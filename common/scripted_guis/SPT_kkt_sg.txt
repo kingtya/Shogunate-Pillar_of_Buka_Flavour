@@ -1,0 +1,27 @@
+﻿SPT_kkt_init_flag_list = {
+	scope = character
+
+	effect = {
+		SPT_clear_flag_list = yes
+		SPT_init_flag_list = yes
+	}
+}
+
+SPT_kkt_selected_flag = {
+	scope = character
+
+	saved_scopes = {
+		SPT_kkt_clicked_flag
+	}
+
+	is_vaild = {
+		scope:SPT_kkt_clicked_flag = var:SPT_kkt_selected_flag
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_kkt_selected_flag
+			value = scope:SPT_kkt_clicked_flag
+		}
+	}
+}

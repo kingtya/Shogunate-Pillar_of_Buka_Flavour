@@ -58,6 +58,8 @@
             name = _show
             using = Animation_FadeIn_Quick
             using = Sound_WindowShow_Standard
+            # 窗口打开时候执行的代码，此处是初始化政策列表
+            on_start = "[GetScriptedGui('SPT_kkt_init_flag_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
         }
         state = {
             name = _hide
@@ -94,18 +96,18 @@
 							layoutpolicy_horizontal = expanding
 							layoutpolicy_vertical = expanding
 							flipdirection = yes
-                            datamodel = "[GetGlobalList('SPT_kkt_flags')]"
+                            datamodel = "[GetPlayer.MakeScope.GetList('SPT_kkt_flags')]"
 							datamodel_wrap = 5
 
 							item = {
-								SPT_kkt_flag_info = {}
+								SPT_kkt_flag_info_button = {}
 							}
 						}
 					}
 
 					blockoverride "scrollbox_empty" {
 						layoutpolicy_vertical = expanding
-						visible = "[IsDataModelEmpty(GetGlobalList('SPT_kkt_flags'))]"
+						visible = "[IsDataModelEmpty(GetPlayer.MakeScope.GetList('SPT_kkt_flags'))]"
 						text = SPT_kkt_flag_empty_text
 					}
 				}
@@ -128,7 +130,7 @@
         }
     }
 
-    type SPT_kkt_flag_info = button_standard_hover {
+    type SPT_kkt_flag_info_button = button_standard_hover {
         layoutpolicy_horizontal = expanding
         layoutpolicy_vertical = expanding
         size = { 240 240 }
@@ -144,6 +146,8 @@
                 using = Font_Size_Big
             }
         }
+        down = "[EqualTo_string(Scope.GetFlagName, GetVariableSystem.Get('selected_flag'))]"
+        onclick = "[GetVariableSystem.Set('selected_flag', Scope.GetFlagName)]"
     }
 
     type SPT_placeholder_for_layout = scrollbox {
