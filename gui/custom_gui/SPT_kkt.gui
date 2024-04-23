@@ -1,0 +1,97 @@
+﻿types SPT_kkt_types { # 作为一个类型名，没有实际意义 kkt作为政策窗口的缩写（滚键盘打出来的）
+
+    type SPT_kkt_open_button =  container { # 此类型为一个按钮，用于打开政策窗口
+        name = "SPT_kkt_open_button"  # 窗口名，该名称会被用于初始创建窗口 一般与类型名相同即可
+        visible = "[And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode))]" #一些基本的可见性判断字面意思
+        parentanchor = top|right # 父锚点，即锚点在父窗口的位置
+        position = { -40 55 } # 位置
+
+        using = Animation_ShowHide_Quick # 使用动画模版 此模版是p社自带的，模版本质是可重用的代码，可以不是一个完整的类型，甚至可以只是一句代码
+
+        button_round = { # 按钮类型
+            size = { 35 35 }
+            alpha = 0.7 # 透明度
+
+            state = { # 当鼠标进入时候播放一个动画
+                name = _mouse_enter
+                alpha = 1
+                duration = 0.2
+                using = Animation_Curve_Default
+            }
+
+            state = { # 当鼠标离开时候播放一个动画
+                name = _mouse_leave
+                alpha = 0.7
+                duration = 0.7
+                using = Animation_Curve_Default
+            }
+
+            button_icon = { # 按钮图标 图标暂时借用原版的
+                texture = "gfx/interface/icons/flat_icons/achievements.dds"
+                parentanchor = center
+                alwaystransparent = yes # 允许能点击到被该元素覆盖的元素
+                size = { 25 25 }
+	        }
+
+            # 点击按钮时候执行的代码 onclick 可以有多个，会依次执行  注意：这里的true不是一个布尔值，而是一个字符串
+            onclick = "[GetVariableSystem.Set('show_SPT_kkt_window', 'true')]"
+            
+        }
+    }
+
+
+    type SPT_kkt_window = window { # 政策窗口的类型
+        name = "SPT_kkt_window"
+        allow_outside = yes # 允许内部元素溢出到外部
+        position = { 0 -60 }
+        movable = yes # 使得窗口可移动 注意：以window为基类的类型，是唯一可以移动的类型 在其他地方写movable = yes是没有意义的
+        parentanchor = center
+        size = { 1300 900 } # 窗口大小，你也可以使用百分比，使用百分比的话会以父窗口为基准 此处父窗口为玩家屏幕
+        using = Window_Background # 一些背景模版，可以迅速让窗口适应原版风格，由于p社的工作，使用这些模版可以让切换到不同文化时候窗口风格与当前文化风格保持一致
+        using = Window_Decoration_Spike
+
+        # 窗口可见性判断 即如果show_SPT_kkt_window变量为true则显示窗口
+        visible = "[GetVariableSystem.HasValue( 'show_SPT_kkt_window', 'true' )]"
+
+        # 窗口关闭时候播放动画和声音，这些都是原版模版
+        state = {
+            name = _show
+            using = Animation_FadeIn_Quick
+            using = Sound_WindowShow_Standard
+        }
+        state = {
+            name = _hide
+            using = Animation_FadeOut_Quick
+            using = Sound_WindowHide_Standard
+        }
+
+        vbox = {
+            using = Window_Margins
+
+            header_pattern = { # 一个标题栏， 你可以把标题和退出按钮包含到标题栏中
+                layoutpolicy_horizontal = expanding
+
+                blockoverride "button_close"
+                {
+                    onclick = "[GetVariableSystem.Set('show_SPT_kkt_window', 'false')]"
+                }
+
+                blockoverride "header_text"
+                {
+                    text = SPT_kkt_window_head_text # 标题文本 此处可以直接写中文文字，或者写本地化键
+                }
+            }
+
+            hbox = { # 横向布局 目前为占位符，使用此布局进行一个窗口填充
+                layoutpolicy_horizontal = expanding # 保证横向填充
+                layoutpolicy_vertical = expanding
+            }
+
+        }
+    }
+
+}
+
+# 实例化类型对象，只有实例化后才能在scripted_widgets中被使用
+SPT_kkt_open_button = {}
+SPT_kkt_window = {}
