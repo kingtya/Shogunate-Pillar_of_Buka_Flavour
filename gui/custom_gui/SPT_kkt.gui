@@ -82,13 +82,79 @@
                 }
             }
 
+            vbox = { # 横向布局 目前为占位符，使用此布局进行一个窗口填充
+                layoutpolicy_horizontal = expanding # 保证横向填充
+                layoutpolicy_vertical = expanding
+                scrollbox = {
+					
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					blockoverride "scrollbox_content" {
+						dynamicgridbox = {
+							layoutpolicy_horizontal = expanding
+							layoutpolicy_vertical = expanding
+							flipdirection = yes
+                            datamodel = "[GetGlobalList('SPT_kkt_flags')]"
+							datamodel_wrap = 5
+
+							item = {
+								SPT_kkt_flag_info = {}
+							}
+						}
+					}
+
+					blockoverride "scrollbox_empty" {
+						layoutpolicy_vertical = expanding
+						visible = "[IsDataModelEmpty(GetGlobalList('SPT_kkt_flags'))]"
+						text = SPT_kkt_flag_empty_text
+					}
+				}
+            }
             hbox = { # 横向布局 目前为占位符，使用此布局进行一个窗口填充
                 layoutpolicy_horizontal = expanding # 保证横向填充
                 layoutpolicy_vertical = expanding
+                vbox = {
+                    layoutpolicy_horizontal = expanding # 保证横向填充
+                    layoutpolicy_vertical = expanding
+                    SPT_placeholder_for_layout = {}
+                }
+                vbox = {
+                    layoutpolicy_horizontal = expanding # 保证横向填充
+                    layoutpolicy_vertical = expanding
+                    SPT_placeholder_for_layout = {}
+                }
             }
 
         }
     }
+
+    type SPT_kkt_flag_info = button_standard_hover {
+        layoutpolicy_horizontal = expanding
+        layoutpolicy_vertical = expanding
+        size = { 240 240 }
+
+        hbox = {
+            layoutpolicy_horizontal = expanding
+            layoutpolicy_vertical = expanding
+            text_single = {
+                layoutpolicy_horizontal = expanding
+                text = "[Scope.GetFlagName]"
+                align = top
+                using = Font_Type_Flavor
+                using = Font_Size_Big
+            }
+        }
+    }
+
+    type SPT_placeholder_for_layout = scrollbox {
+		layoutpolicy_horizontal = expanding
+		layoutpolicy_vertical = expanding
+		blockoverride "scrollbox_content" {
+		}
+
+		blockoverride "scrollbox_empty" {
+		}
+	}
 
 }
 

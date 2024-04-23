@@ -1,7 +1,11 @@
 ﻿l_simp_chinese:
 SPT_kkt_window_head_text: "政策"
+SPT_kkt_flag_empty_text: "未能找到任何国策"
 
 # flag 列表
 flag_kkt_1: "传播公家嗜好"
 flag_kkt_2: "颁布今川假名目录"
 flag_kkt_3: "颁布甲州法度次第"
+flag_kkt_4: "实行兵农分离"
+flag_kkt_5: "咕噜咕噜"
+flag_kkt_6: "嘿嘿嘿"
