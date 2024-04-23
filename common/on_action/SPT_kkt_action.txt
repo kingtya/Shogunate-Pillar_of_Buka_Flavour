@@ -1,0 +1,22 @@
+﻿on_game_start = {
+	on_actions = {
+		SPT_kkt_init_action
+	}
+}
+
+SPT_kkt_init_action = {
+	effect = {
+		add_to_global_variable_list = {
+			name = SPT_kkt_flags
+			target = flag:flag_kkt_1
+		}
+		add_to_global_variable_list = {
+			name = SPT_kkt_flags
+			target = flag:flag_kkt_2
+		}
+		add_to_global_variable_list = {
+			name = SPT_kkt_flags
+			target = flag:flag_kkt_3
+		}
+	}
+}
