@@ -1,11 +1,13 @@
 ﻿l_simp_chinese:
 SPT_kkt_window_head_text: "政策"
 SPT_kkt_flag_empty_text: "未能找到任何国策"
+SPT_confirm_kkt_button_text: "发布国策"
+SPT_remove_kkt_button_text: "撤销国策"
 
 # flag 列表
-flag_kkt_1: "传播公家嗜好"
-flag_kkt_2: "颁布今川假名目录"
-flag_kkt_3: "颁布甲州法度次第"
-flag_kkt_4: "实行兵农分离"
-flag_kkt_5: "咕噜咕噜"
-flag_kkt_6: "嘿嘿嘿"
+flag_kkt_1_name: "颁布征兵法案"
+flag_kkt_2_name: "颁布今川假名目录"
+flag_kkt_3_name: "颁布甲州法度次第"
+flag_kkt_4_name: "实行兵农分离"
+flag_kkt_5_name: "咕噜咕噜"
+flag_kkt_6_name: "嘿嘿嘿"

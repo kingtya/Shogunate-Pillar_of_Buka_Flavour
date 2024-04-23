@@ -25,3 +25,46 @@ SPT_kkt_selected_flag = {
 		}
 	}
 }
+
+SPT_kkt_remove_all_kkt_modifier = {
+	scope = character
+
+	effect = {
+		remove_character_modifier = flag_kkt_1_modifier
+		remove_character_modifier = flag_kkt_2_modifier
+		remove_character_modifier = flag_kkt_3_modifier
+		remove_character_modifier = flag_kkt_4_modifier
+		remove_character_modifier = flag_kkt_5_modifier
+		remove_character_modifier = flag_kkt_6_modifier
+	}
+}
+
+SPT_kkt_apply_modifier = {
+	scope = character
+
+	saved_scopes = {
+		SPT_kkt_selected_flag
+	}
+
+	effect = {
+		SPT_kkt_set_modifier_to_character = {
+			FLAG = scope:SPT_kkt_selected_flag
+			ACTION = add
+		}
+	}
+}
+
+SPT_kkt_remove_modifier = {
+	scope = character
+
+	saved_scopes = {
+		SPT_kkt_selected_flag
+	}
+
+	effect = {
+		SPT_kkt_set_modifier_to_character = {
+			FLAG = scope:SPT_kkt_selected_flag
+			ACTION = remove
+		}
+	}
+}

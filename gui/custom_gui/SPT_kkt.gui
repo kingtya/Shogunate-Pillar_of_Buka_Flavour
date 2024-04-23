@@ -118,12 +118,49 @@
                 vbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
                     layoutpolicy_vertical = expanding
-                    SPT_placeholder_for_layout = {}
+                    text_multi = {
+                        autoresize = yes
+                        using = Font_Size_Medium
+                        text = "[GetModifier(Concatenate(GetVariableSystem.Get('selected_flag') ,'_modifier')).GetDescWithEffects]"
+                    }
                 }
                 vbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
                     layoutpolicy_vertical = expanding
-                    SPT_placeholder_for_layout = {}
+                    button_primary_big = {
+                        layoutpolicy_horizontal = expanding
+                        layoutpolicy_vertical = expanding
+                        hbox = {
+                            layoutpolicy_horizontal = expanding
+                            layoutpolicy_vertical = expanding
+                            text_single = {
+                                layoutpolicy_horizontal = expanding
+                                text = SPT_confirm_kkt_button_text
+                                align = top
+                                using = Font_Type_Flavor
+                                using = Font_Size_Big
+                            }
+                        }
+
+                        onclick = "[GetScriptedGui('SPT_kkt_apply_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
+                    }
+                    button_primary_big = {
+                        layoutpolicy_horizontal = expanding
+                        layoutpolicy_vertical = expanding
+                        hbox = {
+                            layoutpolicy_horizontal = expanding
+                            layoutpolicy_vertical = expanding
+                            text_single = {
+                                layoutpolicy_horizontal = expanding
+                                text = SPT_remove_kkt_button_text
+                                align = top
+                                using = Font_Type_Flavor
+                                using = Font_Size_Big
+                            }
+                        }
+
+                        onclick = "[GetScriptedGui('SPT_kkt_remove_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
+                    }
                 }
             }
 
@@ -140,7 +177,7 @@
             layoutpolicy_vertical = expanding
             text_single = {
                 layoutpolicy_horizontal = expanding
-                text = "[Scope.GetFlagName]"
+                text = "[Localize(Concatenate(Scope.GetFlagName, '_name'))]"
                 align = top
                 using = Font_Type_Flavor
                 using = Font_Size_Big

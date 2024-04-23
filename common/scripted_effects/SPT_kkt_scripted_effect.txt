@@ -29,3 +29,28 @@
 SPT_clear_flag_list = {
 	clear_variable_list = SPT_kkt_flags
 }
+
+SPT_kkt_set_modifier_to_character = {
+	switch = {
+		trigger = $FLAG$
+
+		flag:flag_kkt_1 = {
+			$ACTION$_character_modifier = flag_kkt_1_modifier
+		}
+		flag:flag_kkt_2 = {
+			$ACTION$_character_modifier = flag_kkt_2_modifier
+		}
+		flag:flag_kkt_3 = {
+			$ACTION$_character_modifier = flag_kkt_3_modifier
+		}
+		flag:flag_kkt_4 = {
+			$ACTION$_character_modifier = flag_kkt_4_modifier
+		}
+		flag:flag_kkt_5 = {
+			$ACTION$_character_modifier = flag_kkt_5_modifier
+		}
+		flag:flag_kkt_6 = {
+			$ACTION$_character_modifier = flag_kkt_6_modifier
+		}
+	}
+}
