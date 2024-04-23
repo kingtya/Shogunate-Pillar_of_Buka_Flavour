@@ -1,0 +1,114 @@
+﻿l_simp_chinese:
+# 今川 / 武田
+trait_imagawa_margin:0 "今川传"
+trait_imagawa_margin_desc:0 "今川氏发迹于三河国碧海郡今川，乃清和源氏一脉，于南北朝时代作为足利氏一门支援北朝对抗南朝，继而支持室町足利幕府。传言道“公方不继吉良继，吉良不继今川继”。"
+TRAIT_FLAG_DESC_can_make_decision_imagawa_kana_mokuruku:0 "解锁#E 传播公家嗜好#![decision|E]\n解锁#E 颁布今川假名目录#![decision|E]\n如果满足要求，为领主解锁#E 颁布今川假名目录#![decision|E]"
+
+trait_takeda_margin:0 "武田传"
+trait_takeda_margin_desc:0 "武田氏发迹于甲斐国武田乡，乃清和源氏新罗三郎义光后裔。清光子信义就任甲斐守护，此后该职由武田氏世代相继。"
+TRAIT_FLAG_DESC_can_make_decision_koushiu_hado_no_shidai:0 "解锁#E 颁布甲州法度次第#![decision|E]\n如果满足要求，为领主解锁#E 颁布甲州法度次第#![decision|E]"
+
+introduce_imagawa_kana_mokuruku_decision:0 "颁布今川假名目录"
+introduce_imagawa_kana_mokuruku_decision_tooltip:0 "颁布新的分国法来繁荣我的领地"
+introduce_imagawa_kana_mokuruku_decision_desc:0 "《今川假名目录》是骏河国的战国大名今川氏亲制定的分国法，是东国是最古老的分国法。大永6年（1526年）4月，今川氏亲制定了由33条组成的家法《假名目录》。当时氏亲身患重病，草案中很大程度上反映了家臣以及嫡子今川氏辉继承并稳定政权的意愿。天文22年（1553年）2月，今川义元制定了《假名目录追加21条》进行补订，其中否认了守护不入的义务，完全摒弃了守护大名的色彩。"
+introduce_imagawa_kana_mokuruku_decision_confirm:0 "颁布政令"
+
+introduce_koushiu_hado_no_shidai_decision:0 "颁布甲州法度次第"
+introduce_koushiu_hado_no_shidai_decision_tooltip:0 "颁布新的分国法来繁荣我的领地"
+introduce_koushiu_hado_no_shidai_decision_desc:0 "《甲州法度次第》是甲斐国的战国大名武田信玄于天文16年（1547年）制定的分国法，也被称为信玄家法、甲州法度、甲州式目等。最初由55条基本法组成，天文23年（1554年）追加2条，共57条。甲州法度分为上卷和下卷，上卷由57条组成，主要规定了法律条款；下卷由99条组成，是一部道德论述集，引用了诸如论语、孟子等中国古典著作，旨在规范日常行为。"
+introduce_koushiu_hado_no_shidai_decision_confirm:0 "颁布政令"
+
+introduce_imagawa_kana_mokuruku_decision_life_once_tt:0 "#N 你一生只能颁布一次今川假名目录#weak （分国法）#!#!"
+introduce_imagawa_kana_mokuruku_decision_effect_tt:0 "如果你是[root.GetCulture.GetName]文化的[culture_head|E]，你的[culture|E]会获得[GetCultureTradition('tradition_imagawa_kana_mokuruku').GetName]传统，你领地内该文化以外的[county|E]获得[GetModifier('spt_introduce_imagawa_kana_mokuruku_county_modifier').GetNameWithTooltip]，为期#V 25年#!\n如果你不是[root.GetCulture.GetName]文化的[culture_head|E]，你领地内的[county|E]获得[GetModifier('spt_introduce_imagawa_kana_mokuruku_county_modifier').GetNameWithTooltip]，为期#V 50年#!"
+introduce_imagawa_kana_mokuruku_can_not_fire_steward_tt:0 "如果你没有[GetTrait('imagawa_margin').GetName( GetNullCharacter )]，你的家宰[steward.GetDynasty.GetNameNoTooltip][steward.GetFirstName]有[GetTrait('imagawa_margin').GetName( GetNullCharacter )]，你在今后#N [SCOPE.ScriptValue('council_position_locked_value')|0]年#!内无法将[steward.GetSheHe]撤职"
+
+introduce_koushiu_hado_no_shidai_decision_life_once_tt:0 "#N 你一生只能颁布一次甲州法度次第#weak （分国法）#!#!"
+introduce_koushiu_hado_no_shidai_decision_effect_tt:0 "如果你是[root.GetCulture.GetName]文化的[culture_head|E]，你的[culture|E]会获得[GetCultureTradition('tradition_koushiu_hado_no_shidai').GetName]传统，你领地内该文化以外的[county|E]获得[GetModifier('spt_introduce_koushiu_hado_no_shidai_county_modifier').GetNameWithTooltip]，为期#V 25年#!\n如果你不是[root.GetCulture.GetName]文化的[culture_head|E]，你领地内的[county|E]获得[GetModifier('spt_introduce_koushiu_hado_no_shidai_county_modifier').GetNameWithTooltip]，为期#V 50年#!"
+introduce_koushiu_hado_no_shidai_can_not_fire_steward_tt:0 "如果你没有[GetTrait('takeda_margin').GetName( GetNullCharacter )]，你的家宰[steward.GetDynasty.GetNameNoTooltip][steward.GetFirstName]有[GetTrait('takeda_margin').GetName( GetNullCharacter )]，你在今后#N [SCOPE.ScriptValue('council_position_locked_value')|0]年#!内无法将[steward.GetSheHe]撤职"
+
+spt_introduce_imagawa_kana_mokuruku_county_modifier:0 "废除守护不入#weak （今川假名目录）#!"
+spt_introduce_imagawa_kana_mokuruku_county_modifier_desc:1 "这个地方的守护不入特权被新的法律废除"
+spt_introduce_imagawa_kana_mokuruku_modifier:0 "今川假名目录"
+spt_introduce_imagawa_kana_mokuruku_modifier_desc:1 "此人颁布了今川假名目录"
+
+spt_introduce_koushiu_hado_no_shidai_county_modifier:0 "领地规范#weak （甲州法度次第）#!"
+spt_introduce_koushiu_hado_no_shidai_county_modifier_desc:1 "这个地方的土地所有权和年贡征收被新的法律规范"
+spt_introduce_koushiu_hado_no_shidai_modifier:0 "甲州法度次第"
+spt_introduce_koushiu_hado_no_shidai_modifier_desc:1 "此人颁布了甲州法度次第"
+
+tradition_imagawa_kana_mokuruku_name:0 "今川假名目录"
+tradition_imagawa_kana_mokuruku_desc:0 "这项分国法撤废领内的守护不入权和关所，加强了税收和经济，在领民嫁娶、家臣团、座商、各派宗论等问题上具有强烈的文化保守主义和贸易保护主义色彩，保障了国内安定繁荣。"
+spt_culture_head_not_has_imagawa_margin_desc:0 "该[culture|E]的[culture_head|E]没有[GetTrait('imagawa_margin').GetName( GetNullCharacter )]"
+
+tradition_koushiu_hado_no_shidai_name:0 "甲州法度次第"
+tradition_koushiu_hado_no_shidai_desc:0 "这项分国法规范了国众地头的土地所有权和年贡征收，并强令家臣效忠。该法最著名的是“喧哗两成败”即私斗双方不论对错一并惩处和“国主犯法，与民同罪”的思想。"
+spt_culture_head_not_has_takeda_margin_desc:0 "该[culture|E]的[culture_head|E]没有[GetTrait('takeda_margin').GetName( GetNullCharacter )]"
+
+# 织田
+trait_oda_nobunaga:0 "第六天魔王"
+trait_oda_nobunaga_desc:0 "天下布武的大名织田信长为巩固自己在畿内的势力，打破第15代室町幕府将军足利义昭建立的信长包围网，进攻当时被视为佛教圣地的比睿山延历寺并烧毁寺庙，杀害僧侣、妇孺数千。时人以“第六天魔王”比喻信长为佛教的对头魔王。"
+
+trait_oda_margin:0 "织田传#weak （弹正忠家）#!"
+trait_oda_margin_desc:0 "织田氏发祥于越前国织田庄，本姓忌部氏，与甲斐氏、朝仓氏同为斯波武卫家效力，室町时代为尾张守护代。弹正忠家本为织田氏庶流，传自信长祖父三代，趁乱世之机坐大。"
+TRAIT_FLAG_DESC_can_make_decision_heino_bunri:0 "解锁#E 实行兵农分离#![decision|E]\n如果满足要求，为领主解锁#E 实行兵农分离#![decision|E]"
+
+introduce_heino_bunri_decision:0 "实行兵农分离"
+introduce_heino_bunri_decision_tooltip:0 "颁布新的政策来强化我的常备军"
+introduce_heino_bunri_decision_desc:0 "兵农分离是战国大名为能拥有常备兵所实行的政策，可能启发于织田信长，实际奠基于太阁丰臣秀吉的检地与刀狩，最终完成于关白丰臣秀次的“人扫令”。此外，该政令也是为了确立武士阶级，使武士以外的人民无法拥有武力，巩固社会的秩序。"
+introduce_heino_bunri_decision_confirm:0 "颁布政令"
+
+spt_introduce_heino_bunri_modifier:0 "兵农分离"
+spt_introduce_heino_bunri_modifier_desc:1 "此人实行了兵农分离"
+
+introduce_heino_bunri_can_not_fire_steward_tt:0 "如果你没有[GetTrait('oda_margin').GetName( GetNullCharacter )]，你的家宰[steward.GetDynasty.GetNameNoTooltip][steward.GetFirstName]有[GetTrait('oda_margin').GetName( GetNullCharacter )]，你在今后#N [SCOPE.ScriptValue('council_position_locked_value')|0]年#!内无法将[steward.GetSheHe]撤职"
+
+# 后北条
+trait_hojo_margin:0 "后北条传"
+trait_hojo_margin_desc:0 "始于原为京都御家人的伊势新九郎宗瑞，其因平定今川家内乱有功受封城主。统一相模后，二代当主氏纲改姓北条以巩固统治，因与镰仓时代的幕府执权北条氏没有直接血缘关系，故又称后北条氏。"
+TRAIT_FLAG_DESC_can_make_decision_hojo_okakioki:0 "解锁#E 谛听五条训诫#![decision|E]\n如果满足要求，为领主解锁#E 谛听五条训诫#![decision|E]"
+
+introduce_hojo_okakioki_decision:0 "谛听五条训诫"
+introduce_hojo_okakioki_decision_tooltip:0 "阅读先辈遗训来激发我的意志"
+introduce_hojo_okakioki_decision_desc:0 "《五条训诫》，即五个条御书置，是日本战国大名北条氏纲于天文十年（1541年）5月21日写给嫡子氏康的遗训。书中谈到了节俭的重要性，谈及先父北条早云（伊势宗瑞）功成之原因，氏纲言道：“世上时人尝言亡父入道公以微小之身成为天性之福人，自是因为得到了天道眷顾，但最重要的还是因为早云公严守节俭之道，不好华丽之故也。”"
+introduce_hojo_okakioki_decision_confirm:0 "翻阅御书置"
+
+spt_introduce_hojo_okakioki_county_modifier:0 "四公六民#weak （五条训诫）#!"
+spt_introduce_hojo_okakioki_county_modifier_desc:0 "这个地方实行了四公六民的税收政策"
+spt_introduce_hojo_okakioki_modifier:0 "四公六民"
+spt_introduce_hojo_okakioki_modifier_desc:1 "此人实行了四公六民的税收政策"
+
+introduce_hojo_okakioki_decision_life_once_tt:0 "#N 你一生只能谛听一次五条训诫#!"
+introduce_hojo_okakioki_can_not_fire_steward_tt:0 "如果你没有[GetTrait('hojo_margin').GetName( GetNullCharacter )]，你的家宰[steward.GetDynasty.GetNameNoTooltip][steward.GetFirstName]有[GetTrait('hojo_margin').GetName( GetNullCharacter )]，你在今后#N [SCOPE.ScriptValue('council_position_locked_value')|0]年#!内无法将[steward.GetSheHe]撤职"
+
+# 德川
+trait_tokugawa_margin:0 "德川传"
+trait_tokugawa_margin_desc:0 "始于德川家康，前身是三河国豪族松平氏。家康的祖父清康致力于称霸三河，被后世誉为“如果活到三十岁当可取得天下”。家康发迹后自称清和源氏支流得川氏后裔，改一字为德川。"
+TRAIT_FLAG_DESC_can_make_decision_hatamoto_senteyaku:0 "解锁#E 组建旗本先手役#![decision|E]\n如果满足要求，为领主解锁#E 组建旗本先手役#![decision|E]"
+
+introduce_hatamoto_senteyaku_decision:0 "组建旗本先手役"
+introduce_hatamoto_senteyaku_decision_tooltip:0 "颁布新的政策来强化我的常备军"
+introduce_hatamoto_senteyaku_decision_desc:0 "旗本先手役是在永禄9年（1566年）家康统一三河地区时进行的德川家军制改革中设立的。这次改革将三河武士重新编组为东三河众、西三河众，以及家康直属的旗本三备。先手役是家康直属的机动部队，与马廻众分开编制在上述的旗本内。先手役不仅作为旗本部队的先锋参与战斗，还具备即时反应部队的特征。因此，属于旗本先手役的武士常驻在家康的居城附近，为突发情况做好准备。"
+introduce_hatamoto_senteyaku_decision_confirm:0 "颁布政令"
+
+spt_introduce_hatamoto_senteyaku_modifier:0 "旗本先手役"
+spt_introduce_hatamoto_senteyaku_modifier_desc:1 "此人组建了旗本先手役"
+
+introduce_hatamoto_senteyaku_can_not_fire_steward_tt:0 "如果你没有[GetTrait('tokugawa_margin').GetName( GetNullCharacter )]，你的家宰[steward.GetDynasty.GetNameNoTooltip][steward.GetFirstName]有[GetTrait('tokugawa_margin').GetName( GetNullCharacter )]，你在今后#N [SCOPE.ScriptValue('council_position_locked_value')|0]年#!内无法将[steward.GetSheHe]撤职"
+
+# 上杉
+trait_uesugi_margin:0 "上杉传"
+trait_uesugi_margin_desc:0 ""
+
+
+
+# 上杉 毗沙门天信仰
+# 伊达 编制龙骑兵
+# 真田 六文钱誓言
+# 丰臣 检地刀狩
+# 德川 旗本先手役
+# 本愿寺 机法一体
+# 铃木 杂贺规约
+# 长宗我部 一领具足制
+# 毛利 百万一心之训
+# 大友 切立支丹教
+# 岛津 萨摩军法

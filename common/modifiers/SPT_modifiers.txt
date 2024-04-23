@@ -1,0 +1,57 @@
+﻿spt_introduce_imagawa_kana_mokuruku_county_modifier = {
+	icon = county_modifier_control_positive
+	monthly_county_control_growth_add = 0.1
+	tax_mult = 0.1
+}
+
+spt_introduce_imagawa_kana_mokuruku_modifier = {
+	icon = learning_positive
+	cultural_head_fascination_mult = 0.1
+}
+
+spt_introduce_koushiu_hado_no_shidai_county_modifier = {
+	icon = county_modifier_control_positive
+	monthly_county_control_growth_add = 0.1
+}
+
+spt_introduce_koushiu_hado_no_shidai_modifier = {
+	icon = learning_positive
+	cultural_head_fascination_mult = 0.05
+}
+
+spt_introduce_heino_bunri_modifier = {
+	icon = martial_positive
+	#accolade_glory_gain_mult = 0.2
+	knight_effectiveness_mult = 0.5
+	men_at_arms_limit = 1
+	men_at_arms_cap = 3
+	levy_size = -0.75
+	#levy_reinforcement_rate = -0.5
+}
+
+spt_introduce_hojo_okakioki_county_modifier = {
+	icon = county_modifier_control_positive
+	tax_mult = -0.1
+	monthly_county_control_growth_add = 0.5
+	county_opinion_add = 50
+	travel_danger = -25
+	#levy_size = 0.25
+	#levy_reinforcement_rate = 0.2
+}
+
+spt_introduce_hojo_okakioki_modifier = {
+	icon = prestige_positive
+	monthly_prestige = 2.0
+	monthly_prestige_gain_mult = 0.1
+	monthly_dynasty_prestige = 0.25
+	monthly_dynasty_prestige_mult = 0.05
+	tyranny_loss_mult = 0.25
+}
+
+spt_introduce_hatamoto_senteyaku_modifier = {
+	icon = martial_positive
+	knight_limit = 4
+	knight_effectiveness_mult = 0.5
+	travel_safety = 25
+	hostile_scheme_resistance_mult = 0.1
+}
