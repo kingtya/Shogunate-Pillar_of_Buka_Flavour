@@ -121,7 +121,7 @@
                     text_multi = {
                         autoresize = yes
                         using = Font_Size_Medium
-                        text = "[GetModifier(Concatenate(GetVariableSystem.Get('selected_flag') ,'_modifier')).GetDescWithEffects]"
+                        text = "[GetScriptedGui('SPT_kkt_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                     }
                 }
                 vbox = {
@@ -191,9 +191,6 @@
 		layoutpolicy_horizontal = expanding
 		layoutpolicy_vertical = expanding
 		blockoverride "scrollbox_content" {
-		}
-
-		blockoverride "scrollbox_empty" {
 		}
 	}
 
