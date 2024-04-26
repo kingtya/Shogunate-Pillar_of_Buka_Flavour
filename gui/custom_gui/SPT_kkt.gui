@@ -137,12 +137,24 @@
                             }
                         }
                     }
-                    
-                    text_single = {
-                        layoutpolicy_horizontal = expanding
-                        text = "[GuiScope.SetRoot(MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).ScriptValue('SPT_kkt_flag_values')|0]"
-                        using = Font_Size_Medium
+                    hbox = {
+                        text_single = {
+                            layoutpolicy_horizontal = expanding
+                            text = SPT_kkt_cost_text
+                            using = Font_Size_Medium
+                        }
+                        icon = {
+							name = "icon_gold"
+							size = { 30 30 }
+							texture = "gfx/interface/icons/icon_gold.dds"
+						}
+                        text_single = {
+                            layoutpolicy_horizontal = expanding
+                            text = "[GuiScope.SetRoot(MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).ScriptValue('SPT_kkt_flag_values')|0]"
+                            using = Font_Size_Medium
+                        }
                     }
+                    
                 }
                 vbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
@@ -208,7 +220,7 @@
                                     using = Font_Size_Big
                                 }
                             }
-    
+                            
                             onclick = "[GetScriptedGui('SPT_kkt_remove_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
                         }
                     }

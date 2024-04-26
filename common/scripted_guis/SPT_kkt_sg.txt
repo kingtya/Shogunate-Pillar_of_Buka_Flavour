@@ -50,9 +50,7 @@ SPT_kkt_apply_modifier = {
 		SPT_kkt_set_modifier_to_character = {
 			FLAG = scope:SPT_kkt_selected_flag
 			ACTION = add
-		}
-		hidden_effect = {
-			remove_short_term_gold = scope:SPT_kkt_selected_flag.SPT_kkt_flag_values
+			CONFIRM = yes
 		}
 	}
 }
@@ -68,6 +66,7 @@ SPT_kkt_remove_modifier = {
 		SPT_kkt_set_modifier_to_character = {
 			FLAG = scope:SPT_kkt_selected_flag
 			ACTION = remove
+			CONFIRM = no
 		}
 	}
 }
