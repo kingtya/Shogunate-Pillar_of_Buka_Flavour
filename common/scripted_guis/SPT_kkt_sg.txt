@@ -4,6 +4,7 @@
 	effect = {
 		SPT_init_flag_list = yes
 		SPT_init_flag_list_2 = yes
+		SPT_init_flag_list_3 = yes
 	}
 }
 

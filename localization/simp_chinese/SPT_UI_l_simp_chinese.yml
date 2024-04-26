@@ -3,8 +3,8 @@ SPT_kkt_window_head_text: "政策"
 SPT_kkt_flag_empty_text: "未能找到任何国策"
 SPT_confirm_kkt_button_text: "发布国策"
 SPT_remove_kkt_button_text: "撤销国策"
-SPT_kkt_effect_head_text: "国策效果"
-SPT_kkt_cost_head_text: "国策花费"
+SPT_kkt_effect_head_text:0 "效果"
+SPT_kkt_cost_head_text:1 "花费"
 SPT_kkt_cost_text: "花费"
 
 # flag 列表
@@ -58,3 +58,15 @@ spt_policy_buddhism_sanction_modifier_desc:0 "此人保护领地内寺社的权�
 flag_spt_policy_foster_system_name:0 "#V 寄亲寄子制#!"
 spt_policy_foster_system_modifier:0 "寄亲寄子制"
 spt_policy_foster_system_modifier_desc:0 "此人与封臣缔结了形式上的血缘关系。"
+
+flag_spt_policy_western_sanction_name:0 "#V 南蛮保护#!"
+spt_policy_western_sanction_modifier:0 "南蛮保护制"
+spt_policy_western_sanction_modifier_desc:0 "此人与封臣缔结了形式上的血缘关系。"
+
+flag_spt_policy_improve_firearms_name:0 "#V 强化铁炮队#!"
+spt_policy_improve_firearms_modifier:0 "强化铁炮队"
+spt_policy_improve_firearms_modifier_desc:0 "此人与封臣缔结了形式上的血缘关系。"
+
+flag_spt_policy_meritocracy_name:0 "#V 能力主义#!"
+spt_policy_meritocracy_modifier:0 "能力主义"
+spt_policy_meritocracy_modifier_desc:0 "此人与封臣缔结了形式上的血缘关系。"

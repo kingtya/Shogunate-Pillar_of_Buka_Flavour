@@ -95,7 +95,7 @@
                 }
             }
 
-            header_standard = { # 一个标题栏， 你可以把标题和退出按钮包含到标题栏中
+            header_pattern = { # 一个标题栏， 你可以把标题和退出按钮包含到标题栏中
                 layoutpolicy_horizontal = expanding
 
                 blockoverride "button_close"
@@ -118,54 +118,135 @@
                 ################
                 ### 保守政策 ###
                 ################
-                scrollbox = {
+                vbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
-                    layoutpolicy_vertical = preferred
-                    size = { 100% 500 }
-					blockoverride "scrollbox_content" {
-                        vbox = {
-                            datamodel = "[GetPlayer.MakeScope.GetList('SPT_conservative_policy_flags')]"
-
-							item = {
-								SPT_kkt_flag_info_button = {}
-							}
+                    layoutpolicy_vertical = expanding
+                    
+                    vbox = {
+                        layoutpolicy_horizontal = expanding # 保证横向填充
+                        layoutpolicy_vertical = expanding
+                        header_standard = {
+                            layoutpolicy_horizontal = expanding
+                            blockoverride "header_text"
+                            {
+                                text = 保守
+                            }
+                            blockoverride "button_close"
+                            {
+                                visible = no
+                            }
                         }
-						
-					}
-                    blockoverride "scrollbox_empty"
-                    {
-                        visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_conservative_policy_flags') )]"
-                        text = "嘿嘿，出bug喽"
+                        scrollbox = {
+                            layoutpolicy_horizontal = expanding # 保证横向填充
+                            layoutpolicy_vertical = preferred
+                            size = { 100% 500 }
+                            blockoverride "scrollbox_content" {
+                                vbox = {
+                                    datamodel = "[GetPlayer.MakeScope.GetList('SPT_conservative_policy_flags')]"
+
+                                    item = {
+                                        SPT_kkt_flag_info_button = {}
+                                    }
+                                }
+                                
+                            }
+                            blockoverride "scrollbox_empty"
+                            {
+                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_conservative_policy_flags') )]"
+                                text = "嘿嘿，出bug喽"
+                            }
+                        }
                     }
-				}
+                }
 
                 ################
                 ### 中道政策 ###
                 ################
-                scrollbox = {
+                vbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
-                    layoutpolicy_vertical = preferred
-                    size = { 100% 500 }
-					blockoverride "scrollbox_content" {
-                        vbox = {
-                            datamodel = "[GetPlayer.MakeScope.GetList('SPT_neutral_policy_flags')]"
-
-							item = {
-								SPT_kkt_flag_info_button = {}
-							}
+                    layoutpolicy_vertical = expanding
+                    
+                    vbox = {
+                        layoutpolicy_horizontal = expanding # 保证横向填充
+                        layoutpolicy_vertical = expanding
+                        header_standard = {
+                            layoutpolicy_horizontal = expanding
+                            blockoverride "header_text"
+                            {
+                                text = 中道
+                            }
+                            blockoverride "button_close"
+                            {
+                                visible = no
+                            }
                         }
-						
-					}
-                    blockoverride "scrollbox_empty"
-                    {
-                        visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_neutral_policy_flags') )]"
-                        text = "嘿嘿，出bug喽"
+
+                        scrollbox = {
+                            layoutpolicy_horizontal = expanding # 保证横向填充
+                            layoutpolicy_vertical = preferred
+                            size = { 100% 500 }
+                            blockoverride "scrollbox_content" {
+                                vbox = {
+                                    datamodel = "[GetPlayer.MakeScope.GetList('SPT_neutral_policy_flags')]"
+
+                                    item = {
+                                        SPT_kkt_flag_info_button = {}
+                                    }
+                                }
+                                
+                            }
+                            blockoverride "scrollbox_empty"
+                            {
+                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_neutral_policy_flags') )]"
+                                text = "嘿嘿，出bug喽"
+                            }
+                        }
                     }
-				}
+                }
 
                 ################
                 ### 革新政策 ###
                 ################
+                vbox = {
+                    layoutpolicy_horizontal = expanding # 保证横向填充
+                    layoutpolicy_vertical = expanding
+                    
+                    vbox = {
+                        layoutpolicy_horizontal = expanding # 保证横向填充
+                        layoutpolicy_vertical = expanding
+                        header_standard = {
+                            layoutpolicy_horizontal = expanding
+                            blockoverride "header_text"
+                            {
+                                text = 革新
+                            }
+                            blockoverride "button_close"
+                            {
+                                visible = no
+                            }
+                        }
+                        scrollbox = {
+                            layoutpolicy_horizontal = expanding # 保证横向填充
+                            layoutpolicy_vertical = preferred
+                            size = { 100% 500 }
+                            blockoverride "scrollbox_content" {
+                                vbox = {
+                                    datamodel = "[GetPlayer.MakeScope.GetList('SPT_progressive_policy_flags')]"
+        
+                                    item = {
+                                        SPT_kkt_flag_info_button = {}
+                                    }
+                                }
+                                
+                            }
+                            blockoverride "scrollbox_empty"
+                            {
+                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_progressive_policy_flags') )]"
+                                text = "嘿嘿，出bug喽"
+                            }
+                        }
+                    }
+                }
 
                 ################
                 ### 御用政策 ###
