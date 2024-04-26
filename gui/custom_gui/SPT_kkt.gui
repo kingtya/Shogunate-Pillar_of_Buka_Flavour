@@ -34,6 +34,7 @@
 	        }
 
             # 点击按钮时候执行的代码 onclick 可以有多个，会依次执行  注意：这里的true不是一个布尔值，而是一个字符串
+            onclick = "[GetScriptedGui('SPT_kkt_init_flag_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
             onclick = "[GetVariableSystem.Set('show_SPT_kkt_window', 'true')]"
             
         }
@@ -58,8 +59,6 @@
             name = _show
             using = Animation_FadeIn_Quick
             using = Sound_WindowShow_Standard
-            # 窗口打开时候执行的代码，此处是初始化政策列表
-            on_start = "[GetScriptedGui('SPT_kkt_init_flag_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
         }
         state = {
             name = _hide
@@ -120,18 +119,20 @@
                     layoutpolicy_vertical = preferred
                     size = { 100% 500 }
 					blockoverride "scrollbox_content" {
-						dynamicgridbox = {
-                            layoutpolicy_horizontal = expanding # 保证横向填充
-                            layoutpolicy_vertical = preferred
-							flipdirection = yes
+                        vbox = {
                             datamodel = "[GetPlayer.MakeScope.GetList('SPT_kkt_flags')]"
-							datamodel_wrap = 2
 
 							item = {
 								SPT_kkt_flag_info_button = {}
 							}
-						}
+                        }
+						
 					}
+                    blockoverride "scrollbox_empty"
+                    {
+                        visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_kkt_flags') )]"
+                        text = "嘿嘿，出bug喽"
+                    }
 				}
             }
             hbox = { # 横向布局 目前为占位符，使用此布局进行一个窗口填充
@@ -243,7 +244,7 @@
     }
 
     type SPT_kkt_flag_info_button = button_letter {
-        size = { 50% 80 }
+        size = { 240 80 }
         text_single = {
             text = "[Localize(Concatenate(Scope.GetFlagName, '_name'))]"
             default_format = "#light_background"
