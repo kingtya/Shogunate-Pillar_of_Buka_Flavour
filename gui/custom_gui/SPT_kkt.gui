@@ -65,6 +65,7 @@
             name = _hide
             using = Animation_FadeOut_Quick
             using = Sound_WindowHide_Standard
+            on_start = "[GetScriptedGui('SPT_kkt_exit_flag_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
         }
 
         vbox = {

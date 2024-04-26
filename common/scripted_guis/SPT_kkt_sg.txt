@@ -2,8 +2,15 @@
 	scope = character
 
 	effect = {
-		SPT_clear_flag_list = yes
 		SPT_init_flag_list = yes
+	}
+}
+
+SPT_kkt_exit_flag_list = {
+	scope = character
+
+	effect = {
+		SPT_clear_flag_list = yes
 	}
 }
 
