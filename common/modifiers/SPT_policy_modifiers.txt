@@ -1,0 +1,39 @@
+﻿spt_policy_direct_daimyo_rule_modifier = {
+	icon = stewardship_positive
+	domain_limit = 1
+	monthly_income = -0.2
+}
+
+spt_policy_improve_labor_modifier = {
+	icon = stewardship_positive
+	general_opinion = -5
+	build_speed = -0.5
+	build_prestige_cost = -0.25
+	monthly_income = -0.2
+}
+
+spt_policy_deploy_draftee_modifier = {
+	icon = martial_positive
+	men_at_arms_maintenance = -0.2
+	men_at_arms_limit = 1
+}
+
+spt_policy_improve_militia_modifier = {
+	icon = martial_positive
+	levy_size = 0.3
+	levy_reinforcement_rate = 0.1
+	domain_tax_mult = -0.05
+	monthly_income = -0.2
+}
+
+spt_policy_post_horse_system_modifier = {
+	icon = horse_positive
+	sway_schemes_power_add = 20
+	travel_safety = 20
+	character_travel_speed_mult = 0.25
+}
+
+spt_policy_distant_diplomacy_modifier = {
+	icon = diplomacy_positive
+	diplomatic_range_mult = 0.5
+}
