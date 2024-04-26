@@ -70,6 +70,31 @@
         vbox = {
             using = Window_Margins
 
+            background = {
+                visible = "[Character.GetGovernment.IsType('feudal_government')]"
+                texture = "gfx/interface/illustrations/event_scenes/study.dds"
+                alpha = 1
+				spriteborder = { 1 1 }
+				margin = { -30 -10 }
+                modify_texture = {
+                    texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
+                    blend_mode = alphamultiply
+                    mirror = vertical
+                }
+            }
+            background = {
+                visible = "[Not(Character.GetGovernment.IsType('feudal_government'))]"
+                texture = "gfx/interface/illustrations/event_scenes/fp2_relaxing_room.dds"
+                alpha = 0.5
+				spriteborder = { 1 1 }
+				margin = { -30 -10 }
+                modify_texture = {
+                    texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
+                    blend_mode = alphamultiply
+                    mirror = vertical
+                }
+            }
+
             header_standard = { # 一个标题栏， 你可以把标题和退出按钮包含到标题栏中
                 layoutpolicy_horizontal = expanding
 
@@ -86,48 +111,36 @@
 
             vbox = { # 横向布局 目前为占位符，使用此布局进行一个窗口填充
                 layoutpolicy_horizontal = expanding # 保证横向填充
-                layoutpolicy_vertical = expanding
+                layoutpolicy_vertical = preferred
+                size = { 100% 500 }
+                #using = Background_Letter
                 scrollbox = {
-					layoutpolicy_horizontal = expanding
-					layoutpolicy_vertical = expanding
+                    layoutpolicy_horizontal = expanding # 保证横向填充
+                    layoutpolicy_vertical = preferred
+                    size = { 100% 500 }
 					blockoverride "scrollbox_content" {
 						dynamicgridbox = {
-							layoutpolicy_horizontal = expanding
-							layoutpolicy_vertical = expanding
+                            layoutpolicy_horizontal = expanding # 保证横向填充
+                            layoutpolicy_vertical = preferred
 							flipdirection = yes
                             datamodel = "[GetPlayer.MakeScope.GetList('SPT_kkt_flags')]"
-							datamodel_wrap = 5
+							datamodel_wrap = 2
 
 							item = {
 								SPT_kkt_flag_info_button = {}
 							}
 						}
 					}
-
-					blockoverride "scrollbox_empty" {
-						layoutpolicy_vertical = expanding
-						visible = "[IsDataModelEmpty(GetPlayer.MakeScope.GetList('SPT_kkt_flags'))]"
-						text = SPT_kkt_flag_empty_text
-					}
 				}
             }
             hbox = { # 横向布局 目前为占位符，使用此布局进行一个窗口填充
                 layoutpolicy_horizontal = expanding # 保证横向填充
-                layoutpolicy_vertical = expanding
+                layoutpolicy_vertical = preferred
+                size = { 100% 40% }
                 vbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
                     layoutpolicy_vertical = expanding
-                    header_standard = {
-                        layoutpolicy_horizontal = expanding
-                        blockoverride "header_text"
-                        {
-                            text = SPT_kkt_cost_head_text
-                        }
-                        blockoverride "button_close"
-                        {
-                            visible = no
-                        }
-                    }
+                    
                     scrollbox = {
                         layoutpolicy_horizontal = expanding
                         layoutpolicy_vertical = expanding
@@ -137,18 +150,13 @@
                             }
                         }
                     }
-                    hbox = {
-                        text_multi = {
-                            autoresize = yes
-                            using = Font_Size_Medium
-                            text = "[GetScriptedGui('SPT_kkt_apply_cost').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
-                        }
-                    }
+                    
                     
                 }
                 vbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
                     layoutpolicy_vertical = expanding
+                    
                     vbox = {
                         layoutpolicy_horizontal = expanding # 保证横向填充
                         layoutpolicy_vertical = expanding
@@ -174,42 +182,53 @@
                                 }
                             }
                         }
+                        header_standard = {
+                            layoutpolicy_horizontal = expanding
+                            blockoverride "header_text"
+                            {
+                                text = SPT_kkt_cost_head_text
+                            }
+                            blockoverride "button_close"
+                            {
+                                visible = no
+                            }
+                        }
+                        scrollbox = {
+                            layoutpolicy_horizontal = expanding
+                            layoutpolicy_vertical = expanding
+                            blockoverride "scrollbox_content" {
+                                hbox = {
+                                    text_multi = {
+                                        autoresize = yes
+                                        using = Font_Size_Medium
+                                        text = "[GetScriptedGui('SPT_kkt_apply_cost').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                                    }
+                                }
+                            }
+                        }
+                        
                         
                     }
                     hbox = {
                         layoutpolicy_horizontal = expanding # 保证横向填充
                         layoutpolicy_vertical = expanding
                         button_primary_big = {
-                            layoutpolicy_horizontal = expanding
-                            layoutpolicy_vertical = expanding
-                            hbox = {
+                            text_single = {
                                 layoutpolicy_horizontal = expanding
-                                layoutpolicy_vertical = expanding
-                                text_single = {
-                                    layoutpolicy_horizontal = expanding
-                                    text = SPT_confirm_kkt_button_text
-                                    align = top
-                                    using = Font_Type_Flavor
-                                    using = Font_Size_Big
-                                }
+                                text = SPT_confirm_kkt_button_text
+	    	                    parentanchor = center
+	    	                    position = {0 -3 }
                             }
     
                             onclick = "[GetScriptedGui('SPT_kkt_apply_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
                             onclick = "[GetScriptedGui('SPT_kkt_apply_cost').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                         }
                         button_primary_big = {
-                            layoutpolicy_horizontal = expanding
-                            layoutpolicy_vertical = expanding
-                            hbox = {
+                            text_single = {
                                 layoutpolicy_horizontal = expanding
-                                layoutpolicy_vertical = expanding
-                                text_single = {
-                                    layoutpolicy_horizontal = expanding
-                                    text = SPT_remove_kkt_button_text
-                                    align = top
-                                    using = Font_Type_Flavor
-                                    using = Font_Size_Big
-                                }
+                                text = SPT_remove_kkt_button_text
+	    	                    parentanchor = center
+	    	                    position = {0 -3 }
                             }
                             
                             onclick = "[GetScriptedGui('SPT_kkt_remove_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
@@ -222,21 +241,13 @@
         }
     }
 
-    type SPT_kkt_flag_info_button = button_standard_hover {
-        layoutpolicy_horizontal = expanding
-        layoutpolicy_vertical = expanding
-        size = { 240 240 }
-
-        hbox = {
-            layoutpolicy_horizontal = expanding
-            layoutpolicy_vertical = expanding
-            text_single = {
-                layoutpolicy_horizontal = expanding
-                text = "[Localize(Concatenate(Scope.GetFlagName, '_name'))]"
-                align = top
-                using = Font_Type_Flavor
-                using = Font_Size_Big
-            }
+    type SPT_kkt_flag_info_button = button_letter {
+        size = { 50% 80 }
+        text_single = {
+            text = "[Localize(Concatenate(Scope.GetFlagName, '_name'))]"
+            default_format = "#light_background"
+	    	parentanchor = center
+	    	position = {0 -3 }
         }
         down = "[EqualTo_string(Scope.GetFlagName, GetVariableSystem.Get('selected_flag'))]"
         onclick = "[GetVariableSystem.Set('selected_flag', Scope.GetFlagName)]"
