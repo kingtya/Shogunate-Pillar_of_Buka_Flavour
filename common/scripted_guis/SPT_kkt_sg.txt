@@ -14,24 +14,6 @@ SPT_kkt_exit_flag_list = {
 	}
 }
 
-SPT_kkt_selected_flag = {
-	scope = character
-
-	saved_scopes = {
-		SPT_kkt_clicked_flag
-	}
-
-	is_vaild = {
-		scope:SPT_kkt_clicked_flag = var:SPT_kkt_selected_flag
-	}
-
-	effect = {
-		set_variable = {
-			name = SPT_kkt_selected_flag
-			value = scope:SPT_kkt_clicked_flag
-		}
-	}
-}
 
 SPT_kkt_remove_all_kkt_modifier = {
 	scope = character
