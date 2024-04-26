@@ -3,6 +3,8 @@ SPT_kkt_window_head_text: "政策"
 SPT_kkt_flag_empty_text: "未能找到任何国策"
 SPT_confirm_kkt_button_text: "发布国策"
 SPT_remove_kkt_button_text: "撤销国策"
+SPT_kkt_effect_head_text: "国策效果"
+SPT_kkt_cost_head_text: "国策花费"
 
 # flag 列表
 flag_kkt_1_name: "颁布征兵法案"
