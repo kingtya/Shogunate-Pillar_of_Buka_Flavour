@@ -1,12 +1,1 @@
-﻿SPT_kkt_flag_values = {
-	value = 0
-	switch = {
-		trigger = this
-		flag:flag_kkt_1 = { add = 10 }
-		flag:flag_kkt_2 = { add = 20 }
-		flag:flag_kkt_3 = { add = 30 }
-		flag:flag_kkt_4 = { add = 40 }
-		flag:flag_kkt_5 = { add = 50 }
-		flag:flag_kkt_6 = { add = 60 }
-	}
-}
+﻿

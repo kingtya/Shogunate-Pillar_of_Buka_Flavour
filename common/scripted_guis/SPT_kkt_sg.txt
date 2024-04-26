@@ -70,3 +70,17 @@ SPT_kkt_remove_modifier = {
 		}
 	}
 }
+
+SPT_kkt_apply_cost = {
+	scope = character
+
+	saved_scopes = {
+		SPT_kkt_selected_flag
+	}
+
+	effect = {
+		SPT_kkt_set_cost_to_character = {
+			FLAG = scope:SPT_kkt_selected_flag
+		}
+	}
+}

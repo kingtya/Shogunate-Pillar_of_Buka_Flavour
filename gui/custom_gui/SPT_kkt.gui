@@ -138,20 +138,10 @@
                         }
                     }
                     hbox = {
-                        text_single = {
-                            layoutpolicy_horizontal = expanding
-                            text = SPT_kkt_cost_text
+                        text_multi = {
+                            autoresize = yes
                             using = Font_Size_Medium
-                        }
-                        icon = {
-							name = "icon_gold"
-							size = { 30 30 }
-							texture = "gfx/interface/icons/icon_gold.dds"
-						}
-                        text_single = {
-                            layoutpolicy_horizontal = expanding
-                            text = "[GuiScope.SetRoot(MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).ScriptValue('SPT_kkt_flag_values')|0]"
-                            using = Font_Size_Medium
+                            text = "[GetScriptedGui('SPT_kkt_apply_cost').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                         }
                     }
                     
@@ -205,6 +195,7 @@
                             }
     
                             onclick = "[GetScriptedGui('SPT_kkt_apply_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
+                            onclick = "[GetScriptedGui('SPT_kkt_apply_cost').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                         }
                         button_primary_big = {
                             layoutpolicy_horizontal = expanding
