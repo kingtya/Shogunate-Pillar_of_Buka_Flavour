@@ -109,18 +109,22 @@
                 }
             }
 
-            vbox = { # 横向布局 目前为占位符，使用此布局进行一个窗口填充
+            hbox = { # 横向布局 目前为占位符，使用此布局进行一个窗口填充
                 layoutpolicy_horizontal = expanding # 保证横向填充
                 layoutpolicy_vertical = preferred
                 size = { 100% 500 }
                 #using = Background_Letter
+
+                ################
+                ### 保守政策 ###
+                ################
                 scrollbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
                     layoutpolicy_vertical = preferred
                     size = { 100% 500 }
 					blockoverride "scrollbox_content" {
                         vbox = {
-                            datamodel = "[GetPlayer.MakeScope.GetList('SPT_kkt_flags')]"
+                            datamodel = "[GetPlayer.MakeScope.GetList('SPT_conservative_policy_flags')]"
 
 							item = {
 								SPT_kkt_flag_info_button = {}
@@ -130,11 +134,46 @@
 					}
                     blockoverride "scrollbox_empty"
                     {
-                        visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_kkt_flags') )]"
+                        visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_conservative_policy_flags') )]"
                         text = "嘿嘿，出bug喽"
                     }
 				}
+
+                ################
+                ### 中道政策 ###
+                ################
+                scrollbox = {
+                    layoutpolicy_horizontal = expanding # 保证横向填充
+                    layoutpolicy_vertical = preferred
+                    size = { 100% 500 }
+					blockoverride "scrollbox_content" {
+                        vbox = {
+                            datamodel = "[GetPlayer.MakeScope.GetList('SPT_neutral_policy_flags')]"
+
+							item = {
+								SPT_kkt_flag_info_button = {}
+							}
+                        }
+						
+					}
+                    blockoverride "scrollbox_empty"
+                    {
+                        visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_neutral_policy_flags') )]"
+                        text = "嘿嘿，出bug喽"
+                    }
+				}
+
+                ################
+                ### 革新政策 ###
+                ################
+
+                ################
+                ### 御用政策 ###
+                ################
+               
             }
+
+
             hbox = { # 横向布局 目前为占位符，使用此布局进行一个窗口填充
                 layoutpolicy_horizontal = expanding # 保证横向填充
                 layoutpolicy_vertical = preferred
