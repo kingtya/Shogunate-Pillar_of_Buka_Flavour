@@ -290,6 +290,46 @@
                 ################
                 ### 御用政策 ###
                 ################
+                vbox = {
+                    layoutpolicy_horizontal = expanding # 保证横向填充
+                    layoutpolicy_vertical = expanding
+                    
+                    vbox = {
+                        layoutpolicy_horizontal = expanding # 保证横向填充
+                        layoutpolicy_vertical = expanding
+                        header_standard = {
+                            layoutpolicy_horizontal = expanding
+                            blockoverride "header_text"
+                            {
+                                text = 御用
+                            }
+                            blockoverride "button_close"
+                            {
+                                visible = no
+                            }
+                        }
+                        scrollbox = {
+                            layoutpolicy_horizontal = expanding # 保证横向填充
+                            layoutpolicy_vertical = preferred
+                            size = { 100% 400 }
+                            blockoverride "scrollbox_content" {
+                                vbox = {
+                                    datamodel = "[GetPlayer.MakeScope.GetList('SPT_special_policy_flags')]"
+        
+                                    item = {
+                                        SPT_kkt_flag_info_button = {}
+                                    }
+                                }
+                                
+                            }
+                            blockoverride "scrollbox_empty"
+                            {
+                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_special_policy_flags') )]"
+                                text = "嘿嘿，出bug喽"
+                            }
+                        }
+                    }
+                }
             }
 
 
@@ -341,29 +381,35 @@
                                 visible = no
                             }
                         }
-                        scrollbox = {
+                        vbox = {
+                            layoutpolicy_horizontal = expanding
+                            layoutpolicy_vertical = expanding
+                            margin = { 10 10 }
                             background = {
                                 using = Background_Area_Dark
                                 margin = { -10 -10 }
                             }
-                            layoutpolicy_horizontal = preferred
-                            layoutpolicy_vertical = expanding
-                            size = { 0 200 }
-                            blockoverride "scrollbox_content" {
-                                hbox = {
-                                    margin = { 10 5 }
-                                    layoutpolicy_horizontal = expanding
-                                    text_multi = {
-                                        autoresize = yes
-                                        using = Font_Size_Medium
-                                        text = "[GetScriptedGui('SPT_kkt_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
-                                    }
+                            scrollbox = {
+                                layoutpolicy_horizontal = preferred
+                                layoutpolicy_vertical = expanding
+                                size = { 0 195 }
+                                blockoverride "scrollbox_content" {
                                     hbox = {
-                                       layoutpolicy_horizontal = expanding
+                                        margin = { 0 -6 }
+                                        layoutpolicy_horizontal = expanding
+                                        text_multi = {
+                                            autoresize = yes
+                                            using = Font_Size_Medium
+                                            text = "[GetScriptedGui('SPT_kkt_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                                        }
+                                        hbox = {
+                                           layoutpolicy_horizontal = expanding
+                                        }
                                     }
                                 }
                             }
                         }
+                       
                         ################
                         ### 政策费用 ###
                         ################

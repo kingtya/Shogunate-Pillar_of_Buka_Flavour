@@ -1,4 +1,6 @@
-﻿spt_policy_direct_daimyo_rule_modifier = {
+﻿#中道
+
+spt_policy_direct_daimyo_rule_modifier = {
 	icon = stewardship_positive
 	domain_limit = 1
 	monthly_income = -0.2
@@ -36,4 +38,14 @@ spt_policy_post_horse_system_modifier = {
 spt_policy_distant_diplomacy_modifier = {
 	icon = diplomacy_positive
 	diplomatic_range_mult = 0.5
+}
+
+# 革新
+
+spt_policy_soidier_professionaliztion_modifier = {
+	icon = martial_positive
+	knight_effectiveness_mult = 0.5
+	men_at_arms_limit = 1
+	men_at_arms_cap = 3
+	levy_size = -0.75
 }

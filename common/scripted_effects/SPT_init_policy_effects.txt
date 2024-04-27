@@ -2,6 +2,7 @@
 ### 政策初始化 ###
 #################
 # 注：此处每一个flag对应一个国策，root为当前角色，如果需要动态显示国策，用if判断即可
+## 保守
 SPT_init_conservative_poilcy_flag_list = {
 	add_to_variable_list = {
 		name = SPT_conservative_policy_flags
@@ -25,7 +26,7 @@ SPT_init_conservative_poilcy_flag_list = {
 	}
 
 }
-
+## 中道
 SPT_init_neutral_poilcy_flag_list = {
 	add_to_variable_list = {
 		name = SPT_neutral_policy_flags
@@ -53,7 +54,7 @@ SPT_init_neutral_poilcy_flag_list = {
 	}
 
 }
-
+## 革新
 SPT_init_progressive_poilcy_flag_list = {
 	add_to_variable_list = {
 		name = SPT_progressive_policy_flags
@@ -79,6 +80,10 @@ SPT_init_progressive_poilcy_flag_list = {
 		name = SPT_progressive_policy_flags
 		target = flag:flag_spt_policy_supply_transporter
 	}
+
+}
+## 御用
+SPT_init_special_poilcy_flag_list = {
 }
 
 ################
@@ -88,4 +93,5 @@ SPT_clear_flag_list = {
 	clear_variable_list = SPT_conservative_poliy_flags
 	clear_variable_list = SPT_neutral_policy_flags
 	clear_variable_list = SPT_progressive_poliy_flags
+	clear_variable_list = SPT_special_poilcy_flags
 }

@@ -37,6 +37,10 @@ spt_test_effect = {
 			$ACTION$_character_modifier = spt_policy_distant_diplomacy_modifier
 			
 		}
+
+		flag:flag_spt_policy_soidier_professionaliztion = {
+			$ACTION$_character_modifier = spt_policy_soidier_professionaliztion_modifier
+		}
 	}
 }
 ### 革新
