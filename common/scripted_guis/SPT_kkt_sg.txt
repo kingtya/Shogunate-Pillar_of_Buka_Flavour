@@ -37,6 +37,14 @@ SPT_kkt_apply_modifier = {
 		SPT_kkt_selected_flag
 	}
 
+	is_valid = {
+		NOT = {
+			SPT_kkt_is_policy_released = {
+				FLAG = scope:SPT_kkt_selected_flag
+			}
+		}
+	}
+
 	effect = {
 		SPT_kkt_set_modifier_to_character = {
 			FLAG = scope:SPT_kkt_selected_flag
@@ -51,6 +59,12 @@ SPT_kkt_remove_modifier = {
 
 	saved_scopes = {
 		SPT_kkt_selected_flag
+	}
+
+	is_valid = {
+		SPT_kkt_is_policy_released = {
+			FLAG = scope:SPT_kkt_selected_flag
+		}
 	}
 
 	effect = {
