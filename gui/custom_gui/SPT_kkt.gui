@@ -386,6 +386,8 @@
 	    	                    parentanchor = center
 	    	                    position = {0 -3 }
                             }
+
+                            enabled = "[GetScriptedGui('SPT_kkt_apply_modifier').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
     
                             onclick = "[GetScriptedGui('SPT_kkt_apply_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
                             onclick = "[GetScriptedGui('SPT_kkt_apply_cost').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
@@ -397,6 +399,7 @@
 	    	                    parentanchor = center
 	    	                    position = {0 -3 }
                             }
+                            enabled = "[GetScriptedGui('SPT_kkt_remove_modifier').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
                             
                             onclick = "[GetScriptedGui('SPT_kkt_remove_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
                         }

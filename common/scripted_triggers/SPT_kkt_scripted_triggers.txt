@@ -1,1 +1,17 @@
-﻿
+﻿SPT_kkt_is_policy_released = {
+	custom_description = {
+		text = SPT_kkt_policy_released
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			any_in_list = {
+				variable = SPT_released_policy_flags
+				this = $FLAG$
+			}
+		}
+		trigger_else = {
+			always = no
+		}
+	}
+}

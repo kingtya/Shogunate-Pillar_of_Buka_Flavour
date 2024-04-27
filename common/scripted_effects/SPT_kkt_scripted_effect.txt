@@ -134,10 +134,18 @@ SPT_kkt_set_modifier_to_character = {
 					$ACTION$_character_modifier = spt_policy_distant_diplomacy_modifier
 				}
 			}
+			add_to_variable_list = {
+				name = SPT_released_policy_flags
+				target = $FLAG$
+			}
 		}
 		if = {
 			limit = {
 				$CONFIRM$ = no #撤销国策
+			}
+			remove_list_variable = {
+				name = SPT_released_policy_flags
+				target = $FLAG$
 			}
 		}
 	}
