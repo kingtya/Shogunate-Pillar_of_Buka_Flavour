@@ -48,7 +48,7 @@ SPT_kkt_can_revoke_pocliy = {
 			exists = $FLAG$
 		}
 		custom_description = {
-			text = SPT_kkt_policy_released
+			text = SPT_kkt_policy_not_released
 			trigger_if = {
 				limit = {
 					has_variable_list = SPT_released_policy_flags
@@ -60,6 +60,33 @@ SPT_kkt_can_revoke_pocliy = {
 			}
 			trigger_else = {
 				always = no
+			}
+		}
+
+		custom_description = {
+			text = SPT_kkt_released_flag_recentlt
+			trigger_if = {
+				limit = {
+					trigger_if = {
+						limit = {
+							has_variable_list = SPT_released_policy_flags
+						}
+						any_in_list = {
+							variable = SPT_released_policy_flags
+							this = $FLAG$
+						}
+						
+					}
+					trigger_else = {
+						always = no
+					}
+				}
+				NOT = {
+					has_character_flag = $FLAG$
+				}
+			}
+			trigger_else = {
+				always = yes
 			}
 		}
 	}
