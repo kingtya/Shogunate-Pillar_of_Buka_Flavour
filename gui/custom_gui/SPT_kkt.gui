@@ -76,7 +76,6 @@
                         texture = "gfx/interface/skinned/hud_maintab/maintab_my_policy.dds"
                         onclick = "[GetScriptedGui('SPT_kkt_init_flag_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                         onclick = "[GetVariableSystem.Set('show_SPT_kkt_window', 'true')]"
-                        #shortcut = "my_realm_window"
                         tooltip = "#T 政策#!"
                         down = "[GetVariableSystem.HasValue( 'show_SPT_kkt_window', 'true' )]"
                     }
@@ -154,12 +153,10 @@
                 }
             }
 
-            hbox = { # 横向布局 目前为占位符，使用此布局进行一个窗口填充
+            hbox = { # 横向布局政策分类
                 layoutpolicy_horizontal = expanding # 保证横向填充
                 layoutpolicy_vertical = preferred
-                size = { 100% 500 }
-                #using = Background_Letter
-
+                size = { 100% 400 }
                 ################
                 ### 保守政策 ###
                 ################
@@ -184,7 +181,7 @@
                         scrollbox = {
                             layoutpolicy_horizontal = expanding # 保证横向填充
                             layoutpolicy_vertical = preferred
-                            size = { 100% 500 }
+                            size = { 100% 400 }
                             blockoverride "scrollbox_content" {
                                 vbox = {
                                     datamodel = "[GetPlayer.MakeScope.GetList('SPT_conservative_policy_flags')]"
@@ -203,7 +200,6 @@
                         }
                     }
                 }
-
                 ################
                 ### 中道政策 ###
                 ################
@@ -229,7 +225,7 @@
                         scrollbox = {
                             layoutpolicy_horizontal = expanding # 保证横向填充
                             layoutpolicy_vertical = preferred
-                            size = { 100% 500 }
+                            size = { 100% 400 }
                             blockoverride "scrollbox_content" {
                                 vbox = {
                                     datamodel = "[GetPlayer.MakeScope.GetList('SPT_neutral_policy_flags')]"
@@ -248,7 +244,6 @@
                         }
                     }
                 }
-
                 ################
                 ### 革新政策 ###
                 ################
@@ -273,7 +268,7 @@
                         scrollbox = {
                             layoutpolicy_horizontal = expanding # 保证横向填充
                             layoutpolicy_vertical = preferred
-                            size = { 100% 500 }
+                            size = { 100% 400 }
                             blockoverride "scrollbox_content" {
                                 vbox = {
                                     datamodel = "[GetPlayer.MakeScope.GetList('SPT_progressive_policy_flags')]"
@@ -292,11 +287,9 @@
                         }
                     }
                 }
-
                 ################
                 ### 御用政策 ###
                 ################
-               
             }
 
 
@@ -307,7 +300,7 @@
                 vbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
                     layoutpolicy_vertical = expanding
-                    
+
                     scrollbox = {
                         layoutpolicy_horizontal = expanding
                         layoutpolicy_vertical = expanding
@@ -317,8 +310,6 @@
                             }
                         }
                     }
-                    
-                    
                 }
                 vbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
@@ -339,13 +330,21 @@
                             }
                         }
                         scrollbox = {
-                            layoutpolicy_horizontal = expanding
+                            background = {
+                                using = Background_Area_Dark
+                                margin = { -10 -10 }
+                            }
+                            layoutpolicy_horizontal = preferred
                             layoutpolicy_vertical = expanding
+                            size = { 0 200 }
                             blockoverride "scrollbox_content" {
-                                text_multi = {
-                                    autoresize = yes
-                                    using = Font_Size_Medium
-                                    text = "[GetScriptedGui('SPT_kkt_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                                container = {
+                                    text_multi = {
+                                        margin_left = -375
+                                        autoresize = yes
+                                        using = Font_Size_Medium
+                                        text = "[GetScriptedGui('SPT_kkt_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                                    }
                                 }
                             }
                         }
@@ -361,6 +360,11 @@
                             }
                         }
                         scrollbox = {
+                            background = {
+                                using = Background_Area_Dark
+                                margin = { -10 -10 }
+                            }
+
                             layoutpolicy_horizontal = expanding
                             layoutpolicy_vertical = expanding
                             blockoverride "scrollbox_content" {
