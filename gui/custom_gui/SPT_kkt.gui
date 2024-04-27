@@ -75,7 +75,7 @@
                     {
                         texture = "gfx/interface/skinned/hud_maintab/maintab_my_policy.dds"
                         onclick = "[GetScriptedGui('SPT_kkt_init_flag_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetVariableSystem.Set('show_SPT_kkt_window', 'true')]"
+                        onclick = "[GetVariableSystem.Toggle( 'show_SPT_kkt_window' )]"
                         tooltip = "#T 政策#!"
                         down = "[GetVariableSystem.HasValue( 'show_SPT_kkt_window', 'true' )]"
                     }
@@ -144,7 +144,7 @@
 
                 blockoverride "button_close"
                 {
-                    onclick = "[GetVariableSystem.Set('show_SPT_kkt_window', 'false')]"
+                    onclick = "[GetVariableSystem.Toggle( 'show_SPT_kkt_window' )]"
                 }
 
                 blockoverride "header_text"
@@ -153,7 +153,7 @@
                 }
             }
 
-            hbox = { # 横向布局政策分类
+            hbox = { # 政策分类
                 layoutpolicy_horizontal = expanding # 保证横向填充
                 layoutpolicy_vertical = preferred
                 size = { 100% 400 }
@@ -293,10 +293,13 @@
             }
 
 
-            hbox = { # 横向布局 目前为占位符，使用此布局进行一个窗口填充
+            hbox = { # 政策信息栏
                 layoutpolicy_horizontal = expanding # 保证横向填充
                 layoutpolicy_vertical = preferred
                 size = { 100% 40% }
+                ################
+                ### 人物详情 ###
+                ################
                 vbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
                     layoutpolicy_vertical = expanding
@@ -310,19 +313,23 @@
                             }
 
                             text_single = {
-                                text = "[GetPlayer.MakeScope.Var('current_kkt_points').GetValue|0]/[GetPlayer.MakeScope.ScriptValue('SPT_kkt_total_points')|0]"
+                                text = SPT_current_policy_points
                                 using = Font_Size_Large
                             }
                         }
                     }
                 }
+
                 vbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
                     layoutpolicy_vertical = expanding
-                    
+
                     vbox = {
                         layoutpolicy_horizontal = expanding # 保证横向填充
                         layoutpolicy_vertical = expanding
+                        ################
+                        ### 政策效果 ###
+                        ################
                         header_standard = {
                             layoutpolicy_horizontal = expanding
                             blockoverride "header_text"
@@ -344,6 +351,7 @@
                             size = { 0 200 }
                             blockoverride "scrollbox_content" {
                                 hbox = {
+                                    margin = { 10 5 }
                                     layoutpolicy_horizontal = expanding
                                     text_multi = {
                                         autoresize = yes
@@ -351,11 +359,14 @@
                                         text = "[GetScriptedGui('SPT_kkt_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                                     }
                                     hbox = {
-                                        layoutpolicy_horizontal = expanding
+                                       layoutpolicy_horizontal = expanding
                                     }
                                 }
                             }
                         }
+                        ################
+                        ### 政策费用 ###
+                        ################
                         header_standard = {
                             layoutpolicy_horizontal = expanding
                             blockoverride "header_text"
@@ -377,6 +388,7 @@
                             layoutpolicy_vertical = expanding
                             blockoverride "scrollbox_content" {
                                 hbox = {
+                                    margin = { 10 5 }
                                     layoutpolicy_horizontal = expanding
                                     text_multi = {
                                         autoresize = yes
@@ -442,7 +454,7 @@
             text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).ScriptValue('SPT_kkt_points')|0]"
             default_format = "#light_background"
             parentanchor = center
-            position = {0 -3 }
+            position = { 50 -3 }
         }
         
         down = "[EqualTo_string(Scope.GetFlagName, GetVariableSystem.Get('selected_flag'))]"

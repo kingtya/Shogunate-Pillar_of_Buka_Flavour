@@ -3,7 +3,7 @@
 		limit = {
 			exists = $FLAG$
 		}
-		custom_description = {
+		custom_tooltip = {
 			text = SPT_kkt_policy_released
 			trigger_if = {
 				limit = {
