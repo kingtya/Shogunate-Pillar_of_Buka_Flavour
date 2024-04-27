@@ -351,11 +351,19 @@
                             portrait_torso = {
                                 datacontext = "[GetPlayer.MakeScope.Char]"
                             }
+                            hbox = {
+                                icon = {
+                                    name = "icon_gold"
+                                    size = { 30 30 }
+                                    texture = "gfx/interface/icons/icon_gold.dds"
+                                }
 
-                            text_single = {
-                                text = SPT_current_policy_points
-                                using = Font_Size_Large
+                                text_single = {
+                                    text = SPT_current_policy_points
+                                    using = Font_Size_Large
+                                }
                             }
+                            
                         }
                     }
                 }
@@ -492,18 +500,35 @@
 
     type SPT_kkt_flag_info_button = button_letter {
         size = { 240 60 }
+
+        hbox = {
+            spacer = { size = { 30 0 } }
+            icon = {
+                size = { 30 30 }
+                texture = "gfx/interface/icons/icon_gold.dds"
+            }
+            expand = {}
+        }
+        
         text_single = {
             text = "[Localize(Concatenate(Scope.GetFlagName, '_name'))]"
             default_format = "#light_background"
             parentanchor = center
             position = {0 -3 }
         }
+        icon = {
+            size = { 30 30 }
+            position = { 160 15 }
+            texture = "gfx/interface/icons/icon_gold.dds"
+        }
         text_single = {
             text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).ScriptValue('SPT_kkt_points')|0]"
             default_format = "#light_background"
             parentanchor = center
-            position = { 50 -3 }
+            position = { 85 -3 }
         }
+
+        
         
         down = "[EqualTo_string(Scope.GetFlagName, GetVariableSystem.Get('selected_flag'))]"
         onclick = "[GetVariableSystem.Set('selected_flag', Scope.GetFlagName)]"
