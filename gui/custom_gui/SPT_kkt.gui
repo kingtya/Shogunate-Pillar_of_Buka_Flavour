@@ -1,42 +1,87 @@
 ﻿types SPT_kkt_types { # 作为一个类型名，没有实际意义 kkt作为政策窗口的缩写（滚键盘打出来的）
 
-    type SPT_kkt_open_button =  container { # 此类型为一个按钮，用于打开政策窗口
+    type SPT_kkt_open_button = widget {
         name = "SPT_kkt_open_button"  # 窗口名，该名称会被用于初始创建窗口 一般与类型名相同即可
         visible = "[And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode))]" #一些基本的可见性判断字面意思
         parentanchor = top|right # 父锚点，即锚点在父窗口的位置
-        position = { -40 55 } # 位置
+        position = { 0 500 } # 位置
+		size = { 50 0 }
+        allow_outside = yes
 
         using = Animation_ShowHide_Quick # 使用动画模版 此模版是p社自带的，模版本质是可重用的代码，可以不是一个完整的类型，甚至可以只是一句代码
 
-        button_round = { # 按钮类型
-            size = { 35 35 }
-            alpha = 0.7 # 透明度
+        vbox = {
+			alwaystransparent = no
+			filter_mouse = all
+			visible = "[Not(IsGameViewOpen('barbershop'))]"
+			margin = { 5 10 }
 
-            state = { # 当鼠标进入时候播放一个动画
-                name = _mouse_enter
-                alpha = 1
-                duration = 0.2
-                using = Animation_Curve_Default
-            }
+            Background = {
+				visible = "[And(Not(IsRightWindowOpen) , Not(IsGameViewOpen('barbershop')) )]"
+				texture = "gfx/interface/skinned/hud_maintab_bg_middle.dds"
+				spriteType = CorneredTiled
+				texture_density =  2
+				margin = { 0 -50 }
+			}
 
-            state = { # 当鼠标离开时候播放一个动画
-                name = _mouse_leave
-                alpha = 0.7
-                duration = 0.7
-                using = Animation_Curve_Default
-            }
-
-            button_icon = { # 按钮图标 图标暂时借用原版的
-                texture = "gfx/interface/icons/flat_icons/achievements.dds"
-                parentanchor = center
-                alwaystransparent = yes # 允许能点击到被该元素覆盖的元素
-                size = { 25 25 }
-	        }
-
-            # 点击按钮时候执行的代码 onclick 可以有多个，会依次执行  注意：这里的true不是一个布尔值，而是一个字符串
-            onclick = "[GetScriptedGui('SPT_kkt_init_flag_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-            onclick = "[GetVariableSystem.Set('show_SPT_kkt_window', 'true')]"
+            Background = {
+				visible = "[And(Not(IsRightWindowOpen) , Not(IsGameViewOpen('barbershop')) )]"
+				spriteType = CorneredStretched
+				spriteborder_top = 100
+				parentanchor = top|right
+				texture_density = 2
+				size = { 50 100 }
+				texture = "gfx/interface/skinned/hud_maintab_bg_top.dds"
+			}
             
+            Background = {
+				visible = "[And(Not(IsRightWindowOpen) , Not(IsGameViewOpen('barbershop')) )]"
+				spriteType = CorneredStretched
+				spriteborder_bottom = 100
+				parentanchor = top|right
+				texture_density = 2
+				size = { 50 150 }
+				texture = "gfx/interface/skinned/hud_maintab_bg_bottom.dds"
+			}
+
+            vbox = {
+                state = {
+                    name = _show
+                    alpha = 1
+                    duration = 0.1
+                    using = Animation_Curve_Default
+                }
+
+                state = {
+                    name = _hide
+                    duration = 0.6
+                    alpha = 0
+                    using = Animation_Curve_Default
+                }
+
+                widget_hud_main_tab = {
+                    name = "SPT_tab_placeholder"
+
+                    blockoverride "maintab_button"
+                    {   
+                        visible = no
+                    }
+                }
+
+                widget_hud_main_tab = {
+                    name = "SPT_tab_my_polices"
+
+                    blockoverride "maintab_button"
+                    {
+                        texture = "gfx/interface/skinned/hud_maintab/maintab_my_policy.dds"
+                        onclick = "[GetScriptedGui('SPT_kkt_init_flag_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                        onclick = "[GetVariableSystem.Set('show_SPT_kkt_window', 'true')]"
+                        #shortcut = "my_realm_window"
+                        tooltip = "#T 政策#!"
+                        down = "[GetVariableSystem.HasValue( 'show_SPT_kkt_window', 'true' )]"
+                    }
+                }
+            }
         }
     }
 
@@ -364,7 +409,7 @@
     }
 
     type SPT_kkt_flag_info_button = button_letter {
-        size = { 240 80 }
+        size = { 240 60 }
         text_single = {
             text = "[Localize(Concatenate(Scope.GetFlagName, '_name'))]"
             default_format = "#light_background"

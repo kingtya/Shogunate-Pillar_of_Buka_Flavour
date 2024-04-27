@@ -2,9 +2,9 @@
 	scope = character
 
 	effect = {
-		SPT_init_flag_list = yes
-		SPT_init_flag_list_2 = yes
-		SPT_init_flag_list_3 = yes
+		SPT_init_neutral_poilcy_flag_list = yes
+		SPT_init_conservative_poilcy_flag_list = yes
+		SPT_init_progressive_poilcy_flag_list = yes
 	}
 }
 

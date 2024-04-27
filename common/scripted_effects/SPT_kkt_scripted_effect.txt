@@ -1,5 +1,28 @@
 ﻿# 注：此处每一个flag对应一个国策，root为当前角色，如果需要动态显示国策，用if判断即可
-SPT_init_flag_list = {
+SPT_init_conservative_poilcy_flag_list = {
+	add_to_variable_list = {
+		name = SPT_conservative_policy_flags
+		target = flag:flag_spt_policy_canal_improvements
+	}
+	add_to_variable_list = {
+		name = SPT_conservative_policy_flags
+		target = flag:flag_spt_policy_council_system
+	}
+	add_to_variable_list = {
+		name = SPT_conservative_policy_flags
+		target = flag:flag_spt_policy_official_purveyor
+	}
+	add_to_variable_list = {
+		name = SPT_conservative_policy_flags
+		target = flag:flag_spt_policy_buddhism_sanction
+	}
+	add_to_variable_list = {
+		name = SPT_conservative_policy_flags
+		target = flag:flag_spt_policy_foster_system
+	}
+
+}
+SPT_init_neutral_poilcy_flag_list = {
 	add_to_variable_list = {
 		name = SPT_neutral_policy_flags
 		target = flag:flag_spt_policy_direct_daimyo_rule
@@ -24,30 +47,17 @@ SPT_init_flag_list = {
 		name = SPT_neutral_policy_flags
 		target = flag:flag_spt_policy_distant_diplomacy
 	}
+
 }
-SPT_init_flag_list_2 = {
+SPT_init_progressive_poilcy_flag_list = {
 	add_to_variable_list = {
-		name = SPT_conservative_policy_flags
-		target = flag:flag_spt_policy_canal_improvements
+		name = SPT_progressive_policy_flags
+		target = flag:flag_spt_policy_soidier_professionaliztion
 	}
 	add_to_variable_list = {
-		name = SPT_conservative_policy_flags
-		target = flag:flag_spt_policy_council_system
+		name = SPT_progressive_policy_flags
+		target = flag:flag_spt_policy_easy_commerce
 	}
-	add_to_variable_list = {
-		name = SPT_conservative_policy_flags
-		target = flag:flag_spt_policy_official_purveyor
-	}
-	add_to_variable_list = {
-		name = SPT_conservative_policy_flags
-		target = flag:flag_spt_policy_buddhism_sanction
-	}
-	add_to_variable_list = {
-		name = SPT_conservative_policy_flags
-		target = flag:flag_spt_policy_foster_system
-	}
-}
-SPT_init_flag_list_3 = {
 	add_to_variable_list = {
 		name = SPT_progressive_policy_flags
 		target = flag:flag_spt_policy_western_sanction
@@ -59,6 +69,10 @@ SPT_init_flag_list_3 = {
 	add_to_variable_list = {
 		name = SPT_progressive_policy_flags
 		target = flag:flag_spt_policy_meritocracy
+	}
+	add_to_variable_list = {
+		name = SPT_progressive_policy_flags
+		target = flag:flag_spt_policy_supply_transporter
 	}
 }
 
