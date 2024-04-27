@@ -338,12 +338,15 @@
                             layoutpolicy_vertical = expanding
                             size = { 0 200 }
                             blockoverride "scrollbox_content" {
-                                container = {
+                                hbox = {
+                                    layoutpolicy_horizontal = expanding
                                     text_multi = {
-                                        margin_left = -375
                                         autoresize = yes
                                         using = Font_Size_Medium
                                         text = "[GetScriptedGui('SPT_kkt_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                                    }
+                                    hbox = {
+                                        layoutpolicy_horizontal = expanding
                                     }
                                 }
                             }
@@ -369,10 +372,14 @@
                             layoutpolicy_vertical = expanding
                             blockoverride "scrollbox_content" {
                                 hbox = {
+                                    layoutpolicy_horizontal = expanding
                                     text_multi = {
                                         autoresize = yes
                                         using = Font_Size_Medium
                                         text = "[GetScriptedGui('SPT_kkt_apply_cost').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                                    }
+                                    hbox = {
+                                        layoutpolicy_horizontal = expanding
                                     }
                                 }
                             }
@@ -391,7 +398,10 @@
 	    	                    position = {0 -3 }
                             }
 
-                            enabled = "[GetScriptedGui('SPT_kkt_apply_modifier').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
+                            tooltip = "[GetScriptedGui('SPT_kkt_can_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                            tooltip_visible = "[GetScriptedGui('SPT_kkt_can_remove_modifier').IsVaild( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+
+                            enabled = "[GetScriptedGui('SPT_kkt_can_apply_modifier').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
     
                             onclick = "[GetScriptedGui('SPT_kkt_apply_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
                             onclick = "[GetScriptedGui('SPT_kkt_apply_cost').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
@@ -403,7 +413,7 @@
 	    	                    parentanchor = center
 	    	                    position = {0 -3 }
                             }
-                            enabled = "[GetScriptedGui('SPT_kkt_remove_modifier').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
+                            enabled = "[GetScriptedGui('SPT_kkt_can_remove_modifier').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
                             
                             onclick = "[GetScriptedGui('SPT_kkt_remove_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
                         }

@@ -37,19 +37,27 @@ SPT_kkt_apply_modifier = {
 		SPT_kkt_selected_flag
 	}
 
-	is_valid = {
-		NOT = {
-			SPT_kkt_is_policy_released = {
-				FLAG = scope:SPT_kkt_selected_flag
-			}
-		}
-	}
-
 	effect = {
 		SPT_kkt_set_modifier_to_character = {
 			FLAG = scope:SPT_kkt_selected_flag
 			ACTION = add
 			CONFIRM = yes
+		}
+	}
+}
+
+SPT_kkt_can_apply_modifier = {
+	scope = character
+
+	saved_scopes = {
+		SPT_kkt_selected_flag
+	}
+
+	is_valid = {
+		NOT = {
+			SPT_kkt_is_policy_released = {
+				FLAG = scope:SPT_kkt_selected_flag
+			}
 		}
 	}
 }
@@ -61,12 +69,6 @@ SPT_kkt_remove_modifier = {
 		SPT_kkt_selected_flag
 	}
 
-	is_valid = {
-		SPT_kkt_is_policy_released = {
-			FLAG = scope:SPT_kkt_selected_flag
-		}
-	}
-
 	effect = {
 		SPT_kkt_set_modifier_to_character = {
 			FLAG = scope:SPT_kkt_selected_flag
@@ -75,6 +77,21 @@ SPT_kkt_remove_modifier = {
 		}
 	}
 }
+
+SPT_kkt_can_remove_modifier = {
+	scope = character
+
+	saved_scopes = {
+		SPT_kkt_selected_flag
+	}
+
+	is_valid = {
+		SPT_kkt_is_policy_released = {
+			FLAG = scope:SPT_kkt_selected_flag
+		}
+	}
+}
+
 
 SPT_kkt_apply_cost = {
 	scope = character
