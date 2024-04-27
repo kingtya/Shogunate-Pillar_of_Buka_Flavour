@@ -155,6 +155,10 @@ SPT_kkt_set_modifier_to_character = {
 				name = current_kkt_points
 				add = $FLAG$.SPT_kkt_points
 			}
+			add_character_flag = {
+				flag = $FLAG$
+				years = 10
+			}
 		}
 		if = {
 			limit = {
@@ -167,6 +171,12 @@ SPT_kkt_set_modifier_to_character = {
 			change_variable = {
 				name = current_kkt_points
 				subtract = $FLAG$.SPT_kkt_points
+			}
+			if = {
+				limit = {
+					has_character_flag = $FLAG$
+				}
+				remove_character_flag = $FLAG$
 			}
 		}
 	}

@@ -3,7 +3,17 @@
 	global_not = SPT_kkt_policy_released
 }
 
+SPT_kkt_policy_not_released = {
+	global = SPT_kkt_policy_not_released
+	global_not = SPT_kkt_policy_not_released
+}
+
 SPT_kkt_need_points = {
 	global = SPT_kkt_need_points
 	global_not = SPT_kkt_need_points
+}
+
+SPT_kkt_released_flag_recentlt = {
+	global = SPT_kkt_released_flag_recentlt
+	global_not = SPT_kkt_released_flag_recentlt
 }
