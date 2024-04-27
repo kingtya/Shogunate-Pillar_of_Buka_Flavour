@@ -1,8 +1,0 @@
-﻿## 革新
-spt_policy_soidier_professionaliztion_modifier = {
-	icon = martial_positive
-	knight_effectiveness_mult = 0.5
-	men_at_arms_limit = 1
-	men_at_arms_cap = 3
-	levy_size = -0.75
-}

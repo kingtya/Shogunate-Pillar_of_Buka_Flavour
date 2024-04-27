@@ -5,7 +5,7 @@
 SPT_kkt_set_effect_to_character = {
 	
 	show_as_tooltip = { # 作为显示效果，不实际执行
-		spt_test_effect = {
+		spt_policy_management_effect = {
 			FLAG = $FLAG$
 			ACTION = $ACTION$
 		}
@@ -16,7 +16,7 @@ SPT_kkt_set_effect_to_character = {
 			limit = {
 				$CONFIRM$ = yes #发布国策
 			}
-			spt_test_effect = {
+			spt_policy_management_effect = {
 				FLAG = $FLAG$
 				ACTION = $ACTION$
 			}

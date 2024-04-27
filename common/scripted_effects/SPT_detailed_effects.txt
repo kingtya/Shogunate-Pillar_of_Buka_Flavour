@@ -1,15 +1,25 @@
 ﻿################
 ### 政策分类 ###
 ################
-### 保守
-## 宫廷礼制封臣好感 ++
-## 本乡本土封臣好感 +
-## 追名逐利封臣好感 -
-### 中道
-## 宫廷礼制封臣好感 +
-spt_test_effect = {
+spt_policy_management_effect = {
 	switch = {
 		trigger = $FLAG$
+		
+		### 保守
+		## 宫廷礼制封臣好感 ++
+		## 本乡本土封臣好感 +
+		## 追名逐利封臣好感 -
+		flag:flag_spt_policy_council_system_modifier = {
+			$ACTION$_character_modifier = spt_policy_council_system_modifier_modifier
+
+		}
+		flag:flag_spt_policy_official_purveyor_modifier = {
+			$ACTION$_character_modifier = spt_policy_official_purveyor_modifier_modifier
+
+		}
+
+		### 中道
+		## 宫廷礼制封臣好感 +
 		flag:flag_spt_policy_direct_daimyo_rule = {
 			$ACTION$_character_modifier = spt_policy_direct_daimyo_rule_modifier
 			SPT_courtly_vassal_towards_policy_opinion_effect = {
@@ -19,34 +29,52 @@ spt_test_effect = {
 		}
 		flag:flag_spt_policy_improve_labor = {
 			$ACTION$_character_modifier = spt_policy_improve_labor_modifier
-
+			SPT_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY = neutral
+				OPINION = 10
+			}
 		}
 		flag:flag_spt_policy_deploy_draftee = {
 			$ACTION$_character_modifier = spt_policy_deploy_draftee_modifier
-
+			SPT_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY = neutral
+				OPINION = 10
+			}
 		}
 		flag:flag_spt_policy_improve_militia = {
 			$ACTION$_character_modifier = spt_policy_improve_militia_modifier
-
+			SPT_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY = neutral
+				OPINION = 10
+			}
 		}
 		flag:flag_spt_policy_post_horse_system = {
 			$ACTION$_character_modifier = spt_policy_post_horse_system_modifier
-
+			SPT_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY = neutral
+				OPINION = 10
+			}
 		}
 		flag:flag_spt_policy_distant_diplomacy = {
 			$ACTION$_character_modifier = spt_policy_distant_diplomacy_modifier
-			
+			SPT_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY = neutral
+				OPINION = 10
+			}
 		}
-
+		
+		### 革新
+		## 宫廷礼制封臣好感 --
+		## 本乡本土封臣好感 -
+		## 追名逐利封臣好感 ++
 		flag:flag_spt_policy_soidier_professionaliztion = {
 			$ACTION$_character_modifier = spt_policy_soidier_professionaliztion_modifier
+
 		}
+
+
 	}
 }
-### 革新
-## 宫廷礼制封臣好感 --
-## 本乡本土封臣好感 -
-## 追名逐利封臣好感 ++
 
 ################
 ### 封臣立场 ###
@@ -59,7 +87,7 @@ SPT_courtly_vassal_towards_policy_opinion_effect = {
 		if = {
 			limit = { $POLICY$ = neutral }
 			custom_tooltip = SPT_courtly_vassal_towards_policy_opinion_effect_tt
-			#hidden_effect = {
+			hidden_effect = {
 				every_vassal = {
 					limit = {
 						has_vassal_stance = courtly
@@ -70,7 +98,7 @@ SPT_courtly_vassal_towards_policy_opinion_effect = {
 						opinion = $OPINION$
 					}
 				}
-			#}
+			}
 		}
 	}
 }

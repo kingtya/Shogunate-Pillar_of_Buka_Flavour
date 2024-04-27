@@ -1,0 +1,30 @@
+﻿## 革新
+spt_policy_western_sanction_modifier = {
+
+}
+
+spt_policy_improve_firearms_modifier = {
+	archers_damage_mult = 0.25
+}
+
+spt_policy_meritocracy_modifier = {
+	
+}
+
+spt_policy_supply_transporter_modifier = {
+	movement_speed = 0.2
+	hostile_county_attrition = -0.2
+	supply_duration = 1	
+}
+
+spt_policy_easy_commerce_modifier = {
+	
+}
+
+spt_policy_soidier_professionaliztion_modifier = {
+	icon = martial_positive
+	knight_effectiveness_mult = 0.5
+	men_at_arms_limit = 1
+	men_at_arms_cap = 3
+	levy_size = -0.75
+}

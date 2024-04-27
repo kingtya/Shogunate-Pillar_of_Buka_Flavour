@@ -1,14 +1,17 @@
 ﻿spt_vassal_towards_progressive_policy_opinion = {
 	monthly_change = 0.1
 	decaying = yes
+	stacking = yes
 }
 
 spt_vassal_towards_neutral_policy_opinion = {
 	monthly_change = 0.1
 	decaying = yes
+	stacking = yes
 }
 
 spt_vassal_towards_conservative_policy_opinion = {
 	monthly_change = 0.1
 	decaying = yes
+	stacking = yes
 }
