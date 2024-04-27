@@ -1,1 +1,22 @@
-﻿
+﻿SPT_kkt_points = {
+	value = 0
+	switch = {
+		trigger = this
+
+		flag:flag_spt_policy_direct_daimyo_rule = {
+			add = 100
+		}
+
+		flag:flag_spt_policy_soidier_professionaliztion = {
+			add = 20
+		}
+
+		flag:xxx_3 = {
+			add = 30
+		}
+	}
+}
+
+SPT_kkt_total_points = {
+	value = 100
+}

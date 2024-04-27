@@ -1,0 +1,9 @@
+﻿SPT_kkt_policy_released = {
+	global = SPT_kkt_policy_released
+	global_not = SPT_kkt_policy_released
+}
+
+SPT_kkt_need_points = {
+	global = SPT_kkt_need_points
+	global_not = SPT_kkt_need_points
+}

@@ -308,6 +308,11 @@
                             portrait_torso = {
                                 datacontext = "[GetPlayer.MakeScope.Char]"
                             }
+
+                            text_single = {
+                                text = "[GetPlayer.MakeScope.Var('current_kkt_points').GetValue|0]/[GetPlayer.MakeScope.ScriptValue('SPT_kkt_total_points')|0]"
+                                using = Font_Size_Large
+                            }
                         }
                     }
                 }
@@ -430,11 +435,19 @@
         text_single = {
             text = "[Localize(Concatenate(Scope.GetFlagName, '_name'))]"
             default_format = "#light_background"
-	    	parentanchor = center
-	    	position = {0 -3 }
+            parentanchor = center
+            position = {0 -3 }
         }
+        text_single = {
+            text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).ScriptValue('SPT_kkt_points')|0]"
+            default_format = "#light_background"
+            parentanchor = center
+            position = {0 -3 }
+        }
+        
         down = "[EqualTo_string(Scope.GetFlagName, GetVariableSystem.Get('selected_flag'))]"
         onclick = "[GetVariableSystem.Set('selected_flag', Scope.GetFlagName)]"
+        onclick = "[GetScriptedGui('SPT_kkt_count_points_sg').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
     }
 
     type SPT_placeholder_for_layout = scrollbox {

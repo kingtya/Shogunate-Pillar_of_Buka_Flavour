@@ -7,6 +7,7 @@ SPT_kkt_effect_head_text:0 "效果"
 SPT_kkt_cost_head_text:1 "花费"
 SPT_kkt_cost_text: "花费"
 SPT_kkt_policy_released: "你已经颁布了这个国策"
+SPT_kkt_need_points: "需要更多政策点"
 
 # flag 列表
 

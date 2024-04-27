@@ -1,17 +1,70 @@
-﻿SPT_kkt_is_policy_released = {
-	custom_description = {
-		text = SPT_kkt_policy_released
-		trigger_if = {
-			limit = {
-				has_variable_list = SPT_released_policy_flags
+﻿SPT_kkt_can_release_pocliy = {
+	trigger_if = {
+		limit = {
+			exists = $FLAG$
+		}
+		custom_description = {
+			text = SPT_kkt_policy_released
+			trigger_if = {
+				limit = {
+					has_variable_list = SPT_released_policy_flags
+				}
+				NOT = {
+					any_in_list = {
+						variable = SPT_released_policy_flags
+						this = $FLAG$
+					}
+				}
+				
 			}
-			any_in_list = {
-				variable = SPT_released_policy_flags
-				this = $FLAG$
+			trigger_else = {
+				always = yes
 			}
 		}
-		trigger_else = {
-			always = no
+		custom_description = {
+			text = SPT_kkt_need_points
+	
+			trigger_if = {
+				limit = {
+					exists = root.var:SPT_will_be_kkt_points
+				}
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			trigger_else = {
+				always = no
+			}
+			
 		}
 	}
+	trigger_else = {
+		always = no
+	}
+	
+}
+
+SPT_kkt_can_revoke_pocliy = {
+	trigger_if = {
+		limit = {
+			exists = $FLAG$
+		}
+		custom_description = {
+			text = SPT_kkt_policy_released
+			trigger_if = {
+				limit = {
+					has_variable_list = SPT_released_policy_flags
+				}
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = $FLAG$
+				}
+			}
+			trigger_else = {
+				always = no
+			}
+		}
+	}
+	trigger_else = {
+		always = no
+	}
+	
 }

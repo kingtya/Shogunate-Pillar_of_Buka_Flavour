@@ -1,4 +1,17 @@
 ﻿# 注：此处每一个flag对应一个国策，root为当前角色，如果需要动态显示国策，用if判断即可
+SPT_init_points = {
+	if = {
+		limit = {
+			NOT = {
+				exists = var:current_kkt_points
+			}
+		}
+		set_variable = {
+			name = current_kkt_points
+			value = 0
+		}
+	}
+}
 SPT_init_conservative_poilcy_flag_list = {
 	add_to_variable_list = {
 		name = SPT_conservative_policy_flags
@@ -138,6 +151,10 @@ SPT_kkt_set_modifier_to_character = {
 				name = SPT_released_policy_flags
 				target = $FLAG$
 			}
+			change_variable = {
+				name = current_kkt_points
+				add = $FLAG$.SPT_kkt_points
+			}
 		}
 		if = {
 			limit = {
@@ -146,6 +163,10 @@ SPT_kkt_set_modifier_to_character = {
 			remove_list_variable = {
 				name = SPT_released_policy_flags
 				target = $FLAG$
+			}
+			change_variable = {
+				name = current_kkt_points
+				subtract = $FLAG$.SPT_kkt_points
 			}
 		}
 	}
@@ -172,6 +193,16 @@ SPT_kkt_set_cost_to_character = { #国策花费 只会在发布时候应用
 		}
 		flag:flag_kkt_6 = {
 			remove_short_term_gold = 60
+		}
+	}
+}
+
+SPT_kkt_count_pocliy_points = {
+	set_variable = {
+		name = SPT_will_be_kkt_points
+		value = {
+			value = root.var:current_kkt_points
+			add = $FLAG$.SPT_kkt_points
 		}
 	}
 }
