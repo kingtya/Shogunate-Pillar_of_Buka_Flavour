@@ -6,6 +6,7 @@
 		SPT_init_neutral_poilcy_flag_list = yes
 		SPT_init_conservative_poilcy_flag_list = yes
 		SPT_init_progressive_poilcy_flag_list = yes
+		SPT_init_special_poilcy_flag_list = yes
 	}
 }
 

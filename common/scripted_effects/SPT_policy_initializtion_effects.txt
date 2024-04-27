@@ -84,6 +84,19 @@ SPT_init_progressive_poilcy_flag_list = {
 }
 ## 御用
 SPT_init_special_poilcy_flag_list = {
+	add_to_variable_list = {
+		name = SPT_special_policy_flags
+		target = flag:flag_spt_policy_laws_of_imagawa
+	}
+	add_to_variable_list = {
+		name = SPT_special_policy_flags
+		target = flag:flag_spt_policy_laws_of_takeda
+	}
+	add_to_variable_list = {
+		name = SPT_special_policy_flags
+		target = flag:flag_spt_policy_five_admonitions
+	}
+
 }
 
 ################

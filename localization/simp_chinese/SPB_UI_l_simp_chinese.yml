@@ -97,3 +97,19 @@ spt_policy_easy_commerce_modifier_desc:0 "此人免除座商特权，鼓励自�
 flag_spt_policy_soidier_professionaliztion_name:0 "#V 兵农分离#!"
 spt_policy_soidier_professionaliztion_modifier:0 "兵农分离"
 spt_policy_soidier_professionaliztion_modifier_desc:0 "此人将领民兵和常备兵分离，彻底化了常备军制。"
+
+################
+### 御用政策 ###
+################
+
+flag_spt_policy_laws_of_imagawa_name:0 "#V 今川假名目录#!"
+spt_policy_laws_of_imagawa_modifier:0 "今川假名目录"
+spt_policy_laws_of_imagawa_modifier_desc:0 "此人颁布了今川假名目录。"
+
+flag_spt_policy_laws_of_takeda_name:0 "#V 甲州法度次第#!"
+spt_policy_laws_of_takeda_modifier:0 "甲州法度次第"
+spt_policy_laws_of_takeda_modifier_desc:0 "此人颁布了甲州法度次第。"
+
+flag_spt_policy_five_admonitions_name:0 "#V 五条训诫#!"
+spt_policy_five_admonitions_modifier:0 "五条训诫"
+spt_policy_five_admonitions_modifier_desc:0 "此人谛听了五条训诫。"

@@ -1,0 +1,22 @@
+﻿##保守
+spt_policy_canal_improvements_modifier = {
+}
+
+spt_policy_council_system_modifier = {
+	icon = stewardship_positive
+	happy_powerful_vassal_tax_contribution_mult = 0.2
+	happy_powerful_vassal_levy_contribution_mult = 0.2
+}
+
+spt_policy_official_purveyor_modifier = {
+	icon = stewardship_positive
+	domain_tax_mult = 0.1
+}
+
+spt_policy_buddhism_sanction_modifier = {
+}
+
+spt_policy_foster_system_modifier = {
+	icon = diplomacy_positive
+	direct_vassal_opinion = 20
+}
