@@ -5,6 +5,7 @@
         visible = "[And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode))]" #一些基本的可见性判断字面意思
         parentanchor = top|right # 父锚点，即锚点在父窗口的位置
         position = { 0 500 } # 位置
+        layer = hud_layer
 		size = { 50 0 }
         allow_outside = yes
 
@@ -17,7 +18,7 @@
 			margin = { 5 10 }
 
             Background = {
-				visible = "[And(Not(IsRightWindowOpen) , Not(IsGameViewOpen('barbershop')) )]"
+				visible = no
 				texture = "gfx/interface/skinned/hud_maintab_bg_middle.dds"
 				spriteType = CorneredTiled
 				texture_density =  2
@@ -25,7 +26,7 @@
 			}
 
             Background = {
-				visible = "[And(Not(IsRightWindowOpen) , Not(IsGameViewOpen('barbershop')) )]"
+				visible = no
 				spriteType = CorneredStretched
 				spriteborder_top = 100
 				parentanchor = top|right
@@ -88,10 +89,11 @@
     type SPT_kkt_window = window { # 政策窗口的类型
         name = "SPT_kkt_window"
         allow_outside = yes # 允许内部元素溢出到外部
-        position = { 0 -60 }
-        movable = yes # 使得窗口可移动 注意：以window为基类的类型，是唯一可以移动的类型 在其他地方写movable = yes是没有意义的
+        position = { 0 0 }
+        movable = no # 使得窗口可移动 注意：以window为基类的类型，是唯一可以移动的类型 在其他地方写movable = yes是没有意义的
         parentanchor = center
-        size = { 1300 900 } # 窗口大小，你也可以使用百分比，使用百分比的话会以父窗口为基准 此处父窗口为玩家屏幕
+        layer = top
+        size = { 1300 1000 } # 窗口大小，你也可以使用百分比，使用百分比的话会以父窗口为基准 此处父窗口为玩家屏幕
         using = Window_Background # 一些背景模版，可以迅速让窗口适应原版风格，由于p社的工作，使用这些模版可以让切换到不同文化时候窗口风格与当前文化风格保持一致
         using = Window_Decoration_Spike
 
@@ -153,31 +155,52 @@
                 }
             }
 
-            hbox = { # 政策分类
+            vbox = {
                 layoutpolicy_horizontal = expanding # 保证横向填充
                 layoutpolicy_vertical = preferred
-                size = { 100% 400 }
-                ################
-                ### 保守政策 ###
-                ################
-                vbox = {
+
+                hbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
-                    layoutpolicy_vertical = expanding
-                    
-                    vbox = {
+                    layoutpolicy_vertical = preferred
+                    hbox = {
                         layoutpolicy_horizontal = expanding # 保证横向填充
-                        layoutpolicy_vertical = expanding
+                        layoutpolicy_vertical = preferred
                         header_standard = {
                             layoutpolicy_horizontal = expanding
                             blockoverride "header_text"
                             {
-                                text = 保守
+                                text = "保守 / 中道"
                             }
                             blockoverride "button_close"
                             {
                                 visible = no
                             }
                         }
+                        header_standard = {
+                            layoutpolicy_horizontal = expanding
+                            blockoverride "header_text"
+                            {
+                                text = "革新 / 御用"
+                            }
+                            blockoverride "button_close"
+                            {
+                                visible = no
+                            }
+                        }
+                    }
+                }
+
+               
+                hbox = { # 政策分类
+                    layoutpolicy_horizontal = expanding # 保证横向填充
+                    layoutpolicy_vertical = preferred
+                    size = { 100% 400 }
+                    ################
+                    ### 保守政策 ###
+                    ################
+                    vbox = {
+                        layoutpolicy_horizontal = expanding # 保证横向填充
+                        layoutpolicy_vertical = expanding
                         scrollbox = {
                             layoutpolicy_horizontal = expanding # 保证横向填充
                             layoutpolicy_vertical = preferred
@@ -199,28 +222,12 @@
                             }
                         }
                     }
-                }
-                ################
-                ### 中道政策 ###
-                ################
-                vbox = {
-                    layoutpolicy_horizontal = expanding # 保证横向填充
-                    layoutpolicy_vertical = expanding
-                    
+                    ################
+                    ### 中道政策 ###
+                    ################
                     vbox = {
                         layoutpolicy_horizontal = expanding # 保证横向填充
                         layoutpolicy_vertical = expanding
-                        header_standard = {
-                            layoutpolicy_horizontal = expanding
-                            blockoverride "header_text"
-                            {
-                                text = 中道
-                            }
-                            blockoverride "button_close"
-                            {
-                                visible = no
-                            }
-                        }
 
                         scrollbox = {
                             layoutpolicy_horizontal = expanding # 保证横向填充
@@ -243,28 +250,12 @@
                             }
                         }
                     }
-                }
-                ################
-                ### 革新政策 ###
-                ################
-                vbox = {
-                    layoutpolicy_horizontal = expanding # 保证横向填充
-                    layoutpolicy_vertical = expanding
-                    
+                    ################
+                    ### 革新政策 ###
+                    ################
                     vbox = {
                         layoutpolicy_horizontal = expanding # 保证横向填充
                         layoutpolicy_vertical = expanding
-                        header_standard = {
-                            layoutpolicy_horizontal = expanding
-                            blockoverride "header_text"
-                            {
-                                text = 革新
-                            }
-                            blockoverride "button_close"
-                            {
-                                visible = no
-                            }
-                        }
                         scrollbox = {
                             layoutpolicy_horizontal = expanding # 保证横向填充
                             layoutpolicy_vertical = preferred
@@ -286,28 +277,12 @@
                             }
                         }
                     }
-                }
-                ################
-                ### 御用政策 ###
-                ################
-                vbox = {
-                    layoutpolicy_horizontal = expanding # 保证横向填充
-                    layoutpolicy_vertical = expanding
-                    
+                    ################
+                    ### 御用政策 ###
+                    ################
                     vbox = {
                         layoutpolicy_horizontal = expanding # 保证横向填充
                         layoutpolicy_vertical = expanding
-                        header_standard = {
-                            layoutpolicy_horizontal = expanding
-                            blockoverride "header_text"
-                            {
-                                text = 御用
-                            }
-                            blockoverride "button_close"
-                            {
-                                visible = no
-                            }
-                        }
                         scrollbox = {
                             layoutpolicy_horizontal = expanding # 保证横向填充
                             layoutpolicy_vertical = preferred
@@ -332,6 +307,8 @@
                 }
             }
 
+           
+
 
             hbox = { # 政策信息栏
                 layoutpolicy_horizontal = expanding # 保证横向填充
@@ -353,9 +330,9 @@
                             }
                             hbox = {
                                 icon = {
-                                    name = "icon_gold"
+                                    name = "icon_policy_point"
                                     size = { 30 30 }
-                                    texture = "gfx/interface/icons/icon_gold.dds"
+                                    texture = "gfx/interface/icons/symbols/icon_policy_point.dds"
                                 }
 
                                 text_single = {
@@ -505,25 +482,25 @@
             spacer = { size = { 30 0 } }
             icon = {
                 size = { 30 30 }
-                texture = "gfx/interface/icons/icon_gold.dds"
+                texture = "gfx/interface/icons/activities/activity_adult_education_header.dds"
             }
             expand = {}
         }
-        
         text_single = {
             text = "[Localize(Concatenate(Scope.GetFlagName, '_name'))]"
             default_format = "#light_background"
-            parentanchor = center
-            position = {0 -3 }
+            parentanchor = left|center
+            position = { 65 -3 }
         }
+
         icon = {
             size = { 30 30 }
             position = { 160 15 }
-            texture = "gfx/interface/icons/icon_gold.dds"
+            texture = "gfx/interface/icons/symbols/icon_policy_point.dds"
         }
         text_single = {
             text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).ScriptValue('SPT_kkt_points')|0]"
-            default_format = "#light_background"
+            default_format = "bold"
             parentanchor = center
             position = { 85 -3 }
         }
