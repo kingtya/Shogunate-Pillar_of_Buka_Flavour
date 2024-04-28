@@ -98,7 +98,7 @@
         using = Window_Decoration_Spike
 
         # 窗口可见性判断 即如果show_SPT_kkt_window变量为true则显示窗口
-        visible = "[GetVariableSystem.HasValue( 'show_SPT_kkt_window', 'true' )]"
+        visible = "[And(GetVariableSystem.HasValue( 'show_SPT_kkt_window', 'true' ),GetPlayer.IsValid)]"
 
         # 窗口关闭时候播放动画和声音，这些都是原版模版
         state = {
@@ -466,27 +466,26 @@
     type SPT_kkt_flag_info_button = button_letter {
         size = { 240 60 }
 
-        # hbox = {
-        #     spacer = { size = { 30 0 } }
-        #     icon = {
-        #         size = { 30 30 }
-        #         visible = "[GetScriptedGui('SPT_kkt_is_released_sg').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
-        #         texture = "gfx/interface/icons/activities/activity_adult_education_header.dds"
-        #     }
-        #     expand = {}
-        # }
+        hbox = {
+            spacer = { size = { 30 0 } }
+            icon = {
+                size = { 30 30 }
+                visible = "[GetScriptedGui('SPT_kkt_is_released_sg').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                texture = "gfx/interface/icons/activities/activity_adult_education_header.dds"
+            }
+            expand = {}
+            icon = {
+                size = { 30 30 }
+                texture = "gfx/interface/icons/symbols/icon_policy_point.dds"
+            }
+            spacer = { size = { 45 0 } }
+        }
         text_single = {
             text = "[Localize(Concatenate(Scope.GetFlagName, '_name'))]"
             default_format = "#light_background"
             parentanchor = left|vcenter
             position = { 65 -3 }
         }
-
-        # icon = {
-        #     size = { 30 30 }
-        #     position = { 160 15 }
-        #     texture = "gfx/interface/icons/symbols/icon_policy_point.dds"
-        # }
         text_single = {
             text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).ScriptValue('SPT_kkt_points')|0]"
             default_format = "bold"
@@ -494,8 +493,6 @@
             position = { 85 -3 }
         }
 
-        
-        
         down = "[EqualTo_string(Scope.GetFlagName, GetVariableSystem.Get('selected_flag'))]"
         onclick = "[GetVariableSystem.Set('selected_flag', Scope.GetFlagName)]"
         onclick = "[GetScriptedGui('SPT_kkt_count_points_sg').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
