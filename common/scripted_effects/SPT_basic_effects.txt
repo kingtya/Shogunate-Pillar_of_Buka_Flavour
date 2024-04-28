@@ -30,7 +30,7 @@ SPT_kkt_set_effect_to_character = {
 			}
 			add_character_flag = {
 				flag = $FLAG$
-				years = 10
+				#years = 10
 			}
 		}
 		if = {
@@ -66,21 +66,6 @@ SPT_kkt_set_cost_to_character = {
 
 		flag:flag_kkt_1 = {
 			remove_short_term_gold = 10
-		}
-		flag:flag_kkt_2 = {
-			remove_short_term_gold = 20
-		}
-		flag:flag_kkt_3 = {
-			remove_short_term_gold = 30
-		}
-		flag:flag_kkt_4 = {
-			remove_short_term_gold = 40
-		}
-		flag:flag_kkt_5 = {
-			remove_short_term_gold = 50
-		}
-		flag:flag_kkt_6 = {
-			remove_short_term_gold = 60
 		}
 	}
 }

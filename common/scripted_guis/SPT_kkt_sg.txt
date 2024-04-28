@@ -18,21 +18,6 @@ SPT_kkt_exit_flag_list = {
 	}
 }
 
-
-SPT_kkt_remove_all_kkt_modifier = {
-	scope = character
-
-	effect = {
-		# 预防报错，先注释掉 后面如果需要该函数则取消注释 另外，后续不应直接使用此函数，而是统一通过SPT_kkt_set_effect_to_character效果取消国策来实现移除modifier
-		# remove_character_modifier = flag_kkt_1_modifier
-		# remove_character_modifier = flag_kkt_2_modifier
-		# remove_character_modifier = flag_kkt_3_modifier
-		# remove_character_modifier = flag_kkt_4_modifier
-		# remove_character_modifier = flag_kkt_5_modifier
-		# remove_character_modifier = flag_kkt_6_modifier
-	}
-}
-
 SPT_kkt_apply_modifier = {
 	scope = character
 

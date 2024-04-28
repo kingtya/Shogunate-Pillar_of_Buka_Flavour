@@ -10,17 +10,10 @@ SPT_kkt_policy_released: "你已经颁布了这个国策"
 SPT_kkt_policy_not_released: "你还没有颁布这个国策"
 SPT_kkt_need_points: "需要更多政策点"
 SPT_kkt_released_flag_recentlt: "发布国策的十年后才能撤销"
-SPT_kkt_bugs: "嘿嘿，出bug喽"
+SPT_kkt_bugs:0 "政策加载中"
 SPT_kkt_window_gexin_text: "革新 / 御用"
 SPT_kkt_window_baoshou_text: "保守 / 中道"
 SPT_tab_my_polices_tt: "#T 政策#!"
-
-SPT_current_policy_points:0 "#weak 目前#!#E 政策点上限#!：[GetPlayer.MakeScope.Var('current_kkt_points').GetValue|0]/[GetPlayer.MakeScope.ScriptValue('SPT_kkt_total_points')|0]"
-SPT_courtly_vassal_towards_policy_opinion_effect_tt:0 "所有[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]）对[actor.GetUIName]的好感提高#P 10#!#weak （-1.20/年）（颁布中道政策）#!"
-
-spt_vassal_towards_progressive_policy_opinion:0 "颁布革新政策"
-spt_vassal_towards_neutral_policy_opinion:1 "颁布中道政策"
-spt_vassal_towards_conservative_policy_opinion:2 "颁布保守政策"
 
 # flag 列表
 

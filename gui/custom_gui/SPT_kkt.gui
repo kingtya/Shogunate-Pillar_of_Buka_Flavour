@@ -90,7 +90,7 @@
         name = "SPT_kkt_window"
         allow_outside = yes # 允许内部元素溢出到外部
         position = { 0 0 }
-        movable = no # 使得窗口可移动 注意：以window为基类的类型，是唯一可以移动的类型 在其他地方写movable = yes是没有意义的
+        movable = yes # 使得窗口可移动 注意：以window为基类的类型，是唯一可以移动的类型 在其他地方写movable = yes是没有意义的
         parentanchor = center
         layer = top
         size = { 1300 1000 } # 窗口大小，你也可以使用百分比，使用百分比的话会以父窗口为基准 此处父窗口为玩家屏幕
