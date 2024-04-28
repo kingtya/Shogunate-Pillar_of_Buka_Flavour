@@ -26,7 +26,7 @@ spt_policy_canal_improvements_modifier:0 "灌溉整备"
 spt_policy_canal_improvements_modifier_desc:0 "此人重视领地内的农务。"
 
 flag_spt_policy_council_system_name:0 "#V 合议制#!"
-spt_policy_council_system_modifier:0 "合议制#weak （保守）#!"
+spt_policy_council_system_modifier:0 "合议制"
 spt_policy_council_system_modifier_desc:0 "此人加重了家臣在领地事务上的话语权。"
 
 flag_spt_policy_official_purveyor_name:0 "#V 御用商人#!"
@@ -46,7 +46,7 @@ spt_policy_foster_system_modifier_desc:0 "此人与封臣缔结了形式上的�
 ################
 
 flag_spt_policy_direct_daimyo_rule_name:0 "#V 大名亲政#!"
-spt_policy_direct_daimyo_rule_modifier:0 "大名亲政#weak （中道）#!"
+spt_policy_direct_daimyo_rule_modifier:0 "大名亲政"
 spt_policy_direct_daimyo_rule_modifier_desc:0 "此人躬亲于政。"
 
 flag_spt_policy_improve_labor_name:0 "#V 夫役强化#!"
