@@ -210,7 +210,7 @@
                             blockoverride "scrollbox_empty"
                             {
                                 visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_conservative_policy_flags') )]"
-                                text = SPT_kkt_bugs
+                                text = SPT_policy_is_loading_text
                             }
                         }
                     }
@@ -238,7 +238,7 @@
                             blockoverride "scrollbox_empty"
                             {
                                 visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_neutral_policy_flags') )]"
-                                text = SPT_kkt_bugs
+                                text = SPT_policy_is_loading_text
                             }
                         }
                     }
@@ -265,7 +265,7 @@
                             blockoverride "scrollbox_empty"
                             {
                                 visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_progressive_policy_flags') )]"
-                                text = SPT_kkt_bugs
+                                text = SPT_policy_is_loading_text
                             }
                         }
                     }
@@ -292,7 +292,7 @@
                             blockoverride "scrollbox_empty"
                             {
                                 visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_special_policy_flags') )]"
-                                text = SPT_kkt_bugs
+                                text = SPT_policy_is_loading_text
                             }
                         }
                     }
@@ -443,7 +443,7 @@
 	    	                    position = {0 -3 }
                             }
 
-                            tooltip = "[GetScriptedGui('SPT_kkt_can_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                            tooltip = "[GetScriptedGui('SPT_kkt_can_apply_modifier').IsValidTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                             tooltip_visible = "[Not(GetScriptedGui('SPT_kkt_can_apply_modifier').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
 
                             enabled = "[GetScriptedGui('SPT_kkt_can_apply_modifier').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
@@ -459,7 +459,7 @@
 	    	                    position = {0 -3 }
                             }
                             enabled = "[GetScriptedGui('SPT_kkt_can_remove_modifier').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
-                            tooltip = "[GetScriptedGui('SPT_kkt_can_remove_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                            tooltip = "[GetScriptedGui('SPT_kkt_can_remove_modifier').IsValidTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                             tooltip_visible = "[Not(GetScriptedGui('SPT_kkt_can_remove_modifier').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
                             
                             onclick = "[GetScriptedGui('SPT_kkt_remove_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"

@@ -64,7 +64,7 @@ SPT_kkt_can_revoke_pocliy = {
 		}
 
 		custom_description = {
-			text = SPT_kkt_released_flag_recentlt
+			text = SPT_policy_released_recently
 			trigger_if = {
 				limit = {
 					trigger_if = {
