@@ -120,3 +120,17 @@ SPT_kkt_count_points_sg = {
 		}
 	}
 }
+
+SPT_kkt_is_releaseed_sg = {
+	scope = character
+
+	saved_scopes = {
+		SPT_kkt_selected_flag
+	}
+
+	is_shown = {
+		SPT_kkt_is_released_pocliy = {
+			FLAG = scope:SPT_kkt_selected_flag
+		}
+	}
+}

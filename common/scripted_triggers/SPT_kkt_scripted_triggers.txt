@@ -95,3 +95,18 @@ SPT_kkt_can_revoke_pocliy = {
 	}
 	
 }
+
+SPT_kkt_is_released_pocliy = {
+	trigger_if = {
+		limit = {
+			has_variable_list = SPT_released_policy_flags
+		}
+		any_in_list = {
+			variable = SPT_released_policy_flags
+			this = $FLAG$
+		}
+	}
+	trigger_else = {
+		always = no
+	}
+}
