@@ -29,8 +29,8 @@ spt_policy_improve_militia_modifier = {
 
 spt_policy_post_horse_system_modifier = {
 	icon = horse_positive
-	sway_schemes_power_add = 20
-	travel_safety = 20
+	# sway_schemes_power_add = 20
+	# travel_safety = 20
 	character_travel_speed_mult = 0.25
 }
 

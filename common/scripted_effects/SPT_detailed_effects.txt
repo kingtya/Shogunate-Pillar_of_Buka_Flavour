@@ -10,12 +10,11 @@ spt_policy_management_effect = {
 		## 本乡本土封臣好感 +
 		## 追名逐利封臣好感 -
 		flag:flag_spt_policy_council_system_modifier = {
-			$ACTION$_character_modifier = spt_policy_council_system_modifier_modifier
+			# $ACTION$_character_modifier = spt_policy_council_system_modifier_modifier
 
 		}
 		flag:flag_spt_policy_official_purveyor_modifier = {
-			$ACTION$_character_modifier = spt_policy_official_purveyor_modifier_modifier
-
+			# $ACTION$_character_modifier = spt_policy_official_purveyor_modifier_modifier
 		}
 
 		### 中道

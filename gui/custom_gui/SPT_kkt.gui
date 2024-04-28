@@ -77,7 +77,7 @@
                         texture = "gfx/interface/skinned/hud_maintab/maintab_my_policy.dds"
                         onclick = "[GetScriptedGui('SPT_kkt_init_flag_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                         onclick = "[GetVariableSystem.Toggle( 'show_SPT_kkt_window' )]"
-                        tooltip = "#T 政策#!"
+                        tooltip = SPT_tab_my_polices_tt
                         down = "[GetVariableSystem.HasValue( 'show_SPT_kkt_window', 'true' )]"
                     }
                 }
@@ -157,7 +157,7 @@
                             layoutpolicy_horizontal = expanding
                             blockoverride "header_text"
                             {
-                                text = "保守 / 中道"
+                                text = SPT_kkt_window_baoshou_text
                             }
                             blockoverride "button_close"
                             {
@@ -168,7 +168,7 @@
                             layoutpolicy_horizontal = expanding
                             blockoverride "header_text"
                             {
-                                text = "革新 / 御用"
+                                text = SPT_kkt_window_gexin_text
                             }
                             blockoverride "button_close"
                             {
@@ -206,7 +206,7 @@
                             blockoverride "scrollbox_empty"
                             {
                                 visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_conservative_policy_flags') )]"
-                                text = "嘿嘿，出bug喽"
+                                text = SPT_kkt_bugs
                             }
                         }
                     }
@@ -234,7 +234,7 @@
                             blockoverride "scrollbox_empty"
                             {
                                 visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_neutral_policy_flags') )]"
-                                text = "嘿嘿，出bug喽"
+                                text = SPT_kkt_bugs
                             }
                         }
                     }
@@ -261,7 +261,7 @@
                             blockoverride "scrollbox_empty"
                             {
                                 visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_progressive_policy_flags') )]"
-                                text = "嘿嘿，出bug喽"
+                                text = SPT_kkt_bugs
                             }
                         }
                     }
@@ -288,7 +288,7 @@
                             blockoverride "scrollbox_empty"
                             {
                                 visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_special_policy_flags') )]"
-                                text = "嘿嘿，出bug喽"
+                                text = SPT_kkt_bugs
                             }
                         }
                     }
@@ -435,7 +435,7 @@
                             }
 
                             tooltip = "[GetScriptedGui('SPT_kkt_can_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
-                            tooltip_visible = "[Not(GetScriptedGui('SPT_kkt_can_apply_modifier').IsVaild( GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+                            tooltip_visible = "[Not(GetScriptedGui('SPT_kkt_can_apply_modifier').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
 
                             enabled = "[GetScriptedGui('SPT_kkt_can_apply_modifier').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
     
@@ -451,7 +451,7 @@
                             }
                             enabled = "[GetScriptedGui('SPT_kkt_can_remove_modifier').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
                             tooltip = "[GetScriptedGui('SPT_kkt_can_remove_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
-                            tooltip_visible = "[Not(GetScriptedGui('SPT_kkt_can_remove_modifier').IsVaild( GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+                            tooltip_visible = "[Not(GetScriptedGui('SPT_kkt_can_remove_modifier').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
                             
                             onclick = "[GetScriptedGui('SPT_kkt_remove_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
                         }
@@ -466,27 +466,27 @@
     type SPT_kkt_flag_info_button = button_letter {
         size = { 240 60 }
 
-        hbox = {
-            spacer = { size = { 30 0 } }
-            icon = {
-                size = { 30 30 }
-                visible = "[GetScriptedGui('SPT_kkt_is_released_sg').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
-                texture = "gfx/interface/icons/activities/activity_adult_education_header.dds"
-            }
-            expand = {}
-        }
+        # hbox = {
+        #     spacer = { size = { 30 0 } }
+        #     icon = {
+        #         size = { 30 30 }
+        #         visible = "[GetScriptedGui('SPT_kkt_is_released_sg').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
+        #         texture = "gfx/interface/icons/activities/activity_adult_education_header.dds"
+        #     }
+        #     expand = {}
+        # }
         text_single = {
             text = "[Localize(Concatenate(Scope.GetFlagName, '_name'))]"
             default_format = "#light_background"
-            parentanchor = left|center
+            parentanchor = left|vcenter
             position = { 65 -3 }
         }
 
-        icon = {
-            size = { 30 30 }
-            position = { 160 15 }
-            texture = "gfx/interface/icons/symbols/icon_policy_point.dds"
-        }
+        # icon = {
+        #     size = { 30 30 }
+        #     position = { 160 15 }
+        #     texture = "gfx/interface/icons/symbols/icon_policy_point.dds"
+        # }
         text_single = {
             text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).ScriptValue('SPT_kkt_points')|0]"
             default_format = "bold"
