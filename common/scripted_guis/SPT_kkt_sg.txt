@@ -121,7 +121,7 @@ SPT_kkt_count_points_sg = {
 	}
 }
 
-SPT_kkt_is_releaseed_sg = {
+SPT_kkt_is_released_sg = {
 	scope = character
 
 	saved_scopes = {

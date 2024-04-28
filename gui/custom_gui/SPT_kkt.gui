@@ -117,21 +117,9 @@
             using = Window_Margins
 
             background = {
-                visible = "[Character.GetGovernment.IsType('feudal_government')]"
+                #visible = "[Character.GetGovernment.IsType('feudal_government')]"
                 texture = "gfx/interface/illustrations/event_scenes/study.dds"
                 alpha = 1
-				spriteborder = { 1 1 }
-				margin = { -30 -10 }
-                modify_texture = {
-                    texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
-                    blend_mode = alphamultiply
-                    mirror = vertical
-                }
-            }
-            background = {
-                visible = "[Not(Character.GetGovernment.IsType('feudal_government'))]"
-                texture = "gfx/interface/illustrations/event_scenes/fp2_relaxing_room.dds"
-                alpha = 0.5
 				spriteborder = { 1 1 }
 				margin = { -30 -10 }
                 modify_texture = {
@@ -482,6 +470,7 @@
             spacer = { size = { 30 0 } }
             icon = {
                 size = { 30 30 }
+                visible = "[GetScriptedGui('SPT_kkt_is_released_sg').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
                 texture = "gfx/interface/icons/activities/activity_adult_education_header.dds"
             }
             expand = {}
