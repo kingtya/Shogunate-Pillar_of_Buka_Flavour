@@ -1,4 +1,25 @@
 ﻿################
+### 政策花费 ###
+################
+
+SPT_kkt_set_cost_to_character = {
+	switch = {
+		trigger = $FLAG$
+
+		flag:flag_spt_policy_council_system = {
+			add_prestige = -50
+		}
+		flag:flag_spt_policy_official_purveyor = {
+			remove_short_term_gold = 50
+		}
+		flag:flag_spt_policy_foster_system = {
+			add_prestige = -50
+		}
+	}
+}
+
+
+################
 ### 政策效果 ###
 ################
 
@@ -54,19 +75,5 @@ SPT_kkt_set_effect_to_character = {
 		}
 	}
 	
-}
-
-################
-### 政策花费 ###
-################
-
-SPT_kkt_set_cost_to_character = {
-	switch = {
-		trigger = $FLAG$
-
-		flag:flag_kkt_1 = {
-			remove_short_term_gold = 10
-		}
-	}
 }
 

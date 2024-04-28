@@ -131,7 +131,6 @@
 
             header_pattern = { # 一个标题栏， 你可以把标题和退出按钮包含到标题栏中
                 layoutpolicy_horizontal = expanding
-
                 blockoverride "button_close"
                 {
                     onclick = "[GetVariableSystem.Toggle( 'show_SPT_kkt_window' )]"
@@ -145,14 +144,14 @@
 
             vbox = {
                 layoutpolicy_horizontal = expanding # 保证横向填充
-                layoutpolicy_vertical = preferred
 
                 hbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
-                    layoutpolicy_vertical = preferred
+                    layoutpolicy_vertical = expanding
                     hbox = {
                         layoutpolicy_horizontal = expanding # 保证横向填充
-                        layoutpolicy_vertical = preferred
+                        layoutpolicy_vertical = expanding
+                        
                         header_standard = {
                             layoutpolicy_horizontal = expanding
                             blockoverride "header_text"
@@ -164,6 +163,11 @@
                                 visible = no
                             }
                         }
+                    }
+                    hbox = {
+                        layoutpolicy_horizontal = expanding # 保证横向填充
+                        layoutpolicy_vertical = expanding
+                        
                         header_standard = {
                             layoutpolicy_horizontal = expanding
                             blockoverride "header_text"
@@ -182,7 +186,7 @@
                 hbox = { # 政策分类
                     layoutpolicy_horizontal = expanding # 保证横向填充
                     layoutpolicy_vertical = preferred
-                    size = { 100% 400 }
+                    size = { 100% 100% }
                     ################
                     ### 保守政策 ###
                     ################
@@ -192,7 +196,7 @@
                         scrollbox = {
                             layoutpolicy_horizontal = expanding # 保证横向填充
                             layoutpolicy_vertical = preferred
-                            size = { 100% 400 }
+                            size = { 100% 450 }
                             blockoverride "scrollbox_content" {
                                 vbox = {
                                     datamodel = "[GetPlayer.MakeScope.GetList('SPT_conservative_policy_flags')]"
@@ -220,7 +224,7 @@
                         scrollbox = {
                             layoutpolicy_horizontal = expanding # 保证横向填充
                             layoutpolicy_vertical = preferred
-                            size = { 100% 400 }
+                            size = { 100% 450 }
                             blockoverride "scrollbox_content" {
                                 vbox = {
                                     datamodel = "[GetPlayer.MakeScope.GetList('SPT_neutral_policy_flags')]"
@@ -247,7 +251,7 @@
                         scrollbox = {
                             layoutpolicy_horizontal = expanding # 保证横向填充
                             layoutpolicy_vertical = preferred
-                            size = { 100% 400 }
+                            size = { 100% 450 }
                             blockoverride "scrollbox_content" {
                                 vbox = {
                                     datamodel = "[GetPlayer.MakeScope.GetList('SPT_progressive_policy_flags')]"
@@ -274,7 +278,7 @@
                         scrollbox = {
                             layoutpolicy_horizontal = expanding # 保证横向填充
                             layoutpolicy_vertical = preferred
-                            size = { 100% 400 }
+                            size = { 100% 450 }
                             blockoverride "scrollbox_content" {
                                 vbox = {
                                     datamodel = "[GetPlayer.MakeScope.GetList('SPT_special_policy_flags')]"
@@ -317,6 +321,7 @@
                                 datacontext = "[GetPlayer.MakeScope.Char]"
                             }
                             hbox = {
+                                margin = { 10 20 }
                                 icon = {
                                     name = "icon_policy_point"
                                     size = { 30 30 }
@@ -325,7 +330,7 @@
 
                                 text_single = {
                                     text = SPT_current_policy_points
-                                    using = Font_Size_Large
+                                    using = Font_Size_Medium
                                 }
                             }
                             
@@ -343,16 +348,16 @@
                         ################
                         ### 政策效果 ###
                         ################
-                        header_standard = {
+                        
+                        hbox = {
                             layoutpolicy_horizontal = expanding
-                            blockoverride "header_text"
-                            {
-                                text = SPT_kkt_effect_head_text
+                            margin = { 10 0 }
+                            
+                            text_label_left = {
+                                using = Font_Size_Medium
+                                text = "效果:"
                             }
-                            blockoverride "button_close"
-                            {
-                                visible = no
-                            }
+                            expand = {}
                         }
                         vbox = {
                             layoutpolicy_horizontal = expanding
@@ -360,7 +365,7 @@
                             margin = { 10 10 }
                             background = {
                                 using = Background_Area_Dark
-                                margin = { -10 -10 }
+                                margin = { -15 -15 }
                             }
                             scrollbox = {
                                 layoutpolicy_horizontal = preferred
@@ -386,36 +391,40 @@
                         ################
                         ### 政策费用 ###
                         ################
-                        header_standard = {
+                        hbox = {
                             layoutpolicy_horizontal = expanding
-                            blockoverride "header_text"
-                            {
-                                text = SPT_kkt_cost_head_text
+                            margin = { 10 0 }
+                            
+                            text_label_left = {
+                                using = Font_Size_Medium
+                                text = "费用:"
                             }
-                            blockoverride "button_close"
-                            {
-                                visible = no
-                            }
+                            expand = {}
                         }
-                        scrollbox = {
-                            background = {
-                                using = Background_Area_Dark
-                                margin = { -10 -10 }
-                            }
-
+                        vbox = {
                             layoutpolicy_horizontal = expanding
                             layoutpolicy_vertical = expanding
-                            blockoverride "scrollbox_content" {
-                                hbox = {
-                                    margin = { 10 5 }
-                                    layoutpolicy_horizontal = expanding
-                                    text_multi = {
-                                        autoresize = yes
-                                        using = Font_Size_Medium
-                                        text = "[GetScriptedGui('SPT_kkt_apply_cost').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
-                                    }
+                            margin = { 10 10 }
+                            background = {
+                                using = Background_Area_Dark
+                                margin = { -15 -15 }
+                            }
+                            scrollbox = {
+                                layoutpolicy_horizontal = preferred
+                                layoutpolicy_vertical = expanding
+                                size = { 0 50 }
+                                blockoverride "scrollbox_content" {
                                     hbox = {
+                                        margin = { 0 -6 }
                                         layoutpolicy_horizontal = expanding
+                                        text_multi = {
+                                            autoresize = yes
+                                            using = Font_Size_Medium
+                                            text = "[GetScriptedGui('SPT_kkt_apply_cost').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                                        }
+                                        hbox = {
+                                           layoutpolicy_horizontal = expanding
+                                        }
                                     }
                                 }
                             }
@@ -490,7 +499,7 @@
             text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).ScriptValue('SPT_kkt_points')|0]"
             default_format = "bold"
             parentanchor = center
-            position = { 85 -3 }
+            position = { 90 -3 }
         }
 
         down = "[EqualTo_string(Scope.GetFlagName, GetVariableSystem.Get('selected_flag'))]"
