@@ -14,7 +14,7 @@ SPT_init_conservative_poilcy_flag_list = {
 		target = flag:flag_spt_policy_official_purveyor
 	}
 	add_to_variable_list = {
-		name = SPT_neutral_policy_flags
+		name = SPT_conservative_policy_flags
 		target = flag:flag_spt_policy_improve_militia
 	}
 	add_to_variable_list = {
