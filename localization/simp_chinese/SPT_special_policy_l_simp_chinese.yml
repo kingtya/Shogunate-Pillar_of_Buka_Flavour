@@ -45,7 +45,7 @@ spt_policy_intensive_firearms_warning_tt:0 "@warning_icon!#X 你或你的家宰�
 flag_spt_policy_dragon_corps_name:0 "#V 编制龙骑兵#!"
 spt_policy_dragon_corps_modifier:0 "编制龙骑兵"
 spt_policy_dragon_corps_modifier_desc:0 "此人组建了骑马铁炮队。"
-spt_policy_dragon_corps_effect_tt:0 "你可以招募[GetMaA('dragon_corps').GetName][men_at_arms|E]"
+spt_policy_dragon_corps_effect_tt:0 "如果#V 你#!的[culture|E]有$innovation_advanced_bowmaking$[innovation|E]，#V 你#!可以招募[GetMaA('dragon_corps').GetName][men_at_arms|E]"
 spt_policy_dragon_corps_warning_tt:0 "@warning_icon!#X 你或你的家宰没有[GetTrait('date_margin').GetName( GetNullCharacter )]，由家宰解锁的要求为15军事且颁布后10年内无法将其撤职#!"
 
 flag_spt_policy_chivalry_education_name:0 "#V 萨摩军法#!"

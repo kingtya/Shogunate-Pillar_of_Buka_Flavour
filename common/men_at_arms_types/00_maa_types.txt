@@ -450,7 +450,7 @@ sohei_troop = {
 }
 
 dragon_corps = {
-	type = archers
+	type = archer_cavalry
 	
 	can_recruit = {
 		has_variable_list = SPT_released_policy_flags
@@ -458,10 +458,13 @@ dragon_corps = {
 			variable = SPT_released_policy_flags
 			this = flag:flag_spt_policy_dragon_corps
 		}
+		culture = {
+			has_innovation = innovation_advanced_bowmaking
+		}
 	}
 
 	damage = 106
-	toughness = 38
+	toughness = 28
 	pursuit = 30
 	screen = 10
 	
@@ -475,7 +478,7 @@ dragon_corps = {
 	counters = {
 		heavy_infantry = 1
 		heavy_cavalry = 1
-		archer_cavalry = 0.5
+		archers = 0.5
 	}
 
 	buy_cost = { gold = 200 }
