@@ -14,7 +14,7 @@ spt_policy_improve_labor_modifier = {
 
 spt_policy_deploy_draftee_modifier = {
 	icon = martial_positive
-	men_at_arms_maintenance = -0.1
+	men_at_arms_cap = 1
 	men_at_arms_limit = 1
 }
 

@@ -1,0 +1,90 @@
+﻿spt_has_imagawa_margin_trait = {
+	OR = {
+		has_trait = imagawa_margin
+		AND = {
+			exists = cp:councillor_steward
+			cp:councillor_steward = {
+				has_trait = imagawa_margin
+				stewardship >= high_skill_rating
+			}
+		}
+	}
+}
+
+spt_has_takeda_margin_trait = {
+	OR = {
+		has_trait = takeda_margin
+		AND = {
+			exists = cp:councillor_steward
+			cp:councillor_steward = {
+				has_trait = takeda_margin
+				stewardship >= high_skill_rating
+			}
+		}
+	}
+}
+
+spt_has_oda_margin_trait = {
+	OR = {
+		has_trait = oda_margin
+		AND = {
+			exists = cp:councillor_steward
+			cp:councillor_steward = {
+				has_trait = oda_margin
+				martial >= high_skill_rating
+			}
+		}
+	}
+}
+
+spt_has_hojo_margin_trait = {
+	OR = {
+		has_trait = hojo_margin
+		AND = {
+			exists = cp:councillor_steward
+			cp:councillor_steward = {
+				has_trait = hojo_margin
+				learning >= decent_skill_rating
+			}
+		}
+	}
+}
+
+spt_has_tokugawa_margin_trait = {
+	OR = {
+		has_trait = tokugawa_margin
+		AND = {
+			exists = cp:councillor_steward
+			cp:councillor_steward = {
+				has_trait = tokugawa_margin
+				martial >= high_skill_rating
+			}
+		}
+	}
+}
+
+spt_has_uesugi_margin_trait = {
+	OR = {
+		has_trait = uesugi_margin
+		AND = {
+			exists = cp:councillor_steward
+			cp:councillor_steward = {
+				has_trait = uesugi_margin
+				martial >= decent_skill_rating
+			}
+		}
+	}
+}
+
+spt_has_shimazu_margin_trait = {
+	OR = {
+		has_trait = shimazu_margin
+		AND = {
+			exists = cp:councillor_steward
+			cp:councillor_steward = {
+				has_trait = shimazu_margin
+				martial >= high_skill_rating
+			}
+		}
+	}
+}

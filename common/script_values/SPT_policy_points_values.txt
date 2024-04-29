@@ -62,8 +62,6 @@
 		flag:flag_spt_policy_supply_transporter = {
 			add = 25
 		}
-
-		
 	}
 }
 

@@ -1,0 +1,236 @@
+﻿imagawa_margin = { # 今川传
+	category = fame
+	shown_in_ruler_designer = no
+
+	legitimacy_gain_mult = 0.2
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_imagawa_margin
+
+	icon = {
+		desc = imagawa_margin.dds
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_imagawa_margin_desc
+			}
+			desc = trait_imagawa_margin_desc
+		}
+	}
+}
+
+takeda_margin = { # 武田传
+	category = fame
+	shown_in_ruler_designer = no
+
+	legitimacy_gain_mult = 0.2
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_takeda_margin
+
+	icon = {
+		desc = takeda_margin.dds
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_takeda_margin_desc
+			}
+			desc = trait_takeda_margin_desc
+		}
+	}
+}
+
+oda_margin = { # 织田传
+	category = fame
+	shown_in_ruler_designer = no
+
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_oda_margin
+
+	icon = {
+		desc = oda_margin.dds
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_oda_margin_desc
+			}
+			desc = trait_oda_margin_desc
+		}
+	}
+}
+
+hojo_margin = { # 北条传
+	category = fame
+	shown_in_ruler_designer = no
+
+	legitimacy_gain_mult = 0.05
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_hojo_margin
+
+	icon = {
+		desc = hojo_margin.dds
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_hojo_margin_desc
+			}
+			desc = trait_hojo_margin_desc
+		}
+	}
+}
+
+tokugawa_margin = { # 德川传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_tokugawa_margin
+
+	icon = {
+		desc = tokugawa_margin.dds
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_tokugawa_margin_desc
+			}
+			desc = trait_tokugawa_margin_desc
+		}
+	}
+}
+
+uesugi_margin = { # 上杉传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	legitimacy_gain_mult = 0.15
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_uesugi_margin
+
+	icon = {
+		desc = uesugi_margin.dds
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_uesugi_margin_desc
+			}
+			desc = trait_uesugi_margin_desc
+		}
+	}
+}
+
+shimazu_margin = { # 岛津传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	legitimacy_gain_mult = 0.02
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_shimazu_margin
+
+	icon = {
+		desc = shimazu_margin.dds
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_shimazu_margin_desc
+			}
+			desc = trait_shimazu_margin_desc
+		}
+	}
+}
+
+oda_nobunaga = {
+	category = fame
+	shown_in_ruler_designer = no
+
+	domain_limit = 3
+	#domain_tax_different_faith_mult = 0.5
+	dread_baseline_add = 30
+	dread_per_tyranny_mult = 0.5
+	different_faith_opinion = -50
+	clergy_opinion = -25
+	#siege_phase_time = -0.5
+
+	icon = {
+		desc = oda_nobunaga.dds
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_oda_nobunaga_desc
+			}
+			desc = trait_oda_nobunaga_desc
+		}
+	}
+}

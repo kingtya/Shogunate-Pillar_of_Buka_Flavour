@@ -2,6 +2,7 @@
 
 ### 0001-0002 能力主义添加角色修正
 ### 0003 灌溉整备添加伯爵领修正
+### 0004-0006 今川假名目录、甲州法度次第、五条训诫添加伯爵领修正
 
 spt_policy_events.0001 = {
 	hidden = yes
@@ -70,6 +71,57 @@ spt_policy_events.0003 = {
 		scope:county = {
 			add_county_modifier = {
 				modifier = spt_policy_canal_improvements_county_modifier
+				years = 10
+			}
+		}
+	}
+}
+
+spt_policy_events.0004 = {
+	hidden = yes
+
+	trigger = {
+		scope:county.holder = scope:county_holder
+	}
+
+	immediate = {
+		scope:county = {
+			add_county_modifier = {
+				modifier = spt_policy_laws_of_imagawa_county_modifier
+				years = 10
+			}
+		}
+	}
+}
+
+spt_policy_events.0005 = {
+	hidden = yes
+
+	trigger = {
+		scope:county.holder = scope:county_holder
+	}
+
+	immediate = {
+		scope:county = {
+			add_county_modifier = {
+				modifier = spt_policy_laws_of_takeda_county_modifier
+				years = 10
+			}
+		}
+	}
+}
+
+spt_policy_events.0006 = {
+	hidden = yes
+
+	trigger = {
+		scope:county.holder = scope:county_holder
+	}
+
+	immediate = {
+		scope:county = {
+			add_county_modifier = {
+				modifier = spt_policy_five_admonitions_county_modifier
 				years = 10
 			}
 		}

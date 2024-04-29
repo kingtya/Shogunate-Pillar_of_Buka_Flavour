@@ -65,6 +65,31 @@ SPT_kkt_set_cost_to_character = {
 		flag:flag_spt_policy_supply_transporter = {
 			add_prestige = -50
 		}
+		# 御用
+		flag:flag_spt_policy_laws_of_imagawa = {
+			remove_short_term_gold = 100
+		}
+		flag:flag_spt_policy_laws_of_takeda = {
+			remove_short_term_gold = 100
+		}
+		flag:flag_spt_policy_five_admonitions = {
+			remove_short_term_gold = 100
+		}
+		flag:flag_spt_policy_guardian_forces = {
+			remove_short_term_gold = 100
+		}
+		flag:flag_spt_policy_intensive_firearms = {
+			remove_short_term_gold = 100
+		}
+		flag:flag_spt_policy_dragon_corps = {
+			remove_short_term_gold = 100
+		}
+		flag:flag_spt_policy_chivalry_education = {
+			remove_short_term_gold = 100
+		}
+		flag:flag_spt_policy_expeditionary_support = {
+			remove_short_term_gold = 100
+		}
 	}
 }
 

@@ -9,3 +9,15 @@ SPT_kkt_init_action = {
 		# 暂且弃之
 	}
 }
+
+on_join_court = {
+	events = {
+		spt_policy_events.0001
+	}
+}
+
+on_leave_court = {
+	events = {
+		spt_policy_events.0002
+	}
+}

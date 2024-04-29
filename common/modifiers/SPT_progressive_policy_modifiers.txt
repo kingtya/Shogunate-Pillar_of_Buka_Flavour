@@ -6,7 +6,7 @@ spt_policy_western_sanction_modifier = {
 
 spt_policy_improve_firearms_modifier = {
 	icon = martial_positive
-	archers_damage_mult = 0.25
+	archers_damage_mult = 0.10
 }
 
 spt_policy_meritocracy_modifier = {
@@ -28,8 +28,8 @@ spt_policy_meritocracy_being_humiliated_modifier = {
 spt_policy_supply_transporter_modifier = {
 	icon = horse_positive
 	movement_speed = 0.2
-	hostile_county_attrition = -0.25
-	supply_duration = 1	
+	supply_duration = 0.25
+	plain_supply_limit_mult = 0.5
 }
 
 spt_policy_easy_commerce_modifier = {

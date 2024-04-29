@@ -1,0 +1,65 @@
+﻿spt_policy_laws_of_imagawa_modifier = {
+	icon = learning_positive
+	cultural_head_fascination_mult = 0.05
+}
+spt_policy_laws_of_imagawa_county_modifier = {
+	icon = county_modifier_control_positive
+	monthly_county_control_growth_add = 0.1
+	tax_mult = 0.1
+}
+
+spt_policy_laws_of_takeda_modifier = {
+	icon = learning_positive
+	cultural_head_fascination_mult = 0.05
+}
+spt_policy_laws_of_takeda_county_modifier = {
+	icon = county_modifier_control_positive
+	monthly_county_control_growth_add = 0.1
+}
+
+spt_policy_five_admonitions_modifier = {
+	icon = prestige_positive
+	monthly_prestige = 2.0
+	monthly_prestige_gain_mult = 0.1
+	monthly_dynasty_prestige = 0.25
+	monthly_dynasty_prestige_mult = 0.05
+	tyranny_loss_mult = 0.25
+}
+
+spt_policy_five_admonitions_county_modifier = {
+	icon = county_modifier_control_positive
+	tax_mult = -0.1
+	monthly_county_control_growth_add = 0.5
+	county_opinion_add = 30
+	travel_danger = -25
+}
+
+spt_policy_guardian_forces_modifier = {
+	icon = martial_positive
+	knight_limit = 2
+	knight_effectiveness_mult = 0.5
+	character_travel_safety = 20
+	hostile_scheme_resistance_mult = 0.1
+}
+
+spt_policy_intensive_firearms_modifier = {
+	icon = martial_positive
+	archers_damage_mult = 0.2
+	archers_toughness_mult = 0.1
+}
+
+spt_policy_chivalry_education_modifier = {
+	icon = martial_positive
+	maa_damage_add = 15
+	maa_toughness_add = 10
+}
+
+spt_policy_expeditionary_support_modifier = {
+	icon = martial_positive
+	skirmishers_damage_add = 20
+	skirmishers_toughness_add = 10
+	men_at_arms_maintenance = -0.2
+	movement_speed = 0.1
+	hostile_county_attrition = -0.75
+	supply_duration = 0.75
+}

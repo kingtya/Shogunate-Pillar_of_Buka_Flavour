@@ -302,148 +302,135 @@ spt_policy_management_effect = {
 				OPINION = -5
 			}
 		}
-	}
-}
 
-################
-### 封臣立场 ###
-################
-### 宫廷礼制
-SPT_courtly_vassal_towards_policy_opinion_effect = {
-	save_temporary_scope_as = actor
-	if = {
-		limit = { any_vassal = { has_vassal_stance = courtly } }
-		if = {
-			limit = { 
-				$POLICY_TYPE_SW_1$ = no
-				$POLICY_TYPE_SW_2$ = no
+		### 御用
+		flag:flag_spt_policy_laws_of_imagawa = {
+			if = {
+				limit = {
+					spt_has_imagawa_margin_trait = no
+				}
+				custom_tooltip = spt_policy_laws_of_imagawa_warning_tt
 			}
-			custom_tooltip = SPT_courtly_vassal_towards_policy_opinion_effect_tt_0
+			$ACTION$_character_modifier = spt_policy_laws_of_imagawa_modifier
+			custom_tooltip = spt_policy_laws_of_imagawa_effect_tt
+			custom_tooltip = spt_policy_laws_of_imagawa_effect_tt_1
 			hidden_effect = {
-				every_vassal = {
-					limit = {
-						has_vassal_stance = courtly
-					}
-					add_opinion = {
-						target = scope:actor
-						modifier = spt_vassal_towards_conservative_policy_opinion
-						opinion = $OPINION$
+				every_sub_realm_county = {
+					add_county_modifier = {
+						modifier = spt_policy_laws_of_imagawa_county_modifier
+						years = 20
 					}
 				}
 			}
+			
 		}
-		if = {
-			limit = { 
-				$POLICY_TYPE_SW_1$ = no
-				$POLICY_TYPE_SW_2$ = yes
+		flag:flag_spt_policy_laws_of_takeda = {
+			if = {
+				limit = {
+					spt_has_takeda_margin_trait = no
+				}
+				custom_tooltip = spt_policy_laws_of_takeda_warning_tt
 			}
-			custom_tooltip = SPT_courtly_vassal_towards_policy_opinion_effect_tt_1
+			$ACTION$_character_modifier = spt_policy_laws_of_takeda_modifier
+			custom_tooltip = spt_policy_laws_of_takeda_effect_tt
+			custom_tooltip = spt_policy_laws_of_takeda_effect_tt_1
 			hidden_effect = {
-				every_vassal = {
-					limit = {
-						has_vassal_stance = courtly
-					}
-					add_opinion = {
-						target = scope:actor
-						modifier = spt_vassal_towards_neutral_policy_opinion
-						opinion = $OPINION$
+				every_sub_realm_county = {
+					add_county_modifier = {
+						modifier = spt_policy_laws_of_takeda_county_modifier
+						years = 20
 					}
 				}
 			}
+			
 		}
-		if = {
-			limit = { 
-				$POLICY_TYPE_SW_1$ = yes
-				$POLICY_TYPE_SW_2$ = no
+		flag:flag_spt_policy_five_admonitions = {
+			if = {
+				limit = {
+					spt_has_hojo_margin_trait = no
+				}
+				custom_tooltip = spt_policy_five_admonitions_warning_tt
 			}
-			custom_tooltip = SPT_courtly_vassal_towards_policy_opinion_effect_tt_2
-			hidden_effect = {
-				every_vassal = {
+			if = {
+				limit = {
+					NOT = { has_trait = temperate }
+				}
+				if = {
 					limit = {
-						has_vassal_stance = courtly
+						has_trait = gluttonous
 					}
-					add_opinion = {
-						target = scope:actor
-						modifier = spt_vassal_towards_progressive_policy_opinion
-						opinion = $OPINION$
+					remove_trait = gluttonous
+					add_trait = temperate 
+				}
+				else_if = {
+					limit = {
+						has_trait = greedy
+					}
+					remove_trait = greedy
+					add_trait = temperate
+				}
+				else = {
+					add_trait = temperate
+				}
+			}
+			$ACTION$_character_modifier = spt_policy_five_admonitions_modifier
+			custom_tooltip = spt_policy_five_admonitions_effect_tt
+			custom_tooltip = spt_policy_five_admonitions_effect_tt_1
+			hidden_effect = {
+				every_sub_realm_county = {
+					add_county_modifier = {
+						modifier = spt_policy_five_admonitions_county_modifier
+						years = 50
 					}
 				}
 			}
+			
 		}
-	}
-}
-
-SPT_glory_hound_vassal_towards_policy_opinion_effect = {
-	save_temporary_scope_as = actor
-	if = {
-		limit = { any_vassal = { has_vassal_stance = glory_hound } }
-		if = {
-			limit = {
-			}
-			custom_tooltip = SPT_glory_hound_vassal_towards_policy_opinion_effect_tt
-			hidden_effect = {
-				every_vassal = {
-					limit = {
-						has_vassal_stance = glory_hound
-					}
-					add_opinion = {
-						target = scope:actor
-						modifier = spt_vassal_towards_conservative_policy_opinion
-						opinion = $OPINION$
-					}
+		flag:flag_spt_policy_guardian_forces = {
+			if = {
+				limit = {
+					spt_has_tokugawa_margin_trait = no
 				}
+				custom_tooltip = spt_policy_guardian_forces_warning_tt
 			}
+			$ACTION$_character_modifier = spt_policy_guardian_forces_modifier
 		}
-	}
-}
-
-SPT_parochial_vassal_towards_policy_opinion_effect = {
-	save_temporary_scope_as = actor
-	if = {
-		limit = { any_vassal = { has_vassal_stance = parochial } }
-		if = {
-			limit = { 
-				$POLICY_TYPE_SW_1$ = no
-				$POLICY_TYPE_SW_2$ = no
-			}
-			custom_tooltip = SPT_parochial_vassal_towards_policy_opinion_effect_tt_0
-			hidden_effect = {
-				every_vassal = {
-					limit = {
-						has_vassal_stance = parochial
-					}
-					add_opinion = {
-						target = scope:actor
-						modifier = spt_vassal_towards_conservative_policy_opinion
-						opinion = $OPINION$
-					}
+		flag:flag_spt_policy_intensive_firearms = {
+			if = {
+				limit = {
+					spt_has_oda_margin_trait = no
 				}
+				custom_tooltip = spt_policy_intensive_firearms_warning_tt
 			}
+			$ACTION$_character_modifier = spt_policy_intensive_firearms_modifier
 		}
-		if = {
-			limit = { 
-				$POLICY_TYPE_SW_1$ = no
-				$POLICY_TYPE_SW_2$ = yes
-			}
-		}
-		if = {
-			limit = { 
-				$POLICY_TYPE_SW_1$ = yes
-				$POLICY_TYPE_SW_2$ = no
-			}
-			custom_tooltip = SPT_parochial_vassal_towards_policy_opinion_effect_tt_2
-			hidden_effect = {
-				every_vassal = {
-					limit = {
-						has_vassal_stance = parochial
-					}
-					add_opinion = {
-						target = scope:actor
-						modifier = spt_vassal_towards_progressive_policy_opinion
-						opinion = $OPINION$
-					}
+		flag:flag_spt_dragon_corps_firearms = {
+			custom_tooltip = spt_policy_dragon_corps_effect_tt
+			if = {
+				limit = {
+					#spt_has_oda_margin_trait = no
 				}
+				custom_tooltip = spt_policy_dragon_corps_warning_tt
 			}
+			#$ACTION$_character_modifier = spt_policy_dragon_corps__modifier
+		}
+		flag:flag_spt_policy_chivalry_education = {
+			if = {
+				limit = {
+					spt_has_shimazu_margin_trait = no
+				}
+				custom_tooltip = spt_policy_chivalry_education_warning_tt
+			}
+			$ACTION$_character_modifier = spt_policy_chivalry_education_modifier
+		}
+		flag:flag_spt_policy_expeditionary_support = {
+			if = {
+				limit = {
+					spt_has_uesugi_margin_trait = no
+				}
+				custom_tooltip = spt_policy_expeditionary_support_warning_tt
+			}
+			$ACTION$_character_modifier = spt_policy_expeditionary_support_modifier
 		}
 	}
 }
