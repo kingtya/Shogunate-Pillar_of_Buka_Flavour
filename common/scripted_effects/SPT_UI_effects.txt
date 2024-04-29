@@ -1,0 +1,129 @@
+﻿################
+### 政策花费 ###
+################
+
+SPT_kkt_set_cost_to_character = {
+	switch = {
+		trigger = $FLAG$
+		# 保守
+		flag:flag_spt_policy_improve_cavalry = {
+			remove_short_term_gold = 50
+		}
+		flag:flag_spt_policy_canal_improvements = {
+			remove_short_term_gold = 50
+		}
+		flag:flag_spt_policy_buddhism_sanction = {
+			add_piety = -50
+		}
+		flag:flag_spt_policy_council_system = {
+			add_prestige = -50
+		}
+		flag:flag_spt_policy_official_purveyor = {
+			remove_short_term_gold = 50
+		}
+		flag:flag_spt_policy_foster_system = {
+			add_prestige = -50
+		}
+		# 中道
+		flag:flag_spt_policy_direct_daimyo_rule = {
+			add_prestige = -50
+		}
+		flag:flag_spt_policy_improve_labor = {
+			add_prestige = -50
+		}
+		flag:flag_spt_policy_deploy_draftee = {
+			add_prestige = -50
+		}
+		flag:flag_spt_policy_improve_militia = {
+			add_prestige = -50
+		}
+		flag:flag_spt_policy_post_horse_system = {
+			remove_short_term_gold = 25
+		}
+		flag:flag_spt_policy_distant_diplomacy = {
+			remove_short_term_gold = 25
+		}
+		flag:flag_spt_policy_suggestion_box = {
+			add_prestige = -25
+		}
+		# 革新
+		flag:flag_spt_policy_soidier_professionaliztion = {
+			remove_short_term_gold = 50
+		}
+		flag:flag_spt_policy_easy_commerce = {
+			remove_short_term_gold = 50
+		}
+		flag:flag_spt_policy_improve_firearms = {
+			add_prestige = -50
+		}
+		flag:flag_spt_policy_western_sanction = {
+			add_piety = -50
+		}
+		flag:flag_spt_policy_meritocracy = {
+			add_prestige = -50
+		}
+		flag:flag_spt_policy_supply_transporter = {
+			add_prestige = -50
+		}
+	}
+}
+
+
+################
+### 政策效果 ###
+################
+
+SPT_kkt_set_effect_to_character = {
+	
+	show_as_tooltip = { # 作为显示效果，不实际执行
+		spt_policy_management_effect = {
+			FLAG = $FLAG$
+			ACTION = $ACTION$
+		}
+	}
+
+	hidden_effect = { # 实际执行
+		if = {
+			limit = {
+				$CONFIRM$ = yes #发布国策
+			}
+			spt_policy_management_effect = {
+				FLAG = $FLAG$
+				ACTION = $ACTION$
+			}
+			add_to_variable_list = {
+				name = SPT_released_policy_flags
+				target = $FLAG$
+			}
+			change_variable = {
+				name = current_kkt_points
+				add = $FLAG$.SPT_policy_points
+			}
+			add_character_flag = {
+				flag = $FLAG$
+				years = 5
+			}
+		}
+		if = {
+			limit = {
+				$CONFIRM$ = no #撤销国策
+			}
+			remove_list_variable = {
+				name = SPT_released_policy_flags
+				target = $FLAG$
+			}
+			change_variable = {
+				name = current_kkt_points
+				subtract = $FLAG$.SPT_policy_points
+			}
+			if = {
+				limit = {
+					has_character_flag = $FLAG$
+				}
+				remove_character_flag = $FLAG$
+			}
+		}
+	}
+	
+}
+

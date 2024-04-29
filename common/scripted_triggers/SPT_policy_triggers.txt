@@ -4,7 +4,7 @@
 			exists = $FLAG$
 		}
 		custom_description = {
-			text = SPT_kkt_policy_released
+			text = SPT_policy_released_cd
 			trigger_if = {
 				limit = {
 					has_variable_list = SPT_released_policy_flags
@@ -22,7 +22,37 @@
 			}
 		}
 		custom_description = {
-			text = SPT_kkt_need_points
+			text = SPT_contraditory_policy_released_cd
+			trigger_if = {
+				limit = {
+					has_variable_list = SPT_released_policy_flags
+					$FLAG$ = flag:flag_spt_policy_official_purveyor
+				}
+				NOT = {
+					any_in_list = {
+						variable = SPT_released_policy_flags
+						this = flag:flag_spt_policy_easy_commerce
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
+					has_variable_list = SPT_released_policy_flags
+					$FLAG$ = flag:flag_spt_policy_easy_commerce
+				}
+				NOT = {
+					any_in_list = {
+						variable = SPT_released_policy_flags
+						this = flag:flag_spt_policy_official_purveyor
+					}
+				}
+			}
+			trigger_else = {
+				always = yes
+			}
+		}
+		custom_description = {
+			text = SPT_policy_need_more_points
 	
 			trigger_if = {
 				limit = {
@@ -33,7 +63,6 @@
 			trigger_else = {
 				always = no
 			}
-			
 		}
 	}
 	trigger_else = {

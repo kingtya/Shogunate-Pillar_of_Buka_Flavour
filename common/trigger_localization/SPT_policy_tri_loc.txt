@@ -1,0 +1,24 @@
+﻿SPT_policy_released_cd = {
+	global = SPT_policy_released_cd
+	global_not = SPT_policy_released_cd
+}
+
+SPT_kkt_policy_not_released = {
+	global = SPT_kkt_policy_not_released
+	global_not = SPT_kkt_policy_not_released
+}
+
+SPT_policy_need_more_points = {
+	global = SPT_policy_need_more_points
+	global_not = SPT_policy_need_more_points
+}
+
+SPT_policy_released_recently = {
+	global = SPT_policy_released_recently
+	global_not = SPT_policy_released_recently
+}
+
+SPT_contraditory_policy_released_cd = {
+	global = SPT_contraditory_policy_released_cd
+	global_not = SPT_contraditory_policy_released_cd
+}

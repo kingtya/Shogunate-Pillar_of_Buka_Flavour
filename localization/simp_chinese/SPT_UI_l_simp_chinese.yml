@@ -1,19 +1,22 @@
 ﻿l_simp_chinese:
-SPT_kkt_window_head_text: "政策"
-SPT_kkt_flag_empty_text: "未能找到任何国策"
-SPT_confirm_kkt_button_text:0 "发布国策"
-SPT_remove_kkt_button_text:1 "撤销国策"
-SPT_kkt_effect_head_text:0 "效果"
-SPT_kkt_cost_head_text:1 "费用"
-SPT_kkt_cost_text: "花费"
-SPT_kkt_policy_released: "你已经颁布了这个国策"
-SPT_kkt_policy_not_released: "你还没有颁布这个国策"
-SPT_kkt_need_points: "需要更多政策点"
-SPT_policy_released_recently:0 "你颁布这个国策的时间未满十年"
-SPT_policy_is_loading_text:0 "政策加载中"
+SPT_policy_window_head_text:0 "政策"
 SPT_kkt_window_gexin_text: "革新 / 御用"
 SPT_kkt_window_baoshou_text: "保守 / 中道"
-SPT_tab_my_polices_tt: "#T 政策#!"
+SPT_policy_is_loading_text:0 "政策加载中"
+
+SPT_policy_released_cd:0 "你已经颁布了这个国策"
+SPT_contraditory_policy_released_cd:1 "你颁布过互相冲突的国策"
+SPT_kkt_policy_not_released: "你还没有颁布这个国策"
+
+SPT_policy_need_more_points:0 "需要更多政策点"
+SPT_policy_released_recently:0 "你颁布这个国策的时间未满五年"
+
+SPT_effect_header_text:0 "效果:"
+SPT_cost_header_text:1 "费用:"
+SPT_confirm_kkt_button_text:0 "发布国策"
+SPT_remove_kkt_button_text:1 "撤销国策"
+
+SPT_tab_my_polices_tt:0 "#T 政策#!"
 
 # flag 列表
 
@@ -21,9 +24,16 @@ SPT_tab_my_polices_tt: "#T 政策#!"
 ### 保守政策 ###
 ################
 
+flag_spt_policy_improve_cavalry_name:0 "#V 骑马队强化#!"
+spt_policy_improve_cavalry_modifier:0 "骑马队强化"
+spt_policy_improve_cavalry_modifier_desc:0 "此人改进了骑马队军制。"
+
 flag_spt_policy_canal_improvements_name:0 "#V 灌溉整备#!"
 spt_policy_canal_improvements_modifier:0 "灌溉整备"
-spt_policy_canal_improvements_modifier_desc:0 "此人重视领地内的农务。"
+spt_policy_canal_improvements_modifier_desc:0 "此人整备了领地内的农务。"
+spt_policy_canal_improvements_county_modifier:0 "灌溉整备"
+spt_policy_canal_improvements_county_modifier_desc:0 "此地进行了农务的整备。"
+spt_policy_canal_improvements_effect_tt:0 "你直辖领地内的[county|E]每个#V 季度#!都有较高概率获得[GetModifier('spt_policy_canal_improvements_county_modifier').GetNameWithTooltip]，为期#V 10年#!"
 
 flag_spt_policy_council_system_name:0 "#V 合议制#!"
 spt_policy_council_system_modifier:0 "合议制"
@@ -32,10 +42,12 @@ spt_policy_council_system_modifier_desc:0 "此人加重了家臣在领地事务�
 flag_spt_policy_official_purveyor_name:0 "#V 御用商人#!"
 spt_policy_official_purveyor_modifier:0 "御用商人"
 spt_policy_official_purveyor_modifier_desc:0 "此人保护领地内大座商的权益。"
+spt_policy_official_purveyor_warning_tt:0 "@warning_icon!#X 你颁布的政策御用商人和这个政策冲突#!"
 
 flag_spt_policy_buddhism_sanction_name:0 "#V 寺社保护#!"
 spt_policy_buddhism_sanction_modifier:0 "寺社保护"
 spt_policy_buddhism_sanction_modifier_desc:0 "此人保护领地内寺社的权益。"
+shinto_religion_opinion:0 "神道信众好感"
 
 flag_spt_policy_foster_system_name:0 "#V 寄亲寄子制#!"
 spt_policy_foster_system_modifier:0 "寄亲寄子制"
@@ -69,6 +81,10 @@ flag_spt_policy_distant_diplomacy_name:0 "#V 远交近攻策#!"
 spt_policy_distant_diplomacy_modifier:0 "远交近攻策"
 spt_policy_distant_diplomacy_modifier_desc:0 "此人加强了外交的重要性。"
 
+flag_spt_policy_suggestion_box_name:0 "#V 目安箱#!"
+spt_policy_suggestion_box_modifier:0 "目安箱"
+spt_policy_suggestion_box_modifier_desc:0 "此人允许领民上达建议信。"
+
 ################
 ### 革新政策 ###
 ################
@@ -77,13 +93,18 @@ flag_spt_policy_western_sanction_name:0 "#V 南蛮保护#!"
 spt_policy_western_sanction_modifier:0 "南蛮保护"
 spt_policy_western_sanction_modifier_desc:0 "此人保护西方外来者的权益。"
 
-flag_spt_policy_improve_firearms_name:0 "#V 强化铁炮队#!"
-spt_policy_improve_firearms_modifier:0 "强化铁炮队"
+flag_spt_policy_improve_firearms_name:0 "#V 铁炮队强化#!"
+spt_policy_improve_firearms_modifier:0 "铁炮队强化"
 spt_policy_improve_firearms_modifier_desc:0 "此人改进了铁炮队军制。"
 
 flag_spt_policy_meritocracy_name:0 "#V 能力主义#!"
 spt_policy_meritocracy_modifier:0 "能力主义"
-spt_policy_meritocracy_modifier_desc:0 "此人与封臣缔结了形式上的血缘关系。"
+spt_policy_meritocracy_modifier_desc:0 "此人在领内事务上任人唯贤。"
+spt_policy_meritocracy_being_encouraged_modifier:0 "能力主义-喜悦"
+spt_policy_meritocracy_being_encouraged_modifier_desc:0 "此人能力出众，备受领主的鼓励。"
+spt_policy_meritocracy_being_humiliated_modifier:0 "能力主义-压抑"
+spt_policy_meritocracy_being_humiliated_modifier_desc:0 "此人能力平平，被认为难以胜任领内的工作。"
+spt_policy_meritocracy_effect_tt:0 "所有任一能力达到优秀等级#P [GetPlayer.MakeScope.ScriptValue('high_skill_rating')|0]#!的成年角色在加入你的[court|E]时会获得[GetModifier('spt_policy_meritocracy_being_encouraged_modifier').GetNameWithTooltip|P]，其他成年角\n色会获得#N [GetModifier('spt_policy_meritocracy_being_humiliated_modifier').GetNameWithTooltip]#!，立即适用于你的[courtier|E]"
 
 flag_spt_policy_supply_transporter_name:0 "#V 小荷驮队配备#!"
 spt_policy_supply_transporter_modifier:0 "小荷驮队配备"
@@ -92,6 +113,7 @@ spt_policy_supply_transporter_modifier_desc:0 "此人配备了专门的运输队
 flag_spt_policy_easy_commerce_name:0 "#V 乐市乐座#!"
 spt_policy_easy_commerce_modifier:0 "乐市乐座"
 spt_policy_easy_commerce_modifier_desc:0 "此人免除座商特权和贸易税，鼓励自由通商。"
+spt_policy_easy_commerce_warning_tt:0 "@warning_icon!#X 你颁布的政策乐市乐座和这个政策冲突#!"
 
 flag_spt_policy_soidier_professionaliztion_name:0 "#V 兵农分离#!"
 spt_policy_soidier_professionaliztion_modifier:0 "兵农分离"
@@ -112,3 +134,7 @@ spt_policy_laws_of_takeda_modifier_desc:0 "此人颁布了甲州法度次第。"
 flag_spt_policy_five_admonitions_name:0 "#V 五条训诫#!"
 spt_policy_five_admonitions_modifier:0 "五条训诫"
 spt_policy_five_admonitions_modifier_desc:0 "此人谛听了五条训诫。"
+
+flag_spt_policy_guardian_forces_name:0 "#V 旗本先手役#!"
+spt_policy_guardian_forces_modifier:0 "旗本先手役"
+spt_policy_guardian_forces_modifier_desc:0 "此人组建了旗本先手役。"

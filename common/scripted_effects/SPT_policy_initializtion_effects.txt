@@ -4,9 +4,14 @@
 # 注：此处每一个flag对应一个国策，root为当前角色，如果需要动态显示国策，用if判断即可
 ## 保守
 SPT_init_conservative_poilcy_flag_list = {
+	
 	add_to_variable_list = {
 		name = SPT_conservative_policy_flags
 		target = flag:flag_spt_policy_canal_improvements
+	}
+	add_to_variable_list = {
+		name = SPT_conservative_policy_flags
+		target = flag:flag_spt_policy_official_purveyor
 	}
 	add_to_variable_list = {
 		name = SPT_conservative_policy_flags
@@ -14,7 +19,7 @@ SPT_init_conservative_poilcy_flag_list = {
 	}
 	add_to_variable_list = {
 		name = SPT_conservative_policy_flags
-		target = flag:flag_spt_policy_official_purveyor
+		target = flag:flag_spt_policy_improve_cavalry
 	}
 	add_to_variable_list = {
 		name = SPT_conservative_policy_flags
@@ -52,7 +57,10 @@ SPT_init_neutral_poilcy_flag_list = {
 		name = SPT_neutral_policy_flags
 		target = flag:flag_spt_policy_distant_diplomacy
 	}
-
+	add_to_variable_list = {
+		name = SPT_neutral_policy_flags
+		target = flag:flag_spt_policy_suggestion_box
+	}
 }
 ## 革新
 SPT_init_progressive_poilcy_flag_list = {
@@ -108,3 +116,32 @@ SPT_clear_flag_list = {
 	clear_variable_list = SPT_progressive_poliy_flags
 	clear_variable_list = SPT_special_poilcy_flags
 }
+
+#################
+### 政策点管理 ###
+#################
+
+SPT_init_points = {
+	if = {
+		limit = {
+			NOT = {
+				exists = var:current_kkt_points
+			}
+		}
+		set_variable = {
+			name = current_kkt_points
+			value = 0
+		}
+	}
+}
+
+SPT_kkt_count_pocliy_points = {
+	set_variable = {
+		name = SPT_will_be_kkt_points
+		value = {
+			value = root.var:current_kkt_points
+			add = $FLAG$.SPT_policy_points
+		}
+	}
+}
+

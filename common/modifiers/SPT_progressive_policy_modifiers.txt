@@ -1,6 +1,7 @@
 ﻿## 革新
 spt_policy_western_sanction_modifier = {
- 	#
+	icon = social_positive
+ 	christianity_religion_opinion = 20
 }
 
 spt_policy_improve_firearms_modifier = {
@@ -9,7 +10,19 @@ spt_policy_improve_firearms_modifier = {
 }
 
 spt_policy_meritocracy_modifier = {
-	#
+	icon = dread_positive
+	monthly_prestige = 0.1
+	dread_baseline_add = 10
+}
+spt_policy_meritocracy_being_encouraged_modifier = {
+	icon = stress_positive
+	opinion_of_liege = 10
+	stress_gain_mult = -0.2
+}
+spt_policy_meritocracy_being_humiliated_modifier = {
+	icon = stress_negative
+	opinion_of_liege = -10
+	stress_gain_mult = 0.2
 }
 
 spt_policy_supply_transporter_modifier = {

@@ -1,15 +1,17 @@
-﻿SPT_kkt_points = {
+﻿SPT_policy_points = {
 	value = 0
 	switch = {
 		trigger = this
-
+		# 保守
+		flag:flag_spt_policy_improve_cavalry = {
+			add = 20
+		}
 		flag:flag_spt_policy_canal_improvements = {
-			add = 999
+			add = 20
 		}
 		flag:flag_spt_policy_buddhism_sanction = {
-			add = 999
+			add = 20
 		}
-
 		flag:flag_spt_policy_council_system = {
 			add = 20
 		}
@@ -19,7 +21,7 @@
 		flag:flag_spt_policy_foster_system = {
 			add = 20
 		}
-
+		# 中道
 		flag:flag_spt_policy_direct_daimyo_rule = {
 			add = 40
 		}
@@ -38,7 +40,10 @@
 		flag:flag_spt_policy_distant_diplomacy = {
 			add = 10
 		}
-
+		flag:flag_spt_policy_suggestion_box = {
+			add = 5
+		}
+		# 革新
 		flag:flag_spt_policy_soidier_professionaliztion = {
 			add = 25
 		}
@@ -49,10 +54,10 @@
 			add = 25
 		}
 		flag:flag_spt_policy_western_sanction = {
-			add = 999
+			add = 25
 		}
 		flag:flag_spt_policy_meritocracy = {
-			add = 999
+			add = 25
 		}
 		flag:flag_spt_policy_supply_transporter = {
 			add = 25

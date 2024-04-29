@@ -1,0 +1,77 @@
+﻿namespace = spt_policy_events
+
+### 0001-0002 能力主义添加角色修正
+### 0003 灌溉整备添加伯爵领修正
+
+spt_policy_events.0001 = {
+	hidden = yes
+
+	trigger = {
+		scope:new_employer = {
+			has_character_modifier = spt_policy_meritocracy_modifier
+		}
+		is_adult = yes
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					diplomacy >= high_skill_rating
+					stewardship >= high_skill_rating
+					martial >= high_skill_rating
+					intrigue >= high_skill_rating 
+					learning >= high_skill_rating 
+					prowess >= high_skill_rating
+				}
+			}
+			add_character_modifier = spt_policy_meritocracy_being_encouraged_modifier
+		}
+		else = {
+			add_character_modifier = spt_policy_meritocracy_being_humiliated_modifier
+		}
+	}
+}
+
+spt_policy_events.0002 = {
+	hidden = yes
+
+	trigger = {
+		OR = {
+			has_character_modifier = spt_policy_meritocracy_being_encouraged_modifier
+			has_character_modifier = spt_policy_meritocracy_being_humiliated_modifier
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_character_modifier = spt_policy_meritocracy_being_encouraged_modifier
+			}
+			remove_character_modifier = spt_policy_meritocracy_being_encouraged_modifier
+		}
+		if = {
+			limit = {
+				has_character_modifier = spt_policy_meritocracy_being_humiliated_modifier
+			}
+			remove_character_modifier = spt_policy_meritocracy_being_humiliated_modifier
+		}
+	}
+}
+
+spt_policy_events.0003 = {
+	hidden = yes
+
+	trigger = {
+		scope:county.holder = scope:county_holder
+	}
+
+	immediate = {
+		scope:county = {
+			add_county_modifier = {
+				modifier = spt_policy_canal_improvements_county_modifier
+				years = 10
+			}
+		}
+	}
+}

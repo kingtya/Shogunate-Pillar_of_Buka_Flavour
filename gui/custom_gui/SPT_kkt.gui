@@ -118,7 +118,7 @@
 
             background = {
                 #visible = "[Character.GetGovernment.IsType('feudal_government')]"
-                texture = "gfx/interface/illustrations/event_scenes/study.dds"
+                texture = "gfx/interface/skinned/hud_maintab/policy_background.dds"
                 alpha = 1
 				spriteborder = { 1 1 }
 				margin = { -30 -10 }
@@ -126,6 +126,10 @@
                     texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
                     blend_mode = alphamultiply
                     mirror = vertical
+                }
+                modify_texture = {
+                    texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
+                    blend_mode = alphamultiply
                 }
             }
 
@@ -138,7 +142,7 @@
 
                 blockoverride "header_text"
                 {
-                    text = SPT_kkt_window_head_text # 标题文本 此处可以直接写中文文字，或者写本地化键
+                    text = SPT_policy_window_head_text # 标题文本 此处可以直接写中文文字，或者写本地化键
                 }
             }
 
@@ -312,21 +316,33 @@
                 vbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
                     layoutpolicy_vertical = expanding
-
+                    background = {
+                        using = Background_Area
+                        margin = { -15 -15 }
+                    }
                     scrollbox = {
                         layoutpolicy_horizontal = expanding
                         layoutpolicy_vertical = expanding
+                        background = {
+                            using = Background_Area
+                        }
                         blockoverride "scrollbox_content" {
                             portrait_torso = {
                                 datacontext = "[GetPlayer.MakeScope.Char]"
                             }
                             hbox = {
+                                background = {
+                                    using = Background_Area
+                                    margin = { 0 -15 }
+                                }
                                 margin = { 10 20 }
                                 icon = {
                                     name = "icon_policy_point"
                                     size = { 30 30 }
                                     texture = "gfx/interface/icons/symbols/icon_policy_point.dds"
                                 }
+
+                                spacing = 5
 
                                 text_single = {
                                     text = SPT_current_policy_points
@@ -355,7 +371,7 @@
                             
                             text_label_left = {
                                 using = Font_Size_Medium
-                                text = "效果:"
+                                text = SPT_effect_header_text
                             }
                             expand = {}
                         }
@@ -364,7 +380,7 @@
                             layoutpolicy_vertical = expanding
                             margin = { 10 10 }
                             background = {
-                                using = Background_Area_Dark
+                                using = Background_Area
                                 margin = { -15 -15 }
                             }
                             scrollbox = {
@@ -377,6 +393,7 @@
                                         layoutpolicy_horizontal = expanding
                                         text_multi = {
                                             autoresize = yes
+                                            multiline = yes
                                             using = Font_Size_Medium
                                             text = "[GetScriptedGui('SPT_kkt_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                                         }
@@ -397,7 +414,7 @@
                             
                             text_label_left = {
                                 using = Font_Size_Medium
-                                text = "费用:"
+                                text = SPT_cost_header_text
                             }
                             expand = {}
                         }
@@ -406,7 +423,7 @@
                             layoutpolicy_vertical = expanding
                             margin = { 10 10 }
                             background = {
-                                using = Background_Area_Dark
+                                using = Background_Area
                                 margin = { -15 -15 }
                             }
                             scrollbox = {
@@ -496,7 +513,7 @@
             position = { 65 -3 }
         }
         text_single = {
-            text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).ScriptValue('SPT_kkt_points')|0]"
+            text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).ScriptValue('SPT_policy_points')|0]"
             default_format = "bold"
             parentanchor = center
             position = { 90 -3 }
