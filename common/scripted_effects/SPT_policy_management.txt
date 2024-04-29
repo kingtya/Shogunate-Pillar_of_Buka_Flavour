@@ -37,6 +37,19 @@ spt_policy_management_effect = {
 				OPINION = 5
 			}
 		}
+		flag:flag_spt_policy_improve_militia = {
+			$ACTION$_character_modifier = spt_policy_improve_militia_modifier
+			SPT_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 10
+			}
+			SPT_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 5
+			}
+		}
 		# 合议制
 		flag:flag_spt_policy_council_system = {
 			$ACTION$_character_modifier = spt_policy_council_system_modifier
@@ -124,14 +137,6 @@ spt_policy_management_effect = {
 		}
 		flag:flag_spt_policy_deploy_draftee = {
 			$ACTION$_character_modifier = spt_policy_deploy_draftee_modifier
-			SPT_courtly_vassal_towards_policy_opinion_effect = {
-				POLICY_TYPE_SW_1 = no
-				POLICY_TYPE_SW_2 = yes
-				OPINION = 5
-			}
-		}
-		flag:flag_spt_policy_improve_militia = {
-			$ACTION$_character_modifier = spt_policy_improve_militia_modifier
 			SPT_courtly_vassal_towards_policy_opinion_effect = {
 				POLICY_TYPE_SW_1 = no
 				POLICY_TYPE_SW_2 = yes
@@ -307,6 +312,20 @@ spt_policy_management_effect = {
 		flag:flag_spt_policy_laws_of_imagawa = {
 			if = {
 				limit = {
+					root = {
+						NOT = { has_trait = imagawa_margin }
+					}
+					exists = cp:councillor_steward
+					cp:councillor_steward = {
+						has_trait = imagawa_margin
+					}
+				}
+				cp:councillor_steward = {
+					spt_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
 					spt_has_imagawa_margin_trait = no
 				}
 				custom_tooltip = spt_policy_laws_of_imagawa_warning_tt
@@ -325,6 +344,20 @@ spt_policy_management_effect = {
 			
 		}
 		flag:flag_spt_policy_laws_of_takeda = {
+			if = {
+				limit = {
+					root = {
+						NOT = { has_trait = takeda_margin }
+					}
+					exists = cp:councillor_steward
+					cp:councillor_steward = {
+						has_trait = takeda_margin
+					}
+				}
+				cp:councillor_steward = {
+					block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
 			if = {
 				limit = {
 					spt_has_takeda_margin_trait = no
@@ -347,6 +380,20 @@ spt_policy_management_effect = {
 		flag:flag_spt_policy_five_admonitions = {
 			if = {
 				limit = {
+					root = {
+						NOT = { has_trait = hojo_margin }
+					}
+					exists = cp:councillor_steward
+					cp:councillor_steward = {
+						has_trait = hojo_margin
+					}
+				}
+				cp:councillor_steward = {
+					spt_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
 					spt_has_hojo_margin_trait = no
 				}
 				custom_tooltip = spt_policy_five_admonitions_warning_tt
@@ -361,6 +408,7 @@ spt_policy_management_effect = {
 					}
 					remove_trait = gluttonous
 					add_trait = temperate 
+					custom_tooltip = spt_policy_five_admonitions_effect_tt_2
 				}
 				else_if = {
 					limit = {
@@ -389,6 +437,20 @@ spt_policy_management_effect = {
 		flag:flag_spt_policy_guardian_forces = {
 			if = {
 				limit = {
+					root = {
+						NOT = { has_trait = tokugawa_margin }
+					}
+					exists = cp:councillor_steward
+					cp:councillor_steward = {
+						has_trait = tokugawa_margin
+					}
+				}
+				cp:councillor_steward = {
+					spt_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
 					spt_has_tokugawa_margin_trait = no
 				}
 				custom_tooltip = spt_policy_guardian_forces_warning_tt
@@ -398,23 +460,65 @@ spt_policy_management_effect = {
 		flag:flag_spt_policy_intensive_firearms = {
 			if = {
 				limit = {
+					root = {
+						NOT = { has_trait = oda_margin }
+					}
+					exists = cp:councillor_steward
+					cp:councillor_steward = {
+						has_trait = oda_margin
+					}
+				}
+				cp:councillor_steward = {
+					spt_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
 					spt_has_oda_margin_trait = no
 				}
 				custom_tooltip = spt_policy_intensive_firearms_warning_tt
 			}
 			$ACTION$_character_modifier = spt_policy_intensive_firearms_modifier
 		}
-		flag:flag_spt_dragon_corps_firearms = {
-			custom_tooltip = spt_policy_dragon_corps_effect_tt
+		flag:flag_spt_policy_dragon_corps = {
 			if = {
 				limit = {
-					#spt_has_oda_margin_trait = no
+					root = {
+						NOT = { has_trait = date_margin }
+					}
+					exists = cp:councillor_steward
+					cp:councillor_steward = {
+						has_trait = date_margin
+					}
+				}
+				cp:councillor_steward = {
+					spt_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					spt_has_date_margin_trait = no
 				}
 				custom_tooltip = spt_policy_dragon_corps_warning_tt
 			}
+			custom_tooltip = spt_policy_dragon_corps_effect_tt
 			#$ACTION$_character_modifier = spt_policy_dragon_corps__modifier
 		}
 		flag:flag_spt_policy_chivalry_education = {
+			if = {
+				limit = {
+					root = {
+						NOT = { has_trait = shimazu_margin }
+					}
+					exists = cp:councillor_steward
+					cp:councillor_steward = {
+						has_trait = shimazu_margin
+					}
+				}
+				cp:councillor_steward = {
+					spt_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
 			if = {
 				limit = {
 					spt_has_shimazu_margin_trait = no
@@ -424,6 +528,20 @@ spt_policy_management_effect = {
 			$ACTION$_character_modifier = spt_policy_chivalry_education_modifier
 		}
 		flag:flag_spt_policy_expeditionary_support = {
+			if = {
+				limit = {
+					root = {
+						NOT = { has_trait = uesugi_margin }
+					}
+					exists = cp:councillor_steward
+					cp:councillor_steward = {
+						has_trait = uesugi_margin
+					}
+				}
+				cp:councillor_steward = {
+					spt_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
 			if = {
 				limit = {
 					spt_has_uesugi_margin_trait = no

@@ -7,6 +7,7 @@ SPT_policy_is_loading_text:0 "政策加载中"
 SPT_policy_released_cd:0 "你已经颁布了这个国策"
 SPT_contraditory_policy_released_cd:1 "你颁布过互相冲突的国策"
 SPT_kkt_policy_not_released: "你还没有颁布这个国策"
+SPT_policy_is_not_unlock_cd:0 "你不满足这个国策的解锁条件"
 
 SPT_policy_need_more_points:0 "需要更多政策点"
 SPT_policy_released_recently:0 "你颁布这个国策的时间未满五年"
@@ -53,6 +54,15 @@ flag_spt_policy_foster_system_name:0 "#V 寄亲寄子制#!"
 spt_policy_foster_system_modifier:0 "寄亲寄子制"
 spt_policy_foster_system_modifier_desc:0 "此人与封臣缔结了形式上的血缘关系。"
 
+flag_spt_policy_improve_militia_name:0 "#V 兵役强化#!"
+spt_policy_improve_militia_modifier:0 "兵役强化"
+spt_policy_improve_militia_modifier_desc:0 "此人加重了领地的兵役。"
+
+flag_spt_policy_castle_construction_name:0 "#V 城郭基建#!"
+spt_policy_castle_construction_modifier:0 "城郭基建"
+spt_policy_castle_construction_modifier_desc:0 "此人注重城池的基础建设。"
+
+
 ################
 ### 中道政策 ###
 ################
@@ -64,10 +74,6 @@ spt_policy_direct_daimyo_rule_modifier_desc:0 "此人躬亲于政。"
 flag_spt_policy_improve_labor_name:0 "#V 夫役强化#!"
 spt_policy_improve_labor_modifier:0 "夫役强化"
 spt_policy_improve_labor_modifier_desc:0 "此人额外征召了领地的民夫。"
-
-flag_spt_policy_improve_militia_name:0 "#V 兵役强化#!"
-spt_policy_improve_militia_modifier:0 "兵役强化"
-spt_policy_improve_militia_modifier_desc:0 "此人加重了领地的兵役。"
 
 flag_spt_policy_deploy_draftee_name:0 "#V 军役众配备#!"
 spt_policy_deploy_draftee_modifier:0 "军役众配备"

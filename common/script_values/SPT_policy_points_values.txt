@@ -9,9 +9,6 @@
 		flag:flag_spt_policy_canal_improvements = {
 			add = 20
 		}
-		flag:flag_spt_policy_buddhism_sanction = {
-			add = 20
-		}
 		flag:flag_spt_policy_council_system = {
 			add = 20
 		}
@@ -19,7 +16,10 @@
 			add = 20
 		}
 		flag:flag_spt_policy_foster_system = {
-			add = 20
+			add = 15
+		}
+		flag:flag_spt_policy_buddhism_sanction = {
+			add = 10
 		}
 		# 中道
 		flag:flag_spt_policy_direct_daimyo_rule = {

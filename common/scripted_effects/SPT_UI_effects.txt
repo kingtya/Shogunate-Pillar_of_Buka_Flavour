@@ -24,6 +24,9 @@ SPT_kkt_set_cost_to_character = {
 		flag:flag_spt_policy_foster_system = {
 			add_prestige = -50
 		}
+		flag:flag_spt_policy_improve_militia = {
+			add_prestige = -50
+		}
 		# 中道
 		flag:flag_spt_policy_direct_daimyo_rule = {
 			add_prestige = -50
@@ -32,9 +35,6 @@ SPT_kkt_set_cost_to_character = {
 			add_prestige = -50
 		}
 		flag:flag_spt_policy_deploy_draftee = {
-			add_prestige = -50
-		}
-		flag:flag_spt_policy_improve_militia = {
 			add_prestige = -50
 		}
 		flag:flag_spt_policy_post_horse_system = {

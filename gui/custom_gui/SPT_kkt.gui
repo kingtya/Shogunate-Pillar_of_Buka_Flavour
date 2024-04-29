@@ -327,6 +327,9 @@
                             using = Background_Area
                         }
                         blockoverride "scrollbox_content" {
+                            hbox = {
+                                margin = { 0 15}
+                            }
                             portrait_torso = {
                                 datacontext = "[GetPlayer.MakeScope.Char]"
                             }

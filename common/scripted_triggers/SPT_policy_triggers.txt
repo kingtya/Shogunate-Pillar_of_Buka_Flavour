@@ -64,6 +64,60 @@
 				always = no
 			}
 		}
+		custom_description = {
+			text = SPT_policy_is_not_unlock_cd
+			trigger_if = {
+				limit = {
+					$FLAG$ = flag:flag_spt_policy_laws_of_imagawa
+				}
+				spt_has_imagawa_margin_trait = yes
+			}
+			trigger_if = {
+				limit = {
+					$FLAG$ = flag:flag_spt_policy_laws_of_takeda
+				}
+				spt_has_takeda_margin_trait = yes
+			}
+			trigger_if = {
+				limit = {
+					$FLAG$ = flag:flag_spt_policy_five_admonitions
+				}
+				spt_has_hojo_margin_trait = yes
+			}
+			trigger_if = {
+				limit = {
+					$FLAG$ = flag:flag_spt_policy_guardian_forces
+				}
+				spt_has_tokugawa_margin_trait = yes
+			}
+			trigger_if = {
+				limit = {
+					$FLAG$ = flag:flag_spt_policy_intensive_firearms
+				}
+				spt_has_oda_margin_trait = yes
+			}
+			trigger_if = {
+				limit = {
+					$FLAG$ = flag:flag_spt_policy_dragon_corps
+				}
+				spt_has_date_margin_trait = yes
+			}
+			trigger_if = {
+				limit = {
+					$FLAG$ = flag:flag_spt_policy_chivalry_education
+				}
+				spt_has_shimazu_margin_trait = yes
+			}
+			trigger_if = {
+				limit = {
+					$FLAG$ = flag:flag_spt_policy_expeditionary_support
+				}
+				spt_has_uesugi_margin_trait = yes
+			}
+			trigger_else = {
+				always = yes
+			}
+		}
 	}
 	trigger_else = {
 		always = no

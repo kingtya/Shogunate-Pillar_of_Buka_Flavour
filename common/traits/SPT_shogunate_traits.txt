@@ -146,6 +146,36 @@ tokugawa_margin = { # 德川传
 	}
 }
 
+date_margin = { # 伊达传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	legitimacy_gain_mult = 0.2
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_date_margin
+
+	icon = {
+		desc = date_margin.dds
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_date_margin_desc
+			}
+			desc = trait_date_margin_desc
+		}
+	}
+}
+
 uesugi_margin = { # 上杉传
 	category = fame
 	shown_in_ruler_designer = no
@@ -180,7 +210,7 @@ shimazu_margin = { # 岛津传
 	category = fame
 	shown_in_ruler_designer = no
 	
-	legitimacy_gain_mult = 0.02
+	legitimacy_gain_mult = 0.2
 	same_opinion = 5
 
 	inherit_chance = 100

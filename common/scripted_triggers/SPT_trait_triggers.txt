@@ -24,18 +24,6 @@ spt_has_takeda_margin_trait = {
 	}
 }
 
-spt_has_oda_margin_trait = {
-	OR = {
-		has_trait = oda_margin
-		AND = {
-			exists = cp:councillor_steward
-			cp:councillor_steward = {
-				has_trait = oda_margin
-				martial >= high_skill_rating
-			}
-		}
-	}
-}
 
 spt_has_hojo_margin_trait = {
 	OR = {
@@ -50,6 +38,20 @@ spt_has_hojo_margin_trait = {
 	}
 }
 
+
+spt_has_oda_margin_trait = {
+	OR = {
+		has_trait = oda_margin
+		AND = {
+			exists = cp:councillor_steward
+			cp:councillor_steward = {
+				has_trait = oda_margin
+				martial >= high_skill_rating
+			}
+		}
+	}
+}
+
 spt_has_tokugawa_margin_trait = {
 	OR = {
 		has_trait = tokugawa_margin
@@ -57,6 +59,19 @@ spt_has_tokugawa_margin_trait = {
 			exists = cp:councillor_steward
 			cp:councillor_steward = {
 				has_trait = tokugawa_margin
+				martial >= high_skill_rating
+			}
+		}
+	}
+}
+
+spt_has_date_margin_trait = {
+	OR = {
+		has_trait = date_margin
+		AND = {
+			exists = cp:councillor_steward
+			cp:councillor_steward = {
+				has_trait = date_margin
 				martial >= high_skill_rating
 			}
 		}

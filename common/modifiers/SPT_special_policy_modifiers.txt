@@ -52,6 +52,7 @@ spt_policy_chivalry_education_modifier = {
 	icon = martial_positive
 	maa_damage_add = 15
 	maa_toughness_add = 10
+	attacker_advantage = 5
 }
 
 spt_policy_expeditionary_support_modifier = {

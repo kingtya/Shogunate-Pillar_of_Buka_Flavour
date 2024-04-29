@@ -1,0 +1,81 @@
+﻿namespace = spt_character_initialization
+
+spt_character_initialization.0001 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		every_living_character = {
+			if = {
+				limit = {
+					dynasty = dynasty:10000230
+					is_male = yes
+				}
+				add_trait = imagawa_margin
+			}
+			else_if = {
+				limit = {
+					dynasty = dynasty:10000280
+					is_male = yes
+				}
+				add_trait = oda_margin
+			}
+			else_if = {
+				limit = {
+					dynasty = dynasty:10000200
+					is_male = yes
+				}
+				add_trait = takeda_margin
+			}
+			else_if = {
+				limit = {
+					dynasty = dynasty:10000160
+					is_male = yes
+				}
+				add_trait = hojo_margin
+			}
+			else_if = {
+				limit = {
+					dynasty = dynasty:10000240
+					is_male = yes
+				}
+				add_trait = tokugawa_margin
+			}
+			else_if = {
+				limit = {
+					dynasty = dynasty:10000010
+					is_male = yes
+				}
+				add_trait = date_margin
+			}
+			else_if = {
+				limit = {
+					dynasty = dynasty:10000600
+					is_male = yes
+				}
+				add_trait = shimazu_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						AND = {
+							character:10029120 = {
+								dynasty = dynasty:10000100
+							}
+							dynasty = dynasty:10000100
+						}
+						dynasty = dynasty:10000320
+					}
+					is_male = yes
+				}
+				add_trait = uesugi_margin
+			}
+			#if = {
+			#	limit = {
+			#		this = character:10029120
+			#	}
+			#	add_trait = oda_nobunaga
+			#}
+		}
+	}
+}

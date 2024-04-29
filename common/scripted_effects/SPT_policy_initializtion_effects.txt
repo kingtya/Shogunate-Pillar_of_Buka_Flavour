@@ -14,6 +14,10 @@ SPT_init_conservative_poilcy_flag_list = {
 		target = flag:flag_spt_policy_official_purveyor
 	}
 	add_to_variable_list = {
+		name = SPT_neutral_policy_flags
+		target = flag:flag_spt_policy_improve_militia
+	}
+	add_to_variable_list = {
 		name = SPT_conservative_policy_flags
 		target = flag:flag_spt_policy_council_system
 	}
@@ -23,12 +27,13 @@ SPT_init_conservative_poilcy_flag_list = {
 	}
 	add_to_variable_list = {
 		name = SPT_conservative_policy_flags
-		target = flag:flag_spt_policy_buddhism_sanction
+		target = flag:flag_spt_policy_foster_system
 	}
 	add_to_variable_list = {
 		name = SPT_conservative_policy_flags
-		target = flag:flag_spt_policy_foster_system
+		target = flag:flag_spt_policy_buddhism_sanction
 	}
+	
 
 }
 ## 中道
@@ -44,10 +49,6 @@ SPT_init_neutral_poilcy_flag_list = {
 	add_to_variable_list = {
 		name = SPT_neutral_policy_flags
 		target = flag:flag_spt_policy_deploy_draftee
-	}
-	add_to_variable_list = {
-		name = SPT_neutral_policy_flags
-		target = flag:flag_spt_policy_improve_militia
 	}
 	add_to_variable_list = {
 		name = SPT_neutral_policy_flags
@@ -306,5 +307,13 @@ SPT_parochial_vassal_towards_policy_opinion_effect = {
 				}
 			}
 		}
+	}
+}
+
+spt_block_firing_councillor_effect = {
+	set_variable = {
+		name = block_fire_councillor
+		value = $COURT_OWNER$
+		years = 10
 	}
 }

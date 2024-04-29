@@ -22,3 +22,8 @@ SPT_contraditory_policy_released_cd = {
 	global = SPT_contraditory_policy_released_cd
 	global_not = SPT_contraditory_policy_released_cd
 }
+
+SPT_policy_is_not_unlock_cd = {
+	global = SPT_policy_is_not_unlock_cd
+	global_not = SPT_policy_is_not_unlock_cd
+}
