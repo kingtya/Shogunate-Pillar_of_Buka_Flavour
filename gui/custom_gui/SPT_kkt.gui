@@ -522,6 +522,8 @@
             position = { 90 -3 }
         }
 
+        tooltip = "[Localize(Concatenate(Scope.GetFlagName, '_desc'))]"
+
         down = "[EqualTo_string(Scope.GetFlagName, GetVariableSystem.Get('selected_flag'))]"
         onclick = "[GetVariableSystem.Set('selected_flag', Scope.GetFlagName)]"
         onclick = "[GetScriptedGui('SPT_kkt_count_points_sg').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"

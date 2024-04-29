@@ -132,10 +132,10 @@ SPT_init_special_poilcy_flag_list = {
 ### 政策复位 ###
 ################
 SPT_clear_flag_list = {
-	clear_variable_list = SPT_conservative_poliy_flags
+	clear_variable_list = SPT_conservative_policy_flags
 	clear_variable_list = SPT_neutral_policy_flags
-	clear_variable_list = SPT_progressive_poliy_flags
-	clear_variable_list = SPT_special_poilcy_flags
+	clear_variable_list = SPT_progressive_policy_flags
+	clear_variable_list = SPT_special_policy_flags
 }
 
 #################
