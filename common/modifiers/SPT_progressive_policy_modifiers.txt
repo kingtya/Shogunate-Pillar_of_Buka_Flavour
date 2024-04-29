@@ -29,7 +29,7 @@ spt_policy_supply_transporter_modifier = {
 	icon = horse_positive
 	movement_speed = 0.2
 	supply_duration = 0.25
-	plain_supply_limit_mult = 0.5
+	plains_supply_limit_mult = 0.5
 }
 
 spt_policy_easy_commerce_modifier = {
