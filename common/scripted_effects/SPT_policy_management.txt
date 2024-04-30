@@ -502,7 +502,6 @@ spt_policy_management_effect = {
 				custom_tooltip = spt_policy_dragon_corps_warning_tt
 			}
 			custom_tooltip = spt_policy_dragon_corps_effect_tt
-			#$ACTION$_character_modifier = spt_policy_dragon_corps__modifier
 		}
 		flag:flag_spt_policy_chivalry_education = {
 			if = {

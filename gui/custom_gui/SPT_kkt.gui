@@ -2,9 +2,9 @@
 
     type SPT_kkt_open_button = widget {
         name = "SPT_kkt_open_button"  # 窗口名，该名称会被用于初始创建窗口 一般与类型名相同即可
-        visible = "[And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode))]" #一些基本的可见性判断字面意思
+        visible = "[And(And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)), Not(IsGameViewOpen('struggle')))]"
         parentanchor = top|right # 父锚点，即锚点在父窗口的位置
-        position = { 0 500 } # 位置
+        position = { 0 535 } # 位置
         layer = hud_layer
 		size = { 50 0 }
         allow_outside = yes
@@ -16,33 +16,29 @@
 			filter_mouse = all
 			visible = "[Not(IsGameViewOpen('barbershop'))]"
 			margin = { 5 10 }
-
-            Background = {
-				visible = no
-				texture = "gfx/interface/skinned/hud_maintab_bg_middle.dds"
-				spriteType = CorneredTiled
-				texture_density =  2
-				margin = { 0 -50 }
-			}
-
-            Background = {
-				visible = no
-				spriteType = CorneredStretched
-				spriteborder_top = 100
-				parentanchor = top|right
-				texture_density = 2
-				size = { 50 100 }
-				texture = "gfx/interface/skinned/hud_maintab_bg_top.dds"
-			}
-            
+        
             Background = {
 				visible = "[And(Not(IsRightWindowOpen) , Not(IsGameViewOpen('barbershop')) )]"
 				spriteType = CorneredStretched
 				spriteborder_bottom = 100
 				parentanchor = top|right
 				texture_density = 2
-				size = { 50 150 }
+				size = { 50 100 }
 				texture = "gfx/interface/skinned/hud_maintab_bg_bottom.dds"
+			}
+
+            widget = {
+				layoutpolicy_horizontal = expanding
+				size = { 0 15 }
+
+				icon = {
+					visible = "[And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode))]"
+					parentanchor = right|vcenter
+					texture = "gfx/interface/skinned/hud_spike_big.dds"
+					size = { 25 15 }
+
+					using = Animation_ShowHide_Standard
+				}
 			}
 
             vbox = {
@@ -58,15 +54,6 @@
                     duration = 0.6
                     alpha = 0
                     using = Animation_Curve_Default
-                }
-
-                widget_hud_main_tab = {
-                    name = "SPT_tab_placeholder"
-
-                    blockoverride "maintab_button"
-                    {   
-                        visible = no
-                    }
                 }
 
                 widget_hud_main_tab = {

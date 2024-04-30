@@ -8,6 +8,13 @@ spt_character_initialization.0001 = {
 		every_living_character = {
 			if = {
 				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10023010 # 义元之父氏亲
+						}
+						this = character:10023010
+					}
 					dynasty = dynasty:10000230
 					is_male = yes
 				}
@@ -15,6 +22,15 @@ spt_character_initialization.0001 = {
 			}
 			else_if = {
 				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10029120 # 信长
+						}
+						this = character:10029120
+						this = character:10029100 # 信秀
+						this = character:10029118 # 信定
+					}
 					dynasty = dynasty:10000280
 					is_male = yes
 				}
@@ -22,6 +38,14 @@ spt_character_initialization.0001 = {
 			}
 			else_if = {
 				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10020010 # 信玄
+						}
+						this = character:10020010
+						this = character:10020000 # 信虎
+					}
 					dynasty = dynasty:10000200
 					is_male = yes
 				}
@@ -29,6 +53,14 @@ spt_character_initialization.0001 = {
 			}
 			else_if = {
 				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10016000 # 氏纲
+						}
+						this = character:10016000 
+						this = character:10016001 # 早云
+					}
 					dynasty = dynasty:10000160
 					is_male = yes
 				}
@@ -36,6 +68,15 @@ spt_character_initialization.0001 = {
 			}
 			else_if = {
 				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10024006 # 家康
+						}
+						this = character:10024006
+						this = character:10024002 # 广忠
+						this = character:10024000 # 清康
+					}
 					dynasty = dynasty:10000240
 					is_male = yes
 				}
@@ -43,6 +84,14 @@ spt_character_initialization.0001 = {
 			}
 			else_if = {
 				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10001035 # 政宗
+						}
+						this = character:10001035 # 政宗
+						this = character:10001021 # 辉宗
+					}
 					dynasty = dynasty:10000010
 					is_male = yes
 				}
@@ -58,8 +107,16 @@ spt_character_initialization.0001 = {
 			else_if = {
 				limit = {
 					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10032011 # 谦信
+						}
+						this = character:10032011 # 谦信
+						this = character:10032000 # 为景
+					}
+					OR = {
 						AND = {
-							character:10029120 = {
+							character:10032011 = {
 								dynasty = dynasty:10000100
 							}
 							dynasty = dynasty:10000100

@@ -44,15 +44,15 @@ spt_policy_guardian_forces_modifier = {
 
 spt_policy_intensive_firearms_modifier = {
 	icon = martial_positive
-	archers_damage_mult = 0.2
+	archers_damage_mult = 0.3
 	archers_toughness_mult = 0.1
 }
 
 spt_policy_chivalry_education_modifier = {
 	icon = martial_positive
-	maa_damage_add = 15
-	maa_toughness_add = 10
-	attacker_advantage = 5
+	maa_damage_add = 40
+	maa_toughness_add = 15
+	attacker_advantage = 10
 }
 
 spt_policy_expeditionary_support_modifier = {

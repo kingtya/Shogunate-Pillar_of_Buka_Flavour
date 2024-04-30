@@ -23,7 +23,7 @@
 		}
 		# 中道
 		flag:flag_spt_policy_direct_daimyo_rule = {
-			add = 40
+			add = 30
 		}
 		flag:flag_spt_policy_improve_labor = {
 			add = 20
@@ -57,10 +57,10 @@
 			add = 25
 		}
 		flag:flag_spt_policy_meritocracy = {
-			add = 25
+			add = 20
 		}
 		flag:flag_spt_policy_supply_transporter = {
-			add = 25
+			add = 20
 		}
 	}
 }

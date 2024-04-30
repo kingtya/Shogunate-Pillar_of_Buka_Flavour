@@ -12,8 +12,8 @@ SPT_kkt_set_cost_to_character = {
 		flag:flag_spt_policy_canal_improvements = {
 			remove_short_term_gold = 50
 		}
-		flag:flag_spt_policy_buddhism_sanction = {
-			add_piety = -50
+		flag:flag_spt_policy_improve_militia = {
+			add_prestige = -50
 		}
 		flag:flag_spt_policy_council_system = {
 			add_prestige = -50
@@ -22,10 +22,10 @@ SPT_kkt_set_cost_to_character = {
 			remove_short_term_gold = 50
 		}
 		flag:flag_spt_policy_foster_system = {
-			add_prestige = -50
+			add_prestige = -25
 		}
-		flag:flag_spt_policy_improve_militia = {
-			add_prestige = -50
+		flag:flag_spt_policy_buddhism_sanction = {
+			add_piety = -25
 		}
 		# 中道
 		flag:flag_spt_policy_direct_daimyo_rule = {
@@ -54,16 +54,16 @@ SPT_kkt_set_cost_to_character = {
 			remove_short_term_gold = 50
 		}
 		flag:flag_spt_policy_improve_firearms = {
-			add_prestige = -50
+			remove_short_term_gold = 50
 		}
 		flag:flag_spt_policy_western_sanction = {
 			add_piety = -50
 		}
 		flag:flag_spt_policy_meritocracy = {
-			add_prestige = -50
+			add_prestige = -25
 		}
 		flag:flag_spt_policy_supply_transporter = {
-			add_prestige = -50
+			add_prestige = -25
 		}
 		# 御用
 		flag:flag_spt_policy_laws_of_imagawa = {
