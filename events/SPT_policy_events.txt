@@ -71,7 +71,7 @@ spt_policy_events.0003 = {
 		scope:county = {
 			add_county_modifier = {
 				modifier = spt_policy_canal_improvements_county_modifier
-				years = 10
+				years = 5
 			}
 		}
 	}
@@ -88,7 +88,7 @@ spt_policy_events.0004 = {
 		scope:county = {
 			add_county_modifier = {
 				modifier = spt_policy_laws_of_imagawa_county_modifier
-				years = 10
+				years = 5
 			}
 		}
 	}
@@ -105,7 +105,7 @@ spt_policy_events.0005 = {
 		scope:county = {
 			add_county_modifier = {
 				modifier = spt_policy_laws_of_takeda_county_modifier
-				years = 10
+				years = 5
 			}
 		}
 	}
@@ -122,7 +122,7 @@ spt_policy_events.0006 = {
 		scope:county = {
 			add_county_modifier = {
 				modifier = spt_policy_five_admonitions_county_modifier
-				years = 10
+				years = 5
 			}
 		}
 	}

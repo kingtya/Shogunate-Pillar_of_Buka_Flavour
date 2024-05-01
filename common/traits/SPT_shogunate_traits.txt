@@ -236,6 +236,76 @@ shimazu_margin = { # 岛津传
 	}
 }
 
+mori_margin = { # 岛津传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	legitimacy_gain_mult = 0.2
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_mori_margin
+
+	icon = {
+		desc = mori_margin.dds
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_mori_margin_desc
+			}
+			desc = trait_mori_margin_desc
+		}
+	}
+}
+
+mori_margin = { # 毛利传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	legitimacy_gain_mult = 0.1
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_mori_margin
+
+	icon = {
+		desc = mori_margin.dds
+	}
+
+	desc = trait_mori_margin_desc
+}
+
+chosokabe_margin = { # 长宗我部传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	legitimacy_gain_mult = 0.2
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_chosokabe_margin
+
+	icon = {
+		desc = chosokabe_margin.dds
+	}
+
+	desc = trait_chosokabe_margin_desc
+}
+
 oda_nobunaga = {
 	category = fame
 	shown_in_ruler_designer = no

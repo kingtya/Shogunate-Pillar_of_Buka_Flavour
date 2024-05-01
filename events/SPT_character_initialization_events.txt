@@ -127,6 +127,27 @@ spt_character_initialization.0001 = {
 				}
 				add_trait = uesugi_margin
 			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10056004
+						}
+						this = character:10056004
+					}
+					dynasty = dynasty:10000560
+					is_male = yes
+				}
+				add_trait = mori_margin
+			}
+			else_if = {
+				limit = {
+					dynasty = dynasty:10000582
+					is_male = yes
+				}
+				add_trait = chosokabe_margin
+			}
 			#if = {
 			#	limit = {
 			#		this = character:10029120

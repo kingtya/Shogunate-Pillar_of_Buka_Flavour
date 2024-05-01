@@ -5,7 +5,7 @@
 			exists = cp:councillor_steward
 			cp:councillor_steward = {
 				has_trait = imagawa_margin
-				stewardship >= high_skill_rating
+				stewardship >= decent_skill_rating
 			}
 		}
 	}
@@ -18,7 +18,7 @@ spt_has_takeda_margin_trait = {
 			exists = cp:councillor_steward
 			cp:councillor_steward = {
 				has_trait = takeda_margin
-				stewardship >= high_skill_rating
+				stewardship >= decent_skill_rating
 			}
 		}
 	}
@@ -72,7 +72,7 @@ spt_has_date_margin_trait = {
 			exists = cp:councillor_steward
 			cp:councillor_steward = {
 				has_trait = date_margin
-				martial >= high_skill_rating
+				martial >= decent_skill_rating
 			}
 		}
 	}
@@ -98,7 +98,33 @@ spt_has_shimazu_margin_trait = {
 			exists = cp:councillor_steward
 			cp:councillor_steward = {
 				has_trait = shimazu_margin
-				martial >= high_skill_rating
+				prowess >= extremely_high_skill_rating
+			}
+		}
+	}
+}
+
+spt_has_mori_margin_trait = {
+	OR = {
+		has_trait = mori_margin
+		AND = {
+			exists = cp:councillor_steward
+			cp:councillor_steward = {
+				has_trait = mori_margin
+				stewardship >= decent_skill_rating
+			}
+		}
+	}
+}
+
+spt_has_chosokabe_margin_trait = {
+	OR = {
+		has_trait = chosokabe_margin
+		AND = {
+			exists = cp:councillor_steward
+			cp:councillor_steward = {
+				has_trait = chosokabe_margin
+				martial >= decent_skill_rating
 			}
 		}
 	}

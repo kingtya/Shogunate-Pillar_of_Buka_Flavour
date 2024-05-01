@@ -213,12 +213,12 @@ spt_policy_management_effect = {
 					if = {
 						limit = {
 							OR = {
-								diplomacy >= high_skill_rating
-								stewardship >= high_skill_rating
-								martial >= high_skill_rating
-								intrigue >= high_skill_rating 
-								learning >= high_skill_rating 
-								prowess >= high_skill_rating
+								diplomacy >= decent_skill_rating
+								stewardship >= decent_skill_rating
+								martial >= decent_skill_rating
+								intrigue >= decent_skill_rating 
+								learning >= decent_skill_rating 
+								prowess >= decent_skill_rating
 							}
 						}
 						add_character_modifier = spt_policy_meritocracy_being_encouraged_modifier
@@ -478,6 +478,12 @@ spt_policy_management_effect = {
 				}
 				custom_tooltip = spt_policy_intensive_firearms_warning_tt
 			}
+			if = {
+				limit = {
+					spt_culture_has_innovation_advanced_bowmaking = no
+				}
+				custom_tooltip = spt_policy_has_no_innovation_advanced_bowmaking
+			}
 			$ACTION$_character_modifier = spt_policy_intensive_firearms_modifier
 		}
 		flag:flag_spt_policy_dragon_corps = {
@@ -500,6 +506,12 @@ spt_policy_management_effect = {
 					spt_has_date_margin_trait = no
 				}
 				custom_tooltip = spt_policy_dragon_corps_warning_tt
+			}
+			if = {
+				limit = {
+					spt_culture_has_innovation_advanced_bowmaking = no
+				}
+				custom_tooltip = spt_policy_has_no_innovation_advanced_bowmaking
 			}
 			custom_tooltip = spt_policy_dragon_corps_effect_tt
 		}
@@ -548,6 +560,52 @@ spt_policy_management_effect = {
 				custom_tooltip = spt_policy_expeditionary_support_warning_tt
 			}
 			$ACTION$_character_modifier = spt_policy_expeditionary_support_modifier
+		}
+		flag:flag_spt_policy_million_minds_motto = {
+			if = {
+				limit = {
+					root = {
+						NOT = { has_trait = mori_margin }
+					}
+					exists = cp:councillor_steward
+					cp:councillor_steward = {
+						has_trait = mori_margin
+					}
+				}
+				cp:councillor_steward = {
+					spt_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					spt_has_mori_margin_trait = no
+				}
+				custom_tooltip = spt_policy_million_minds_motto_warning_tt
+			}
+			$ACTION$_character_modifier = spt_policy_million_minds_motto_modifier
+		}
+		flag:flag_spt_policy_armoured_militia = {
+			if = {
+				limit = {
+					root = {
+						NOT = { has_trait = chosokabe_margin }
+					}
+					exists = cp:councillor_steward
+					cp:councillor_steward = {
+						has_trait = chosokabe_margin
+					}
+				}
+				cp:councillor_steward = {
+					spt_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					spt_has_chosokabe_margin_trait = no
+				}
+				custom_tooltip = spt_policy_armoured_militia_warning_tt
+			}
+			$ACTION$_character_modifier = spt_policy_armoured_militia_modifier
 		}
 	}
 }

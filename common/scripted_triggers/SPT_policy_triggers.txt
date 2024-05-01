@@ -94,12 +94,14 @@
 				limit = {
 					$FLAG$ = flag:flag_spt_policy_intensive_firearms
 				}
+				spt_culture_has_innovation_advanced_bowmaking = yes
 				spt_has_oda_margin_trait = yes
 			}
 			trigger_if = {
 				limit = {
 					$FLAG$ = flag:flag_spt_policy_dragon_corps
 				}
+				spt_culture_has_innovation_advanced_bowmaking = yes
 				spt_has_date_margin_trait = yes
 			}
 			trigger_if = {
@@ -114,6 +116,18 @@
 				}
 				spt_has_uesugi_margin_trait = yes
 			}
+			trigger_if = {
+				limit = {
+					$FLAG$ = flag:flag_spt_policy_million_minds_motto
+				}
+				spt_has_mori_margin_trait = yes
+			}
+			trigger_if = {
+				limit = {
+					$FLAG$ = flag:flag_spt_policy_armoured_militia
+				}
+				spt_has_chosokabe_margin_trait = yes
+			}
 			trigger_else = {
 				always = yes
 			}
@@ -123,6 +137,12 @@
 		always = no
 	}
 	
+}
+
+spt_culture_has_innovation_advanced_bowmaking = {
+	culture = {
+		has_innovation = innovation_advanced_bowmaking
+	}
 }
 
 SPT_kkt_can_revoke_pocliy = {

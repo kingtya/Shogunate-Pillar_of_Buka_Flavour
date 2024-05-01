@@ -376,7 +376,7 @@
                             scrollbox = {
                                 layoutpolicy_horizontal = preferred
                                 layoutpolicy_vertical = expanding
-                                size = { 0 195 }
+                                size = { 0 165 }
                                 blockoverride "scrollbox_content" {
                                     hbox = {
                                         margin = { 0 -6 }
@@ -419,7 +419,7 @@
                             scrollbox = {
                                 layoutpolicy_horizontal = preferred
                                 layoutpolicy_vertical = expanding
-                                size = { 0 50 }
+                                size = { 0 67 }
                                 blockoverride "scrollbox_content" {
                                     hbox = {
                                         margin = { 0 -6 }

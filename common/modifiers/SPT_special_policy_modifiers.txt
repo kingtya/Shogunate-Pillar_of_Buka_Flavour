@@ -1,11 +1,11 @@
 ﻿spt_policy_laws_of_imagawa_modifier = {
 	icon = learning_positive
-	cultural_head_fascination_mult = 0.1
+	cultural_head_fascination_mult = 0.3
 	monthly_prestige = 1.0
 }
 spt_policy_laws_of_imagawa_county_modifier = {
 	icon = county_modifier_control_positive
-	monthly_county_control_growth_add = 0.1
+	monthly_county_control_growth_add = 0.3
 	tax_mult = 0.1
 }
 
@@ -53,17 +53,34 @@ spt_policy_intensive_firearms_modifier = {
 
 spt_policy_chivalry_education_modifier = {
 	icon = martial_positive
-	maa_damage_add = 40
+	maa_damage_add = 30
 	maa_toughness_add = 15
 	attacker_advantage = 10
 }
 
 spt_policy_expeditionary_support_modifier = {
 	icon = martial_positive
-	skirmishers_damage_add = 20
-	skirmishers_toughness_add = 10
+	mercenary_hire_cost_mult = -0.25
+	retreat_losses = -0.2
 	men_at_arms_maintenance = -0.2
 	movement_speed = 0.1
 	hostile_county_attrition = -0.75
 	supply_duration = 0.75
+}
+
+spt_policy_million_minds_motto_modifier = {
+	icon = letter_positive
+	direct_vassal_opinion = 15
+	vassal_tax_contribution_mult = 0.2
+	vassal_levy_contribution_mult = 0.2
+}
+
+spt_policy_armoured_militia_modifier = {
+	icon = martial_positive
+	skirmishers_damage_add = 18
+	skirmishers_toughness_add = 12
+	levy_reinforcement_rate = 0.4
+	levy_pursuit = 10
+	levy_screen = 15
+	levy_maintenance = -0.7
 }

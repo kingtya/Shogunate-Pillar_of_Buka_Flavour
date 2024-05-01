@@ -31,6 +31,14 @@ trait_date_margin:0 "伊达传"
 trait_date_margin_desc:0 "伊达氏发源于陆奥国伊达郡，乃藤原氏山阴流一脉。自镰仓时代起到江户时代皆为东北地方举足轻重的大名。"
 TRAIT_FLAG_DESC_trait_date_margin:0 "解锁#E 编制龙骑兵政策#!\n如果满足要求，为领主解锁#E 编制龙骑兵政策#!"
 
+trait_mori_margin:0 "毛利传"
+trait_mori_margin_desc:0 "本姓大江氏。发源于镰仓时代的政所别当大江广元四子季光。安艺毛利氏本是当地小豪族，传至元就向东击败尼子氏，向西消灭篡夺大内氏的陶晴贤，一跃成为“西国的霸主”。"
+TRAIT_FLAG_DESC_trait_mori_margin:0 "解锁#E 百万一心之训政策#!\n如果满足要求，为领主解锁#E 百万一心之训政策#!"
+
+trait_chosokabe_margin:0 "长宗我部传"
+trait_chosokabe_margin_desc:0 "土佐国豪族，进入当地时期不明。曾于兼序时代遭入侵而灭亡，国亲在一条家的支持下复兴长宗我部氏。传至元亲时一统四国地区。"
+TRAIT_FLAG_DESC_trait_chosokabe_margin:0 "解锁#E 一领具足制政策#!\n如果满足要求，为领主解锁#E 一领具足制政策#!"
+
 # 上杉 毗沙门天信仰
 # 伊达 编制龙骑兵
 # 真田 六文钱誓言
