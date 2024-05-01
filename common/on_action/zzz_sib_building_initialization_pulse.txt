@@ -1,0 +1,6 @@
+﻿on_game_start = {
+	events = {
+		sib_building_initialization.0001
+		sib_culture_tradition_initialization.0001
+	}
+}

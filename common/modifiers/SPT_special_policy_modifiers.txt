@@ -1,6 +1,7 @@
 ﻿spt_policy_laws_of_imagawa_modifier = {
 	icon = learning_positive
-	cultural_head_fascination_mult = 0.05
+	cultural_head_fascination_mult = 0.1
+	monthly_prestige = 1.0
 }
 spt_policy_laws_of_imagawa_county_modifier = {
 	icon = county_modifier_control_positive
@@ -11,6 +12,8 @@ spt_policy_laws_of_imagawa_county_modifier = {
 spt_policy_laws_of_takeda_modifier = {
 	icon = learning_positive
 	cultural_head_fascination_mult = 0.05
+	light_cavalry_damage_mult = 0.25
+	heavy_cavalry_damage_mult = 0.25
 }
 spt_policy_laws_of_takeda_county_modifier = {
 	icon = county_modifier_control_positive
@@ -23,7 +26,7 @@ spt_policy_five_admonitions_modifier = {
 	monthly_prestige_gain_mult = 0.1
 	monthly_dynasty_prestige = 0.25
 	monthly_dynasty_prestige_mult = 0.05
-	tyranny_loss_mult = 0.25
+	tyranny_loss_mult = 0.5
 }
 
 spt_policy_five_admonitions_county_modifier = {

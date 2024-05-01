@@ -31,7 +31,7 @@ spt_policy_improve_cavalry_modifier:0 "骑马队强化"
 spt_policy_improve_cavalry_modifier_desc:0 "此人改进了骑马队军制。"
 
 flag_spt_policy_canal_improvements_name:0 "#V 灌溉整备#!"
-flag_spt_policy_canal_improvements_desc:0 "中世时代集中的灌溉农业为瘟疫的泛滥提供可能，很有必要探索合适的管理方式。"
+flag_spt_policy_canal_improvements_desc:0 "中世时代集中性的灌溉农业为瘟疫的泛滥提供可能，很有必要合理统筹乡民的田间劳作。"
 spt_policy_canal_improvements_modifier:0 "灌溉整备"
 spt_policy_canal_improvements_modifier_desc:0 "此人整备了领地内的农务。"
 spt_policy_canal_improvements_county_modifier:0 "灌溉整备"
@@ -94,7 +94,7 @@ spt_policy_post_horse_system_modifier:0 "传马制"
 spt_policy_post_horse_system_modifier_desc:0 "此人在领地内广设驿站。"
 
 flag_spt_policy_distant_diplomacy_name:0 "#V 远交近攻策#!"
-flag_spt_policy_distant_diplomacy_desc:0 "“远交近攻”是一种古老的外交策略，核心在于先攻击地理位置较近的敌人，同时与地理位置较远的国家建立友好关系。"
+flag_spt_policy_distant_diplomacy_desc:0 "一种古老的外交策略，核心在于先攻击地理位置较近的敌人，同时与地理位置较远的国家建立友好关系。"
 spt_policy_distant_diplomacy_modifier:0 "远交近攻策"
 spt_policy_distant_diplomacy_modifier_desc:0 "此人加强了外交的重要性。"
 
@@ -139,6 +139,6 @@ spt_policy_easy_commerce_modifier_desc:0 "此人免除座商特权和贸易税�
 spt_policy_easy_commerce_warning_tt:0 "@warning_icon!#X 你颁布的政策乐市乐座和这个政策冲突#!"
 
 flag_spt_policy_soidier_professionaliztion_name:0 "#V 兵农分离#!"
-flag_spt_policy_soidier_professionaliztion_desc:0 "织丰时代活跃在历史舞台上的军事制度。兵者，武士；农者，农民，明确两者之间身份和阶级的差别，同时建立起前者支配后者的社会制度。"
+flag_spt_policy_soidier_professionaliztion_desc:0 "战国大名为能拥有常备兵所实行的政策，可能启发于织田信长，实际奠基于太阁丰臣秀吉的检地与刀狩，最终完成于关白丰臣秀次的“人扫令”。此外，该政令也是为了确立武士阶级，使武士以外的人民无法拥有武力，巩固社会的秩序。"
 spt_policy_soidier_professionaliztion_modifier:0 "兵农分离"
 spt_policy_soidier_professionaliztion_modifier_desc:0 "此人将领民兵和常备兵分离，彻底化了常备军制。"

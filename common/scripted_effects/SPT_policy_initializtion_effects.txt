@@ -125,6 +125,14 @@ SPT_init_special_poilcy_flag_list = {
 		name = SPT_special_policy_flags
 		target = flag:flag_spt_policy_expeditionary_support
 	}
+	add_to_variable_list = {
+		name = SPT_special_policy_flags
+		target = flag:flag_spt_policy_million_minds_motto
+	}
+	add_to_variable_list = {
+		name = SPT_special_policy_flags
+		target = flag:flag_spt_policy_armoured_militia
+	}
 
 }
 

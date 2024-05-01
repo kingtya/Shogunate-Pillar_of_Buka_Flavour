@@ -1,0 +1,177 @@
+﻿namespace = sib_culture_tradition_initialization
+
+sib_culture_tradition_initialization.0001 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		every_culture_global = {
+			# Koshin
+			if = {
+				limit = {
+					this = culture:koshin
+				}
+				add_culture_tradition = tradition_mountaineers
+				add_culture_tradition = tradition_horse_breeder
+			}
+			# Oshu
+			else_if = {
+				limit = {
+					this = culture:northern_oshu
+				}
+				add_culture_tradition = tradition_horse_breeder
+				add_culture_tradition = tradition_hunters
+			}
+			else_if = {
+				limit = {
+					this = culture:southern_oshu
+				}
+				add_culture_tradition = tradition_hill_dwellers
+			}
+			# Kanto
+			else_if = {
+				limit = {
+					this = culture:western_kanto
+				}
+				add_culture_tradition = tradition_pastoralists
+				add_culture_tradition = tradition_polders
+			}
+			else_if = {
+				limit = {
+					this = culture:eastern_kanto
+				}
+				add_culture_tradition = tradition_pastoralists
+				add_culture_tradition = tradition_seafaring
+			}
+			else_if = {
+				limit = {
+					this = culture:northern_kanto
+				}
+				add_culture_tradition = tradition_highland_warriors
+			}
+			else_if = {
+				limit = {
+					this = culture:southern_kanto
+				}
+				add_culture_tradition = tradition_only_the_strong
+				add_culture_tradition = tradition_stand_and_fight
+			}
+			# Shikoku
+			else_if = {
+				limit = {
+					this = culture:shikoku
+				}
+				add_culture_tradition = tradition_practiced_pirates
+				add_culture_tradition = tradition_fishermen
+			}
+			# Western Chubu
+			else_if = {
+				limit = {
+					this = culture:western_chubu
+				}
+				add_culture_tradition = tradition_maritime_mercantilism
+				add_culture_tradition = tradition_artisans
+			}
+			# Kyushu
+			else_if = {
+				limit = {
+					this = culture:northern_kyushu
+				}
+				add_culture_tradition = tradition_maritime_mercantilism
+				add_culture_tradition = tradition_practiced_pirates
+			}
+			else_if = {
+				limit = {
+					this = culture:central_kyushu
+				}
+				add_culture_tradition = tradition_xenophilic
+				add_culture_tradition = tradition_esteemed_hospitality
+			}
+			else_if = {
+				limit = {
+					this = culture:southern_kyushu
+				}
+				add_culture_tradition = tradition_quarrelsome
+				add_culture_tradition = tradition_chivalry
+			}
+			# Kinai
+			else_if = {
+ 				limit = {
+					this = culture:northern_kinai
+				}
+				add_culture_tradition = tradition_forest_folk
+				add_culture_tradition = tradition_forbearing
+			}
+			else_if = {
+				limit = {
+					this = culture:central_kinai
+				}
+				add_culture_tradition = tradition_ruling_caste
+				add_culture_tradition = tradition_poetry
+			}
+			else_if = {
+				limit = {
+					this = culture:southern_kinai
+				}
+				add_culture_tradition = tradition_philosopher_culture
+				add_culture_tradition = tradition_poetry
+			}
+			# Tokai
+			else_if = {
+				limit = {
+					this = culture:tokai
+				}
+				add_culture_tradition = tradition_agrarian
+				add_culture_tradition = tradition_loyal_soldiers
+			}
+			# Western Chugoku
+			else_if = {
+				limit = {
+					this = culture:western_chugoku
+				}
+				add_culture_tradition = tradition_seafaring
+			}
+			else_if = {
+				limit = {
+					this = culture:sanyo
+				}
+				add_culture_tradition = tradition_metal_craftsmanship
+				add_culture_tradition = tradition_ancient_miners
+			}
+			else_if = {
+				limit = {
+					this = culture:sanin
+				}
+				add_culture_tradition = tradition_mystical_ancestors
+			}
+			else_if = {
+				limit = {
+					this = culture:western_hokuriku
+				}
+				add_culture_tradition = tradition_collective_lands
+				#add_culture_tradition = tradition_zealous_people
+			}
+			else_if = {
+				limit = {
+					this = culture:eastern_hokuriku
+				}
+				add_culture_tradition = tradition_adaptive_skirmishing
+				add_culture_tradition = tradition_hit_and_run
+			}
+			# Hokkaido
+			else_if = {
+				limit = {
+					this = culture:hokkaido_wajin
+				}
+				add_culture_tradition = tradition_culture_blending
+			}
+			# Dewa
+			else_if = {
+				limit = {
+					this = culture:dewa
+				}
+				add_culture_tradition = tradition_forest_fighters
+			}
+		}
+	}
+}

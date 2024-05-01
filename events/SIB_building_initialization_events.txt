@@ -1,0 +1,78 @@
+﻿namespace = sib_building_initialization
+
+sib_building_initialization.0001 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		every_province = {
+			#save_scope_as = under_check_province
+			if = {
+				limit = {
+					province_owner = {
+						government_has_flag = government_is_tribal
+					}
+					has_building_or_higher = tribe_01
+				}
+				random_list = {
+					10 = {
+						add_building = longhouses_01
+					}
+					10 = {
+						add_building = war_camps_01
+					}
+					10 = {
+						add_building = palisades_01
+					}
+					10 = {
+						add_building = market_villages_01
+					}
+				}
+			}
+			else = {
+				if = { # farmland
+					limit = {
+						terrain = farmlands
+					}
+					sib_set_up_farmlands_building_effects = yes
+				}
+				else_if = { # hills
+					limit = {
+						terrain = hills
+					}
+					sib_set_up_hills_building_effects = yes
+				}
+				else_if = { # mountains
+					limit = {
+						terrain = mountains
+					}
+					sib_set_up_mountains_building_effects = yes
+				}
+				else_if = { # forest
+					limit = {
+						terrain = forest
+					}
+					sib_set_up_forest_building_effects = yes
+				}
+				else_if = { # wetlands
+					limit = {
+						terrain = wetlands
+					}
+					sib_set_up_wetlands_building_effects = yes
+				}
+				else_if = { # floodplains
+					limit = {
+						terrain = floodplains
+					}
+					sib_set_up_floodplains_building_effects = yes
+				}
+				else_if = { # plains
+					limit = {
+						terrain = plains
+					}
+					sib_set_up_plains_building_effects = yes
+				}
+			}
+		}
+	}
+}
