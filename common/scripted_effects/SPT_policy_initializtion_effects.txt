@@ -350,12 +350,12 @@ FF_test_effect = {
 		}
 	}
 
-
+	#如何检测角色的政策点是否超过了总政策点
 	set_variable = {
 		name = SPT_will_be_kkt_points
 		value = {
 			value = root.var:current_kkt_points
-			add = $FLAG$.SPT_policy_points
+			add = flag:a.SPT_policy_points
 		}
 	}
 	if = {
