@@ -486,7 +486,7 @@ dragon_corps = {
 	high_maintenance_cost = { gold = 1.6 }
 
 	ai_quality = {
-		value = counter_synergy_ai_weight_archers
+		value = 100
 	}
 	
 	holy_order_fallback = no

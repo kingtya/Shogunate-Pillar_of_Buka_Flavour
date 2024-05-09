@@ -11,9 +11,9 @@ spt_character_initialization.0001 = {
 					OR = {
 						any_ancestor = {
 							even_if_dead = yes
-							this = character:10023010 # 义元之父氏亲
+							this = character:10023003 # 氏亲
 						}
-						this = character:10023010
+						this = character:10023003
 					}
 					dynasty = dynasty:10000230
 					is_male = yes
@@ -25,9 +25,9 @@ spt_character_initialization.0001 = {
 					OR = {
 						any_ancestor = {
 							even_if_dead = yes
-							this = character:10029120 # 信长
+							this = character:10029100
 						}
-						this = character:10029120
+						#this = character:10029120 # 信长
 						this = character:10029100 # 信秀
 						this = character:10029118 # 信定
 					}
@@ -41,9 +41,9 @@ spt_character_initialization.0001 = {
 					OR = {
 						any_ancestor = {
 							even_if_dead = yes
-							this = character:10020010 # 信玄
+							this = character:10020000
 						}
-						this = character:10020010
+						#this = character:10020010 # 信玄
 						this = character:10020000 # 信虎
 					}
 					dynasty = dynasty:10000200
@@ -87,10 +87,11 @@ spt_character_initialization.0001 = {
 					OR = {
 						any_ancestor = {
 							even_if_dead = yes
-							this = character:10001035 # 政宗
+							this = character:10001001
 						}
-						this = character:10001035 # 政宗
-						this = character:10001021 # 辉宗
+						#this = character:10001035 # 政宗
+						#this = character:10001021 # 辉宗
+						this = character:10001001 # 稙宗
 					}
 					dynasty = dynasty:10000010
 					is_male = yes

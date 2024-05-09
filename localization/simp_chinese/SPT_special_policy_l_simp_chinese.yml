@@ -67,7 +67,7 @@ spt_policy_expeditionary_support_modifier_desc:0 "此人掌握了远距离作战
 spt_policy_expeditionary_support_warning_tt:0 "@warning_icon!#X 你或你的家宰没有[GetTrait('uesugi_margin').GetName( GetNullCharacter )]，由家宰解锁要求其有12军事且颁布后10年内无法将其\n撤职#!"
 
 flag_spt_policy_million_minds_motto_name:0 "#V 百万一心之训#!"
-flag_spt_policy_million_minds_motto_desc:0 "西中国地区的战国大名毛利元在改建吉田郡山城时使用的石碑上所刻下的训言。由于本丸石垣的建设进展困难，于是将此碑埋在本丸后方的“姬之丸”处代替人柱，最终成功完成了普请建设。通过省略“百”字的一画，将“万”字写成“一力”，使其竖写时可以读作“一日一力一心”，即“同心协力”，寓意国人们齐心协力，便可做成任何事情。"
+flag_spt_policy_million_minds_motto_desc:0 "安艺国的战国大名毛利元在改建吉田郡山城时使用的石碑上所刻下的训言。由于本丸石垣的建设进展困难，于是将此碑埋在本丸后方的“姬之丸”处代替人柱，最终成功完成了普请建设。通过省略“百”字的一画，将“万”字写成“一力”，使其竖写时可以读作“一日一力一心”，即“同心协力”，寓意国人们齐心协力，便可做成任何事情。"
 spt_policy_million_minds_motto_modifier:0 "百万一心之训"
 spt_policy_million_minds_motto_modifier_desc:0 "此人家中谛听了百万一心之训。"
 spt_policy_million_minds_motto_warning_tt:0 "@warning_icon!#X 你或你的家宰没有[GetTrait('mori_margin').GetName( GetNullCharacter )]，由家宰解锁要求其有12管理且颁布后10年内无法将其撤职#!"

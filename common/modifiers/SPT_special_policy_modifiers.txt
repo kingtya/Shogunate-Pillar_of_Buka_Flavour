@@ -53,9 +53,9 @@ spt_policy_intensive_firearms_modifier = {
 
 spt_policy_chivalry_education_modifier = {
 	icon = martial_positive
-	maa_damage_add = 30
-	maa_toughness_add = 15
-	attacker_advantage = 10
+	stationed_maa_damage_add = 20
+	stationed_maa_toughness_add = 8
+	attacker_advantage = 5
 }
 
 spt_policy_expeditionary_support_modifier = {
@@ -82,5 +82,5 @@ spt_policy_armoured_militia_modifier = {
 	levy_reinforcement_rate = 0.4
 	levy_pursuit = 10
 	levy_screen = 15
-	levy_maintenance = -0.7
+	levy_maintenance = -0.5
 }
