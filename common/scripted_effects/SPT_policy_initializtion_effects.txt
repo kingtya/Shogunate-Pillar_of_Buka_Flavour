@@ -325,3 +325,42 @@ spt_block_firing_councillor_effect = {
 		years = 10
 	}
 }
+
+FF_test_effect = {
+	# # 以下以root为要操作的角色 flag:a为当前政策 current_kkt_points是角色当前使用的政策点数量 SPT_policy_points是当前政策的政策点占用
+	root = {
+		if = { #这个if块确保了变量current_kkt_points的存在
+			limit = {
+				NOT = {
+					exists = var:current_kkt_points
+				}
+			}
+			set_variable = {
+				name = current_kkt_points
+				value = 0
+			}
+		}
+		change_variable = {	#为角色添加政策点占用
+			name = current_kkt_points #该变量为角色当前使用的政策点数量
+			add = flag:a.SPT_policy_points #添加政策点占用
+		}
+		change_variable = { #为角色解除政策点占用
+			name = current_kkt_points #该变量为角色当前使用的政策点数量
+			subtract = flag:a.SPT_policy_points #解除政策点占用
+		}
+	}
+
+	#如何检测角色的政策点是否超过了总政策点
+	set_variable = {
+		name = SPT_will_be_kkt_points
+		value = {
+			value = root.var:current_kkt_points
+			add = flag:a.SPT_policy_points
+		}
+	}
+	if = {
+		limit = {
+			root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+		}
+	}
+}
