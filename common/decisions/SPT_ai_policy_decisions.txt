@@ -3,7 +3,7 @@ spt_ai_publish_policy_canal_improvements_decision = {
 	ai_goal = yes
 
 	is_shown = {
-		#is_ai = yes
+		is_ai = yes
 	}
 	is_valid = {
 		trigger_if = {
