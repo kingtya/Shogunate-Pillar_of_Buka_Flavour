@@ -33,7 +33,6 @@ SPT_init_conservative_poilcy_flag_list = {
 		name = SPT_conservative_policy_flags
 		target = flag:flag_spt_policy_buddhism_sanction
 	}
-	
 
 }
 ## 中道
@@ -154,11 +153,11 @@ SPT_init_points = {
 	if = {
 		limit = {
 			NOT = {
-				exists = var:current_kkt_points
+				exists = var:spt_current_policy_points
 			}
 		}
 		set_variable = {
-			name = current_kkt_points
+			name = spt_current_policy_points
 			value = 0
 		}
 	}
@@ -166,9 +165,9 @@ SPT_init_points = {
 
 SPT_kkt_count_pocliy_points = {
 	set_variable = {
-		name = SPT_will_be_kkt_points
+		name = spt_policy_will_be_points
 		value = {
-			value = root.var:current_kkt_points
+			value = root.var:spt_current_policy_points
 			add = $FLAG$.SPT_policy_points
 		}
 	}

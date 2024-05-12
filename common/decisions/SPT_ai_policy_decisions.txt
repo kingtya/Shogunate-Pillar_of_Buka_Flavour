@@ -3,14 +3,14 @@ spt_ai_publish_policy_canal_improvements_decision = {
 	ai_goal = yes
 
 	is_shown = {
-		is_ai = yes
+		#is_ai = yes
 	}
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points < root.SPT_kkt_total_points
+			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
 	}
 
@@ -20,15 +20,15 @@ spt_ai_publish_policy_canal_improvements_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_canal_improvements.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_canal_improvements
@@ -67,9 +67,9 @@ spt_ai_publish_policy_official_purveyor_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points < root.SPT_kkt_total_points
+			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
 	}
 
@@ -79,15 +79,15 @@ spt_ai_publish_policy_official_purveyor_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_official_purveyor.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_official_purveyor
@@ -126,9 +126,9 @@ spt_ai_publish_policy_improve_militia_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points < root.SPT_kkt_total_points
+			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
 	}
 
@@ -138,15 +138,15 @@ spt_ai_publish_policy_improve_militia_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_improve_militia.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_improve_militia
@@ -185,9 +185,9 @@ spt_ai_publish_policy_buddhism_sanction_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points < root.SPT_kkt_total_points
+			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
 	}
 
@@ -197,15 +197,15 @@ spt_ai_publish_policy_buddhism_sanction_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_buddhism_sanction.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_buddhism_sanction
@@ -244,9 +244,9 @@ spt_ai_publish_policy_foster_system_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points < root.SPT_kkt_total_points
+			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
 	}
 
@@ -256,15 +256,15 @@ spt_ai_publish_policy_foster_system_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_foster_system.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_foster_system
@@ -317,9 +317,9 @@ spt_ai_publish_policy_improve_cavalry_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points < root.SPT_kkt_total_points
+			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
 	}
 
@@ -329,15 +329,15 @@ spt_ai_publish_policy_improve_cavalry_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_improve_cavalry.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_improve_cavalry
@@ -377,9 +377,9 @@ spt_ai_publish_policy_improve_labor_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points < root.SPT_kkt_total_points
+			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
 	}
 
@@ -389,15 +389,15 @@ spt_ai_publish_policy_improve_labor_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_improve_labor.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_improve_labor
@@ -441,9 +441,9 @@ spt_ai_publish_policy_direct_daimyo_rule_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points < root.SPT_kkt_total_points
+			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
 	}
 
@@ -453,15 +453,15 @@ spt_ai_publish_policy_direct_daimyo_rule_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_direct_daimyo_rule.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_direct_daimyo_rule
@@ -500,9 +500,9 @@ spt_ai_publish_policy_deploy_draftee_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points < root.SPT_kkt_total_points
+			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
 	}
 
@@ -512,15 +512,15 @@ spt_ai_publish_policy_deploy_draftee_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_deploy_draftee.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_deploy_draftee
@@ -564,9 +564,9 @@ spt_ai_publish_policy_post_horse_system_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points < root.SPT_kkt_total_points
+			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
 	}
 
@@ -576,15 +576,15 @@ spt_ai_publish_policy_post_horse_system_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_post_horse_system.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_post_horse_system
@@ -628,9 +628,9 @@ spt_ai_publish_policy_distant_diplomacy_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points < root.SPT_kkt_total_points
+			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
 	}
 
@@ -640,15 +640,15 @@ spt_ai_publish_policy_distant_diplomacy_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_distant_diplomacy.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_distant_diplomacy
@@ -677,9 +677,9 @@ spt_ai_publish_policy_suggestion_box_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points >= 95
+			root.var:spt_current_policy_points >= 95
 		}
 	}
 
@@ -689,15 +689,15 @@ spt_ai_publish_policy_suggestion_box_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_suggestion_box.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_suggestion_box
@@ -741,9 +741,9 @@ spt_ai_publish_policy_improve_firearms_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points < root.SPT_kkt_total_points
+			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
 	}
 
@@ -753,15 +753,15 @@ spt_ai_publish_policy_improve_firearms_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_improve_firearms.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_improve_firearms
@@ -800,9 +800,9 @@ spt_ai_publish_policy_meritocracy_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points < root.SPT_kkt_total_points
+			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
 	}
 
@@ -812,15 +812,15 @@ spt_ai_publish_policy_meritocracy_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_meritocracy.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_meritocracy
@@ -849,9 +849,9 @@ spt_ai_publish_policy_supply_transporter_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:current_kkt_points
+				exists = root.var:spt_current_policy_points
 			}
-			root.var:current_kkt_points < root.SPT_kkt_total_points
+			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
 	}
 
@@ -861,15 +861,15 @@ spt_ai_publish_policy_supply_transporter_decision = {
 
 	effect = {
 		set_variable = {
-			name = SPT_will_be_kkt_points
+			name = spt_policy_will_be_points
 			value = {
-				value = root.var:current_kkt_points
+				value = root.var:spt_current_policy_points
 				add = flag:flag_spt_policy_supply_transporter.SPT_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			SPT_set_policy_effect_to_character = {
 				FLAG = flag:flag_spt_policy_supply_transporter

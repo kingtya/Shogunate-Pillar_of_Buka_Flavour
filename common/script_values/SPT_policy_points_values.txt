@@ -65,6 +65,6 @@
 	}
 }
 
-SPT_kkt_total_points = {
+spt_total_policy_points = {
 	value = 100
 }

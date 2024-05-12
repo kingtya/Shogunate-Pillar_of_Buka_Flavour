@@ -56,9 +56,9 @@
 	
 			trigger_if = {
 				limit = {
-					exists = root.var:SPT_will_be_kkt_points
+					exists = root.var:spt_policy_will_be_points
 				}
-				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
 			}
 			trigger_else = {
 				always = no

@@ -1,6 +1,6 @@
 ﻿l_simp_chinese:
 
-SPT_current_policy_points:0 "#weak 目前#!#E 政策点上限#!：[GetPlayer.MakeScope.Var('current_kkt_points').GetValue|0]/[GetPlayer.MakeScope.ScriptValue('SPT_kkt_total_points')|0]"
+SPT_current_policy_points:0 "#weak 目前#!#E 政策点上限#!：[GetPlayer.MakeScope.Var('spt_current_policy_points').GetValue|0]/[GetPlayer.MakeScope.ScriptValue('spt_total_policy_points')|0]"
 
 SPT_courtly_vassal_towards_policy_opinion_effect_tt_0:0 "所有[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]）对[actor.GetUIName]的好感提高#P 5#!#weak （-1.20/年）（颁布保守政策）#!"
 SPT_courtly_vassal_towards_policy_opinion_effect_tt_1:1 "所有[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]）对[actor.GetUIName]的好感提高#P 5#!#weak （-1.20/年）（颁布中道政策）#!"
