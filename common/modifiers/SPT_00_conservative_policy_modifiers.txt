@@ -1,4 +1,8 @@
-﻿##保守
+﻿debug_modifier = {
+	stacking = yes
+}
+
+##保守
 spt_policy_canal_improvements_modifier = {
 	icon = social_positive
 	county_opinion_add = 10
@@ -41,7 +45,7 @@ spt_policy_buddhism_sanction_modifier = {
 }
 
 spt_policy_foster_system_modifier = {
-	icon = diplomacy_positive
+	icon = family_positive
 	direct_vassal_opinion = 15
 	monthly_prestige = 1
 	monthly_prestige_gain_mult = 0.1

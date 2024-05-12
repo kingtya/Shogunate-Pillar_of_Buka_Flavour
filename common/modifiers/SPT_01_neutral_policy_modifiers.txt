@@ -7,7 +7,7 @@ spt_policy_direct_daimyo_rule_modifier = {
 }
 
 spt_policy_improve_labor_modifier = {
-	icon = stewardship_positive
+	icon = rock_positive
 	build_speed = -0.2
 	build_gold_cost = -0.05
 	county_opinion_add = -10

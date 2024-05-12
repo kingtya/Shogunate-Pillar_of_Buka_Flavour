@@ -1,9 +1,10 @@
 ﻿# 保守
 spt_ai_publish_policy_canal_improvements_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
+		gold >= 50
 	}
 	is_valid = {
 		trigger_if = {
@@ -12,10 +13,21 @@ spt_ai_publish_policy_canal_improvements_decision = {
 			}
 			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_canal_improvements
+				}
+			}
+		}
 	}
 
-	minimum_cost = {
-		gold = 50
+	cost = {
+		#gold = 50
 	}
 
 	effect = {
@@ -35,6 +47,7 @@ spt_ai_publish_policy_canal_improvements_decision = {
 				ACTION = add
 				CONFIRM = yes
 			}
+			remove_short_term_gold = 50
 		}
 	}
 
@@ -49,7 +62,7 @@ spt_ai_publish_policy_canal_improvements_decision = {
 
 		modifier = {
 			ai_has_economical_boom_personality = yes
-			add = 75
+			add = 25
 		}
 
 		modifier = {
@@ -60,7 +73,7 @@ spt_ai_publish_policy_canal_improvements_decision = {
 }
 spt_ai_publish_policy_official_purveyor_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 	}
@@ -71,10 +84,21 @@ spt_ai_publish_policy_official_purveyor_decision = {
 			}
 			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_official_purveyor
+				}
+			}
+		}
 	}
 
-	minimum_cost = {
-		gold = 50
+	cost = {
+		#gold = 50
 	}
 
 	effect = {
@@ -94,6 +118,7 @@ spt_ai_publish_policy_official_purveyor_decision = {
 				ACTION = add
 				CONFIRM = yes
 			}
+			remove_short_term_gold = 50
 		}
 	}
 
@@ -108,7 +133,7 @@ spt_ai_publish_policy_official_purveyor_decision = {
 
 		modifier = {
 			ai_has_economical_boom_personality = yes
-			add = 75
+			add = 25
 		}
 
 		modifier = {
@@ -119,7 +144,7 @@ spt_ai_publish_policy_official_purveyor_decision = {
 }
 spt_ai_publish_policy_improve_militia_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 	}
@@ -129,6 +154,17 @@ spt_ai_publish_policy_improve_militia_decision = {
 				exists = root.var:spt_current_policy_points
 			}
 			root.var:spt_current_policy_points < root.spt_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_improve_militia
+				}
+			}
 		}
 	}
 
@@ -167,7 +203,7 @@ spt_ai_publish_policy_improve_militia_decision = {
 
 		modifier = {
 			ai_has_warlike_personality = yes
-			add = 75
+			add = 25
 		}
 
 		modifier = {
@@ -178,7 +214,7 @@ spt_ai_publish_policy_improve_militia_decision = {
 }
 spt_ai_publish_policy_buddhism_sanction_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 	}
@@ -188,6 +224,17 @@ spt_ai_publish_policy_buddhism_sanction_decision = {
 				exists = root.var:spt_current_policy_points
 			}
 			root.var:spt_current_policy_points < root.spt_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_buddhism_sanction
+				}
+			}
 		}
 	}
 
@@ -226,7 +273,7 @@ spt_ai_publish_policy_buddhism_sanction_decision = {
 
 		modifier = {
 			ai_has_cautious_personality = yes
-			add = 75
+			add = 25
 		}
 
 		modifier = {
@@ -237,7 +284,7 @@ spt_ai_publish_policy_buddhism_sanction_decision = {
 }
 spt_ai_publish_policy_foster_system_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 	}
@@ -247,6 +294,17 @@ spt_ai_publish_policy_foster_system_decision = {
 				exists = root.var:spt_current_policy_points
 			}
 			root.var:spt_current_policy_points < root.spt_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_foster_system
+				}
+			}
 		}
 	}
 
@@ -285,7 +343,7 @@ spt_ai_publish_policy_foster_system_decision = {
 
 		modifier = {
 			ai_has_warlike_personality = yes
-			add = 75
+			add = 25
 		}
 
 		modifier = {
@@ -296,7 +354,7 @@ spt_ai_publish_policy_foster_system_decision = {
 }
 spt_ai_publish_policy_improve_cavalry_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 		OR = {
@@ -320,6 +378,17 @@ spt_ai_publish_policy_improve_cavalry_decision = {
 				exists = root.var:spt_current_policy_points
 			}
 			root.var:spt_current_policy_points < root.spt_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_improve_cavalry
+				}
+			}
 		}
 	}
 
@@ -358,7 +427,7 @@ spt_ai_publish_policy_improve_cavalry_decision = {
 
 		modifier = {
 			ai_has_warlike_personality = yes
-			add = 75
+			add = 25
 		}
 
 		modifier = {
@@ -370,7 +439,7 @@ spt_ai_publish_policy_improve_cavalry_decision = {
 # 中道
 spt_ai_publish_policy_improve_labor_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 	}
@@ -380,6 +449,17 @@ spt_ai_publish_policy_improve_labor_decision = {
 				exists = root.var:spt_current_policy_points
 			}
 			root.var:spt_current_policy_points < root.spt_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_improve_labor
+				}
+			}
 		}
 	}
 
@@ -418,12 +498,12 @@ spt_ai_publish_policy_improve_labor_decision = {
 
 		modifier = {
 			ai_has_economical_boom_personality = yes
-			add = 75
+			add = 25
 		}
 
 		modifier = {
 			ai_has_warlike_personality = yes
-			add = 75
+			add = 25
 		}
 
 		modifier = {
@@ -434,7 +514,7 @@ spt_ai_publish_policy_improve_labor_decision = {
 }
 spt_ai_publish_policy_direct_daimyo_rule_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 	}
@@ -444,6 +524,17 @@ spt_ai_publish_policy_direct_daimyo_rule_decision = {
 				exists = root.var:spt_current_policy_points
 			}
 			root.var:spt_current_policy_points < root.spt_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_direct_daimyo_rule
+				}
+			}
 		}
 	}
 
@@ -493,7 +584,7 @@ spt_ai_publish_policy_direct_daimyo_rule_decision = {
 }
 spt_ai_publish_policy_deploy_draftee_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 	}
@@ -503,6 +594,17 @@ spt_ai_publish_policy_deploy_draftee_decision = {
 				exists = root.var:spt_current_policy_points
 			}
 			root.var:spt_current_policy_points < root.spt_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_deploy_draftee
+				}
+			}
 		}
 	}
 
@@ -541,7 +643,7 @@ spt_ai_publish_policy_deploy_draftee_decision = {
 
 		modifier = {
 			ai_has_warlike_personality = yes
-			add = 75
+			add = 25
 		}
 
 		modifier = {
@@ -557,9 +659,10 @@ spt_ai_publish_policy_deploy_draftee_decision = {
 }
 spt_ai_publish_policy_post_horse_system_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
+		gold >= 25
 	}
 	is_valid = {
 		trigger_if = {
@@ -568,10 +671,21 @@ spt_ai_publish_policy_post_horse_system_decision = {
 			}
 			root.var:spt_current_policy_points < root.spt_total_policy_points
 		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_post_horse_system
+				}
+			}
+		}
 	}
 
-	minimum_cost = {
-		gold = 25
+	cost = {
+		#gold = 25
 	}
 
 	effect = {
@@ -591,6 +705,7 @@ spt_ai_publish_policy_post_horse_system_decision = {
 				ACTION = add
 				CONFIRM = yes
 			}
+			remove_short_term_gold = 25
 		}
 	}
 
@@ -610,7 +725,7 @@ spt_ai_publish_policy_post_horse_system_decision = {
 
 		modifier = {
 			ai_has_cautious_personality = yes
-			add = 75
+			add = 25
 		}
 
 		modifier = {
@@ -621,7 +736,7 @@ spt_ai_publish_policy_post_horse_system_decision = {
 }
 spt_ai_publish_policy_distant_diplomacy_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 	}
@@ -631,6 +746,17 @@ spt_ai_publish_policy_distant_diplomacy_decision = {
 				exists = root.var:spt_current_policy_points
 			}
 			root.var:spt_current_policy_points < root.spt_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_distant_diplomacy
+				}
+			}
 		}
 	}
 
@@ -665,12 +791,12 @@ spt_ai_publish_policy_distant_diplomacy_decision = {
 	}
 
 	ai_will_do = {
-		base = 100
+		base = 25
 	}
 }
 spt_ai_publish_policy_suggestion_box_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 	}
@@ -679,7 +805,18 @@ spt_ai_publish_policy_suggestion_box_decision = {
 			limit = {
 				exists = root.var:spt_current_policy_points
 			}
-			root.var:spt_current_policy_points >= 95
+			root.var:spt_current_policy_points < root.spt_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_suggestion_box
+				}
+			}
 		}
 	}
 
@@ -714,23 +851,22 @@ spt_ai_publish_policy_suggestion_box_decision = {
 	}
 
 	ai_will_do = {
-		base = 25
-
+		base = 5
 		modifier = {
-			ai_has_cautious_personality = yes
-			add = 75
-		}
-
-		modifier = {
-			ai_economical_unpredictable_personality = yes
-			add = 25
+			trigger_if = {
+				limit = {
+					exists = root.var:spt_current_policy_points
+				}
+				root.var:spt_current_policy_points >= 95
+			}
+			add = 20
 		}
 	}
 }
 # 革新
 spt_ai_publish_policy_improve_firearms_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 		number_maa_regiments_of_base_type = {
@@ -744,6 +880,17 @@ spt_ai_publish_policy_improve_firearms_decision = {
 				exists = root.var:spt_current_policy_points
 			}
 			root.var:spt_current_policy_points < root.spt_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_improve_firearms
+				}
+			}
 		}
 	}
 
@@ -782,7 +929,7 @@ spt_ai_publish_policy_improve_firearms_decision = {
 
 		modifier = {
 			ai_has_warlike_personality = yes
-			add = 75
+			add = 25
 		}
 
 		modifier = {
@@ -793,7 +940,7 @@ spt_ai_publish_policy_improve_firearms_decision = {
 }
 spt_ai_publish_policy_meritocracy_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 	}
@@ -803,6 +950,17 @@ spt_ai_publish_policy_meritocracy_decision = {
 				exists = root.var:spt_current_policy_points
 			}
 			root.var:spt_current_policy_points < root.spt_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_meritocracy
+				}
+			}
 		}
 	}
 
@@ -842,7 +1000,7 @@ spt_ai_publish_policy_meritocracy_decision = {
 }
 spt_ai_publish_policy_supply_transporter_decision = {
 	ai_goal = yes
-
+	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 	}
@@ -852,6 +1010,17 @@ spt_ai_publish_policy_supply_transporter_decision = {
 				exists = root.var:spt_current_policy_points
 			}
 			root.var:spt_current_policy_points < root.spt_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = SPT_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = SPT_released_policy_flags
+					this = flag:flag_spt_policy_supply_transporter
+				}
+			}
 		}
 	}
 
@@ -890,7 +1059,7 @@ spt_ai_publish_policy_supply_transporter_decision = {
 
 		modifier = {
 			ai_has_warlike_personality = yes
-			add = 75
+			add = 25
 		}
 
 		modifier = {
