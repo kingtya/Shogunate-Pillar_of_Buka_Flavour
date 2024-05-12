@@ -4,63 +4,63 @@
 		trigger = this
 		# 保守
 		flag:flag_spt_policy_improve_cavalry = {
-			add = 20
+			add = 25
 		}
 		flag:flag_spt_policy_canal_improvements = {
-			add = 20
+			add = 25
 		}
 		flag:flag_spt_policy_council_system = {
-			add = 20
+			add = 25
 		}
 		flag:flag_spt_policy_official_purveyor = {
-			add = 20
+			add = 25
 		}
 		flag:flag_spt_policy_foster_system = {
-			add = 15
+			add = 20
 		}
 		flag:flag_spt_policy_buddhism_sanction = {
-			add = 10
+			add = 15
 		}
 		# 中道
 		flag:flag_spt_policy_direct_daimyo_rule = {
-			add = 30
+			add = 35
 		}
 		flag:flag_spt_policy_improve_labor = {
-			add = 20
+			add = 25
 		}
 		flag:flag_spt_policy_deploy_draftee = {
-			add = 20
+			add = 25
 		}
 		flag:flag_spt_policy_improve_militia = {
-			add = 20
+			add = 25
 		}
 		flag:flag_spt_policy_post_horse_system = {
-			add = 10
+			add = 15
 		}
 		flag:flag_spt_policy_distant_diplomacy = {
-			add = 10
+			add = 15
 		}
 		flag:flag_spt_policy_suggestion_box = {
-			add = 5
+			add = 10
 		}
 		# 革新
 		flag:flag_spt_policy_soidier_professionaliztion = {
-			add = 25
+			add = 30
 		}
 		flag:flag_spt_policy_easy_commerce = {
-			add = 25
+			add = 30
 		}
 		flag:flag_spt_policy_improve_firearms = {
-			add = 25
+			add = 30
 		}
 		flag:flag_spt_policy_western_sanction = {
-			add = 25
+			add = 30
 		}
 		flag:flag_spt_policy_meritocracy = {
-			add = 20
+			add = 25
 		}
 		flag:flag_spt_policy_supply_transporter = {
-			add = 20
+			add = 25
 		}
 	}
 }
