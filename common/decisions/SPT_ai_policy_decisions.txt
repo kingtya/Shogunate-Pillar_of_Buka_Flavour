@@ -1,0 +1,901 @@
+﻿# 保守
+spt_ai_publish_policy_canal_improvements_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		#is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points < root.SPT_kkt_total_points
+		}
+	}
+
+	minimum_cost = {
+		gold = 50
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_canal_improvements.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_canal_improvements
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_economical_boom_personality = yes
+			add = 75
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
+	}
+}
+spt_ai_publish_policy_official_purveyor_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points < root.SPT_kkt_total_points
+		}
+	}
+
+	minimum_cost = {
+		gold = 50
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_official_purveyor.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_official_purveyor
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_economical_boom_personality = yes
+			add = 75
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
+	}
+}
+spt_ai_publish_policy_improve_militia_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points < root.SPT_kkt_total_points
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_improve_militia.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_improve_militia
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 75
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
+	}
+}
+spt_ai_publish_policy_buddhism_sanction_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points < root.SPT_kkt_total_points
+		}
+	}
+
+	minimum_cost = {
+		piety = 25
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_buddhism_sanction.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_buddhism_sanction
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_cautious_personality = yes
+			add = 75
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
+	}
+}
+spt_ai_publish_policy_foster_system_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points < root.SPT_kkt_total_points
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_foster_system.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_foster_system
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 75
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
+	}
+}
+spt_ai_publish_policy_improve_cavalry_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		is_ai = yes
+		OR = {
+			number_maa_regiments_of_base_type = {
+				type = light_cavalry
+				value >= 1
+			}
+			number_maa_regiments_of_base_type = {
+				type = heavy_cavalry
+				value >= 1
+			}
+			number_maa_regiments_of_base_type = {
+				type = archer_cavalry
+				value >= 1
+			}
+		}
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points < root.SPT_kkt_total_points
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_improve_cavalry.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_improve_cavalry
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 75
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
+	}
+}
+# 中道
+spt_ai_publish_policy_improve_labor_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points < root.SPT_kkt_total_points
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_improve_labor.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_improve_labor
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_economical_boom_personality = yes
+			add = 75
+		}
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 75
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
+	}
+}
+spt_ai_publish_policy_direct_daimyo_rule_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points < root.SPT_kkt_total_points
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_direct_daimyo_rule.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_direct_daimyo_rule
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 25
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
+	}
+}
+spt_ai_publish_policy_deploy_draftee_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points < root.SPT_kkt_total_points
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_deploy_draftee.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_deploy_draftee
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 75
+		}
+
+		modifier = {
+			ai_has_cautious_personality = yes
+			add = 25
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
+	}
+}
+spt_ai_publish_policy_post_horse_system_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points < root.SPT_kkt_total_points
+		}
+	}
+
+	minimum_cost = {
+		gold = 25
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_post_horse_system.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_post_horse_system
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 25
+		}
+
+		modifier = {
+			ai_has_cautious_personality = yes
+			add = 75
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
+	}
+}
+spt_ai_publish_policy_distant_diplomacy_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points < root.SPT_kkt_total_points
+		}
+	}
+
+	minimum_cost = {
+		prestige = 25
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_distant_diplomacy.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_distant_diplomacy
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+spt_ai_publish_policy_suggestion_box_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points >= 95
+		}
+	}
+
+	minimum_cost = {
+		prestige = 10
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_suggestion_box.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_suggestion_box
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_cautious_personality = yes
+			add = 75
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
+	}
+}
+# 革新
+spt_ai_publish_policy_improve_firearms_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		is_ai = yes
+		number_maa_regiments_of_base_type = {
+			type = archer
+			value >= 1
+		}
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points < root.SPT_kkt_total_points
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_improve_firearms.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_improve_firearms
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 75
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
+	}
+}
+spt_ai_publish_policy_meritocracy_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points < root.SPT_kkt_total_points
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_meritocracy.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_meritocracy
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+	}
+}
+spt_ai_publish_policy_supply_transporter_decision = {
+	ai_goal = yes
+
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:current_kkt_points
+			}
+			root.var:current_kkt_points < root.SPT_kkt_total_points
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		set_variable = {
+			name = SPT_will_be_kkt_points
+			value = {
+				value = root.var:current_kkt_points
+				add = flag:flag_spt_policy_supply_transporter.SPT_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:SPT_will_be_kkt_points <= root.SPT_kkt_total_points
+			}
+			SPT_set_policy_effect_to_character = {
+				FLAG = flag:flag_spt_policy_supply_transporter
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 75
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
+	}
+}

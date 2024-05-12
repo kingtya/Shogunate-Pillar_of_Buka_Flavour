@@ -26,7 +26,7 @@ SPT_kkt_apply_modifier = {
 	}
 
 	effect = {
-		SPT_kkt_set_effect_to_character = {
+		SPT_set_policy_effect_to_character = {
 			FLAG = scope:SPT_kkt_selected_flag
 			ACTION = add
 			CONFIRM = yes
@@ -56,7 +56,7 @@ SPT_kkt_remove_modifier = {
 	}
 
 	effect = {
-		SPT_kkt_set_effect_to_character = {
+		SPT_set_policy_effect_to_character = {
 			FLAG = scope:SPT_kkt_selected_flag
 			ACTION = remove
 			CONFIRM = no

@@ -48,7 +48,7 @@ spt_policy_intensive_firearms_modifier_desc:0 "此人钟情于将铁炮投入战
 spt_policy_intensive_firearms_warning_tt:0 "@warning_icon!#X 你或你的家宰没有[GetTrait('oda_margin').GetName( GetNullCharacter )]，由家宰解锁要求其有15军事且颁布后10年内无法\n将其撤职#!"
 
 flag_spt_policy_dragon_corps_name:0 "#V 编制龙骑兵#!"
-flag_spt_policy_dragon_corps_desc:0 "东北地区的战国大名伊达政宗独创的精锐骑马铁炮队，兼具骑兵的机动力和火枪兵的远程杀伤力，在庆长19年（1614年）至庆长20年（1615年）的大坂之役中昙花一现。在十七世纪的欧洲，该兵种也被称为“龙骑兵”。"
+flag_spt_policy_dragon_corps_desc:0 "奥州的战国大名伊达政宗独创的精锐骑马铁炮队，兼具骑兵的机动力和火枪兵的远程杀伤力，在庆长19年（1614年）至庆长20年（1615年）的大坂之役中昙花一现。在十七世纪的欧洲，该兵种也被称为“龙骑兵”。"
 spt_policy_dragon_corps_modifier:0 "编制龙骑兵"
 spt_policy_dragon_corps_modifier_desc:0 "此人组建了骑马铁炮队。"
 spt_policy_dragon_corps_effect_tt:0 "如果#V 你#!的[culture|E]有$innovation_advanced_bowmaking$[innovation|E]，#V 你#!可以招募[GetMaA('dragon_corps').GetName][men_at_arms|E]"
