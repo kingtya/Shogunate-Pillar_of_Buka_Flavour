@@ -306,6 +306,26 @@ chosokabe_margin = { # 长宗我部传
 	desc = trait_chosokabe_margin_desc
 }
 
+otomo_margin = { # 大友传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	legitimacy_gain_mult = 0.2
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_otomo_margin
+
+	icon = {
+		desc = otomo_margin.dds
+	}
+
+	desc = trait_otomo_margin_desc
+}
+
 oda_nobunaga = {
 	category = fame
 	shown_in_ruler_designer = no

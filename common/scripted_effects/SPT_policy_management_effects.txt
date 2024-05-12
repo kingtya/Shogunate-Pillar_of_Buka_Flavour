@@ -1,7 +1,7 @@
 ﻿################
-### 政策分类 ###
+### 政策发布 ###
 ################
-spt_policy_management_effect = {
+spt_policy_introduction_effect = {
 	switch = {
 		trigger = $FLAG$
 		
@@ -9,7 +9,6 @@ spt_policy_management_effect = {
 		## 本乡本土封臣好感 ++
 		## 宫廷礼制封臣好感 +
 		## 追名逐利封臣好感 -
-		# 灌溉整备
 		flag:flag_spt_policy_improve_cavalry = {
 			$ACTION$_character_modifier = spt_policy_improve_cavalry_modifier
 			SPT_parochial_vassal_towards_policy_opinion_effect = {
@@ -50,7 +49,6 @@ spt_policy_management_effect = {
 				OPINION = 5
 			}
 		}
-		# 合议制
 		flag:flag_spt_policy_council_system = {
 			$ACTION$_character_modifier = spt_policy_council_system_modifier
 			SPT_parochial_vassal_towards_policy_opinion_effect = {
@@ -64,7 +62,6 @@ spt_policy_management_effect = {
 				OPINION = 5
 			}
 		}
-		# 御用商人
 		flag:flag_spt_policy_official_purveyor = {
 			if = {
 				limit = {
@@ -88,7 +85,6 @@ spt_policy_management_effect = {
 				OPINION = 5
 			}
 		}
-		# 寄亲寄子制
 		flag:flag_spt_policy_foster_system = {
 			$ACTION$_character_modifier = spt_policy_foster_system_modifier
 			SPT_parochial_vassal_towards_policy_opinion_effect = {
@@ -102,7 +98,6 @@ spt_policy_management_effect = {
 				OPINION = 5
 			}
 		}
-		# 寺社保护
 		flag:flag_spt_policy_buddhism_sanction = {
 			$ACTION$_character_modifier = spt_policy_buddhism_sanction_modifier
 			SPT_parochial_vassal_towards_policy_opinion_effect = {
@@ -188,7 +183,6 @@ spt_policy_management_effect = {
 				OPINION = -5
 			}
 		}
-		
 		flag:flag_spt_policy_meritocracy = {
 			$ACTION$_character_modifier = spt_policy_meritocracy_modifier
 			custom_tooltip = spt_policy_meritocracy_effect_tt
@@ -229,7 +223,6 @@ spt_policy_management_effect = {
 				}
 			}
 		}
-
 		flag:flag_spt_policy_soidier_professionaliztion = {
 			$ACTION$_character_modifier = spt_policy_soidier_professionaliztion_modifier
 			SPT_glory_hound_vassal_towards_policy_opinion_effect = {
@@ -246,7 +239,6 @@ spt_policy_management_effect = {
 				OPINION = -5
 			}
 		}
-
 		flag:flag_spt_policy_easy_commerce = {
 			if = {
 				limit = {
@@ -273,7 +265,6 @@ spt_policy_management_effect = {
 				OPINION = -5
 			}
 		}
-
 		flag:flag_spt_policy_improve_firearms = {
 			$ACTION$_character_modifier = spt_policy_improve_firearms_modifier
 			SPT_glory_hound_vassal_towards_policy_opinion_effect = {
@@ -290,7 +281,6 @@ spt_policy_management_effect = {
 				OPINION = -5
 			}
 		}
-
 		flag:flag_spt_policy_supply_transporter = {
 			$ACTION$_character_modifier = spt_policy_supply_transporter_modifier
 			SPT_glory_hound_vassal_towards_policy_opinion_effect = {
@@ -605,6 +595,117 @@ spt_policy_management_effect = {
 				}
 				custom_tooltip = spt_policy_armoured_militia_warning_tt
 			}
+			$ACTION$_character_modifier = spt_policy_armoured_militia_modifier
+		}
+	}
+}
+
+################
+### 政策撤销 ###
+################
+spt_policy_revocation_effect = {
+	switch = {
+		trigger = $FLAG$
+		
+		### 保守
+		## 本乡本土封臣好感 ++
+		## 宫廷礼制封臣好感 +
+		## 追名逐利封臣好感 -
+		flag:flag_spt_policy_improve_cavalry = {
+			$ACTION$_character_modifier = spt_policy_improve_cavalry_modifier
+		}
+		flag:flag_spt_policy_canal_improvements = {
+			$ACTION$_character_modifier = spt_policy_canal_improvements_modifier
+		}
+		flag:flag_spt_policy_improve_militia = {
+			$ACTION$_character_modifier = spt_policy_improve_militia_modifier
+		}
+		flag:flag_spt_policy_council_system = {
+			$ACTION$_character_modifier = spt_policy_council_system_modifier
+		}
+		flag:flag_spt_policy_official_purveyor = {
+			$ACTION$_character_modifier = spt_policy_official_purveyor_modifier
+		}
+		flag:flag_spt_policy_foster_system = {
+			$ACTION$_character_modifier = spt_policy_foster_system_modifier
+		}
+		flag:flag_spt_policy_buddhism_sanction = {
+			$ACTION$_character_modifier = spt_policy_buddhism_sanction_modifier
+		}
+
+		### 中道
+		## 宫廷礼制封臣好感 +
+		flag:flag_spt_policy_direct_daimyo_rule = {
+			$ACTION$_character_modifier = spt_policy_direct_daimyo_rule_modifier
+		}
+		flag:flag_spt_policy_improve_labor = {
+			$ACTION$_character_modifier = spt_policy_improve_labor_modifier
+		}
+		flag:flag_spt_policy_deploy_draftee = {
+			$ACTION$_character_modifier = spt_policy_deploy_draftee_modifier
+		}
+		flag:flag_spt_policy_post_horse_system = {
+			$ACTION$_character_modifier = spt_policy_post_horse_system_modifier
+		}
+		flag:flag_spt_policy_distant_diplomacy = {
+			$ACTION$_character_modifier = spt_policy_distant_diplomacy_modifier
+		}
+		flag:flag_spt_policy_suggestion_box = {
+			$ACTION$_character_modifier = spt_policy_suggestion_box_modifier
+		}
+		
+		### 革新
+		## 宫廷礼制封臣好感 --
+		## 本乡本土封臣好感 -
+		## 追名逐利封臣好感 ++
+		flag:flag_spt_policy_western_sanction = {
+			$ACTION$_character_modifier = spt_policy_western_sanction_modifier
+		}
+		flag:flag_spt_policy_meritocracy = {
+			$ACTION$_character_modifier = spt_policy_meritocracy_modifier
+		}
+		flag:flag_spt_policy_soidier_professionaliztion = {
+			$ACTION$_character_modifier = spt_policy_soidier_professionaliztion_modifier
+		}
+		flag:flag_spt_policy_easy_commerce = {
+			$ACTION$_character_modifier = spt_policy_easy_commerce_modifier
+		}
+		flag:flag_spt_policy_improve_firearms = {
+			$ACTION$_character_modifier = spt_policy_improve_firearms_modifier
+		}
+		flag:flag_spt_policy_supply_transporter = {
+			$ACTION$_character_modifier = spt_policy_supply_transporter_modifier
+		}
+
+		### 御用
+		flag:flag_spt_policy_laws_of_imagawa = {
+			$ACTION$_character_modifier = spt_policy_laws_of_imagawa_modifier
+		}
+		flag:flag_spt_policy_laws_of_takeda = {
+			$ACTION$_character_modifier = spt_policy_laws_of_takeda_modifier
+		}
+		flag:flag_spt_policy_five_admonitions = {
+			$ACTION$_character_modifier = spt_policy_five_admonitions_modifier
+		}
+		flag:flag_spt_policy_guardian_forces = {
+			$ACTION$_character_modifier = spt_policy_guardian_forces_modifier
+		}
+		flag:flag_spt_policy_intensive_firearms = {
+			$ACTION$_character_modifier = spt_policy_intensive_firearms_modifier
+		}
+		flag:flag_spt_policy_dragon_corps = {
+			#
+		}
+		flag:flag_spt_policy_chivalry_education = {
+			$ACTION$_character_modifier = spt_policy_chivalry_education_modifier
+		}
+		flag:flag_spt_policy_expeditionary_support = {
+			$ACTION$_character_modifier = spt_policy_expeditionary_support_modifier
+		}
+		flag:flag_spt_policy_million_minds_motto = {
+			$ACTION$_character_modifier = spt_policy_million_minds_motto_modifier
+		}
+		flag:flag_spt_policy_armoured_militia = {
 			$ACTION$_character_modifier = spt_policy_armoured_militia_modifier
 		}
 	}

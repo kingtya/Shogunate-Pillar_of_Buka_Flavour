@@ -108,7 +108,7 @@ SPT_kkt_set_cost_to_character = {
 SPT_kkt_set_effect_to_character = {
 	
 	show_as_tooltip = { # 作为显示效果，不实际执行
-		spt_policy_management_effect = {
+		spt_policy_introduction_effect = {
 			FLAG = $FLAG$
 			ACTION = $ACTION$
 		}
@@ -119,7 +119,7 @@ SPT_kkt_set_effect_to_character = {
 			limit = {
 				$CONFIRM$ = yes #发布国策
 			}
-			spt_policy_management_effect = {
+			spt_policy_introduction_effect = {
 				FLAG = $FLAG$
 				ACTION = $ACTION$
 			}
@@ -139,6 +139,10 @@ SPT_kkt_set_effect_to_character = {
 		if = {
 			limit = {
 				$CONFIRM$ = no #撤销国策
+			}
+			spt_policy_revocation_effect = {
+				FLAG = $FLAG$
+				ACTION = $ACTION$
 			}
 			remove_list_variable = {
 				name = SPT_released_policy_flags

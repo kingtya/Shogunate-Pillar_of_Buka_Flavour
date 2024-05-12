@@ -147,7 +147,7 @@
                             layoutpolicy_horizontal = expanding
                             blockoverride "header_text"
                             {
-                                text = SPT_kkt_window_baoshou_text
+                                text = SPT_con_neu_policy_header_text
                             }
                             blockoverride "button_close"
                             {
@@ -163,7 +163,7 @@
                             layoutpolicy_horizontal = expanding
                             blockoverride "header_text"
                             {
-                                text = SPT_kkt_window_gexin_text
+                                text = SPT_pro_sp_policy_header_text
                             }
                             blockoverride "button_close"
                             {

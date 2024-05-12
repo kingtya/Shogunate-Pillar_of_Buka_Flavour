@@ -20,7 +20,7 @@ trait_tokugawa_margin_desc:0 "始于德川家康，前身是三河国豪族松�
 TRAIT_FLAG_DESC_trait_tokugawa_margin:0 "解锁#E 旗本先手役政策#!\n如果满足要求，为领主解锁#E 旗本先手役政策#!"
 
 trait_uesugi_margin:0 "上杉传#weak （长尾家）#!"
-trait_uesugi_margin_desc:0 "上杉氏原为公家，后在关东管治。扇谷、山内上杉家相继在后北条家侵攻下灭亡，宪政将关东管领一职授予长尾景虎（上杉谦信），自此长尾家成为上杉氏的嫡流。"
+trait_uesugi_margin_desc:0 "上杉氏原为公家，后在关东管治。扇谷、山内上杉家相继在后北条家侵攻下灭亡，宪政将关东管领一职授予长尾景虎（上杉谦信），自此原为越后守护代的长尾家成为上杉氏的嫡流。"
 TRAIT_FLAG_DESC_trait_uesugi_margin:0 "解锁#E 远征军支援政策#!\n如果满足要求，为领主解锁#E 远征军支援政策#!"
 
 trait_shimazu_margin:0 "岛津传"
@@ -39,14 +39,13 @@ trait_chosokabe_margin:0 "长宗我部传"
 trait_chosokabe_margin_desc:0 "土佐国豪族，进入当地时期不明。曾于兼序时代遭入侵而灭亡，国亲在一条家的支持下复兴长宗我部氏。传至元亲时一统四国地区。"
 TRAIT_FLAG_DESC_trait_chosokabe_margin:0 "解锁#E 一领具足制政策#!\n如果满足要求，为领主解锁#E 一领具足制政策#!"
 
-# 上杉 毗沙门天信仰
-# 伊达 编制龙骑兵
-# 真田 六文钱誓言
+trait_otomo_margin:0 "大友传"
+trait_otomo_margin_desc:0 "大友氏发源于相模国大友庄，相传家祖能直为源赖朝后裔，镰仓时代到战国时代以九州丰后国为根据地，一度支配北九州。传自宗麟时代与西方关系密切，被传教士赞誉为“日本第一英主”。"
+TRAIT_FLAG_DESC_trait_otomo_margin:0 "解锁#E 切立支丹保护政策#!\n如果满足要求，为领主解锁#E 切立支丹保护政策#!"
+
+# 真田 表里军略
 # 丰臣 检地刀狩
-# 德川 旗本先手役
 # 本愿寺 机法一体
 # 铃木 杂贺规约
-# 长宗我部 一领具足制
-# 毛利 百万一心之训
-# 大友 切立支丹教
-# 岛津 萨摩军法
+# 三好 理世安民
+# 最上 内治外谋

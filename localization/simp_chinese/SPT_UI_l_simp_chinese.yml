@@ -1,7 +1,7 @@
 ﻿l_simp_chinese:
 SPT_policy_window_head_text:0 "政策"
-SPT_kkt_window_gexin_text: "革新 / 御用"
-SPT_kkt_window_baoshou_text: "保守 / 中道"
+SPT_pro_sp_policy_header_text:0 "革新 / 御用"
+SPT_con_neu_policy_header_text:1 "保守 / 中道"
 SPT_policy_is_loading_text:0 "政策加载中"
 
 SPT_policy_released_cd:0 "你已经颁布了这个国策"
@@ -20,7 +20,6 @@ SPT_remove_kkt_button_text:1 "撤销国策"
 SPT_tab_my_polices_tt:0 "#T 政策#!"
 
 # flag 列表
-
 ################
 ### 保守政策 ###
 ################
