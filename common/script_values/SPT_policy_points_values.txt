@@ -53,14 +53,14 @@
 		flag:flag_spt_policy_improve_firearms = {
 			add = 30
 		}
-		flag:flag_spt_policy_western_sanction = {
-			add = 30
-		}
 		flag:flag_spt_policy_meritocracy = {
 			add = 25
 		}
 		flag:flag_spt_policy_supply_transporter = {
 			add = 25
+		}
+		flag:flag_spt_policy_western_sanction = {
+			add = 15
 		}
 	}
 }

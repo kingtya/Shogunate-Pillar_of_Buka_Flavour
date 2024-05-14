@@ -74,10 +74,6 @@ SPT_init_progressive_poilcy_flag_list = {
 	}
 	add_to_variable_list = {
 		name = SPT_progressive_policy_flags
-		target = flag:flag_spt_policy_western_sanction
-	}
-	add_to_variable_list = {
-		name = SPT_progressive_policy_flags
 		target = flag:flag_spt_policy_improve_firearms
 	}
 	add_to_variable_list = {
@@ -87,6 +83,10 @@ SPT_init_progressive_poilcy_flag_list = {
 	add_to_variable_list = {
 		name = SPT_progressive_policy_flags
 		target = flag:flag_spt_policy_supply_transporter
+	}
+	add_to_variable_list = {
+		name = SPT_progressive_policy_flags
+		target = flag:flag_spt_policy_western_sanction
 	}
 
 }
