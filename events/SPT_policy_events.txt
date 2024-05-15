@@ -1,15 +1,15 @@
-﻿namespace = spt_policy_events
+﻿namespace = sp_policy_events
 
 ### 0001-0002 能力主义添加角色修正
 ### 0003 灌溉整备添加伯爵领修正
 ### 0004-0006 今川假名目录、甲州法度次第、五条训诫添加伯爵领修正
 
-spt_policy_events.0001 = {
+sp_policy_events.0001 = {
 	hidden = yes
 
 	trigger = {
 		scope:new_employer = {
-			has_character_modifier = spt_policy_meritocracy_modifier
+			has_character_modifier = sp_policy_meritocracy_modifier
 		}
 		is_adult = yes
 	}
@@ -26,41 +26,41 @@ spt_policy_events.0001 = {
 					prowess >= high_skill_rating
 				}
 			}
-			add_character_modifier = spt_policy_meritocracy_being_encouraged_modifier
+			add_character_modifier = sp_policy_meritocracy_being_encouraged_modifier
 		}
 		else = {
-			add_character_modifier = spt_policy_meritocracy_being_humiliated_modifier
+			add_character_modifier = sp_policy_meritocracy_being_humiliated_modifier
 		}
 	}
 }
 
-spt_policy_events.0002 = {
+sp_policy_events.0002 = {
 	hidden = yes
 
 	trigger = {
 		OR = {
-			has_character_modifier = spt_policy_meritocracy_being_encouraged_modifier
-			has_character_modifier = spt_policy_meritocracy_being_humiliated_modifier
+			has_character_modifier = sp_policy_meritocracy_being_encouraged_modifier
+			has_character_modifier = sp_policy_meritocracy_being_humiliated_modifier
 		}
 	}
 
 	immediate = {
 		if = {
 			limit = {
-				has_character_modifier = spt_policy_meritocracy_being_encouraged_modifier
+				has_character_modifier = sp_policy_meritocracy_being_encouraged_modifier
 			}
-			remove_character_modifier = spt_policy_meritocracy_being_encouraged_modifier
+			remove_character_modifier = sp_policy_meritocracy_being_encouraged_modifier
 		}
 		if = {
 			limit = {
-				has_character_modifier = spt_policy_meritocracy_being_humiliated_modifier
+				has_character_modifier = sp_policy_meritocracy_being_humiliated_modifier
 			}
-			remove_character_modifier = spt_policy_meritocracy_being_humiliated_modifier
+			remove_character_modifier = sp_policy_meritocracy_being_humiliated_modifier
 		}
 	}
 }
 
-spt_policy_events.0003 = {
+sp_policy_events.0003 = {
 	hidden = yes
 
 	trigger = {
@@ -70,14 +70,14 @@ spt_policy_events.0003 = {
 	immediate = {
 		scope:county = {
 			add_county_modifier = {
-				modifier = spt_policy_canal_improvements_county_modifier
+				modifier = sp_policy_canal_improvements_county_modifier
 				years = 5
 			}
 		}
 	}
 }
 
-spt_policy_events.0004 = {
+sp_policy_events.0004 = {
 	hidden = yes
 
 	trigger = {
@@ -87,14 +87,14 @@ spt_policy_events.0004 = {
 	immediate = {
 		scope:county = {
 			add_county_modifier = {
-				modifier = spt_policy_laws_of_imagawa_county_modifier
+				modifier = sp_policy_laws_of_imagawa_county_modifier
 				years = 5
 			}
 		}
 	}
 }
 
-spt_policy_events.0005 = {
+sp_policy_events.0005 = {
 	hidden = yes
 
 	trigger = {
@@ -104,14 +104,14 @@ spt_policy_events.0005 = {
 	immediate = {
 		scope:county = {
 			add_county_modifier = {
-				modifier = spt_policy_laws_of_takeda_county_modifier
+				modifier = sp_policy_laws_of_takeda_county_modifier
 				years = 5
 			}
 		}
 	}
 }
 
-spt_policy_events.0006 = {
+sp_policy_events.0006 = {
 	hidden = yes
 
 	trigger = {
@@ -121,7 +121,7 @@ spt_policy_events.0006 = {
 	immediate = {
 		scope:county = {
 			add_county_modifier = {
-				modifier = spt_policy_five_admonitions_county_modifier
+				modifier = sp_policy_five_admonitions_county_modifier
 				years = 5
 			}
 		}

@@ -1,7 +1,7 @@
-﻿types SPT_kkt_types { # 作为一个类型名，没有实际意义 kkt作为政策窗口的缩写（滚键盘打出来的）
+﻿types sp_types { # 作为一个类型名，没有实际意义
 
-    type SPT_kkt_open_button = widget {
-        name = "SPT_kkt_open_button"  # 窗口名，该名称会被用于初始创建窗口 一般与类型名相同即可
+    type sp_open_button = widget {
+        name = "sp_open_button"  # 窗口名，该名称会被用于初始创建窗口 一般与类型名相同即可
         visible = "[And(And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)), Not(IsGameViewOpen('struggle')))]"
         parentanchor = top|right # 父锚点，即锚点在父窗口的位置
         position = { 0 535 } # 位置
@@ -57,15 +57,15 @@
                 }
 
                 widget_hud_main_tab = {
-                    name = "SPT_tab_my_polices"
+                    name = "sp_tab_my_polices"
 
                     blockoverride "maintab_button"
                     {
                         texture = "gfx/interface/skinned/hud_maintab/maintab_my_policy.dds"
-                        onclick = "[GetScriptedGui('SPT_kkt_init_flag_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetVariableSystem.Toggle( 'show_SPT_kkt_window' )]"
-                        tooltip = SPT_tab_my_polices_tt
-                        down = "[GetVariableSystem.HasValue( 'show_SPT_kkt_window', 'true' )]"
+                        onclick = "[GetScriptedGui('sp_init_flag_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                        onclick = "[GetVariableSystem.Toggle( 'show_sp_window' )]"
+                        tooltip = sp_tab_my_policies_tt
+                        down = "[GetVariableSystem.HasValue( 'show_sp_window', 'true' )]"
                     }
                 }
             }
@@ -73,8 +73,8 @@
     }
 
 
-    type SPT_kkt_window = window { # 政策窗口的类型
-        name = "SPT_kkt_window"
+    type sp_window = window { # 政策窗口的类型
+        name = "sp_window"
         allow_outside = yes # 允许内部元素溢出到外部
         position = { 0 0 }
         movable = yes # 使得窗口可移动 注意：以window为基类的类型，是唯一可以移动的类型 在其他地方写movable = yes是没有意义的
@@ -84,8 +84,8 @@
         using = Window_Background # 一些背景模版，可以迅速让窗口适应原版风格，由于p社的工作，使用这些模版可以让切换到不同文化时候窗口风格与当前文化风格保持一致
         using = Window_Decoration_Spike
 
-        # 窗口可见性判断 即如果show_SPT_kkt_window变量为true则显示窗口
-        visible = "[And(GetVariableSystem.HasValue( 'show_SPT_kkt_window', 'true' ),GetPlayer.IsValid)]"
+        # 窗口可见性判断 即如果show_sp_window变量为true则显示窗口
+        visible = "[And(GetVariableSystem.HasValue( 'show_sp_window', 'true' ),GetPlayer.IsValid)]"
 
         # 窗口关闭时候播放动画和声音，这些都是原版模版
         state = {
@@ -97,7 +97,7 @@
             name = _hide
             using = Animation_FadeOut_Quick
             using = Sound_WindowHide_Standard
-            on_start = "[GetScriptedGui('SPT_kkt_exit_flag_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+            on_start = "[GetScriptedGui('sp_exit_flag_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
         }
 
         vbox = {
@@ -124,12 +124,12 @@
                 layoutpolicy_horizontal = expanding
                 blockoverride "button_close"
                 {
-                    onclick = "[GetVariableSystem.Toggle( 'show_SPT_kkt_window' )]"
+                    onclick = "[GetVariableSystem.Toggle( 'show_sp_window' )]"
                 }
 
                 blockoverride "header_text"
                 {
-                    text = SPT_policy_window_head_text # 标题文本 此处可以直接写中文文字，或者写本地化键
+                    text = sp_policy_window_head_text # 标题文本 此处可以直接写中文文字，或者写本地化键
                 }
             }
 
@@ -147,7 +147,7 @@
                             layoutpolicy_horizontal = expanding
                             blockoverride "header_text"
                             {
-                                text = SPT_con_neu_policy_header_text
+                                text = sp_con_neu_policy_header_text
                             }
                             blockoverride "button_close"
                             {
@@ -163,7 +163,7 @@
                             layoutpolicy_horizontal = expanding
                             blockoverride "header_text"
                             {
-                                text = SPT_pro_sp_policy_header_text
+                                text = sp_pro_sp_policy_header_text
                             }
                             blockoverride "button_close"
                             {
@@ -190,18 +190,18 @@
                             size = { 100% 450 }
                             blockoverride "scrollbox_content" {
                                 vbox = {
-                                    datamodel = "[GetPlayer.MakeScope.GetList('SPT_conservative_policy_flags')]"
+                                    datamodel = "[GetPlayer.MakeScope.GetList('sp_conservative_policy_flags')]"
 
                                     item = {
-                                        SPT_kkt_flag_info_button = {}
+                                        sp_flag_info_button = {}
                                     }
                                 }
                                 
                             }
                             blockoverride "scrollbox_empty"
                             {
-                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_conservative_policy_flags') )]"
-                                text = SPT_policy_is_loading_text
+                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('sp_conservative_policy_flags') )]"
+                                text = sp_policy_is_loading_text
                             }
                         }
                     }
@@ -218,18 +218,18 @@
                             size = { 100% 450 }
                             blockoverride "scrollbox_content" {
                                 vbox = {
-                                    datamodel = "[GetPlayer.MakeScope.GetList('SPT_neutral_policy_flags')]"
+                                    datamodel = "[GetPlayer.MakeScope.GetList('sp_neutral_policy_flags')]"
 
                                     item = {
-                                        SPT_kkt_flag_info_button = {}
+                                        sp_flag_info_button = {}
                                     }
                                 }
                                 
                             }
                             blockoverride "scrollbox_empty"
                             {
-                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_neutral_policy_flags') )]"
-                                text = SPT_policy_is_loading_text
+                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('sp_neutral_policy_flags') )]"
+                                text = sp_policy_is_loading_text
                             }
                         }
                     }
@@ -245,18 +245,18 @@
                             size = { 100% 450 }
                             blockoverride "scrollbox_content" {
                                 vbox = {
-                                    datamodel = "[GetPlayer.MakeScope.GetList('SPT_progressive_policy_flags')]"
+                                    datamodel = "[GetPlayer.MakeScope.GetList('sp_progressive_policy_flags')]"
         
                                     item = {
-                                        SPT_kkt_flag_info_button = {}
+                                        sp_flag_info_button = {}
                                     }
                                 }
                                 
                             }
                             blockoverride "scrollbox_empty"
                             {
-                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_progressive_policy_flags') )]"
-                                text = SPT_policy_is_loading_text
+                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('sp_progressive_policy_flags') )]"
+                                text = sp_policy_is_loading_text
                             }
                         }
                     }
@@ -272,18 +272,18 @@
                             size = { 100% 450 }
                             blockoverride "scrollbox_content" {
                                 vbox = {
-                                    datamodel = "[GetPlayer.MakeScope.GetList('SPT_special_policy_flags')]"
+                                    datamodel = "[GetPlayer.MakeScope.GetList('sp_special_policy_flags')]"
         
                                     item = {
-                                        SPT_kkt_flag_info_button = {}
+                                        sp_flag_info_button = {}
                                     }
                                 }
                                 
                             }
                             blockoverride "scrollbox_empty"
                             {
-                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('SPT_special_policy_flags') )]"
-                                text = SPT_policy_is_loading_text
+                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('sp_special_policy_flags') )]"
+                                text = sp_policy_is_loading_text
                             }
                         }
                     }
@@ -335,7 +335,7 @@
                                 spacing = 5
 
                                 text_single = {
-                                    text = SPT_current_policy_points
+                                    text = sp_current_policy_points
                                     using = Font_Size_Medium
                                 }
                             }
@@ -361,7 +361,7 @@
                             
                             text_label_left = {
                                 using = Font_Size_Medium
-                                text = SPT_effect_header_text
+                                text = sp_effect_header_text
                             }
                             expand = {}
                         }
@@ -385,7 +385,7 @@
                                             autoresize = yes
                                             multiline = yes
                                             using = Font_Size_Medium
-                                            text = "[GetScriptedGui('SPT_kkt_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                                            text = "[GetScriptedGui('sp_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                                         }
                                         hbox = {
                                            layoutpolicy_horizontal = expanding
@@ -404,7 +404,7 @@
                             
                             text_label_left = {
                                 using = Font_Size_Medium
-                                text = SPT_cost_header_text
+                                text = sp_cost_header_text
                             }
                             expand = {}
                         }
@@ -427,7 +427,7 @@
                                         text_multi = {
                                             autoresize = yes
                                             using = Font_Size_Medium
-                                            text = "[GetScriptedGui('SPT_kkt_apply_cost').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                                            text = "[GetScriptedGui('sp_apply_cost').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                                         }
                                         hbox = {
                                            layoutpolicy_horizontal = expanding
@@ -445,31 +445,31 @@
                         button_primary_big = {
                             text_single = {
                                 layoutpolicy_horizontal = expanding
-                                text = SPT_confirm_kkt_button_text
+                                text = sp_confirm_button_text
 	    	                    parentanchor = center
 	    	                    position = {0 -3 }
                             }
 
-                            tooltip = "[GetScriptedGui('SPT_kkt_can_apply_modifier').IsValidTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
-                            tooltip_visible = "[Not(GetScriptedGui('SPT_kkt_can_apply_modifier').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+                            tooltip = "[GetScriptedGui('sp_can_apply_modifier').IsValidTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                            tooltip_visible = "[Not(GetScriptedGui('sp_can_apply_modifier').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
 
-                            enabled = "[GetScriptedGui('SPT_kkt_can_apply_modifier').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
+                            enabled = "[GetScriptedGui('sp_can_apply_modifier').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
     
-                            onclick = "[GetScriptedGui('SPT_kkt_apply_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
-                            onclick = "[GetScriptedGui('SPT_kkt_apply_cost').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                            onclick = "[GetScriptedGui('sp_apply_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
+                            onclick = "[GetScriptedGui('sp_apply_cost').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                         }
                         button_primary_big = {
                             text_single = {
                                 layoutpolicy_horizontal = expanding
-                                text = SPT_remove_kkt_button_text
+                                text = sp_remove_button_text
 	    	                    parentanchor = center
 	    	                    position = {0 -3 }
                             }
-                            enabled = "[GetScriptedGui('SPT_kkt_can_remove_modifier').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
-                            tooltip = "[GetScriptedGui('SPT_kkt_can_remove_modifier').IsValidTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
-                            tooltip_visible = "[Not(GetScriptedGui('SPT_kkt_can_remove_modifier').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+                            enabled = "[GetScriptedGui('sp_can_remove_modifier').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
+                            tooltip = "[GetScriptedGui('sp_can_remove_modifier').IsValidTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
+                            tooltip_visible = "[Not(GetScriptedGui('sp_can_remove_modifier').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
                             
-                            onclick = "[GetScriptedGui('SPT_kkt_remove_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
+                            onclick = "[GetScriptedGui('sp_remove_modifier').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End)]"
                         }
                     }
                     
@@ -479,14 +479,14 @@
         }
     }
 
-    type SPT_kkt_flag_info_button = button_letter {
+    type sp_flag_info_button = button_letter {
         size = { 240 60 }
 
         hbox = {
             spacer = { size = { 30 0 } }
             icon = {
                 size = { 30 30 }
-                visible = "[GetScriptedGui('SPT_kkt_is_released_sg').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                visible = "[GetScriptedGui('sp_is_released_sg').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
                 texture = "gfx/interface/icons/activities/activity_adult_education_header.dds"
             }
             expand = {}
@@ -503,7 +503,7 @@
             position = { 65 -3 }
         }
         text_single = {
-            text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).ScriptValue('SPT_policy_points')|0]"
+            text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).ScriptValue('sp_policy_points')|0]"
             default_format = "bold"
             parentanchor = center
             position = { 90 -3 }
@@ -513,10 +513,10 @@
 
         down = "[EqualTo_string(Scope.GetFlagName, GetVariableSystem.Get('selected_flag'))]"
         onclick = "[GetVariableSystem.Set('selected_flag', Scope.GetFlagName)]"
-        onclick = "[GetScriptedGui('SPT_kkt_count_points_sg').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('SPT_kkt_selected_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
+        onclick = "[GetScriptedGui('sp_count_points_sg').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
     }
 
-    type SPT_placeholder_for_layout = scrollbox {
+    type sp_placeholder_for_layout = scrollbox {
 		layoutpolicy_horizontal = expanding
 		layoutpolicy_vertical = expanding
 		blockoverride "scrollbox_content" {
@@ -526,5 +526,5 @@
 }
 
 # 实例化类型对象，只有实例化后才能在scripted_widgets中被使用
-SPT_kkt_open_button = {}
-SPT_kkt_window = {}
+sp_open_button = {}
+sp_window = {}

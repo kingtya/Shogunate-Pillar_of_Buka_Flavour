@@ -1,0 +1,122 @@
+﻿sp_init_flag_list = {
+	scope = character
+
+	effect = {
+		sp_init_points = yes
+		sp_init_neutral_poilcy_flag_list = yes
+		sp_init_conservative_poilcy_flag_list = yes
+		sp_init_progressive_poilcy_flag_list = yes
+		sp_init_special_poilcy_flag_list = yes
+	}
+}
+
+sp_exit_flag_list = {
+	scope = character
+
+	effect = {
+		sp_clear_flag_list = yes
+	}
+}
+
+sp_apply_modifier = {
+	scope = character
+
+	saved_scopes = {
+		sp_selected_flag
+	}
+
+	effect = {
+		sp_set_policy_effect_to_character = {
+			FLAG = scope:sp_selected_flag
+			ACTION = add
+			CONFIRM = yes
+		}
+	}
+}
+
+sp_can_apply_modifier = {
+	scope = character
+
+	saved_scopes = {
+		sp_selected_flag
+	}
+
+	is_valid = {
+		sp_can_release_pocliy = {
+			FLAG = scope:sp_selected_flag
+		}
+	}
+}
+
+sp_remove_modifier = {
+	scope = character
+
+	saved_scopes = {
+		sp_selected_flag
+	}
+
+	effect = {
+		sp_set_policy_effect_to_character = {
+			FLAG = scope:sp_selected_flag
+			ACTION = remove
+			CONFIRM = no
+		}
+	}
+}
+
+sp_can_remove_modifier = {
+	scope = character
+
+	saved_scopes = {
+		sp_selected_flag
+	}
+
+	is_valid = {
+		sp_can_revoke_pocliy = {
+			FLAG = scope:sp_selected_flag
+		}
+	}
+}
+
+
+sp_apply_cost = {
+	scope = character
+
+	saved_scopes = {
+		sp_selected_flag
+	}
+
+	effect = {
+		sp_set_cost_to_character = {
+			FLAG = scope:sp_selected_flag
+		}
+	}
+}
+
+sp_count_points_sg = {
+	scope = character
+
+	saved_scopes = {
+		sp_selected_flag
+	}
+
+	effect = {
+		sp_count_pocliy_points = {
+			FLAG = scope:sp_selected_flag
+		}
+	}
+}
+
+sp_is_released_sg = {
+	scope = character
+
+	saved_scopes = {
+		sp_selected_flag
+	}
+
+	is_shown = {
+		sp_is_released_pocliy = {
+			FLAG = scope:sp_selected_flag
+		}
+	}
+}

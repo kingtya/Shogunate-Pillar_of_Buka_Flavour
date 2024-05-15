@@ -1,6 +1,6 @@
-﻿namespace = spt_character_initialization
+﻿namespace = sp_character_initialization
 
-spt_character_initialization.0001 = {
+sp_character_initialization.0001 = {
 	scope = none
 	hidden = yes
 

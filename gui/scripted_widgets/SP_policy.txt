@@ -1,3 +1,3 @@
 ﻿# 利用这些可以保证ui在一开始就被创建 注意：创建的ui会一直存在，但是显示与否要看ui自己的visible 不显示的ui实际性能影响极其微小，无需担心
-gui/custom_gui/SPT_kkt.gui = SPT_kkt_open_button # SPT_kkt_open_button 是窗口的name属性标记的 而不是类型名称
-gui/custom_gui/SPT_kkt.gui = SPT_kkt_window
+gui/custom_gui/SP_policy.gui = sp_open_button # sp_open_button 是窗口的name属性标记的 而不是类型名称
+gui/custom_gui/SP_policy.gui = sp_window

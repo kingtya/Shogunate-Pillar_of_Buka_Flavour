@@ -1,37 +1,39 @@
 ﻿##中道
-spt_policy_direct_daimyo_rule_modifier = {
+sp_policy_direct_daimyo_rule_modifier = {
 	icon = stewardship_positive
-	monthly_prestige = 0.1
+	monthly_prestige = 1
 	domain_limit = 1
 	stress_gain_mult = 0.2
 }
 
-spt_policy_improve_labor_modifier = {
+sp_policy_improve_labor_modifier = {
 	icon = rock_positive
 	build_speed = -0.2
 	build_gold_cost = -0.05
 	county_opinion_add = -10
 }
 
-spt_policy_deploy_draftee_modifier = {
+sp_policy_deploy_draftee_modifier = {
 	icon = martial_positive
-	men_at_arms_maintenance = -0.15
+	men_at_arms_maintenance = -0.2
 }
 
-spt_policy_post_horse_system_modifier = {
+sp_policy_post_horse_system_modifier = {
 	icon = horse_positive
 	movement_speed = 0.1
 	character_travel_safety = 25
 	character_travel_speed_mult = 0.05
 }
 
-spt_policy_distant_diplomacy_modifier = {
-	icon = diplomacy_positive
+sp_policy_distant_diplomacy_modifier = {
+	icon = diplomacy_policy
+	monthly_prestige = 1
+	monthly_prestige_gain_mult = 0.1
 	diplomatic_range_mult = 0.5
 	independent_ruler_opinion = 10
 }
 
-spt_policy_suggestion_box_modifier = {
+sp_policy_suggestion_box_modifier = {
 	icon = social_positive
 	county_opinion_add = 20
 }

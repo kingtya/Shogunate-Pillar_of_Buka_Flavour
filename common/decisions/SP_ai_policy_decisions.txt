@@ -1,5 +1,5 @@
 ﻿# 保守
-spt_ai_publish_policy_canal_improvements_decision = {
+sp_ai_publish_policy_canal_improvements_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -9,18 +9,18 @@ spt_ai_publish_policy_canal_improvements_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_canal_improvements
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_canal_improvements
 				}
 			}
 		}
@@ -32,18 +32,18 @@ spt_ai_publish_policy_canal_improvements_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_canal_improvements.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_canal_improvements.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_canal_improvements
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_canal_improvements
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -71,7 +71,7 @@ spt_ai_publish_policy_canal_improvements_decision = {
 		}
 	}
 }
-spt_ai_publish_policy_official_purveyor_decision = {
+sp_ai_publish_policy_official_purveyor_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -80,18 +80,18 @@ spt_ai_publish_policy_official_purveyor_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_official_purveyor
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_official_purveyor
 				}
 			}
 		}
@@ -103,18 +103,18 @@ spt_ai_publish_policy_official_purveyor_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_official_purveyor.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_official_purveyor.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_official_purveyor
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_official_purveyor
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -142,7 +142,7 @@ spt_ai_publish_policy_official_purveyor_decision = {
 		}
 	}
 }
-spt_ai_publish_policy_improve_militia_decision = {
+sp_ai_publish_policy_improve_militia_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -151,18 +151,18 @@ spt_ai_publish_policy_improve_militia_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_improve_militia
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_improve_militia
 				}
 			}
 		}
@@ -174,18 +174,18 @@ spt_ai_publish_policy_improve_militia_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_improve_militia.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_improve_militia.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_improve_militia
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_improve_militia
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -212,7 +212,7 @@ spt_ai_publish_policy_improve_militia_decision = {
 		}
 	}
 }
-spt_ai_publish_policy_buddhism_sanction_decision = {
+sp_ai_publish_policy_buddhism_sanction_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -221,18 +221,18 @@ spt_ai_publish_policy_buddhism_sanction_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_buddhism_sanction
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_buddhism_sanction
 				}
 			}
 		}
@@ -244,18 +244,18 @@ spt_ai_publish_policy_buddhism_sanction_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_buddhism_sanction.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_buddhism_sanction.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_buddhism_sanction
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_buddhism_sanction
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -282,7 +282,7 @@ spt_ai_publish_policy_buddhism_sanction_decision = {
 		}
 	}
 }
-spt_ai_publish_policy_foster_system_decision = {
+sp_ai_publish_policy_foster_system_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -291,18 +291,18 @@ spt_ai_publish_policy_foster_system_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_foster_system
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_foster_system
 				}
 			}
 		}
@@ -314,18 +314,18 @@ spt_ai_publish_policy_foster_system_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_foster_system.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_foster_system.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_foster_system
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_foster_system
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -352,7 +352,7 @@ spt_ai_publish_policy_foster_system_decision = {
 		}
 	}
 }
-spt_ai_publish_policy_improve_cavalry_decision = {
+sp_ai_publish_policy_improve_cavalry_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -375,18 +375,18 @@ spt_ai_publish_policy_improve_cavalry_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_improve_cavalry
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_improve_cavalry
 				}
 			}
 		}
@@ -398,18 +398,18 @@ spt_ai_publish_policy_improve_cavalry_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_improve_cavalry.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_improve_cavalry.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_improve_cavalry
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_improve_cavalry
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -437,7 +437,7 @@ spt_ai_publish_policy_improve_cavalry_decision = {
 	}
 }
 # 中道
-spt_ai_publish_policy_improve_labor_decision = {
+sp_ai_publish_policy_improve_labor_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -446,18 +446,18 @@ spt_ai_publish_policy_improve_labor_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_improve_labor
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_improve_labor
 				}
 			}
 		}
@@ -469,18 +469,18 @@ spt_ai_publish_policy_improve_labor_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_improve_labor.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_improve_labor.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_improve_labor
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_improve_labor
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -512,7 +512,7 @@ spt_ai_publish_policy_improve_labor_decision = {
 		}
 	}
 }
-spt_ai_publish_policy_direct_daimyo_rule_decision = {
+sp_ai_publish_policy_direct_daimyo_rule_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -521,18 +521,18 @@ spt_ai_publish_policy_direct_daimyo_rule_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_direct_daimyo_rule
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_direct_daimyo_rule
 				}
 			}
 		}
@@ -544,18 +544,18 @@ spt_ai_publish_policy_direct_daimyo_rule_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_direct_daimyo_rule.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_direct_daimyo_rule.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_direct_daimyo_rule
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_direct_daimyo_rule
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -582,7 +582,7 @@ spt_ai_publish_policy_direct_daimyo_rule_decision = {
 		}
 	}
 }
-spt_ai_publish_policy_deploy_draftee_decision = {
+sp_ai_publish_policy_deploy_draftee_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -591,18 +591,18 @@ spt_ai_publish_policy_deploy_draftee_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_deploy_draftee
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_deploy_draftee
 				}
 			}
 		}
@@ -614,18 +614,18 @@ spt_ai_publish_policy_deploy_draftee_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_deploy_draftee.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_deploy_draftee.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_deploy_draftee
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_deploy_draftee
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -657,7 +657,7 @@ spt_ai_publish_policy_deploy_draftee_decision = {
 		}
 	}
 }
-spt_ai_publish_policy_post_horse_system_decision = {
+sp_ai_publish_policy_post_horse_system_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -667,18 +667,18 @@ spt_ai_publish_policy_post_horse_system_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_post_horse_system
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_post_horse_system
 				}
 			}
 		}
@@ -690,18 +690,18 @@ spt_ai_publish_policy_post_horse_system_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_post_horse_system.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_post_horse_system.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_post_horse_system
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_post_horse_system
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -734,7 +734,7 @@ spt_ai_publish_policy_post_horse_system_decision = {
 		}
 	}
 }
-spt_ai_publish_policy_distant_diplomacy_decision = {
+sp_ai_publish_policy_distant_diplomacy_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -743,18 +743,18 @@ spt_ai_publish_policy_distant_diplomacy_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_distant_diplomacy
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_distant_diplomacy
 				}
 			}
 		}
@@ -766,18 +766,18 @@ spt_ai_publish_policy_distant_diplomacy_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_distant_diplomacy.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_distant_diplomacy.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_distant_diplomacy
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_distant_diplomacy
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -794,7 +794,7 @@ spt_ai_publish_policy_distant_diplomacy_decision = {
 		base = 25
 	}
 }
-spt_ai_publish_policy_suggestion_box_decision = {
+sp_ai_publish_policy_suggestion_box_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -803,18 +803,18 @@ spt_ai_publish_policy_suggestion_box_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_suggestion_box
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_suggestion_box
 				}
 			}
 		}
@@ -826,18 +826,18 @@ spt_ai_publish_policy_suggestion_box_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_suggestion_box.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_suggestion_box.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_suggestion_box
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_suggestion_box
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -855,16 +855,16 @@ spt_ai_publish_policy_suggestion_box_decision = {
 		modifier = {
 			trigger_if = {
 				limit = {
-					exists = root.var:spt_current_policy_points
+					exists = root.var:sp_current_policy_points
 				}
-				root.var:spt_current_policy_points >= 95
+				root.var:sp_current_policy_points >= 95
 			}
 			add = 20
 		}
 	}
 }
 # 革新
-spt_ai_publish_policy_improve_firearms_decision = {
+sp_ai_publish_policy_improve_firearms_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -877,18 +877,18 @@ spt_ai_publish_policy_improve_firearms_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_improve_firearms
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_improve_firearms
 				}
 			}
 		}
@@ -900,18 +900,18 @@ spt_ai_publish_policy_improve_firearms_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_improve_firearms.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_improve_firearms.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_improve_firearms
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_improve_firearms
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -938,7 +938,7 @@ spt_ai_publish_policy_improve_firearms_decision = {
 		}
 	}
 }
-spt_ai_publish_policy_meritocracy_decision = {
+sp_ai_publish_policy_meritocracy_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -947,18 +947,18 @@ spt_ai_publish_policy_meritocracy_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_meritocracy
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_meritocracy
 				}
 			}
 		}
@@ -970,18 +970,18 @@ spt_ai_publish_policy_meritocracy_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_meritocracy.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_meritocracy.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_meritocracy
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_meritocracy
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -998,7 +998,7 @@ spt_ai_publish_policy_meritocracy_decision = {
 		base = 25
 	}
 }
-spt_ai_publish_policy_supply_transporter_decision = {
+sp_ai_publish_policy_supply_transporter_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
@@ -1007,18 +1007,18 @@ spt_ai_publish_policy_supply_transporter_decision = {
 	is_valid = {
 		trigger_if = {
 			limit = {
-				exists = root.var:spt_current_policy_points
+				exists = root.var:sp_current_policy_points
 			}
-			root.var:spt_current_policy_points < root.spt_total_policy_points
+			root.var:sp_current_policy_points < root.sp_total_policy_points
 		}
 		trigger_if = {
 			limit = {
-				has_variable_list = SPT_released_policy_flags
+				has_variable_list = sp_released_policy_flags
 			}
 			NOT = {
 				any_in_list = {
-					variable = SPT_released_policy_flags
-					this = flag:flag_spt_policy_supply_transporter
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_supply_transporter
 				}
 			}
 		}
@@ -1030,18 +1030,18 @@ spt_ai_publish_policy_supply_transporter_decision = {
 
 	effect = {
 		set_variable = {
-			name = spt_policy_will_be_points
+			name = sp_policy_will_be_points
 			value = {
-				value = root.var:spt_current_policy_points
-				add = flag:flag_spt_policy_supply_transporter.SPT_policy_points
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_supply_transporter.sp_policy_points
 			}
 		}
 		if = {
 			limit = {
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			SPT_set_policy_effect_to_character = {
-				FLAG = flag:flag_spt_policy_supply_transporter
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_supply_transporter
 				ACTION = add
 				CONFIRM = yes
 			}

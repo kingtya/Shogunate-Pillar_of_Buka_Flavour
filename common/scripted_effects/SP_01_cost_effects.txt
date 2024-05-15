@@ -2,99 +2,99 @@
 ### 政策花费 ###
 ################
 
-SPT_kkt_set_cost_to_character = {
+sp_set_cost_to_character = {
 	switch = {
 		trigger = $FLAG$
 		# 保守
-		flag:flag_spt_policy_canal_improvements = {
+		flag:flag_sp_policy_canal_improvements = {
 			remove_short_term_gold = 50
 		}
-		flag:flag_spt_policy_improve_militia = {
+		flag:flag_sp_policy_improve_militia = {
 			add_prestige = -50
 		}
-		flag:flag_spt_policy_council_system = {
+		flag:flag_sp_policy_council_system = {
 			add_prestige = -50
 		}
-		flag:flag_spt_policy_official_purveyor = {
+		flag:flag_sp_policy_official_purveyor = {
 			remove_short_term_gold = 50
 		}
-		flag:flag_spt_policy_foster_system = {
+		flag:flag_sp_policy_foster_system = {
 			add_prestige = -25
 		}
-		flag:flag_spt_policy_improve_cavalry = {
+		flag:flag_sp_policy_improve_cavalry = {
 			remove_short_term_gold = 50
 		}
-		flag:flag_spt_policy_buddhism_sanction = {
+		flag:flag_sp_policy_buddhism_sanction = {
 			add_piety = -25
 		}
 		# 中道
-		flag:flag_spt_policy_direct_daimyo_rule = {
+		flag:flag_sp_policy_direct_daimyo_rule = {
 			add_prestige = -50
 		}
-		flag:flag_spt_policy_improve_labor = {
+		flag:flag_sp_policy_improve_labor = {
 			add_prestige = -50
 		}
-		flag:flag_spt_policy_deploy_draftee = {
+		flag:flag_sp_policy_deploy_draftee = {
 			add_prestige = -50
 		}
-		flag:flag_spt_policy_post_horse_system = {
+		flag:flag_sp_policy_post_horse_system = {
 			remove_short_term_gold = 25
 		}
-		flag:flag_spt_policy_distant_diplomacy = {
+		flag:flag_sp_policy_distant_diplomacy = {
 			add_prestige = -25
 		}
-		flag:flag_spt_policy_suggestion_box = {
+		flag:flag_sp_policy_suggestion_box = {
 			add_prestige = -10
 		}
 		# 革新
-		flag:flag_spt_policy_soidier_professionaliztion = {
+		flag:flag_sp_policy_soidier_professionaliztion = {
 			remove_short_term_gold = 50
 		}
-		flag:flag_spt_policy_easy_commerce = {
+		flag:flag_sp_policy_easy_commerce = {
 			remove_short_term_gold = 50
 		}
-		flag:flag_spt_policy_improve_firearms = {
+		flag:flag_sp_policy_improve_firearms = {
 			remove_short_term_gold = 50
 		}
-		flag:flag_spt_policy_western_sanction = {
+		flag:flag_sp_policy_western_sanction = {
 			add_piety = -50
 		}
-		flag:flag_spt_policy_meritocracy = {
+		flag:flag_sp_policy_meritocracy = {
 			add_prestige = -25
 		}
-		flag:flag_spt_policy_supply_transporter = {
+		flag:flag_sp_policy_supply_transporter = {
 			add_prestige = -25
 		}
 		# 御用
-		flag:flag_spt_policy_laws_of_imagawa = {
+		flag:flag_sp_policy_laws_of_imagawa = {
 			add_prestige = -100
 		}
-		flag:flag_spt_policy_laws_of_takeda = {
+		flag:flag_sp_policy_laws_of_takeda = {
 			add_prestige = -100
 		}
-		flag:flag_spt_policy_five_admonitions = {
+		flag:flag_sp_policy_five_admonitions = {
 			add_prestige = -100
 		}
-		flag:flag_spt_policy_guardian_forces = {
+		flag:flag_sp_policy_guardian_forces = {
 			add_prestige = -100
 		}
-		flag:flag_spt_policy_intensive_firearms = {
+		flag:flag_sp_policy_intensive_firearms = {
 			remove_short_term_gold = 100
 			add_prestige = -100
 		}
-		flag:flag_spt_policy_dragon_corps = {
+		flag:flag_sp_policy_dragon_corps = {
 			add_prestige = -150
 		}
-		flag:flag_spt_policy_chivalry_education = {
+		flag:flag_sp_policy_chivalry_education = {
 			add_prestige = -100
 		}
-		flag:flag_spt_policy_expeditionary_support = {
+		flag:flag_sp_policy_expeditionary_support = {
 			add_prestige = -100
 		}
-		flag:flag_spt_policy_million_minds_motto = {
+		flag:flag_sp_policy_million_minds_motto = {
 			add_prestige = -100
 		}
-		flag:flag_spt_policy_armoured_militia = {
+		flag:flag_sp_policy_armoured_militia = {
 			add_prestige = -100
 		}
 	}
@@ -105,10 +105,10 @@ SPT_kkt_set_cost_to_character = {
 ### 政策效果 ###
 ################
 
-SPT_set_policy_effect_to_character = {
+sp_set_policy_effect_to_character = {
 	
 	show_as_tooltip = { # 作为显示效果，不实际执行
-		spt_policy_introduction_effect = {
+		sp_policy_introduction_effect = {
 			FLAG = $FLAG$
 			ACTION = $ACTION$
 		}
@@ -119,26 +119,26 @@ SPT_set_policy_effect_to_character = {
 			limit = {
 				$CONFIRM$ = yes #发布国策
 			}
-			spt_policy_introduction_effect = {
+			sp_policy_introduction_effect = {
 				FLAG = $FLAG$
 				ACTION = $ACTION$
 			}
 			add_to_variable_list = {
-				name = SPT_released_policy_flags
+				name = sp_released_policy_flags
 				target = $FLAG$
 			}
 			if = {
 				limit = {
-					NOT = { exists = root.var:spt_current_policy_points }	
+					NOT = { exists = root.var:sp_current_policy_points }	
 				}
 				set_variable = {
-					name = spt_current_policy_points
+					name = sp_current_policy_points
 					value = 0
 				}
 			}
 			change_variable = {
-				name = spt_current_policy_points
-				add = $FLAG$.SPT_policy_points
+				name = sp_current_policy_points
+				add = $FLAG$.sp_policy_points
 			}
 			add_character_flag = {
 				flag = $FLAG$
@@ -149,17 +149,17 @@ SPT_set_policy_effect_to_character = {
 			limit = {
 				$CONFIRM$ = no #撤销国策
 			}
-			spt_policy_revocation_effect = {
+			sp_policy_revocation_effect = {
 				FLAG = $FLAG$
 				ACTION = $ACTION$
 			}
 			remove_list_variable = {
-				name = SPT_released_policy_flags
+				name = sp_released_policy_flags
 				target = $FLAG$
 			}
 			change_variable = {
-				name = spt_current_policy_points
-				subtract = $FLAG$.SPT_policy_points
+				name = sp_current_policy_points
+				subtract = $FLAG$.sp_policy_points
 			}
 			if = {
 				limit = {

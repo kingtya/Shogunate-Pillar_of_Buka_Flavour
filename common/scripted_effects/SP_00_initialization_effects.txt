@@ -1,0 +1,326 @@
+﻿#################
+### 政策初始化 ###
+#################
+# 注：此处每一个flag对应一个国策，root为当前角色，如果需要动态显示国策，用if判断即可
+## 保守
+sp_init_conservative_poilcy_flag_list = {
+	
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_canal_improvements
+	}
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_official_purveyor
+	}
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_improve_militia
+	}
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_council_system
+	}
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_improve_cavalry
+	}
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_foster_system
+	}
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_buddhism_sanction
+	}
+
+}
+## 中道
+sp_init_neutral_poilcy_flag_list = {
+	add_to_variable_list = {
+		name = sp_neutral_policy_flags
+		target = flag:flag_sp_policy_direct_daimyo_rule
+	}
+	add_to_variable_list = {
+		name = sp_neutral_policy_flags
+		target = flag:flag_sp_policy_improve_labor
+	}
+	add_to_variable_list = {
+		name = sp_neutral_policy_flags
+		target = flag:flag_sp_policy_deploy_draftee
+	}
+	add_to_variable_list = {
+		name = sp_neutral_policy_flags
+		target = flag:flag_sp_policy_post_horse_system
+	}
+	add_to_variable_list = {
+		name = sp_neutral_policy_flags
+		target = flag:flag_sp_policy_distant_diplomacy
+	}
+	add_to_variable_list = {
+		name = sp_neutral_policy_flags
+		target = flag:flag_sp_policy_suggestion_box
+	}
+}
+## 革新
+sp_init_progressive_poilcy_flag_list = {
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_soidier_professionaliztion
+	}
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_easy_commerce
+	}
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_improve_firearms
+	}
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_meritocracy
+	}
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_supply_transporter
+	}
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_western_sanction
+	}
+
+}
+## 御用
+sp_init_special_poilcy_flag_list = {
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_laws_of_imagawa
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_laws_of_takeda
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_five_admonitions
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_guardian_forces
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_intensive_firearms
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_dragon_corps
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_chivalry_education
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_expeditionary_support
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_million_minds_motto
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_armoured_militia
+	}
+
+}
+
+################
+### 政策复位 ###
+################
+sp_clear_flag_list = {
+	clear_variable_list = sp_conservative_policy_flags
+	clear_variable_list = sp_neutral_policy_flags
+	clear_variable_list = sp_progressive_policy_flags
+	clear_variable_list = sp_special_policy_flags
+}
+
+#################
+### 政策点管理 ###
+#################
+
+sp_init_points = {
+	if = {
+		limit = {
+			NOT = {
+				exists = var:sp_current_policy_points
+			}
+		}
+		set_variable = {
+			name = sp_current_policy_points
+			value = 0
+		}
+	}
+}
+
+sp_count_pocliy_points = {
+	set_variable = {
+		name = sp_policy_will_be_points
+		value = {
+			value = root.var:sp_current_policy_points
+			add = $FLAG$.sp_policy_points
+		}
+	}
+}
+
+
+################
+### 封臣立场 ###
+################
+### 宫廷礼制
+sp_courtly_vassal_towards_policy_opinion_effect = {
+	save_temporary_scope_as = actor
+	if = {
+		limit = { any_vassal = { has_vassal_stance = courtly } }
+		if = {
+			limit = { 
+				$POLICY_TYPE_SW_1$ = no
+				$POLICY_TYPE_SW_2$ = no
+			}
+			custom_tooltip = sp_courtly_vassal_towards_policy_opinion_effect_tt_0
+			hidden_effect = {
+				every_vassal = {
+					limit = {
+						has_vassal_stance = courtly
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = sp_vassal_towards_conservative_policy_opinion
+						opinion = $OPINION$
+					}
+				}
+			}
+		}
+		if = {
+			limit = { 
+				$POLICY_TYPE_SW_1$ = no
+				$POLICY_TYPE_SW_2$ = yes
+			}
+			custom_tooltip = sp_courtly_vassal_towards_policy_opinion_effect_tt_1
+			hidden_effect = {
+				every_vassal = {
+					limit = {
+						has_vassal_stance = courtly
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = sp_vassal_towards_neutral_policy_opinion
+						opinion = $OPINION$
+					}
+				}
+			}
+		}
+		if = {
+			limit = { 
+				$POLICY_TYPE_SW_1$ = yes
+				$POLICY_TYPE_SW_2$ = no
+			}
+			custom_tooltip = sp_courtly_vassal_towards_policy_opinion_effect_tt_2
+			hidden_effect = {
+				every_vassal = {
+					limit = {
+						has_vassal_stance = courtly
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = sp_vassal_towards_progressive_policy_opinion
+						opinion = $OPINION$
+					}
+				}
+			}
+		}
+	}
+}
+
+sp_glory_hound_vassal_towards_policy_opinion_effect = {
+	save_temporary_scope_as = actor
+	if = {
+		limit = { any_vassal = { has_vassal_stance = glory_hound } }
+		if = {
+			limit = {
+			}
+			custom_tooltip = sp_glory_hound_vassal_towards_policy_opinion_effect_tt
+			hidden_effect = {
+				every_vassal = {
+					limit = {
+						has_vassal_stance = glory_hound
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = sp_vassal_towards_conservative_policy_opinion
+						opinion = $OPINION$
+					}
+				}
+			}
+		}
+	}
+}
+
+sp_parochial_vassal_towards_policy_opinion_effect = {
+	save_temporary_scope_as = actor
+	if = {
+		limit = { any_vassal = { has_vassal_stance = parochial } }
+		if = {
+			limit = { 
+				$POLICY_TYPE_SW_1$ = no
+				$POLICY_TYPE_SW_2$ = no
+			}
+			custom_tooltip = sp_parochial_vassal_towards_policy_opinion_effect_tt_0
+			hidden_effect = {
+				every_vassal = {
+					limit = {
+						has_vassal_stance = parochial
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = sp_vassal_towards_conservative_policy_opinion
+						opinion = $OPINION$
+					}
+				}
+			}
+		}
+		if = {
+			limit = { 
+				$POLICY_TYPE_SW_1$ = no
+				$POLICY_TYPE_SW_2$ = yes
+			}
+		}
+		if = {
+			limit = { 
+				$POLICY_TYPE_SW_1$ = yes
+				$POLICY_TYPE_SW_2$ = no
+			}
+			custom_tooltip = sp_parochial_vassal_towards_policy_opinion_effect_tt_2
+			hidden_effect = {
+				every_vassal = {
+					limit = {
+						has_vassal_stance = parochial
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = sp_vassal_towards_progressive_policy_opinion
+						opinion = $OPINION$
+					}
+				}
+			}
+		}
+	}
+}
+
+sp_block_firing_councillor_effect = {
+	set_variable = {
+		name = block_fire_councillor
+		value = $COURT_OWNER$
+		years = 10
+	}
+}

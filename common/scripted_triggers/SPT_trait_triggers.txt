@@ -1,4 +1,4 @@
-﻿spt_has_imagawa_margin_trait = {
+﻿sp_has_imagawa_margin_trait = {
 	OR = {
 		has_trait = imagawa_margin
 		AND = {
@@ -11,7 +11,7 @@
 	}
 }
 
-spt_has_takeda_margin_trait = {
+sp_has_takeda_margin_trait = {
 	OR = {
 		has_trait = takeda_margin
 		AND = {
@@ -25,7 +25,7 @@ spt_has_takeda_margin_trait = {
 }
 
 
-spt_has_hojo_margin_trait = {
+sp_has_hojo_margin_trait = {
 	OR = {
 		has_trait = hojo_margin
 		AND = {
@@ -39,7 +39,7 @@ spt_has_hojo_margin_trait = {
 }
 
 
-spt_has_oda_margin_trait = {
+sp_has_oda_margin_trait = {
 	OR = {
 		has_trait = oda_margin
 		AND = {
@@ -52,7 +52,7 @@ spt_has_oda_margin_trait = {
 	}
 }
 
-spt_has_tokugawa_margin_trait = {
+sp_has_tokugawa_margin_trait = {
 	OR = {
 		has_trait = tokugawa_margin
 		AND = {
@@ -65,7 +65,7 @@ spt_has_tokugawa_margin_trait = {
 	}
 }
 
-spt_has_date_margin_trait = {
+sp_has_date_margin_trait = {
 	OR = {
 		has_trait = date_margin
 		AND = {
@@ -78,7 +78,7 @@ spt_has_date_margin_trait = {
 	}
 }
 
-spt_has_uesugi_margin_trait = {
+sp_has_uesugi_margin_trait = {
 	OR = {
 		has_trait = uesugi_margin
 		AND = {
@@ -91,7 +91,7 @@ spt_has_uesugi_margin_trait = {
 	}
 }
 
-spt_has_shimazu_margin_trait = {
+sp_has_shimazu_margin_trait = {
 	OR = {
 		has_trait = shimazu_margin
 		AND = {
@@ -104,7 +104,7 @@ spt_has_shimazu_margin_trait = {
 	}
 }
 
-spt_has_mori_margin_trait = {
+sp_has_mori_margin_trait = {
 	OR = {
 		has_trait = mori_margin
 		AND = {
@@ -117,7 +117,7 @@ spt_has_mori_margin_trait = {
 	}
 }
 
-spt_has_chosokabe_margin_trait = {
+sp_has_chosokabe_margin_trait = {
 	OR = {
 		has_trait = chosokabe_margin
 		AND = {

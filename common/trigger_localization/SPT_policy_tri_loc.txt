@@ -1,29 +1,29 @@
-﻿SPT_policy_released_cd = {
-	global = SPT_policy_released_cd
-	global_not = SPT_policy_released_cd
+﻿sp_policy_released_cd = {
+	global = sp_policy_released_cd
+	global_not = sp_policy_released_cd
 }
 
-SPT_kkt_policy_not_released = {
-	global = SPT_kkt_policy_not_released
-	global_not = SPT_kkt_policy_not_released
+sp_policy_not_released_cd = {
+	global = sp_policy_not_released_cd
+	global_not = sp_policy_not_released_cd
 }
 
-SPT_policy_need_more_points = {
-	global = SPT_policy_need_more_points
-	global_not = SPT_policy_need_more_points
+sp_policy_need_more_points_cd = {
+	global = sp_policy_need_more_points_cd
+	global_not = sp_policy_need_more_points_cd
 }
 
-SPT_policy_released_recently = {
-	global = SPT_policy_released_recently
-	global_not = SPT_policy_released_recently
+sp_policy_released_recently_cd = {
+	global = sp_policy_released_recently_cd
+	global_not = sp_policy_released_recently_cd
 }
 
-SPT_contraditory_policy_released_cd = {
-	global = SPT_contraditory_policy_released_cd
-	global_not = SPT_contraditory_policy_released_cd
+sp_contraditory_policy_released_cd = {
+	global = sp_contraditory_policy_released_cd
+	global_not = sp_contraditory_policy_released_cd
 }
 
-SPT_policy_is_not_unlock_cd = {
-	global = SPT_policy_is_not_unlock_cd
-	global_not = SPT_policy_is_not_unlock_cd
+sp_policy_is_not_unlock_cd = {
+	global = sp_policy_is_not_unlock_cd
+	global_not = sp_policy_is_not_unlock_cd
 }

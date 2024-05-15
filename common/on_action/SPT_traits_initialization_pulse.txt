@@ -1,5 +1,0 @@
-﻿on_game_start = {
-	events = {
-		spt_character_initialization.0001
-	}
-}

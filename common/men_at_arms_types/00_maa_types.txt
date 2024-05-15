@@ -453,10 +453,10 @@ dragon_corps = {
 	type = archer_cavalry
 	
 	can_recruit = {
-		has_variable_list = SPT_released_policy_flags
+		has_variable_list = sp_released_policy_flags
 		any_in_list = {
-			variable = SPT_released_policy_flags
-			this = flag:flag_spt_policy_dragon_corps
+			variable = sp_released_policy_flags
+			this = flag:flag_sp_policy_dragon_corps
 		}
 		culture = {
 			has_innovation = innovation_advanced_bowmaking

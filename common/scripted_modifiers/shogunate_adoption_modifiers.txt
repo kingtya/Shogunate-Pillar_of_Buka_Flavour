@@ -1,0 +1,291 @@
+﻿# Adoption scripted modifiers
+
+shogunate_adoption_ai_accept_modifier = {
+
+	# Weak Hook
+
+	modifier = {
+		add = 20
+		scope:actor = {
+			has_character_modifier = sp_policy_foster_system_modifier
+		}
+		scope:recipient = {
+			is_vassal_of = scope:actor
+		}
+		desc = sp_policy_foster_system_more_accpetive_adoption_reason
+	}
+	modifier = {
+		add = 100
+		scope:adoption_hook = yes
+		scope:actor = { NOT = { has_strong_hook = scope:recipient } }
+		desc = SCHEME_WEAK_HOOK_USED
+	}
+
+	# Strong Hook
+
+	modifier = {
+		add = 200
+		scope:adoption_hook = yes
+		scope:actor = { has_strong_hook = scope:recipient }
+		desc = SCHEME_STRONG_HOOK_USED
+	}
+
+	# Dynasty Prestige Level
+
+	modifier = {
+		scope:secondary_actor = { has_dynasty = yes }
+		NOT = { scope:secondary_actor.dynasty.dynasty_prestige_level = scope:secondary_recipient.dynasty.dynasty_prestige_level }
+		add = {
+			value = scope:secondary_actor.dynasty.dynasty_prestige_level
+			subtract = scope:secondary_recipient.dynasty.dynasty_prestige_level
+			multiply = 5
+		}
+		desc = AI_DYNASTY_PRESTIGE_REASON_SECONDARY
+	}	
+
+	# Dynasty Prestige Level (Lowborn)
+
+	modifier = {
+		scope:secondary_actor = { has_dynasty = no }
+		add = {
+			value = -100
+			if = {
+				limit = {
+					scope:secondary_recipient = { has_dynasty = yes }
+				}
+				multiply = 5
+			}
+		}
+		desc = AI_DYNASTY_PRESTIGE_REASON_LOWBORN
+	}
+
+	# Tier Difference
+
+	modifier = {
+		NOT = { scope:actor.highest_held_title_tier = scope:recipient.highest_held_title_tier }
+		add = {
+			value = scope:actor.highest_held_title_tier
+			subtract = scope:recipient.highest_held_title_tier
+			multiply = 30
+		}
+		desc = SHOGUNATE_ADOPTION_TIER_DIFFERENCE
+	}
+
+	# Opinion (recipient -> actor)
+
+	opinion_modifier = {
+		trigger = {
+			NOT = { scope:actor = scope:recipient }
+		}
+		who = scope:recipient
+		opinion_target = scope:actor
+		multiplier = 0.75
+		desc = SAR_AI_ACTOR_OPINION_REASON
+	}
+
+	# Opinion (recipient -> secondary_actor)
+
+	opinion_modifier = {
+		trigger = {
+			NOT = { scope:recipient = scope:secondary_actor }
+		}
+		who = scope:recipient
+		opinion_target = scope:secondary_actor
+		multiplier = 0.25
+		desc = SAR_AI_SECONDARY_ACTOR_OPINION_REASON
+	}
+
+	# Adoptive father is old and has no inheritable son
+
+	modifier = {
+		add = scope:secondary_recipient.age
+		scope:secondary_actor.age < scope:secondary_recipient.age
+		scope:secondary_recipient = {
+			age >= 30
+			any_child = {
+				is_alive = yes
+				is_male = yes
+				NOT = { has_trait = eunuch }
+				NOT = { has_trait = devoted }
+				NOT = { has_trait = order_member }
+				NOT = { has_trait = bastard }
+				NOT = { has_trait = bastard_founder }
+				count = 0
+			}
+		}
+		desc = SHOGUNATE_ADOPTION_FATHER_HAS_NO_SON
+	}
+
+	# Adoptive father has any inheritable son
+
+	modifier = {
+		add = -200
+		scope:secondary_actor.age < scope:secondary_recipient.age
+		scope:secondary_recipient = {
+			any_child = {
+				is_alive = yes
+				is_male = yes
+				NOT = { has_trait = eunuch }
+				NOT = { has_trait = devoted }
+				NOT = { has_trait = order_member }
+				NOT = { has_trait = bastard }
+				NOT = { has_trait = bastard_founder }
+				count > 0
+			}
+		}
+		desc = SHOGUNATE_ADOPTION_FATHER_HAS_ANY_SON
+	}
+
+	# Adoptive father has low fertility
+
+	modifier = {
+		add = 50
+		scope:secondary_actor.age < scope:secondary_recipient.age
+		scope:secondary_recipient = {
+			fertility < 0.1
+		}
+		desc = SHOGUNATE_ADOPTION_FATHER_HAS_LOW_FERTILITY
+	}
+
+	# Adoptive father's consorts have low fertility
+
+	modifier = {
+		add = 25
+		scope:secondary_actor.age < scope:secondary_recipient.age
+		scope:secondary_recipient = {
+			any_consort = {
+				is_alive = yes
+				count > 0
+			}
+			any_consort = {
+				is_alive = yes
+				fertility >= 0.1
+				count = 0
+			}
+		}
+		desc = SHOGUNATE_ADOPTION_MOTHER_HAS_LOW_FERTILITY
+	}
+
+	# Adopted child is too young
+
+	modifier = {
+		add = {
+			value = 16
+			subtract = scope:secondary_actor.age
+			multiply = -3
+		}
+		scope:secondary_actor.age < scope:secondary_recipient.age
+		scope:secondary_actor = {
+			age < 16
+		}
+		desc = SHOGUNATE_ADOPTION_CHILD_IS_TOO_YOUNG
+	}
+
+	# Adopted child is female
+
+	modifier = {
+		add = -100
+		scope:secondary_actor.age < scope:secondary_recipient.age
+		scope:secondary_actor = {
+			is_female = yes
+		}
+		desc = SHOGUNATE_ADOPTION_CHILD_IS_FEMALE
+	}
+
+	# Adopted child is not healthy
+
+	modifier = {
+		add = -100
+		scope:secondary_actor.age < scope:secondary_recipient.age
+		scope:secondary_actor = {
+			OR = {
+				has_trait = depressed_1
+				has_trait = depressed_genetic
+				has_trait = lunatic_1
+				has_trait = lunatic_genetic
+				has_trait = possessed_1
+				has_trait = possessed_genetic
+				has_trait = ill
+				has_trait = pneumonic
+				has_trait = great_pox
+				has_trait = early_great_pox
+				has_trait = lovers_pox
+				has_trait = leper
+				has_trait = wounded_1
+				has_trait = wounded_2
+				has_trait = wounded_3
+				has_trait = maimed
+				has_trait = one_eyed
+				has_trait = one_legged
+				has_trait = disfigured
+				has_trait = infirm
+				has_trait = incapable
+				has_trait = gout_ridden
+				has_trait = consumption
+				has_trait = cancer
+				has_trait = typhus
+				has_trait = bubonic_plague
+				has_trait = smallpox
+				has_trait = sickly
+				has_trait = scarred
+				has_trait = eunuch
+				has_trait = blind
+			}
+		}
+		desc = SHOGUNATE_ADOPTION_CHILD_IS_NOT_HEALTHY
+	}
+
+	# Adopted child is an heir
+
+	modifier = {
+		add = -100
+		scope:secondary_actor.age > scope:secondary_recipient.age
+		scope:secondary_recipient = {
+			any_heir_title = {
+				exists = holder
+			}
+		}
+		desc = SHOGUNATE_ADOPTION_CHILD_IS_HEIR
+	}
+
+	# Adopted child is landed
+
+	modifier = {
+		add = -100
+		scope:secondary_actor.age > scope:secondary_recipient.age
+		scope:secondary_recipient = {
+			is_landed = yes
+		}
+		desc = SHOGUNATE_ADOPTION_CHILD_IS_LANDED
+	}
+
+	# Valuable claimant
+
+	modifier = {
+		add = -100
+		scope:secondary_actor.age > scope:secondary_recipient.age
+		scope:secondary_recipient = {
+			is_claimant = yes
+			NOT = {
+				any_claim = {
+					holder = scope:recipient
+				}
+			}
+			NOT = { this = scope:recipient }
+		}
+		desc = VALUABLE_CLAIMANT
+	}
+
+	# Valuable on my own title
+	
+	modifier = {
+		add = -100
+		scope:secondary_actor.age > scope:secondary_recipient.age
+		scope:secondary_recipient = {
+			any_claim = {
+				holder = scope:recipient
+			}
+		}
+		desc = CLAIMANT_TO_MY_TITLES
+	}
+}

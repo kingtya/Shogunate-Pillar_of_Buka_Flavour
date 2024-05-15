@@ -1,0 +1,34 @@
+﻿l_simp_chinese:
+## UI
+sp_tab_my_policies_tt:0 "#T 政策#!"
+sp_policy_window_head_text:0 "政策"
+sp_pro_sp_policy_header_text:0 "革新 / 御用"
+sp_con_neu_policy_header_text:1 "保守 / 中道"
+sp_policy_is_loading_text:0 "政策加载中"
+sp_effect_header_text:0 "效果:"
+sp_cost_header_text:1 "费用:"
+sp_confirm_button_text:0 "发布国策"
+sp_remove_button_text:1 "撤销国策"
+
+sp_policy_released_cd:0 "你已经颁布了这个国策"
+sp_contraditory_policy_released_cd:0 "你颁布过互相冲突的国策"
+sp_policy_is_not_unlock_cd:0 "你不满足这个国策的解锁条件"
+sp_policy_need_more_points_cd:0 "你需要更多政策点"
+
+sp_policy_not_released_cd:0 "你还没有颁布这个国策"
+sp_policy_released_recently_cd:0 "你颁布这个国策的时间未满五年"
+
+sp_current_policy_points:0 "#weak 目前#!#E 政策点上限#!：[GetPlayer.MakeScope.Var('sp_current_policy_points').GetValue|0]/[GetPlayer.MakeScope.ScriptValue('sp_total_policy_points')|0]"
+
+sp_courtly_vassal_towards_policy_opinion_effect_tt_0:0 "所有[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]）对[actor.GetUIName]的好感提高#P 5#!#weak （-1.20/年）（颁布保守政策）#!"
+sp_courtly_vassal_towards_policy_opinion_effect_tt_1:1 "所有[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]）对[actor.GetUIName]的好感提高#P 5#!#weak （-1.20/年）（颁布中道政策）#!"
+sp_courtly_vassal_towards_policy_opinion_effect_tt_2:0 "所有[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]）对[actor.GetUIName]的好感降低#N 10#!#weak （-1.20/年）（颁布革新政策）#!"
+
+sp_parochial_vassal_towards_policy_opinion_effect_tt_0:1 "所有[GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_parochial_vassals')|V0]）对[actor.GetUIName]的好感提高#P 10#!#weak （-1.20/年）（颁布保守政策）#!"
+sp_parochial_vassal_towards_policy_opinion_effect_tt_2:1 "所有[GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_parochial_vassals')|V0]）对[actor.GetUIName]的好感降低#N 5#!#weak （-1.20/年）（颁布革新政策）#!"
+
+sp_glory_hound_vassal_towards_policy_opinion_effect_tt:0 "所有[GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_glory_hound_vassals')|V0]）对[actor.GetUIName]的好感提高#P 10#!#weak （-1.20/年）（颁布革新政策）#!"
+
+sp_vassal_towards_progressive_policy_opinion:0 "颁布革新政策"
+sp_vassal_towards_neutral_policy_opinion:1 "颁布中道政策"
+sp_vassal_towards_conservative_policy_opinion:2 "颁布保守政策"

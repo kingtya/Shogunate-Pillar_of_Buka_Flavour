@@ -1,0 +1,70 @@
+﻿sp_policy_points = {
+	value = 0
+	switch = {
+		trigger = this
+		# 保守
+		flag:flag_sp_policy_improve_cavalry = {
+			add = 25
+		}
+		flag:flag_sp_policy_canal_improvements = {
+			add = 25
+		}
+		flag:flag_sp_policy_council_system = {
+			add = 25
+		}
+		flag:flag_sp_policy_official_purveyor = {
+			add = 25
+		}
+		flag:flag_sp_policy_foster_system = {
+			add = 20
+		}
+		flag:flag_sp_policy_buddhism_sanction = {
+			add = 15
+		}
+		# 中道
+		flag:flag_sp_policy_direct_daimyo_rule = {
+			add = 35
+		}
+		flag:flag_sp_policy_improve_labor = {
+			add = 25
+		}
+		flag:flag_sp_policy_deploy_draftee = {
+			add = 25
+		}
+		flag:flag_sp_policy_improve_militia = {
+			add = 25
+		}
+		flag:flag_sp_policy_post_horse_system = {
+			add = 15
+		}
+		flag:flag_sp_policy_distant_diplomacy = {
+			add = 15
+		}
+		flag:flag_sp_policy_suggestion_box = {
+			add = 10
+		}
+		# 革新
+		flag:flag_sp_policy_soidier_professionaliztion = {
+			add = 30
+		}
+		flag:flag_sp_policy_easy_commerce = {
+			add = 30
+		}
+		flag:flag_sp_policy_improve_firearms = {
+			add = 30
+		}
+		flag:flag_sp_policy_meritocracy = {
+			add = 25
+		}
+		flag:flag_sp_policy_supply_transporter = {
+			add = 25
+		}
+		flag:flag_sp_policy_western_sanction = {
+			add = 15
+		}
+	}
+}
+
+sp_total_policy_points = {
+	value = 100
+}

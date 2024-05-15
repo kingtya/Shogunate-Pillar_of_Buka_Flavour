@@ -1,17 +1,17 @@
-﻿SPT_kkt_can_release_pocliy = {
+﻿sp_can_release_pocliy = {
 	trigger_if = {
 		limit = {
 			exists = $FLAG$
 		}
 		custom_description = {
-			text = SPT_policy_released_cd
+			text = sp_policy_released_cd
 			trigger_if = {
 				limit = {
-					has_variable_list = SPT_released_policy_flags
+					has_variable_list = sp_released_policy_flags
 				}
 				NOT = {
 					any_in_list = {
-						variable = SPT_released_policy_flags
+						variable = sp_released_policy_flags
 						this = $FLAG$
 					}
 				}
@@ -22,28 +22,28 @@
 			}
 		}
 		custom_description = {
-			text = SPT_contraditory_policy_released_cd
+			text = sp_contraditory_policy_released_cd
 			trigger_if = {
 				limit = {
-					has_variable_list = SPT_released_policy_flags
-					$FLAG$ = flag:flag_spt_policy_official_purveyor
+					has_variable_list = sp_released_policy_flags
+					$FLAG$ = flag:flag_sp_policy_official_purveyor
 				}
 				NOT = {
 					any_in_list = {
-						variable = SPT_released_policy_flags
-						this = flag:flag_spt_policy_easy_commerce
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_easy_commerce
 					}
 				}
 			}
 			trigger_if = {
 				limit = {
-					has_variable_list = SPT_released_policy_flags
-					$FLAG$ = flag:flag_spt_policy_easy_commerce
+					has_variable_list = sp_released_policy_flags
+					$FLAG$ = flag:flag_sp_policy_easy_commerce
 				}
 				NOT = {
 					any_in_list = {
-						variable = SPT_released_policy_flags
-						this = flag:flag_spt_policy_official_purveyor
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_official_purveyor
 					}
 				}
 			}
@@ -52,81 +52,81 @@
 			}
 		}
 		custom_description = {
-			text = SPT_policy_need_more_points
+			text = sp_policy_need_more_points_cd
 	
 			trigger_if = {
 				limit = {
-					exists = root.var:spt_policy_will_be_points
+					exists = root.var:sp_policy_will_be_points
 				}
-				root.var:spt_policy_will_be_points <= root.spt_total_policy_points
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
 			trigger_else = {
 				always = no
 			}
 		}
 		custom_description = {
-			text = SPT_policy_is_not_unlock_cd
+			text = sp_policy_is_not_unlock_cd
 			trigger_if = {
 				limit = {
-					$FLAG$ = flag:flag_spt_policy_laws_of_imagawa
+					$FLAG$ = flag:flag_sp_policy_laws_of_imagawa
 				}
-				spt_has_imagawa_margin_trait = yes
+				sp_has_imagawa_margin_trait = yes
 			}
 			trigger_if = {
 				limit = {
-					$FLAG$ = flag:flag_spt_policy_laws_of_takeda
+					$FLAG$ = flag:flag_sp_policy_laws_of_takeda
 				}
-				spt_has_takeda_margin_trait = yes
+				sp_has_takeda_margin_trait = yes
 			}
 			trigger_if = {
 				limit = {
-					$FLAG$ = flag:flag_spt_policy_five_admonitions
+					$FLAG$ = flag:flag_sp_policy_five_admonitions
 				}
-				spt_has_hojo_margin_trait = yes
+				sp_has_hojo_margin_trait = yes
 			}
 			trigger_if = {
 				limit = {
-					$FLAG$ = flag:flag_spt_policy_guardian_forces
+					$FLAG$ = flag:flag_sp_policy_guardian_forces
 				}
-				spt_has_tokugawa_margin_trait = yes
+				sp_has_tokugawa_margin_trait = yes
 			}
 			trigger_if = {
 				limit = {
-					$FLAG$ = flag:flag_spt_policy_intensive_firearms
+					$FLAG$ = flag:flag_sp_policy_intensive_firearms
 				}
-				spt_culture_has_innovation_advanced_bowmaking = yes
-				spt_has_oda_margin_trait = yes
+				sp_culture_has_innovation_advanced_bowmaking = yes
+				sp_has_oda_margin_trait = yes
 			}
 			trigger_if = {
 				limit = {
-					$FLAG$ = flag:flag_spt_policy_dragon_corps
+					$FLAG$ = flag:flag_sp_policy_dragon_corps
 				}
-				spt_culture_has_innovation_advanced_bowmaking = yes
-				spt_has_date_margin_trait = yes
+				sp_culture_has_innovation_advanced_bowmaking = yes
+				sp_has_date_margin_trait = yes
 			}
 			trigger_if = {
 				limit = {
-					$FLAG$ = flag:flag_spt_policy_chivalry_education
+					$FLAG$ = flag:flag_sp_policy_chivalry_education
 				}
-				spt_has_shimazu_margin_trait = yes
+				sp_has_shimazu_margin_trait = yes
 			}
 			trigger_if = {
 				limit = {
-					$FLAG$ = flag:flag_spt_policy_expeditionary_support
+					$FLAG$ = flag:flag_sp_policy_expeditionary_support
 				}
-				spt_has_uesugi_margin_trait = yes
+				sp_has_uesugi_margin_trait = yes
 			}
 			trigger_if = {
 				limit = {
-					$FLAG$ = flag:flag_spt_policy_million_minds_motto
+					$FLAG$ = flag:flag_sp_policy_million_minds_motto
 				}
-				spt_has_mori_margin_trait = yes
+				sp_has_mori_margin_trait = yes
 			}
 			trigger_if = {
 				limit = {
-					$FLAG$ = flag:flag_spt_policy_armoured_militia
+					$FLAG$ = flag:flag_sp_policy_armoured_militia
 				}
-				spt_has_chosokabe_margin_trait = yes
+				sp_has_chosokabe_margin_trait = yes
 			}
 			trigger_else = {
 				always = yes
@@ -139,25 +139,31 @@
 	
 }
 
-spt_culture_has_innovation_advanced_bowmaking = {
+sp_culture_has_innovation_advanced_bowmaking = {
 	culture = {
 		has_innovation = innovation_advanced_bowmaking
 	}
 }
 
-SPT_kkt_can_revoke_pocliy = {
+sp_culture_has_innovation_guilds = {
+	culture = {
+		has_innovation = innovation_guilds
+	}
+}
+
+sp_can_revoke_pocliy = {
 	trigger_if = {
 		limit = {
 			exists = $FLAG$
 		}
 		custom_description = {
-			text = SPT_kkt_policy_not_released
+			text = sp_policy_not_released_cd
 			trigger_if = {
 				limit = {
-					has_variable_list = SPT_released_policy_flags
+					has_variable_list = sp_released_policy_flags
 				}
 				any_in_list = {
-					variable = SPT_released_policy_flags
+					variable = sp_released_policy_flags
 					this = $FLAG$
 				}
 			}
@@ -167,15 +173,15 @@ SPT_kkt_can_revoke_pocliy = {
 		}
 
 		custom_description = {
-			text = SPT_policy_released_recently
+			text = sp_policy_released_recently_cd
 			trigger_if = {
 				limit = {
 					trigger_if = {
 						limit = {
-							has_variable_list = SPT_released_policy_flags
+							has_variable_list = sp_released_policy_flags
 						}
 						any_in_list = {
-							variable = SPT_released_policy_flags
+							variable = sp_released_policy_flags
 							this = $FLAG$
 						}
 						
@@ -199,13 +205,13 @@ SPT_kkt_can_revoke_pocliy = {
 	
 }
 
-SPT_kkt_is_released_pocliy = {
+sp_is_released_pocliy = {
 	trigger_if = {
 		limit = {
-			has_variable_list = SPT_released_policy_flags
+			has_variable_list = sp_released_policy_flags
 		}
 		any_in_list = {
-			variable = SPT_released_policy_flags
+			variable = sp_released_policy_flags
 			this = $FLAG$
 		}
 	}
