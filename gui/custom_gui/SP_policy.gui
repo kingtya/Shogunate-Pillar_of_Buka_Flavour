@@ -317,8 +317,27 @@
                             hbox = {
                                 margin = { 0 15}
                             }
-                            portrait_torso = {
-                                datacontext = "[GetPlayer.MakeScope.Char]"
+                            widget_councillor_item = {
+                                layoutpolicy_horizontal = expanding
+                                layoutpolicy_vertical = expanding
+                                datacontext = "[AccessCouncilWindow]" # 利用 AccessCouncilWindow 可以使得当前窗口获取内阁窗口所需数据 此为p社所留接口
+                                datacontext = "[CouncilWindow.GetCouncillor('councillor_steward')]" # councillor_steward即为内阁职位，可以是其他职位
+                                datacontext = "[GuiCouncilPosition.GetActiveCouncilTask]"
+                                datacontext = "[ActiveCouncilTask.GetPositionType]"
+                                datacontext = "[ActiveCouncilTask.GetCouncillor]"
+            
+                                background =  { # 背景
+                                    texture = "gfx/interface/skinned/illustrations/council/bg_council_steward.dds"
+                                    fittype = centercrop
+                                    using = Mask_Rough_Edges
+                                    alpha = 0.7
+                                }
+            
+                                background = { # 背景
+                                    texture = "gfx/interface/component_masks/mask_vignette.dds"
+                                    color = { 0.15 0.15 0.15 1 }
+                                    alpha = 0.3
+                                }
                             }
                             hbox = {
                                 background = {
