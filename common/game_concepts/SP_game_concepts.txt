@@ -1,2 +1,7 @@
-﻿policy = {
+﻿shogunate_policy = {
+	texture = "gfx/interface/icons/activities/activity_adult_education_header.dds"
+}
+
+shogunate_policy_point = {
+	texture = "gfx/interface/icons/activities/activity_adult_education_header.dds"
 }

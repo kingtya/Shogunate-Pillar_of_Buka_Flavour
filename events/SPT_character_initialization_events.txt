@@ -149,6 +149,20 @@ sp_character_initialization.0001 = {
 				}
 				add_trait = chosokabe_margin
 			}
+			else_if = {
+				limit = {
+					dynasty = dynasty:10000640
+					is_male = yes
+				}
+				add_trait = otomo_margin
+			}
+			else_if = {
+				limit = {
+					dynasty = dynasty:10000222
+					is_male = yes
+				}
+				add_trait = sanada_margin
+			}
 			#if = {
 			#	limit = {
 			#		this = character:10029120

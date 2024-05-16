@@ -22,7 +22,7 @@ sp_policy_deploy_draftee_modifier = {
 
 sp_policy_post_horse_system_modifier = {
 	icon = horse_policy
-	movement_speed = 0.1
+	movement_speed = 0.15
 	character_travel_safety = 25
 	character_travel_speed_mult = 0.05
 }

@@ -129,3 +129,16 @@ sp_has_chosokabe_margin_trait = {
 		}
 	}
 }
+
+sp_has_sanada_margin_trait = {
+	OR = {
+		has_trait = sanada_margin
+		AND = {
+			exists = cp:councillor_steward
+			cp:councillor_steward = {
+				has_trait = sanada_margin
+				prowess >= extremely_high_skill_rating
+			}
+		}
+	}
+}

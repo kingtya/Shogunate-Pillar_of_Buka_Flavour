@@ -84,3 +84,12 @@ sp_policy_armoured_militia_modifier = {
 	levy_screen = 15
 	levy_maintenance = -0.5
 }
+
+sp_policy_six_coins_oath_modifier = {
+	icon = martial_positive
+	prowess = 4
+	knight_effectiveness_mult = 0.5
+	hard_casualty_modifier = 0.3
+	enemy_hard_casualty_modifier = 0.15
+	defender_advantage = 8
+}

@@ -130,6 +130,12 @@
 			}
 			trigger_if = {
 				limit = {
+					$FLAG$ = flag:flag_sp_policy_six_coins_oath
+				}
+				sp_has_sanada_margin_trait = yes
+			}
+			trigger_if = {
+				limit = {
 					$FLAG$ = flag:flag_sp_policy_progressive_system
 				}
 				OR = {

@@ -470,6 +470,11 @@ sp_ai_publish_policy_council_system_decision = {
 			ai_has_cautious_personality = yes
 			add = 25
 		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
 	}
 }
 sp_ai_publish_policy_improve_cavalry_decision = {
@@ -1142,7 +1147,7 @@ sp_ai_publish_policy_improve_firearms_decision = {
 	is_shown = {
 		is_ai = yes
 		number_maa_regiments_of_base_type = {
-			type = archer
+			type = archers
 			value >= 1
 		}
 	}
@@ -1285,11 +1290,11 @@ sp_ai_publish_policy_meritocracy_decision = {
 	}
 
 	ai_will_do = {
-		base = 25
+		base = 10
 
 		modifier = {
 			ai_economical_unpredictable_personality = yes
-			add = 50
+			add = 40
 		}
 	}
 }
@@ -1359,7 +1364,7 @@ sp_ai_publish_policy_supply_transporter_decision = {
 	}
 
 	ai_will_do = {
-		base = 25
+		base = 10
 
 		modifier = {
 			ai_has_warlike_personality = yes
@@ -1368,7 +1373,7 @@ sp_ai_publish_policy_supply_transporter_decision = {
 
 		modifier = {
 			ai_economical_unpredictable_personality = yes
-			add = 50
+			add = 40
 		}
 	}
 }

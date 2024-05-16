@@ -52,7 +52,8 @@ flag_sp_policy_dragon_corps_name:0 "#V 编制龙骑兵#!"
 flag_sp_policy_dragon_corps_desc:0 "奥州的战国大名伊达政宗独创的精锐骑马铁炮队，兼具骑兵的机动力和火枪兵的远程杀伤力，在庆长19年（1614年）至庆长20年（1615年）的大坂之役中昙花一现。在十七世纪的欧洲，该兵种也被称为“龙骑兵”。"
 sp_policy_dragon_corps_modifier:0 "编制龙骑兵"
 sp_policy_dragon_corps_modifier_desc:0 "此人组建了骑马铁炮队。"
-sp_policy_dragon_corps_effect_tt:0 "如果#V 你#!的[culture|E]有$innovation_advanced_bowmaking$[innovation|E]，#V 你#!可以招募[GetMaA('dragon_corps').GetName][men_at_arms|E]"
+sp_policy_dragon_corps_effect_tt_0:0 "如果#V 你#!的[culture|E]有$innovation_advanced_bowmaking$[innovation|E]，#V 你#!可以招募[GetMaA('dragon_corps').GetName][men_at_arms|E]"
+sp_policy_dragon_corps_effect_tt_1:1 "你获得一支人数为#V 100#!的[GetMaA('dragon_corps').GetName]军队"
 sp_policy_dragon_corps_warning_tt:0 "@warning_icon!#X 你或你的家宰没有[GetTrait('date_margin').GetName( GetNullCharacter )]，由家宰解锁要求其有12军事且颁布后5年内无法将其撤职#!"
 
 flag_sp_policy_chivalry_education_name:0 "#V 萨摩军法#!"
@@ -78,5 +79,11 @@ flag_sp_policy_armoured_militia_desc:0 "土佐国的战国大名长宗我部氏�
 sp_policy_armoured_militia_modifier:0 "一领具足制"
 sp_policy_armoured_militia_modifier_desc:0 "此人建立了一领具足制。"
 sp_policy_armoured_militia_warning_tt:0 "@warning_icon!#X 你或你的家宰没有[GetTrait('chosokabe_margin').GetName( GetNullCharacter )]，由家宰解锁要求其有12军事且颁布后5年内无法将其撤职#!"
+
+flag_sp_policy_six_coins_oath_name:0 "#V 六文钱誓言#!"
+flag_sp_policy_six_coins_oath_desc:0 ""
+sp_policy_six_coins_oath_modifier:0 "六文钱誓言"
+sp_policy_six_coins_oath_modifier_desc:0 "此人家中谛听了六文钱誓言。"
+sp_policy_six_coins_oath_warning_tt:0 "@warning_icon!#X 你或你的家宰没有[GetTrait('sanada_margin').GetName( GetNullCharacter )]，由家宰解锁要求其有20勇武且颁布后5年内无法将其撤职#!"
 
 sp_policy_has_no_innovation_advanced_bowmaking_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_advanced_bowmaking$[innovation|E]#!"
