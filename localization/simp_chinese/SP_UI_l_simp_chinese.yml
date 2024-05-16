@@ -16,7 +16,7 @@ sp_policy_is_locked_cd:0 "你不满足这个国策的解锁条件"
 sp_policy_need_more_points_cd:0 "你需要更多政策点"
 
 sp_policy_not_released_cd:0 "你还没有颁布这个国策"
-sp_policy_released_recently_cd:0 "你颁布这个国策的时间未满五年"
+sp_policy_released_recently_cd:0 "你颁布这个国策的时间未满三年"
 
 sp_current_policy_points:0 "#weak 目前#!#E 政策点上限#!：[GetPlayer.MakeScope.Var('sp_current_policy_points').GetValue|0]/[GetPlayer.MakeScope.ScriptValue('sp_total_policy_points')|0]"
 

@@ -558,6 +558,24 @@ sp_policy_introduction_effect = {
 				custom_tooltip = sp_policy_has_no_innovation_advanced_bowmaking_tt
 			}
 			custom_tooltip = sp_policy_dragon_corps_effect_tt
+			if = {
+				limit = {
+					number_maa_regiments_of_base_type = {
+						type = number_maa_regiments_of_type
+						value < 1
+					}
+				}
+				spawn_army = {
+					name = event_troop_default_name
+					men_at_arms = {
+						type = dragon_corps
+						stacks = 1
+					}
+					location = root.capital_province
+					origin = root.capital_province
+				}
+			}
+
 		}
 		flag:flag_sp_policy_chivalry_education = {
 			if = {

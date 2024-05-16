@@ -330,6 +330,6 @@ sp_block_firing_councillor_effect = {
 	set_variable = {
 		name = block_fire_councillor
 		value = $COURT_OWNER$
-		years = 10
+		years = 5
 	}
 }

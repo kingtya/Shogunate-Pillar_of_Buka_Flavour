@@ -146,7 +146,7 @@ sp_set_policy_effect_to_character = {
 			}
 			add_character_flag = {
 				flag = $FLAG$
-				years = 5
+				years = 3
 			}
 		}
 		if = {

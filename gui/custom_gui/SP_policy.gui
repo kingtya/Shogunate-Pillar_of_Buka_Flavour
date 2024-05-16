@@ -79,7 +79,7 @@
         position = { 0 0 }
         movable = yes # 使得窗口可移动 注意：以window为基类的类型，是唯一可以移动的类型 在其他地方写movable = yes是没有意义的
         parentanchor = center
-        layer = top
+        layer = middle
         size = { 1300 1000 } # 窗口大小，你也可以使用百分比，使用百分比的话会以父窗口为基准 此处父窗口为玩家屏幕
         using = Window_Background # 一些背景模版，可以迅速让窗口适应原版风格，由于p社的工作，使用这些模版可以让切换到不同文化时候窗口风格与当前文化风格保持一致
         using = Window_Decoration_Spike
@@ -318,6 +318,7 @@
                                 margin = { 0 15}
                             }
                             widget_councillor_item = {
+                                #size = { 340 0 }
                                 layoutpolicy_horizontal = expanding
                                 layoutpolicy_vertical = expanding
                                 datacontext = "[AccessCouncilWindow]" # 利用 AccessCouncilWindow 可以使得当前窗口获取内阁窗口所需数据 此为p社所留接口

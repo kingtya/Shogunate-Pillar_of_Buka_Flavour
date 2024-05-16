@@ -397,6 +397,81 @@ sp_ai_publish_policy_foster_system_decision = {
 		}
 	}
 }
+sp_ai_publish_policy_council_system_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		highest_held_title_tier > 2
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_council_system
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 25
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_council_system.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_council_system
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_cautious_personality = yes
+			add = 25
+		}
+	}
+}
 sp_ai_publish_policy_improve_cavalry_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
@@ -1048,7 +1123,7 @@ sp_ai_publish_policy_suggestion_box_decision = {
 	}
 
 	ai_will_do = {
-		base = 5
+		base = 10
 		modifier = {
 			trigger_if = {
 				limit = {
@@ -1056,7 +1131,7 @@ sp_ai_publish_policy_suggestion_box_decision = {
 				}
 				root.var:sp_current_policy_points >= 90
 			}
-			add = 20
+			add = 25
 		}
 	}
 }
