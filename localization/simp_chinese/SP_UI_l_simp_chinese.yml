@@ -12,7 +12,7 @@ sp_remove_button_text:1 "撤销国策"
 
 sp_policy_released_cd:0 "你已经颁布了这个国策"
 sp_contraditory_policy_released_cd:0 "你颁布过互相冲突的国策"
-sp_policy_is_not_unlock_cd:0 "你不满足这个国策的解锁条件"
+sp_policy_is_locked_cd:0 "你不满足这个国策的解锁条件"
 sp_policy_need_more_points_cd:0 "你需要更多政策点"
 
 sp_policy_not_released_cd:0 "你还没有颁布这个国策"

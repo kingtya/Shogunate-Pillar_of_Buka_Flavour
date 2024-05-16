@@ -503,7 +503,7 @@
             position = { 65 -3 }
         }
         text_single = {
-            text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).ScriptValue('sp_policy_points')|0]"
+            text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).AddScope('introducer', GetPlayer.MakeScope).ScriptValue('sp_policy_points')|0]"
             default_format = "bold"
             parentanchor = center
             position = { 90 -3 }

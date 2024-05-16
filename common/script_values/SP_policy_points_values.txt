@@ -4,50 +4,255 @@
 		trigger = this
 		# 保守
 		flag:flag_sp_policy_improve_cavalry = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 10
+			}
 			add = 25
 		}
 		flag:flag_sp_policy_canal_improvements = {
-			add = 25
-		}
-		flag:flag_sp_policy_council_system = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 10
+			}
 			add = 25
 		}
 		flag:flag_sp_policy_official_purveyor = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 10
+			}
 			add = 25
 		}
 		flag:flag_sp_policy_foster_system = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 10
+			}
 			add = 20
 		}
+		flag:flag_sp_policy_council_system = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 10
+			}
+			add = 15
+		}
 		flag:flag_sp_policy_buddhism_sanction = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 10
+			}
 			add = 15
 		}
 		# 中道
 		flag:flag_sp_policy_direct_daimyo_rule = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 5
+			}
 			add = 35
 		}
 		flag:flag_sp_policy_improve_labor = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 5
+			}
 			add = 25
 		}
 		flag:flag_sp_policy_deploy_draftee = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 5
+			}
 			add = 25
 		}
 		flag:flag_sp_policy_improve_militia = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 5
+			}
 			add = 25
 		}
 		flag:flag_sp_policy_post_horse_system = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 5
+			}
 			add = 15
 		}
 		flag:flag_sp_policy_distant_diplomacy = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 5
+			}
+			add = 15
+		}
+		flag:flag_sp_policy_coalition_focus = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 5
+			}
 			add = 15
 		}
 		flag:flag_sp_policy_suggestion_box = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 5
+			}
 			add = 10
 		}
 		# 革新
 		flag:flag_sp_policy_soidier_professionaliztion = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						sp_culture_has_innovation_royal_armory = no
+						sp_has_oda_margin_trait = no
+					}
+				}
+				add = 20
+			}
 			add = 30
 		}
 		flag:flag_sp_policy_easy_commerce = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						sp_culture_has_innovation_guilds = no
+						sp_has_oda_margin_trait = no
+					}
+				}
+				add = 20
+			}
 			add = 30
 		}
 		flag:flag_sp_policy_improve_firearms = {
@@ -67,4 +272,14 @@
 
 sp_total_policy_points = {
 	value = 100
+	if = {
+		limit = {
+			has_variable_list = sp_released_policy_flags
+			any_in_list = {
+				variable = sp_released_policy_flags
+				this = flag:flag_sp_policy_progressive_system
+			}
+		}
+		add = 20
+	}
 }

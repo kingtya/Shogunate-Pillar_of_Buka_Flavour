@@ -23,7 +23,7 @@ sp_contraditory_policy_released_cd = {
 	global_not = sp_contraditory_policy_released_cd
 }
 
-sp_policy_is_not_unlock_cd = {
-	global = sp_policy_is_not_unlock_cd
-	global_not = sp_policy_is_not_unlock_cd
+sp_policy_is_locked_cd = {
+	global = sp_policy_is_locked_cd
+	global_not = sp_policy_is_locked_cd
 }

@@ -12,9 +12,6 @@ sp_set_cost_to_character = {
 		flag:flag_sp_policy_improve_militia = {
 			add_prestige = -50
 		}
-		flag:flag_sp_policy_council_system = {
-			add_prestige = -50
-		}
 		flag:flag_sp_policy_official_purveyor = {
 			remove_short_term_gold = 50
 		}
@@ -23,6 +20,9 @@ sp_set_cost_to_character = {
 		}
 		flag:flag_sp_policy_improve_cavalry = {
 			remove_short_term_gold = 50
+		}
+		flag:flag_sp_policy_council_system = {
+			add_prestige = -25
 		}
 		flag:flag_sp_policy_buddhism_sanction = {
 			add_piety = -25
@@ -41,6 +41,9 @@ sp_set_cost_to_character = {
 			remove_short_term_gold = 25
 		}
 		flag:flag_sp_policy_distant_diplomacy = {
+			add_prestige = -25
+		}
+		flag:flag_sp_policy_coalition_focus = {
 			add_prestige = -25
 		}
 		flag:flag_sp_policy_suggestion_box = {
@@ -136,6 +139,7 @@ sp_set_policy_effect_to_character = {
 					value = 0
 				}
 			}
+			save_temporary_scope_as = introducer
 			change_variable = {
 				name = sp_current_policy_points
 				add = $FLAG$.sp_policy_points
@@ -157,6 +161,7 @@ sp_set_policy_effect_to_character = {
 				name = sp_released_policy_flags
 				target = $FLAG$
 			}
+			save_temporary_scope_as = introducer
 			change_variable = {
 				name = sp_current_policy_points
 				subtract = $FLAG$.sp_policy_points

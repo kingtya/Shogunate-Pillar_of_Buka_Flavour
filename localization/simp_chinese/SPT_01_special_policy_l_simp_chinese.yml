@@ -46,6 +46,7 @@ flag_sp_policy_intensive_firearms_desc:0 "天正3年（1575年），织田信长
 sp_policy_intensive_firearms_modifier:0 "火器集中运用"
 sp_policy_intensive_firearms_modifier_desc:0 "此人钟情于将铁炮投入战争。"
 sp_policy_intensive_firearms_warning_tt:0 "@warning_icon!#X 你或你的家宰没有[GetTrait('oda_margin').GetName( GetNullCharacter )]，由家宰解锁要求其有15军事且颁布后10年内无法\n将其撤职#!"
+sp_policy_has_no_policy_improve_firearms_tt:0 "@warning_icon!#X 你没有颁布前置政策铁炮队强化#!"
 
 flag_sp_policy_dragon_corps_name:0 "#V 编制龙骑兵#!"
 flag_sp_policy_dragon_corps_desc:0 "奥州的战国大名伊达政宗独创的精锐骑马铁炮队，兼具骑兵的机动力和火枪兵的远程杀伤力，在庆长19年（1614年）至庆长20年（1615年）的大坂之役中昙花一现。在十七世纪的欧洲，该兵种也被称为“龙骑兵”。"
@@ -78,4 +79,4 @@ sp_policy_armoured_militia_modifier:0 "一领具足制"
 sp_policy_armoured_militia_modifier_desc:0 "此人建立了一领具足制。"
 sp_policy_armoured_militia_warning_tt:0 "@warning_icon!#X 你或你的家宰没有[GetTrait('chosokabe_margin').GetName( GetNullCharacter )]，由家宰解锁要求其有12军事且颁布后10年内无法将其撤职#!"
 
-sp_policy_has_no_innovation_advanced_bowmaking:0 "@warning_icon!#X 你的[culture|E]没有$innovation_advanced_bowmaking$[innovation|E]#!"
+sp_policy_has_no_innovation_advanced_bowmaking_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_advanced_bowmaking$[innovation|E]#!"

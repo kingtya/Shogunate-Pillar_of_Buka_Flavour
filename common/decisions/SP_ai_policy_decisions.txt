@@ -31,6 +31,15 @@ sp_ai_publish_policy_canal_improvements_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -102,6 +111,15 @@ sp_ai_publish_policy_official_purveyor_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -173,6 +191,15 @@ sp_ai_publish_policy_improve_militia_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -243,6 +270,15 @@ sp_ai_publish_policy_buddhism_sanction_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -313,6 +349,15 @@ sp_ai_publish_policy_foster_system_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -397,6 +442,15 @@ sp_ai_publish_policy_improve_cavalry_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -468,6 +522,15 @@ sp_ai_publish_policy_improve_labor_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -543,6 +606,15 @@ sp_ai_publish_policy_direct_daimyo_rule_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -613,6 +685,15 @@ sp_ai_publish_policy_deploy_draftee_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -689,6 +770,15 @@ sp_ai_publish_policy_post_horse_system_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -765,6 +855,15 @@ sp_ai_publish_policy_distant_diplomacy_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -792,6 +891,95 @@ sp_ai_publish_policy_distant_diplomacy_decision = {
 
 	ai_will_do = {
 		base = 25
+
+		modifier = {
+			ai_has_cautious_personality = yes
+			add = 25
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
+	}
+}
+sp_ai_publish_policy_coalition_focus_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_coalition_focus
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 25
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_coalition_focus.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_coalition_focus
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_cautious_personality = yes
+			add = 25
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 25
+		}
 	}
 }
 sp_ai_publish_policy_suggestion_box_decision = {
@@ -825,6 +1013,15 @@ sp_ai_publish_policy_suggestion_box_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -857,7 +1054,7 @@ sp_ai_publish_policy_suggestion_box_decision = {
 				limit = {
 					exists = root.var:sp_current_policy_points
 				}
-				root.var:sp_current_policy_points >= 95
+				root.var:sp_current_policy_points >= 90
 			}
 			add = 20
 		}
@@ -899,6 +1096,15 @@ sp_ai_publish_policy_improve_firearms_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -929,7 +1135,7 @@ sp_ai_publish_policy_improve_firearms_decision = {
 
 		modifier = {
 			ai_has_warlike_personality = yes
-			add = 25
+			add = 50
 		}
 
 		modifier = {
@@ -969,6 +1175,15 @@ sp_ai_publish_policy_meritocracy_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -996,6 +1211,11 @@ sp_ai_publish_policy_meritocracy_decision = {
 
 	ai_will_do = {
 		base = 25
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 50
+		}
 	}
 }
 sp_ai_publish_policy_supply_transporter_decision = {
@@ -1029,6 +1249,15 @@ sp_ai_publish_policy_supply_transporter_decision = {
 	}
 
 	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
 		set_variable = {
 			name = sp_policy_will_be_points
 			value = {
@@ -1064,7 +1293,7 @@ sp_ai_publish_policy_supply_transporter_decision = {
 
 		modifier = {
 			ai_economical_unpredictable_personality = yes
-			add = 25
+			add = 50
 		}
 	}
 }

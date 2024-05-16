@@ -4,7 +4,7 @@
 
 ##保守
 sp_policy_canal_improvements_modifier = {
-	icon = social_positive
+	icon = social_policy
 	county_opinion_add = 10
 }
 sp_policy_canal_improvements_county_modifier = {
@@ -14,14 +14,15 @@ sp_policy_canal_improvements_county_modifier = {
 }
 
 sp_policy_improve_cavalry_modifier = {
-	icon = martial_positive
+	icon = martial_policy
 	light_cavalry_damage_mult = 0.2
 	heavy_cavalry_damage_mult = 0.2
 	archer_cavalry_damage_mult = 0.2
 }
 
 sp_policy_council_system_modifier = {
-	icon = prestige_positive
+	icon = prestige_policy
+	monthly_prestige = 0.5
 	powerful_vassal_opinion = 10
 	happy_powerful_vassal_tax_contribution_mult = 0.15
 	happy_powerful_vassal_levy_contribution_mult = 0.1
@@ -30,14 +31,14 @@ sp_policy_council_system_modifier = {
 }
 
 sp_policy_official_purveyor_modifier = {
-	icon = economy_positive
+	icon = economy_policy
 	monthly_prestige = 1
 	domain_tax_mult = 0.1
 	republic_government_vassal_opinion = 15
 }
 
 sp_policy_buddhism_sanction_modifier = {
-	icon = social_positive
+	icon = social_policy
 	shinto_religion_opinion = 10
 	buddhism_religion_opinion = 10
 	monthly_piety = 1
@@ -45,14 +46,14 @@ sp_policy_buddhism_sanction_modifier = {
 }
 
 sp_policy_foster_system_modifier = {
-	icon = family_positive
+	icon = family_policy
 	direct_vassal_opinion = 15
 	monthly_prestige = 1
 	monthly_prestige_gain_mult = 0.1
 }
 
 sp_policy_improve_militia_modifier = {
-	icon = martial_positive
+	icon = martial_policy
 	levy_size = 0.3
 	levy_reinforcement_rate = 0.1
 	county_opinion_add = -10

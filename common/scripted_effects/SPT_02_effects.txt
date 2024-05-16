@@ -49,19 +49,6 @@ sp_policy_introduction_effect = {
 				OPINION = 5
 			}
 		}
-		flag:flag_sp_policy_council_system = {
-			$ACTION$_character_modifier = sp_policy_council_system_modifier
-			sp_parochial_vassal_towards_policy_opinion_effect = {
-				POLICY_TYPE_SW_1 = no
-				POLICY_TYPE_SW_2 = no
-				OPINION = 10
-			}
-			sp_courtly_vassal_towards_policy_opinion_effect = {
-				POLICY_TYPE_SW_1 = no
-				POLICY_TYPE_SW_2 = no
-				OPINION = 5
-			}
-		}
 		flag:flag_sp_policy_official_purveyor = {
 			if = {
 				limit = {
@@ -88,6 +75,19 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_foster_system = {
 			$ACTION$_character_modifier = sp_policy_foster_system_modifier
 			custom_tooltip = sp_policy_foster_system_more_accpetive_adoption_tt
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_council_system = {
+			$ACTION$_character_modifier = sp_policy_council_system_modifier
 			sp_parochial_vassal_towards_policy_opinion_effect = {
 				POLICY_TYPE_SW_1 = no
 				POLICY_TYPE_SW_2 = no
@@ -155,6 +155,14 @@ sp_policy_introduction_effect = {
 				OPINION = 5
 			}
 		}
+		flag:flag_sp_policy_coalition_focus = {
+			$ACTION$_character_modifier = sp_policy_coalition_focus_modifier
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = yes
+				OPINION = 5
+			}
+		}
 		flag:flag_sp_policy_suggestion_box = {
 			$ACTION$_character_modifier = sp_policy_suggestion_box_modifier
 			sp_courtly_vassal_towards_policy_opinion_effect = {
@@ -168,6 +176,23 @@ sp_policy_introduction_effect = {
 		## 宫廷礼制封臣好感 --
 		## 本乡本土封臣好感 -
 		## 追名逐利封臣好感 ++
+		flag:flag_sp_policy_progressive_system = {
+			custom_tooltip = sp_policy_progressive_system_tt_0
+			custom_tooltip = sp_policy_progressive_system_tt_1
+			sp_glory_hound_vassal_towards_policy_opinion_effect = {
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -10
+			}
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -5
+			}
+		}
 		flag:flag_sp_policy_western_sanction = {
 			$ACTION$_character_modifier = sp_policy_western_sanction_modifier
 			sp_glory_hound_vassal_towards_policy_opinion_effect = {
@@ -225,6 +250,13 @@ sp_policy_introduction_effect = {
 			}
 		}
 		flag:flag_sp_policy_soidier_professionaliztion = {
+			if = {
+				limit = {
+					sp_culture_has_innovation_innovation_royal_armory = no
+					sp_has_oda_margin_trait = no
+				}
+				custom_tooltip = sp_policy_has_no_innovation_innovation_royal_armory_tt
+			}
 			$ACTION$_character_modifier = sp_policy_soidier_professionaliztion_modifier
 			sp_glory_hound_vassal_towards_policy_opinion_effect = {
 				OPINION = 10
@@ -250,6 +282,13 @@ sp_policy_introduction_effect = {
 					}
 				}
 				custom_tooltip = sp_policy_official_purveyor_warning_tt
+			}
+			if = {
+				limit = {
+					sp_culture_has_innovation_guilds = no
+					sp_has_oda_margin_trait = no
+				}
+				custom_tooltip = sp_policy_has_no_innovation_guilds_tt
 			}
 			$ACTION$_character_modifier = sp_policy_easy_commerce_modifier
 			sp_glory_hound_vassal_towards_policy_opinion_effect = {
@@ -473,7 +512,21 @@ sp_policy_introduction_effect = {
 				limit = {
 					sp_culture_has_innovation_advanced_bowmaking = no
 				}
-				custom_tooltip = sp_policy_has_no_innovation_advanced_bowmaking
+				custom_tooltip = sp_policy_has_no_innovation_advanced_bowmaking_tt
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = { has_variable_list = sp_released_policy_flags }
+						NOT = {
+							any_in_list = {
+								variable = sp_released_policy_flags
+								this = flag:flag_sp_policy_improve_firearms
+							}
+						}
+					}
+				}
+				custom_tooltip = sp_policy_has_no_policy_improve_firearms_tt
 			}
 			$ACTION$_character_modifier = sp_policy_intensive_firearms_modifier
 		}
@@ -502,7 +555,7 @@ sp_policy_introduction_effect = {
 				limit = {
 					sp_culture_has_innovation_advanced_bowmaking = no
 				}
-				custom_tooltip = sp_policy_has_no_innovation_advanced_bowmaking
+				custom_tooltip = sp_policy_has_no_innovation_advanced_bowmaking_tt
 			}
 			custom_tooltip = sp_policy_dragon_corps_effect_tt
 		}

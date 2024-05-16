@@ -65,7 +65,7 @@
 			}
 		}
 		custom_description = {
-			text = sp_policy_is_not_unlock_cd
+			text = sp_policy_is_locked_cd
 			trigger_if = {
 				limit = {
 					$FLAG$ = flag:flag_sp_policy_laws_of_imagawa
@@ -128,6 +128,18 @@
 				}
 				sp_has_chosokabe_margin_trait = yes
 			}
+			trigger_if = {
+				limit = {
+					$FLAG$ = flag:flag_sp_policy_progressive_system
+				}
+				OR = {
+					NOT = { has_variable_list = sp_released_policy_flags }
+					any_in_list = {
+						variable = sp_released_policy_flags
+						count <= 0
+					}
+				}
+			}
 			trigger_else = {
 				always = yes
 			}
@@ -148,6 +160,12 @@ sp_culture_has_innovation_advanced_bowmaking = {
 sp_culture_has_innovation_guilds = {
 	culture = {
 		has_innovation = innovation_guilds
+	}
+}
+
+sp_culture_has_innovation_royal_armory = {
+	culture = {
+		has_innovation = innovation_royal_armory
 	}
 }
 
