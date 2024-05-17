@@ -1290,11 +1290,11 @@ sp_ai_publish_policy_meritocracy_decision = {
 	}
 
 	ai_will_do = {
-		base = 10
+		base = 25
 
 		modifier = {
 			ai_economical_unpredictable_personality = yes
-			add = 40
+			add = 25
 		}
 	}
 }
@@ -1368,12 +1368,12 @@ sp_ai_publish_policy_supply_transporter_decision = {
 
 		modifier = {
 			ai_has_warlike_personality = yes
-			add = 25
+			add = 40
 		}
 
 		modifier = {
 			ai_economical_unpredictable_personality = yes
-			add = 40
+			add = 25
 		}
 	}
 }
