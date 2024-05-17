@@ -339,7 +339,7 @@ house_guard = {
 	ai_quality = { value = 100 }
 }
 
-daiky_warrior = {
+shigedou_archers = {
 	type = archers
 	
 	damage = 65
@@ -366,7 +366,7 @@ daiky_warrior = {
 
 	ai_quality = { value = 10 }
 	
-	icon = daiky_warrior	
+	icon = shigedou_archers	
 	
 	stack = 50
 	
@@ -378,7 +378,7 @@ daiky_warrior = {
 	icon = crossbowmen
 }
 
-tkm_horse_archers = {
+yabusame_archers = {
 	type = archer_cavalry
 	
 	damage = 90
@@ -415,7 +415,7 @@ tkm_horse_archers = {
 	icon = horse_archers
 }
 
-sohei_troop = {
+sohei_pikemen = {
 	type = pikemen
 	
 	damage = 60
@@ -439,7 +439,7 @@ sohei_troop = {
 	
 	stack = 50
 	ai_quality = { value = 30 }
-	icon = sohei_troop
+	icon = sohei_pikemen
 	
 	holy_order_fallback = no
 	allowed_in_hired_troops = no
