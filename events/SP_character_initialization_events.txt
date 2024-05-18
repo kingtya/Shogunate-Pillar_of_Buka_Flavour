@@ -100,6 +100,13 @@ sp_character_initialization.0001 = {
 			}
 			else_if = {
 				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10060000 # 贵久
+						}
+						this = character:10060000 # 贵久
+					}
 					dynasty = dynasty:10000600
 					is_male = yes
 				}
@@ -117,7 +124,7 @@ sp_character_initialization.0001 = {
 					}
 					OR = {
 						AND = {
-							character:10032011 = {
+							character:10032011 = { # 谦信
 								dynasty = dynasty:10000100
 							}
 							dynasty = dynasty:10000100
@@ -144,6 +151,13 @@ sp_character_initialization.0001 = {
 			}
 			else_if = {
 				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10059102 # 国亲
+						}
+						this = character:10059102 # 国亲
+					}
 					dynasty = dynasty:10000582
 					is_male = yes
 				}
@@ -151,6 +165,13 @@ sp_character_initialization.0001 = {
 			}
 			else_if = {
 				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10064002 # 宗麟
+						}
+						this = character:10064002 # 宗麟
+					}
 					dynasty = dynasty:10000640
 					is_male = yes
 				}
@@ -158,6 +179,13 @@ sp_character_initialization.0001 = {
 			}
 			else_if = {
 				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10021142 # 幸纲
+						}
+						this = character:10059102 # 幸纲
+					}
 					dynasty = dynasty:10000222
 					is_male = yes
 				}

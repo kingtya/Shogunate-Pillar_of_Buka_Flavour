@@ -1,0 +1,27 @@
+﻿## CK2 Compatibility
+
+stressed = {}
+is_fat = {}
+
+
+betrayer = {
+	category = fame
+
+	shown_in_ruler_designer = no
+
+	icon = {
+		desc = third_force.dds
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = betray_desc
+			}
+			desc = betray_desc
+		}
+	}
+}

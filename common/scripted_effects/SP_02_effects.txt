@@ -808,3 +808,81 @@ sp_policy_revocation_effect = {
 		}
 	}
 }
+
+################
+### 政策效果 ###
+################
+
+sp_set_policy_effect_to_character = {
+	
+	show_as_tooltip = { # 作为显示效果，不实际执行
+		sp_policy_introduction_effect = {
+			FLAG = $FLAG$
+			ACTION = $ACTION$
+		}
+	}
+
+	hidden_effect = { # 实际执行
+		if = {
+			limit = {
+				$CONFIRM$ = yes #发布国策
+			}
+			sp_policy_introduction_effect = {
+				FLAG = $FLAG$
+				ACTION = $ACTION$
+			}
+			add_to_variable_list = {
+				name = sp_released_policy_flags
+				target = $FLAG$
+			}
+			if = {
+				limit = {
+					NOT = { exists = root.var:sp_current_policy_points }	
+				}
+				set_variable = {
+					name = sp_current_policy_points
+					value = 0
+				}
+			}
+			save_temporary_scope_as = introducer
+			change_variable = {
+				name = sp_current_policy_points
+				add = $FLAG$.sp_policy_points
+			}
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_character_flag = {
+					flag = $FLAG$
+					years = 3
+				}
+			}
+		}
+		if = {
+			limit = {
+				$CONFIRM$ = no #撤销国策
+			}
+			sp_policy_revocation_effect = {
+				FLAG = $FLAG$
+				ACTION = $ACTION$
+			}
+			remove_list_variable = {
+				name = sp_released_policy_flags
+				target = $FLAG$
+			}
+			save_temporary_scope_as = introducer
+			change_variable = {
+				name = sp_current_policy_points
+				subtract = $FLAG$.sp_policy_points
+			}
+			if = {
+				limit = {
+					has_character_flag = $FLAG$
+				}
+				remove_character_flag = $FLAG$
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,21 @@
+﻿l_simp_chinese:
+NOT_betray_neighboring_condition:0 "[CHARACTER.GetShortUIName|U]不是你邻近的领主"
+NOT_betray_opinion_condition:0 "[CHARACTER.GetShortUIName|U]对你的好感低于0"
+NOT_offer_betray_neighboring_condition:0 "[CHARACTER.GetShortUIName|U]不是你邻近的领主"
+NOT_offer_betray_opinion_condition_1:0 "[CHARACTER.GetShortUIName|U]对你的好感低于80"
+NOT_offer_betray_opinion_condition_2:0 "[CHARACTER.GetShortUIName|U]对领主的好感大于0"
+betray_me:0 "背叛了我"
+betray_my_liege:0 "背叛我的领主"
+arranged_my_vassal:0 "调略我的封臣"
+turned_over_to_me:0 "投靠了我"
+my_new_liege:0 "新领主"
+
+offer_betray_interaction_aibehavior_power_1:0 "我的领主的军力更强：$VALUE|=+0$"
+offer_betray_interaction_aibehavior_power_2:0 "比我的领主的军力更强：$VALUE|=+0$"
+
+betray:0 "寝返"
+offer_betray:0 "调略"
+
+betray_interaction.0020.desc:0 "御馆大人，大事不妙！[recipient.GetUIName|U]寝返并投向了[actor.GetUIName|U]一方!"
+betray_interaction.0030.desc:0 "御馆大人，大事不妙！[actor.GetUIName|U]寝返并投向了[recipient.GetUIName|U]一方!"
+betray_interaction.0020.a:0 "噢！"
