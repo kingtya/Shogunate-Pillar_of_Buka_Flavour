@@ -342,15 +342,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_laws_of_imagawa = {
 			if = {
 				limit = {
-					root = {
-						NOT = { has_trait = imagawa_margin }
-					}
-					exists = cp:councillor_steward
-					cp:councillor_steward = {
-						has_trait = imagawa_margin
-					}
+					sp_councillor_has_imagawa_margin_trait = yes
 				}
-				cp:councillor_steward = {
+				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
 				}
 			}
@@ -376,15 +370,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_laws_of_takeda = {
 			if = {
 				limit = {
-					root = {
-						NOT = { has_trait = takeda_margin }
-					}
-					exists = cp:councillor_steward
-					cp:councillor_steward = {
-						has_trait = takeda_margin
-					}
+					sp_councillor_has_takeda_margin_trait = yes
 				}
-				cp:councillor_steward = {
+				cp:councillor_spt_bugyo = {
 					block_firing_councillor_effect = { COURT_OWNER = root }
 				}
 			}
@@ -410,15 +398,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_five_admonitions = {
 			if = {
 				limit = {
-					root = {
-						NOT = { has_trait = hojo_margin }
-					}
-					exists = cp:councillor_steward
-					cp:councillor_steward = {
-						has_trait = hojo_margin
-					}
+					sp_councillor_has_hojo_margin_trait = yes
 				}
-				cp:councillor_steward = {
+				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
 				}
 			}
@@ -467,15 +449,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_guardian_forces = {
 			if = {
 				limit = {
-					root = {
-						NOT = { has_trait = tokugawa_margin }
-					}
-					exists = cp:councillor_steward
-					cp:councillor_steward = {
-						has_trait = tokugawa_margin
-					}
+					sp_councillor_has_tokugawa_margin_trait = yes
 				}
-				cp:councillor_steward = {
+				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
 				}
 			}
@@ -490,15 +466,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_intensive_firearms = {
 			if = {
 				limit = {
-					root = {
-						NOT = { has_trait = oda_margin }
-					}
-					exists = cp:councillor_steward
-					cp:councillor_steward = {
-						has_trait = oda_margin
-					}
+					sp_councillor_has_oda_margin_trait = yes
 				}
-				cp:councillor_steward = {
+				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
 				}
 			}
@@ -533,15 +503,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_dragon_corps = {
 			if = {
 				limit = {
-					root = {
-						NOT = { has_trait = date_margin }
-					}
-					exists = cp:councillor_steward
-					cp:councillor_steward = {
-						has_trait = date_margin
-					}
+					sp_councillor_has_date_margin_trait = yes
 				}
-				cp:councillor_steward = {
+				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
 				}
 			}
@@ -587,11 +551,11 @@ sp_policy_introduction_effect = {
 						NOT = { has_trait = shimazu_margin }
 					}
 					exists = cp:councillor_steward
-					cp:councillor_steward = {
+					cp:councillor_spt_bugyo = {
 						has_trait = shimazu_margin
 					}
 				}
-				cp:councillor_steward = {
+				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
 				}
 			}
@@ -606,16 +570,7 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_expeditionary_support = {
 			if = {
 				limit = {
-					root = {
-						NOT = { has_trait = uesugi_margin }
-					}
-					exists = cp:councillor_steward
-					cp:councillor_steward = {
-						has_trait = uesugi_margin
-					}
-				}
-				cp:councillor_steward = {
-					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+					sp_councillor_has_uesugi_margin_trait = yes
 				}
 			}
 			if = {
@@ -629,15 +584,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_million_minds_motto = {
 			if = {
 				limit = {
-					root = {
-						NOT = { has_trait = mori_margin }
-					}
-					exists = cp:councillor_steward
-					cp:councillor_steward = {
-						has_trait = mori_margin
-					}
+					sp_councillor_has_mori_margin_trait = yes
 				}
-				cp:councillor_steward = {
+				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
 				}
 			}
@@ -652,15 +601,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_armoured_militia = {
 			if = {
 				limit = {
-					root = {
-						NOT = { has_trait = chosokabe_margin }
-					}
-					exists = cp:councillor_steward
-					cp:councillor_steward = {
-						has_trait = chosokabe_margin
-					}
+					sp_councillor_has_chosokabe_margin_trait = yes
 				}
-				cp:councillor_steward = {
+				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
 				}
 			}
@@ -675,15 +618,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_six_coins_oath = {
 			if = {
 				limit = {
-					root = {
-						NOT = { has_trait = sanada_margin }
-					}
-					exists = cp:councillor_steward
-					cp:councillor_steward = {
-						has_trait = sanada_margin
-					}
+					sp_councillor_has_sanada_margin_trait = yes
 				}
-				cp:councillor_steward = {
+				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
 				}
 			}

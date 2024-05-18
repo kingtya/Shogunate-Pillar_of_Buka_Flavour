@@ -1,0 +1,15 @@
+spt_bugyo_task_default = {
+	default_task = yes
+	position = councillor_spt_bugyo
+	
+	effect_desc = spt_bugyo_task_default_effect_desc
+	
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+
+	council_owner_modifier = {
+		name = woc_task_collect_taxes_modifier
+		domain_tax_mult = 0.01
+		scale = steward_collect_taxes_scale_base
+	}
+}

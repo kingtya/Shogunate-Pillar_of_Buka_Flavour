@@ -1,0 +1,69 @@
+councillor_spt_bugyo = {
+	skill = stewardship
+	
+	name = councillor_spt_bugyo
+
+	tooltip = councillor_spt_bugyo_desc
+
+	modifier = {
+		name = councillor_spt_bugyo_modifier
+		monthly_learning_lifestyle_xp_gain_mult = 0.05
+		monthly_stewardship_lifestyle_xp_gain_mult = 0.05
+		scale = council_scaled_by_liege_tier
+	}
+
+	modifier = {
+		name = councillor_spt_bugyo_modifier
+		monthly_prestige = 0.5
+		scale = council_scaled_monthly_income
+	}
+
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		stewardship = 1
+		scale = chancellor_learn_on_the_job_scale
+	}
+
+	council_owner_modifier = {
+		name = reliable_house_modifier
+		stewardship = 1
+		scale = chancellor_reliable_house_scale
+	}
+
+	valid_character = {
+		exists = root.liege_or_court_owner
+		can_be_councillor_basics_trigger = yes
+		NOR = {
+			has_council_position = councillor_spouse
+			has_council_position = councillor_court_chaplain
+			has_council_position = councillor_chancellor
+			has_council_position = councillor_steward
+			has_council_position = councillor_marshal
+			has_council_position = councillor_spymaster
+		}
+		OR = {
+			is_ruler = yes
+			AND = {
+				is_female = yes
+				root.liege_or_court_owner.faith = { NOT = { has_doctrine_parameter = male_dominated_council } }
+			}
+			AND = {
+				is_male = yes
+				root.liege_or_court_owner.faith = { NOT = { has_doctrine_parameter = female_dominated_council } }
+			}
+		}
+	}
+	
+	valid_position = {
+	}
+
+	on_get_position = {
+		got_council_position_effect = yes
+	}
+
+	on_fired_from_position = {
+		fired_from_council_position_effect = yes
+	}
+
+	portrait_animation = chaplain
+}

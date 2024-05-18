@@ -324,7 +324,7 @@
                                 #layoutpolicy_horizontal = expanding
                                 layoutpolicy_vertical = expanding
                                 datacontext = "[AccessCouncilWindow]" # 利用 AccessCouncilWindow 可以使得当前窗口获取内阁窗口所需数据 此为p社所留接口
-                                datacontext = "[CouncilWindow.GetCouncillor('councillor_steward')]" # councillor_steward即为内阁职位，可以是其他职位
+                                datacontext = "[CouncilWindow.GetCouncillor('councillor_spt_bugyo')]" # councillor_steward即为内阁职位，可以是其他职位
                                 datacontext = "[GuiCouncilPosition.GetActiveCouncilTask]"
                                 datacontext = "[ActiveCouncilTask.GetPositionType]"
                                 datacontext = "[ActiveCouncilTask.GetCouncillor]"

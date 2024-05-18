@@ -271,7 +271,65 @@
 }
 
 sp_total_policy_points = {
-	value = 100
+	value = 25
+	if = {
+		limit = {
+			culture = {
+				has_cultural_era_or_later = culture_era_tribal
+			}
+		}
+		add = 25
+	}
+	if = {
+		limit = {
+			culture = {
+				has_cultural_era_or_later = culture_era_pre_medieval
+			}
+		}
+		add = 25
+	}
+	if = {
+		limit = {
+			culture = {
+				has_cultural_era_or_later = culture_era_early_medieval
+			}
+		}
+		add = 0
+	}
+	if = {
+		limit = {
+			culture = {
+				has_cultural_era_or_later = culture_era_high_medieval
+			}
+		}
+		add = 0
+	}
+	if = {
+		limit = {
+			culture = {
+				has_cultural_era_or_later = culture_era_late_medieval
+			}
+		}
+		add = 20
+	}
+	if = {
+		limit = {
+			exists = cp:councillor_spt_bugyo
+		}
+		add = {
+			value = cp:councillor_spt_bugyo.stewardship
+			divide = 4
+		}
+	}
+	if = {
+		limit = {
+			exists = cp:councillor_spt_bugyo
+		}
+		add = {
+			value = cp:councillor_spt_bugyo.learning
+			divide = 4
+		}
+	}
 	if = {
 		limit = {
 			has_variable_list = sp_released_policy_flags
