@@ -94,4 +94,9 @@ sp_policy_cunning_strategy_warning_tt:0 "@warning_icon!#X 你或你的勘定奉�
 sp_policy_cunning_strategy_effect_tt:0 "其他[ruler|E]更愿意接受你的#V 寝返#!和#V 调略#!提议"
 sp_policy_foster_system_more_accpetive_betrayal_reason:0 "你的表里军略[sp_policy|E]：$VALUE|+=0$"
 
+flag_sp_policy_sanada_red_armour_name:0 "#V 编制真田赤备#!"
+flag_sp_policy_sanada_red_armour_desc:0 "大坂之阵时，真田信繁麾下的六千人的军势皆身着赤色铠甲、携带着赤色的武具与旗帜。遗憾的是，真田信繁战死在向德川家康本阵冲锋的路上，真田赤备也倒在了历史的洪流之中。"
+sp_policy_sanada_red_armour_effect_tt_0:0 "#V 你#!可以招募[GetMaA('sanada_red_armour').GetName][men_at_arms|E]"
+sp_policy_sanada_red_armour_effect_tt_1:1 "你获得一支人数为#V 50#!的[GetMaA('sanada_red_armour').GetName]军队"
+
 sp_policy_has_no_innovation_advanced_bowmaking_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_advanced_bowmaking$[innovation|E]#!"

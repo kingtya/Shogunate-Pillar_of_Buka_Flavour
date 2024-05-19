@@ -653,6 +653,43 @@ sp_policy_introduction_effect = {
 			custom_tooltip = sp_policy_cunning_strategy_effect_tt
 			#$ACTION$_character_modifier = sp_policy_cunning_strategy_modifier
 		}
+		flag:flag_sp_policy_sanada_red_armour = {
+			if = {
+				limit = {
+					sp_councillor_has_sanada_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_sanada_margin_trait = no
+				}
+				custom_tooltip = sp_policy_six_coins_oath_warning_tt
+			}
+			custom_tooltip = sp_policy_sanada_red_armour_effect_tt_0
+			if = {
+				limit = {
+					number_maa_regiments_of_base_type = {
+						type = number_maa_regiments_of_type
+						value < 1
+					}
+				}
+				hidden_effect = {
+					spawn_army = {
+						name = event_troop_default_name
+						men_at_arms = {
+							type = sanada_red_armour
+							stacks = 1
+						}
+						location = root.capital_province
+						origin = root.capital_province
+					}
+				}
+				custom_tooltip = sp_policy_sanada_red_armour_effect_tt_1
+			}
+		}
 	}
 }
 
