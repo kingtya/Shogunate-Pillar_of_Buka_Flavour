@@ -103,5 +103,8 @@ sp_set_cost_to_character = {
 		flag:flag_sp_policy_six_coins_oath = {
 			add_prestige = -100
 		}
+		flag:flag_sp_policy_cunning_strategy = {
+			add_piety = -100
+		}
 	}
 }

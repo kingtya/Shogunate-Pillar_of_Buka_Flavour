@@ -50,6 +50,7 @@
 			trigger_else = {
 				always = yes
 			}
+
 		}
 		custom_description = {
 			text = sp_policy_need_more_points_cd
@@ -63,6 +64,7 @@
 			trigger_else = {
 				always = no
 			}
+
 		}
 		custom_description = {
 			text = sp_policy_is_locked_cd
@@ -96,6 +98,10 @@
 				}
 				sp_culture_has_innovation_advanced_bowmaking = yes
 				sp_has_oda_margin_trait = yes
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_improve_firearms
+				}
 			}
 			trigger_if = {
 				limit = {
@@ -136,6 +142,12 @@
 			}
 			trigger_if = {
 				limit = {
+					$FLAG$ = flag:flag_sp_policy_cunning_strategy
+				}
+				sp_has_sanada_margin_trait_2 = yes
+			}
+			trigger_if = {
+				limit = {
 					$FLAG$ = flag:flag_sp_policy_progressive_system
 				}
 				OR = {
@@ -145,6 +157,7 @@
 						count <= 0
 					}
 				}
+
 			}
 			trigger_else = {
 				always = yes

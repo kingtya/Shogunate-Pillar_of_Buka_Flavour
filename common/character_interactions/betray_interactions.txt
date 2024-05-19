@@ -18,6 +18,17 @@
 
 	ai_will_do = {
 		base = 0
+
+		modifier = {
+			add = 20 
+			scope:actor = {
+				has_variable_list = sp_released_policy_flags
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_cunning_strategy
+				}
+			}
+		}
 		
 		modifier = { #old liege opinion minus and new liege opinion more than 30
 			add = 30
@@ -149,6 +160,18 @@
 		# OPINION SCALES
 		# Personality modifier.
 		# Compare Opinion modifier.
+
+		modifier = {
+			add = 20 
+			scope:actor = {
+				has_variable_list = sp_released_policy_flags
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_cunning_strategy
+				}
+			}
+			desc = sp_policy_foster_system_more_accpetive_betrayal_reason
+		}
 
 		modifier = { # Different faith, no pluralism.
 			desc = offer_vassalization_interaction_aibehavior_differentfaith_tt
@@ -546,6 +569,18 @@ offer_betray = {
 		# OPINION SCALES
 		# Dread
 		# Compare Opinion modifier.
+
+		modifier = {
+			add = 20 
+			scope:actor = {
+				has_variable_list = sp_released_policy_flags
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_cunning_strategy
+				}
+			}
+			desc = sp_policy_foster_system_more_accpetive_betrayal_reason
+		}
 		
 		# PERKS
 		modifier = { # Perk boost
@@ -1492,7 +1527,6 @@ offer_betray = {
 
 	ai_potential = {
 		is_adult = yes
-#		is_independent_ruler = yes
 		highest_held_title_tier > tier_county
 	}
 

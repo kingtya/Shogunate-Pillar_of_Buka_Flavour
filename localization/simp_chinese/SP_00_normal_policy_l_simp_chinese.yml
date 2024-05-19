@@ -39,7 +39,7 @@ flag_sp_policy_foster_system_desc:0 "战国时代的一种虚拟同族血缘关�
 sp_policy_foster_system_modifier:0 "寄亲寄子制"
 sp_policy_foster_system_modifier_desc:0 "此人与封臣缔结了形式上的血缘关系。"
 sp_policy_foster_system_more_accpetive_adoption_tt:0 "你的[direct_vassals|E]更愿意接受你安排的[adoption|E]关系"
-sp_policy_foster_system_more_accpetive_adoption_reason:0 "寄亲寄子制：$VALUE|+=0$"
+sp_policy_foster_system_more_accpetive_adoption_reason:0 "[sp_policy|E]寄亲寄子制：$VALUE|+=0$"
 
 flag_sp_policy_improve_militia_name:0 "#V 兵役强化#!"
 flag_sp_policy_improve_militia_desc:0 ""

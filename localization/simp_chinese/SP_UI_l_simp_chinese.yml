@@ -1,9 +1,9 @@
 ﻿l_simp_chinese:
 
-game_concept_spt_policy:0 "政策"
-game_concept_spt_policy_desc:0 "政策是[ruler|E]为了某一特定目的而推行的特殊法令，往往能提供政略上的增益或[soldier|E]强化的[modifier|E]，或其他特殊效果。\n\n部分势力可以通过家传[trait|E]解锁特殊的御用政策，这种特质是男性遗传的，作为这一[house|E]的时代特征。"
-game_concept_spt_policy_point:0 "政策点上限"
-game_concept_spt_policy_point_desc:0 "你只能通过消耗政策点颁布一定数量的[spt_policy|E]，政策点的数量受限于[era|E]和勘定奉行的[skills|E]。\n\n上限的决定因素有：\n\n$EFFECT_LIST_BULLET$$councillor_spt_bugyo$每4点[stewardship|E]提高#V 1#!\n$EFFECT_LIST_BULLET$$councillor_spt_bugyo$每4点[learning|E]提高#V 1#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到平安[era|E]提高#V 25#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到镰仓·室町[era|E]提高#V 25#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到战国[era|E]提高#V 25#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到安土桃山[era|E]提高#V 20#!\n$EFFECT_LIST_BULLET$#E 革新制度#![spt_policy|E]提高#V 20#!"
+game_concept_sp_policy:0 "政策"
+game_concept_sp_policy_desc:0 "政策是[ruler|E]为了某一特定目的而推行的特殊法令，往往能提供政略上的增益或[soldier|E]强化的[modifier|E]，或其他特殊效果。\n\n部分势力可以通过家传[trait|E]解锁特殊的御用政策，这种特质是男性遗传的，作为这一[house|E]的时代特征。"
+game_concept_sp_policy_point:0 "政策点上限"
+game_concept_sp_policy_point_desc:0 "你只能通过消耗政策点颁布一定数量的[sp_policy|E]，政策点的数量受限于[era|E]和勘定奉行的[skills|E]。\n\n上限的决定因素有：\n\n$EFFECT_LIST_BULLET$$councillor_spt_bugyo$每2点[stewardship|E]提高#V 1#!\n$EFFECT_LIST_BULLET$$councillor_spt_bugyo$每4点[learning|E]提高#V 1#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到平安[era|E]提高#V 25#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到镰仓·室町[era|E]提高#V 25#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到战国[era|E]提高#V 25#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到安土桃山[era|E]提高#V 20#!\n$EFFECT_LIST_BULLET$#E 革新制度#![sp_policy|E]提高#V 20#!"
 
 ## UI Elements
 
@@ -25,7 +25,7 @@ sp_policy_need_more_points_cd:0 "你需要更多政策点"
 sp_policy_not_released_cd:0 "你还没有颁布这个国策"
 sp_policy_released_recently_cd:0 "你颁布这个国策的时间未满三年"
 
-sp_current_policy_points:0 "#weak 目前#!#E [spt_policy_point|E]#!：[GetPlayer.MakeScope.Var('sp_current_policy_points').GetValue|0]/[GetPlayer.MakeScope.ScriptValue('sp_total_policy_points')|0]"
+sp_current_policy_points:0 "#weak 目前#!#E [sp_policy_point|E]#!：[GetPlayer.MakeScope.Var('sp_current_policy_points').GetValue|0]/[GetPlayer.MakeScope.ScriptValue('sp_total_policy_points')|0]"
 
 sp_courtly_vassal_towards_policy_opinion_effect_tt_0:0 "所有[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]）对[actor.GetUIName]的好感提高#P 5#!#weak （-1.20/年）（颁布保守政策）#!"
 sp_courtly_vassal_towards_policy_opinion_effect_tt_1:1 "所有[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]）对[actor.GetUIName]的好感提高#P 5#!#weak （-1.20/年）（颁布中道政策）#!"
@@ -45,10 +45,10 @@ sp_vassal_towards_conservative_policy_opinion:2 "颁布保守政策"
 ## councillor
 
 councillor_spt_bugyo:0 "勘定奉行"
-councillor_spt_bugyo_desc:0 "$councillor_spt_bugyo$是佐理财政、指挥代官的[councillor|E]。$councillor_spt_bugyo$直接影响你的[realm|E]内所能推行的[spt_policy|E]的数量！"
-game_concept_spt_bugyo_desc:0 "$councillor_spt_bugyo$是对[realm|E]中的立法、行政和司法事务向领主提出建议的[councillor|E]。\n\n需要领地法律干涉君权通过才可任命"
+councillor_spt_bugyo_desc:0 "$councillor_spt_bugyo$是佐理财政、指挥代官的[councillor|E]。$councillor_spt_bugyo$直接影响你的[realm|E]内所能推行的[sp_policy|E]的数量。"
+game_concept_spt_bugyo_desc:0 "$councillor_spt_bugyo$是佐理财政、指挥代官的[councillor|E]。$councillor_spt_bugyo$直接影响[realm|E]内所能推行的[sp_policy|E]的数量。"
 councillor_spt_bugyo_modifier:0 "领主的勘定奉行"
-spt_bugyo_task_default:0 "规整政令"
+spt_bugyo_task_default:0 "推行政令"
 spt_bugyo_task_default_effect_desc:1 "[councillor.GetShortUIName|U]将在你的领地推行政令，并使你获得:\n[councillor.GetModifierDescForTask('spt_bugyo_task_default')]"
 
 ## Regiments

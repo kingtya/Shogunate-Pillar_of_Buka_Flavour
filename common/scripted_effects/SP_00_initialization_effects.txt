@@ -145,6 +145,10 @@ sp_init_special_poilcy_flag_list = {
 		name = sp_special_policy_flags
 		target = flag:flag_sp_policy_six_coins_oath
 	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_cunning_strategy
+	}
 
 }
 

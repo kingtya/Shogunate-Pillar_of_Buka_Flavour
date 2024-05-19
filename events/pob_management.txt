@@ -1,0 +1,19 @@
+﻿namespace = pob_abdication_event
+
+pob_abdication_event.0001 = {
+	hidden = yes
+
+	immediate = {
+		set_diarch = scope:previous_player
+		start_diarchy = regency
+		set_diarchy_swing = 40
+	}
+}
+
+pob_abdication_event.0002 = {
+	hidden = yes
+
+	immediate = {
+		depose = yes
+	}
+}

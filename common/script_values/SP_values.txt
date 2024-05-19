@@ -318,7 +318,7 @@ sp_total_policy_points = {
 		}
 		add = {
 			value = cp:councillor_spt_bugyo.stewardship
-			divide = 4
+			divide = 2
 		}
 	}
 	if = {

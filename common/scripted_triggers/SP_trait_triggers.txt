@@ -210,6 +210,18 @@ sp_has_sanada_margin_trait = {
 		}
 	}
 }
+sp_has_sanada_margin_trait_2 = {
+	OR = {
+		has_trait = sanada_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = sanada_margin
+				intrigue >= high_skill_rating
+			}
+		}
+	}
+}
 sp_councillor_has_sanada_margin_trait = {
 	NOT = { has_trait = sanada_margin }
 	exists = cp:councillor_spt_bugyo

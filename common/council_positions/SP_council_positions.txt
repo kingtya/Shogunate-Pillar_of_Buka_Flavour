@@ -1,5 +1,6 @@
 councillor_spt_bugyo = {
 	skill = stewardship
+	auto_fill = yes
 	
 	name = councillor_spt_bugyo
 

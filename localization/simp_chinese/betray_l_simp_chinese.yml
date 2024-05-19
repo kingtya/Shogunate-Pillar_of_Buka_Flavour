@@ -13,8 +13,8 @@ my_new_liege:0 "新领主"
 offer_betray_interaction_aibehavior_power_1:0 "我的领主的军力更强：$VALUE|=+0$"
 offer_betray_interaction_aibehavior_power_2:0 "比我的领主的军力更强：$VALUE|=+0$"
 
-betray:0 "寝返"
-offer_betray:0 "调略"
+betray:0 "寝返#weak  (武家栋梁）#!"
+offer_betray:0 "调略#weak （武家栋梁）#!"
 
 betray_interaction.0020.desc:0 "御馆大人，大事不妙！[recipient.GetUIName|U]寝返并投向了[actor.GetUIName|U]一方!"
 betray_interaction.0030.desc:0 "御馆大人，大事不妙！[actor.GetUIName|U]寝返并投向了[recipient.GetUIName|U]一方!"

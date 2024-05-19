@@ -1,0 +1,254 @@
+﻿pob_abdicate_decision_feudal = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	sort_order = 200
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		is_adult = yes
+		government_has_flag = government_is_feudal
+		OR = {
+			is_ai = no
+			AND = {
+				is_ai = yes
+				OR = {
+					has_trait = incapable
+					has_trait = cancer
+					has_trait = leper
+					has_trait = blind
+					has_trait = wounded_3
+					age >= 60
+				}
+			}
+		}
+		
+	}
+
+	is_valid = {
+		AND = {
+			exists = player_heir
+			player_heir = {
+				dynasty = root.dynasty
+				is_child_of = root
+				is_adult = yes
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+		save_scope_as = previous_player
+		custom_tooltip = pob_abdicate_decision_effect_tooltip
+		root = {
+			trigger_event = {
+				id = pob_abdication_event.0002
+				days = 1
+			}
+		}
+		root.player_heir = {
+			show_as_tooltip = {
+				set_diarch = scope:previous_player
+				set_diarchy_swing = 40
+			}
+			trigger_event = {
+				id = pob_abdication_event.0001
+				days = 2
+			}
+		}
+	}
+
+	ai_check_interval = 120
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = -1000
+			has_trait = ambitious
+		}
+		modifier = {
+			add = -1000
+			has_trait = stubborn
+		}
+		modifier = {
+			add = -25
+			has_trait = arrogant
+		}
+		modifier = {
+			add = -50
+			has_trait = greedy
+		}
+		modifier = {
+			add = -50
+			has_trait = craven
+		}
+		modifier = {
+			add = 25
+			has_trait = content
+		}
+		modifier = {
+			add = 100
+			has_trait = humble
+		}
+		modifier = {
+			add = 25
+			has_trait = generous
+		}
+		modifier = {
+			add = 25
+			has_trait = compassionate
+		}
+		modifier = {
+			add = 25
+			has_trait = trusting
+		}
+		modifier = {
+			add = 75
+			has_trait = just
+		}
+		modifier = {
+			add = 25
+			has_trait = shy
+		}
+		modifier = {
+			add = 25
+			has_trait = honest
+		}
+		modifier = {
+			add = 25
+			has_trait = diligent
+		}
+		modifier = {
+			add = 25
+			has_trait = calm
+		}
+	}
+}
+
+pob_abdicate_decision_clan = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	sort_order = 200
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		is_adult = yes
+		government_has_flag = government_is_tribal
+		OR = {
+			is_ai = no
+			AND = {
+				is_ai = yes
+				OR = {
+					has_trait = incapable
+					has_trait = cancer
+					has_trait = leper
+					has_trait = blind
+					has_trait = wounded_3
+					age >= 60
+				}
+			}
+		}
+	}
+
+	is_valid = {
+		AND = {
+			exists = player_heir
+			player_heir = {
+				dynasty = root.dynasty
+				is_close_or_extended_family_of = root
+				is_adult = yes
+			}
+		}	
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+		custom_tooltip = pob_abdicate_decision_effect_tooltip
+		hidden_effect = {
+			depose = yes
+		}
+	}
+
+	ai_check_interval = 120
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = -1000
+			has_trait = ambitious
+		}
+		modifier = {
+			add = -1000
+			has_trait = stubborn
+		}
+		modifier = {
+			add = -25
+			has_trait = arrogant
+		}
+		modifier = {
+			add = -50
+			has_trait = greedy
+		}
+		modifier = {
+			add = -50
+			has_trait = craven
+		}
+		modifier = {
+			add = 25
+			has_trait = content
+		}
+		modifier = {
+			add = 100
+			has_trait = humble
+		}
+		modifier = {
+			add = 25
+			has_trait = generous
+		}
+		modifier = {
+			add = 25
+			has_trait = compassionate
+		}
+		modifier = {
+			add = 25
+			has_trait = trusting
+		}
+		modifier = {
+			add = 75
+			has_trait = just
+		}
+		modifier = {
+			add = 25
+			has_trait = shy
+		}
+		modifier = {
+			add = 25
+			has_trait = honest
+		}
+		modifier = {
+			add = 25
+			has_trait = diligent
+		}
+		modifier = {
+			add = 25
+			has_trait = calm
+		}
+		modifier = {
+			add = 50
+			has_trait = hashishiyah
+		}
+		modifier = {
+			add = 100
+			has_trait = decadent
+		}
+	}
+}

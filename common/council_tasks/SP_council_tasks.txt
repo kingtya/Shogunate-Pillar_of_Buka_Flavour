@@ -8,7 +8,7 @@ spt_bugyo_task_default = {
 	task_progress = task_progress_infinite
 
 	council_owner_modifier = {
-		name = woc_task_collect_taxes_modifier
+		name = task_collect_taxes_modifier
 		domain_tax_mult = 0.01
 		scale = steward_collect_taxes_scale_base
 	}

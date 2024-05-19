@@ -86,4 +86,12 @@ sp_policy_six_coins_oath_modifier:0 "六文钱誓言"
 sp_policy_six_coins_oath_modifier_desc:0 "此人家中谛听了六文钱誓言。"
 sp_policy_six_coins_oath_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('sanada_margin').GetName( GetNullCharacter )]，由勘定奉行解锁要求其有20勇武且颁布后5年内无法将其撤职#!"
 
+flag_sp_policy_cunning_strategy_name:0 "#V 表里军略#!"
+flag_sp_policy_cunning_strategy_desc:0 ""
+sp_policy_cunning_strategy_modifier:0 "表里军略"
+sp_policy_cunning_strategy_modifier_desc:0 "此人掌握了寝返和调略的精髓。"
+sp_policy_cunning_strategy_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('sanada_margin').GetName( GetNullCharacter )]，由勘定奉行解锁要求其有15谋略且颁布后5年内无法将其撤职#!"
+sp_policy_cunning_strategy_effect_tt:0 "其他[ruler|E]更愿意接受你的#V 寝返#!和#V 调略#!提议"
+sp_policy_foster_system_more_accpetive_betrayal_reason:0 "你的表里军略[sp_policy|E]：$VALUE|+=0$"
+
 sp_policy_has_no_innovation_advanced_bowmaking_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_advanced_bowmaking$[innovation|E]#!"
