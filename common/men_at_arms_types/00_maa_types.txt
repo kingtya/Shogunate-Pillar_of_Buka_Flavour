@@ -525,6 +525,11 @@ sanada_red_armour = {
 		archers = 0.5
 	}
 
+	winter_bonus = {
+		normal_winter = { damage = -10 toughness = -5 }
+		harsh_winter = { damage = -20 toughness = -10 }
+	}
+
 	buy_cost = { gold = 175 }
 	low_maintenance_cost = { gold = 0.5 }
 	high_maintenance_cost = { gold = 2 }

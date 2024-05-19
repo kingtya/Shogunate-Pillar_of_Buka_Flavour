@@ -19,6 +19,13 @@
 	ai_will_do = {
 		base = 0
 
+		modifier = { # POB don't bother player with meaningless request
+			add = -50
+			scope:recipient = {
+				is_ai = no
+			}
+		}
+
 		modifier = {
 			add = 20 
 			scope:actor = {
