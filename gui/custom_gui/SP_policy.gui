@@ -407,6 +407,7 @@
                                             autoresize = yes
                                             multiline = yes
                                             using = Font_Size_Medium
+                                            max_width = 730
                                             text = "[GetScriptedGui('sp_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                                         }
                                         hbox = {
@@ -449,6 +450,7 @@
                                         text_multi = {
                                             autoresize = yes
                                             using = Font_Size_Medium
+                                            max_width = 730
                                             text = "[GetScriptedGui('sp_apply_cost').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                                         }
                                         hbox = {
@@ -525,6 +527,7 @@
             max_width = 100
             autoresize = yes
             position = { 40 0 }
+            fontsize = 12
         }
         text_single = {
             text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).AddScope('introducer', GetPlayer.MakeScope).ScriptValue('sp_policy_points')|0]"
