@@ -407,7 +407,7 @@
                                             autoresize = yes
                                             multiline = yes
                                             using = Font_Size_Medium
-                                            max_width = 730
+                                            max_width = 750
                                             text = "[GetScriptedGui('sp_apply_modifier').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                                         }
                                         hbox = {
@@ -450,7 +450,7 @@
                                         text_multi = {
                                             autoresize = yes
                                             using = Font_Size_Medium
-                                            max_width = 730
+                                            max_width = 750
                                             text = "[GetScriptedGui('sp_apply_cost').BuildTooltip( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(GetVariableSystem.Get('selected_flag'))).End )]"
                                         }
                                         hbox = {
@@ -507,7 +507,7 @@
         size = { 240 60 }
 
         hbox = {
-            spacer = { size = { 30 0 } }
+            spacer = { size = { 15 0 } }
             icon = {
                 size = { 30 30 }
                 visible = "[GetScriptedGui('sp_is_released_sg').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
@@ -524,10 +524,9 @@
             text = "[Localize(Concatenate(Scope.GetFlagName, '_name'))]"
             default_format = "#light_background"
             parentanchor = left|vcenter
-            max_width = 100
+            max_width = 120
             autoresize = yes
-            position = { 40 0 }
-            fontsize = 12
+            position = { 45 0 }
         }
         text_single = {
             text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).AddScope('introducer', GetPlayer.MakeScope).ScriptValue('sp_policy_points')|0]"

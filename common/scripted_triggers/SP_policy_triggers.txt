@@ -1,4 +1,4 @@
-﻿sp_can_release_pocliy = {
+﻿sp_can_release_policy = {
 	trigger_if = {
 		limit = {
 			exists = $FLAG$
@@ -194,7 +194,7 @@ sp_culture_has_innovation_royal_armory = {
 	}
 }
 
-sp_can_revoke_pocliy = {
+sp_can_revoke_policy = {
 	trigger_if = {
 		limit = {
 			exists = $FLAG$
@@ -248,7 +248,7 @@ sp_can_revoke_pocliy = {
 	
 }
 
-sp_is_released_pocliy = {
+sp_is_released_policy = {
 	trigger_if = {
 		limit = {
 			has_variable_list = sp_released_policy_flags

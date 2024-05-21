@@ -3,10 +3,10 @@
 
 	effect = {
 		sp_init_points = yes
-		sp_init_neutral_poilcy_flag_list = yes
-		sp_init_conservative_poilcy_flag_list = yes
-		sp_init_progressive_poilcy_flag_list = yes
-		sp_init_special_poilcy_flag_list = yes
+		sp_init_neutral_policy_flag_list = yes
+		sp_init_conservative_policy_flag_list = yes
+		sp_init_progressive_policy_flag_list = yes
+		sp_init_special_policy_flag_list = yes
 	}
 }
 
@@ -42,7 +42,7 @@ sp_can_apply_modifier = {
 	}
 
 	is_valid = {
-		sp_can_release_pocliy = {
+		sp_can_release_policy = {
 			FLAG = scope:sp_selected_flag
 		}
 	}
@@ -72,7 +72,7 @@ sp_can_remove_modifier = {
 	}
 
 	is_valid = {
-		sp_can_revoke_pocliy = {
+		sp_can_revoke_policy = {
 			FLAG = scope:sp_selected_flag
 		}
 	}
@@ -101,7 +101,7 @@ sp_count_points_sg = {
 	}
 
 	effect = {
-		sp_count_pocliy_points = {
+		sp_count_policy_points = {
 			FLAG = scope:sp_selected_flag
 		}
 	}
@@ -115,7 +115,7 @@ sp_is_released_sg = {
 	}
 
 	is_shown = {
-		sp_is_released_pocliy = {
+		sp_is_released_policy = {
 			FLAG = scope:sp_selected_flag
 		}
 	}
