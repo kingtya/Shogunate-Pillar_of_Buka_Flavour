@@ -80,8 +80,8 @@ sp_policy_armoured_militia_modifier = {
 	skirmishers_damage_add = 18
 	skirmishers_toughness_add = 12
 	levy_reinforcement_rate = 0.4
-	levy_attack = 8
-	levy_toughness = 10
+	levy_attack = 6
+	levy_toughness = 8
 	levy_maintenance = -0.5
 }
 
