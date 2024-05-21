@@ -1,0 +1,67 @@
+﻿l_english:
+
+game_concept_sp_policy:0 "政策" <"policy"> #NT!
+game_concept_sp_policy_desc:0 "政策是[ruler|E]为了某一特定目的而推行的特殊法令，往往能提供政略上的增益或[soldier|E]强化的[modifier|E]，或其他特殊效果。\n\n部分势力可以通过家传[trait|E]解锁特殊的御用政策，这种特质是男性遗传的，作为这一[house|E]的时代特征。" <"Policies are [ruler|E]special laws implemented for a specific purpose, often providing political buffs or [soldier|E]enhanced [modifier|E], or other special effects. \n\nSome forces can unlock special imperial policies through family inheritance [trait|E]. This trait is inherited from men and is a characteristic of this [house|E] era."> #NT!
+game_concept_sp_policy_point:0 "政策点上限" <"Policy point ceiling"> #NT!
+game_concept_sp_policy_point_desc:0 "你只能通过消耗政策点颁布一定数量的[sp_policy|E]，政策点的数量受限于[era|E]和勘定奉行的[skills|E]。\n\n上限的决定因素有：\n\n$EFFECT_LIST_BULLET$$councillor_spt_bugyo$每2点[stewardship|E]提高#V 1#!\n$EFFECT_LIST_BULLET$$councillor_spt_bugyo$每4点[learning|E]提高#V 1#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到平安[era|E]提高#V 25#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到镰仓·室町[era|E]提高#V 25#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到战国[era|E]提高#V 25#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到安土桃山[era|E]提高#V 20#!\n$EFFECT_LIST_BULLET$#E 革新制度#![sp_policy|E]提高#V 20#!" <"You can only issue a certain amount of [sp_policy|E] by spending policy points, and the number of policy points is limited by [era|E] and the assigned [skills|E]. \n\nThe determining factors of the upper limit are:\n\n$EFFECT_LIST_BULLET$$councillor_spt_bugyo$ Every 2 points of [stewardship|E] increase #V 1[era|E]4\n$EFFECT_LIST_BULLET$$councillor_spt_bugyo$ Every 4 points of [learning|E] increase #V 1[era|E]4\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]achieve peace [era|E] increase #V 25[era|E]4\ n$EFFECT_LIST_BULLET$[culture | Momoyama[era|E] improve#V 20[era|E]4\n$EFFECT_LIST_BULLET$#E Innovation system[era|E]4[sp_policy|E] improve#V 20[era|E]4"> #NT!
+
+## UI Elements
+
+sp_tab_my_policies_tt:0 "#T 政策#!" <"#T Policy#!"> #NT!
+sp_policy_window_head_text:0 "政策" <"policy"> #NT!
+sp_pro_sp_policy_header_text:0 "革新 / 御用" <"Innovation/Queen"> #NT!
+sp_con_neu_policy_header_text:1 "保守 / 中道" <"Conservative / Moderate"> #NT!
+sp_policy_is_loading_text:0 "政策加载中" <"Policy loading"> #NT!
+sp_effect_header_text:0 "效果:" <"Effect:"> #NT!
+sp_cost_header_text:1 "费用:" <"cost:"> #NT!
+sp_confirm_button_text:0 "发布国策" <"Release of national policy"> #NT!
+sp_remove_button_text:1 "撤销国策" <"Cancel national policy"> #NT!
+
+sp_policy_released_cd:0 "你已经颁布了这个国策" <"You have promulgated this national policy"> #NT!
+sp_contraditory_policy_released_cd:0 "你颁布过互相冲突的国策" <"You have enacted conflicting national policies"> #NT!
+sp_policy_is_locked_cd:0 "你不满足这个国策的解锁条件" <"You do not meet the unlocking conditions for this national policy"> #NT!
+sp_policy_need_more_points_cd:0 "你需要更多政策点" <"You need more policy points"> #NT!
+
+sp_policy_not_released_cd:0 "你还没有颁布这个国策" <"You haven't promulgated this national policy yet"> #NT!
+sp_policy_released_recently_cd:0 "你颁布这个国策的时间未满三年" <"You have promulgated this national policy for less than three years."> #NT!
+
+sp_current_policy_points:0 "#weak 目前#!#E [sp_policy_point|E]#!：[GetPlayer.MakeScope.Var('sp_current_policy_points').GetValue|0]/[GetPlayer.MakeScope.ScriptValue('sp_total_policy_points')|0]" <"#weak Currently#!#E [sp_policy_point|E]#!：[GetPlayer.MakeScope.Var('sp_current_policy_points').GetValue|0]/[GetPlayer.MakeScope.ScriptValue('sp_total_policy_points')|0]"> #NT!
+
+sp_courtly_vassal_towards_policy_opinion_effect_tt_0:0 "所有[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]）对[actor.GetUIName]的好感提高#P 5#!#weak （-1.20/年）（颁布保守政策）#!" <"All [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E] ([actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]) increased favorability towards [actor.GetUIName]#P 5#!#weak  (-1.20/year) (enacted conservative policies)#!"> #NT!
+sp_courtly_vassal_towards_policy_opinion_effect_tt_1:1 "所有[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]）对[actor.GetUIName]的好感提高#P 5#!#weak （-1.20/年）（颁布中道政策）#!" <"All [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E] ([actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0])'s favorability towards [actor.GetUIName] increased#P 5#!#weak  (-1.20/year) (promulgated middle-of-the-road policy)#!"> #NT!
+sp_courtly_vassal_towards_policy_opinion_effect_tt_2:0 "所有[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]）对[actor.GetUIName]的好感降低#N 10#!#weak （-1.20/年）（颁布革新政策）#!" <"All [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E] ([actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]) favorable opinion of [actor.GetUIName] decreased#N 10#!#weak  (-1.20/year) (promulgated reform policy)#!"> #NT!
+
+sp_parochial_vassal_towards_policy_opinion_effect_tt_0:1 "所有[GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_parochial_vassals')|V0]）对[actor.GetUIName]的好感提高#P 10#!#weak （-1.20/年）（颁布保守政策）#!" <"All [GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName][vassal|E] ([actor.MakeScope.ScriptValue('number_of_parochial_vassals')|V0]) increased favorability towards [actor.GetUIName]#P 10#!#weak  (-1.20/year) (enacted conservative policies)#!"> #NT!
+sp_parochial_vassal_towards_policy_opinion_effect_tt_2:1 "所有[GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_parochial_vassals')|V0]）对[actor.GetUIName]的好感降低#N 5#!#weak （-1.20/年）（颁布革新政策）#!" <"All [GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName][vassal|E] ([actor.MakeScope.ScriptValue('number_of_parochial_vassals')|V0]) favorable opinion of [actor.GetUIName] decreased#N 5#!#weak  (-1.20/year) (promulgated reform policy)#!"> #NT!
+
+sp_glory_hound_vassal_towards_policy_opinion_effect_tt:0 "所有[GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_glory_hound_vassals')|V0]）对[actor.GetUIName]的好感提高#P 10#!#weak （-1.20/年）（颁布革新政策）#!" <"All [GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName][vassal|E] ([actor.MakeScope.ScriptValue('number_of_glory_hound_vassals')|V0])'s favorable opinion of [actor.GetUIName] increased#P 10#!#weak  (-1.20/year) (promulgated reform policy)#!"> #NT!
+
+## Opinion modifiers
+
+sp_vassal_towards_progressive_policy_opinion:0 "颁布革新政策" <"Promulgate innovative policies"> #NT!
+sp_vassal_towards_neutral_policy_opinion:1 "颁布中道政策" <"Promulgate a middle-of-the-road policy"> #NT!
+sp_vassal_towards_conservative_policy_opinion:2 "颁布保守政策" <"enact conservative policies"> #NT!
+
+## councillor
+
+councillor_spt_bugyo:0 "勘定奉行" <"Determine and implement"> #NT!
+councillor_spt_bugyo_desc:0 "$councillor_spt_bugyo$是佐理财政、指挥代官的[councillor|E]。$councillor_spt_bugyo$直接影响你的[realm|E]内所能推行的[sp_policy|E]的数量。" <"$councillor_spt_bugyo$ is [councillor|E] who assists with finances and directs acting officers. $councillor_spt_bugyo$ directly affects the number of [sp_policy|E] that can be implemented in your [realm|E]."> #NT!
+game_concept_spt_bugyo_desc:0 "$councillor_spt_bugyo$是佐理财政、指挥代官的[councillor|E]。$councillor_spt_bugyo$直接影响[realm|E]内所能推行的[sp_policy|E]的数量。" <"$councillor_spt_bugyo$ is [councillor|E] who assists with finances and directs acting officers. $councillor_spt_bugyo$ directly affects the number of [sp_policy|E] that can be implemented within [realm|E]."> #NT!
+councillor_spt_bugyo_modifier:0 "领主的勘定奉行" <"The Lord's Appointment and Enforcement"> #NT!
+spt_bugyo_task_default:0 "推行政令" <"implement executive order"> #NT!
+spt_bugyo_task_default_effect_desc:1 "[councillor.GetShortUIName|U]将在你的领地推行政令，并使你获得:\n[councillor.GetModifierDescForTask('spt_bugyo_task_default')]" <"[councillor.GetShortUIName|U] will enforce the decree in your territory and grant you:\n[councillor.GetModifierDescForTask('spt_bugyo_task_default')]"> #NT!
+
+## Regiments
+
+yabusame_archers:0 "流镝马武士" <"Yabusame Samurai"> #NT!
+yabusame_archers_flavor:0 "#F 擅于骑在马上射箭的武士，在平原拉锯战中有无可比拟的优势。#!" <"#F A warrior who is good at archery on horseback has an unparalleled advantage in tug-of-war on the plains. #!"> #NT!
+shigedou_archers:0 "重藤弓武者" <"Heavy vine bow warrior"> #NT!
+shigedou_archers_flavor:0 "#F 小笠流弓术中有一种将躯干漆黑并用藤缠绕的弓，射出的箭矢无比精准，杀伤巨大，仅有少数武士能精通使用。#!" <"#F  In Kogasa-ryu archery, there is a kind of bow whose body is darkened and wrapped with vines. The arrows it shoots are extremely accurate and can cause huge damage. Only a few samurai can use it proficiently. #!"> #NT!
+sohei_pikemen:0 "薙刀武僧" <"Naginata Monk"> #NT!
+sohei_pikemen_flavor:0 "#F 手持薙刀的武僧，这种长柄兵器足以对抗骑兵和步兵。信仰坚定的僧兵很危险，他们绝对忠贞，不畏死亡。#!" <"#F A monk armed with a naginata, a long-handled weapon capable of fighting cavalry and infantry. Monks with firm beliefs are dangerous. They are absolutely loyal and fearless of death. #!"> #NT!
+dragon_corps:0 "龙骑兵" <"Dragoon"> #NT!
+dragon_corps_flavor:0 "#F 伊达家利用奥州马产地的优势，再装配火绳枪的特殊骑马铁炮队，在战国末年的大坂之战中发挥了重大效果。#!" <"#F The Date family took advantage of the Oshu horse production area and equipped a special horse-mounted iron artillery team equipped with matchlock guns, which played a major role in the Battle of Osaka in the late Warring States Period. #!"> #NT!
+sanada_red_armour:0 "真田赤备" <"Sanada Akabi"> #NT!
+sanada_red_armour_flavor:0 "#F 大坂之战中，由真田信繁编制的身着赤色铠甲，携带赤色的武具与旗帜的军势，骑兵部队乃个中翘楚。#!" <"#F  In the Battle of Osaka, the cavalry troops organized by Sanada Nobushige were the best among the troops wearing red armor, carrying red weapons and flags. #!"> #NT!
+armoured_militia:0 "长宗我部一领具足" <"Our department is equipped with all the skills of the eldest sect"> #NT!
+armoured_militia_flavor:0 "由常备盔甲的农户组成。兼顾农务的同时，在投入战争时也较有体能和耐力，进而提升整体战斗力。" <"Composed of farmers who always wear armor. While taking care of farming, they also have more physical fitness and endurance when going into war, thus improving their overall combat effectiveness."> #NT!

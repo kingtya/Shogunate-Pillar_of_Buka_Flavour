@@ -617,6 +617,7 @@ sp_policy_introduction_effect = {
 				custom_tooltip = sp_policy_armoured_militia_warning_tt
 			}
 			$ACTION$_character_modifier = sp_policy_armoured_militia_modifier
+			custom_tooltip = sp_policy_armoured_militia_effect_tt_0
 		}
 		flag:flag_sp_policy_six_coins_oath = {
 			if = {

@@ -1,0 +1,54 @@
+﻿l_english:
+trait_imagawa_margin:0 "今川传" <"Imagawaden"> #NT!
+trait_imagawa_margin_desc:0 "今川氏发迹于三河国碧海郡今川，乃清和源氏一脉，于南北朝时代作为足利氏一门支援北朝对抗南朝，继而支持室町足利幕府。传言道“公方不继吉良继，吉良不继今川继”。" <"The Imagawa clan made its fortune in Imagawa, Bikai County, Mikawa Province. It is a lineage of the Seiwa Minamoto clan. During the Southern and Northern Dynasties, as a branch of the Ashikaga clan, it supported the Northern Dynasty against the Southern Dynasty, and then supported the Muromachi Ashikaga Shogunate. Rumor has it that "the public will not succeed Kira Tsugumi, and Kira will not succeed Imagawa Sugi.""> #NT!
+TRAIT_FLAG_DESC_trait_imagawa_margin:0 "解锁#V 传播公家嗜好#![decision|E]（未实装）\n解锁#V 今川假名目录[sp_policy|E]#!\n如果满足要求，为领主解锁#V 今川假名目录[sp_policy|E]#!" <"Unlock #V  Spread the public hobby #![decision|E] (not implemented)\nUnlock #V Imagawa Kana Directory[sp_policy|E]#!\nIf the requirements are met, unlock #V Imagawa Kana Directory[sp_policy|E]#! for the lord"> #NT!
+
+trait_takeda_margin:0 "武田传" <"Takedaden"> #NT!
+trait_takeda_margin_desc:0 "武田氏发迹于甲斐国武田乡，乃清和源氏新罗三郎义光后裔。清光子信义就任甲斐守护，此后该职由武田氏世代相继。" <"The Takeda clan made its fortune in Takeda Township, Kai Country, and was a descendant of Silla Saburo Yoshimitsu, the Gen clan of the Qing Dynasty. Kiyomitsu Nobuyoshi was appointed as the guardian of Kai, and since then, the post has been passed down by the Takeda clan for generations."> #NT!
+TRAIT_FLAG_DESC_trait_takeda_margin:0 "解锁#V 甲州法度次第[sp_policy|E]#!\n如果满足要求，为领主解锁#V 甲州法度次第[sp_policy|E]#!" <"Unlock #V  Koshu Law Order [sp_policy|E]#!\nIf the requirements are met, unlock #V  Koshu Law Order [sp_policy|E]#! for the lord"> #NT!
+
+trait_oda_margin:0 "织田传#weak （弹正忠家）#!" <"Odaden #weak  (Danmasa Tadake) #!"> #NT!
+trait_oda_margin_desc:0 "织田氏发祥于越前国织田庄，本姓忌部氏，与甲斐氏、朝仓氏同为斯波武卫家效力，室町时代为尾张守护代。弹正忠家本为织田氏庶流，传自信长祖父三代，趁乱世之机坐大。" <"The Oda clan was born in Oda Village of Echizen Province. Their original surname was the Jibe clan. Together with the Kai clan and the Asakura clan, they served the Shibabu Wei family. During the Muromachi period, they were the guardians of Owari. Danmasa Tadashi was originally a concubine of the Oda clan. It is said that the third generation of Nobu's eldest grandfather took advantage of the troubled times to become powerful."> #NT!
+TRAIT_FLAG_DESC_trait_oda_margin:0 "解锁#V 火器集中运用[sp_policy|E]#!\n如果满足要求，为领主解锁#V 火器集中运用[sp_policy|E]#!\n提前解锁#V 兵农分离[sp_policy|E]#!和#V 乐市乐座[sp_policy|E]#! " <"Unlock #V  Firearms Concentration Use [sp_policy|E]#!\nIf the requirements are met, unlock #V  Firearms Concentration Use [sp_policy|E]#!\nUnlock #V  Soldiers and Farmers Separation [sp_policy|E]#! and #V  Leshi Lezuo [sp_policy|E]#!  in advance"> #NT!
+
+trait_hojo_margin:0 "后北条传" <"Go Hojoden"> #NT!
+trait_hojo_margin_desc:0 "始于原为京都御家人的伊势新九郎宗瑞，其因平定今川家内乱有功受封城主。统一相模后，二代当主氏纲改姓北条以巩固统治，因与镰仓时代的幕府执权北条氏没有直接血缘关系，故又称后北条氏。" <"It started with Ise Shinkuro Munezu, who was originally a Kyoto retainer. He was awarded the title of lord for his contribution in suppressing the internal strife of the Imagawa family. After unifying Sagami, the second head of the clan, Ujiyasu, changed his surname to Hojo to consolidate his rule. Because he had no direct blood relationship with the Hojo clan, the ruling shogunate of the Kamakura period, he was also called the Later Hojo clan."> #NT!
+TRAIT_FLAG_DESC_trait_hojo_margin:0 "解锁#V 五条训诫[sp_policy|E]#!\n如果满足要求，为领主解锁#V 五条训诫[sp_policy|E]#!" <"Unlock #V  Five Commandments [sp_policy|E]#!\nIf the requirements are met, unlock #V  Five Commandments [sp_policy|E]#! for the lord"> #NT!
+
+trait_tokugawa_margin:0 "德川传" <"Tokugawa"> #NT!
+trait_tokugawa_margin_desc:0 "始于德川家康，前身是三河国豪族松平氏。家康的祖父清康致力于称霸三河，被后世誉为“如果活到三十岁当可取得天下”。家康发迹后自称清和源氏支流得川氏后裔，改一字为德川。" <"It started with Tokugawa Ieyasu, who was a descendant of the Matsudaira clan, a powerful clan in Mikawa Province. Ieyasu's grandfather, Kiyoyasu, was committed to dominating Mikawa and was praised by later generations as "a man who would have conquered the world if he lived to the age of 30." After Ieyasu became successful, he claimed to be a descendant of the Tokugawa clan, a branch of the Seiwa Genji clan, and changed his name to Tokugawa."> #NT!
+TRAIT_FLAG_DESC_trait_tokugawa_margin:0 "解锁#V 旗本先手役[sp_policy|E]#!\n如果满足要求，为领主解锁#V 旗本先手役[sp_policy|E]#!" <"Unlock #V  Flagship First Strike [sp_policy|E]#!\nIf the requirements are met, unlock #V  Flagship First Strike [sp_policy|E]#! for the lord"> #NT!
+
+trait_uesugi_margin:0 "上杉传#weak （长尾家）#!" <"Uesugiden #weak  (Nagao family) #!"> #NT!
+trait_uesugi_margin_desc:0 "上杉氏原为公家，后在关东管治。扇谷、山内上杉家相继在后北条家侵攻下灭亡，宪政将关东管领一职授予长尾景虎（上杉谦信），自此原为越后守护代的长尾家成为上杉氏的嫡流。" <"The Uesugi family was originally a public family and later governed in Kanto. The Ogidani and Yamauchi Uesugi families perished one after another due to the invasion of the Go-Hojo family. Kensei granted the post of Kanto governor to Nagao Kagetora (Uesugi Kenshin). From then on, the Nagao family, who was originally the guardian of Echigo, became the direct descendant of the Uesugi family."> #NT!
+TRAIT_FLAG_DESC_trait_uesugi_margin:0 "解锁#V 远征军支援[sp_policy|E]#!\n如果满足要求，为领主解锁#V 远征军支援[sp_policy|E]#!" <"Unlock #V  Expeditionary Force Support[sp_policy|E]#!\nIf the requirements are met, unlock #V Expeditionary Force Support[sp_policy|E]#! for the lord"> #NT!
+
+trait_shimazu_margin:0 "岛津传" <"Shimadzu"> #NT!
+trait_shimazu_margin_desc:0 "岛津氏发源于日向国岛津庄，原为渡来人，属秦氏惟宗氏一脉，于镰仓幕府时期出任九州地头，全盛时以萨摩国为中心统治南九州。" <"The Shimazu clan originated from Shimazusho in Hyuga Province. They were originally from Torai and belonged to the lineage of the Qin family. They took over Kyushu territory during the Kamakura shogunate period and ruled Southern Kyushu with Satsuma Kingdom as the center during its heyday."> #NT!
+TRAIT_FLAG_DESC_trait_shimazu_margin:0 "解锁#V 萨摩军法[sp_policy|E]#!\n如果满足要求，为领主解锁#V 萨摩军法[sp_policy|E]#!" <"Unlock #V  Satsuma Military Law [sp_policy|E]#!\nIf the requirements are met, unlock #V  Satsuma Military Law [sp_policy|E]#! for the lord"> #NT!
+
+trait_date_margin:0 "伊达传" <"Date"> #NT!
+trait_date_margin_desc:0 "伊达氏发源于陆奥国伊达郡，乃藤原氏山阴流一脉。自镰仓时代起到江户时代皆为东北地方举足轻重的大名。" <"The Date clan originated from Date County, Mutsu Province, and is part of the Sanin-ryu lineage of the Fujiwara clan. From the Kamakura period to the Edo period, he was an important daimyo in Tohoku."> #NT!
+TRAIT_FLAG_DESC_trait_date_margin:0 "解锁#V 编制龙骑兵[sp_policy|E]#!\n如果满足要求，为领主解锁#V 编制龙骑兵[sp_policy|E]#!" <"Unlock #V  Dragoon [sp_policy|E]#!\nIf the requirements are met, unlock #V  Dragoon [sp_policy|E]#! for the lord"> #NT!
+
+trait_mori_margin:0 "毛利传" <"Maori Biography"> #NT!
+trait_mori_margin_desc:0 "本姓大江氏。发源于镰仓时代的政所别当大江广元四子季光。安艺毛利氏本是当地小豪族，传至元就向东击败尼子氏，向西消灭篡夺大内氏的陶晴贤，一跃成为“西国的霸主”。" <"My surname is Dajiang. The political office that originated in the Kamakura period was Oe Hiromoto's fourth son, Ikimitsu. The Anyi Maori clan was originally a small local wealthy clan. When it reached the Yuan Dynasty, they went east to defeat the Nizi clan, and went west to eliminate Tao Qingxian who usurped the Ouchi clan, and became the "overlord of the Western Kingdom"."> #NT!
+TRAIT_FLAG_DESC_trait_mori_margin:0 "解锁#V 百万一心之训[sp_policy|E]#!\n如果满足要求，为领主解锁#V 百万一心之训[sp_policy|E]#!" <"Unlock #V  The Training of a Million and One Heart [sp_policy|E]#!\nIf the requirements are met, unlock #V  The Training of a Million and One Heart [sp_policy|E]#! for the lord"> #NT!
+
+trait_chosokabe_margin:0 "长宗我部传" <"Biography of Changzonggabu"> #NT!
+trait_chosokabe_margin_desc:0 "土佐国豪族，进入当地时期不明。曾于兼序时代遭入侵而灭亡，国亲在一条家的支持下复兴长宗我部氏。传至元亲时一统四国地区。" <"A wealthy family from Tosa Province, it is unknown when they entered the local area. The clan was invaded and destroyed during the Kanexu era, and the Chosoga clan was revived by Kunichika with the support of the Ichijo family. It was passed down to Yuan Qin that he unified the Shikoku region."> #NT!
+TRAIT_FLAG_DESC_trait_chosokabe_margin:0 "解锁#V 一领具足制[sp_policy|E]#!\n如果满足要求，为领主解锁#V 一领具足制[sp_policy|E]#!" <"Unlock #V  One collar and full system [sp_policy|E]#!\nIf the requirements are met, unlock #V  One collar and full system [sp_policy|E]#! for the lord"> #NT!
+
+trait_otomo_margin:0 "大友传" <"The Legend of Otomo"> #NT!
+trait_otomo_margin_desc:0 "大友氏发源于相模国大友庄，相传家祖能直为源赖朝后裔，镰仓时代到战国时代以九州丰后国为根据地，一度支配北九州。传自宗麟时代与西方关系密切，被传教士赞誉为“日本第一英主”。" <"The Otomo clan originated from Otomo-sho in Sagami Province. It is said that the ancestor of the family, Noriaki, was a descendant of Minamoto no Yoritomo. From the Kamakura period to the Warring States period, they used Bungo Province in Kyushu as their base and once dominated northern Kyushu. It is said that they had close relations with the West since the time of Sorin, and were praised by missionaries as "the first great ruler in Japan.""> #NT!
+TRAIT_FLAG_DESC_trait_otomo_margin:0 "解锁#V 切立支丹保护[sp_policy|E]#!\n如果满足要求，为领主解锁#V 切立支丹保护[sp_policy|E]#!（未实装)" <"Unlock #V Cheritsudan Protection[sp_policy|E]#!\nIf the requirements are met, unlock #V Cheritsudan Protection[sp_policy|E]#!（未实装) for the lord"> #NT!
+
+trait_sanada_margin:0 "真田传" <"Sanadaden"> #NT!
+trait_sanada_margin_desc:0 "始于真田幸纲（隆），原为信浓豪族海野氏分家。海野氏早年为镰仓幕府御家人，随即衰落，被武田家灭亡后，幸纲继承家门。真田家辛纲、昌幸、信繁（幸村）一门三代均为将略之才。幸村于大坂之战以寡击众，号“日本第一兵”。" <"It started with Yukitsuna Sanada (Takashi) and was originally a branch of the Umino clan, a wealthy family in Shinano. In his early years, the Umino family was a member of the Kamakura shogunate's royal family, but then declined. After the Takeda family was destroyed, Yukitsuna succeeded the family. The three generations of the Sanada family, Shintsuna, Masayuki, and Nobushige (Yukimura), were all talented generals. During the Battle of Osaka, Yukimura was known as "Japan's No. 1 Soldier" because he defeated the enemy with a small number."> #NT!
+TRAIT_FLAG_DESC_trait_sanada_margin:0 "解锁#V 六文钱誓言[sp_policy|E]#!\n如果满足要求，为领主解锁#V 六文钱誓言[sp_policy|E]#!\n解锁#V 表里军略[sp_policy|E]#!\n如果满足要求，为领主解锁#V 表里军略[sp_policy|E]#!\n解锁#V 编制真田赤备[sp_policy|E]#!\n如果满足要求，为领主解锁#V 编制真田赤备[sp_policy|E]#!" <"Unlock #V  The Oath of Six Coins [sp_policy|E][sp_policy|E]2\nIf the requirements are met, unlock #V  The Oath of Six Coins for the lord [sp_policy|E][sp_policy|E]2\nUnlock #V  Military Strategy [sp_policy|E][sp_policy|E]2\nIf the requirements are met, unlock #V  Military Strategy for the lord [sp_policy|E][sp_policy|E]2\nUnlock #V  Build Sanada Akabi [sp_policy|E][sp_policy|E]2\nIf the requirements are met, unlock #V  for the lord Build Sanada Akabi [sp_policy|E][sp_policy|E]2"> #NT!
+
+# 丰臣 检地刀狩
+# 本愿寺 机法一体
+# 铃木 杂贺规约
+# 三好 理世安民
+# 最上 内治外谋

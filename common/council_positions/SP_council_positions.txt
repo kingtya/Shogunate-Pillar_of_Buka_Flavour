@@ -34,14 +34,6 @@ councillor_spt_bugyo = {
 	valid_character = {
 		exists = root.liege_or_court_owner
 		can_be_councillor_basics_trigger = yes
-		NOR = {
-			has_council_position = councillor_spouse
-			has_council_position = councillor_court_chaplain
-			has_council_position = councillor_chancellor
-			has_council_position = councillor_steward
-			has_council_position = councillor_marshal
-			has_council_position = councillor_spymaster
-		}
 		OR = {
 			is_ruler = yes
 			AND = {

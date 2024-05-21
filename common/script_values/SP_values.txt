@@ -114,7 +114,7 @@
 				}
 				add = 5
 			}
-			add = 35
+			add = 25
 		}
 		flag:flag_sp_policy_improve_labor = {
 			if = {

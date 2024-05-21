@@ -1,0 +1,10 @@
+﻿l_english:
+pob_abdicate_decision_feudal:0 "Seclusion#weak  (Pillar Of Buka)#!" #NT!
+pob_abdicate_decision_clan:0 "Abdication#weak  (Pillar Of Buka)#!" #NT!
+pob_abdicate_decision_feudal_tooltip:0 "Handing over power to your [player_heir|E]\n\n#weak  Shogunate Pillar of Buka#!" #NT!
+pob_abdicate_decision_clan_tooltip:0 "Handing over power to your [player_heir|E]\n\n#weak  Shogunate Pillar of Buka#!" #NT!
+pob_abdicate_decision_feudal_desc:0 "My heir is qualified to be the governor of the family. For the sake of the safety of the territory, it is time for him to take charge!" #NT!
+pob_abdicate_decision_clan_desc:0 "My successor is capable of being the leader. For the stability of the territory, it is time for him to take charge of the tribe!" #NT!
+pob_abdicate_decision_effect_tooltip:0 "You will #E abdicate in a few days#!了" #NT!
+pob_abdicate_decision_feudal_confirm:0 "Inheritance of Family Heir" #NT!
+pob_abdicate_decision_clan_confirm:0 "Inherit authority" #NT!

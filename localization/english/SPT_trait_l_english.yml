@@ -1,0 +1,54 @@
+﻿l_english:
+trait_imagawa_margin:0 "Imagawa Margin" #NT!
+trait_imagawa_margin_desc:0 "The Imagawa clan made its fortune in Imagawa, Bikai County, Mikawa Province. It is a lineage of the Seiwa Minamoto clan. During the Southern and Northern Dynasties, as a branch of the Ashikaga clan, it supported the Northern Dynasty against the Southern Dynasty, and then supported the Muromachi Ashikaga Shogunate. Rumor has it that "the public will not succeed Kira Tsugumi, and Kira will not succeed Imagawa Sugi."" #NT!
+TRAIT_FLAG_DESC_trait_imagawa_margin:0 "Unlock #V  Spread the public hobby #![decision|E] (not implemented)\nUnlock #V Imagawa Kana Directory[sp_policy|E]#!\nIf the requirements are met, unlock #V Imagawa Kana Directory[sp_policy|E]#! for the lord" #NT!
+
+trait_takeda_margin:0 "Takeda Margin" #NT!
+trait_takeda_margin_desc:0 "The Takeda clan made its fortune in Takeda Township, Kai Country, and was a descendant of Silla Saburo Yoshimitsu, the Gen clan of the Qing Dynasty. Kiyomitsu Nobuyoshi was appointed as the guardian of Kai, and since then, the post has been passed down by the Takeda clan for generations." #NT!
+TRAIT_FLAG_DESC_trait_takeda_margin:0 "Unlock #V  Koshu Law Order [sp_policy|E]#!\nIf the requirements are met, unlock #V  Koshu Law Order [sp_policy|E]#! for the lord" #NT!
+
+trait_oda_margin:0 "Oda Margin #weak  (House Danmasa) #!" #NT!
+trait_oda_margin_desc:0 "The Oda clan was born in Oda Village of Echizen Province. Their original surname was the Jibe clan. Together with the Kai clan and the Asakura clan, they served the Shibabu Wei family. During the Muromachi period, they were the guardians of Owari. Danmasa Tadashi was originally a concubine of the Oda clan. It is said that the third generation of Nobu's eldest grandfather took advantage of the troubled times to become powerful." #NT!
+TRAIT_FLAG_DESC_trait_oda_margin:0 "Unlock #V  Firearms Concentration Use [sp_policy|E]#!\nIf the requirements are met, unlock #V  Firearms Concentration Use [sp_policy|E]#!\nUnlock #V  Soldiers and Farmers Separation [sp_policy|E]#! and #V  Leshi Lezuo [sp_policy|E]#!  in advance" #NT!
+
+trait_hojo_margin:0 "Hojo Margin" #NT!
+trait_hojo_margin_desc:0 "It started with Ise Shinkurō Sozui, who was originally a member of the imperial family of Kyoto. He was granted the title of Lord of the Castle for his contribution in putting down the civil strife of the Imagawa family. After the unification of Sagami, Tsuna, the second generation leader, changed his surname to Hojo to consolidate his rule. Since he had no direct blood relationship with the Hojo clan who ruled the shogunate during the Kamakura period, he was also called the Later Hojo clan." #NT!
+TRAIT_FLAG_DESC_trait_hojo_margin:0 "Unlock #V  Five Commandments [sp_policy|E]#!\nIf the requirements are met, unlock #V  Five Commandments [sp_policy|E]#! for the lord" #NT!
+
+trait_tokugawa_margin:0 "Tokugawa Margin" #NT!
+trait_tokugawa_margin_desc:0 "It started with Tokugawa Ieyasu and was formerly the Matsudaira clan, a wealthy family of Mikawa Kingdom. Ieyasu's grandfather, Kiyoyasu, was dedicated to dominating Mikawa and was praised by later generations as "if he lives to be thirty years old, he will conquer the world." After Ieyasu became prosperous, he claimed to be a descendant of the Kawa clan, a tributary of the Seiwa Genji clan, and changed his name to Tokugawa." #NT!
+TRAIT_FLAG_DESC_trait_tokugawa_margin:0 "Unlock #V  Flagship First Strike [sp_policy|E]#!\nIf the requirements are met, unlock #V  Flagship First Strike [sp_policy|E]#! for the lord" #NT!
+
+trait_uesugi_margin:0 "Uesugi Margin #weak  (House Nagao) #!" #NT!
+trait_uesugi_margin_desc:0 "The Uesugi family was originally a public family and later governed in Kanto. The Ogidani and Yamauchi Uesugi families perished one after another due to the invasion of the Go-Hojo family. Kensei granted the post of Kanto governor to Nagao Kagetora (Uesugi Kenshin). From then on, the Nagao family, who was originally the guardian of Echigo, became the direct descendant of the Uesugi family." #NT!
+TRAIT_FLAG_DESC_trait_uesugi_margin:0 "Unlock #V  Expeditionary Force Support[sp_policy|E]#!\nIf the requirements are met, unlock #V Expeditionary Force Support[sp_policy|E]#! for the lord" #NT!
+
+trait_shimazu_margin:0 "Shimazu Margin" #NT!
+trait_shimazu_margin_desc:0 "The Shimazu clan originated from Shimazusho in Hyuga Province. They were originally from Torai and belonged to the lineage of the Qin family. They took over Kyushu territory during the Kamakura shogunate period and ruled Southern Kyushu with Satsuma Kingdom as the center during its heyday." #NT!
+TRAIT_FLAG_DESC_trait_shimazu_margin:0 "Unlock #V  Satsuma Military Law [sp_policy|E]#!\nIf the requirements are met, unlock #V  Satsuma Military Law [sp_policy|E]#! for the lord" #NT!
+
+trait_date_margin:0 "Date Margin" #NT!
+trait_date_margin_desc:0 "The Date clan originated from Date County, Mutsu Province, and is part of the Sanin-ryu lineage of the Fujiwara clan. From the Kamakura period to the Edo period, he was an important daimyo in Tohoku." #NT!
+TRAIT_FLAG_DESC_trait_date_margin:0 "Unlock #V  Dragoon [sp_policy|E]#!\nIf the requirements are met, unlock #V  Dragoon [sp_policy|E]#! for the lord" #NT!
+
+trait_mori_margin:0 "Mori Margin" #NT!
+trait_mori_margin_desc:0 "My surname is Dajiang. The political office that originated in the Kamakura period was Oe Hiromoto's fourth son, Ikimitsu. The Anyi Maori clan was originally a small local wealthy clan. When it reached the Yuan Dynasty, they went east to defeat the Nizi clan, and went west to eliminate Tao Qingxian who usurped the Ouchi clan, and became the "overlord of the Western Kingdom"." #NT!
+TRAIT_FLAG_DESC_trait_mori_margin:0 "Unlock #V  The Training of a Million and One Heart [sp_policy|E]#!\nIf the requirements are met, unlock #V  The Training of a Million and One Heart [sp_policy|E]#! for the lord" #NT!
+
+trait_chosokabe_margin:0 "Chosokabe Margin" #NT!
+trait_chosokabe_margin_desc:0 "A wealthy family from Tosa Province, it is unknown when they entered the local area. The clan was invaded and destroyed during the Kanexu era, and the Chosoga clan was revived by Kunichika with the support of the Ichijo family. It was passed down to Yuan Qin that he unified the Shikoku region." #NT!
+TRAIT_FLAG_DESC_trait_chosokabe_margin:0 "Unlock #V  One collar and full system [sp_policy|E]#!\nIf the requirements are met, unlock #V  One collar and full system [sp_policy|E]#! for the lord" #NT!
+
+trait_otomo_margin:0 "Otomo Margin" #NT!
+trait_otomo_margin_desc:0 "The Otomo clan originated from Otomo-so, Sagami Province. According to legend, the family ancestor was a direct descendant of Minamoto Yoritomo. From the Kamakura Period to the Warring States Period, it was based in Kyushu Bungo Province and once dominated Kitakyushu. It is said that he had close relations with the West during the Zonglin period and was praised by missionaries as "Japan's first British master"." #NT!
+TRAIT_FLAG_DESC_trait_otomo_margin:0 "Unlock #V Cheritsudan Protection[sp_policy|E]#!\nIf the requirements are met, unlock #V Cheritsudan Protection[sp_policy|E]#!(not completed) for the lord" #NT!
+
+trait_sanada_margin:0 "Sanada Margin" #NT!
+trait_sanada_margin_desc:0 "It started with Yukitsuna Sanada (Takashi) and was originally a branch of the Umino clan, a wealthy family in Shinano. In his early years, the Umino family was a member of the Kamakura shogunate's royal family, but then declined. After the Takeda family was destroyed, Yukitsuna succeeded the family. The three generations of the Sanada family, Shintsuna, Masayuki, and Nobushige (Yukimura), were all talented generals. During the Battle of Osaka, Yukimura was known as "Japan's No. 1 Soldier" because he defeated the enemy with a small number." #NT!
+TRAIT_FLAG_DESC_trait_sanada_margin:0 "Unlocks #V  Six-coin Pledge [sp_policy|E][sp_policy|E]2\nIf the requirements are met, unlocks #V  Six-coin Pledge [sp_policy|E][sp_policy|E]2 for the lord\nUnlocks #V  Internal and External Military Strategy [sp_policy|E][sp_policy|E]2\nIf the requirements are met, unlocks #V  Internal and External Military Strategy [sp_policy|E][sp_policy|E]2 for the lord\nUnlocks #V  Prepare Sanada Red Armor [sp_policy|E][sp_policy|E]2\nIf the requirements are met, unlocks #V  Prepare Sanada Red Armor [sp_policy|E][sp_policy|E]2 for the lord" #NT!
+
+# 丰臣 检地刀狩
+# 本愿寺 机法一体
+# 铃木 杂贺规约
+# 三好 理世安民
+# 最上 内治外谋

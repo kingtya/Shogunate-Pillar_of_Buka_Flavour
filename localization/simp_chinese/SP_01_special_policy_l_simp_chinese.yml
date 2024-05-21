@@ -79,6 +79,7 @@ flag_sp_policy_armoured_militia_desc:0 "土佐国的战国大名长宗我部氏�
 sp_policy_armoured_militia_modifier:0 "一领具足制"
 sp_policy_armoured_militia_modifier_desc:0 "此人建立了一领具足制。"
 sp_policy_armoured_militia_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('chosokabe_margin').GetName( GetNullCharacter )]，由勘定奉行解锁要求其有12军事且颁布后5年内无法将其\n撤职#!"
+sp_policy_armoured_militia_effect_tt_0:0 "#V 你#!可以招募[GetMaA('armoured_militia').GetName][men_at_arms|E]"
 
 flag_sp_policy_six_coins_oath_name:0 "#V 六文钱誓言#!"
 flag_sp_policy_six_coins_oath_desc:0 ""
@@ -95,7 +96,7 @@ sp_policy_cunning_strategy_effect_tt:0 "其他[ruler|E]更愿意接受你的#V �
 sp_policy_foster_system_more_accpetive_betrayal_reason:0 "你的表里军略[sp_policy|E]：$VALUE|+=0$"
 
 flag_sp_policy_sanada_red_armour_name:0 "#V 编制真田赤备#!"
-flag_sp_policy_sanada_red_armour_desc:0 "大坂之阵时，真田信繁麾下的六千人的军势皆身着赤色铠甲、携带着赤色的武具与旗帜。遗憾的是，真田信繁战死在向德川家康本阵冲锋的路上，真田赤备也倒在了历史的洪流之中。"
+flag_sp_policy_sanada_red_armour_desc:0 "庆长20年（1615年）的大阪夏之阵中由真田信繁（幸村）编成。完全继承武田流赤备的真田信繁队在天王寺口之战中对家康本阵的攻击造成了德川本阵自三方原之战以来从未有过的大崩溃，在岛津氏的《萨摩旧记》中被记载下了“真田日本第一勇士，自古以来未有此等”这样赞赏其活跃的文字。"
 sp_policy_sanada_red_armour_effect_tt_0:0 "#V 你#!可以招募[GetMaA('sanada_red_armour').GetName][men_at_arms|E]"
 sp_policy_sanada_red_armour_effect_tt_1:1 "你获得一支人数为#V 50#!的[GetMaA('sanada_red_armour').GetName]军队"
 

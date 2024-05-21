@@ -1,0 +1,21 @@
+﻿l_english:
+NOT_betray_neighboring_condition:0 "[CHARACTER.GetShortUIName|U]不是你邻近的领主" <"[CHARACTER.GetShortUIName|U] is not your neighboring lord"> #NT!
+NOT_betray_opinion_condition:0 "[CHARACTER.GetShortUIName|U]对你的好感低于0" <"[CHARACTER.GetShortUIName|U]'s opinion of you is less than 0"> #NT!
+NOT_offer_betray_neighboring_condition:0 "[CHARACTER.GetShortUIName|U]不是你邻近的领主" <"[CHARACTER.GetShortUIName|U] is not your neighboring lord"> #NT!
+NOT_offer_betray_opinion_condition_1:0 "[CHARACTER.GetShortUIName|U]对你的好感低于80" <"[CHARACTER.GetShortUIName|U]'s opinion of you is less than 80"> #NT!
+NOT_offer_betray_opinion_condition_2:0 "[CHARACTER.GetShortUIName|U]对领主的好感大于0" <"[CHARACTER.GetShortUIName|U] has a favorable opinion of the lord greater than 0"> #NT!
+betray_me:0 "背叛了我" <"betrayed me"> #NT!
+betray_my_liege:0 "背叛我的领主" <"betray my lord"> #NT!
+arranged_my_vassal:0 "调略我的封臣" <"Redirect my vassals"> #NT!
+turned_over_to_me:0 "投靠了我" <"Take refuge in me"> #NT!
+my_new_liege:0 "新领主" <"new lord"> #NT!
+
+offer_betray_interaction_aibehavior_power_1:0 "我的领主的军力更强：$VALUE|=+0$" <"My lord's army is stronger: $VALUE|=+0$"> #NT!
+offer_betray_interaction_aibehavior_power_2:0 "比我的领主的军力更强：$VALUE|=+0$" <"More powerful than my lord: $VALUE|=+0$"> #NT!
+
+betray:0 "寝返#weak  (武家栋梁）#!" <"Return to bed #weak  (Wu Family Pillar) #!"> #NT!
+offer_betray:0 "调略#weak （武家栋梁）#!" <"Adjustment #weak  (Military Pillar) #!"> #NT!
+
+betray_interaction.0020.desc:0 "御馆大人，大事不妙！[recipient.GetUIName|U]寝返并投向了[actor.GetUIName|U]一方!" <"Sir, something bad is going on! [recipient.GetUIName|U] went back to bed and joined [actor.GetUIName|U]!"> #NT!
+betray_interaction.0030.desc:0 "御馆大人，大事不妙！[actor.GetUIName|U]寝返并投向了[recipient.GetUIName|U]一方!" <"Sir, something bad is going on! [actor.GetUIName|U] went back to bed and joined [recipient.GetUIName|U]!"> #NT!
+betray_interaction.0020.a:0 "噢！" <"oh!"> #NT!

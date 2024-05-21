@@ -518,11 +518,13 @@
             }
             spacer = { size = { 45 0 } }
         }
-        text_single = {
+        text_multi = {
             text = "[Localize(Concatenate(Scope.GetFlagName, '_name'))]"
             default_format = "#light_background"
             parentanchor = left|vcenter
-            position = { 65 -3 }
+            max_width = 100
+            autoresize = yes
+            position = { 40 0 }
         }
         text_single = {
             text = "[GuiScope.SetRoot(MakeScopeFlag(Scope.GetFlagName)).AddScope('introducer', GetPlayer.MakeScope).ScriptValue('sp_policy_points')|0]"
