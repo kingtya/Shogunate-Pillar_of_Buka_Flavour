@@ -10,9 +10,9 @@ sp_policy_laws_of_imagawa_modifier:0 "Laws of Imagawa" #NT!
 sp_policy_laws_of_imagawa_modifier_desc:0 "This person promulgated the Imagawa Kana Directory." #NT!
 sp_policy_laws_of_imagawa_county_modifier:0 "Laws of Imagawa" #NT!
 sp_policy_laws_of_imagawa_county_modifier_desc:0 "The place's secluded privileges were abolished by new laws." #NT!
-sp_policy_laws_of_imagawa_warning_tt:0 "@warning_icon!#X  You or your assigned enforcement do not have [GetTrait('imagawa_margin').GetName( GetNullCharacter )], unlocking by an assigned enforcement requires it to have 12 management and cannot be removed within 5 years of issuance#!" #NT!
-sp_policy_laws_of_imagawa_effect_tt:0 "[county|E] in your territory receive [GetModifier('sp_policy_laws_of_imagawa_county_modifier').GetNameWithTooltip] for #V 20 years#!" #NT!
-sp_policy_laws_of_imagawa_effect_tt_1:1 "[county|E]Each #V  quarter#! in your territory has a higher probability of obtaining [GetModifier('sp_policy_laws_of_imagawa_county_modifier').GetNameWithTooltip] for a period of #V 5 years#!" #NT!
+sp_policy_laws_of_imagawa_warning_tt:0 "@warning_icon!#X  You and your Kanjyo Bugyo do not have [GetTrait('imagawa_margin').GetName( GetNullCharacter )], unlocking by the latter requires Kanjyo Bugyo having 12 Stewardship and cannot be fired for 5 years#!" #NT!
+sp_policy_laws_of_imagawa_effect_tt:0 "Every [county|E] in your territory gain [GetModifier('sp_policy_laws_of_imagawa_county_modifier').GetNameWithTooltip] for #V 20 years#!" #NT!
+sp_policy_laws_of_imagawa_effect_tt_1:1 "Each #V quarter#! every [county|E] in your territory has a high probability of gaining [GetModifier('sp_policy_laws_of_imagawa_county_modifier').GetNameWithTooltip] for #V 5 years#!" #NT!
 
 flag_sp_policy_laws_of_takeda_name:0 "#V Laws of Takeda #!" #NT!
 flag_sp_policy_laws_of_takeda_desc:0 "The Warring States Daimyo Takeda Shingen of the Kai Kingdom enacted the Separation of Kingdoms Law in the 16th year of Tenbun (1547). It is also known as the Shingen Family Law, the Koshu Law, the Koshu Shikimoku, etc. Initially, it consisted of 55 basic laws. In the 23rd year of Tianmo (1554), 2 additional articles were added, making a total of 57 articles. Jiazhou Laws is divided into the first volume and the second volume. The first volume consists of 57 articles, which mainly stipulates legal provisions; the second volume consists of 99 articles, which is a collection of moral expositions and quotes Chinese classical works such as The Analects of Confucius and Mencius. It aims to Standardize daily behavior." #NT!
@@ -66,7 +66,7 @@ flag_sp_policy_expeditionary_support_name:0 "#V Expeditionary Force Support#!" #
 flag_sp_policy_expeditionary_support_desc:0 "The frost-covered military camp is full of autumn air, and there are several rows of wild geese crossing the third watch of the moon. \nCross the mountains and get the view of Nengzhou. I can't hide my hometown and remember the expedition. \n\n$TAB$$TAB$$TAB$$TAB$$TAB$$TAB$——Uesugi Kenshin's "Work in the Formation"" #NT!
 sp_policy_expeditionary_support_modifier:0 "Expeditionary Force Support" #NT!
 sp_policy_expeditionary_support_modifier_desc:0 "This man has mastered the art of long-distance combat." #NT!
-sp_policy_expeditionary_support_warning_tt:0 "@warning_icon!#X  You or your assigned enforcement do not have [GetTrait('uesugi_margin').GetName( GetNullCharacter )], unlocking by assigned enforcement requires it to have 12 military and cannot\nremove it within 5 years after it is issued#!" #NT!
+sp_policy_expeditionary_support_warning_tt:0 "@warning_icon!#X  You or your assigned enforcement do not have [GetTrait('uesugi_margin').GetName( GetNullCharacter )], unlocking by assigned enforcement requires it to have 12 military and cannot remove it within 5 years after it is issued#!" #NT!
 
 flag_sp_policy_million_minds_motto_name:0 "#V One Million Heart Training#!"
 flag_sp_policy_million_minds_motto_desc:0 "The words of instruction engraved on the stone tablet used by the Sengoku daimyo Mourimoto of Aki Province when he was rebuilding Yoshida Gunyama Castle. Since the construction of the Honmaru stone wall was difficult to progress, the monument was buried in the "Himemaru" behind the Honmaru in place of the human pillar, and the construction of the general temple was successfully completed. By omitting the word "hundred", the word "ten thousand" is written as "one force", so that when written vertically, it can be read as "one day, one effort and one heart", that is, "working together", which means that when people work together, they can achieve success. Can be made into anything." #NT!
@@ -78,8 +78,8 @@ flag_sp_policy_armoured_militia_name:0 "#V Armoured Militia#!"
 flag_sp_policy_armoured_militia_desc:0 "The Warring States Daimyo Chosogabe clan of Tosa Province deployed a military system of arming peasants without dividing the time between soldiers and peasants. Regular samurai usually had extra spare gear, and these half-peasant, half-soldier soldiers got their name from having only one set of gear. First-class soldiers are usually exempted from the routine work that samurai should do. They are physically strong due to engaging in farm work and have high collective action capabilities, so they are of a higher level as soldiers. However, it is also difficult to mobilize during busy farming periods and cannot withstand long-term battle." #NT!
 sp_policy_armoured_militia_modifier:0 "One-stop service" #NT!
 sp_policy_armoured_militia_modifier_desc:0 "This person established the one-lead system." #NT!
-sp_policy_armoured_militia_warning_tt:0 "@warning_icon!#X You or your assigned enforcement do not have [GetTrait('chosokabe_margin').GetName( GetNullCharacter )], unlocking by assigned enforcement requires it to have 12 military and it cannot be removed within 5 years after it is issued\n#!" #NT!
-sp_policy_armoured_militia_effect_tt_0:0 "#V you#!可以招募[GetMaA('armoured_militia').GetName][men_at_arms|E]" #NT!
+sp_policy_armoured_militia_warning_tt:0 "@warning_icon!#X You or your assigned enforcement do not have [GetTrait('chosokabe_margin').GetName( GetNullCharacter )], unlocking by assigned enforcement requires it to have 12 military and it cannot be removed within 5 years after it is issued#!" #NT!
+sp_policy_armoured_militia_effect_tt_0:0 "#V you#! can recruit [GetMaA('armoured_militia').GetName] [men_at_arms|E]" #NT!
 
 flag_sp_policy_six_coins_oath_name:0 "#V Six Coins Oath#!"
 flag_sp_policy_six_coins_oath_desc:0 ""
@@ -92,12 +92,12 @@ flag_sp_policy_cunning_strategy_desc:0 ""
 sp_policy_cunning_strategy_modifier:0 "Cunning Strategy" #NT!
 sp_policy_cunning_strategy_modifier_desc:0 "This person has mastered the essence of sleep, return and adjustment." #NT!
 sp_policy_cunning_strategy_warning_tt:0 "@warning_icon!#X  You or your assigned enforcement do not have [GetTrait('sanada_margin').GetName( GetNullCharacter )], unlocking by assigned enforcement requires it to have 15 policies and cannot be removed within 5 years of its release#!" #NT!
-sp_policy_cunning_strategy_effect_tt:0 "Other [ruler|E] are more willing to accept your #V sleepback#! and #V redirect #!提议" #NT!
+sp_policy_cunning_strategy_effect_tt:0 "Other [ruler|E] are more willing to accept your #V betray#! and #V offer betray#!" #NT!
 sp_policy_foster_system_more_accpetive_betrayal_reason:0 "Your internal and external military strategies [sp_policy|E]:$VALUE|+=0$" #NT!
 
 flag_sp_policy_sanada_red_armour_name:0 "#V Establish Sanada Akabi#!" #NT!
 flag_sp_policy_sanada_red_armour_desc:0 "It was formed by Sanada Nobushige (Yukimura) in the Osaka Summer Formation in the 20th year of Keicho (1615). Sanada Nobushige's team, which fully succeeded Takeda Ryu Akabi, attacked Ieyasu's main formation in the Battle of Tennojiguchi, causing a major collapse of the Tokugawa main formation that had never been seen since the Battle of Mikatahara. In Shimazu's "Satsuma Old Chronicles" It is recorded in the book that "Sanada is the best warrior in Japan, and there has never been anyone like him since ancient times." This is written in praise of his activity." #NT!
-sp_policy_sanada_red_armour_effect_tt_0:0 "#V you#!可以招募[GetMaA('sanada_red_armour').GetName][men_at_arms|E]" #NT!
+sp_policy_sanada_red_armour_effect_tt_0:0 "#V you#! can recruit [GetMaA('sanada_red_armour').GetName] [men_at_arms|E]" #NT!
 sp_policy_sanada_red_armour_effect_tt_1:1 "You get a team of #V 50#!的[GetMaA('sanada_red_armour').GetName] troops."
 
 sp_policy_has_no_innovation_advanced_bowmaking_tt:0 "@warning_icon!#X Your [culture|E] does not have $innovation_advanced_bowmaking$[innovation|E]#!" #NT

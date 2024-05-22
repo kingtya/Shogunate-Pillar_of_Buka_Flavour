@@ -1,21 +1,21 @@
 ﻿l_english:
 
-game_concept_sp_policy:0 "policy" #NT!
+game_concept_sp_policy:0 "Policy" #NT!
 game_concept_sp_policy_desc:0 "Policies are [ruler|E]special laws implemented for a specific purpose, often providing political buffs or [soldier|E]enhanced [modifier|E], or other special effects. \n\nSome forces can unlock special imperial policies through family inheritance [trait|E]. This trait is inherited from men and is a characteristic of this [house|E] era." #NT!
-game_concept_sp_policy_point:0 "policy point cap" #NT!
-game_concept_sp_policy_point_desc:0 "You can only issue a certain amount of [sp_policy|E] by spending policy points, and the number of policy points is limited by [era|E] and the assigned [skills|E]. \n\nThe determining factors of the upper limit are:\n\n$EFFECT_LIST_BULLET$$councillor_spt_bugyo$ Every 2 points of [stewardship|E] increase #V 1[era|E]4\n$EFFECT_LIST_BULLET$$councillor_spt_bugyo$ Every 4 points of [learning|E] increase #V 1[era|E]4\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]achieve peace [era|E] increase #V 25[era|E]4\ n$EFFECT_LIST_BULLET$[culture | Momoyama[era|E] improve#V 20[era|E]4\n$EFFECT_LIST_BULLET$#E Innovation system[era|E]4[sp_policy|E] improve#V 20[era|E]4" #NT!
+game_concept_sp_policy_point:0 "Policy Point Limit" #NT!
+game_concept_sp_policy_point_desc:0 "You can only issue a certain amount of [sp_policy|E] by spending policy points, and the number of policy points is limited by [era|E] and the assigned [skills|E]. \n\nThe determining factors of the upper limit are:\n\n$EFFECT_LIST_BULLET$$councillor_spt_bugyo$ Every 2 points of [stewardship|E] increase #V 1#!\n$EFFECT_LIST_BULLET$$councillor_spt_bugyo$ every 4 [learning|E] increase #V 1#!\n$EFFECT_LIST_BULLET$[culture|E] [innovation|E] reached Heian [era|E] increase #V 25#!\n$EFFECT_LIST_BULLET$[culture|E] [innovation|E] reached Kamakura·Muromachi [era|E] increase #V 25#!\n$EFFECT_LIST_BULLET$[culture|E] [innovation|E] reached Sengoku [era|E] improve #V 25#!\n$EFFECT_LIST_BULLET$[culture|E] [innovation|E] reached Azuchi-momoyama [era|E] increase #V 20#!\n$EFFECT_LIST_BULLET$Progressive System [sp_policy|E] improve#V 20#!"
 
 ## UI Elements
 
 sp_tab_my_policies_tt:0 "#T Policy#!" #NT!
-sp_policy_window_head_text:0 "policy" #NT!
+sp_policy_window_head_text:0 "Policy" #NT!
 sp_pro_sp_policy_header_text:0 "Progressive / Special" #NT!
 sp_con_neu_policy_header_text:1 "Conservative / Neutral" #NT!
-sp_policy_is_loading_text:0 "Policy loading" #NT!
-sp_effect_header_text:0 "Effect:" #NT!
+sp_policy_is_loading_text:0 "Policy Loading" #NT!
+sp_effect_header_text:0 "Effects:" #NT!
 sp_cost_header_text:1 "Cost:" #NT!
-sp_confirm_button_text:0 "Release national policy" #NT!
-sp_remove_button_text:1 "Revoke mational policy" #NT!
+sp_confirm_button_text:0 "Release National Policy" #NT!
+sp_remove_button_text:1 "Revoke National Policy" #NT!
 
 sp_policy_released_cd:0 "You have promulgated this national policy" #NT!
 sp_contraditory_policy_released_cd:0 "You have enacted conflicting national policies" #NT!
@@ -27,14 +27,14 @@ sp_policy_released_recently_cd:0 "You have promulgated this national policy for 
 
 sp_current_policy_points:0 "#weak Currently#! #E [sp_policy_point|E]#!: [GetPlayer.MakeScope.Var('sp_current_policy_points').GetValue|0]/[GetPlayer.MakeScope.ScriptValue('sp_total_policy_points')|0]" #NT!
 
-sp_courtly_vassal_towards_policy_opinion_effect_tt_0:0 "All [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E] ([actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]) increased favorability towards [actor.GetUIName]#P 5#!#weak  (-1.20/year) (enacted conservative policies)#!" #NT!
-sp_courtly_vassal_towards_policy_opinion_effect_tt_1:1 "All [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E] ([actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0])'s favorability towards [actor.GetUIName] increased#P 5#!#weak  (-1.20/year) (promulgated middle-of-the-road policy)#!" #NT!
-sp_courtly_vassal_towards_policy_opinion_effect_tt_2:0 "All [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E] ([actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0])'s opinion of [actor.GetUIName] decreases #N 10#!#weak  (-1.20/year) (enact reform policies) #!" #NT!
+sp_courtly_vassal_towards_policy_opinion_effect_tt_0:0 "All [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] [vassal|E] ([actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]) increased favorability towards [actor.GetUIName] #P 5#!#weak  (-1.20/year) (enacted conservative policies)#!" #NT!
+sp_courtly_vassal_towards_policy_opinion_effect_tt_1:1 "All [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] [vassal|E] ([actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0])'s favorability towards [actor.GetUIName] increased #P 5#!#weak  (-1.20/year) (promulgated middle-of-the-road policy)#!" #NT!
+sp_courtly_vassal_towards_policy_opinion_effect_tt_2:0 "All [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] [vassal|E] ([actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0])'s opinion of [actor.GetUIName] decreases #N 10#!#weak  (-1.20/year) (enact reform policies) #!" #NT!
 
-sp_parochial_vassal_towards_policy_opinion_effect_tt_0:1 "All [GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName][vassal|E] ([actor.MakeScope.ScriptValue('number_of_parochial_vassals')|V0]) increased favorability towards [actor.GetUIName]#P 10#!#weak  (-1.20/year) (enacted conservative policies)#!" #NT!
-sp_parochial_vassal_towards_policy_opinion_effect_tt_2:1 "All [GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName][vassal|E] ([actor.MakeScope.ScriptValue('number_of_parochial_vassals')|V0]) favorable opinion of [actor.GetUIName] decreased#N 5#!#weak  (-1.20/year) (promulgated reform policy)#!" #NT!
+sp_parochial_vassal_towards_policy_opinion_effect_tt_0:1 "All [GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName] [vassal|E] ([actor.MakeScope.ScriptValue('number_of_parochial_vassals')|V0]) increased favorability towards [actor.GetUIName] #P 10#!#weak  (-1.20/year) (enacted conservative policies)#!" #NT!
+sp_parochial_vassal_towards_policy_opinion_effect_tt_2:1 "All [GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName] [vassal|E] ([actor.MakeScope.ScriptValue('number_of_parochial_vassals')|V0]) favorable opinion of [actor.GetUIName] decreased #N 5#!#weak  (-1.20/year) (promulgated reform policy)#!" #NT!
 
-sp_glory_hound_vassal_towards_policy_opinion_effect_tt:0 "All [GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName][vassal|E] ([actor.MakeScope.ScriptValue('number_of_glory_hound_vassals')|V0])'s favorable opinion of [actor.GetUIName] increased#P 10#!#weak  (-1.20/year) (promulgated reform policy)#!" #NT!
+sp_glory_hound_vassal_towards_policy_opinion_effect_tt:0 "All [GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName] [vassal|E] ([actor.MakeScope.ScriptValue('number_of_glory_hound_vassals')|V0])'s favorable opinion of [actor.GetUIName] increased #P 10#!#weak  (-1.20/year) (promulgated reform policy)#!" #NT!
 
 ## Opinion modifiers
 
