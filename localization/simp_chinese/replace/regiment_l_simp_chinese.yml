@@ -18,3 +18,6 @@ onager_flavor:0 "#F 由许多排列在地面上的盾牌组成。保护士兵免
 mangonel_flavor:0 "#F 用木头和竹子组合而成的箭楼。用于侦察和压制城内。#!"
 trebuchet_flavor:0 "#F 把竹子捆起来当盾。不仅能挡住箭矢，还可以抵挡火绳枪的子弹。#!"
 bombard_flavor:0 "#F 战国时代的大炮。虽然价格昂贵且数量稀少，但可以轻松炸开防御工事。#!"
+
+light_horsemen:0 "骑马武者"
+pikemen_unit:0 "精锐枪足轻"

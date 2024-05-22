@@ -48,8 +48,6 @@ spt_bugyo_task_default:0 "推行政令"
 spt_bugyo_task_default_effect_desc:1 "[councillor.GetShortUIName|U]将在你的领地推行政令，并使你获得:\n[councillor.GetModifierDescForTask('spt_bugyo_task_default')]"
 
 ## 兵士
-light_horsemen:0 "骑马武者"
-pikemen_unit:0 "精锐枪足轻"
 yabusame_archers:0 "流镝马武士"
 yabusame_archers_flavor:0 "#F 擅于骑在马上射箭的武士，在平原拉锯战中有无可比拟的优势。#!"
 shigedou_archers:0 "重藤弓武者"
