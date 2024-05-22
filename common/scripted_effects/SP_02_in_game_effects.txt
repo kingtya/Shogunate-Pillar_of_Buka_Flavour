@@ -502,6 +502,7 @@ sp_policy_introduction_effect = {
 				custom_tooltip = sp_policy_has_no_policy_improve_firearms_tt
 			}
 			$ACTION$_character_modifier = sp_policy_intensive_firearms_modifier
+			custom_tooltip = sp_policy_intensive_firearms_effect_tt
 		}
 		flag:flag_sp_policy_dragon_corps = {
 			if = {

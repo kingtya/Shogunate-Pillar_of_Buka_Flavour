@@ -6,9 +6,9 @@
 
 flag_sp_policy_laws_of_imagawa_name:0 "#V Laws of Imagawa#!" #NT!
 flag_sp_policy_laws_of_imagawa_desc:0 "The Warring States Daimyo Imagawa of Suruga Province enacted the Separation of States Act, which is the oldest separation of state act in Eastern Province. In April of the 6th year of Dayei (1526), ​​the Imagawa family formulated the "Kana Directory", a family law consisting of 33 articles. At that time, Uji himself was seriously ill, and the draft largely reflected the wishes of his retainers and his legitimate son, Imagawa Ujiteru, to inherit and stabilize the regime. In February of the 22nd year of Tianbun (1553), Imagawa Yoshimoto formulated the "Additional 21 Articles to the Kana Directory" for revision, which denies the obligation to protect the name and completely abandons the color of protecting the daimyo." #NT!
-sp_policy_laws_of_imagawa_modifier:0 "Imagawa Kana Directory" #NT!
+sp_policy_laws_of_imagawa_modifier:0 "Laws of Imagawa" #NT!
 sp_policy_laws_of_imagawa_modifier_desc:0 "This person promulgated the Imagawa Kana Directory." #NT!
-sp_policy_laws_of_imagawa_county_modifier:0 "Imagawa Kana Directory" #NT!
+sp_policy_laws_of_imagawa_county_modifier:0 "Laws of Imagawa" #NT!
 sp_policy_laws_of_imagawa_county_modifier_desc:0 "The place's secluded privileges were abolished by new laws." #NT!
 sp_policy_laws_of_imagawa_warning_tt:0 "@warning_icon!#X  You or your assigned enforcement do not have [GetTrait('imagawa_margin').GetName( GetNullCharacter )], unlocking by an assigned enforcement requires it to have 12 management and cannot be removed within 5 years of issuance#!" #NT!
 sp_policy_laws_of_imagawa_effect_tt:0 "[county|E] in your territory receive [GetModifier('sp_policy_laws_of_imagawa_county_modifier').GetNameWithTooltip] for #V 20 years#!" #NT!
@@ -26,9 +26,9 @@ sp_policy_laws_of_takeda_effect_tt_1:1 "[county|E]Each #V  quarter#! in your ter
 
 flag_sp_policy_five_admonitions_name:0 "#V Five Admonitions#!" #NT!
 flag_sp_policy_five_admonitions_desc:0 "Also known as Wutiao Yushu Zhi. The Warring States Daimyo of Sagami Province, Hojo Utsuna, wrote a legacy to his son Ujiyasu on May 21, the tenth year of the Astronomy Year (1541). The book talks about the importance of frugality and the reasons for the success of his late father Hojo Soun (Ise Munezui). Ujitsuna says: "People in the world sometimes say that my late father became a priest and became a blessed person by nature with a small body. It is because he has been favored by heaven, but the most important thing is because Mr. Soun strictly adheres to the principle of frugality and does not want to be gorgeous. "" #NT!
-sp_policy_five_admonitions_modifier:0 "five admonitions" #NT!
+sp_policy_five_admonitions_modifier:0 "Five Admonitions" #NT!
 sp_policy_five_admonitions_modifier_desc:0 "This person listened carefully to the five admonitions." #NT!
-sp_policy_five_admonitions_county_modifier:0 "Five Commandments" #NT!
+sp_policy_five_admonitions_county_modifier:0 "Five Admonitions" #NT!
 sp_policy_five_admonitions_county_modifier_desc:0 "This place implements the tax policy of four public and six citizens." #NT!
 sp_policy_five_admonitions_warning_tt:0 "@warning_icon!#X  You or your assigned followers do not have [GetTrait('hojo_margin').GetName( GetNullCharacter )]. Unlocking by assigned followers requires that they have 12 knowledge and they cannot be dismissed within 5 years after being issued\n#!" #NT!
 sp_policy_five_admonitions_effect_tt:0 "[county|E] in your territory receive [GetModifier('sp_policy_five_admonitions_county_modifier').GetNameWithTooltip] for #V 20 years#!" #NT!
@@ -37,28 +37,28 @@ sp_policy_five_admonitions_effect_tt_2:2 "You get [GetTrait('temperate').GetName
 
 flag_sp_policy_guardian_forces_name:0 "#V Guardian Forces #!" #NT!
 flag_sp_policy_guardian_forces_desc:0 "In the 9th year of Eiroku (1566), the Warring States Period daimyo Tokugawa Ieyasu reformed the Tokugawa family military system when he unified the Mikawa area. This reform reorganized the Mikawa samurai into the Higashi Mikawa clan, the Nishi Mikawa clan, and the Hatamoto Sanbi directly under Ieyasu. The Sensouyu is a mobile force directly under Ieyasu, and is organized separately from the horse soldiers in the above-mentioned flag base. Hatamoto shoujo not only participate in the battle as the vanguard of the flag force, but also have the characteristics of an immediate response force. The samurai who belong to the shoujo of the flag are always stationed near Ieyasu Castle to prepare for emergencies." #NT!
-sp_policy_guardian_forces_modifier:0 "Hatamoto first battle" #NT!
+sp_policy_guardian_forces_modifier:0 "Guardian Forces" #NT!
 sp_policy_guardian_forces_modifier_desc:0 "This person formed the Hatamoto Sensei." #NT!
 sp_policy_guardian_forces_warning_tt:0 "@warning_icon!#X  You or your assigned enforcement do not have [GetTrait('tokugawa_margin').GetName( GetNullCharacter )], unlocking by assigned enforcement requires it to have 15 military and it cannot be removed for 5 years after it is issued #!" #NT!
 
 flag_sp_policy_intensive_firearms_name:0 "#V Intensive Firearms#!" #NT!
 flag_sp_policy_intensive_firearms_desc:0 "In 1575, Oda Nobunaga and Tokugawa Ieyasu formed an alliance to fight against the Takeda army. Facing the powerful cavalry of the Kai Takeda clan, the Oda army built wooden stakes on the battlefield and arranged the arquebusiers among them. They adopted a three-stage exchange shooting tactic, relying on the advantages of range and bullet coverage to kill the Kai cavalry, and ensured a great victory in the Battle of Nagashino, laying the foundation for the unification of Japan." #NT!
-sp_policy_intensive_firearms_modifier:0 "Concentrated use of firearms" #NT!
+sp_policy_intensive_firearms_modifier:0 "Intensive Firearms" #NT!
 sp_policy_intensive_firearms_modifier_desc:0 "This man loves to use iron cannons in war." #NT!
 sp_policy_intensive_firearms_warning_tt:0 "@warning_icon!#X You or your assigned enforcement do not have [GetTrait('oda_margin').GetName( GetNullCharacter )], unlocking by assigned enforcement requires it to have 15 military and it cannot be removed for 5 years after it is issued\n#!" #NT!
 sp_policy_has_no_policy_improve_firearms_tt:0 "@warning_icon!#X You did not issue a pre-emptive policy to strengthen the iron artillery team#!" #NT!
 
 flag_sp_policy_dragon_corps_name:0 "#V Dragon Crops#!" #NT!
 flag_sp_policy_dragon_corps_desc:0 "The elite horse-mounted iron artillery unit originally created by Oshu's Sengoku daimyo Date Masamune, which combines the mobility of cavalry with the long-range lethality of musketeers, was used in the Battle of Osaka from the 19th year of Keicho (1614) to the 20th year of Keicho (1615). A short-lived flash in the pan. In seventeenth-century Europe, this unit was also known as "dragon cavalry."" #NT!
-sp_policy_dragon_corps_modifier:0 "Formation of dragoons" #NT!
+sp_policy_dragon_corps_modifier:0 "Establish Dragon Crops" #NT!
 sp_policy_dragon_corps_modifier_desc:0 "This man formed a horse-mounted iron artillery team." #NT!
 sp_policy_dragon_corps_effect_tt_0:0 "If #V your #!'s [culture|E] has $innovation_advanced_bowmaking$[innovation|E], #V you #!可以招募[GetMaA('dragon_corps').GetName][men_at_arms|E]" #NT!
-sp_policy_dragon_corps_effect_tt_1:1 "You get a team with #V 100#!的[GetMaA('dragon_corps').GetName]军队" #NT!
+sp_policy_dragon_corps_effect_tt_1:1 "You get a team of #V 100#!的[GetMaA('dragon_corps').GetName] troops." #NT!
 sp_policy_dragon_corps_warning_tt:0 "@warning_icon!#X  You or your assigned enforcement do not have [GetTrait('date_margin').GetName( GetNullCharacter )], unlocking by assigned enforcement requires it to have 12 military and cannot be removed within 5 years of its release #!" #NT!
 
 flag_sp_policy_chivalry_education_name:0 "#V Satsuma Military Education#!" #NT!
 flag_sp_policy_chivalry_education_desc:0 "Satsuma Province in southern Kyushu is located in a remote area with difficult living conditions, so the people are fierce and fierce, and there were many war maniacs until the end of the shogunate. The powerful local daimyo Shimazu family took advantage of these advantages and disadvantages to build a strong army." #NT!
-sp_policy_chivalry_education_modifier:0 "Satsuma Military Law" #NT!
+sp_policy_chivalry_education_modifier:0 "Satsuma Military Education" #NT!
 sp_policy_chivalry_education_modifier_desc:0 "This man led his troops with unique military law." #NT!
 sp_policy_chivalry_education_warning_tt:0 "@warning_icon!#X  You or your designated enforcement do not have [GetTrait('shimazu_margin').GetName( GetNullCharacter )], unlocking by the designated enforcement requires that it has 20 courage and cannot be removed for 5 years after its release #!" #NT!
 
@@ -68,36 +68,36 @@ sp_policy_expeditionary_support_modifier:0 "Expeditionary Force Support" #NT!
 sp_policy_expeditionary_support_modifier_desc:0 "This man has mastered the art of long-distance combat." #NT!
 sp_policy_expeditionary_support_warning_tt:0 "@warning_icon!#X  You or your assigned enforcement do not have [GetTrait('uesugi_margin').GetName( GetNullCharacter )], unlocking by assigned enforcement requires it to have 12 military and cannot\nremove it within 5 years after it is issued#!" #NT!
 
-flag_sp_policy_million_minds_motto_name:0 "#V One Million Heart Training #!" #NT!
+flag_sp_policy_million_minds_motto_name:0 "#V One Million Heart Training#!"
 flag_sp_policy_million_minds_motto_desc:0 "The words of instruction engraved on the stone tablet used by the Sengoku daimyo Mourimoto of Aki Province when he was rebuilding Yoshida Gunyama Castle. Since the construction of the Honmaru stone wall was difficult to progress, the monument was buried in the "Himemaru" behind the Honmaru in place of the human pillar, and the construction of the general temple was successfully completed. By omitting the word "hundred", the word "ten thousand" is written as "one force", so that when written vertically, it can be read as "one day, one effort and one heart", that is, "working together", which means that when people work together, they can achieve success. Can be made into anything." #NT!
-sp_policy_million_minds_motto_modifier:0 "One Million Hearts Training" #NT!
+sp_policy_million_minds_motto_modifier:0 "One Million Hearts Training"
 sp_policy_million_minds_motto_modifier_desc:0 "This person's family has listened carefully to the teachings of Millions of One Heart." #NT!
 sp_policy_million_minds_motto_warning_tt:0 "@warning_icon!#X  You or your assigned enforcement do not have [GetTrait('mori_margin').GetName( GetNullCharacter )], unlocking by an assigned enforcement requires it to have 12 management and cannot be removed within 5 years of issuance#!" #NT!
 
-flag_sp_policy_armoured_militia_name:0 "#V Armoured Militia #!" #NT!
+flag_sp_policy_armoured_militia_name:0 "#V Armoured Militia#!"
 flag_sp_policy_armoured_militia_desc:0 "The Warring States Daimyo Chosogabe clan of Tosa Province deployed a military system of arming peasants without dividing the time between soldiers and peasants. Regular samurai usually had extra spare gear, and these half-peasant, half-soldier soldiers got their name from having only one set of gear. First-class soldiers are usually exempted from the routine work that samurai should do. They are physically strong due to engaging in farm work and have high collective action capabilities, so they are of a higher level as soldiers. However, it is also difficult to mobilize during busy farming periods and cannot withstand long-term battle." #NT!
 sp_policy_armoured_militia_modifier:0 "One-stop service" #NT!
 sp_policy_armoured_militia_modifier_desc:0 "This person established the one-lead system." #NT!
 sp_policy_armoured_militia_warning_tt:0 "@warning_icon!#X You or your assigned enforcement do not have [GetTrait('chosokabe_margin').GetName( GetNullCharacter )], unlocking by assigned enforcement requires it to have 12 military and it cannot be removed within 5 years after it is issued\n#!" #NT!
 sp_policy_armoured_militia_effect_tt_0:0 "#V you#!可以招募[GetMaA('armoured_militia').GetName][men_at_arms|E]" #NT!
 
-flag_sp_policy_six_coins_oath_name:0 "#V Six Coins Oath#!" #NT!
+flag_sp_policy_six_coins_oath_name:0 "#V Six Coins Oath#!"
 flag_sp_policy_six_coins_oath_desc:0 ""
-sp_policy_six_coins_oath_modifier:0 "six cents oath" #NT!
+sp_policy_six_coins_oath_modifier:0 "Six Coins Oath" #NT!
 sp_policy_six_coins_oath_modifier_desc:0 "This person's family listened to the six-penny oath." #NT!
 sp_policy_six_coins_oath_warning_tt:0 "@warning_icon!#X  You or your designated enforcement do not have [GetTrait('sanada_margin').GetName( GetNullCharacter )], unlocking by the designated enforcement requires that it has 20 courage and cannot be removed for 5 years after its release #!" #NT!
 
-flag_sp_policy_cunning_strategy_name:0 "#V Cunning Strategy#!" #NT!
+flag_sp_policy_cunning_strategy_name:0 "#V Cunning Strategy#!"
 flag_sp_policy_cunning_strategy_desc:0 ""
-sp_policy_cunning_strategy_modifier:0 "Internal and external military strategy" #NT!
+sp_policy_cunning_strategy_modifier:0 "Cunning Strategy" #NT!
 sp_policy_cunning_strategy_modifier_desc:0 "This person has mastered the essence of sleep, return and adjustment." #NT!
 sp_policy_cunning_strategy_warning_tt:0 "@warning_icon!#X  You or your assigned enforcement do not have [GetTrait('sanada_margin').GetName( GetNullCharacter )], unlocking by assigned enforcement requires it to have 15 policies and cannot be removed within 5 years of its release#!" #NT!
 sp_policy_cunning_strategy_effect_tt:0 "Other [ruler|E] are more willing to accept your #V sleepback#! and #V redirect #!提议" #NT!
-sp_policy_foster_system_more_accpetive_betrayal_reason:0 "Your internal and external military strategies [sp_policy|E]: $VALUE|+=0$" #NT!
+sp_policy_foster_system_more_accpetive_betrayal_reason:0 "Your internal and external military strategies [sp_policy|E]:$VALUE|+=0$" #NT!
 
-flag_sp_policy_sanada_red_armour_name:0 "#V Preparation of Sanada Akabi#!" #NT!
+flag_sp_policy_sanada_red_armour_name:0 "#V Establish Sanada Akabi#!" #NT!
 flag_sp_policy_sanada_red_armour_desc:0 "It was formed by Sanada Nobushige (Yukimura) in the Osaka Summer Formation in the 20th year of Keicho (1615). Sanada Nobushige's team, which fully succeeded Takeda Ryu Akabi, attacked Ieyasu's main formation in the Battle of Tennojiguchi, causing a major collapse of the Tokugawa main formation that had never been seen since the Battle of Mikatahara. In Shimazu's "Satsuma Old Chronicles" It is recorded in the book that "Sanada is the best warrior in Japan, and there has never been anyone like him since ancient times." This is written in praise of his activity." #NT!
 sp_policy_sanada_red_armour_effect_tt_0:0 "#V you#!可以招募[GetMaA('sanada_red_armour').GetName][men_at_arms|E]" #NT!
-sp_policy_sanada_red_armour_effect_tt_1:1 "You get a team with #V 50#!的[GetMaA('sanada_red_armour').GetName]军队" #NT!
+sp_policy_sanada_red_armour_effect_tt_1:1 "You get a team of #V 50#!的[GetMaA('sanada_red_armour').GetName] troops."
 
-sp_policy_has_no_innovation_advanced_bowmaking_tt:0 "@warning_icon!#X Your [culture|E] does not have $innovation_advanced_bowmaking$[innovation|E]#!" #NT!
+sp_policy_has_no_innovation_advanced_bowmaking_tt:0 "@warning_icon!#X Your [culture|E] does not have $innovation_advanced_bowmaking$[innovation|E]#!" #NT

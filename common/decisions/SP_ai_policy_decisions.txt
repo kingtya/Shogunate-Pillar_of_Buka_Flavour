@@ -1141,6 +1141,90 @@ sp_ai_publish_policy_suggestion_box_decision = {
 	}
 }
 # 革新
+sp_ai_publish_policy_easy_commerce_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		number_maa_regiments_of_base_type = {
+			type = archers
+			value >= 1
+		}
+		sp_culture_has_innovation_guilds = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_easy_commerce
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		gold = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_easy_commerce.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_easy_commerce
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 50
+		}
+
+		modifier = {
+			ai_economical_unpredictable_personality = yes
+			add = 50
+		}
+	}
+}
 sp_ai_publish_policy_improve_firearms_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
