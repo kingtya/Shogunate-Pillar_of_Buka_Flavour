@@ -744,6 +744,9 @@ sp_policy_revocation_effect = {
 		flag:flag_sp_policy_distant_diplomacy = {
 			$ACTION$_character_modifier = sp_policy_distant_diplomacy_modifier
 		}
+		flag:flag_sp_policy_coalition_focus = {
+			$ACTION$_character_modifier = sp_policy_coalition_focus_modifier
+		}
 		flag:flag_sp_policy_suggestion_box = {
 			$ACTION$_character_modifier = sp_policy_suggestion_box_modifier
 		}

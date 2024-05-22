@@ -44,7 +44,7 @@ sp_vassal_towards_conservative_policy_opinion:2 "enact conservative policies" #N
 
 ## councillor
 
-councillor_spt_bugyo:0 "Bugyo" #NT!
+councillor_spt_bugyo:0 "Kanjyo Bugyo" #NT!
 councillor_spt_bugyo_desc:0 "$councillor_spt_bugyo$ is [councillor|E] who assists with finances and directs acting officers. $councillor_spt_bugyo$ directly affects the number of [sp_policy|E] that can be implemented in your [realm|E]." #NT!
 game_concept_spt_bugyo_desc:0 "$councillor_spt_bugyo$ is [councillor|E] who assists with finances and directs acting officers. $councillor_spt_bugyo$ directly affects the number of [sp_policy|E] that can be implemented within [realm|E]." #NT!
 councillor_spt_bugyo_modifier:0 "The Lord's Appointment and Enforcement" #NT!
