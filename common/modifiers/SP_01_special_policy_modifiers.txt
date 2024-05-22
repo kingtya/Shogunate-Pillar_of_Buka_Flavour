@@ -1,7 +1,9 @@
 ﻿sp_policy_laws_of_imagawa_modifier = {
 	icon = learning_special
-	cultural_head_fascination_mult = 0.3
+	cultural_head_fascination_mult = 0.1
 	monthly_prestige = 1.0
+	monthly_prestige_gain_mult = 0.08
+	development_growth_factor = 0.12
 }
 sp_policy_laws_of_imagawa_county_modifier = {
 	icon = county_modifier_control_positive
@@ -23,7 +25,7 @@ sp_policy_laws_of_takeda_county_modifier = {
 sp_policy_five_admonitions_modifier = {
 	icon = prestige_special
 	monthly_prestige = 2.0
-	monthly_prestige_gain_mult = 0.1
+	monthly_prestige_gain_mult = 0.12
 	monthly_dynasty_prestige = 0.25
 	monthly_dynasty_prestige_mult = 0.05
 	tyranny_loss_mult = 0.5

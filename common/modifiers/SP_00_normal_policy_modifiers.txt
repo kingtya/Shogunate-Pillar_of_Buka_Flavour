@@ -4,7 +4,7 @@
 
 ##保守
 sp_policy_canal_improvements_modifier = {
-	icon = social_policy
+	icon = social_political
 	county_opinion_add = 10
 }
 sp_policy_canal_improvements_county_modifier = {
@@ -14,24 +14,23 @@ sp_policy_canal_improvements_county_modifier = {
 }
 
 sp_policy_improve_cavalry_modifier = {
-	icon = martial_policy
+	icon = martial_political
 	light_cavalry_damage_mult = 0.2
 	heavy_cavalry_damage_mult = 0.2
 	archer_cavalry_damage_mult = 0.2
 }
 
 sp_policy_council_system_modifier = {
-	icon = prestige_policy
-	monthly_prestige = 0.5
+	icon = prestige_political
+	monthly_prestige = 0.6
 	powerful_vassal_opinion = 10
-	happy_powerful_vassal_tax_contribution_mult = 0.15
-	happy_powerful_vassal_levy_contribution_mult = 0.1
-	monthly_prestige_gain_per_happy_powerful_vassal_add = 1
-	monthly_prestige_gain_per_happy_powerful_vassal_mult = 0.1
+	happy_powerful_vassal_tax_contribution_add = 0.15
+	happy_powerful_vassal_levy_contribution_add = 0.1
+	monthly_prestige_gain_per_happy_powerful_vassal_mult = 0.08
 }
 
 sp_policy_official_purveyor_modifier = {
-	icon = economy_policy
+	icon = economy_political
 	monthly_prestige = 1
 	domain_tax_mult = 0.15
 	tax_mult = -0.05
@@ -39,7 +38,7 @@ sp_policy_official_purveyor_modifier = {
 }
 
 sp_policy_buddhism_sanction_modifier = {
-	icon = social_policy
+	icon = social_political
 	shinto_religion_opinion = 10
 	buddhism_religion_opinion = 10
 	monthly_piety = 1
@@ -47,88 +46,87 @@ sp_policy_buddhism_sanction_modifier = {
 }
 
 sp_policy_foster_system_modifier = {
-	icon = family_policy
+	icon = family_political
 	direct_vassal_opinion = 15
 	monthly_prestige = 1
-	monthly_prestige_gain_mult = 0.1
+	monthly_prestige_gain_mult = 0.08
 }
 
 sp_policy_improve_militia_modifier = {
-	icon = martial_policy
+	icon = martial_political
 	levy_size = 0.2
 	levy_reinforcement_rate = 0.1
-	county_opinion_add = -10
+	county_opinion_add = -15
 }
 
 ##中道
 sp_policy_direct_daimyo_rule_modifier = {
-	icon = stewardship_policy
+	icon = stewardship_political
 	monthly_prestige = 1
 	domain_limit = 1
 	stress_gain_mult = 0.2
 }
 
 sp_policy_improve_labor_modifier = {
-	icon = rock_policy
+	icon = rock_political
 	build_speed = -0.2
 	build_gold_cost = -0.05
-	county_opinion_add = -10
+	county_opinion_add = -15
 }
 
 sp_policy_deploy_draftee_modifier = {
-	icon = martial_policy
+	icon = martial_political
 	stationed_maa_damage_add = 8
 	stationed_maa_toughness_add = 4
 	men_at_arms_maintenance = -0.2
 }
 
 sp_policy_post_horse_system_modifier = {
-	icon = horse_policy
+	icon = horse_political
 	movement_speed = 0.15
 	character_travel_safety = 25
 	character_travel_speed_mult = 0.05
 }
 
 sp_policy_distant_diplomacy_modifier = {
-	icon = diplomacy_policy
+	icon = diplomacy_political
 	monthly_prestige = 0.75
-	monthly_prestige_gain_mult = 0.1
+	monthly_prestige_gain_mult = 0.08
 	diplomatic_range_mult = 0.5
 	independent_ruler_opinion = 10
 }
 
 sp_policy_coalition_focus_modifier = {
-	icon = diplomacy_policy
+	icon = diplomacy_political
 	monthly_prestige = 0.4
 	sway_scheme_power_mult = 0.3
 	mercenary_hire_cost_mult = -0.5
 }
 
 sp_policy_suggestion_box_modifier = {
-	icon = social_policy
+	icon = social_political
 	monthly_prestige = 0.1
 	county_opinion_add = 25
 }
 
 ## 革新
 sp_policy_western_sanction_modifier = {
-	icon = social_policy
+	icon = social_political
  	christianity_religion_opinion = 20
 	monthly_piety = 1
 	monthly_piety_gain_mult = 0.1
 }
 
 sp_policy_improve_firearms_modifier = {
-	icon = martial_policy
+	icon = martial_political
 	archers_damage_mult = 0.20
 	archers_toughness_mult = 0.05
 }
 
 sp_policy_meritocracy_modifier = {
-	icon = prestige_policy
-	#icon = dread_positive
+	icon = dread_political
 	monthly_prestige = 1
-	monthly_prestige_gain_mult = 0.1
+	monthly_prestige_gain_mult = 0.08
 	dread_baseline_add = 10
 }
 sp_policy_meritocracy_being_encouraged_modifier = {
@@ -143,7 +141,7 @@ sp_policy_meritocracy_being_humiliated_modifier = {
 }
 
 sp_policy_supply_transporter_modifier = {
-	icon = horse_policy
+	icon = horse_political
 	maa_pursuit_add = 12
 	movement_speed = 0.2
 	supply_duration = 0.25
@@ -151,13 +149,13 @@ sp_policy_supply_transporter_modifier = {
 }
 
 sp_policy_easy_commerce_modifier = {
-	icon = economy_policy
+	icon = economy_political
 	republic_government_tax_contribution_mult = -0.2
 	tax_mult = 0.2
 }
 
 sp_policy_soidier_professionaliztion_modifier = {
-	icon = martial_policy
+	icon = martial_political
 	knight_effectiveness_mult = 0.5
 	men_at_arms_limit = 1
 	men_at_arms_cap = 3
