@@ -262,6 +262,11 @@ pob_search_for_western_merchant_decision = {
 	cooldown = { years = 5 }
 
 	is_shown = {
+		has_variable_list = sp_released_policy_flags
+		any_in_list = {
+			variable = sp_released_policy_flags
+			this = flag:flag_sp_policy_western_sanction
+		}
 	}
 	
 	is_valid_showing_failures_only = {
