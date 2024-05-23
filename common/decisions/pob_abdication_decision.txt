@@ -252,3 +252,116 @@ pob_abdicate_decision_clan = {
 		}
 	}
 }
+
+pob_search_for_western_merchant_decision = {
+	ai_check_interval = 40
+	picture = "gfx/interface/illustrations/decisions/fp3_decision_tax_collector.dds"
+	
+	sort_order = 60
+
+	cooldown = { years = 5 }
+
+	is_shown = {
+	}
+	
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+		custom_tooltip = search_administors_decision.tt
+		hidden_effect = {
+			random_list = {
+				40 = {
+					save_temporary_scope_value_as = {
+						name = number_of_western_merchant
+						value = 1
+					}
+				}
+				40 = {
+					save_temporary_scope_value_as = {
+						name = number_of_western_merchant
+						value = 2
+					}
+				}
+				20 = {
+					save_temporary_scope_value_as = {
+						name = number_of_western_merchant
+						value = 3
+					}
+				}
+			}
+			while = {
+				count = scope:number_of_western_merchant
+				random_list = {
+					40 = {
+						culture:portuguese = {
+							save_scope_as = culture_of_western_merchant
+						}
+					}
+					25 = {
+						culture:castilian = {
+							save_scope_as = culture_of_western_merchant
+						}
+					}
+					25 = {
+						culture:dutch = {
+							save_scope_as = culture_of_western_merchant
+						}
+					}
+					10 = {
+						culture:english = {
+							save_scope_as = culture_of_western_merchant
+						}
+					}
+				}
+				create_character = {
+					template = administrator_character
+					employer = root
+					faith = faith:catholic
+					culture = scope:culture_of_western_merchant
+					gender_female_chance = {
+						if = {
+							limit = { root.faith = { has_doctrine = doctrine_gender_male_dominated } }
+							add = 0
+						}
+						else_if = {
+							limit = { root.faith = { has_doctrine = doctrine_gender_female_dominated } }
+							add = 100
+						}
+						else = {
+							add = 50
+						}
+					}
+					save_scope_as = western_merchant
+				}
+				send_interface_message = {
+					title = pob_search_for_western_merchant_decision.msg.t
+					desc = pob_search_for_western_merchant_decision.msg.desc
+					type = event_stewardship_good_with_text
+					left_icon = scope:western_merchant
+				}
+			}
+		}
+	}
+
+	minimum_cost = { 
+		piety = 150
+	}
+
+	ai_potential = {
+		piety >= 150
+	}
+
+	ai_will_do = {
+		base = 30
+		modifier = {
+			add = 10
+			has_trait = ambitious
+		}
+		modifier = {
+			add = -10
+			has_trait = paranoid
+		}
+	}
+}

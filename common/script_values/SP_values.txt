@@ -301,6 +301,16 @@
 			add = 25
 		}
 		flag:flag_sp_policy_western_sanction = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						sp_culture_has_innovation_shogunate_nanban_trade = no
+						sp_has_oda_margin_trait = no
+					}
+				}
+				add = 10
+			}
 			add = 15
 		}
 	}

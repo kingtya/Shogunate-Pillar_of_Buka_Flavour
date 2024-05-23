@@ -127,3 +127,11 @@ sp_policy_events.0006 = {
 		}
 	}
 }
+
+sp_policy_events.0007 = {
+	type = character_event
+	hidden = yes
+
+	immediate = {
+	}
+}
