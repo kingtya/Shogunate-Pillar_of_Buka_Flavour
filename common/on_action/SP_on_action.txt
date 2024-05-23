@@ -1,4 +1,12 @@
-﻿on_join_court = {
+﻿on_game_start = {
+	events = {
+		sp_character_initialization.0001
+		sib_building_initialization.0001
+		sib_culture_tradition_initialization.0001
+	}
+}
+
+on_join_court = {
 	events = {
 		sp_policy_events.0001
 	}

@@ -9,7 +9,7 @@ sp_policy_canal_improvements_modifier = {
 }
 sp_policy_canal_improvements_county_modifier = {
 	icon = county_modifier_control_positive
-	monthly_county_control_growth_add = 0.2
+	monthly_county_control_growth_add = 0.3
 	epidemic_resistance = 25
 }
 

@@ -1,4 +1,5 @@
-﻿sp_can_release_policy = {
+﻿## 发布政策
+sp_can_release_policy = {
 	trigger_if = {
 		limit = {
 			exists = $FLAG$
@@ -196,31 +197,27 @@
 	}
 	
 }
-
 sp_culture_has_innovation_advanced_bowmaking = {
 	culture = {
 		has_innovation = innovation_advanced_bowmaking
 	}
 }
-
 sp_culture_has_innovation_guilds = {
 	culture = {
 		has_innovation = innovation_guilds
 	}
 }
-
 sp_culture_has_innovation_royal_armory = {
 	culture = {
 		has_innovation = innovation_royal_armory
 	}
 }
-
 sp_culture_has_innovation_shogunate_nanban_trade = {
 	culture = {
 		has_innovation = innovation_shogunate_nanban_trade
 	}
 }
-
+## 撤销政策
 sp_can_revoke_policy = {
 	trigger_if = {
 		limit = {
@@ -274,7 +271,7 @@ sp_can_revoke_policy = {
 	}
 	
 }
-
+## 已发布政策
 sp_is_released_policy = {
 	trigger_if = {
 		limit = {
@@ -287,5 +284,261 @@ sp_is_released_policy = {
 	}
 	trigger_else = {
 		always = no
+	}
+}
+## 家传特质检定
+sp_has_imagawa_margin_trait = {
+	OR = {
+		has_trait = imagawa_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = imagawa_margin
+				stewardship >= decent_skill_rating
+			}
+		}
+	}
+}
+sp_councillor_has_imagawa_margin_trait = {
+	NOT = { has_trait = imagawa_margin }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = imagawa_margin
+	}
+}
+
+sp_has_takeda_margin_trait = {
+	OR = {
+		has_trait = takeda_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = takeda_margin
+				stewardship >= decent_skill_rating
+			}
+		}
+	}
+}
+sp_councillor_has_takeda_margin_trait = {
+	NOT = { has_trait = takeda_margin }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = takeda_margin
+	}
+}
+
+sp_has_hojo_margin_trait = {
+	OR = {
+		has_trait = hojo_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = hojo_margin
+				learning >= decent_skill_rating
+			}
+		}
+	}
+}
+sp_councillor_has_hojo_margin_trait = {
+	NOT = { has_trait = hojo_margin }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = hojo_margin
+	}
+}
+
+sp_has_oda_margin_trait = {
+	OR = {
+		has_trait = oda_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = oda_margin
+				martial >= high_skill_rating
+			}
+		}
+	}
+}
+sp_councillor_has_oda_margin_trait = {
+	NOT = { has_trait = oda_margin }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = oda_margin
+	}
+}
+
+sp_has_tokugawa_margin_trait = {
+	OR = {
+		has_trait = tokugawa_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = tokugawa_margin
+				martial >= high_skill_rating
+			}
+		}
+	}
+}
+sp_councillor_has_tokugawa_margin_trait = {
+	NOT = { has_trait = tokugawa_margin }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = tokugawa_margin
+	}
+}
+
+sp_has_date_margin_trait = {
+	OR = {
+		has_trait = date_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = date_margin
+				martial >= decent_skill_rating
+			}
+		}
+	}
+}
+sp_councillor_has_date_margin_trait = {
+	NOT = { has_trait = date_margin }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = date_margin
+	}
+}
+
+sp_has_uesugi_margin_trait = {
+	OR = {
+		has_trait = uesugi_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = uesugi_margin
+				martial >= decent_skill_rating
+			}
+		}
+	}
+}
+sp_councillor_has_uesugi_margin_trait = {
+	NOT = { has_trait = uesugi_margin }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = uesugi_margin
+	}
+}
+
+sp_has_shimazu_margin_trait = {
+	OR = {
+		has_trait = shimazu_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = shimazu_margin
+				prowess >= extremely_high_skill_rating
+			}
+		}
+	}
+}
+sp_councillor_has_shimazu_margin_trait = {
+	NOT = { has_trait = shimazu_margin }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = shimazu_margin
+	}
+}
+
+sp_has_mori_margin_trait = {
+	OR = {
+		has_trait = mori_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = mori_margin
+				stewardship >= decent_skill_rating
+			}
+		}
+	}
+}
+sp_councillor_has_mori_margin_trait = {
+	NOT = { has_trait = mori_margin }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = mori_margin
+	}
+}
+
+sp_has_chosokabe_margin_trait = {
+	OR = {
+		has_trait = chosokabe_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = chosokabe_margin
+				martial >= decent_skill_rating
+			}
+		}
+	}
+}
+sp_councillor_has_chosokabe_margin_trait = {
+	NOT = { has_trait = chosokabe_margin }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = chosokabe_margin
+	}
+}
+
+sp_has_sanada_margin_trait = {
+	OR = {
+		has_trait = sanada_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = sanada_margin
+				prowess >= extremely_high_skill_rating
+			}
+		}
+	}
+}
+sp_has_sanada_margin_trait_2 = {
+	OR = {
+		has_trait = sanada_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = sanada_margin
+				intrigue >= high_skill_rating
+			}
+		}
+	}
+}
+sp_councillor_has_sanada_margin_trait = {
+	NOT = { has_trait = sanada_margin }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = sanada_margin
+	}
+}
+
+sp_has_otomo_margin_trait = {
+	OR = {
+		AND = {
+			has_trait = otomo_margin
+			religion = religion:christianity_religion
+		}
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = otomo_margin
+				learning >= decent_skill_rating
+			}
+			religion = religion:christianity_religion
+		}
+	}
+}
+sp_councillor_has_otomo_margin_trait = {
+	NOT = { has_trait = otomo_margin }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = otomo_margin
 	}
 }
