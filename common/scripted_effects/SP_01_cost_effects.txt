@@ -5,7 +5,11 @@
 sp_set_cost_to_character = {
 	switch = {
 		trigger = $FLAG$
-		# 保守
+
+		##########
+		## 保守 ##
+		##########
+		
 		flag:flag_sp_policy_canal_improvements = {
 			remove_short_term_gold = 50
 		}
@@ -27,7 +31,14 @@ sp_set_cost_to_character = {
 		flag:flag_sp_policy_buddhism_sanction = {
 			add_piety = -25
 		}
-		# 中道
+		flag:flag_sp_policy_castle_construction = {
+			remove_short_term_gold = 25
+		}
+
+		##########
+		## 中道 ##
+		##########
+
 		flag:flag_sp_policy_direct_daimyo_rule = {
 			add_prestige = -50
 		}
@@ -49,7 +60,13 @@ sp_set_cost_to_character = {
 		flag:flag_sp_policy_suggestion_box = {
 			add_prestige = -10
 		}
-		# 革新
+		flag:flag_sp_policy_thermalism = {
+			remove_short_term_gold = 25
+		}
+	
+		##########
+		## 革新 ##
+		##########
 		flag:flag_sp_policy_soidier_professionaliztion = {
 			remove_short_term_gold = 50
 		}
@@ -68,7 +85,11 @@ sp_set_cost_to_character = {
 		flag:flag_sp_policy_supply_transporter = {
 			add_prestige = -25
 		}
-		# 御用
+		
+		##########
+		## 御用 ##
+		##########
+
 		flag:flag_sp_policy_laws_of_imagawa = {
 			add_prestige = -100
 		}
@@ -108,6 +129,9 @@ sp_set_cost_to_character = {
 		}
 		flag:flag_sp_policy_sanada_red_armour = {
 			add_prestige = -150
+		}
+		flag:flag_sp_policy_kichishitan_sanction = {
+			add_piety = -100
 		}
 	}
 }

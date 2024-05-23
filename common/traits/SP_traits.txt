@@ -306,6 +306,25 @@ chosokabe_margin = { # 长宗我部传
 	desc = trait_chosokabe_margin_desc
 }
 
+sanada_margin = { # 真田传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_sanada_margin
+
+	icon = {
+		desc = sanada_margin.dds
+	}
+
+	desc = trait_sanada_margin_desc
+}
+
 otomo_margin = { # 大友传
 	category = fame
 	shown_in_ruler_designer = no
@@ -326,24 +345,44 @@ otomo_margin = { # 大友传
 	desc = trait_otomo_margin_desc
 }
 
-sanada_margin = { # 真田传
+toyotomi_margin = { # 丰臣传
 	category = fame
 	shown_in_ruler_designer = no
 	
-	legitimacy_gain_mult = 0.1
+	legitimacy_gain_mult = 0.2
 	same_opinion = 5
 
 	inherit_chance = 100
 	parent_inheritance_sex = male
 	inherit_from_real_father = no
 
-	flag = trait_sanada_margin
+	flag = trait_toyotomi_margin
 
 	icon = {
-		desc = sanada_margin.dds
+		desc = toyotomi_margin.dds
 	}
 
-	desc = trait_sanada_margin_desc
+	desc = trait_toyotomi_margin_desc
+}
+
+miyoshi_margin = { # 三好传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	legitimacy_gain_mult = 0.2
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_miyoshi_margin
+
+	icon = {
+		desc = miyoshi_margin.dds
+	}
+
+	desc = trait_miyoshi_margin_desc
 }
 
 oda_nobunaga = {

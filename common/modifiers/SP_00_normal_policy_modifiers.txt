@@ -9,7 +9,7 @@ sp_policy_canal_improvements_modifier = {
 }
 sp_policy_canal_improvements_county_modifier = {
 	icon = county_modifier_control_positive
-	monthly_county_control_growth_add = 0.3
+	monthly_county_control_growth_add = 0.2
 	epidemic_resistance = 25
 }
 
@@ -57,6 +57,13 @@ sp_policy_improve_militia_modifier = {
 	levy_size = 0.2
 	levy_reinforcement_rate = 0.1
 	county_opinion_add = -15
+}
+
+sp_policy_castle_construction_modifier = {
+	icon = rock_political
+	fort_level = 2
+	garrison_size = 0.3
+	building_slot_add = 1
 }
 
 ##中道
@@ -109,10 +116,16 @@ sp_policy_suggestion_box_modifier = {
 	county_opinion_add = 25
 }
 
+sp_policy_thermalism_modifier = {
+	icon = health_positive
+	health = 0.1
+	negate_health_penalty_add = 0.1
+}
+
 ## 革新
 sp_policy_western_sanction_modifier = {
 	icon = social_political
- 	christianity_religion_opinion = 20
+ 	christianity_religion_opinion = 10
 	monthly_piety = 1
 	monthly_piety_gain_mult = 0.1
 }

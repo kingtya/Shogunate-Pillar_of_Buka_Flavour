@@ -100,4 +100,4 @@ flag_sp_policy_sanada_red_armour_desc:0 "It was formed by Sanada Nobushige (Yuki
 sp_policy_sanada_red_armour_effect_tt_0:0 "#V you#! can recruit [GetMaA('sanada_red_armour').GetName] [men_at_arms|E]" #NT!
 sp_policy_sanada_red_armour_effect_tt_1:1 "You get a team of #V 50#!的[GetMaA('sanada_red_armour').GetName] troops."
 
-sp_policy_has_no_innovation_advanced_bowmaking_tt:0 "@warning_icon!#X Your [culture|E] does not have $innovation_advanced_bowmaking$[innovation|E]#!" #NT
+sp_policy_has_no_innovation_advanced_bowmaking_tt:0 "@warning_icon!#X Your [culture|E] does not have $innovation_advanced_bowmaking$ [innovation|E]#!" #NT

@@ -112,6 +112,19 @@ sp_policy_introduction_effect = {
 				OPINION = 5
 			}
 		}
+		flag:flag_sp_policy_castle_construction = {
+			$ACTION$_character_modifier = sp_policy_castle_construction_modifier
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 5
+			}
+		}
 
 		### 中道
 		## 宫廷礼制封臣好感 +
@@ -171,6 +184,14 @@ sp_policy_introduction_effect = {
 				OPINION = 5
 			}
 		}
+		flag:flag_sp_policy_thermalism = {
+			$ACTION$_character_modifier = sp_policy_thermalism_modifier
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = yes
+				OPINION = 5
+			}
+		}
 		
 		### 革新
 		## 宫廷礼制封臣好感 --
@@ -194,6 +215,13 @@ sp_policy_introduction_effect = {
 			}
 		}
 		flag:flag_sp_policy_western_sanction = {
+			if = {
+				limit = {
+					sp_culture_has_innovation_shogunate_nanban_trade = no
+					sp_has_otomo_margin_trait = no
+				}
+				custom_tooltip = sp_policy_has_no_innovation_shogunate_nanban_trade_tt
+			}
 			$ACTION$_character_modifier = sp_policy_western_sanction_modifier
 			sp_glory_hound_vassal_towards_policy_opinion_effect = {
 				OPINION = 10
@@ -252,10 +280,10 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_soidier_professionaliztion = {
 			if = {
 				limit = {
-					sp_culture_has_innovation_innovation_royal_armory = no
+					sp_culture_has_innovation_royal_armory = no
 					sp_has_oda_margin_trait = no
 				}
-				custom_tooltip = sp_policy_has_no_innovation_innovation_royal_armory_tt
+				custom_tooltip = sp_policy_has_no_innovation_royal_armory_tt
 			}
 			$ACTION$_character_modifier = sp_policy_soidier_professionaliztion_modifier
 			sp_glory_hound_vassal_towards_policy_opinion_effect = {
@@ -692,6 +720,37 @@ sp_policy_introduction_effect = {
 				custom_tooltip = sp_policy_sanada_red_armour_effect_tt_1
 			}
 		}
+		flag:flag_sp_policy_kichishitan_sanction = {
+			if = {
+				limit = {
+					sp_councillor_has_otomo_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_otomo_margin_trait = no
+				}
+				custom_tooltip = sp_policy_kichishitan_sanction_warning_tt
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = { has_variable_list = sp_released_policy_flags }
+						NOT = {
+							any_in_list = {
+								variable = sp_released_policy_flags
+								this = flag:flag_sp_policy_western_sanction
+							}
+						}
+					}
+				}
+				custom_tooltip = sp_policy_has_no_policy_western_sanction_tt
+			}
+			$ACTION$_character_modifier = sp_policy_kichishitan_sanction_modifier
+		}
 	}
 }
 
@@ -727,6 +786,9 @@ sp_policy_revocation_effect = {
 		flag:flag_sp_policy_buddhism_sanction = {
 			$ACTION$_character_modifier = sp_policy_buddhism_sanction_modifier
 		}
+		flag:flag_sp_policy_castle_construction = {
+			$ACTION$_character_modifier = sp_policy_castle_construction_modifier
+		}
 
 		### 中道
 		## 宫廷礼制封臣好感 +
@@ -750,6 +812,9 @@ sp_policy_revocation_effect = {
 		}
 		flag:flag_sp_policy_suggestion_box = {
 			$ACTION$_character_modifier = sp_policy_suggestion_box_modifier
+		}
+		flag:flag_sp_policy_thermalism = {
+			$ACTION$_character_modifier = sp_policy_thermalism_modifier
 		}
 		
 		### 革新
@@ -811,6 +876,9 @@ sp_policy_revocation_effect = {
 		}
 		flag:flag_sp_policy_cunning_strategy = {
 			#$ACTION$_character_modifier = sp_policy_cunning_strategy_modifier
+		}
+		flag:flag_sp_policy_kichishitan_sanction = {
+			$ACTION$_character_modifier = sp_policy_kichishitan_sanction_modifier
 		}
 	}
 }

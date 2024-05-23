@@ -154,6 +154,12 @@
 			}
 			trigger_if = {
 				limit = {
+					$FLAG$ = flag:flag_sp_policy_kichishitan_sanction
+				}
+				sp_has_otomo_margin_trait = yes
+			}
+			trigger_if = {
+				limit = {
 					$FLAG$ = flag:flag_sp_policy_progressive_system
 				}
 				OR = {
@@ -163,8 +169,23 @@
 						count <= 0
 					}
 				}
-
 			}
+			trigger_if = {
+				limit = {
+					$FLAG$ = flag:flag_sp_policy_thermalism
+				}
+				any_sub_realm_county = {
+        	        any_county_province = {
+						OR = {
+							has_building = kusatsu_onsen_hot_springs_01
+							has_building = arima_onsen_hot_springs_01
+							has_building = dogo_onsen_hot_springs_01
+							has_building = dogo_onsen_hot_springs_01
+						}
+					}
+				}
+			}
+
 			trigger_else = {
 				always = yes
 			}
@@ -191,6 +212,12 @@ sp_culture_has_innovation_guilds = {
 sp_culture_has_innovation_royal_armory = {
 	culture = {
 		has_innovation = innovation_royal_armory
+	}
+}
+
+sp_culture_has_innovation_shogunate_nanban_trade = {
+	culture = {
+		has_innovation = innovation_shogunate_nanban_trade
 	}
 }
 

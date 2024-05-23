@@ -99,7 +99,27 @@
 			}
 			add = 15
 		}
-		# 中道
+		flag:flag_sp_policy_castle_construction = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 10
+			}
+			add = 15
+		}
+
+		##########
+		## 中道 ##
+		##########
+
 		flag:flag_sp_policy_direct_daimyo_rule = {
 			if = {
 				limit = {
@@ -213,6 +233,22 @@
 			add = 15
 		}
 		flag:flag_sp_policy_suggestion_box = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 5
+			}
+			add = 10
+		}
+		flag:flag_sp_policy_thermalism = {
 			if = {
 				limit = {
 					exists = scope:introducer

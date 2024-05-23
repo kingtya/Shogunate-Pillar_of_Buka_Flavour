@@ -28,9 +28,9 @@ sp_policy_official_purveyor_modifier:0 "Official Purveyor" #NT!
 sp_policy_official_purveyor_modifier_desc:0 "This person protects the rights and interests of the big merchants in the territory." #NT!
 sp_policy_official_purveyor_warning_tt:0 "@warning_icon!#X The policy you promulgated for merchants conflicts with this policy#!" #NT!
 
-flag_sp_policy_buddhism_sanction_name:0 "#V Buddhis Sanction#!"
+flag_sp_policy_buddhism_sanction_name:0 "#V Buddhism Sanction#!"
 flag_sp_policy_buddhism_sanction_desc:0 "After Buddhism was introduced to Japan, it was compromised with the local Shinto beliefs and combined to form a belief system, so it is called a temple together." #NT!
-sp_policy_buddhism_sanction_modifier:0 "Buddhis Sanction" #NT!
+sp_policy_buddhism_sanction_modifier:0 "Buddhism Sanction"
 sp_policy_buddhism_sanction_modifier_desc:0 "This person protects the rights of the temple community within the territory." #NT!
 shinto_religion_opinion:0 "Favorable opinion among Shinto believers" #NT!
 
@@ -131,7 +131,7 @@ flag_sp_policy_soidier_professionaliztion_name:0 "#V Soidier Professionaliztion#
 flag_sp_policy_soidier_professionaliztion_desc:0 "The policy implemented by the Warring States daimyo to have a standing army may have been inspired by Oda Nobunaga. It was actually based on Taiko Toyotomi Hideyoshi's land inspection and sword hunting, and was finally completed by Sekihaku Toyotomi Hideji's "People's Order". In addition, the decree was also intended to establish the samurai class so that people other than samurai could not possess force and consolidate social order." #NT!
 sp_policy_soidier_professionaliztion_modifier:0 "Soidier Professionaliztion" #NT!
 sp_policy_soidier_professionaliztion_modifier_desc:0 "This man separated the militia from the standing army and completely transformed the standing army system." #NT!
-sp_policy_has_no_innovation_innovation_royal_armory_tt:0 "@warning_icon!#X Your [culture|E] does not have $innovation_royal_armory$[innovation|E]. Forcing it will permanently lose 20 policy points#!" #NT!
+sp_policy_has_no_innovation_royal_armory_tt:0 "@warning_icon!#X Your [culture|E] does not have $innovation_royal_armory$[innovation|E]. Forcing it will permanently lose 20 policy points#!" #NT!
 
 flag_sp_policy_progressive_system_name:0 "#V Progressive System#!" #NT!
 flag_sp_policy_progressive_system_desc:0 ""

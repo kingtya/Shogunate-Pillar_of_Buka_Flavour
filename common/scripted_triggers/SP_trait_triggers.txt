@@ -229,3 +229,27 @@ sp_councillor_has_sanada_margin_trait = {
 		has_trait = sanada_margin
 	}
 }
+
+sp_has_otomo_margin_trait = {
+	OR = {
+		AND = {
+			has_trait = otomo_margin
+			religion = religion:christianity_religion
+		}
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = otomo_margin
+				learning >= decent_skill_rating
+			}
+			religion = religion:christianity_religion
+		}
+	}
+}
+sp_councillor_has_otomo_margin_trait = {
+	NOT = { has_trait = otomo_margin }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = otomo_margin
+	}
+}

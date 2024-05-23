@@ -95,3 +95,19 @@ sp_policy_six_coins_oath_modifier = {
 	enemy_hard_casualty_modifier = 0.25
 	defender_advantage = 8
 }
+
+sp_policy_kichishitan_sanction_modifier = {
+	icon = social_special
+	christianity_religion_opinion = 15
+	faith_conversion_piety_cost_mult = 1
+	domain_tax_same_faith_mult = -0.1
+	domain_tax_different_faith_mult_even_if_baron = 0.3
+	opinion_of_different_faith_liege = -10
+	levy_reinforcement_rate_same_faith = 0.4
+}
+
+sp_policy_govern_for_people_modifier = {
+	icon = stewardship_special
+	title_creation_cost_mult = -0.2
+	monthly_county_control_change_factor = 1.2
+}
