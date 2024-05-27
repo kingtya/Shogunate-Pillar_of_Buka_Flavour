@@ -113,7 +113,7 @@ sp_can_release_policy = {
 			}
 			trigger_if = {
 				limit = {
-					$FLAG$ = flag:flag_sp_policy_chivalry_education
+					$FLAG$ = flag:flag_sp_policy_satsuma_military_education
 				}
 				sp_has_shimazu_margin_trait = yes
 			}
@@ -511,6 +511,18 @@ sp_has_sanada_margin_trait_2 = {
 		}
 	}
 }
+sp_has_sanada_margin_trait_3 = {
+	OR = {
+		has_trait = sanada_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = sanada_margin
+				martial >= high_skill_rating
+			}
+		}
+	}
+}
 sp_councillor_has_sanada_margin_trait = {
 	NOT = { has_trait = sanada_margin }
 	exists = cp:councillor_spt_bugyo
@@ -535,10 +547,42 @@ sp_has_otomo_margin_trait = {
 		}
 	}
 }
+sp_has_otomo_margin_trait_2 = {
+	OR = {
+		has_trait = otomo_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = otomo_margin
+				learning >= decent_skill_rating
+			}
+		}
+	}
+}
 sp_councillor_has_otomo_margin_trait = {
 	NOT = { has_trait = otomo_margin }
 	exists = cp:councillor_spt_bugyo
 	cp:councillor_spt_bugyo = {
 		has_trait = otomo_margin
+	}
+}
+
+sp_has_miyoshi_margin_trait = {
+	OR = {
+		has_trait = miyoshi_margin
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = miyoshi_margin
+				stewardship >= decent_skill_rating
+			}
+		}
+	}
+}
+sp_councillor_has_miyoshi_margin_trait = {
+	NOT = { has_trait = miyoshi_margin }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = miyoshi_margin
 	}
 }

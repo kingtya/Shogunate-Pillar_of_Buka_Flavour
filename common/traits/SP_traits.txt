@@ -345,6 +345,26 @@ otomo_margin = { # 大友传
 	desc = trait_otomo_margin_desc
 }
 
+miyoshi_margin = { # 三好传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	legitimacy_gain_mult = 0.05
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_miyoshi_margin
+
+	icon = {
+		desc = miyoshi_margin.dds
+	}
+
+	desc = trait_miyoshi_margin_desc
+}
+
 toyotomi_margin = { # 丰臣传
 	category = fame
 	shown_in_ruler_designer = no
@@ -363,26 +383,6 @@ toyotomi_margin = { # 丰臣传
 	}
 
 	desc = trait_toyotomi_margin_desc
-}
-
-miyoshi_margin = { # 三好传
-	category = fame
-	shown_in_ruler_designer = no
-	
-	legitimacy_gain_mult = 0.2
-	same_opinion = 5
-
-	inherit_chance = 100
-	parent_inheritance_sex = male
-	inherit_from_real_father = no
-
-	flag = trait_miyoshi_margin
-
-	icon = {
-		desc = miyoshi_margin.dds
-	}
-
-	desc = trait_miyoshi_margin_desc
 }
 
 oda_nobunaga = {

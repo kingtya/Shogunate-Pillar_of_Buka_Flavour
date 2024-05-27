@@ -4,7 +4,9 @@ game_concept_sp_policy_desc:0 "政策是[ruler|E]为了某一特定目的而推�
 game_concept_sp_policy_point:0 "政策点上限"
 game_concept_sp_policy_point_desc:0 "你只能通过消耗政策点颁布一定数量的[sp_policy|E]，政策点的数量受限于[era|E]和勘定奉行的[skills|E]。\n\n上限的决定因素有：\n\n$EFFECT_LIST_BULLET$$councillor_spt_bugyo$每2点[stewardship|E]提高#V 1#!\n$EFFECT_LIST_BULLET$$councillor_spt_bugyo$每4点[learning|E]提高#V 1#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到平安[era|E]提高#V 25#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到镰仓·室町[era|E]提高#V 25#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到战国[era|E]提高#V 25#!\n$EFFECT_LIST_BULLET$[culture|E][innovation|E]达到安土桃山[era|E]提高#V 20#!\n$EFFECT_LIST_BULLET$#E 革新制度#![sp_policy|E]提高#V 20#!"
 
-## UI元素
+############
+## UI元素 ##
+############
 sp_tab_my_policies_tt:0 "#T 政策#!"
 sp_policy_window_head_text:0 "政策"
 sp_pro_sp_policy_header_text:0 "革新 / 御用"
@@ -22,19 +24,22 @@ sp_policy_not_released_cd:0 "你还没有颁布这个政策"
 sp_policy_released_recently_cd:0 "你颁布这个政策的时间未满三年"
 sp_current_policy_points:0 "#weak 目前#!#E [sp_policy_point|E]#!：[GetPlayer.MakeScope.Var('sp_current_policy_points').GetValue|0]/[GetPlayer.MakeScope.ScriptValue('sp_total_policy_points')|0]"
 
+##############
+## 好感修正 ##
+##############
 sp_courtly_vassal_towards_policy_opinion_effect_tt_0:0 "所有[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]）对[actor.GetUIName]的好感提高#P 5#!#weak （-1.20/年）（颁布保守政策）#!"
 sp_courtly_vassal_towards_policy_opinion_effect_tt_1:1 "所有[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]）对[actor.GetUIName]的好感提高#P 5#!#weak （-1.20/年）（颁布中道政策）#!"
 sp_courtly_vassal_towards_policy_opinion_effect_tt_2:0 "所有[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]）对[actor.GetUIName]的好感降低#N 10#!#weak （-1.20/年）（颁布革新政策）#!"
 sp_parochial_vassal_towards_policy_opinion_effect_tt_0:1 "所有[GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_parochial_vassals')|V0]）对[actor.GetUIName]的好感提高#P 10#!#weak （-1.20/年）（颁布保守政策）#!"
 sp_parochial_vassal_towards_policy_opinion_effect_tt_2:1 "所有[GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_parochial_vassals')|V0]）对[actor.GetUIName]的好感降低#N 5#!#weak （-1.20/年）（颁布革新政策）#!"
 sp_glory_hound_vassal_towards_policy_opinion_effect_tt:0 "所有[GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName][vassal|E]（[actor.MakeScope.ScriptValue('number_of_glory_hound_vassals')|V0]）对[actor.GetUIName]的好感提高#P 10#!#weak （-1.20/年）（颁布革新政策）#!"
-
-## 好感修正
 sp_vassal_towards_progressive_policy_opinion:0 "颁布革新政策"
 sp_vassal_towards_neutral_policy_opinion:1 "颁布中道政策"
 sp_vassal_towards_conservative_policy_opinion:2 "颁布保守政策"
 
-## 内阁职位
+##############
+## 内阁职位 ##
+##############
 councillor_spt_bugyo:0 "勘定奉行"
 councillor_spt_bugyo_desc:0 "$councillor_spt_bugyo$是佐理财政、指挥代官的[councillor|E]。$councillor_spt_bugyo$直接影响你的[realm|E]内所能推行的[sp_policy|E]的数量。"
 game_concept_spt_bugyo_desc:0 "$councillor_spt_bugyo$是佐理财政、指挥代官的[councillor|E]。$councillor_spt_bugyo$直接影响[realm|E]内所能推行的[sp_policy|E]的数量。"
@@ -42,7 +47,9 @@ councillor_spt_bugyo_modifier:0 "领主的勘定奉行"
 spt_bugyo_task_default:0 "推行政令"
 spt_bugyo_task_default_effect_desc:1 "[councillor.GetShortUIName|U]将在你的领地推行政令，并使你获得:\n[councillor.GetModifierDescForTask('spt_bugyo_task_default')]"
 
-## 兵士
+##########
+## 兵士 ##
+##########
 yabusame_archers:0 "流镝马武士"
 yabusame_archers_flavor:0 "#F 擅于骑在马上射箭的武士，在平原拉锯战中有无可比拟的优势。#!"
 shigedou_archers:0 "重藤弓武者"
@@ -59,3 +66,18 @@ armoured_militia:0 "长宗我部一领具足"
 armoured_militia_flavor:0 "由常备盔甲的农户组成。兼顾农务的同时，在投入战争时也较有体能和耐力，进而提升整体战斗力。"
 oda_crossbowmen:0 "织田三段击铁炮队"
 oda_crossbowmen_flavor:0 "阵前安置拒马栅，将铁炮足轻分为三队，一队瞄准射击；二队、三队分别装弹和调整火绳位置，实现连续不间断射击。"
+
+##############
+## 游戏规则 ##
+##############
+rule_sp_ai_special_policies:0 "@prestige_icon! PoB：AI御用政策"
+setting_enable_ai_special_policies:1 "启用"
+setting_enable_ai_special_policies_desc:2 "电脑角色会颁布家传特质对应的御用政策（@warning_icon!#X 这将会削弱那些名不经传的势力#!）。"
+setting_disable_ai_special_policies:0 "#V 禁用#!"
+setting_disable_ai_special_policies_desc:1 "电脑角色仅颁布通用政策。"
+
+rule_sp_fictional_alliances:0 "@prestige_icon! PoB：虚构同盟"
+setting_enable_fictional_alliances:1 "#V 启用#!"
+setting_enable_fictional_alliances_desc:2 "原版幕府的设定，游戏开始后会由姻亲关系生成同盟（这可能导致仇敌间的同盟）。"
+setting_disable_fictional_alliances:0 "禁用"
+setting_disable_fictional_alliances_desc:1 "游戏开始后不由姻亲关系生成同盟（建议搭配#E 更佳婚姻同盟#!使用）。"

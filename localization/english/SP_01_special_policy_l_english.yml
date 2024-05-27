@@ -56,11 +56,11 @@ sp_policy_dragon_corps_effect_tt_0:0 "If #V your #!'s [culture|E] has $innovatio
 sp_policy_dragon_corps_effect_tt_1:1 "You get a team of #V 100#!的[GetMaA('dragon_corps').GetName] troops." #NT!
 sp_policy_dragon_corps_warning_tt:0 "@warning_icon!#X  You or your assigned enforcement do not have [GetTrait('date_margin').GetName( GetNullCharacter )], unlocking by assigned enforcement requires it to have 12 military and cannot be removed within 5 years of its release #!" #NT!
 
-flag_sp_policy_chivalry_education_name:0 "#V Satsuma Military Education#!" #NT!
-flag_sp_policy_chivalry_education_desc:0 "Satsuma Province in southern Kyushu is located in a remote area with difficult living conditions, so the people are fierce and fierce, and there were many war maniacs until the end of the shogunate. The powerful local daimyo Shimazu family took advantage of these advantages and disadvantages to build a strong army." #NT!
-sp_policy_chivalry_education_modifier:0 "Satsuma Military Education" #NT!
-sp_policy_chivalry_education_modifier_desc:0 "This man led his troops with unique military law." #NT!
-sp_policy_chivalry_education_warning_tt:0 "@warning_icon!#X  You or your designated enforcement do not have [GetTrait('shimazu_margin').GetName( GetNullCharacter )], unlocking by the designated enforcement requires that it has 20 courage and cannot be removed for 5 years after its release #!" #NT!
+flag_sp_policy_satsuma_military_education_name:0 "#V Satsuma Military Education#!" #NT!
+flag_sp_policy_satsuma_military_education_desc:0 "Satsuma Province in southern Kyushu is located in a remote area with difficult living conditions, so the people are fierce and fierce, and there were many war maniacs until the end of the shogunate. The powerful local daimyo Shimazu family took advantage of these advantages and disadvantages to build a strong army." #NT!
+sp_policy_satsuma_military_education_modifier:0 "Satsuma Military Education" #NT!
+sp_policy_satsuma_military_education_modifier_desc:0 "This man led his troops with unique military law." #NT!
+sp_policy_satsuma_military_education_warning_tt:0 "@warning_icon!#X  You or your designated enforcement do not have [GetTrait('shimazu_margin').GetName( GetNullCharacter )], unlocking by the designated enforcement requires that it has 20 courage and cannot be removed for 5 years after its release #!" #NT!
 
 flag_sp_policy_expeditionary_support_name:0 "#V Expeditionary Force Support#!" #NT!
 flag_sp_policy_expeditionary_support_desc:0 "The frost-covered military camp is full of autumn air, and there are several rows of wild geese crossing the third watch of the moon. \nCross the mountains and get the view of Nengzhou. I can't hide my hometown and remember the expedition. \n\n$TAB$$TAB$$TAB$$TAB$$TAB$$TAB$——Uesugi Kenshin's "Work in the Formation"" #NT!

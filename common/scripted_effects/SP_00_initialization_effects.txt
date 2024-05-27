@@ -5,7 +5,6 @@
 ##########
 ## 保守 ##
 ##########
-
 sp_init_conservative_policy_flag_list = {
 	add_to_variable_list = {
 		name = sp_conservative_policy_flags
@@ -18,10 +17,6 @@ sp_init_conservative_policy_flag_list = {
 	add_to_variable_list = {
 		name = sp_conservative_policy_flags
 		target = flag:flag_sp_policy_improve_militia
-	}
-	add_to_variable_list = {
-		name = sp_conservative_policy_flags
-		target = flag:flag_sp_policy_improve_cavalry
 	}
 	add_to_variable_list = {
 		name = sp_conservative_policy_flags
@@ -45,7 +40,6 @@ sp_init_conservative_policy_flag_list = {
 ##########
 ## 中道 ##
 ##########
-
 sp_init_neutral_policy_flag_list = {
 	add_to_variable_list = {
 		name = sp_neutral_policy_flags
@@ -61,7 +55,7 @@ sp_init_neutral_policy_flag_list = {
 	}
 	add_to_variable_list = {
 		name = sp_neutral_policy_flags
-		target = flag:flag_sp_policy_post_horse_system
+		target = flag:flag_sp_policy_coalition_focus
 	}
 	add_to_variable_list = {
 		name = sp_neutral_policy_flags
@@ -69,7 +63,7 @@ sp_init_neutral_policy_flag_list = {
 	}
 	add_to_variable_list = {
 		name = sp_neutral_policy_flags
-		target = flag:flag_sp_policy_coalition_focus
+		target = flag:flag_sp_policy_post_horse_system
 	}
 	add_to_variable_list = {
 		name = sp_neutral_policy_flags
@@ -85,7 +79,6 @@ sp_init_neutral_policy_flag_list = {
 ##########
 ## 革新 ##
 ##########
-
 sp_init_progressive_policy_flag_list = {
 	add_to_variable_list = {
 		name = sp_progressive_policy_flags
@@ -105,6 +98,10 @@ sp_init_progressive_policy_flag_list = {
 	}
 	add_to_variable_list = {
 		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_improve_cavalry
+	}
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
 		target = flag:flag_sp_policy_meritocracy
 	}
 	add_to_variable_list = {
@@ -121,7 +118,6 @@ sp_init_progressive_policy_flag_list = {
 ##########
 ## 御用 ##
 ##########
-
 sp_init_special_policy_flag_list = {
 	add_to_variable_list = {
 		name = sp_special_policy_flags
@@ -149,7 +145,7 @@ sp_init_special_policy_flag_list = {
 	}
 	add_to_variable_list = {
 		name = sp_special_policy_flags
-		target = flag:flag_sp_policy_chivalry_education
+		target = flag:flag_sp_policy_satsuma_military_education
 	}
 	add_to_variable_list = {
 		name = sp_special_policy_flags
@@ -178,6 +174,10 @@ sp_init_special_policy_flag_list = {
 	add_to_variable_list = {
 		name = sp_special_policy_flags
 		target = flag:flag_sp_policy_kichishitan_sanction
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_govern_for_people
 	}
 
 }

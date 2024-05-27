@@ -9,19 +9,6 @@ sp_policy_introduction_effect = {
 		## 本乡本土封臣好感 ++
 		## 宫廷礼制封臣好感 +
 		## 追名逐利封臣好感 -
-		flag:flag_sp_policy_improve_cavalry = {
-			$ACTION$_character_modifier = sp_policy_improve_cavalry_modifier
-			sp_parochial_vassal_towards_policy_opinion_effect = {
-				POLICY_TYPE_SW_1 = no
-				POLICY_TYPE_SW_2 = no
-				OPINION = 10
-			}
-			sp_courtly_vassal_towards_policy_opinion_effect = {
-				POLICY_TYPE_SW_1 = no
-				POLICY_TYPE_SW_2 = no
-				OPINION = 5
-			}
-		}
 		flag:flag_sp_policy_canal_improvements = {
 			$ACTION$_character_modifier = sp_policy_canal_improvements_modifier
 			custom_tooltip = sp_policy_canal_improvements_effect_tt
@@ -197,6 +184,22 @@ sp_policy_introduction_effect = {
 		## 宫廷礼制封臣好感 --
 		## 本乡本土封臣好感 -
 		## 追名逐利封臣好感 ++
+		flag:flag_sp_policy_improve_cavalry = {
+			$ACTION$_character_modifier = sp_policy_improve_cavalry_modifier
+			sp_glory_hound_vassal_towards_policy_opinion_effect = {
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -10
+			}
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -5
+			}
+		}
 		flag:flag_sp_policy_progressive_system = {
 			custom_tooltip = sp_policy_progressive_system_tt_0
 			custom_tooltip = sp_policy_progressive_system_tt_1
@@ -548,6 +551,7 @@ sp_policy_introduction_effect = {
 				}
 				custom_tooltip = sp_policy_dragon_corps_warning_tt
 			}
+			$ACTION$_character_modifier = sp_policy_dragon_corps_modifier
 			if = {
 				limit = {
 					sp_culture_has_innovation_advanced_bowmaking = no
@@ -575,9 +579,8 @@ sp_policy_introduction_effect = {
 				}
 				custom_tooltip = sp_policy_dragon_corps_effect_tt_1
 			}
-
 		}
-		flag:flag_sp_policy_chivalry_education = {
+		flag:flag_sp_policy_satsuma_military_education = {
 			if = {
 				limit = {
 					root = {
@@ -596,9 +599,9 @@ sp_policy_introduction_effect = {
 				limit = {
 					sp_has_shimazu_margin_trait = no
 				}
-				custom_tooltip = sp_policy_chivalry_education_warning_tt
+				custom_tooltip = sp_policy_satsuma_military_education_warning_tt
 			}
-			$ACTION$_character_modifier = sp_policy_chivalry_education_modifier
+			$ACTION$_character_modifier = sp_policy_satsuma_military_education_modifier
 		}
 		flag:flag_sp_policy_expeditionary_support = {
 			if = {
@@ -677,7 +680,7 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_sanada_margin_trait = no
+					sp_has_sanada_margin_trait_2 = no
 				}
 				custom_tooltip = sp_policy_cunning_strategy_warning_tt
 			}
@@ -695,9 +698,9 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_sanada_margin_trait = no
+					sp_has_sanada_margin_trait_3 = no
 				}
-				custom_tooltip = sp_policy_six_coins_oath_warning_tt
+				custom_tooltip = sp_policy_sanada_red_armour_warning_tt
 			}
 			custom_tooltip = sp_policy_sanada_red_armour_effect_tt_0
 			if = {
@@ -751,6 +754,23 @@ sp_policy_introduction_effect = {
 				custom_tooltip = sp_policy_has_no_policy_western_sanction_tt
 			}
 			$ACTION$_character_modifier = sp_policy_kichishitan_sanction_modifier
+		}
+		flag:flag_sp_policy_govern_for_people = {
+			if = {
+				limit = {
+					sp_councillor_has_miyoshi_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_sanada_miyoshi_trait = no
+				}
+				custom_tooltip = sp_policy_govern_for_people_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_govern_for_people_modifier
 		}
 	}
 }
@@ -860,8 +880,8 @@ sp_policy_revocation_effect = {
 		flag:flag_sp_policy_dragon_corps = {
 			#
 		}
-		flag:flag_sp_policy_chivalry_education = {
-			$ACTION$_character_modifier = sp_policy_chivalry_education_modifier
+		flag:flag_sp_policy_satsuma_military_education = {
+			$ACTION$_character_modifier = sp_policy_satsuma_military_education_modifier
 		}
 		flag:flag_sp_policy_expeditionary_support = {
 			$ACTION$_character_modifier = sp_policy_expeditionary_support_modifier

@@ -2,23 +2,11 @@
 	value = 0
 	switch = {
 		trigger = this
-		# 保守
-		flag:flag_sp_policy_improve_cavalry = {
-			if = {
-				limit = {
-					exists = scope:introducer
-					scope:introducer = {
-						has_variable_list = sp_released_policy_flags
-						any_in_list = {
-							variable = sp_released_policy_flags
-							this = flag:flag_sp_policy_progressive_system
-						}
-					}
-				}
-				add = 10
-			}
-			add = 25
-		}
+
+		##########
+		## 保守 ##
+		##########
+
 		flag:flag_sp_policy_canal_improvements = {
 			if = {
 				limit = {
@@ -81,7 +69,7 @@
 				}
 				add = 10
 			}
-			add = 15
+			add = 20
 		}
 		flag:flag_sp_policy_buddhism_sanction = {
 			if = {
@@ -97,7 +85,7 @@
 				}
 				add = 10
 			}
-			add = 15
+			add = 20
 		}
 		flag:flag_sp_policy_castle_construction = {
 			if = {
@@ -113,13 +101,12 @@
 				}
 				add = 10
 			}
-			add = 15
+			add = 20
 		}
 
 		##########
 		## 中道 ##
 		##########
-
 		flag:flag_sp_policy_direct_daimyo_rule = {
 			if = {
 				limit = {
@@ -183,23 +170,7 @@
 				add = 5
 			}
 			add = 25
-		}
-		flag:flag_sp_policy_post_horse_system = {
-			if = {
-				limit = {
-					exists = scope:introducer
-					scope:introducer = {
-						has_variable_list = sp_released_policy_flags
-						any_in_list = {
-							variable = sp_released_policy_flags
-							this = flag:flag_sp_policy_progressive_system
-						}
-					}
-				}
-				add = 5
-			}
-			add = 15
-		}
+		}		
 		flag:flag_sp_policy_distant_diplomacy = {
 			if = {
 				limit = {
@@ -214,9 +185,25 @@
 				}
 				add = 5
 			}
-			add = 15
+			add = 20
 		}
 		flag:flag_sp_policy_coalition_focus = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 5
+			}
+			add = 20
+		}
+		flag:flag_sp_policy_post_horse_system = {
 			if = {
 				limit = {
 					exists = scope:introducer
@@ -264,7 +251,13 @@
 			}
 			add = 10
 		}
-		# 革新
+
+		##########
+		## 革新 ##
+		##########
+		flag:flag_sp_policy_improve_cavalry = {
+			add = 25
+		}
 		flag:flag_sp_policy_soidier_professionaliztion = {
 			if = {
 				limit = {
@@ -276,7 +269,7 @@
 				}
 				add = 20
 			}
-			add = 30
+			add = 25
 		}
 		flag:flag_sp_policy_easy_commerce = {
 			if = {
@@ -289,16 +282,16 @@
 				}
 				add = 20
 			}
-			add = 30
+			add = 25
 		}
 		flag:flag_sp_policy_improve_firearms = {
-			add = 30
+			add = 25
 		}
 		flag:flag_sp_policy_meritocracy = {
-			add = 25
+			add = 20
 		}
 		flag:flag_sp_policy_supply_transporter = {
-			add = 25
+			add = 20
 		}
 		flag:flag_sp_policy_western_sanction = {
 			if = {
@@ -311,7 +304,7 @@
 				}
 				add = 10
 			}
-			add = 15
+			add = 20
 		}
 	}
 }

@@ -1538,7 +1538,7 @@ offer_betray = {
 	}
 
 	ai_will_do = {
-		base = 100
+		base = 200
 
 		# AI prefers to receive higher obligations from their vassals when possible.
 		modifier = {

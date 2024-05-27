@@ -1,0 +1,17 @@
+﻿sp_ai_special_policies = {
+	default = enable_ai_special_policies
+
+	enable_ai_special_policies = {
+	}
+	disable_ai_special_policies = {
+	}
+}
+
+sp_fictional_alliances = {
+	default = disable_fictional_alliances
+
+	enable_fictional_alliances = {
+	}
+	disable_fictional_alliances = {
+	}
+}

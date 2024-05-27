@@ -3,9 +3,8 @@
 ################
 ### 保守政策 ###
 ################
-
 flag_sp_policy_improve_cavalry_name:0 "#V 骑马队强化#!"
-flag_sp_policy_improve_cavalry_desc:0 ""
+flag_sp_policy_improve_cavalry_desc:0 "战国时代的骑兵主要用于侦察、骚扰和追击敌人，而非主要的作战力量，这是因为日本的地形多山多森林，适合大规模骑兵作战的平原较少。武士们在战斗中常常采用下马步战的方式，骑兵冲锋属于别具一格的策略。"
 sp_policy_improve_cavalry_modifier:0 "骑马队强化"
 sp_policy_improve_cavalry_modifier_desc:0 "此人改进了骑马队军制。"
 
@@ -20,7 +19,7 @@ sp_policy_canal_improvements_effect_tt:0 "你直辖领地内的[county|E]每个#
 flag_sp_policy_council_system_name:0 "#V 合议制#!"
 flag_sp_policy_council_system_desc:0 "传统的武家决策方式，家臣们在家老的主持下集体讨论商议，将集体做出的意见交由主君定夺。"
 sp_policy_council_system_modifier:0 "合议制"
-sp_policy_council_system_modifier_desc:0 "此人加重了家臣在领地事务上的话语权。"
+sp_policy_council_system_modifier_desc:0 "此人加重了家臣和一门在领地事务上的话语权。"
 
 flag_sp_policy_official_purveyor_name:0 "#V 御用商人#!"
 flag_sp_policy_official_purveyor_desc:0 "战国大名不与一般商人来往，只和特定的大座商保持密切接触，这些商人即“御用商人”。"
@@ -42,20 +41,18 @@ sp_policy_foster_system_more_accpetive_adoption_tt:0 "你的[direct_vassals|E]�
 sp_policy_foster_system_more_accpetive_adoption_reason:0 "[sp_policy|E]寄亲寄子制：$VALUE|+=0$"
 
 flag_sp_policy_improve_militia_name:0 "#V 兵役强化#!"
-flag_sp_policy_improve_militia_desc:0 ""
+flag_sp_policy_improve_militia_desc:0 "战国大名的兵力基础，是大名向家臣、国众课征军役所取得的人力。征发比之平日更多的兵役能够在短时间内聚集军力，但也必须以免除栋别、普请役等为代价安抚民心。"
 sp_policy_improve_militia_modifier:0 "兵役强化"
 sp_policy_improve_militia_modifier_desc:0 "此人加重了领地的兵役。"
 
 flag_sp_policy_castle_construction_name:0 "#V 城郭基建#!"
-flag_sp_policy_castle_construction_desc:0 ""
+flag_sp_policy_castle_construction_desc:0 "从镰仓时代的武士居馆，到南北朝和室町时代的山城，再到战国时代的平山城，日本的筑城理念经历了漫长的发展而趋于成熟。"
 sp_policy_castle_construction_modifier:0 "城郭基建"
 sp_policy_castle_construction_modifier_desc:0 "此人注重城池的基础建设。"
-
 
 ################
 ### 中道政策 ###
 ################
-
 flag_sp_policy_direct_daimyo_rule_name:0 "#V 大名亲政#!"
 flag_sp_policy_direct_daimyo_rule_desc:0 "大名亲自处理领国政务，不再委托给家宰或其他重臣。"
 sp_policy_direct_daimyo_rule_modifier:0 "大名亲政"
@@ -87,7 +84,7 @@ sp_policy_suggestion_box_modifier:0 "目安箱"
 sp_policy_suggestion_box_modifier_desc:0 "此人允许领民上达建议信。"
 
 flag_sp_policy_coalition_focus_name:0 "#V 合纵策#!"
-flag_sp_policy_coalition_focus_desc:0 ""
+flag_sp_policy_coalition_focus_desc:0 "合纵即“合众弱以攻一强“，目的在于联合许多弱国抵抗一个强国，以防止强国的兼并，实质上是各势力之间为互相拉拢而展开的外交、军事斗争。"
 sp_policy_coalition_focus_modifier:0 "合纵策"
 sp_policy_coalition_focus_modifier_desc:0 "此人着力拉拢周边国众和大名。"
 
@@ -99,7 +96,6 @@ sp_policy_thermalism_modifier_desc:0 "此人利用领内的温泉疗养。"
 ################
 ### 革新政策 ###
 ################
-
 flag_sp_policy_western_sanction_name:0 "#V 南蛮保护#!"
 flag_sp_policy_western_sanction_desc:0 "日本文化中的“南蛮”指的是来自葡萄牙、西班牙、英国等的欧洲人，他们主要通过海上航线来到东亚地区，这些航线通常会经过印度洋、东南亚，然后从南方进入日本海域。"
 sp_policy_western_sanction_modifier:0 "南蛮保护"
@@ -144,6 +140,73 @@ flag_sp_policy_progressive_system_name:0 "#V 革新制度#!"
 flag_sp_policy_progressive_system_desc:0 ""
 sp_policy_progressive_system_tt_0:0 "@warning_icon!#X 你必须把此政策作为前置，即颁布此政策前不能颁布任何政策#!"
 sp_policy_progressive_system_tt_1:0 "你获得#P 20#!政策点，颁布保守政策额外消耗#N 10#!政策点，颁布中道政策额外消耗#N 5#!政策点"
+
+################
+### 家传特质 ###
+################
+trait_imagawa_margin:0 "今川传"
+trait_imagawa_margin_desc:0 "今川氏发迹于三河国碧海郡今川，乃清和源氏一脉，于南北朝时代作为足利氏一门支援北朝对抗南朝，继而支持室町足利幕府。传言道“公方不继吉良继，吉良不继今川继”。"
+TRAIT_FLAG_DESC_trait_imagawa_margin:0 "解锁#V 传播公家嗜好#![decision|E]（未实装）\n解锁#V 今川假名目录[sp_policy|E]#!\n如果满足要求，为领主解锁#V 今川假名目录[sp_policy|E]#!"
+
+trait_takeda_margin:0 "武田传"
+trait_takeda_margin_desc:0 "武田氏发迹于甲斐国武田乡，乃清和源氏新罗三郎义光后裔。清光子信义就任甲斐守护，此后该职由武田氏世代相继。"
+TRAIT_FLAG_DESC_trait_takeda_margin:0 "解锁#V 甲州法度次第[sp_policy|E]#!\n如果满足要求，为领主解锁#V 甲州法度次第[sp_policy|E]#!"
+
+trait_oda_margin:0 "织田传#weak （弹正忠家）#!"
+trait_oda_margin_desc:0 "织田氏发祥于越前国织田庄，本姓忌部氏，与甲斐氏、朝仓氏同为斯波武卫家效力，室町时代为尾张守护代。弹正忠家本为织田氏庶流，传自信长祖父三代，趁乱世之机坐大。"
+TRAIT_FLAG_DESC_trait_oda_margin:0 "解锁#V 火器集中运用[sp_policy|E]#!\n如果满足要求，为领主解锁#V 火器集中运用[sp_policy|E]#!\n提前解锁#V 兵农分离[sp_policy|E]#!和#V 乐市乐座[sp_policy|E]#! "
+
+trait_hojo_margin:0 "后北条传"
+trait_hojo_margin_desc:0 "始于原为京都御家人的伊势新九郎宗瑞，其因平定今川家内乱有功受封城主。统一相模后，二代当主氏纲改姓北条以巩固统治，因与镰仓时代的幕府执权北条氏没有直接血缘关系，故又称后北条氏。"
+TRAIT_FLAG_DESC_trait_hojo_margin:0 "解锁#V 五条训诫[sp_policy|E]#!\n如果满足要求，为领主解锁#V 五条训诫[sp_policy|E]#!"
+
+trait_tokugawa_margin:0 "德川传"
+trait_tokugawa_margin_desc:0 "始于德川家康，前身是三河国豪族松平氏。家康的祖父清康致力于称霸三河，被后世誉为“如果活到三十岁当可取得天下”。家康发迹后自称清和源氏支流得川氏后裔，改一字为德川。"
+TRAIT_FLAG_DESC_trait_tokugawa_margin:0 "解锁#V 旗本先手役[sp_policy|E]#!\n如果满足要求，为领主解锁#V 旗本先手役[sp_policy|E]#!"
+
+trait_uesugi_margin:0 "上杉传#weak （长尾家）#!"
+trait_uesugi_margin_desc:0 "上杉氏原为公家，后在关东管治。扇谷、山内上杉家相继在后北条家侵攻下灭亡，宪政将关东管领一职授予长尾景虎（上杉谦信），自此原为越后守护代的长尾家成为上杉氏的嫡流。"
+TRAIT_FLAG_DESC_trait_uesugi_margin:0 "解锁#V 远征军支援[sp_policy|E]#!\n如果满足要求，为领主解锁#V 远征军支援[sp_policy|E]#!"
+
+trait_shimazu_margin:0 "岛津传"
+trait_shimazu_margin_desc:0 "岛津氏发源于日向国岛津庄，原为渡来人，属秦氏惟宗氏一脉，于镰仓幕府时期出任九州地头，全盛时以萨摩国为中心统治南九州。"
+TRAIT_FLAG_DESC_trait_shimazu_margin:0 "解锁#V 萨摩军法[sp_policy|E]#!\n如果满足要求，为领主解锁#V 萨摩军法[sp_policy|E]#!"
+
+trait_date_margin:0 "伊达传"
+trait_date_margin_desc:0 "伊达氏发源于陆奥国伊达郡，乃藤原氏山阴流一脉。自镰仓时代起到江户时代皆为东北地方举足轻重的大名。"
+TRAIT_FLAG_DESC_trait_date_margin:0 "解锁#V 编制龙骑兵[sp_policy|E]#!\n如果满足要求，为领主解锁#V 编制龙骑兵[sp_policy|E]#!"
+
+trait_mori_margin:0 "毛利传"
+trait_mori_margin_desc:0 "本姓大江氏。发源于镰仓时代的政所别当大江广元四子季光。安艺毛利氏本是当地小豪族，传至元就向东击败尼子氏，向西消灭篡夺大内氏的陶晴贤，一跃成为“西国的霸主”。"
+TRAIT_FLAG_DESC_trait_mori_margin:0 "解锁#V 百万一心之训[sp_policy|E]#!\n如果满足要求，为领主解锁#V 百万一心之训[sp_policy|E]#!"
+
+trait_chosokabe_margin:0 "长宗我部传"
+trait_chosokabe_margin_desc:0 "土佐国豪族，进入当地时期不明。曾于兼序时代遭入侵而灭亡，国亲在一条家的支持下复兴长宗我部氏。传至元亲时一统四国地区。"
+TRAIT_FLAG_DESC_trait_chosokabe_margin:0 "解锁#V 一领具足制[sp_policy|E]#!\n如果满足要求，为领主解锁#V 一领具足制[sp_policy|E]#!"
+
+trait_otomo_margin:0 "大友传"
+trait_otomo_margin_desc:0 "大友氏发源于相模国大友庄，相传家祖能直为源赖朝后裔，镰仓时代到战国时代以九州丰后国为根据地，一度支配北九州。传自宗麟时代与西方关系密切，被传教士赞誉为“日本第一英主”。"
+TRAIT_FLAG_DESC_trait_otomo_margin:0 "解锁#V 吉立支丹保护[sp_policy|E]#!\n如果满足要求，为领主解锁#V 吉立支丹保护[sp_policy|E]#!\n提前解锁#V 南蛮保护#![sp_policy|E]"
+
+trait_sanada_margin:0 "真田传"
+trait_sanada_margin_desc:0 "始于真田幸纲（隆），原为信浓豪族海野氏分家。海野氏早年为镰仓幕府御家人，随即衰落，被武田家灭亡后，幸纲继承家门。真田家辛纲、昌幸、信繁（幸村）一门三代均为将略之才。幸村于大坂之战以寡击众，号“日本第一兵”。"
+TRAIT_FLAG_DESC_trait_sanada_margin:0 "解锁#V 六文钱誓言[sp_policy|E]#!\n如果满足要求，为领主解锁#V 六文钱誓言[sp_policy|E]#!\n解锁#V 表里军略[sp_policy|E]#!\n如果满足要求，为领主解锁#V 表里军略[sp_policy|E]#!\n解锁#V 编制真田赤备[sp_policy|E]#!\n如果满足要求，为领主解锁#V 编制真田赤备[sp_policy|E]#!"
+
+trait_miyoshi_margin:0 "三好传"
+trait_miyoshi_margin_desc:0 "三好氏发源于阿波国三好郡，据传出自阿波小笠原氏，原为管领细川氏家臣。元长时成为细川家重臣，传自长庆时代达到巅峰，一统近畿地区，一度号称“日本副王”，又随着长庆过世迅速陨落。"
+TRAIT_FLAG_DESC_trait_miyoshi_margin:0 "解锁#V 理世安民[sp_policy|E]#!\n如果满足要求，为领主解锁#V 理世安民[sp_policy|E]#!"
+
+trait_toyotomi_margin:0 "丰臣传"
+trait_toyotomi_margin_desc:0 ""
+TRAIT_FLAG_DESC_trait_toyotomi_margin:0 "解锁#V 检地刀狩[sp_policy|E]#!\n如果满足要求，为领主解锁#V 检地刀狩[sp_policy|E]#!"
+
+trait_saika_margin:0 "铃木传"
+trait_saika_margin_desc:0 ""
+TRAIT_FLAG_DESC_trait_saika_margin:0 "解锁#V 杂贺规约[sp_policy|E]#!\n如果满足要求，为领主解锁#V 杂贺规约[sp_policy|E]#!"
+
+trait_honganji_margin:0 "本愿寺传"
+trait_honganji_margin_desc:0 ""
+TRAIT_FLAG_DESC_trait_honganji_margin:0 "解锁#V 机法一体[sp_policy|E]#!\n如果满足要求，为领主解锁#V 机法一体[sp_policy|E]#!"
 
 ################
 ### 御用政策 ###
@@ -214,11 +277,11 @@ sp_policy_dragon_corps_effect_tt_1:1 "你获得一支人数为#V 100#!的[GetMaA
 sp_policy_dragon_corps_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('date_margin').GetName( GetNullCharacter )]，由后者解锁要求其有12军事且颁布后5年内无法将其撤职#!"
 
 ## 岛津家
-flag_sp_policy_chivalry_education_name:0 "#V 萨摩军法#!"
-flag_sp_policy_chivalry_education_desc:0 "南九州的萨摩国地处荒僻，当地生活条件艰苦，故而民风彪悍，直到幕末时代都盛产战争狂人。当地有力的战国大名岛津家驾驭此等优劣势，建立强军。"
-sp_policy_chivalry_education_modifier:0 "萨摩军法"
-sp_policy_chivalry_education_modifier_desc:0 "此人以独特的军法统率部队。"
-sp_policy_chivalry_education_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('shimazu_margin').GetName( GetNullCharacter )]，由后者解锁要求其有20勇武且颁布后5年内无法将其撤职#!"
+flag_sp_policy_satsuma_military_education_name:0 "#V 萨摩军法#!"
+flag_sp_policy_satsuma_military_education_desc:0 "南九州的萨摩国地处荒僻，当地生活条件艰苦，故而民风彪悍，直到幕末时代都盛产战争狂人。当地有力的战国大名岛津家驾驭此等优劣势，建立强军。"
+sp_policy_satsuma_military_education_modifier:0 "萨摩军法"
+sp_policy_satsuma_military_education_modifier_desc:0 "此人以独特的军法统率部队。"
+sp_policy_satsuma_military_education_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('shimazu_margin').GetName( GetNullCharacter )]，由后者解锁要求其有20勇武且颁布后5年内无法将其撤职#!"
 
 ## 上杉家
 flag_sp_policy_expeditionary_support_name:0 "#V 远征军支援#!"
@@ -244,13 +307,13 @@ sp_policy_armoured_militia_effect_tt_0:0 "#V 你#!可以招募[GetMaA('armoured_
 
 ## 真田家
 flag_sp_policy_six_coins_oath_name:0 "#V 六文钱誓言#!"
-flag_sp_policy_six_coins_oath_desc:0 ""
+flag_sp_policy_six_coins_oath_desc:0 "传说人死后渡过三途川的时候，需要支付六文钱（冥钱）。以渡钱为家徽的真田氏所在的信浓在当时是很贫困的地方，初生婴孩经常夭折，而其家人则将六文钱置于棺木中，而六文钱亦代表六道，这代表着真田一族随时赴死的决心。"
 sp_policy_six_coins_oath_modifier:0 "六文钱誓言"
 sp_policy_six_coins_oath_modifier_desc:0 "此人家中谛听了六文钱誓言。"
 sp_policy_six_coins_oath_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('sanada_margin').GetName( GetNullCharacter )]，由后者解锁要求其有20勇武且颁布后5年内无法将其撤职#!"
 
 flag_sp_policy_cunning_strategy_name:0 "#V 表里军略#!"
-flag_sp_policy_cunning_strategy_desc:0 ""
+flag_sp_policy_cunning_strategy_desc:0 "丰臣家重臣石田三成写信给上杉景胜时曾形容真田昌幸：“表里比兴者，应以成败相论。”所谓“比兴”即不合理、不一致。“表里比兴”即昌幸的生存哲学——内外不一、深藏不露。"
 sp_policy_cunning_strategy_modifier:0 "表里军略"
 sp_policy_cunning_strategy_modifier_desc:0 "此人掌握了寝返和调略的精髓。"
 sp_policy_cunning_strategy_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('sanada_margin').GetName( GetNullCharacter )]，由后者解锁要求其有15谋略且颁布后5年内无法将其撤职#!"
@@ -259,12 +322,13 @@ sp_policy_foster_system_more_accpetive_betrayal_reason:0 "你的表里军略[sp_
 
 flag_sp_policy_sanada_red_armour_name:0 "#V 编制真田赤备#!"
 flag_sp_policy_sanada_red_armour_desc:0 "庆长20年（1615年）的大阪夏之阵中由真田信繁（幸村）编成。完全继承武田流赤备的真田信繁队在天王寺口之战中对家康本阵的攻击造成了德川本阵自三方原之战以来从未有过的大崩溃，在岛津氏的《萨摩旧记》中被记载下了“真田日本第一勇士，自古以来未有此等”这样赞赏其活跃的文字。"
+sp_policy_sanada_red_armour_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('sanada_margin').GetName( GetNullCharacter )]，由后者解锁要求其有15军事且颁布后5年内无法将其撤职#!"
 sp_policy_sanada_red_armour_effect_tt_0:0 "#V 你#!可以招募[GetMaA('sanada_red_armour').GetName][men_at_arms|E]"
 sp_policy_sanada_red_armour_effect_tt_1:1 "你获得一支人数为#V 50#!的[GetMaA('sanada_red_armour').GetName]军队"
 
 ## 大友家
 flag_sp_policy_kichishitan_sanction_name:0 "#V 吉立支丹保护#!"
-flag_sp_policy_kichishitan_sanction_desc:0 ""
+flag_sp_policy_kichishitan_sanction_desc:0 "吉立支丹即基督徒的假名音译。丰后国的战国大名大友宗麟以天主教大名为人熟知，天文20年（1551年）宗麟认识了在丰后布教的耶稣会传教士沙勿略并成为密友，二十七年后的天正6年（1578年）改信天主教并受洗礼。宗麟对领地内的布教活动加以保护、进行与西方的贸易，曾梦想要建立天主教王国，但在耳川一战后梦碎。"
 sp_policy_kichishitan_sanction_modifier:0 "吉立支丹保护"
 sp_policy_kichishitan_sanction_modifier_desc:0 "此人在领内推行吉立支丹信仰。"
 sp_policy_kichishitan_sanction_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('otomo_margin').GetName( GetNullCharacter )]且信仰[GetReligionByKey('christianity_religion').GetName]，由后者解锁要求其有12学识且颁布后5年内无法将其撤职#!"
@@ -272,9 +336,9 @@ sp_policy_has_no_policy_western_sanction_tt:0 "@warning_icon!#X 你没有颁布�
 
 ## 三好家
 flag_sp_policy_govern_for_people_name:0 "#V 理世安民#!"
-flag_sp_policy_govern_for_people_sanction_desc:0 ""
+flag_sp_policy_govern_for_people_desc:0 "天文二十二年（1553年），室町幕府十三代将军足利义辉密谋对付时任管领代三好长庆，长庆发兵灵山城，义辉被迫出逃近江朽木，大权旁落。自此长庆开始整顿因战争不绝而混乱无比的近畿地区，弘治二年（1556年）11月长庆重新制定赋税，大幅删修不合理的各项苛捐杂税，并在翌年10月在京都大德寺颁布三条禁令以整肃治安。"
 sp_policy_govern_for_people_modifier:0 "理世安民"
 sp_policy_govern_for_people_modifier_desc:0 "此人致力于安顿民生，匡扶大政。"
-sp_policy_govern_for_people_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('miyoshi_margin').GetName( GetNullCharacter )]且信仰[GetReligionByKey('christianity_religion').GetName]，由后者解锁要求其有12管理且颁布后5年内无法将其撤职#!"
+sp_policy_govern_for_people_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('miyoshi_margin').GetName( GetNullCharacter )]，由后者解锁要求其有12管理且颁布后5年内无法将其撤职#!"
 
 sp_policy_has_no_innovation_advanced_bowmaking_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_advanced_bowmaking$[innovation|E]#!"

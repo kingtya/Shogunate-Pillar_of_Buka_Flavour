@@ -109,7 +109,7 @@ sp_set_cost_to_character = {
 		flag:flag_sp_policy_dragon_corps = {
 			add_prestige = -150
 		}
-		flag:flag_sp_policy_chivalry_education = {
+		flag:flag_sp_policy_satsuma_military_education = {
 			add_prestige = -100
 		}
 		flag:flag_sp_policy_expeditionary_support = {
@@ -132,6 +132,10 @@ sp_set_cost_to_character = {
 		}
 		flag:flag_sp_policy_kichishitan_sanction = {
 			add_piety = -100
+		}
+		flag:flag_sp_policy_govern_for_people = {
+			remove_short_term_gold = 50
+			add_prestige = -50
 		}
 	}
 }

@@ -376,7 +376,9 @@
                         ################
                         ### 政策效果 ###
                         ################
-                        
+                        vbox = {
+                            margin = { 0 2 }
+                        }
                         hbox = {
                             layoutpolicy_horizontal = expanding
                             margin = { 10 0 }
@@ -398,7 +400,7 @@
                             scrollbox = {
                                 layoutpolicy_horizontal = preferred
                                 layoutpolicy_vertical = expanding
-                                size = { 0 165 }
+                                size = { 0 178 }
                                 blockoverride "scrollbox_content" {
                                     hbox = {
                                         margin = { 0 -6 }
@@ -442,7 +444,7 @@
                             scrollbox = {
                                 layoutpolicy_horizontal = preferred
                                 layoutpolicy_vertical = expanding
-                                size = { 0 67 }
+                                size = { 0 71 }
                                 blockoverride "scrollbox_content" {
                                     hbox = {
                                         margin = { 0 -6 }

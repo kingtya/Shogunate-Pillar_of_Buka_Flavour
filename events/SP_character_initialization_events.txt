@@ -191,6 +191,20 @@ sp_character_initialization.0001 = {
 				}
 				add_trait = sanada_margin
 			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10059003 # 元长
+						}
+						this = character:10059003 # 元长
+					}
+					dynasty = dynasty:10000587
+					is_male = yes
+				}
+				add_trait = miyoshi_margin
+			}
 			#if = {
 			#	limit = {
 			#		this = character:10029120
