@@ -21,6 +21,7 @@ on_leave_court = {
 realm_maintenance_quarterly_pulse = {
 	on_actions = {
 		sp_policy_canal_improvements_pulse
+		sp_policy_official_purveyor_pulse
 		sp_policy_laws_of_imagawa_pulse
 		sp_policy_laws_of_takeda_pulse 
 		sp_policy_five_admonitions_pulse
@@ -46,6 +47,33 @@ sp_policy_canal_improvements_pulse = {
 					save_scope_as = county_holder
 					trigger_event = {
 						id = sp_policy_events.0003
+						days = { 10 40 }
+					}
+				}
+			}
+		}
+	}
+}
+
+sp_policy_official_purveyor_pulse = {
+	trigger = {
+		has_character_modifier = sp_policy_official_purveyor_modifier
+		any_held_county = {
+			NOT = { has_county_modifier = sp_policy_official_purveyor_county_modifier }
+		}
+	}
+	effect = {
+		every_held_county = {
+			limit = {
+				NOT = { has_county_modifier = sp_policy_official_purveyor_county_modifier }
+			}
+			random = {
+				chance = 50
+				save_scope_as = county
+				holder = {
+					save_scope_as = county_holder
+					trigger_event = {
+						id = sp_policy_events.0007
 						days = { 10 40 }
 					}
 				}

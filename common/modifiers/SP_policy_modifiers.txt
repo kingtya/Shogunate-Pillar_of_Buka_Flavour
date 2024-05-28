@@ -33,12 +33,27 @@ sp_policy_council_system_modifier = {
 	tyranny_loss_mult = -0.1
 }
 
-sp_policy_official_purveyor_modifier = {
+sp_policy_official_purveyor_modifier_count = {
 	icon = economy_political
-	domain_tax_mult = 0.15
-	tax_mult = -0.05
+	monthly_income = 0.2
+	development_growth_factor = -0.05
+	republic_government_vassal_opinion = 10
+}
+sp_policy_official_purveyor_modifier_duke = {
+	icon = economy_political
+	monthly_income = 0.3
 	development_growth_factor = -0.1
 	republic_government_vassal_opinion = 10
+}
+sp_policy_official_purveyor_modifier_king = {
+	icon = economy_political
+	monthly_income = 0.5
+	development_growth_factor = -0.15
+	republic_government_vassal_opinion = 10
+}
+sp_policy_official_purveyor_county_modifier = {
+	icon = county_modifier_development_negative
+	tax_mult = -0.1
 }
 
 sp_policy_buddhism_sanction_modifier = {
@@ -61,6 +76,7 @@ sp_policy_improve_militia_modifier = {
 	icon = martial_political
 	build_speed = 0.15
 	build_gold_cost = 0.1
+	tax_mult = -0.05
 	levy_size = 0.2
 	levy_reinforcement_rate = 0.1
 	county_opinion_add = -15
