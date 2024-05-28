@@ -80,7 +80,7 @@ shogunate_adoption_ai_accept_modifier = {
 		who = scope:recipient
 		opinion_target = scope:actor
 		multiplier = 0.75
-		desc = SAR_AI_ACTOR_OPINION_REASON
+		desc = POB_ADOPTION_AI_ACTOR_OPINION_REASON
 	}
 
 	# Opinion (recipient -> secondary_actor)
@@ -92,7 +92,7 @@ shogunate_adoption_ai_accept_modifier = {
 		who = scope:recipient
 		opinion_target = scope:secondary_actor
 		multiplier = 0.25
-		desc = SAR_AI_SECONDARY_ACTOR_OPINION_REASON
+		desc = POB_ADOPTION_AI_SECONDARY_ACTOR_OPINION_REASON
 	}
 
 	modifier = {

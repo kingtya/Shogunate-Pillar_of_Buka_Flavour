@@ -22,7 +22,7 @@ light_footmen = {
 	}
 
 	buy_cost = { gold = 35 }
-	low_maintenance_cost = { gold = 0.05 }
+	low_maintenance_cost = { gold = 0.1 }
 	high_maintenance_cost = { gold = 0.3 }
 
 	holy_order_fallback = yes

@@ -19,7 +19,7 @@
 		heavy_infantry = 1
 	}
 	
-	buy_cost = { gold = 150 }
+	buy_cost = { gold = 130 }
 	low_maintenance_cost = { gold = 0.8 }
 	high_maintenance_cost = { gold = 1.6 }
 
@@ -92,7 +92,7 @@ sohei_pikemen = { #
 		light_cavalry = 2
 	}
 	
-	buy_cost = { gold = 150 }
+	buy_cost = { gold = 130 }
 	low_maintenance_cost = { gold = 0.5 }
 	high_maintenance_cost = { gold = 1.5 }
 	

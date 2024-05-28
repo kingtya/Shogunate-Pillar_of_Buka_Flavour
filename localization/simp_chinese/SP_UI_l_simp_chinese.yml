@@ -51,7 +51,7 @@ spt_bugyo_task_default_effect_desc:1 "[councillor.GetShortUIName|U]将在你的�
 ## 兵士 ##
 ##########
 yabusame_archers:0 "流镝马武士"
-yabusame_archers_flavor:0 "#F 擅于骑在马上射箭的武士，在平原拉锯战中有无可比拟的优势。#!"
+yabusame_archers_flavor:0 "#F 擅于骑在马上射箭的武士，在平原拉锯战中有无可比拟的优势。曾经流行于源平时期，逐渐没落于时代。#!"
 shigedou_archers:0 "重藤弓武者"
 shigedou_archers_flavor:0 "#F 小笠流弓术中有一种将躯干漆黑并用藤缠绕的弓，射出的箭矢无比精准，杀伤巨大，仅有少数武士能精通使用。#!"
 sohei_pikemen:0 "薙刀武僧"
@@ -81,5 +81,3 @@ setting_enable_fictional_alliances:1 "#V 启用#!"
 setting_enable_fictional_alliances_desc:2 "幕府的原版设定，游戏开始后会由姻亲关系生成非史实[alliances|E]（@warning_icon!#X 这可能导致仇敌间的同盟#!）。"
 setting_disable_fictional_alliances:0 "禁用"
 setting_disable_fictional_alliances_desc:1 "游戏开始后不由姻亲关系生成非史实[alliances|E]（@warning_icon!#X 建议搭配#E 更佳婚姻同盟#!使用#!）。"
-
-SP_ADOPTION_CARES_ABOUT_COURTIER_REASON:0 "[secondary_recipient.GetShortUIName|U]是重要的[courtier|E]：$VALUE|=+0$"

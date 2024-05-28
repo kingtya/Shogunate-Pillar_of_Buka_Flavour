@@ -1729,8 +1729,6 @@ sp_ai_publish_policy_laws_of_imagawa_decision = {
 		}
 	}
 
-	ai_check_interval = 36
-	
 	ai_potential = {
 		always = yes
 	}
@@ -1800,8 +1798,6 @@ sp_ai_publish_policy_laws_of_takeda_decision = {
 		}
 	}
 
-	ai_check_interval = 36
-	
 	ai_potential = {
 		always = yes
 	}
@@ -1871,8 +1867,6 @@ sp_ai_publish_policy_five_admonitions_decision = {
 		}
 	}
 
-	ai_check_interval = 36
-	
 	ai_potential = {
 		always = yes
 	}
@@ -1942,8 +1936,6 @@ sp_ai_publish_policy_guardian_forces_decision = {
 		}
 	}
 
-	ai_check_interval = 36
-	
 	ai_potential = {
 		always = yes
 	}
@@ -2015,8 +2007,6 @@ sp_ai_publish_policy_intensive_firearms_decision = {
 		}
 	}
 
-	ai_check_interval = 36
-	
 	ai_potential = {
 		always = yes
 	}
@@ -2122,8 +2112,6 @@ sp_ai_publish_policy_dragon_corps_decision = {
 			}
 		}
 	}
-
-	ai_check_interval = 36
 	
 	ai_potential = {
 		always = yes
