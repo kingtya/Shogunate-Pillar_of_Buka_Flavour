@@ -1280,11 +1280,8 @@ sp_ai_publish_policy_soidier_professionaliztion_decision = {
 	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
-		OR = {
-			sp_has_oda_margin_trait = yes
-			sp_culture_has_innovation_royal_armory = yes
-		}
-		number_of_maa_regiments >= recommended_num_maa_regiments_value
+		sp_culture_has_innovation_royal_armory = yes
+		number_of_maa_regiments > recommended_num_maa_regiments_value
 	}
 	is_valid = {
 		trigger_if = {
@@ -1674,9 +1671,9 @@ sp_ai_publish_policy_laws_of_imagawa_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_imagawa_margin_trait = yes
 	}
 	is_valid = {
+		sp_has_imagawa_margin_trait = yes
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points
@@ -1745,9 +1742,9 @@ sp_ai_publish_policy_laws_of_takeda_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_takeda_margin_trait = yes
 	}
 	is_valid = {
+		sp_has_takeda_margin_trait = yes
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points
@@ -1816,9 +1813,9 @@ sp_ai_publish_policy_five_admonitions_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_hojo_margin_trait = yes
 	}
 	is_valid = {
+		sp_has_hojo_margin_trait = yes
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points
@@ -1887,9 +1884,9 @@ sp_ai_publish_policy_guardian_forces_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_tokugawa_margin_trait = yes
 	}
 	is_valid = {
+		sp_has_tokugawa_margin_trait = yes
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points
@@ -1958,9 +1955,9 @@ sp_ai_publish_policy_intensive_firearms_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_oda_margin_trait = yes
 	}
 	is_valid = {
+		sp_has_oda_margin_trait = yes
 		sp_culture_has_innovation_advanced_bowmaking = yes
 		trigger_if = {
 			limit = {
@@ -2031,9 +2028,9 @@ sp_ai_publish_policy_dragon_corps_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_date_margin_trait = yes
 	}
 	is_valid = {
+		sp_has_date_margin_trait = yes
 		sp_culture_has_innovation_advanced_bowmaking = yes
 		trigger_if = {
 			limit = {
@@ -2139,9 +2136,9 @@ sp_ai_publish_policy_satsuma_military_education_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_shimazu_margin_trait = yes
 	}
 	is_valid = {
+		sp_has_shimazu_margin_trait = yes
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points
@@ -2194,6 +2191,8 @@ sp_ai_publish_policy_satsuma_military_education_decision = {
 		}
 	}
 
+	ai_check_interval = 36
+	
 	ai_potential = {
 		always = yes
 	}
@@ -2208,9 +2207,9 @@ sp_ai_publish_policy_expeditionary_support_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_uesugi_margin_trait = yes
 	}
 	is_valid = {
+		sp_has_uesugi_margin_trait = yes
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points
@@ -2263,6 +2262,8 @@ sp_ai_publish_policy_expeditionary_support_decision = {
 		}
 	}
 
+	ai_check_interval = 36
+	
 	ai_potential = {
 		always = yes
 	}
@@ -2277,9 +2278,9 @@ sp_ai_publish_policy_armoured_militia_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_chosokabe_margin_trait = yes
 	}
 	is_valid = {
+		sp_has_chosokabe_margin_trait = yes
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points
@@ -2348,9 +2349,9 @@ sp_ai_publish_policy_million_minds_motto_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_mori_margin_trait = yes
 	}
 	is_valid = {
+		sp_has_mori_margin_trait = yes
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points
@@ -2402,6 +2403,8 @@ sp_ai_publish_policy_million_minds_motto_decision = {
 			}
 		}
 	}
+
+	ai_check_interval = 36
 	
 	ai_potential = {
 		always = yes
@@ -2417,9 +2420,9 @@ sp_ai_publish_policy_six_coins_oath_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_sanada_margin_trait = yes
 	}
 	is_valid = {
+		sp_has_sanada_margin_trait = yes
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points
@@ -2471,6 +2474,8 @@ sp_ai_publish_policy_six_coins_oath_decision = {
 			}
 		}
 	}
+
+	ai_check_interval = 36
 	
 	ai_potential = {
 		always = yes
@@ -2486,9 +2491,15 @@ sp_ai_publish_policy_kichishitan_sanction_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_otomo_margin_trait_2 = yes
+
+		has_variable_list = sp_released_policy_flags
+		any_in_list = {
+			variable = sp_released_policy_flags
+			this = flag:flag_sp_policy_western_sanction
+		}
 	}
 	is_valid = {
+		sp_has_otomo_margin_trait_2 = yes
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points
@@ -2541,6 +2552,8 @@ sp_ai_publish_policy_kichishitan_sanction_decision = {
 			}
 		}
 	}
+
+	ai_check_interval = 36
 	
 	ai_potential = {
 		always = yes
@@ -2556,9 +2569,9 @@ sp_ai_publish_policy_govern_for_people_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_miyoshi_margin_trait = yes
 	}
 	is_valid = {
+		sp_has_miyoshi_margin_trait = yes
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points
@@ -2610,6 +2623,8 @@ sp_ai_publish_policy_govern_for_people_decision = {
 			}
 		}
 	}
+
+	ai_check_interval = 36
 	
 	ai_potential = {
 		always = yes

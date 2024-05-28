@@ -23,16 +23,9 @@ sp_policy_council_system_modifier_desc:0 "此人加重了家臣和一门在领�
 
 flag_sp_policy_official_purveyor_name:0 "#V 御用商人#!"
 flag_sp_policy_official_purveyor_desc:0 "战国大名不与一般商人来往，只和特定的大座商保持密切接触，这些商人即“御用商人”。"
-sp_policy_official_purveyor_modifier_count:0 "御用商人"
-sp_policy_official_purveyor_modifier_duke:0 "御用商人"
-sp_policy_official_purveyor_modifier_king:0 "御用商人"
-sp_policy_official_purveyor_modifier_count_desc:0 "此人保护领地内大座商的权益。"
-sp_policy_official_purveyor_modifier_duke_desc:0 "此人保护领地内大座商的权益。"
-sp_policy_official_purveyor_modifier_king_desc:0 "此人保护领地内大座商的权益。"
-sp_policy_official_purveyor_county_modifier:0 "贸易垄断"
-sp_policy_official_purveyor_county_modifier_desc:0 "此地的大座商用特权垄断了当地大宗商品，阻碍了经济发展。"
+sp_policy_official_purveyor_modifier:0 "御用商人"
+sp_policy_official_purveyor_modifier_desc:0 "此人保护领地内大座商的权益。"
 sp_policy_official_purveyor_warning_tt:0 "@warning_icon!#X 你颁布的政策御用商人和这个政策冲突#!"
-sp_policy_official_purveyor_effect_tt:0 "你直辖领地内的[county|E]每个#V 季度#!都有较高概率获得[GetModifier('sp_policy_official_purveyor_county_modifier').GetNameWithTooltip]，为期#V 5年#!"
 
 flag_sp_policy_buddhism_sanction_name:0 "#V 寺社保护#!"
 flag_sp_policy_buddhism_sanction_desc:0 "佛教传入日本后与本土的神道信仰折衷，习合形成为一个信仰系统，故并列称之为寺社。"
