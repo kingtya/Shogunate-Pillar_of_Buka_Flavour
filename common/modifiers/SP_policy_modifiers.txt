@@ -33,12 +33,27 @@ sp_policy_council_system_modifier = {
 	tyranny_loss_mult = -0.1
 }
 
-sp_policy_official_purveyor_modifier = {
+sp_policy_official_purveyor_modifier_count = {
 	icon = economy_political
-	domain_tax_mult = 0.15
-	tax_mult = -0.05
+	monthly_income = 0.8
+	development_growth_factor = -0.05
+	republic_government_vassal_opinion = 10
+}
+sp_policy_official_purveyor_modifier_duke = {
+	icon = economy_political
+	monthly_income = 1.6
 	development_growth_factor = -0.1
 	republic_government_vassal_opinion = 10
+}
+sp_policy_official_purveyor_modifier_king = {
+	icon = economy_political
+	monthly_income = 3.2
+	development_growth_factor = -0.15
+	republic_government_vassal_opinion = 10
+}
+sp_policy_official_purveyor_county_modifier = {
+	icon = county_modifier_development_negative
+	tax_mult = -0.2
 }
 
 sp_policy_buddhism_sanction_modifier = {
@@ -59,8 +74,9 @@ sp_policy_foster_system_modifier = {
 
 sp_policy_improve_militia_modifier = {
 	icon = martial_political
-	build_speed = 0.15
-	build_gold_cost = 0.1
+	build_speed = 0.1
+	build_gold_cost = 0.05
+	tax_mult = -0.05
 	levy_size = 0.2
 	levy_reinforcement_rate = 0.1
 	county_opinion_add = -15
@@ -92,9 +108,10 @@ sp_policy_improve_labor_modifier = {
 
 sp_policy_deploy_draftee_modifier = {
 	icon = blood_political
-	stationed_maa_damage_add = 8
-	stationed_maa_toughness_add = 4
+	maa_damage_add = 8
+	maa_toughness_add = 4
 	men_at_arms_maintenance = -0.2
+	levy_reinforcement_rate = -0.1
 }
 
 sp_policy_post_horse_system_modifier = {
@@ -108,6 +125,7 @@ sp_policy_distant_diplomacy_modifier = {
 	icon = letter_political
 	monthly_prestige = 0.75
 	monthly_prestige_gain_mult = 0.08
+	personal_scheme_power_add = 10
 	diplomatic_range_mult = 0.5
 	independent_ruler_opinion = 10
 }
@@ -117,6 +135,7 @@ sp_policy_coalition_focus_modifier = {
 	monthly_prestige = 0.4
 	sway_scheme_power_mult = 0.3
 	mercenary_hire_cost_mult = -0.5
+	same_culture_mercenary_hire_cost_mult = -0.25
 }
 
 sp_policy_suggestion_box_modifier = {
@@ -158,11 +177,21 @@ sp_policy_meritocracy_being_encouraged_modifier = {
 	icon = stress_positive
 	opinion_of_liege = 10
 	stress_gain_mult = -0.2
+	diplomacy = 1
+	martial = 1
+	stewardship = 1
+	intrigue = 1
+	learning = 1
 }
 sp_policy_meritocracy_being_humiliated_modifier = {
 	icon = stress_negative
 	opinion_of_liege = -10
 	stress_gain_mult = 0.2
+	diplomacy = -1
+	martial = -1
+	stewardship = -1
+	intrigue = -1
+	learning = -1
 }
 
 sp_policy_supply_transporter_modifier = {
@@ -253,8 +282,8 @@ sp_policy_dragon_corps_modifier = {
 
 sp_policy_satsuma_military_education_modifier = {
 	icon = martial_special
-	stationed_maa_damage_add = 16
-	stationed_maa_toughness_add = 8
+	maa_damage_add = 16
+	maa_toughness_add = 8
 	attacker_advantage = 5
 }
 

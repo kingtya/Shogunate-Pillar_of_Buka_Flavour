@@ -95,6 +95,34 @@ shogunate_adoption_ai_accept_modifier = {
 		desc = SAR_AI_SECONDARY_ACTOR_OPINION_REASON
 	}
 
+	modifier = {
+		add = -50
+		scope:secondary_recipient = {
+			is_adult = yes
+			OR = {
+				is_councillor_of = scope:recipient
+				has_relation_lover = scope:recipient
+				has_relation_soulmate = scope:recipient
+				has_relation_friend = scope:recipient
+				has_relation_best_friend = scope:recipient
+				is_knight_of = scope:recipient
+				has_diplomacy_court_position = yes
+				has_martial_court_position = yes
+				has_stewardship_court_position = yes
+				has_intrigue_court_position = yes
+				has_learning_court_position = yes
+				AND = {
+					exists = inspiration
+					inspiration = {
+						exists = inspiration_sponsor
+						inspiration_sponsor = scope:recipient
+					}
+				}
+			}
+		}
+		desc = SP_ADOPTION_CARES_ABOUT_COURTIER_REASON
+	}
+
 	# Adoptive father is old and has no inheritable son
 
 	modifier = {

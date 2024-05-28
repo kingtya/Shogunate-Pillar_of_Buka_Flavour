@@ -47,7 +47,22 @@ sp_policy_introduction_effect = {
 				}
 				custom_tooltip = sp_policy_easy_commerce_warning_tt
 			}
-			$ACTION$_character_modifier = sp_policy_official_purveyor_modifier
+			if = {
+				limit = {
+					highest_held_title_tier >= tier_kingdom
+				}
+				$ACTION$_character_modifier = sp_policy_official_purveyor_modifier_king
+			}
+			else_if = {
+				limit = {
+					highest_held_title_tier = tier_duchy
+				}
+				$ACTION$_character_modifier = sp_policy_official_purveyor_modifier_duke
+			}
+			else = {
+				$ACTION$_character_modifier = sp_policy_official_purveyor_modifier_count
+			}
+			custom_tooltip = sp_policy_official_purveyor_effect_tt
 			sp_parochial_vassal_towards_policy_opinion_effect = {
 				POLICY_TYPE_SW_1 = no
 				POLICY_TYPE_SW_2 = no
@@ -799,7 +814,9 @@ sp_policy_revocation_effect = {
 			$ACTION$_character_modifier = sp_policy_council_system_modifier
 		}
 		flag:flag_sp_policy_official_purveyor = {
-			$ACTION$_character_modifier = sp_policy_official_purveyor_modifier
+			$ACTION$_character_modifier = sp_policy_official_purveyor_modifier_count
+			$ACTION$_character_modifier = sp_policy_official_purveyor_modifier_duke
+			$ACTION$_character_modifier = sp_policy_official_purveyor_modifier_king
 		}
 		flag:flag_sp_policy_foster_system = {
 			$ACTION$_character_modifier = sp_policy_foster_system_modifier
@@ -950,7 +967,7 @@ sp_set_policy_effect_to_character = {
 				}
 				add_character_flag = {
 					flag = $FLAG$
-					years = 3
+					days = 30
 				}
 			}
 		}

@@ -9,7 +9,6 @@ sp_set_cost_to_character = {
 		##########
 		## 保守 ##
 		##########
-		
 		flag:flag_sp_policy_canal_improvements = {
 			remove_short_term_gold = 50
 		}
@@ -38,7 +37,6 @@ sp_set_cost_to_character = {
 		##########
 		## 中道 ##
 		##########
-
 		flag:flag_sp_policy_direct_daimyo_rule = {
 			add_prestige = -50
 		}
@@ -89,7 +87,6 @@ sp_set_cost_to_character = {
 		##########
 		## 御用 ##
 		##########
-
 		flag:flag_sp_policy_laws_of_imagawa = {
 			add_prestige = -100
 		}

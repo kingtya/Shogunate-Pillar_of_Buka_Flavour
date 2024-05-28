@@ -3,6 +3,7 @@
 ### 0001-0002 能力主义添加角色修正
 ### 0003 灌溉整备添加伯爵领修正
 ### 0004-0006 今川假名目录、甲州法度次第、五条训诫添加伯爵领修正
+### 0007 御用商人添加伯爵领修正
 
 sp_policy_events.0001 = {
 	hidden = yes
@@ -129,9 +130,18 @@ sp_policy_events.0006 = {
 }
 
 sp_policy_events.0007 = {
-	type = character_event
 	hidden = yes
 
+	trigger = {
+		scope:county.holder = scope:county_holder
+	}
+
 	immediate = {
+		scope:county = {
+			add_county_modifier = {
+				modifier = sp_policy_canal_improvements_county_modifier
+				years = 5
+			}
+		}
 	}
 }
