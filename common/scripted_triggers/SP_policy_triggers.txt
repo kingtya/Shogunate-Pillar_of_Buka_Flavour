@@ -161,6 +161,12 @@ sp_can_release_policy = {
 			}
 			trigger_if = {
 				limit = {
+					$FLAG$ = flag:flag_sp_policy_govern_for_people
+				}
+				sp_has_miyoshi_margin_trait = yes
+			}
+			trigger_if = {
+				limit = {
 					$FLAG$ = flag:flag_sp_policy_progressive_system
 				}
 				OR = {
