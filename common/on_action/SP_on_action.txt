@@ -1,8 +1,8 @@
 ﻿on_game_start = {
 	events = {
-		pob_initialization.0001
-		pob_initialization.0002
-		pob_initialization.0003
+		pob_events.0001
+		pob_events.0002
+		pob_events.0003
 	}
 }
 

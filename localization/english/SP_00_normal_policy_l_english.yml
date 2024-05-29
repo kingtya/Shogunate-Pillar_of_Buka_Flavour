@@ -11,44 +11,44 @@ sp_policy_improve_cavalry_modifier_desc:0 "This man improved the cavalry militar
 
 flag_sp_policy_canal_improvements_name:0 "#V Canal Improvements#!"
 flag_sp_policy_canal_improvements_desc:0 "Centralized irrigated agriculture in the Middle Ages made it possible for plagues to spread, and it was necessary to rationally coordinate villagers' field work." #NT!
-sp_policy_canal_improvements_modifier:0 "Canal Improvements" #NT!
+sp_policy_canal_improvements_modifier:0 "Canal improvements" #NT!
 sp_policy_canal_improvements_modifier_desc:0 "This person took care of the farm work in the territory." #NT!
-sp_policy_canal_improvements_county_modifier:0 "Canal Improvements" #NT!
+sp_policy_canal_improvements_county_modifier:0 "Canal omprovements" #NT!
 sp_policy_canal_improvements_county_modifier_desc:0 "Agricultural preparations were carried out here." #NT!
 sp_policy_canal_improvements_effect_tt:0 "Each #V quarter#! every [county|E] in your territory has a higher probability of obtaining [GetModifier('sp_policy_canal_improvements_county_modifier').GetNameWithTooltip] for a period of #V 5 years#!" #NT!
 
 flag_sp_policy_council_system_name:0 "#V Council System#!"
 flag_sp_policy_council_system_desc:0 "In the traditional decision-making method of the Wu family, the retainers discuss and deliberate collectively under the auspices of the family elder, and the collective opinions are handed over to the master for decision-making." #NT!
-sp_policy_council_system_modifier:0 "Collegial system" #NT!
+sp_policy_council_system_modifier:0 "Council system" #NT!
 sp_policy_council_system_modifier_desc:0 "This person increased the retainers' say in territorial affairs." #NT!
 
 flag_sp_policy_official_purveyor_name:0 "#V Official Purveyor#!"
 flag_sp_policy_official_purveyor_desc:0 "The Warring States Daimyo did not interact with ordinary merchants, but only maintained close contact with specific large merchants. These merchants were called "imperial merchants."" #NT!
-sp_policy_official_purveyor_modifier:0 "Official Purveyor" #NT!
+sp_policy_official_purveyor_modifier:0 "Official purveyor" #NT!
 sp_policy_official_purveyor_modifier_desc:0 "This person protects the rights and interests of the big merchants in the territory." #NT!
 sp_policy_official_purveyor_warning_tt:0 "@warning_icon!#X The policy you promulgated for merchants conflicts with this policy#!" #NT!
 
 flag_sp_policy_buddhism_sanction_name:0 "#V Buddhism Sanction#!"
 flag_sp_policy_buddhism_sanction_desc:0 "After Buddhism was introduced to Japan, it was compromised with the local Shinto beliefs and combined to form a belief system, so it is called a temple together." #NT!
-sp_policy_buddhism_sanction_modifier:0 "Buddhism Sanction"
+sp_policy_buddhism_sanction_modifier:0 "Buddhism sanction"
 sp_policy_buddhism_sanction_modifier_desc:0 "This person protects the rights of the temple community within the territory." #NT!
 shinto_religion_opinion:0 "Favorable opinion among Shinto believers" #NT!
 
 flag_sp_policy_foster_system_name:0 "#V Foster System#!" #NT!
 flag_sp_policy_foster_system_desc:0 "In the Warring States Period, a kind of virtual kinship blood relationship constituted a master-slave relationship, or a relationship of protection and protection." #NT!
-sp_policy_foster_system_modifier:0 "Foster System" #NT!
+sp_policy_foster_system_modifier:0 "Foster system"
 sp_policy_foster_system_modifier_desc:0 "This person entered into a formal blood relationship with the vassal." #NT!
-sp_policy_foster_system_more_accpetive_adoption_tt:0 "Your [direct_vassals|E] is more willing to accept the [adoption|E] relationship arranged by you" #NT!
-sp_policy_foster_system_more_accpetive_adoption_reason:0 "[sp_policy|E] Foster System:$VALUE|+=0$" #NT!
+sp_policy_foster_system_more_accpetive_adoption_tt:0 "Your [direct_vassals|E] is more willing to accept the [adoption|E] relationship arranged by you"
+sp_policy_foster_system_more_accpetive_adoption_reason:0 "[sp_policy|E] Foster system:$VALUE|+=0$"
 
 flag_sp_policy_improve_militia_name:0 "#V Improve Militia#!"
 flag_sp_policy_improve_militia_desc:0 ""
-sp_policy_improve_militia_modifier:0 "Improve Militia" #NT!
+sp_policy_improve_militia_modifier:0 "Improve militia"
 sp_policy_improve_militia_modifier_desc:0 "This person increased the military service in the territory." #NT!
 
-flag_sp_policy_castle_construction_name:0 "#V Castle Construction#!" #NT!
+flag_sp_policy_castle_construction_name:0 "#V Castle Construction#!"
 flag_sp_policy_castle_construction_desc:0 ""
-sp_policy_castle_construction_modifier:0 "Castle Construction" #NT!
+sp_policy_castle_construction_modifier:0 "Castle construction"
 sp_policy_castle_construction_modifier_desc:0 "This person pays attention to the infrastructure construction of the castle." #NT!
 
 

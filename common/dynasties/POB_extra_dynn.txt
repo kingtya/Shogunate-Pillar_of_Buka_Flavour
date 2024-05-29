@@ -1,0 +1,4 @@
+﻿11021001 = {
+	name = dynasty_name_11021001 #Chino
+	culture = koshin
+}

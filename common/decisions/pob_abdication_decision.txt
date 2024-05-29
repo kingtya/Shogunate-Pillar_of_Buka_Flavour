@@ -44,7 +44,7 @@
 		custom_tooltip = pob_abdicate_decision_effect_tooltip
 		root = {
 			trigger_event = {
-				id = pob_abdication_event.0002
+				id = pob_events.0005
 				days = 1
 			}
 		}
@@ -54,7 +54,7 @@
 				set_diarchy_swing = 40
 			}
 			trigger_event = {
-				id = pob_abdication_event.0001
+				id = pob_events.0004
 				days = 2
 			}
 		}

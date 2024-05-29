@@ -1,0 +1,50 @@
+﻿11021001={ # Chino Izu
+	name=character_name_11021001 # Izu
+	dynasty=11021001 # Chino
+	martial=7
+	diplomacy=7
+	intrigue=9
+	stewardship=8
+	learning=12
+	religion="shinto"
+	culture="koshin"
+	trait=paranoid
+	trait=calm
+	trait=brave
+	trait="education_intrigue_3"
+	1490.1.1={
+		birth=yes
+	}
+	1500.1.1={
+		culture="chubu_buddhist"
+		effect = {
+			add_trait = "devoted"
+		}
+	}
+	1532.1.1 = {
+		effect = {
+			set_employer = character:10021000 # Suwa Yorishige
+			return_to_court = yes
+		}
+	}
+}
+
+11021002={ #Chino Nanminyou
+	name=character_name_11021002 # Nanminyou
+	dynasty=11021001 # Chino
+	religion="shinto"
+	culture="koshin"
+	martial=7
+	trait=brave
+	trait="education_martial_3"
+	prowess=15
+	1500.1.1={
+		birth=yes
+	}
+	1532.1.1 = {
+		effect = {
+			set_employer = character:10021000 # Suwa Yorishige
+			return_to_court = yes
+		}
+	}
+}

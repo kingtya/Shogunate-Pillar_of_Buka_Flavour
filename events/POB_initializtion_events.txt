@@ -1,6 +1,11 @@
-﻿namespace = pob_initialization
+﻿namespace = pob_events
 
-pob_initialization.0001 = {
+## 0001 家传特质初始化
+## 0002 建筑初始化
+## 0003 文化传统初始化
+## 0004-0005 退位
+
+pob_events.0001 = {
 	scope = none
 	hidden = yes
 
@@ -215,8 +220,7 @@ pob_initialization.0001 = {
 	}
 }
 
-//sib_building_initialization.0001
-pob_initialization.0002 = {
+pob_events.0002 = {
 	scope = none
 	hidden = yes
 
@@ -293,8 +297,7 @@ pob_initialization.0002 = {
 	}
 }
 
-//pob_culture_tradition_initialization.0001
-pob_initialization.0003 = {
+pob_events.0003 = {
 	scope = none
 	hidden = yes
 
@@ -467,5 +470,22 @@ pob_initialization.0003 = {
 				add_culture_tradition = tradition_forest_fighters
 			}
 		}
+	}
+}
+
+pob_events.0004 = {
+	hidden = yes
+
+	immediate = {
+		set_diarch = scope:previous_player
+		start_diarchy = regency
+		set_diarchy_swing = 40
+	}
+}
+pob_events.0005 = {
+	hidden = yes
+
+	immediate = {
+		depose = yes
 	}
 }
