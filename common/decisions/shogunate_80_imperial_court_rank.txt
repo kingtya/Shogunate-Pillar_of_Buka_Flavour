@@ -1,0 +1,735 @@
+﻿# Jugoi Ge
+gain_court_rank_1_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+
+	desc = gain_court_rank_decision_desc
+	confirm_text = gain_court_rank_decision_confirm
+	selection_tooltip = gain_court_rank_decision_tooltip
+
+	is_shown = {
+		can_gain_court_rank_trigger = yes
+		NOT = { has_court_rank_trigger = yes }
+	}
+
+	is_valid = {
+		sub_realm_size >= 5
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = { 
+			value = 100
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	effect = {
+		add_trait = jugoi_ge
+		hidden_effect = {
+			remove_character_flag = post_changed
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		gold >= 200
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+# Jugoi Jo
+gain_court_rank_2_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+
+	desc = gain_court_rank_decision_desc
+	confirm_text = gain_court_rank_decision_confirm
+	selection_tooltip = gain_court_rank_decision_tooltip
+
+	is_shown = {
+		can_gain_court_rank_trigger = yes
+		has_trait = jugoi_ge
+	}
+
+	is_valid = {
+		sub_realm_size >= 5
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = { 
+			value = 200
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	effect = {
+		add_trait = jugoi_jo
+		hidden_effect = {
+			remove_trait = jugoi_ge
+			remove_character_flag = post_changed
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		gold >= 400
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+# Shogoi Ge
+gain_court_rank_3_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+
+	desc = gain_court_rank_decision_desc
+	confirm_text = gain_court_rank_decision_confirm
+	selection_tooltip = gain_court_rank_decision_tooltip
+
+	is_shown = {
+		can_gain_court_rank_trigger = yes
+		has_trait = jugoi_jo
+	}
+
+	is_valid = {
+		sub_realm_size >= 5
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = { 
+			value = 300
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	effect = {
+		add_trait = shogoi_ge
+		hidden_effect = {
+			remove_trait = jugoi_jo
+			remove_character_flag = post_changed
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		gold >= 600
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+# Shogoi Jo
+gain_court_rank_4_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+
+	desc = gain_court_rank_decision_desc
+	confirm_text = gain_court_rank_decision_confirm
+	selection_tooltip = gain_court_rank_decision_tooltip
+
+	is_shown = {
+		can_gain_court_rank_trigger = yes
+		has_trait = shogoi_ge
+	}
+
+	is_valid = {
+		sub_realm_size >= 5
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = { 
+			value = 400
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	effect = {
+		add_trait = shogoi_jo
+		hidden_effect = {
+			remove_trait = shogoi_ge
+			remove_character_flag = post_changed
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		gold >= 800
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+# Jushii Ge
+gain_court_rank_5_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+
+	desc = gain_court_rank_decision_desc
+	confirm_text = gain_court_rank_decision_confirm
+	selection_tooltip = gain_court_rank_decision_tooltip
+
+	is_shown = {
+		can_gain_court_rank_trigger = yes
+		has_trait = shogoi_jo
+	}
+
+	is_valid = {
+		sub_realm_size >= 10
+		highest_held_title_tier >= tier_duchy
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = { 
+			value = 500
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	effect = {
+		add_trait = jushii_ge
+		hidden_effect = {
+			remove_trait = shogoi_jo
+			remove_character_flag = post_changed
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		gold >= 1000
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+# Jushii Jo
+gain_court_rank_6_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+
+	desc = gain_court_rank_decision_desc
+	confirm_text = gain_court_rank_decision_confirm
+	selection_tooltip = gain_court_rank_decision_tooltip
+
+	is_shown = {
+		can_gain_court_rank_trigger = yes
+		has_trait = jushii_ge
+	}
+
+	is_valid = {
+		sub_realm_size >= 10
+		highest_held_title_tier >= tier_duchy
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = { 
+			value = 600
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	effect = {
+		add_trait = jushii_jo
+		hidden_effect = {
+			remove_trait = jushii_ge
+			remove_character_flag = post_changed
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		gold >= 1200
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+# Shoshii Ge
+gain_court_rank_7_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+
+	desc = gain_court_rank_decision_desc
+	confirm_text = gain_court_rank_decision_confirm
+	selection_tooltip = gain_court_rank_decision_tooltip
+
+	is_shown = {
+		can_gain_court_rank_trigger = yes
+		has_trait = jushii_jo
+	}
+
+	is_valid = {
+		sub_realm_size >= 15
+		highest_held_title_tier >= tier_duchy
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = { 
+			value = 700
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	effect = {
+		add_trait = shoshii_ge
+		hidden_effect = {
+			remove_trait = jushii_jo
+			remove_character_flag = post_changed
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		gold >= 1400
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+# Shoshii Jo
+gain_court_rank_8_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+
+	desc = gain_court_rank_decision_desc
+	confirm_text = gain_court_rank_decision_confirm
+	selection_tooltip = gain_court_rank_decision_tooltip
+
+	is_shown = {
+		can_gain_court_rank_trigger = yes
+		has_trait = shoshii_ge
+	}
+
+	is_valid = {
+		sub_realm_size >= 25
+		highest_held_title_tier >= tier_duchy
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = { 
+			value = 800
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	effect = {
+		add_trait = shoshii_jo
+		hidden_effect = {
+			remove_trait = shoshii_ge
+			remove_character_flag = post_changed
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		gold >= 1600
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+# Jusanmi
+gain_court_rank_9_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+
+	desc = gain_court_rank_decision_desc
+	confirm_text = gain_court_rank_decision_confirm
+	selection_tooltip = gain_court_rank_decision_tooltip
+
+	is_shown = {
+		can_gain_court_rank_trigger = yes
+		has_trait = shoshii_jo
+	}
+
+	is_valid = {
+		sub_realm_size >= 35
+		highest_held_title_tier >= tier_duchy
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = { 
+			value = 900
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	effect = {
+		add_trait = jusanmi
+		hidden_effect = {
+			remove_trait = shoshii_jo
+			remove_character_flag = post_changed
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		gold >= 1800
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+# Shosanmi
+gain_court_rank_10_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+
+	desc = gain_court_rank_decision_desc
+	confirm_text = gain_court_rank_decision_confirm
+	selection_tooltip = gain_court_rank_decision_tooltip
+
+	is_shown = {
+		can_gain_court_rank_trigger = yes
+		has_trait = jusanmi
+	}
+
+	is_valid = {
+		sub_realm_size >= 50
+		highest_held_title_tier >= tier_kingdom
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = { 
+			value = 1000
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	effect = {
+		add_trait = shosanmi
+		hidden_effect = {
+			remove_trait = jusanmi
+			remove_character_flag = post_changed
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		gold >= 2000
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+# Junii
+gain_court_rank_11_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+
+	desc = gain_court_rank_decision_desc
+	confirm_text = gain_court_rank_decision_confirm
+	selection_tooltip = gain_court_rank_decision_tooltip
+
+	is_shown = {
+		can_gain_court_rank_trigger = yes
+		has_trait = shosanmi
+	}
+
+	is_valid = {
+		sub_realm_size >= 55
+		highest_held_title_tier >= tier_kingdom
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = { 
+			value = 1100
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	effect = {
+		add_trait = junii
+		hidden_effect = {
+			remove_trait = shosanmi
+			remove_character_flag = post_changed
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		gold >= 2200
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+# Shonii
+gain_court_rank_12_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+
+	desc = gain_court_rank_decision_desc
+	confirm_text = gain_court_rank_decision_confirm
+	selection_tooltip = gain_court_rank_decision_tooltip
+
+	is_shown = {
+		can_gain_court_rank_trigger = yes
+		has_trait = junii
+	}
+
+	is_valid = {
+		sub_realm_size >= 60
+		highest_held_title_tier >= tier_kingdom
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = { 
+			value = 1200
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	effect = {
+		add_trait = shonii
+		hidden_effect = {
+			remove_trait = junii
+			remove_character_flag = post_changed
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		gold >= 2400
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+# Juichii
+gain_court_rank_13_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+
+	desc = gain_court_rank_decision_desc
+	confirm_text = gain_court_rank_decision_confirm
+	selection_tooltip = gain_court_rank_decision_tooltip
+
+	is_shown = {
+		can_gain_court_rank_trigger = yes
+		has_trait = shonii
+	}
+
+	is_valid = {
+		sub_realm_size >= 70
+		highest_held_title_tier >= tier_kingdom
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	cost = {
+		gold = { 
+			value = 1300
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	effect = {
+		add_trait = juichii
+		hidden_effect = {
+			remove_trait = shonii
+			remove_character_flag = post_changed
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		gold >= 2600
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}

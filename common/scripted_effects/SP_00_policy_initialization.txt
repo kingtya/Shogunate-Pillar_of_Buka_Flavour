@@ -34,6 +34,10 @@ sp_init_conservative_policy_flag_list = {
 		name = sp_conservative_policy_flags
 		target = flag:flag_sp_policy_castle_construction
 	}
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_court_affiliation
+	}
 
 }
 
@@ -67,12 +71,13 @@ sp_init_neutral_policy_flag_list = {
 	}
 	add_to_variable_list = {
 		name = sp_neutral_policy_flags
-		target = flag:flag_sp_policy_suggestion_box
+		target = flag:flag_sp_policy_thermalism
 	}
 	add_to_variable_list = {
 		name = sp_neutral_policy_flags
-		target = flag:flag_sp_policy_thermalism
+		target = flag:flag_sp_policy_suggestion_box
 	}
+	
 	
 }
 

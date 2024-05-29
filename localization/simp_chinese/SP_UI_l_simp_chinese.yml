@@ -72,9 +72,9 @@ oda_crossbowmen_flavor:0 "阵前安置拒马栅，将铁炮足轻分为三队，
 ##############
 rule_sp_ai_special_policies:0 "@prestige_icon! PoB：AI御用政策"
 setting_enable_ai_special_policies:1 "启用"
-setting_enable_ai_special_policies_desc:2 "电脑角色会颁布家传特质对应的御用[sp_policy|E]（@warning_icon!#X 这将会削弱那些名不经传的势力#!）。"
+setting_enable_ai_special_policies_desc:2 "AI会颁布家传特质对应的御用[sp_policy|E]（@warning_icon!#X 这将会削弱那些名不经传的势力#!）。"
 setting_disable_ai_special_policies:0 "#V 禁用#!"
-setting_disable_ai_special_policies_desc:1 "电脑角色仅颁布通用[sp_policy|E]。"
+setting_disable_ai_special_policies_desc:1 "AI仅颁布通用[sp_policy|E]。"
 
 rule_sp_fictional_alliances:0 "@prestige_icon! PoB：虚构同盟"
 setting_enable_fictional_alliances:1 "#V 启用#!"

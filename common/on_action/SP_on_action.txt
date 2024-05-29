@@ -1,8 +1,8 @@
 ﻿on_game_start = {
 	events = {
-		sp_character_initialization.0001
-		sib_building_initialization.0001
-		sib_culture_tradition_initialization.0001
+		pob_initialization.0001
+		pob_initialization.0002
+		pob_initialization.0003
 	}
 }
 

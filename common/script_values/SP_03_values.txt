@@ -103,7 +103,23 @@
 			}
 			add = 20
 		}
-
+		flag:flag_sp_policy_court_affiliation = {
+			if = {
+				limit = {
+					exists = scope:introducer
+					scope:introducer = {
+						has_variable_list = sp_released_policy_flags
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = flag:flag_sp_policy_progressive_system
+						}
+					}
+				}
+				add = 10
+			}
+			add = 15
+		}
+		
 		##########
 		## 中道 ##
 		##########
@@ -219,7 +235,7 @@
 			}
 			add = 15
 		}
-		flag:flag_sp_policy_suggestion_box = {
+		flag:flag_sp_policy_thermalism = {
 			if = {
 				limit = {
 					exists = scope:introducer
@@ -233,9 +249,9 @@
 				}
 				add = 5
 			}
-			add = 10
+			add = 15
 		}
-		flag:flag_sp_policy_thermalism = {
+		flag:flag_sp_policy_suggestion_box = {
 			if = {
 				limit = {
 					exists = scope:introducer

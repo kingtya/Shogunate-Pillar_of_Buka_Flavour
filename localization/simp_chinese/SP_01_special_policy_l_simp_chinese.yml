@@ -57,6 +57,12 @@ flag_sp_policy_castle_construction_desc:0 "从镰仓时代的武士居馆，到�
 sp_policy_castle_construction_modifier:0 "城郭基建"
 sp_policy_castle_construction_modifier_desc:0 "此人注重城池的基础建设。"
 
+flag_sp_policy_court_affiliation_name:0 "#V 武家直奏#!"
+flag_sp_policy_court_affiliation_desc:0 "作为足利将军家的外戚和有力公家的日野家、近卫家两家历来担任朝廷和室町幕府的中介，联络公武。大名建立与公卿的亲密关系，利在向朝廷奏请统治地方的大义名分。"
+sp_policy_court_affiliation_modifier:0 "武家直奏"
+sp_policy_court_affiliation_modifier_desc:0 "此人建立了与朝廷的亲密关系。"
+sp_policy_court_affiliation_effect_tt:0 "你获赐#V 官位#![decisions|E]的花费减半"
+
 ################
 ### 中道政策 ###
 ################
@@ -340,6 +346,13 @@ sp_policy_kichishitan_sanction_modifier:0 "吉立支丹保护"
 sp_policy_kichishitan_sanction_modifier_desc:0 "此人在领内推行吉立支丹信仰。"
 sp_policy_kichishitan_sanction_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('otomo_margin').GetName( GetNullCharacter )]且信仰[GetReligionByKey('christianity_religion').GetName]，由后者解锁要求其有12学识且颁布后5年内无法将其撤职#!"
 sp_policy_has_no_policy_western_sanction_tt:0 "@warning_icon!#X 你没有颁布前置政策南蛮保护#!"
+
+## 丰臣家
+flag_sp_policy_census_edict_name:0 "#V 检地刀狩#!"
+flag_sp_policy_census_edict_desc:0 ""
+sp_policy_census_edict_modifier:0 "检地刀狩"
+sp_policy_census_edict_modifier_desc:0 "此人在领内实行了检地刀狩。"
+sp_policy_census_edict_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('toyotomi_margin').GetName( GetNullCharacter )]，由后者解锁要求其有15管理且颁布后5年内无法将其撤职#!"
 
 ## 三好家
 flag_sp_policy_govern_for_people_name:0 "#V 理世安民#!"
