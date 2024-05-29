@@ -16,7 +16,7 @@ sp_set_cost_to_character = {
 			add_prestige = -50
 		}
 		flag:flag_sp_policy_official_purveyor = {
-			remove_short_term_gold = 50
+			add_prestige = -50
 		}
 		flag:flag_sp_policy_foster_system = {
 			add_prestige = -25
