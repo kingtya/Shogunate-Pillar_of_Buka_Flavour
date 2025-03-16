@@ -1,22 +1,24 @@
-﻿pob_plan_reclamation_interaction = {
-	icon = grant_titles_interaction
-	category = interaction_category_vassal
+﻿pob_persuade_enlistment_interaction = {
+	icon = icon_vassal
+	category = interaction_category_friendly
 
 	common_interaction = yes
 	interface_priority = 70
 
-	scheme = pob_plan_reclamation
+	scheme = pob_persuade_enlistment
 
 	send_name = START_SCHEME
 	ignores_pending_interaction_block = yes
 
-	cooldown = { years = 5 }
+	cooldown = { years = 3 }
 
 	is_shown = {
-		scope:actor = {
-			this = scope:recipient
-			any_held_county = {
-				NOT = { has_county_modifier = pob_plan_reclamation_county_modifier }
+		NOT = { scope:actor = scope:recipient }
+		scope:recipient = {
+			is_ruler = no
+			NOR = {
+				top_liege = scope:actor
+				liege = scope:actor
 			}
 		}
 	}
@@ -24,13 +26,13 @@
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			can_start_scheme = {
-				type = pob_plan_reclamation
+				type = pob_persuade_enlistment
 				target_character = scope:recipient
 			}
 		}
 	}
 
-	desc = pob_plan_reclamation_interaction_desc
+	desc = pob_persuade_enlistment_interaction_desc
 
 	cost = {
 		prestige = 100
@@ -40,12 +42,13 @@
 		scope:actor = {
 			send_interface_toast = {
 				type = event_toast_effect_neutral
-				title = pob_plan_reclamation_start_scheme
+				title = pob_persuade_enlistment_start_scheme
 
-				left_icon = scope:actor
+				left_icon = scope:actor					
+				right_icon = scope:recipient
 
 				begin_scheme_basic_effect = {
-					SCHEME_TYPE = pob_plan_reclamation
+					SCHEME_TYPE = pob_persuade_enlistment
 					TARGET_TYPE = target_character
 					TARGET_SCOPE = scope:recipient
 				}
@@ -53,8 +56,8 @@
 		}
 	}
 
-	ai_frequency = 60
-		
+	ai_frequency = 120
+	
 	ai_potential = {
 		NOR = {
 			is_physically_able = yes
@@ -73,7 +76,12 @@
 	}
 
 	ai_targets = {
-		ai_recipients = self
+		ai_recipients = dynasty
+		max = 20
+	}
+
+	ai_targets = {
+		ai_recipients = scripted_relations
 	}
 
 	auto_accept = yes
@@ -83,14 +91,14 @@
 	}
 }
 
-pob_delegate_reclamation_interaction = {
+pob_delegate_persuasion_interaction = {
 
 	category = interaction_category_diplomacy
 	ai_min_reply_days = 1
 	ai_max_reply_days = 3
 	icon = icon_scheme_challenge_status
 	
-	desc = pob_delegate_reclamation_interaction_desc
+	desc = pob_delegate_persuasion_interaction_desc
 
 	common_interaction = yes
 
@@ -98,56 +106,16 @@ pob_delegate_reclamation_interaction = {
 	popup_on_receive = no
 	pause_on_receive = no
 
-	cooldown = { years = 5 }
+	cooldown = { years = 3 }
 	
-	redirect = {
-		if = {
-			limit = {
-				NOT = { scope:actor = scope:recipient }
-			}
-			scope:recipient = {
-				save_scope_as = secondary_recipient
-			}
-		}
-		else = {
-			scope:actor = {
-				ordered_courtier = {
-					limit = {
-						is_adult = yes
-						NOT = {
-							any_scheme = { exists = this }
-						}
-					}
-					order_by = stewardship
-					save_scope_as = secondary_recipient
-				}
-			}
-		}
-		if = {
-			limit = {
-				scope:recipient = {
-					OR = {
-						this = scope:actor
-						is_courtier_of = scope:actor
-					}
-				}
-			}
-			scope:actor = {
-				save_scope_as = recipient
-			}
-		}
-	}
-
 	is_shown = {
-		scope:actor = {
-			any_held_county = {
-				NOT = { has_county_modifier = pob_plan_reclamation_county_modifier }
-			}
-		}
+		NOT = { scope:actor = scope:recipient }
 		scope:recipient = {
-			OR = {
-				this = scope:actor
-				is_courtier_of = scope:actor
+			is_adult = yes
+			is_ruler = no
+			NOR = {
+				top_liege = scope:actor
+				liege = scope:actor
 			}
 		}
 	}
@@ -160,8 +128,8 @@ pob_delegate_reclamation_interaction = {
 			}
 			scope:secondary_recipient = {
 				can_start_scheme = {
-					type = pob_plan_reclamation
-					target_character = scope:secondary_recipient
+					type = pob_persuade_enlistment
+					target_character = scope:recipient
 				}
 			}
 		}
@@ -177,6 +145,7 @@ pob_delegate_reclamation_interaction = {
 						any_scheme = { exists = this }
 					}
 				}
+				order_by = diplomacy
 				add_to_list = characters
 			}
 		}
@@ -190,24 +159,16 @@ pob_delegate_reclamation_interaction = {
 		scope:actor = {
 			send_interface_toast = {
 				type = event_toast_effect_neutral
-				title = pob_plan_reclamation_start_scheme
+				title = pob_persuade_enlistment_start_scheme
 
-				left_icon = scope:secondary_recipient
+				left_icon = scope:secondary_recipient			
+				right_icon = scope:recipient
 
 				scope:secondary_recipient = {
-					show_as_tooltip = {
-						begin_scheme_basic_effect = {
-							SCHEME_TYPE = pob_plan_reclamation
-							TARGET_TYPE = target_character
-							TARGET_SCOPE = scope:actor
-						}
-					}
-					hidden_effect = {
-						begin_scheme_basic_effect = {
-							SCHEME_TYPE = pob_plan_reclamation
-							TARGET_TYPE = target_character
-							TARGET_SCOPE = scope:secondary_recipient
-						}
+					begin_scheme_basic_effect = {
+						SCHEME_TYPE = pob_persuade_enlistment
+						TARGET_TYPE = target_character
+						TARGET_SCOPE = scope:recipient
 					}
 				}
 			}
@@ -239,3 +200,4 @@ pob_delegate_reclamation_interaction = {
 		base = 100
 	}
 }
+

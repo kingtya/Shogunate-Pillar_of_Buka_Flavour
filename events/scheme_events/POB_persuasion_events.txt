@@ -1,6 +1,6 @@
-﻿namespace = pob_persuade_and_entice_events
+﻿namespace = pob_persuade_enlistment_events
 
-pob_persuade_and_entice_events.0002 = { # 劝诱事件
+pob_persuade_enlistment_events.0002 = { # 劝诱事件
 	hidden = yes
 
 	immediate = {
@@ -33,20 +33,20 @@ pob_persuade_and_entice_events.0002 = { # 劝诱事件
 					scope:liege = {
 						if = {
 							limit = { exists = scope:scheme_successful }
-							trigger_event = pob_persuade_and_entice_events.1001
+							trigger_event = pob_persuade_enlistment_events.1001
 						}
 						else = {
-							trigger_event = pob_persuade_and_entice_events.1002
+							trigger_event = pob_persuade_enlistment_events.1002
 						}
 					}
 				}
 				else = {
 					if = {
 						limit = { exists = scope:scheme_successful }
-						trigger_event = pob_persuade_and_entice_events.1001
+						trigger_event = pob_persuade_enlistment_events.1001
 					}
 					else = {
-						trigger_event = pob_persuade_and_entice_events.1002
+						trigger_event = pob_persuade_enlistment_events.1002
 					}
 				}
 			}
@@ -54,10 +54,10 @@ pob_persuade_and_entice_events.0002 = { # 劝诱事件
 	}
 }
 
-pob_persuade_and_entice_events.1001 = { # 成功
+pob_persuade_enlistment_events.1001 = { # 成功
 	type = character_event
-	title = pob_persuade_and_entice_events.1001.t
-	desc = pob_persuade_and_entice_events.1001.desc
+	title = pob_persuade_enlistment_events.1001.t
+	desc = pob_persuade_enlistment_events.1001.desc
 	theme = crown
 
 	left_portrait = {
@@ -82,7 +82,7 @@ pob_persuade_and_entice_events.1001 = { # 成功
 	}
 
 	option = {
-		name = pob_persuade_and_entice_events.1001.a
+		name = pob_persuade_enlistment_events.1001.a
 	}
 
 	after = {
@@ -95,10 +95,10 @@ pob_persuade_and_entice_events.1001 = { # 成功
 	}
 }
 
-pob_persuade_and_entice_events.1002 = { # 失败
+pob_persuade_enlistment_events.1002 = { # 失败
 	type = character_event
-	title = pob_persuade_and_entice_events.1002.t
-	desc = pob_persuade_and_entice_events.1002.desc
+	title = pob_persuade_enlistment_events.1002.t
+	desc = pob_persuade_enlistment_events.1002.desc
 	theme = crown
 
 	left_portrait = {
@@ -132,7 +132,7 @@ pob_persuade_and_entice_events.1002 = { # 失败
 	
 	option = {
 		name = {
-			text = pob_persuade_and_entice_events.1002.a
+			text = pob_persuade_enlistment_events.1002.a
 		}
 		show_as_tooltip = {
 			scope:scheme = {
@@ -147,7 +147,7 @@ pob_persuade_and_entice_events.1002 = { # 失败
 				NOT = { has_character_flag = pob_persuasion_exploit_prevention }
 			}
 		}
-		name = pob_persuade_and_entice_events.1002.b
+		name = pob_persuade_enlistment_events.1002.b
 		stress_impact = {
 			base = minor_stress_gain
 			impatient = minor_stress_gain
@@ -159,7 +159,7 @@ pob_persuade_and_entice_events.1002 = { # 失败
 			}
 			show_as_tooltip = {
 				begin_scheme_basic_effect = {
-					SCHEME_TYPE = pob_persuade_and_entice
+					SCHEME_TYPE = pob_persuade_enlistment
 					TARGET_TYPE = target_character
 					TARGET_SCOPE = scope:target
 				}
@@ -182,7 +182,7 @@ pob_persuade_and_entice_events.1002 = { # 失败
 				}
 				scope:owner = {
 					begin_scheme_basic_effect = {
-						SCHEME_TYPE = pob_persuade_and_entice
+						SCHEME_TYPE = pob_persuade_enlistment
 						TARGET_TYPE = target_character
 						TARGET_SCOPE = scope:target
 					}

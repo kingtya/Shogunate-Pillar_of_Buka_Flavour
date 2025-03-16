@@ -15,8 +15,8 @@
     SP_AI_MARRIED_MATRILINIALLY: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is in a [matrilineal|E] marriage: $VALUE|=+0$"
     SP_AI_MARRIED_PATRILINIALLY: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is in a [patrilineal|E] marriage: $VALUE|=+0$"
     SP_AI_YOU_ARE_THE_SOVEREIGN: "You are the sovereign of [SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]: $VALUE|=+0$"
-    SCHEME_pob_persuade_and_entice_STRONG_HOOK_PENALTY:0 "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is loyal to [target.GetHerHis] [target.Custom2('RelationToMeShort', target.GetLiege)]: $VALUE|+0=$"
-    SCHEME_pob_persuade_and_entice_LOYAL_PENALTY:0 "Target has the [GetTrait('loyal').GetName( owner.Self )] trait: $VALUE|+0=$"
+    SCHEME_pob_persuade_enlistment_STRONG_HOOK_PENALTY:0 "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is loyal to [target.GetHerHis] [target.Custom2('RelationToMeShort', target.GetLiege)]: $VALUE|+0=$"
+    SCHEME_pob_persuade_enlistment_LOYAL_PENALTY:0 "Target has the [GetTrait('loyal').GetName( owner.Self )] trait: $VALUE|+0=$"
 
     SCHEME_REALM_SIZE:0 "Realm Size: $VALUE|+0=$"
 

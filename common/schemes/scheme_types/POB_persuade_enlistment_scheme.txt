@@ -1,7 +1,7 @@
-﻿pob_persuade_and_entice = {
+﻿pob_persuade_enlistment = {
 	# Basic Setup
 	skill = diplomacy
-	desc = pob_persuade_and_entice_desc_general
+	desc = pob_persuade_enlistment_desc_general
 	success_desc = "BEFRIEND_SUCCESS_DESC"
 
 	icon = diplomacy
@@ -257,7 +257,7 @@
 				has_trait = loyal
 			}
 			add = -50
-			desc = SCHEME_pob_persuade_and_entice_LOYAL_PENALTY
+			desc = SCHEME_pob_persuade_enlistment_LOYAL_PENALTY
 		}
 
 		modifier = {
@@ -268,7 +268,7 @@
 				}
 			}
 			add = -50
-			desc = SCHEME_pob_persuade_and_entice_STRONG_HOOK_PENALTY
+			desc = SCHEME_pob_persuade_enlistment_STRONG_HOOK_PENALTY
 		}
 
 		# Family (at location)
@@ -376,7 +376,7 @@
 		scheme_target_character = { save_scope_as = target }
 		scheme_owner = { save_scope_as = owner }
 		scope:scheme.scheme_owner = {
-			trigger_event = pob_persuade_and_entice_events.0002
+			trigger_event = pob_persuade_enlistment_events.0002
 		}
 	}
 
@@ -393,9 +393,9 @@
 				limit = { is_at_war_with = scope:target }
 				scope:owner = {
 					send_interface_toast = {
-						title = pob_persuade_and_entice_invalidated_title
+						title = pob_persuade_enlistment_invalidated_title
 						left_icon = scope:target
-						custom_tooltip = pob_persuade_and_entice_invalidated_war
+						custom_tooltip = pob_persuade_enlistment_invalidated_war
 					}
 				}
 			}
@@ -407,9 +407,9 @@
 				}
 				scope:owner = {
 					send_interface_toast = {
-						title = pob_persuade_and_entice_invalidated_title
+						title = pob_persuade_enlistment_invalidated_title
 						left_icon = scope:target
-						custom_tooltip = pob_persuade_and_entice_invalidated_dead
+						custom_tooltip = pob_persuade_enlistment_invalidated_dead
 					}
 				}
 			}
@@ -423,7 +423,7 @@
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = pob_persuade_and_entice_invalidated_title
+					title = pob_persuade_enlistment_invalidated_title
 					left_icon = scope:target
 					custom_description_no_bullet = {
 						object = scope:target

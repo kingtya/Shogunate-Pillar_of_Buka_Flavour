@@ -377,3 +377,8 @@ pob_plan_reclamation_county_modifier = {
 	icon = stewardship_positive
 	domain_tax_mult = 0.05
 }
+
+pob_slandered_by_spreading_rumors_modifier = {
+	icon = diplomacy_negative
+	general_opinion = -10
+}

@@ -1,6 +1,6 @@
-﻿namespace = pob_improve_relations_events
+﻿namespace = pob_spread_rumors_events
 
-pob_improve_relations_events.0002 = {
+pob_spread_rumors_events.0002 = {
 	hidden = yes
 
 	immediate = {
@@ -33,20 +33,20 @@ pob_improve_relations_events.0002 = {
 					scope:liege = {
 						if = {
 							limit = { exists = scope:scheme_successful }
-							trigger_event = pob_improve_relations_events.1001
+							trigger_event = pob_spread_rumors_events.1001
 						}
 						else = {
-							trigger_event = pob_improve_relations_events.1002
+							trigger_event = pob_spread_rumors_events.1002
 						}
 					}
 				}
 				else = {
 					if = {
 						limit = { exists = scope:scheme_successful }
-						trigger_event = pob_improve_relations_events.1001
+						trigger_event = pob_spread_rumors_events.1001
 					}
 					else = {
-						trigger_event = pob_improve_relations_events.1002
+						trigger_event = pob_spread_rumors_events.1002
 					}
 				}
 			}
@@ -54,10 +54,10 @@ pob_improve_relations_events.0002 = {
 	}
 }
 
-pob_improve_relations_events.1001 = {
+pob_spread_rumors_events.1001 = {
 	type = character_event
-	title = pob_improve_relations_events.1001.t
-	desc = pob_improve_relations_events.1001.desc
+	title = pob_spread_rumors_events.1001.t
+	desc = pob_spread_rumors_events.1001.desc
 	theme = crown
 
 	left_portrait = {
@@ -92,16 +92,15 @@ pob_improve_relations_events.1001 = {
 	immediate = {
 		play_music_cue = "mx_cue_positive_effect"
 		scope:target = {
-			add_opinion = {
-				target = root
-				modifier = pob_improve_relations_task_increased_opinion
-				days = 1825
+			add_character_modifier = {
+				modifier = pob_slandered_by_spreading_rumors_modifier
+				years = 3
 			}
 		}
 	}
 
 	option = {
-		name = pob_improve_relations_events.1001.a
+		name = pob_spread_rumors_events.1001.a
 	}
 
 	after = {
@@ -114,10 +113,10 @@ pob_improve_relations_events.1001 = {
 	}
 }
 
-pob_improve_relations_events.1002 = {
+pob_spread_rumors_events.1002 = {
 	type = character_event
-	title = pob_improve_relations_events.1002.t
-	desc = pob_improve_relations_events.1002.desc
+	title = pob_spread_rumors_events.1002.t
+	desc = pob_spread_rumors_events.1002.desc
 	theme = crown
 
 	left_portrait = {
@@ -151,18 +150,11 @@ pob_improve_relations_events.1002 = {
 
 	immediate = {
 		play_music_cue = "mx_cue_negative"
-		scope:target = {
-			add_opinion = {
-				target = root
-				modifier = pob_improve_relations_task_decreased_opinion
-				days = 1825
-			}
-		}
 	}
 
 	option = {
 		name = {
-			text = pob_improve_relations_events.1002.a
+			text = pob_spread_rumors_events.1002.a
 		}
 		show_as_tooltip = {
 			scope:scheme = {

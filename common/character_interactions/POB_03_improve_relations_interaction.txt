@@ -1,24 +1,35 @@
-﻿pob_persuade_and_entice_interaction = {
-	icon = icon_vassal
+﻿pob_improve_relations_interaction = {
+	icon = icon_culture
 	category = interaction_category_friendly
 
 	common_interaction = yes
 	interface_priority = 70
 
-	scheme = pob_persuade_and_entice
+	scheme = pob_improve_relations
 
 	send_name = START_SCHEME
 	ignores_pending_interaction_block = yes
 
-	cooldown = { years = 3 }
+	cooldown = { years = 5 }
 
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }
 		scope:recipient = {
-			is_ruler = no
+			is_ruler = yes
 			NOR = {
 				top_liege = scope:actor
 				liege = scope:actor
+			}
+		}
+		trigger_if = {
+			limit = {
+				scope:actor = { is_ai = yes }
+			}
+			scope:actor = {
+				NOR = {
+					has_relation_rival = scope:recipient
+					has_relation_nemesis = scope:recipient
+				}
 			}
 		}
 	}
@@ -26,29 +37,25 @@
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			can_start_scheme = {
-				type = pob_persuade_and_entice
+				type = pob_improve_relations
 				target_character = scope:recipient
 			}
 		}
 	}
 
-	desc = pob_persuade_and_entice_interaction_desc
-
-	cost = {
-		prestige = 100
-	}
+	desc = pob_improve_relations_interaction_desc
 
 	on_accept = {
 		scope:actor = {
 			send_interface_toast = {
 				type = event_toast_effect_neutral
-				title = pob_persuade_and_entice_start_scheme
+				title = pob_improve_relations_start_scheme
 
 				left_icon = scope:actor					
 				right_icon = scope:recipient
 
 				begin_scheme_basic_effect = {
-					SCHEME_TYPE = pob_persuade_and_entice
+					SCHEME_TYPE = pob_improve_relations
 					TARGET_TYPE = target_character
 					TARGET_SCOPE = scope:recipient
 				}
@@ -91,31 +98,44 @@
 	}
 }
 
-pob_delegate_persuasion_interaction = {
+pob_send_envoy_interaction = {
 
 	category = interaction_category_diplomacy
 	ai_min_reply_days = 1
 	ai_max_reply_days = 3
 	icon = icon_scheme_challenge_status
 	
-	desc = pob_delegate_persuasion_interaction_desc
+	desc = pob_send_envoy_interaction_desc
 
-	common_interaction = no
+	interface_priority = 20
+
+	common_interaction = yes
 
 	#notification_text = 1
 	popup_on_receive = no
 	pause_on_receive = no
 
-	cooldown = { years = 3 }
+	cooldown = { years = 2 }
 	
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }
 		scope:recipient = {
 			is_adult = yes
-			is_ruler = no
+			is_ruler = yes
 			NOR = {
 				top_liege = scope:actor
 				liege = scope:actor
+			}
+		}
+		trigger_if = {
+			limit = {
+				scope:actor = { is_ai = yes }
+			}
+			scope:actor = {
+				NOR = {
+					has_relation_rival = scope:recipient
+					has_relation_nemesis = scope:recipient
+				}
 			}
 		}
 	}
@@ -128,7 +148,7 @@ pob_delegate_persuasion_interaction = {
 			}
 			scope:secondary_recipient = {
 				can_start_scheme = {
-					type = pob_persuade_and_entice
+					type = pob_improve_relations
 					target_character = scope:recipient
 				}
 			}
@@ -151,31 +171,23 @@ pob_delegate_persuasion_interaction = {
 		}
 	}
 
-	cost = {
-		prestige = 100
-	}
-
 	on_accept = {
 		scope:actor = {
 			send_interface_toast = {
 				type = event_toast_effect_neutral
-				title = pob_persuade_and_entice_start_scheme
+				title = pob_improve_relations_start_scheme
 
 				left_icon = scope:secondary_recipient			
 				right_icon = scope:recipient
 
 				scope:secondary_recipient = {
 					begin_scheme_basic_effect = {
-						SCHEME_TYPE = pob_persuade_and_entice
+						SCHEME_TYPE = pob_improve_relations
 						TARGET_TYPE = target_character
 						TARGET_SCOPE = scope:recipient
 					}
 				}
 			}
-		}
-
-		scope:secondary_recipient = {
-			add_prestige = 100
 		}
 	}
 
@@ -186,18 +198,22 @@ pob_delegate_persuasion_interaction = {
 	}
 
 	ai_targets = {
-		ai_recipients = dynasty
-		max = 20
-	}
-
-	ai_targets = {
-		ai_recipients = scripted_relations
+		ai_recipients = neighboring_rulers
 	}
 
 	auto_accept = yes
 
 	ai_will_do = {
 		base = 100
+
+		modifier = {
+			add = 100
+			scope:recipient = {
+				any_ally = {
+					this = scope:actor
+				}
+			}
+		}
 	}
 }
 

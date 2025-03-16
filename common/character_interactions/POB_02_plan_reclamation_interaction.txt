@@ -1,11 +1,11 @@
-﻿pob_promote_conscription_interaction = {
-	icon = icon_vassal
+﻿pob_plan_reclamation_interaction = {
+	icon = grant_titles_interaction
 	category = interaction_category_vassal
 
 	common_interaction = yes
 	interface_priority = 70
 
-	scheme = pob_promote_conscription
+	scheme = pob_plan_reclamation
 
 	send_name = START_SCHEME
 	ignores_pending_interaction_block = yes
@@ -16,7 +16,7 @@
 		scope:actor = {
 			this = scope:recipient
 			any_held_county = {
-				NOT = { has_county_modifier = pob_improve_militia_county_modifier }
+				NOT = { has_county_modifier = pob_plan_reclamation_county_modifier }
 			}
 		}
 	}
@@ -24,28 +24,28 @@
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			can_start_scheme = {
-				type = pob_promote_conscription
+				type = pob_plan_reclamation
 				target_character = scope:recipient
 			}
 		}
 	}
 
-	desc = pob_promote_conscription_interaction_desc
+	desc = pob_plan_reclamation_interaction_desc
 
 	cost = {
 		prestige = 100
 	}
-	
+
 	on_accept = {
 		scope:actor = {
 			send_interface_toast = {
 				type = event_toast_effect_neutral
-				title = pob_promote_conscription_start_scheme
+				title = pob_plan_reclamation_start_scheme
 
 				left_icon = scope:actor
 
 				begin_scheme_basic_effect = {
-					SCHEME_TYPE = pob_promote_conscription
+					SCHEME_TYPE = pob_plan_reclamation
 					TARGET_TYPE = target_character
 					TARGET_SCOPE = scope:recipient
 				}
@@ -83,16 +83,17 @@
 	}
 }
 
-pob_delegate_conscription_interaction = {
+pob_delegate_reclamation_interaction = {
 
-	category = interaction_category_diplomacy
+	category = interaction_category_vassal
 	ai_min_reply_days = 1
 	ai_max_reply_days = 3
 	icon = icon_scheme_challenge_status
 	
-	desc = pob_delegate_conscription_interaction_desc
+	desc = pob_delegate_reclamation_interaction_desc
 
 	common_interaction = yes
+	interface_priority = 75
 
 	#notification_text = 1
 	popup_on_receive = no
@@ -118,7 +119,7 @@ pob_delegate_conscription_interaction = {
 							any_scheme = { exists = this }
 						}
 					}
-					order_by = martial
+					order_by = stewardship
 					save_scope_as = secondary_recipient
 				}
 			}
@@ -141,7 +142,7 @@ pob_delegate_conscription_interaction = {
 	is_shown = {
 		scope:actor = {
 			any_held_county = {
-				NOT = { has_county_modifier = pob_improve_militia_county_modifier }
+				NOT = { has_county_modifier = pob_plan_reclamation_county_modifier }
 			}
 		}
 		scope:recipient = {
@@ -160,7 +161,7 @@ pob_delegate_conscription_interaction = {
 			}
 			scope:secondary_recipient = {
 				can_start_scheme = {
-					type = pob_promote_conscription
+					type = pob_plan_reclamation
 					target_character = scope:secondary_recipient
 				}
 			}
@@ -190,21 +191,21 @@ pob_delegate_conscription_interaction = {
 		scope:actor = {
 			send_interface_toast = {
 				type = event_toast_effect_neutral
-				title = pob_promote_conscription_start_scheme
+				title = pob_plan_reclamation_start_scheme
 
 				left_icon = scope:secondary_recipient
 
 				scope:secondary_recipient = {
 					show_as_tooltip = {
 						begin_scheme_basic_effect = {
-							SCHEME_TYPE = pob_promote_conscription
+							SCHEME_TYPE = pob_plan_reclamation
 							TARGET_TYPE = target_character
 							TARGET_SCOPE = scope:actor
 						}
 					}
 					hidden_effect = {
 						begin_scheme_basic_effect = {
-							SCHEME_TYPE = pob_promote_conscription
+							SCHEME_TYPE = pob_plan_reclamation
 							TARGET_TYPE = target_character
 							TARGET_SCOPE = scope:secondary_recipient
 						}
@@ -225,8 +226,12 @@ pob_delegate_conscription_interaction = {
 	}
 
 	ai_targets = {
-		ai_recipients = courtiers
+		ai_recipients = dynasty
 		max = 20
+	}
+
+	ai_targets = {
+		ai_recipients = scripted_relations
 	}
 
 	auto_accept = yes

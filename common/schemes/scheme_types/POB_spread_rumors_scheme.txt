@@ -1,15 +1,16 @@
-﻿pob_plan_reclamation = {
+﻿pob_spread_rumors = {
 	# Basic Setup
-	skill = stewardship
-	desc = pob_plan_reclamation_desc_general
+	skill = intrigue
+	desc = pob_spread_rumors_desc_general
 	success_desc = "BEFRIEND_SUCCESS_DESC"
 
-	icon = stewardship
+	icon = intrigue
 	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
-	category = personal
+	category = hostile
 	target_type = character
-	is_secret = no
+	is_secret = yes
 	is_basic = yes
+	maximum_breaches = 5
 	cooldown = { 
 		years = 3
 	}
@@ -17,9 +18,9 @@
 	# Parameters
 	speed_per_skill_point = -2.5
 	spymaster_speed_per_skill_point = 0	
-	uses_resistance = no
+	uses_resistance = yes
 	base_progress_goal = 170
-	maximum_breaches = 1
+	maximum_secrecy = 85
 	base_maximum_success = 95
 	minimum_success = 5
 	
@@ -27,16 +28,28 @@
 	allow = {
 		is_adult = yes
 		is_imprisoned = no
-		scope:target = scope:owner
+		scope:target = {
+			is_adult = yes
+			is_imprisoned = no
+			is_ruler = yes
+		}
 	}
 
 	valid = {
 		is_imprisoned = no
 		is_incapable = no
+		scope:target = {
+			is_ruler = yes
+			is_imprisoned = no
+			is_incapable = no
+			exists = location
+			in_diplomatic_range = scope:owner
+		}
 	}
 
 	odds_prediction = {
-		add = odds_skill_contribution_stewardship_value
+		add = base_odds_prediction_target_is_char_value
+		add = odds_skill_contribution_intrigue_value
 		min = 0
 	}
 
@@ -46,37 +59,53 @@
 		chance_of_no_event = scheme_apa_chance_of_no_event_value
 	}
 
+	base_secrecy = {
+		add = secrecy_base_value
+		add = countermeasure_apply_secrecy_maluses_value
+	}
+
 	# Base Chances
 	base_success_chance = {
 		base = 25
 		
 		modifier = {
 			add = {
-				value = scope:owner.stewardship
-			 	multiply = 1.5
+				value = scope:owner.intrigue
+			 	multiply = 2
 			}
-			desc = SCHEME_YOUR_STEWARDSHIP
+			desc = SCHEME_YOUR_INTRIGUE
 		}
 
-		modifier = {
-			add = {
-				value = scope:owner.learning
-				multiply = 0.5
-			}
-			desc = SCHEME_YOUR_LEARNING
-		}
+		apply_calculated_scheme_success_chance_adjustments_modifier = yes
 
+		# 家族团结度
 		modifier = {
-			add = {
-				value = scope:owner.domain_size
-				multiply = -5
+ 			add = {
+				value = scope:owner.house.house_unity_value
+				multiply = 0.25
 			}
-			desc = SCHEME_REALM_SIZE
-		}
+ 			desc = SP_AI_HOUSE_UNITY
+			exists = scope:owner.house
+			scope:target = {
+				exists = house
+				house = scope:owner.house
+				house = {
+					OR = {
+						has_house_unity_stage = harmonious
+						has_house_unity_stage = friendly
+					}
+				}
+			}
+ 		}
+
 	}
-
+	
 	# On Actions
 	on_start = {
+		set_variable = {
+			name = apply_countermeasures
+			value = flag:calculating
+		}
 	}
 
 	on_phase_completed = {
@@ -84,7 +113,7 @@
 		scheme_target_character = { save_scope_as = target }
 		scheme_owner = { save_scope_as = owner }
 		scope:scheme.scheme_owner = {
-			trigger_event = pob_plan_reclamation_events.0002
+			trigger_event = pob_spread_rumors_events.0002
 		}
 	}
 
@@ -95,33 +124,6 @@
 		scheme_owner = {
 			save_scope_as = owner
 		}
-		scope:owner = {
-			# Invalidation due to war.
-			if = {
-				limit = { is_at_war_with = scope:target }
-				scope:owner = {
-					send_interface_toast = {
-						title = pob_plan_reclamation_invalidated_title
-						left_icon = scope:target
-						custom_tooltip = pob_plan_reclamation_invalidated_war
-					}
-				}
-			}
-
-			# Invalidation due to death
-			if = {
-				limit = {
-					scope:target = { is_alive = no }
-				}
-				scope:owner = {
-					send_interface_toast = {
-						title = pob_plan_reclamation_invalidated_title
-						left_icon = scope:target
-						custom_tooltip = pob_plan_reclamation_invalidated_dead
-					}
-				}
-			}
-		}
 
 		if = {
 			limit = {
@@ -131,7 +133,7 @@
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = pob_plan_reclamation_invalidated_title
+					title = pob_spread_rumors_invalidated_title
 					left_icon = scope:target
 					custom_description_no_bullet = {
 						object = scope:target
