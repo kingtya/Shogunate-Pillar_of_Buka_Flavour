@@ -1,0 +1,23 @@
+﻿l_simp_chinese:
+
+    pob_delegate_reclamation_interaction:0 "指示开垦"
+    pob_delegate_reclamation_interaction_desc:0 "指示[courtier|E]尝试开垦新田"
+    recipient_secondary_pob_delegate_reclamation_interaction:0 "奉行"
+
+    pob_plan_reclamation_interaction:0 "开垦新田#weak （计谋）#!"
+    pob_plan_reclamation_interaction_desc:0 "尝试土地开发以提高你的领地赋税和发展度"
+    pob_plan_reclamation:0 "开垦新田"
+    pob_plan_reclamation_desc_general:0 "在开垦新田[scheme|E]中，你尝试土地开发以提高你的领地赋税和发展度"
+    pob_plan_reclamation_action:0 "$pob_plan_reclamation$："
+    pob_plan_reclamation_desc:0 "我会尝试土地开发以提高领地赋税和发展度"
+    pob_plan_reclamation_start_scheme:0 "$pob_plan_reclamation$开始"
+
+    pob_plan_reclamation_invalidated_title:1 "@personal_scheme_icon!$pob_plan_reclamation$计谋结束"
+
+    pob_plan_reclamation_events.1001.t:0 "$pob_plan_reclamation$: 成功！"
+    pob_plan_reclamation_events.1001.desc:0 "[owner.GetUIName]完成了开垦新田的目标。"
+    pob_plan_reclamation_events.1001.a:0 "为了家名存续，这是必须做的。"
+
+    pob_plan_reclamation_events.1002.t:0 "$pob_plan_reclamation$: 失败！"
+    pob_plan_reclamation_events.1002.desc:0 "[owner.GetUIName]没能完成开垦新田的目标。"
+    pob_plan_reclamation_events.1002.a:0 "为了家名存续，我本该做得更好。"

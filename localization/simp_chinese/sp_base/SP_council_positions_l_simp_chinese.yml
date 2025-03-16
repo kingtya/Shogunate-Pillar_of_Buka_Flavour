@@ -1,0 +1,7 @@
+﻿l_simp_chinese:
+
+    councillor_spt_bugyo:0 "勘定奉行"
+    councillor_spt_bugyo_desc:0 "$councillor_spt_bugyo$是佐理财政、指挥代官的[councillor|E]。$councillor_spt_bugyo$直接影响你的[realm|E]内所能推行的[sp_policy|E]的数量。"
+    councillor_spt_bugyo_modifier:0 "领主的勘定奉行"
+    spt_bugyo_task_default:0 "推行政令"
+    spt_bugyo_task_default_effect_desc:1 "[councillor.GetShortUIName|U]将在你的领地推行政令，并使你获得:\n[councillor.GetModifierDescForTask('spt_bugyo_task_default')]"

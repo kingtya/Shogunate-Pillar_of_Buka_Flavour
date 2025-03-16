@@ -1,0 +1,162 @@
+﻿l_english:
+
+    ################
+    ### 保守政策 ###
+    ################
+
+    flag_sp_policy_improve_cavalry_name:0 "#V Cavalry Strengthening#!"
+    flag_sp_policy_improve_cavalry_desc:0 "During the Warring States period, cavalry was mainly used for reconnaissance, harassment, and pursuit of enemies, rather than as a primary combat force. This was due to Japan's mountainous terrain and lack of vast plains suitable for large-scale cavalry battles. Samurai often fought on foot during battles, and cavalry charges were a distinctive strategy."
+    sp_policy_improve_cavalry_modifier:0 "Cavalry Strengthening"
+    sp_policy_improve_cavalry_modifier_desc:0 "This person has improved the cavalry military system."
+
+    flag_sp_policy_canal_improvements_name:0 "#V Irrigation Improvements#!"
+    flag_sp_policy_canal_improvements_desc:0 "The concentration of irrigation agriculture in medieval times contributed to the spread of plagues, so it was necessary to rationally manage the labor in the fields."
+    sp_policy_canal_improvements_modifier:0 "Irrigation Improvements"
+    sp_policy_canal_improvements_modifier_desc:0 "This person has improved agricultural practices within their domain."
+    sp_policy_canal_improvements_county_modifier:0 "Irrigation Improvements"
+    sp_policy_canal_improvements_county_modifier_desc:0 "Agricultural improvements have been made in this region."
+    sp_policy_canal_improvements_effect_tt:0 "Each #V quarter#! in your directly governed territory's [county|E] has a high chance of receiving [GetModifier('sp_policy_canal_improvements_county_modifier').GetNameWithTooltip] for #V 5 years#!"
+
+    flag_sp_policy_council_system_name:0 "#V Council System#!"
+    flag_sp_policy_council_system_desc:0 "A traditional decision-making process among the samurai, where vassals gather under the family elder's leadership to discuss and form opinions, which are then submitted to the lord for final decision."
+    sp_policy_council_system_modifier:0 "Council System"
+    sp_policy_council_system_modifier_desc:0 "This person has increased the influence of vassals and family members in territorial matters."
+
+    flag_sp_policy_official_purveyor_name:0 "#V Official Merchants#!"
+    flag_sp_policy_official_purveyor_desc:0 "Warring States Daimyo did not interact with ordinary merchants but kept close relations with specific large guild merchants known as 'official merchants.'"
+    sp_policy_official_purveyor_modifier_count:0 "Official Merchants"
+    sp_policy_official_purveyor_modifier_duke:0 "Official Merchants"
+    sp_policy_official_purveyor_modifier_king:0 "Official Merchants"
+    sp_policy_official_purveyor_modifier_count_desc:0 "This person protects the interests of large guild merchants within their territory in exchange for tribute."
+    sp_policy_official_purveyor_modifier_duke_desc:0 "This person protects the interests of large guild merchants within their territory in exchange for tribute."
+    sp_policy_official_purveyor_modifier_king_desc:0 "This person protects the interests of large guild merchants within their territory in exchange for tribute."
+    sp_policy_official_purveyor_county_modifier:0 "Trade Monopoly"
+    sp_policy_official_purveyor_county_modifier_desc:0 "The large guild merchants in this region have a monopoly on local goods, hindering economic development."
+    sp_policy_official_purveyor_warning_tt:0 "@warning_icon!#X The policy Official Merchants conflicts with this policy#!"
+    sp_policy_official_purveyor_effect_tt:0 "Each #V quarter#! in your directly governed territory's [county|E] has a high chance of receiving [GetModifier('sp_policy_official_purveyor_county_modifier').GetNameWithTooltip] for #V 5 years#!"
+
+    flag_sp_policy_buddhism_sanction_name:0 "#V Temple and Shrine Sanction#!"
+    flag_sp_policy_buddhism_sanction_desc:0 "After Buddhism was introduced to Japan, it blended with the indigenous Shinto beliefs to form a combined belief system, which is referred to as temples and shrines."
+    sp_policy_buddhism_sanction_modifier:0 "Temple and Shrine Sanction"
+    sp_policy_buddhism_sanction_modifier_desc:0 "This person protects the interests of temples and shrines within their domain."
+    shinto_religion_opinion:0 "Shinto followers' favor"
+
+    flag_sp_policy_foster_system_name:0 "#V Fosterage System#!"
+    flag_sp_policy_foster_system_desc:0 "A virtual kinship relationship formed in the Warring States period, constituting a lord-servant relationship or a protective and protected relationship."
+    sp_policy_foster_system_modifier:0 "Fosterage System"
+    sp_policy_foster_system_modifier_desc:0 "This person has formed a formal kinship relationship with their vassals."
+    sp_policy_foster_system_more_accpetive_adoption_tt:0 "Your [direct_vassals|E] are more willing to accept the [adoption|E] relationship you arrange."
+    sp_policy_foster_system_more_accpetive_adoption_reason:0 "[sp_policy|E] Fosterage System: $VALUE|+=0$"
+
+    flag_sp_policy_improve_militia_name:0 "#V Militia Strengthening#!"
+    flag_sp_policy_improve_militia_desc:0 "The military foundation of Warring States Daimyo is the conscripted labor from vassals and commoners to fulfill military service. By demanding more military service than usual, they could quickly gather military forces, but they also had to appease the people by exempting them from certain other duties."
+    sp_policy_improve_militia_modifier:0 "Militia Strengthening"
+    sp_policy_improve_militia_modifier_desc:0 "This person has increased the military service requirements in their domain, while exempting some other duties."
+    pob_improve_militia_county_modifier:0 "Militia Strengthening"
+    pob_improve_militia_county_modifier_desc:0 "This place has increased the military service requirements."
+    sp_policy_improve_militia_effect_tt:0 "Your [scheme_success_chance|E] of Promote Militia [scheme|E] rises."
+
+    flag_sp_policy_castle_construction_name:0 "#V Castle Construction#!"
+    flag_sp_policy_castle_construction_desc:0 "From the samurai residences in the Kamakura period to the mountain castles of the Nanboku-chō and Muromachi periods, and finally to the plains castles of the Warring States period, Japan's castle construction philosophy has developed over time into its mature form."
+    sp_policy_castle_construction_modifier:0 "Castle Construction"
+    sp_policy_castle_construction_modifier_desc:0 "This person has focused on the infrastructure of castles."
+
+    flag_sp_policy_court_affiliation_name:0 "#V Court Affiliation#!"
+    flag_sp_policy_court_affiliation_desc:0 "The Hino and Konoe families, as the in-laws of the Ashikaga Shogunate and powerful court nobles, have traditionally acted as intermediaries between the Imperial Court and the Muromachi Shogunate, facilitating communication between the court and the samurai government. For daimyo, establishing close ties with court nobles is beneficial for petitioning the Imperial Court for the legitimacy to govern their territories."
+    sp_policy_court_affiliation_modifier:0 "Direct Petition to the Court"
+    sp_policy_court_affiliation_modifier_desc:0 "This person has established a close relationship with the Imperial Court."
+    sp_policy_court_affiliation_effect_tt:0 "Your cost of #V Gain a Central Post#! and #V Gain a Local Post#! [decisions|E] is halved"
+
+    ################
+    ### 中道政策 ###
+    ################
+    flag_sp_policy_direct_daimyo_rule_name:0 "#V Direct Daimyo Rule#!"
+    flag_sp_policy_direct_daimyo_rule_desc:0 "The Daimyo personally handles the affairs of the domain, no longer delegating them to the family steward or other high-ranking officials."
+    sp_policy_direct_daimyo_rule_modifier:0 "Direct Daimyo Rule"
+    sp_policy_direct_daimyo_rule_modifier_desc:0 "This person is directly involved in governance."
+
+    flag_sp_policy_improve_labor_name:0 "#V Corvée Labor Strengthening#!"
+    flag_sp_policy_improve_labor_desc:0 "Also known as labor duty. Villagers are conscripted into labor according to the population of their households."
+    sp_policy_improve_labor_modifier:0 "Corvée Labor Strengthening"
+    sp_policy_improve_labor_modifier_desc:0 "This person has conscripted additional villagers for labor."
+
+    flag_sp_policy_deploy_draftee_name:0 "#V Military Conscription Setup#!"
+    flag_sp_policy_deploy_draftee_desc:0 "Takeda Shingen divided his subjects into 'military conscripts' and 'commoners.' The 'military conscripts' were exempt from some taxes and labor in exchange for military service, while the 'commoners' were not required to fight but had to pay taxes and perform labor duties."
+    sp_policy_deploy_draftee_modifier:0 "Military Conscription Setup"
+    sp_policy_deploy_draftee_modifier_desc:0 "This person has formed a permanent standing army in addition to the militia."
+
+    flag_sp_policy_post_horse_system_name:0 "#V Post Horse System#!"
+    flag_sp_policy_post_horse_system_desc:0 "The relay horse system is an ancient communication and transportation system used primarily for relaying messages between stations. It developed most prosperously during the Tang Dynasty and was likely introduced to Japan via the envoys to China."
+    sp_policy_post_horse_system_modifier:0 "Post Horse System"
+    sp_policy_post_horse_system_modifier_desc:0 "This person has established many relay stations within their domain."
+
+    flag_sp_policy_distant_diplomacy_name:0 "#V Distant Diplomacy and Close Attack Strategy#!"
+    flag_sp_policy_distant_diplomacy_desc:0 "An ancient diplomatic strategy that focuses on attacking nearby enemies while establishing friendly relations with more distant nations."
+    sp_policy_distant_diplomacy_modifier:0 "Distant Diplomacy and Close Attack Strategy"
+    sp_policy_distant_diplomacy_modifier_desc:0 "This person has enhanced the importance of diplomacy."
+
+    flag_sp_policy_suggestion_box_name:0 "#V Suggestion Box#!"
+    flag_sp_policy_suggestion_box_desc:0 "A system and a box set up for collecting the opinions of the common people, aimed at gathering feedback for governance and understanding social conditions."
+    sp_policy_suggestion_box_modifier:0 "Suggestion Box"
+    sp_policy_suggestion_box_modifier_desc:0 "This person allows their subjects to submit proposals and suggestions."
+
+    flag_sp_policy_coalition_focus_name:0 "#V Coalition Focus#!"
+    flag_sp_policy_coalition_focus_desc:0 "'Coalition' refers to 'uniting the weak to resist the strong,' aiming to form alliances among weaker states to counter a powerful state and prevent its expansion. In essence, it is a diplomatic and military struggle among various factions to win allies."
+    sp_policy_coalition_focus_modifier:0 "Coalition Focus"
+    sp_policy_coalition_focus_modifier_desc:0 "This person focuses on rallying neighboring lords and states."
+
+
+    flag_sp_policy_thermalism_name:0 "#V Thermalism#!"
+    flag_sp_policy_thermalism_desc:0 "Japan has a long-standing tradition of hot spring therapy. As early as the Nara period (710–784), records mention the use of hot springs as 'sacred water' for treating illnesses. During the Edo period (1603–1868), hot springs were widely utilized as a form of medical treatment."
+    sp_policy_thermalism_modifier:0 "Thermalism"
+    sp_policy_thermalism_modifier_desc:0 "This person makes use of hot spring therapy within their domain."
+
+
+    ################
+    ### 革新政策 ###
+    ################
+
+    flag_sp_policy_western_sanction_name:0 "#V Nanban Sanction#!"
+    flag_sp_policy_western_sanction_desc:0 "In Japanese culture, 'Nanban' refers to Europeans from Portugal, Spain, England, and others, who primarily traveled to East Asia via maritime routes that often passed through the Indian Ocean, Southeast Asia, and then entered Japanese waters from the south."
+    sp_policy_western_sanction_modifier:0 "Nanban Sanction"
+    sp_policy_western_sanction_modifier_desc:0 "This person protects the rights of Western foreigners."
+    sp_policy_western_sanction_effect_tt:0 "You unlock the option to seek Nanban merchants[decisions|E]"
+    sp_policy_has_no_innovation_shogunate_nanban_trade_tt:0 "@warning_icon!#X Your [culture|E] does not have the $innovation_shogunate_nanban_trade$ [innovation|E], enforcing this policy will permanently lose 10 policy points#!"
+
+    flag_sp_policy_improve_firearms_name:0 "#V Firearms Strengthening#!"
+    flag_sp_policy_improve_firearms_desc:0 "Since the Portuguese introduced firearms to Tanegashima, the gunpowder weaponry spread quickly through Japan, from the southern Kyushu island of Tanegashima to Kishu, and eventually to all of Japan, where tactics involving firearms were rapidly developed and refined."
+    sp_policy_improve_firearms_modifier:0 "Firearms Strengthening"
+    sp_policy_improve_firearms_modifier_desc:0 "This person has improved the firearms unit system."
+
+    flag_sp_policy_meritocracy_name:0 "#V Meritocracy#!"
+    flag_sp_policy_meritocracy_desc:0 "A political philosophy where talent, rather than wealth or power, determines the allocation of scarce resources and provides differentiated compensation."
+    sp_policy_meritocracy_modifier:0 "Meritocracy"
+    sp_policy_meritocracy_modifier_desc:0 "This person appoints officials based on merit."
+    sp_policy_meritocracy_being_encouraged_modifier:0 "Meritocracy - Encouraged"
+    sp_policy_meritocracy_being_encouraged_modifier_desc:0 "This person is skilled and highly favored by the lord."
+    sp_policy_meritocracy_being_humiliated_modifier:0 "Meritocracy - Humiliated"
+    sp_policy_meritocracy_being_humiliated_modifier_desc:0 "This person has mediocre abilities and is considered unfit for tasks within the domain."
+    sp_policy_meritocracy_effect_tt:0 "Any adult character with a decent skill level#P [GetPlayer.MakeScope.ScriptValue('decent_skill_rating')|0]#! joining your [court|E] will gain [GetModifier('sp_policy_meritocracy_being_encouraged_modifier').GetNameWithTooltip|P], while other adult characters will receive #N [GetModifier('sp_policy_meritocracy_being_humiliated_modifier').GetNameWithTooltip]#!, immediately applying to your [courtier|E]"
+
+    flag_sp_policy_supply_transporter_name:0 "#V Supply Transporter Equipment#!"
+    flag_sp_policy_supply_transporter_desc:0 "A non-professional army responsible for transporting provisions and weapons is called the 'Small Cargo Transport Team'. The commanders of these transport units are known as the 'Small Cargo Overseers'."
+    sp_policy_supply_transporter_modifier:0 "Supply Transporter Equipment"
+    sp_policy_supply_transporter_modifier_desc:0 "This person has equipped dedicated transport units."
+
+    flag_sp_policy_easy_commerce_name:0 "#V Free Market and Free Guilds#!"
+    flag_sp_policy_easy_commerce_desc:0 "In Japan, 'za' refers to a Japanese-style feudal guild, originating from privilege groups based around the court and temples. These guilds paid taxes in exchange for rights to trade. Removing the market and commercial taxes from castle towns and abolishing guild privileges is called 'Free Market'; further abolishing the guild itself is 'Free Guilds'."
+    sp_policy_easy_commerce_modifier:0 "Free Market and Free Guilds"
+    sp_policy_easy_commerce_modifier_desc:0 "This person has abolished guild merchant privileges and trade taxes, encouraging free commerce."
+    sp_policy_has_no_innovation_guilds_tt:0 "@warning_icon!#X Your [culture|E] does not have the $innovation_guilds$ [innovation|E], enforcing this policy will permanently lose 20 policy points#!"
+    sp_policy_easy_commerce_warning_tt:0 "@warning_icon!#X The policy 'Free Market and Free Guilds' conflicts with this policy#!"
+
+    flag_sp_policy_soidier_professionaliztion_name:0 "#V Separation of Soliders and Farmer#!"
+    flag_sp_policy_soidier_professionaliztion_desc:0 "A policy implemented by the warring states lords to maintain a standing army. Likely inspired by Oda Nobunaga, it was fully realized by Toyotomi Hideyoshi’s land surveys and sword hunts, and completed by Toyotomi Hideyori's 'People Sweep Edict'. This decree was also aimed at establishing the samurai class and preventing commoners from possessing weapons, thus reinforcing social order."
+    sp_policy_soidier_professionaliztion_modifier:0 "Separation of Soliders and Farmers"
+    sp_policy_soidier_professionaliztion_modifier_desc:0 "This person has separated militia from standing troops, fully establishing a standing army system."
+    sp_policy_has_no_innovation_royal_armory_tt:0 "@warning_icon!#X Your [culture|E] does not have the $innovation_royal_armory$ [innovation|E], enforcing this policy will permanently lose 20 policy points#!"
+
+    flag_sp_policy_progressive_system_name:0 "#V Progressive System#!"
+    flag_sp_policy_progressive_system_desc:0 ""
+    sp_policy_progressive_system_tt_0:0 "@warning_icon!#X You must make this policy a prerequisite, meaning no other policies can be enacted before this one#!"
+    sp_policy_progressive_system_tt_1:0 "You gain #P 20#! policy points, enacting conservative policies costs an additional #N 10#! policy points, and enacting moderate policies costs an additional #N 5#! policy points"

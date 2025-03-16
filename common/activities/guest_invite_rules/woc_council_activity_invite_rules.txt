@@ -1,0 +1,19 @@
+﻿woc_activity_invite_rule_councilor = {
+	effect = {
+		every_councillor = {
+			limit = {
+				# Remove diarchs from the list.
+				bannable_serving_diarch_trigger = no
+				woc_council_valid_council_position = yes
+			}
+			add_to_list = characters
+		}
+		every_vassal = {
+			limit = {
+				bannable_serving_diarch_trigger = no
+				highest_held_title_tier >= tier_county
+			}
+			add_to_list = characters
+		}
+	}
+}

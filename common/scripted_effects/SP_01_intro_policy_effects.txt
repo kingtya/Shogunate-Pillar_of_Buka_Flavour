@@ -1,0 +1,1254 @@
+﻿################
+### 政策发布 ###
+################
+sp_policy_introduction_effect = {
+	switch = {
+		trigger = $FLAG$
+		
+		### 保守
+		## 本乡本土封臣好感 ++
+		## 宫廷礼制封臣好感 +
+		## 追名逐利封臣好感 -
+		flag:flag_sp_policy_canal_improvements = {
+			$ACTION$_character_modifier = sp_policy_canal_improvements_modifier
+			custom_tooltip = sp_policy_canal_improvements_effect_tt
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_improve_militia = {
+			$ACTION$_character_modifier = sp_policy_improve_militia_modifier
+			custom_tooltip = sp_policy_improve_militia_effect_tt
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_official_purveyor = {
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_easy_commerce
+					}
+				}
+				custom_tooltip = sp_policy_easy_commerce_warning_tt
+			}
+			if = {
+				limit = {
+					highest_held_title_tier >= tier_kingdom
+				}
+				$ACTION$_character_modifier = sp_policy_official_purveyor_modifier_king
+			}
+			else_if = {
+				limit = {
+					highest_held_title_tier = tier_duchy
+				}
+				$ACTION$_character_modifier = sp_policy_official_purveyor_modifier_duke
+			}
+			else = {
+				$ACTION$_character_modifier = sp_policy_official_purveyor_modifier_count
+			}
+			custom_tooltip = sp_policy_official_purveyor_effect_tt
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_foster_system = {
+			$ACTION$_character_modifier = sp_policy_foster_system_modifier
+			custom_tooltip = sp_policy_foster_system_more_accpetive_adoption_tt
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_council_system = {
+			$ACTION$_character_modifier = sp_policy_council_system_modifier
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_buddhism_sanction = {
+			$ACTION$_character_modifier = sp_policy_buddhism_sanction_modifier
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_castle_construction = {
+			$ACTION$_character_modifier = sp_policy_castle_construction_modifier
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_court_affiliation = {
+			#$ACTION$_character_modifier = sp_policy_court_affiliation_modifier
+			custom_tooltip = sp_policy_court_affiliation_effect_tt
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = no
+				OPINION = 5
+			}
+		}
+
+		### 中道
+		## 宫廷礼制封臣好感 +
+		flag:flag_sp_policy_direct_daimyo_rule = {
+			$ACTION$_character_modifier = sp_policy_direct_daimyo_rule_modifier
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = yes
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_improve_labor = {
+			$ACTION$_character_modifier = sp_policy_improve_labor_modifier
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = yes
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_deploy_draftee = {
+			$ACTION$_character_modifier = sp_policy_deploy_draftee_modifier
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = yes
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_post_horse_system = {
+			$ACTION$_character_modifier = sp_policy_post_horse_system_modifier
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = yes
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_distant_diplomacy = {
+			$ACTION$_character_modifier = sp_policy_distant_diplomacy_modifier
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = yes
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_coalition_focus = {
+			$ACTION$_character_modifier = sp_policy_coalition_focus_modifier
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = yes
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_suggestion_box = {
+			$ACTION$_character_modifier = sp_policy_suggestion_box_modifier
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = yes
+				OPINION = 5
+			}
+		}
+		flag:flag_sp_policy_thermalism = {
+			$ACTION$_character_modifier = sp_policy_thermalism_modifier
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = no
+				POLICY_TYPE_SW_2 = yes
+				OPINION = 5
+			}
+		}
+		
+		### 革新
+		## 宫廷礼制封臣好感 --
+		## 本乡本土封臣好感 -
+		## 追名逐利封臣好感 ++
+		flag:flag_sp_policy_improve_cavalry = {
+			$ACTION$_character_modifier = sp_policy_improve_cavalry_modifier
+			sp_glory_hound_vassal_towards_policy_opinion_effect = {
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -10
+			}
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -5
+			}
+		}
+		flag:flag_sp_policy_progressive_system = {
+			custom_tooltip = sp_policy_progressive_system_tt_0
+			custom_tooltip = sp_policy_progressive_system_tt_1
+			sp_glory_hound_vassal_towards_policy_opinion_effect = {
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -10
+			}
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -5
+			}
+		}
+		flag:flag_sp_policy_western_sanction = {
+			if = {
+				limit = {
+					sp_culture_has_innovation_shogunate_nanban_trade = no
+					sp_has_otomo_margin_trait = no
+				}
+				custom_tooltip = sp_policy_has_no_innovation_shogunate_nanban_trade_tt
+			}
+			$ACTION$_character_modifier = sp_policy_western_sanction_modifier
+			custom_tooltip = sp_policy_western_sanction_effect_tt
+			sp_glory_hound_vassal_towards_policy_opinion_effect = {
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -10
+			}
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -5
+			}
+		}
+		flag:flag_sp_policy_meritocracy = {
+			$ACTION$_character_modifier = sp_policy_meritocracy_modifier
+			custom_tooltip = sp_policy_meritocracy_effect_tt
+			sp_glory_hound_vassal_towards_policy_opinion_effect = {
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -10
+			}
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -5
+			}
+			hidden_effect = {
+				every_courtier = {
+					limit = {
+						is_adult = yes
+					}
+					if = {
+						limit = {
+							OR = {
+								diplomacy >= decent_skill_rating
+								stewardship >= decent_skill_rating
+								martial >= decent_skill_rating
+								intrigue >= decent_skill_rating 
+								learning >= decent_skill_rating 
+								prowess >= decent_skill_rating
+							}
+						}
+						add_character_modifier = sp_policy_meritocracy_being_encouraged_modifier
+					}
+					else = {
+						add_character_modifier = sp_policy_meritocracy_being_humiliated_modifier
+					}
+				}
+			}
+		}
+		flag:flag_sp_policy_soidier_professionaliztion = {
+			if = {
+				limit = {
+					sp_culture_has_innovation_royal_armory = no
+					sp_has_oda_margin_trait = no
+				}
+				custom_tooltip = sp_policy_has_no_innovation_royal_armory_tt
+			}
+			$ACTION$_character_modifier = sp_policy_soidier_professionaliztion_modifier
+			sp_glory_hound_vassal_towards_policy_opinion_effect = {
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -10
+			}
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -5
+			}
+		}
+		flag:flag_sp_policy_easy_commerce = {
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_official_purveyor
+					}
+				}
+				custom_tooltip = sp_policy_official_purveyor_warning_tt
+			}
+			if = {
+				limit = {
+					sp_culture_has_innovation_guilds = no
+					sp_has_oda_margin_trait = no
+				}
+				custom_tooltip = sp_policy_has_no_innovation_guilds_tt
+			}
+			$ACTION$_character_modifier = sp_policy_easy_commerce_modifier
+			sp_glory_hound_vassal_towards_policy_opinion_effect = {
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -10
+			}
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -5
+			}
+		}
+		flag:flag_sp_policy_improve_firearms = {
+			$ACTION$_character_modifier = sp_policy_improve_firearms_modifier
+			sp_glory_hound_vassal_towards_policy_opinion_effect = {
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -10
+			}
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -5
+			}
+		}
+		flag:flag_sp_policy_supply_transporter = {
+			$ACTION$_character_modifier = sp_policy_supply_transporter_modifier
+			sp_glory_hound_vassal_towards_policy_opinion_effect = {
+				OPINION = 10
+			}
+			sp_courtly_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -10
+			}
+			sp_parochial_vassal_towards_policy_opinion_effect = {
+				POLICY_TYPE_SW_1 = yes
+				POLICY_TYPE_SW_2 = no
+				OPINION = -5
+			}
+		}
+		
+		############
+		############
+		############
+		### 御用 ###
+		############
+		############
+		############
+
+		flag:flag_sp_policy_laws_of_imagawa = {
+			if = {
+				limit = {
+					sp_councillor_has_imagawa_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_imagawa_margin_trait = no
+				}
+				custom_tooltip = sp_policy_laws_of_imagawa_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_laws_of_imagawa_modifier
+			custom_tooltip = sp_policy_laws_of_imagawa_effect_tt
+			custom_tooltip = sp_policy_laws_of_imagawa_effect_tt_1
+			hidden_effect = {
+				every_sub_realm_county = {
+					add_county_modifier = {
+						modifier = sp_policy_laws_of_imagawa_county_modifier
+						years = 20
+					}
+				}
+			}
+			
+		}
+		flag:flag_sp_policy_laws_of_takeda = {
+			if = {
+				limit = {
+					sp_councillor_has_takeda_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_takeda_margin_trait = no
+				}
+				custom_tooltip = sp_policy_laws_of_takeda_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_laws_of_takeda_modifier
+			custom_tooltip = sp_policy_laws_of_takeda_effect_tt
+			custom_tooltip = sp_policy_laws_of_takeda_effect_tt_1
+			hidden_effect = {
+				every_sub_realm_county = {
+					add_county_modifier = {
+						modifier = sp_policy_laws_of_takeda_county_modifier
+						years = 20
+					}
+				}
+			}
+			
+		}
+
+		flag:flag_sp_policy_takeda_red_armour = {
+			if = {
+				limit = {
+					sp_councillor_has_takeda_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			custom_tooltip = sp_policy_takeda_red_armour_effect_tt_0
+			if = {
+				limit = {
+					number_maa_regiments_of_base_type = {
+						type = number_maa_regiments_of_type
+						value < 1
+					}
+				}
+				hidden_effect = {
+					spawn_army = {
+						name = event_troop_default_name
+						men_at_arms = {
+							type = takeda_red_armour
+							stacks = 2
+						}
+						location = root.capital_province
+						origin = root.capital_province
+					}
+				}
+				custom_tooltip = sp_policy_takeda_red_armour_effect_tt_1
+			}
+		}
+		
+		flag:flag_sp_policy_five_admonitions = {
+			if = {
+				limit = {
+					sp_councillor_has_hojo_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_hojo_margin_trait = no
+				}
+				custom_tooltip = sp_policy_five_admonitions_warning_tt
+			}
+			if = {
+				limit = {
+					NOT = { has_trait = temperate }
+				}
+				if = {
+					limit = {
+						has_trait = gluttonous
+					}
+					remove_trait = gluttonous
+					add_trait = temperate 
+					custom_tooltip = sp_policy_five_admonitions_effect_tt_2
+				}
+				else_if = {
+					limit = {
+						has_trait = greedy
+					}
+					remove_trait = greedy
+					add_trait = temperate
+				}
+				else = {
+					add_trait = temperate
+				}
+			}
+			$ACTION$_character_modifier = sp_policy_five_admonitions_modifier
+			custom_tooltip = sp_policy_five_admonitions_effect_tt
+			custom_tooltip = sp_policy_five_admonitions_effect_tt_1
+			hidden_effect = {
+				every_sub_realm_county = {
+					add_county_modifier = {
+						modifier = sp_policy_five_admonitions_county_modifier
+						years = 50
+					}
+				}
+			}
+			
+		}
+		flag:flag_sp_policy_guardian_forces = {
+			if = {
+				limit = {
+					sp_councillor_has_tokugawa_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_tokugawa_margin_trait = no
+				}
+				custom_tooltip = sp_policy_guardian_forces_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_guardian_forces_modifier
+		}
+		flag:flag_sp_policy_intensive_firearms = {
+			if = {
+				limit = {
+					sp_councillor_has_oda_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_oda_margin_trait = no
+				}
+				custom_tooltip = sp_policy_intensive_firearms_warning_tt
+			}
+			if = {
+				limit = {
+					sp_culture_has_innovation_advanced_bowmaking = no
+				}
+				custom_tooltip = sp_policy_has_no_innovation_advanced_bowmaking_tt
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = { has_variable_list = sp_released_policy_flags }
+						NOT = {
+							any_in_list = {
+								variable = sp_released_policy_flags
+								this = flag:flag_sp_policy_improve_firearms
+							}
+						}
+					}
+				}
+				custom_tooltip = sp_policy_has_no_policy_improve_firearms_tt
+			}
+			$ACTION$_character_modifier = sp_policy_intensive_firearms_modifier
+			custom_tooltip = sp_policy_intensive_firearms_effect_tt
+		}
+		flag:flag_sp_policy_dragon_corps = {
+			if = {
+				limit = {
+					sp_councillor_has_date_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_date_margin_trait = no
+				}
+				custom_tooltip = sp_policy_dragon_corps_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_dragon_corps_modifier
+			if = {
+				limit = {
+					sp_culture_has_innovation_advanced_bowmaking = no
+				}
+				custom_tooltip = sp_policy_has_no_innovation_advanced_bowmaking_tt
+			}
+			custom_tooltip = sp_policy_dragon_corps_effect_tt_0
+			if = {
+				limit = {
+					number_maa_regiments_of_base_type = {
+						type = number_maa_regiments_of_type
+						value < 1
+					}
+				}
+				hidden_effect = {
+					spawn_army = {
+						name = event_troop_default_name
+						men_at_arms = {
+							type = dragon_corps
+							stacks = 2
+						}
+						location = root.capital_province
+						origin = root.capital_province
+					}
+				}
+				custom_tooltip = sp_policy_dragon_corps_effect_tt_1
+			}
+		}
+		flag:flag_sp_policy_satsuma_military_education = {
+			if = {
+				limit = {
+					root = {
+						NOT = { has_trait = shimazu_margin }
+					}
+					exists = cp:councillor_steward
+					cp:councillor_spt_bugyo = {
+						has_trait = shimazu_margin
+					}
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_shimazu_margin_trait = no
+				}
+				custom_tooltip = sp_policy_satsuma_military_education_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_satsuma_military_education_modifier
+		}
+		flag:flag_sp_policy_expeditionary_support = {
+			if = {
+				limit = {
+					sp_councillor_has_uesugi_margin_trait = yes
+				}
+			}
+			if = {
+				limit = {
+					sp_has_uesugi_margin_trait = no
+				}
+				custom_tooltip = sp_policy_expeditionary_support_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_expeditionary_support_modifier
+		}
+		flag:flag_sp_policy_million_minds_motto = {
+			if = {
+				limit = {
+					sp_councillor_has_mori_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_mori_margin_trait = no
+				}
+				custom_tooltip = sp_policy_million_minds_motto_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_million_minds_motto_modifier
+		}
+		flag:flag_sp_policy_armoured_militia = {
+			if = {
+				limit = {
+					sp_councillor_has_chosokabe_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_chosokabe_margin_trait = no
+				}
+				custom_tooltip = sp_policy_armoured_militia_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_armoured_militia_modifier
+			custom_tooltip = sp_policy_armoured_militia_effect_tt_0
+		}
+		flag:flag_sp_policy_six_coins_oath = {
+			if = {
+				limit = {
+					sp_councillor_has_sanada_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_sanada_margin_trait = no
+				}
+				custom_tooltip = sp_policy_six_coins_oath_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_six_coins_oath_modifier
+		}
+		flag:flag_sp_policy_cunning_strategy = {
+			if = {
+				limit = {
+					sp_councillor_has_sanada_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_sanada_margin_trait_2 = no
+				}
+				custom_tooltip = sp_policy_cunning_strategy_warning_tt
+			}
+			custom_tooltip = sp_policy_cunning_strategy_effect_tt
+			#$ACTION$_character_modifier = sp_policy_cunning_strategy_modifier
+		}
+		flag:flag_sp_policy_sanada_red_armour = {
+			if = {
+				limit = {
+					sp_councillor_has_sanada_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_sanada_margin_trait_3 = no
+				}
+				custom_tooltip = sp_policy_sanada_red_armour_warning_tt
+			}
+			custom_tooltip = sp_policy_sanada_red_armour_effect_tt_0
+			if = {
+				limit = {
+					number_maa_regiments_of_base_type = {
+						type = number_maa_regiments_of_type
+						value < 1
+					}
+				}
+				hidden_effect = {
+					spawn_army = {
+						name = event_troop_default_name
+						men_at_arms = {
+							type = sanada_red_armour
+							stacks = 1
+						}
+						location = root.capital_province
+						origin = root.capital_province
+					}
+				}
+				custom_tooltip = sp_policy_sanada_red_armour_effect_tt_1
+			}
+		}
+		flag:flag_sp_policy_kichishitan_sanction = {
+			if = {
+				limit = {
+					sp_councillor_has_otomo_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_otomo_margin_trait = no
+				}
+				custom_tooltip = sp_policy_kichishitan_sanction_warning_tt
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = { has_variable_list = sp_released_policy_flags }
+						NOT = {
+							any_in_list = {
+								variable = sp_released_policy_flags
+								this = flag:flag_sp_policy_western_sanction
+							}
+						}
+					}
+				}
+				custom_tooltip = sp_policy_has_no_policy_western_sanction_tt
+			}
+			$ACTION$_character_modifier = sp_policy_kichishitan_sanction_modifier
+		}
+		flag:flag_sp_policy_govern_for_people = {
+			if = {
+				limit = {
+					sp_councillor_has_miyoshi_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_miyoshi_margin_trait = no
+				}
+				custom_tooltip = sp_policy_govern_for_people_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_govern_for_people_modifier
+		}
+
+		flag:flag_sp_policy_partisan_corps = {
+			if = {
+				limit = {
+					sp_councillor_has_suzuki_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_suzuki_margin_trait = no
+				}
+				custom_tooltip = sp_policy_partisan_corps_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_partisan_corps_modifier
+		}
+
+		flag:flag_sp_policy_buddhist_laws = {
+			if = {
+				limit = {
+					sp_councillor_has_honganji_margin_trait = yes
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					sp_has_honganji_margin_trait = no
+				}
+				custom_tooltip = sp_policy_buddhist_laws_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_buddhist_laws_modifier
+		}
+	}
+}
+
+################
+### 政策撤销 ###
+################
+sp_policy_revocation_effect = {
+	switch = {
+		trigger = $FLAG$
+		
+		### 保守
+		## 本乡本土封臣好感 ++
+		## 宫廷礼制封臣好感 +
+		## 追名逐利封臣好感 -
+		flag:flag_sp_policy_improve_cavalry = {
+			$ACTION$_character_modifier = sp_policy_improve_cavalry_modifier
+		}
+		flag:flag_sp_policy_canal_improvements = {
+			$ACTION$_character_modifier = sp_policy_canal_improvements_modifier
+		}
+		flag:flag_sp_policy_improve_militia = {
+			$ACTION$_character_modifier = sp_policy_improve_militia_modifier
+		}
+		flag:flag_sp_policy_council_system = {
+			$ACTION$_character_modifier = sp_policy_council_system_modifier
+		}
+		flag:flag_sp_policy_official_purveyor = {
+			$ACTION$_character_modifier = sp_policy_official_purveyor_modifier_count
+			$ACTION$_character_modifier = sp_policy_official_purveyor_modifier_duke
+			$ACTION$_character_modifier = sp_policy_official_purveyor_modifier_king
+		}
+		flag:flag_sp_policy_foster_system = {
+			$ACTION$_character_modifier = sp_policy_foster_system_modifier
+		}
+		flag:flag_sp_policy_buddhism_sanction = {
+			$ACTION$_character_modifier = sp_policy_buddhism_sanction_modifier
+		}
+		flag:flag_sp_policy_castle_construction = {
+			$ACTION$_character_modifier = sp_policy_castle_construction_modifier
+		}
+		flag:flag_sp_policy_court_affiliation = {
+			#
+		}
+
+		### 中道
+		## 宫廷礼制封臣好感 +
+		flag:flag_sp_policy_direct_daimyo_rule = {
+			$ACTION$_character_modifier = sp_policy_direct_daimyo_rule_modifier
+		}
+		flag:flag_sp_policy_improve_labor = {
+			$ACTION$_character_modifier = sp_policy_improve_labor_modifier
+		}
+		flag:flag_sp_policy_deploy_draftee = {
+			$ACTION$_character_modifier = sp_policy_deploy_draftee_modifier
+		}
+		flag:flag_sp_policy_post_horse_system = {
+			$ACTION$_character_modifier = sp_policy_post_horse_system_modifier
+		}
+		flag:flag_sp_policy_distant_diplomacy = {
+			$ACTION$_character_modifier = sp_policy_distant_diplomacy_modifier
+		}
+		flag:flag_sp_policy_coalition_focus = {
+			$ACTION$_character_modifier = sp_policy_coalition_focus_modifier
+		}
+		flag:flag_sp_policy_suggestion_box = {
+			$ACTION$_character_modifier = sp_policy_suggestion_box_modifier
+		}
+		flag:flag_sp_policy_thermalism = {
+			$ACTION$_character_modifier = sp_policy_thermalism_modifier
+		}
+		
+		### 革新
+		## 宫廷礼制封臣好感 --
+		## 本乡本土封臣好感 -
+		## 追名逐利封臣好感 ++
+		flag:flag_sp_policy_western_sanction = {
+			$ACTION$_character_modifier = sp_policy_western_sanction_modifier
+		}
+		flag:flag_sp_policy_meritocracy = {
+			$ACTION$_character_modifier = sp_policy_meritocracy_modifier
+		}
+		flag:flag_sp_policy_soidier_professionaliztion = {
+			$ACTION$_character_modifier = sp_policy_soidier_professionaliztion_modifier
+		}
+		flag:flag_sp_policy_easy_commerce = {
+			$ACTION$_character_modifier = sp_policy_easy_commerce_modifier
+		}
+		flag:flag_sp_policy_improve_firearms = {
+			$ACTION$_character_modifier = sp_policy_improve_firearms_modifier
+		}
+		flag:flag_sp_policy_supply_transporter = {
+			$ACTION$_character_modifier = sp_policy_supply_transporter_modifier
+		}
+
+		### 御用
+		flag:flag_sp_policy_laws_of_imagawa = {
+			$ACTION$_character_modifier = sp_policy_laws_of_imagawa_modifier
+		}
+		flag:flag_sp_policy_laws_of_takeda = {
+			$ACTION$_character_modifier = sp_policy_laws_of_takeda_modifier
+		}
+		flag:flag_sp_policy_takeda_red_armour = {
+			#
+		}
+		flag:flag_sp_policy_five_admonitions = {
+			$ACTION$_character_modifier = sp_policy_five_admonitions_modifier
+		}
+		flag:flag_sp_policy_guardian_forces = {
+			$ACTION$_character_modifier = sp_policy_guardian_forces_modifier
+		}
+		flag:flag_sp_policy_intensive_firearms = {
+			$ACTION$_character_modifier = sp_policy_intensive_firearms_modifier
+		}
+		flag:flag_sp_policy_dragon_corps = {
+			#
+		}
+		flag:flag_sp_policy_satsuma_military_education = {
+			$ACTION$_character_modifier = sp_policy_satsuma_military_education_modifier
+		}
+		flag:flag_sp_policy_expeditionary_support = {
+			$ACTION$_character_modifier = sp_policy_expeditionary_support_modifier
+		}
+		flag:flag_sp_policy_million_minds_motto = {
+			$ACTION$_character_modifier = sp_policy_million_minds_motto_modifier
+		}
+		flag:flag_sp_policy_armoured_militia = {
+			$ACTION$_character_modifier = sp_policy_armoured_militia_modifier
+		}
+		flag:flag_sp_policy_six_coins_oath = {
+			$ACTION$_character_modifier = sp_policy_six_coins_oath_modifier
+		}
+		flag:flag_sp_policy_cunning_strategy = {
+			#$ACTION$_character_modifier = sp_policy_cunning_strategy_modifier
+		}
+		#
+		flag:flag_sp_policy_kichishitan_sanction = {
+			$ACTION$_character_modifier = sp_policy_kichishitan_sanction_modifier
+		}
+		flag:flag_sp_policy_govern_for_people = {
+			$ACTION$_character_modifier = sp_policy_govern_for_people_modifier
+		}
+		flag:flag_sp_policy_partisan_corps = {
+			$ACTION$_character_modifier = sp_policy_partisan_corps_modifier
+		}
+		flag:flag_sp_policy_buddhist_laws = {
+			$ACTION$_character_modifier = sp_policy_buddhist_laws_modifier
+		}
+	}
+}
+
+################
+### 政策花费 ###
+################
+sp_set_cost_to_character = {
+	switch = {
+		trigger = $FLAG$
+
+		##########
+		## 保守 ##
+		##########
+		flag:flag_sp_policy_canal_improvements = {
+			remove_short_term_gold = 50
+		}
+		flag:flag_sp_policy_improve_militia = {
+			add_prestige = -50
+		}
+		flag:flag_sp_policy_official_purveyor = {
+			add_prestige = -50
+		}
+		flag:flag_sp_policy_foster_system = {
+			add_prestige = -25
+		}
+		flag:flag_sp_policy_improve_cavalry = {
+			remove_short_term_gold = 50
+		}
+		flag:flag_sp_policy_council_system = {
+			add_prestige = -25
+		}
+		flag:flag_sp_policy_buddhism_sanction = {
+			add_piety = -25
+		}
+		flag:flag_sp_policy_castle_construction = {
+			remove_short_term_gold = 25
+		}
+		flag:flag_sp_policy_court_affiliation = {
+			remove_short_term_gold = 50
+		}
+
+		##########
+		## 中道 ##
+		##########
+		flag:flag_sp_policy_direct_daimyo_rule = {
+			add_prestige = -50
+		}
+		flag:flag_sp_policy_improve_labor = {
+			add_prestige = -50
+		}
+		flag:flag_sp_policy_deploy_draftee = {
+			add_prestige = -50
+		}
+		flag:flag_sp_policy_post_horse_system = {
+			remove_short_term_gold = 25
+		}
+		flag:flag_sp_policy_distant_diplomacy = {
+			add_prestige = -25
+		}
+		flag:flag_sp_policy_coalition_focus = {
+			add_prestige = -25
+		}
+		flag:flag_sp_policy_suggestion_box = {
+			add_prestige = -10
+		}
+		flag:flag_sp_policy_thermalism = {
+			remove_short_term_gold = 25
+		}
+	
+		##########
+		## 革新 ##
+		##########
+		flag:flag_sp_policy_soidier_professionaliztion = {
+			remove_short_term_gold = 50
+		}
+		flag:flag_sp_policy_easy_commerce = {
+			remove_short_term_gold = 50
+		}
+		flag:flag_sp_policy_improve_firearms = {
+			remove_short_term_gold = 50
+		}
+		flag:flag_sp_policy_western_sanction = {
+			add_piety = -50
+		}
+		flag:flag_sp_policy_meritocracy = {
+			add_prestige = -25
+		}
+		flag:flag_sp_policy_supply_transporter = {
+			add_prestige = -25
+		}
+		
+		##########
+		## 御用 ##
+		##########
+		flag:flag_sp_policy_laws_of_imagawa = {
+			add_prestige = -100
+		}
+		flag:flag_sp_policy_laws_of_takeda = {
+			add_prestige = -100
+		}
+		flag:flag_sp_policy_takeda_red_armour = {
+			add_prestige = -100
+		}
+		flag:flag_sp_policy_five_admonitions = {
+			add_prestige = -100
+		}
+		flag:flag_sp_policy_guardian_forces = {
+			add_prestige = -100
+		}
+		flag:flag_sp_policy_intensive_firearms = {
+			remove_short_term_gold = 100
+			add_prestige = -100
+		}
+		flag:flag_sp_policy_dragon_corps = {
+			add_prestige = -150
+		}
+		flag:flag_sp_policy_satsuma_military_education = {
+			add_prestige = -100
+		}
+		flag:flag_sp_policy_expeditionary_support = {
+			add_prestige = -100
+		}
+		flag:flag_sp_policy_million_minds_motto = {
+			add_prestige = -100
+		}
+		flag:flag_sp_policy_armoured_militia = {
+			add_prestige = -100
+		}
+		flag:flag_sp_policy_six_coins_oath = {
+			add_prestige = -100
+		}
+		flag:flag_sp_policy_cunning_strategy = {
+			add_piety = -100
+		}
+		flag:flag_sp_policy_sanada_red_armour = {
+			add_prestige = -150
+		}
+		flag:flag_sp_policy_kichishitan_sanction = {
+			add_piety = -100
+		}
+		flag:flag_sp_policy_govern_for_people = {
+			remove_short_term_gold = 50
+			add_prestige = -50
+		}
+		flag:flag_sp_policy_partisan_corps = {
+			remove_short_term_gold = 25
+			add_prestige = -50
+		}
+		flag:flag_sp_policy_buddhist_laws = {
+			add_prestige = -50
+			add_piety = -100
+		}
+	}
+}
+
+################
+### 政策效果 ###
+################
+sp_set_policy_effect_to_character = {
+	
+	show_as_tooltip = { # 作为显示效果，不实际执行
+		sp_policy_introduction_effect = {
+			FLAG = $FLAG$
+			ACTION = $ACTION$
+		}
+	}
+
+	hidden_effect = { # 实际执行
+		if = {
+			limit = {
+				$CONFIRM$ = yes #发布国策
+			}
+			sp_policy_introduction_effect = {
+				FLAG = $FLAG$
+				ACTION = $ACTION$
+			}
+			add_to_variable_list = {
+				name = sp_released_policy_flags
+				target = $FLAG$
+			}
+			if = {
+				limit = {
+					NOT = { exists = root.var:sp_current_policy_points }	
+				}
+				set_variable = {
+					name = sp_current_policy_points
+					value = 0
+				}
+			}
+			save_temporary_scope_as = introducer
+			change_variable = {
+				name = sp_current_policy_points
+				add = $FLAG$.sp_policy_points
+			}
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_character_flag = {
+					flag = $FLAG$
+					days = 30
+				}
+			}
+		}
+		if = {
+			limit = {
+				$CONFIRM$ = no #撤销国策
+			}
+			sp_policy_revocation_effect = {
+				FLAG = $FLAG$
+				ACTION = $ACTION$
+			}
+			remove_list_variable = {
+				name = sp_released_policy_flags
+				target = $FLAG$
+			}
+			save_temporary_scope_as = introducer
+			change_variable = {
+				name = sp_current_policy_points
+				subtract = $FLAG$.sp_policy_points
+			}
+			if = {
+				limit = {
+					has_character_flag = $FLAG$
+				}
+				remove_character_flag = $FLAG$
+			}
+		}
+	}
+}

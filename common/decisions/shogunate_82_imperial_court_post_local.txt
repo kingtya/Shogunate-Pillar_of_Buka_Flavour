@@ -1,0 +1,2261 @@
+﻿# Gain a Local Court Post
+gain_court_post_local_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	decision_group_type = shogunate_minor
+
+	desc = gain_court_post_local_decision_desc
+	selection_tooltip = gain_court_post_local_decision_tooltip
+
+	is_shown = {
+		shogunate_has_yamato_culture_trigger = yes
+		NOR = {
+			government_has_flag = government_is_republic
+			government_has_flag = government_is_theocracy
+		}
+		NOR = {
+			has_title = title:e_nmih_tenno
+			has_title = title:e_nmih_joko
+			has_title = title:e_nmih_nancho
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_male = yes
+		is_available_adult = yes
+		custom_description = {
+			text = "shogunate_gain_court_post_decision_local_trigger"
+			is_shii_or_goi_trigger = yes
+			NOT = { has_character_flag = post_changed }
+		}
+	}
+
+	widget = {
+		gui = "decision_view_widget_option_list_generic"
+		controller = decision_option_list_controller
+		decision_to_second_step_button = "gain_court_post_local_decision_second_step"
+		show_from_start = yes
+
+		# Dummy
+		item = {
+			value = gain_court_post_dummy_decision
+			localization = gain_court_post_dummy_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				always = no
+			}
+			ai_chance = {
+				value = 0
+			}
+		}
+		# Dazai Daini
+		item = {
+			value = gain_court_post_dazai_daini_decision
+			localization = gain_court_post_dazai_daini_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_dazai_daini } }
+				}
+			}
+			ai_chance = {
+				value = 0
+				if = {
+					limit = {
+						has_title = title:k_nmih_northern_kyushu
+					}
+					add = 100
+				}
+			}
+		}
+		# Dazai Shoni
+		item = {
+			value = gain_court_post_dazai_shoni_decision
+			localization = gain_court_post_dazai_shoni_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_goi_trigger = yes
+				is_under_eighth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_dazai_shoni } }
+				}
+			}
+			ai_chance = {
+				value = 0
+				if = {
+					limit = {
+						has_title = title:k_nmih_northern_kyushu
+					}
+					add = 100
+				}
+				if = {
+					limit = {
+						dynasty = dynasty:10000683 # Shoni
+					}
+					add = 100
+				}
+			}
+		}
+		# Chinjufu Shogun
+		item = {
+			value = gain_court_post_chinjufu_shogun_decision
+			localization = gain_court_post_chinjufu_shogun_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_chinjufu_shogun } }
+				}
+			}
+			ai_chance = {
+				value = 0
+				if = {
+					limit = {
+						OR = {
+							has_title = title:k_nmih_northern_oshu
+							has_title = title:k_nmih_southern_oshu
+						}
+					}
+					add = 10
+				}
+			}
+		}
+		# Yamashiro no Kami
+		item = {
+			value = gain_court_post_yamashiro_no_kami_decision
+			localization = gain_court_post_yamashiro_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_yamashiro_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_yamashiro
+					}
+					add = 100
+				}
+			}
+		}
+		# Settsu no Kami
+		item = {
+			value = gain_court_post_settsu_no_kami_decision
+			localization = gain_court_post_settsu_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_settsu_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_settsu
+					}
+					add = 100
+				}
+			}
+		}
+		# Owari no Kami
+		item = {
+			value = gain_court_post_owari_no_kami_decision
+			localization = gain_court_post_owari_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_owari_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_owari
+					}
+					add = 100
+				}
+			}
+		}
+		# Mikawa no Kami
+		item = {
+			value = gain_court_post_mikawa_no_kami_decision
+			localization = gain_court_post_mikawa_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_mikawa_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_mikawa
+					}
+					add = 100
+				}
+			}
+		}
+		# Totoumi no Kami
+		item = {
+			value = gain_court_post_totoumi_no_kami_decision
+			localization = gain_court_post_totoumi_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_totoumi_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_totomi
+					}
+					add = 100
+				}
+			}
+		}
+		# Suruga no Kami
+		item = {
+			value = gain_court_post_suruga_no_kami_decision
+			localization = gain_court_post_suruga_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_suruga_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_suruga
+					}
+					add = 100
+				}
+			}
+		}
+		# Kai no Kami
+		item = {
+			value = gain_court_post_kai_no_kami_decision
+			localization = gain_court_post_kai_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_kai_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_kai
+					}
+					add = 100
+				}
+			}
+		}
+		# Sagami no Kami
+		item = {
+			value = gain_court_post_sagami_no_kami_decision
+			localization = gain_court_post_sagami_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_sagami_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_sagami
+					}
+					add = 100
+				}
+			}
+		}
+		# Mino no Kami
+		item = {
+			value = gain_court_post_mino_no_kami_decision
+			localization = gain_court_post_mino_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_mino_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_mino
+					}
+					add = 100
+				}
+			}
+		}
+		# Yamato no Kami
+		item = {
+			value = gain_court_post_yamato_no_kami_decision
+			localization = gain_court_post_yamato_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_yamato_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_yamato
+					}
+					add = 100
+				}
+			}
+		}
+		# Kawachi no Kami
+		item = {
+			value = gain_court_post_kawachi_no_kami_decision
+			localization = gain_court_post_kawachi_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_kawachi_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_kawachi
+					}
+					add = 100
+				}
+			}
+		}
+		# Ise no Kami
+		item = {
+			value = gain_court_post_ise_no_kami_decision
+			localization = gain_court_post_ise_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_ise_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_ise
+					}
+					add = 100
+				}
+			}
+		}
+		# Musashi no Kami
+		item = {
+			value = gain_court_post_musashi_no_kami_decision
+			localization = gain_court_post_musashi_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_musashi_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_musashi
+					}
+					add = 100
+				}
+			}
+		}
+		# Shimousa no Kami
+		item = {
+			value = gain_court_post_shimousa_no_kami_decision
+			localization = gain_court_post_shimousa_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_shimousa_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_shimousa
+					}
+					add = 100
+				}
+			}
+		}
+		# Omi no Kami
+		item = {
+			value = gain_court_post_omi_no_kami_decision
+			localization = gain_court_post_omi_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_omi_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_omi
+					}
+					add = 100
+				}
+			}
+		}
+		# Mutsu no Kami
+		item = {
+			value = gain_court_post_mutsu_no_kami_decision
+			localization = gain_court_post_mutsu_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_mutsu_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_iwashiro
+					}
+					add = 100
+				}
+			}
+		}
+		# Echizen no Kami
+		item = {
+			value = gain_court_post_echizen_no_kami_decision
+			localization = gain_court_post_echizen_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_echizen_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_echizen
+					}
+					add = 100
+				}
+			}
+		}
+		# Harima no Kami
+		item = {
+			value = gain_court_post_harima_no_kami_decision
+			localization = gain_court_post_harima_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_harima_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_harima
+					}
+					add = 100
+				}
+			}
+		}
+		# Higo no Kami
+		item = {
+			value = gain_court_post_higo_no_kami_decision
+			localization = gain_court_post_higo_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_higo_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_higo
+					}
+					add = 100
+				}
+			}
+		}
+		# Shinano no Kami
+		item = {
+			value = gain_court_post_shinano_no_kami_decision
+			localization = gain_court_post_shinano_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_shinano_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_shinano
+					}
+					add = 100
+				}
+			}
+		}
+		# Shimotsukeno no Kami
+		item = {
+			value = gain_court_post_shimotsukeno_no_kami_decision
+			localization = gain_court_post_shimotsukeno_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_shimotsukeno_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_shimotsuke
+					}
+					add = 100
+				}
+			}
+		}
+		# Kamitsukeno no Suke
+		item = {
+			value = gain_court_post_kamitsukeno_no_suke_decision
+			localization = gain_court_post_kamitsukeno_no_suke_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_kamitsukeno_no_suke } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_kozuke
+					}
+					add = 100
+				}
+			}
+		}
+		# Hitachi no Suke
+		item = {
+			value = gain_court_post_hitachi_no_suke_decision
+			localization = gain_court_post_hitachi_no_suke_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_hitachi_no_suke } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_hitachi
+					}
+					add = 100
+				}
+			}
+		}
+		# Kazusa no Suke
+		item = {
+			value = gain_court_post_kazusa_no_suke_decision
+			localization = gain_court_post_kazusa_no_suke_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_kazusa_no_suke } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_kazusa
+					}
+					add = 100
+				}
+			}
+		}
+		# Dewa no Kami
+		item = {
+			value = gain_court_post_dewa_no_kami_decision
+			localization = gain_court_post_dewa_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_dewa_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_ugo
+					}
+					add = 100
+				}
+			}
+		}
+		# Kaga no Kami
+		item = {
+			value = gain_court_post_kaga_no_kami_decision
+			localization = gain_court_post_kaga_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_kaga_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_kaga
+					}
+					add = 100
+				}
+			}
+		}
+		# Etchu no Kami
+		item = {
+			value = gain_court_post_etchu_no_kami_decision
+			localization = gain_court_post_etchu_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_etchu_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_etchu
+					}
+					add = 100
+				}
+			}
+		}
+		# Echigo no Kami
+		item = {
+			value = gain_court_post_echigo_no_kami_decision
+			localization = gain_court_post_echigo_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_echigo_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_echigo
+					}
+					add = 100
+				}
+			}
+		}
+		# Tajima no Kami
+		item = {
+			value = gain_court_post_tajima_no_kami_decision
+			localization = gain_court_post_tajima_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_tajima_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_tajima
+					}
+					add = 100
+				}
+			}
+		}
+		# Inaba no Kami
+		item = {
+			value = gain_court_post_inaba_no_kami_decision
+			localization = gain_court_post_inaba_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_inaba_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+			}
+		}
+		# Hoki no Kami
+		item = {
+			value = gain_court_post_hoki_no_kami_decision
+			localization = gain_court_post_hoki_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_hoki_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_inaba
+					}
+					add = 100
+				}
+			}
+		}
+		# Izumo no Kami
+		item = {
+			value = gain_court_post_izumo_no_kami_decision
+			localization = gain_court_post_izumo_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_izumo_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_izumo
+					}
+					add = 100
+				}
+			}
+		}
+		# Mimasaka no Kami
+		item = {
+			value = gain_court_post_mimasaka_no_kami_decision
+			localization = gain_court_post_mimasaka_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_mimasaka_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_mimasaka
+					}
+					add = 100
+				}
+			}
+		}
+		# Bizen no Kami
+		item = {
+			value = gain_court_post_bizen_no_kami_decision
+			localization = gain_court_post_bizen_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_bizen_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_bizen
+					}
+					add = 100
+				}
+			}
+		}
+		# Bitchu no Kami
+		item = {
+			value = gain_court_post_bitchu_no_kami_decision
+			localization = gain_court_post_bitchu_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_bitchu_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_bitchu
+					}
+					add = 100
+				}
+			}
+		}
+		# Bingo no Kami
+		item = {
+			value = gain_court_post_bingo_no_kami_decision
+			localization = gain_court_post_bingo_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_bingo_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_bingo
+					}
+					add = 100
+				}
+			}
+		}
+		# Aki no Kami
+		item = {
+			value = gain_court_post_aki_no_kami_decision
+			localization = gain_court_post_aki_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_aki_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_aki
+					}
+					add = 100
+				}
+			}
+		}
+		# Suo no Kami
+		item = {
+			value = gain_court_post_suo_no_kami_decision
+			localization = gain_court_post_suo_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_suo_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_suo
+					}
+					add = 100
+				}
+			}
+		}
+		# Kii no Kami
+		item = {
+			value = gain_court_post_kii_no_kami_decision
+			localization = gain_court_post_kii_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_kii_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_kii
+					}
+					add = 100
+				}
+			}
+		}
+		# Awa no Kami
+		item = {
+			value = gain_court_post_awa_no_kami_decision
+			localization = gain_court_post_awa_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_awa_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_awa
+					}
+					add = 100
+				}
+			}
+		}
+		# Sanuki no Kami
+		item = {
+			value = gain_court_post_sanuki_no_kami_decision
+			localization = gain_court_post_sanuki_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_sanuki_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_sanuki
+					}
+					add = 100
+				}
+			}
+		}
+		# Iyo no Kami
+		item = {
+			value = gain_court_post_iyo_no_kami_decision
+			localization = gain_court_post_iyo_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_iyo_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_iyo
+					}
+					add = 100
+				}
+			}
+		}
+		# Buzen no Kami
+		item = {
+			value = gain_court_post_buzen_no_kami_decision
+			localization = gain_court_post_buzen_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_buzen_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_buzen
+					}
+					add = 100
+				}
+			}
+		}
+		# Bungo no Kami
+		item = {
+			value = gain_court_post_bungo_no_kami_decision
+			localization = gain_court_post_bungo_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_bungo_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_bungo
+					}
+					add = 100
+				}
+			}
+		}
+		# Chikuzen no Kami
+		item = {
+			value = gain_court_post_chikuzen_no_kami_decision
+			localization = gain_court_post_chikuzen_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_chikuzen_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_chikuzen
+					}
+					add = 100
+				}
+			}
+		}
+		# Chikugo no Kami
+		item = {
+			value = gain_court_post_chikugo_no_kami_decision
+			localization = gain_court_post_chikugo_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_chikugo_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_chikugo
+					}
+					add = 100
+				}
+			}
+		}
+		# Hizen no Kami
+		item = {
+			value = gain_court_post_hizen_no_kami_decision
+			localization = gain_court_post_hizen_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_hizen_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_hizen
+					}
+					add = 100
+				}
+			}
+		}
+		# Boshu no Kami
+		item = {
+			value = gain_court_post_boshu_no_kami_decision
+			localization = gain_court_post_boshu_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_boshu_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_boshu
+					}
+					add = 100
+				}
+			}
+		}
+		# Wakasa no Kami
+		item = {
+			value = gain_court_post_wakasa_no_kami_decision
+			localization = gain_court_post_wakasa_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_wakasa_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_wakasa
+					}
+					add = 100
+				}
+			}
+		}
+		# Noto no Kami
+		item = {
+			value = gain_court_post_noto_no_kami_decision
+			localization = gain_court_post_noto_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_noto_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_noto
+					}
+					add = 100
+				}
+			}
+		}
+		# Sado no Kami
+		item = {
+			value = gain_court_post_sado_no_kami_decision
+			localization = gain_court_post_sado_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_sado_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_sado
+					}
+					add = 100
+				}
+			}
+		}
+		# Tango no Kami
+		item = {
+			value = gain_court_post_tango_no_kami_decision
+			localization = gain_court_post_tango_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_tango_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_tango
+					}
+					add = 100
+				}
+			}
+		}
+		# Iwami no Kami
+		item = {
+			value = gain_court_post_iwami_no_kami_decision
+			localization = gain_court_post_iwami_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_iwami_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_iwami
+					}
+					add = 100
+				}
+			}
+		}
+		# Nagato no Kami
+		item = {
+			value = gain_court_post_nagato_no_kami_decision
+			localization = gain_court_post_nagato_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_nagato_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_nagato
+					}
+					add = 100
+				}
+			}
+		}
+		# Tosa no Kami
+		item = {
+			value = gain_court_post_tosa_no_kami_decision
+			localization = gain_court_post_tosa_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_tosa_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_tosa
+					}
+					add = 100
+				}
+			}
+		}
+		# Hyuga no Kami
+		item = {
+			value = gain_court_post_hyuga_no_kami_decision
+			localization = gain_court_post_hyuga_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_hyuga_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_hyuga
+					}
+					add = 100
+				}
+			}
+		}
+		# Osumi no Kami
+		item = {
+			value = gain_court_post_osumi_no_kami_decision
+			localization = gain_court_post_osumi_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_osumi_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_osumi
+					}
+					add = 100
+				}
+			}
+		}
+		# Satsuma no Kami
+		item = {
+			value = gain_court_post_satsuma_no_kami_decision
+			localization = gain_court_post_satsuma_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_satsuma_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_satsuma
+					}
+					add = 100
+				}
+			}
+		}
+		# Izumi no Kami
+		item = {
+			value = gain_court_post_izumi_no_kami_decision
+			localization = gain_court_post_izumi_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_izumi_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_izumi
+					}
+					add = 100
+				}
+			}
+		}
+		# Iga no Kami
+		item = {
+			value = gain_court_post_iga_no_kami_decision
+			localization = gain_court_post_iga_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_iga_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_iga
+					}
+					add = 100
+				}
+			}
+		}
+		# Shima no Kami
+		item = {
+			value = gain_court_post_shima_no_kami_decision
+			localization = gain_court_post_shima_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_shima_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_shima
+					}
+					add = 100
+				}
+			}
+		}
+		# Izu no Kami
+		item = {
+			value = gain_court_post_izu_no_kami_decision
+			localization = gain_court_post_izu_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_izu_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_izu
+					}
+					add = 100
+				}
+			}
+		}
+		# Hida no Kami
+		item = {
+			value = gain_court_post_hida_no_kami_decision
+			localization = gain_court_post_hida_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_hida_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_hida
+					}
+					add = 100
+				}
+			}
+		}
+		# Oki no Kami
+		item = {
+			value = gain_court_post_oki_no_kami_decision
+			localization = gain_court_post_oki_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_oki_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_oki
+					}
+					add = 100
+				}
+			}
+		}
+		# Awaji no Kami
+		item = {
+			value = gain_court_post_awaji_no_kami_decision
+			localization = gain_court_post_awaji_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_awaji_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_awaji
+					}
+					add = 100
+				}
+			}
+		}
+		# Iki no Kami
+		item = {
+			value = gain_court_post_iki_no_kami_decision
+			localization = gain_court_post_iki_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_iki_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_iki
+					}
+					add = 100
+				}
+			}
+		}
+		# Tsushima no Kami
+		item = {
+			value = gain_court_post_tsushima_no_kami_decision
+			localization = gain_court_post_tsushima_no_kami_decision
+			icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+			is_shown = {
+				is_shii_or_goi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_tsushima_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						has_title = title:d_nmih_tsushima
+					}
+					add = 100
+				}
+			}
+		}
+	}
+
+	effect = {
+		# Yamashiro no Kami
+		if = {
+			limit = { scope:gain_court_post_yamashiro_no_kami_decision ?= yes }
+			give_nickname = nick_the_yamashiro_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Settsu no Kami
+		if = {
+			limit = { scope:gain_court_post_settsu_no_kami_decision ?= yes }
+			give_nickname = nick_the_settsu_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Owari no Kami
+		if = {
+			limit = { scope:gain_court_post_owari_no_kami_decision ?= yes }
+			give_nickname = nick_the_owari_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Mikawa no Kami
+		if = {
+			limit = { scope:gain_court_post_mikawa_no_kami_decision ?= yes }
+			give_nickname = nick_the_mikawa_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Totoumi no Kami
+		if = {
+			limit = { scope:gain_court_post_totoumi_no_kami_decision ?= yes }
+			give_nickname = nick_the_totoumi_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Suruga no Kami
+		if = {
+			limit = { scope:gain_court_post_suruga_no_kami_decision ?= yes }
+			give_nickname = nick_the_suruga_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Kai no Kami
+		if = {
+			limit = { scope:gain_court_post_kai_no_kami_decision ?= yes }
+			give_nickname = nick_the_kai_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Sagami no Kami
+		if = {
+			limit = { scope:gain_court_post_sagami_no_kami_decision ?= yes }
+			give_nickname = nick_the_sagami_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Mino no Kami
+		if = {
+			limit = { scope:gain_court_post_mino_no_kami_decision ?= yes }
+			give_nickname = nick_the_mino_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Yamato no Kami
+		if = {
+			limit = { scope:gain_court_post_yamato_no_kami_decision ?= yes }
+			give_nickname = nick_the_yamato_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Kawachi no Kami
+		if = {
+			limit = { scope:gain_court_post_kawachi_no_kami_decision ?= yes }
+			give_nickname = nick_the_kawachi_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Ise no Kami
+		if = {
+			limit = { scope:gain_court_post_ise_no_kami_decision ?= yes }
+			give_nickname = nick_the_ise_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Musashi no Kami
+		if = {
+			limit = { scope:gain_court_post_musashi_no_kami_decision ?= yes }
+			give_nickname = nick_the_musashi_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Shimousa no Kami
+		if = {
+			limit = { scope:gain_court_post_shimousa_no_kami_decision ?= yes }
+			give_nickname = nick_the_shimousa_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Omi no Kami
+		if = {
+			limit = { scope:gain_court_post_omi_no_kami_decision ?= yes }
+			give_nickname = nick_the_omi_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Mutsu no Kami
+		if = {
+			limit = { scope:gain_court_post_mutsu_no_kami_decision ?= yes }
+			give_nickname = nick_the_mutsu_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Echizen no Kami
+		if = {
+			limit = { scope:gain_court_post_echizen_no_kami_decision ?= yes }
+			give_nickname = nick_the_echizen_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Harima no Kami
+		if = {
+			limit = { scope:gain_court_post_harima_no_kami_decision ?= yes }
+			give_nickname = nick_the_harima_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Higo no Kami
+		if = {
+			limit = { scope:gain_court_post_higo_no_kami_decision ?= yes }
+			give_nickname = nick_the_higo_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Shinano no Kami
+		if = {
+			limit = { scope:gain_court_post_shinano_no_kami_decision ?= yes }
+			give_nickname = nick_the_shinano_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Shimotsukeno no Kami
+		if = {
+			limit = { scope:gain_court_post_shimotsukeno_no_kami_decision ?= yes }
+			give_nickname = nick_the_shimotsukeno_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Kamitsukeno no Suke
+		if = {
+			limit = { scope:gain_court_post_kamitsukeno_no_suke_decision ?= yes }
+			give_nickname = nick_the_kamitsukeno_no_suke
+			add_character_flag = eighth_higher_post
+		}
+		# Hitachi no Suke
+		if = {
+			limit = { scope:gain_court_post_hitachi_no_suke_decision ?= yes }
+			give_nickname = nick_the_hitachi_no_suke
+			add_character_flag = eighth_higher_post
+		}
+		# Kazusa no Suke
+		if = {
+			limit = { scope:gain_court_post_kazusa_no_suke_decision ?= yes }
+			give_nickname = nick_the_kazusa_no_suke
+			add_character_flag = eighth_higher_post
+		}
+		# Dewa no Kami
+		if = {
+			limit = { scope:gain_court_post_dewa_no_kami_decision ?= yes }
+			give_nickname = nick_the_dewa_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Kaga no Kami
+		if = {
+			limit = { scope:gain_court_post_kaga_no_kami_decision ?= yes }
+			give_nickname = nick_the_kaga_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Etchu no Kami
+		if = {
+			limit = { scope:gain_court_post_etchu_no_kami_decision ?= yes }
+			give_nickname = nick_the_etchu_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Echigo no Kami
+		if = {
+			limit = { scope:gain_court_post_echigo_no_kami_decision ?= yes }
+			give_nickname = nick_the_echigo_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Tajima no Kami
+		if = {
+			limit = { scope:gain_court_post_tajima_no_kami_decision ?= yes }
+			give_nickname = nick_the_tajima_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Inaba no Kami
+		if = {
+			limit = { scope:gain_court_post_inaba_no_kami_decision ?= yes }
+			give_nickname = nick_the_inaba_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Hoki no Kami
+		if = {
+			limit = { scope:gain_court_post_hoki_no_kami_decision ?= yes }
+			give_nickname = nick_the_hoki_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Izumo no Kami
+		if = {
+			limit = { scope:gain_court_post_izumo_no_kami_decision ?= yes }
+			give_nickname = nick_the_izumo_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Mimasaka no Kami
+		if = {
+			limit = { scope:gain_court_post_mimasaka_no_kami_decision ?= yes }
+			give_nickname = nick_the_mimasaka_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Bizen no Kami
+		if = {
+			limit = { scope:gain_court_post_bizen_no_kami_decision ?= yes }
+			give_nickname = nick_the_bizen_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Bitchu no Kami
+		if = {
+			limit = { scope:gain_court_post_bitchu_no_kami_decision ?= yes }
+			give_nickname = nick_the_bitchu_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Bingo no Kami
+		if = {
+			limit = { scope:gain_court_post_bingo_no_kami_decision ?= yes }
+			give_nickname = nick_the_bingo_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Aki no Kami
+		if = {
+			limit = { scope:gain_court_post_aki_no_kami_decision ?= yes }
+			give_nickname = nick_the_aki_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Suo no Kami
+		if = {
+			limit = { scope:gain_court_post_suo_no_kami_decision ?= yes }
+			give_nickname = nick_the_suo_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Kii no Kami
+		if = {
+			limit = { scope:gain_court_post_kii_no_kami_decision ?= yes }
+			give_nickname = nick_the_kii_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Awa no Kami
+		if = {
+			limit = { scope:gain_court_post_awa_no_kami_decision ?= yes }
+			give_nickname = nick_the_awa_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Sanuki no Kami
+		if = {
+			limit = { scope:gain_court_post_sanuki_no_kami_decision ?= yes }
+			give_nickname = nick_the_sanuki_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Iyo no Kami
+		if = {
+			limit = { scope:gain_court_post_iyo_no_kami_decision ?= yes }
+			give_nickname = nick_the_iyo_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Buzen no Kami
+		if = {
+			limit = { scope:gain_court_post_buzen_no_kami_decision ?= yes }
+			give_nickname = nick_the_buzen_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Bungo no Kami
+		if = {
+			limit = { scope:gain_court_post_bungo_no_kami_decision ?= yes }
+			give_nickname = nick_the_bungo_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Chikuzen no Kami
+		if = {
+			limit = { scope:gain_court_post_chikuzen_no_kami_decision ?= yes }
+			give_nickname = nick_the_chikuzen_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Chikugo no Kami
+		if = {
+			limit = { scope:gain_court_post_chikugo_no_kami_decision ?= yes }
+			give_nickname = nick_the_chikugo_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Hizen no Kami
+		if = {
+			limit = { scope:gain_court_post_hizen_no_kami_decision ?= yes }
+			give_nickname = nick_the_hizen_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Boshu no Kami
+		if = {
+			limit = { scope:gain_court_post_boshu_no_kami_decision ?= yes }
+			give_nickname = nick_the_boshu_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Wakasa no Kami
+		if = {
+			limit = { scope:gain_court_post_wakasa_no_kami_decision ?= yes }
+			give_nickname = nick_the_wakasa_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Noto no Kami
+		if = {
+			limit = { scope:gain_court_post_noto_no_kami_decision ?= yes }
+			give_nickname = nick_the_noto_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Sado no Kami
+		if = {
+			limit = { scope:gain_court_post_sado_no_kami_decision ?= yes }
+			give_nickname = nick_the_sado_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Tango no Kami
+		if = {
+			limit = { scope:gain_court_post_tango_no_kami_decision ?= yes }
+			give_nickname = nick_the_tango_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Iwami no Kami
+		if = {
+			limit = { scope:gain_court_post_iwami_no_kami_decision ?= yes }
+			give_nickname = nick_the_iwami_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Nagato no Kami
+		if = {
+			limit = { scope:gain_court_post_nagato_no_kami_decision ?= yes }
+			give_nickname = nick_the_nagato_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Tosa no Kami
+		if = {
+			limit = { scope:gain_court_post_tosa_no_kami_decision ?= yes }
+			give_nickname = nick_the_tosa_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Hyuga no Kami
+		if = {
+			limit = { scope:gain_court_post_hyuga_no_kami_decision ?= yes }
+			give_nickname = nick_the_hyuga_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Osumi no Kami
+		if = {
+			limit = { scope:gain_court_post_osumi_no_kami_decision ?= yes }
+			give_nickname = nick_the_osumi_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Satsuma no Kami
+		if = {
+			limit = { scope:gain_court_post_satsuma_no_kami_decision ?= yes }
+			give_nickname = nick_the_satsuma_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Izumi no Kami
+		if = {
+			limit = { scope:gain_court_post_izumi_no_kami_decision ?= yes }
+			give_nickname = nick_the_izumi_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Iga no Kami
+		if = {
+			limit = { scope:gain_court_post_iga_no_kami_decision ?= yes }
+			give_nickname = nick_the_iga_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Shima no Kami
+		if = {
+			limit = { scope:gain_court_post_shima_no_kami_decision ?= yes }
+			give_nickname = nick_the_shima_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Izu no Kami
+		if = {
+			limit = { scope:gain_court_post_izu_no_kami_decision ?= yes }
+			give_nickname = nick_the_izu_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Hida no Kami
+		if = {
+			limit = { scope:gain_court_post_hida_no_kami_decision ?= yes }
+			give_nickname = nick_the_hida_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Oki no Kami
+		if = {
+			limit = { scope:gain_court_post_oki_no_kami_decision ?= yes }
+			give_nickname = nick_the_oki_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Awaji no Kami
+		if = {
+			limit = { scope:gain_court_post_awaji_no_kami_decision ?= yes }
+			give_nickname = nick_the_awaji_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Iki no Kami
+		if = {
+			limit = { scope:gain_court_post_iki_no_kami_decision ?= yes }
+			give_nickname = nick_the_iki_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Tsushima no Kami
+		if = {
+			limit = { scope:gain_court_post_tsushima_no_kami_decision ?= yes }
+			give_nickname = nick_the_tsushima_no_kami
+			add_character_flag = eighth_higher_post
+		}
+
+		# add modifiers
+		gain_imperial_court_local_post_effect = yes
+	}
+
+	cost = {
+		gold = {
+			value = 0
+			if = {
+				limit = {
+					scope:gain_court_post_dazai_daini_decision ?= yes
+				}
+				add = 400
+			}
+			else_if = {
+				limit = {
+					scope:gain_court_post_dazai_shoni_decision ?= yes
+				}
+				add = 300
+			}
+			else_if = {
+				limit = {
+					scope:gain_court_post_chinjufu_shogun_decision ?= yes
+				}
+				add = 500
+			}
+			else = {
+				add = 200
+			}
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}

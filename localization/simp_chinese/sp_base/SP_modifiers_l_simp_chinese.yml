@@ -1,0 +1,7 @@
+﻿l_simp_chinese:
+
+    pob_improve_militia_county_modifier:0 "兵役强化"
+    pob_improve_militia_county_modifier_desc:0 "此地近期被领主加征了兵役。"
+
+    pob_plan_reclamation_county_modifier:0 "农田开垦"
+    pob_plan_reclamation_county_modifier_desc:0 "此地近期开垦了新田。"

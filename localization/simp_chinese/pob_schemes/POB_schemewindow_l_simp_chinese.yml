@@ -1,0 +1,24 @@
+﻿l_simp_chinese:
+
+SP_AI_THEIR_LOVER: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]与[target.GetHerHis]的领主很亲密：$VALUE|=+0$"
+SP_AI_THEIR_FRIEND: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]是[target.GetHerHis]领主的朋友：$VALUE|=+0$"
+SP_AI_THEIR_RIVAL: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]是[target.GetHerHis]领主的仇敌：$VALUE|=+0$"
+SP_AI_THEIR_CHILD: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]是[target.GetHerHis]领主的子女：$VALUE|=+0$"
+SP_AI_THEIR_RELATIVE: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]是[target.GetHerHis]领主的亲属：$VALUE|=+0$"
+SP_AI_MY_LIEGES_KNIGHT: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]是[target.GetHerHis]领主的[target.GetLiege.Custom('KnightCulture')]：$VALUE|=+0$"
+
+SP_AI_MY_LIEGES_COMMANDER: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]是[target.GetHerHis]领主的将领：$VALUE|=+0$"
+SP_AI_ON_THE_COUNCIL: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]在内阁中：$VALUE|=+0$"
+SP_AI_COURT_PHYSICIAN: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]是[target.GetHerHis]领主的宫廷医师：$VALUE|=+0$"
+SP_AI_LEAVING_MY_SPOUSE: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]会离开[target.GetHerHis]的配偶：$VALUE|=+0$"
+SP_AI_LEAVING_MY_CHILD: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]会离开[target.GetHerHis]的子女：$VALUE|=+0$"
+SP_AI_MARRIED_MATRILINIALLY: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]在一段[matrilineal|E]婚姻中：$VALUE|=+0$"
+SP_AI_MARRIED_PATRILINIALLY: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]在一段[patrilineal|E]婚姻中：$VALUE|=+0$"
+SP_AI_YOU_ARE_THE_SOVEREIGN: "你是[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]的君主：$VALUE|=+0$"
+SP_AI_YOUR_RELATIVE: "你是[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]的亲属：$VALUE|=+0$"
+SCHEME_pob_persuade_and_entice_STRONG_HOOK_PENALTY:0 "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]忠于[target.GetHerHis]的[target.Custom2('RelationToMeShort', target.GetLiege)]：$VALUE|+0=$"
+SCHEME_pob_persuade_and_entice_LOYAL_PENALTY:0 "目标是[GetTrait('loyal').GetName( owner.Self )]的: $VALUE|+0=$"
+
+SCHEME_REALM_SIZE:0 "领地规模：$VALUE|+0=$"
+
+SCHEME_SP_POLICY_IMPROVE_MILITIA:0 "兵役强化[policy|E]：$VALUE|+0=$"

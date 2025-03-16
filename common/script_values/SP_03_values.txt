@@ -322,6 +322,19 @@
 			}
 			add = 20
 		}
+
+		##########
+		## 御用 ##
+		##########
+		flag:flag_sp_policy_six_coins_oath = {
+			add = 5
+		}
+		flag:flag_sp_policy_cunning_strategy = {
+			add = 5
+		}
+		flag:flag_sp_policy_sanada_red_armour = {
+			add = 5
+		}
 	}
 }
 

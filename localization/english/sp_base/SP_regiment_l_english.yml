@@ -1,0 +1,26 @@
+﻿l_english:
+
+   yabusame_archers:0 "Yabusame Samurai"  
+   yabusame_archers_flavor:0 "#F Samurai skilled in horseback archery, possessing unparalleled advantages in prolonged battles on open plains. Once popular during the Genpei period, this tradition gradually declined over time.#!"
+
+   shigedou_archers:0 "Shigedō Bowmen"  
+   shigedou_archers_flavor:0 "#F A specialized bow in the Ogasawara-ryū archery school, featuring a black-lacquered body wrapped in vines. Arrows shot from this bow were incredibly precise and highly lethal, with only a few samurai mastering its use.#!"
+
+   sohei_pikemen:0 "Naginata Warrior Monks"  
+   sohei_pikemen_flavor:0 "#F Warrior monks wielding naginata, a polearm capable of countering both cavalry and infantry. Their unwavering faith makes them fearsome opponents, as they fight with absolute loyalty and no fear of death.#!"
+
+   dragon_corps:0 "Date Dragon Cavalry"  
+   dragon_corps_flavor:0 "#F The Date clan took advantage of Oshu’s horse-breeding industry to form a unique mounted matchlock unit. This cavalry played a significant role in the late Sengoku period, particularly during the Siege of Osaka.#!"
+
+   sanada_red_armour:0 "Sanada Aka-zonae"  
+   sanada_red_armour_flavor:0 "#F During the Siege of Osaka, Sanada Nobushige commanded a force clad in red armor, wielding red weapons and banners. Their cavalry units were especially formidable.#!"
+
+   takeda_red_armour:0 "Takeda Aka-zonae"
+   takeda_red_armour_flavor:0 "#F The elite cavalry unit of the Takeda clan, named for their distinctive red armor. Renowned for their exceptional horsemanship and combat prowess, they were a formidable force on the battlefield.#!"
+
+   armoured_militia:0 "Chōsokabe Ichirō Gusoku"  
+   armoured_militia_flavor:0 "A militia composed of farmers equipped with standardized armor. Balancing agricultural duties with military service, they developed endurance and physical strength, enhancing their overall combat effectiveness."
+
+   oda_crossbowmen:0 "Oda Three-Line Volley Fire"  
+   oda_crossbowmen_flavor:0 "A tactical formation where chevaux de frise were placed at the front, and the matchlock gunners were divided into three groups: one aiming and firing, the second reloading, and the third adjusting the match cord. This system ensured continuous, uninterrupted firepower."
+

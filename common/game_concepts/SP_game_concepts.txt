@@ -5,3 +5,8 @@
 sp_policy_point = {
 	texture = "gfx/interface/icons/activities/activity_adult_education_header.dds"
 }
+
+spt_bugyo = {
+	texture = "gfx/interface/icons/message_feed/council.dds"
+	parent = councillor
+}

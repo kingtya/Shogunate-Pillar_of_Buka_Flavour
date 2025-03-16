@@ -173,9 +173,58 @@ sanada_red_armour = { # 真田赤备
 	screen = 10
 	
 	terrain_bonus = {
+		plains = { damage = 30 }
+		drylands = { damage = 30 }
+		wetlands = { damage = -75 toughness = -10 pursuit = -10 }
+	}
+
+	counters = {
+		heavy_infantry = 1
+		heavy_cavalry = 1
+		archers = 0.5
+	}
+
+	winter_bonus = {
+		normal_winter = { damage = -10 toughness = -5 }
+		harsh_winter = { damage = -20 toughness = -10 }
+	}
+
+	buy_cost = { gold = 175 }
+	low_maintenance_cost = { gold = 0.5 }
+	high_maintenance_cost = { gold = 2 }
+
+	ai_quality = {
+		value = 100
+	}
+	
+	holy_order_fallback = no
+	allowed_in_hired_troops = no
+
+	stack = 50
+
+	icon = heavy_cavalry
+}
+
+takeda_red_armour = { # 武田赤备
+	type = heavy_cavalry
+	
+	can_recruit = {
+		has_variable_list = sp_released_policy_flags
+		any_in_list = {
+			variable = sp_released_policy_flags
+			this = flag:flag_sp_policy_takeda_red_armour
+		}
+	}
+
+	damage = 115
+	toughness = 30
+	pursuit = 25
+	screen = 10
+	
+	terrain_bonus = {
 		plains = { damage = 20 }
-		hills = { damage = 20 pursuit = 10 }
-		mountains = { damage = 20 pursuit = 10 }
+		hills = { damage = 20 toughness = -10 pursuit = 10 }
+		mountains = { damage = 20 toughness = -10 pursuit = 10 }
 		wetlands = { damage = -80 toughness = -15 pursuit = -20 }
 	}
 
@@ -246,7 +295,10 @@ armoured_militia = { # 长宗我部一领具足
 	high_maintenance_cost = { gold = jomsviking_pirates_high_maint_cost }
 	
 	stack = 100
-	ai_quality = { value = 100 }
+	ai_quality = { 
+		value = culture_ai_weight_skirmishers
+		add = 60
+	}
 	icon = skirmishers
 }
 

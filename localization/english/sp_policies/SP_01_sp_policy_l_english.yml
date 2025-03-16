@@ -1,0 +1,145 @@
+﻿l_english:
+    ## Imagawa Clan
+    flag_sp_policy_laws_of_imagawa_name:0 "#V Imagawa Kana Code#!"
+    flag_sp_policy_laws_of_imagawa_desc:0 "The Imagawa Clan's domestic laws, drafted by Imagawa Ujichika, the warlord of Suruga Province, are the oldest in the Eastern provinces. In April of 1526, Imagawa Ujichika established the 'Kanamashiro' which consisted of 33 articles. The laws reflected Ujichika’s illness and his desire to ensure the succession of his son Imagawa Ujizane. In 1553, Imagawa Yoshimoto amended it with an additional 21 articles, which removed the guardian duties of the ruling family and entirely discarded the concept of guardian warlords."
+    sp_policy_laws_of_imagawa_modifier:0 "Imagawa Kana Code"
+    sp_policy_laws_of_imagawa_modifier_desc:0 "This individual enacted the Imagawa Code of Laws."
+    sp_policy_laws_of_imagawa_county_modifier:0 "Imagawa Kana Code"
+    sp_policy_laws_of_imagawa_county_modifier_desc:0 "The guardian's privilege to enter this region has been abolished by the new law."
+    sp_policy_laws_of_imagawa_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('imagawa_margin').GetName( GetNullCharacter )], which is required to unlock the policy. The latter requires 12 [stewardship|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+    sp_policy_laws_of_imagawa_effect_tt:0 "The [county|E] in your domain will receive [GetModifier('sp_policy_laws_of_imagawa_county_modifier').GetNameWithTooltip] for #V 20 years#!"
+    sp_policy_laws_of_imagawa_effect_tt_1:1 "Each [county|E] under your direct control has a higher probability each #V quarter#! of receiving [GetModifier('sp_policy_laws_of_imagawa_county_modifier').GetNameWithTooltip] for #V 5 years#!"
+
+    ## Takeda Clan
+    flag_sp_policy_laws_of_takeda_name:0 "#V Takeda Kōshū Legal Code#!"
+    flag_sp_policy_laws_of_takeda_desc:0 "The Takeda Clan's legal code, developed by Takeda Shingen in Kai Province in 1547, is also known as the Shingen Laws or the Kōshū Laws. Originally comprising 55 articles, two additional articles were added in 1554, making a total of 57. The legal code is divided into two parts: the upper part, consisting of 57 articles, focuses on legal rules, while the lower part, with 99 articles, is a moral treatise inspired by classical Chinese works such as the Analects and Mencius."
+    sp_policy_laws_of_takeda_modifier:0 "Kōshū Legal Code"
+    sp_policy_laws_of_takeda_modifier_desc:0 "This individual enacted the Kōshū Legal Code."
+    sp_policy_laws_of_takeda_county_modifier:0 "Kōshū Legal Code"
+    sp_policy_laws_of_takeda_county_modifier_desc:0 "The ownership of land and the collection of annual tributes in this region are now governed by the new laws."
+    sp_policy_laws_of_takeda_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('takeda_margin').GetName( GetNullCharacter )], which is required to unlock the policy. The latter requires 12 [stewardship|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+    sp_policy_laws_of_takeda_effect_tt:0 "The [county|E] in your domain will receive [GetModifier('sp_policy_laws_of_takeda_county_modifier').GetNameWithTooltip] for #V 20 years#!"
+    sp_policy_laws_of_takeda_effect_tt_1:1 "Each [county|E] under your direct control has a higher probability each #V quarter#! of receiving [GetModifier('sp_policy_laws_of_takeda_county_modifier').GetNameWithTooltip] for #V 5 years#!"
+
+    flag_sp_policy_takeda_red_armour_name:0 "#V Takeda Aka-zonae Establishment#!"
+    flag_sp_policy_takeda_red_armour_desc:0 ""
+    sp_policy_takeda_red_armour_effect_tt_0:0 "#V You#! can recruit [GetMaA('takeda_red_armour').GetName] [men_at_arms|E]"
+    sp_policy_takeda_red_armour_effect_tt_1:1 "You gain a force of [GetMaA('takeda_red_armour').GetName] numbering #V 50#!"
+
+    ## Oda Clan
+    flag_sp_policy_intensive_firearms_name:0 "#V Oda Intensive Firearm Use#!"
+    flag_sp_policy_intensive_firearms_desc:0 "In 1575, Oda Nobunaga and Tokugawa Ieyasu formed an alliance to counter the Takeda army. Faced with the Takeda cavalry, Oda's forces used tactical gunfire by arranging arquebusiers behind a barricade, employing a three-stage firing tactic that overwhelmed the Takeda cavalry, securing victory at the Battle of Nagashino."
+    sp_policy_intensive_firearms_modifier:0 "Intensive Firearm Use"
+    sp_policy_intensive_firearms_modifier_desc:0 "This individual favored the use of firearms in war."
+    sp_policy_intensive_firearms_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('oda_margin').GetName( GetNullCharacter )], which is required to unlock the policy. The latter requires 15 [martial|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+    sp_policy_intensive_firearms_effect_tt:1 "#V You#! can recruit [GetMaA('oda_crossbowmen').GetName] [men_at_arms|E]"
+    sp_policy_has_no_policy_improve_firearms_tt:0 "@warning_icon!#X You have not enacted the prerequisite policy to strengthen the firearm unit#!"
+
+    ## Hojo Clan
+    flag_sp_policy_five_admonitions_name:0 "#V Go-Hojo Five Admonitions#!"
+    flag_sp_policy_five_admonitions_desc:0 "Also known as the Five Articles of Advice, it was a set of instructions written by Hojo Ujitsuna of Sagami Province to his son Ujiyasu in 1541. The advice emphasizes frugality and describes the reasons for the success of Ujitsuna's father, Hojo Ujitsuna, who achieved greatness due to his frugality, even claiming that the father’s success was due to divine favor."
+    sp_policy_five_admonitions_modifier:0 "Five Admonitions"
+    sp_policy_five_admonitions_modifier_desc:0 "This individual followed the Five Admonitions."
+    sp_policy_five_admonitions_county_modifier:0 "Five Admonitions"
+    sp_policy_five_admonitions_county_modifier_desc:0 "This region follows the policy of four noble lords and six commoners in taxation."
+    sp_policy_five_admonitions_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('hojo_margin').GetName( GetNullCharacter )], which is required to unlock the policy. The latter requires 12 [learning|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+    sp_policy_five_admonitions_effect_tt:0 "The [county|E] in your domain will receive [GetModifier('sp_policy_five_admonitions_county_modifier').GetNameWithTooltip] for #V 20 years#!"
+    sp_policy_five_admonitions_effect_tt_1:1 "Each [county|E] under your direct control has a higher probability each #V quarter#! of receiving [GetModifier('sp_policy_five_admonitions_county_modifier').GetNameWithTooltip] for #V 5 years#!"
+    sp_policy_five_admonitions_effect_tt_2:2 "You gain [GetTrait('temperate').GetName( GetNullCharacter )|V] [trait|E]"
+
+    ## Tokugawa Clan
+    flag_sp_policy_guardian_forces_name:0 "#V Tokugawa Hatamoto Vanguard#!"
+    flag_sp_policy_guardian_forces_desc:0 "In 1566, Tokugawa Ieyasu reformed the military structure of the Tokugawa clan, reorganizing the Mikawa warriors into East Mikawa, West Mikawa, and Ieyasu's direct flag units. The Hatamoto Vanguard were a mobile force, designed to protect the lord and react quickly to emergencies. They were stationed near Ieyasu's residence, ready for unforeseen events."
+    sp_policy_guardian_forces_modifier:0 "Tokugawa Hatamoto Vanguard"
+    sp_policy_guardian_forces_modifier_desc:0 "This individual established the Tokugawa Flagship Troops."
+    sp_policy_guardian_forces_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('tokugawa_margin').GetName( GetNullCharacter )], which is required to unlock the policy. The latter requires 15 [martial|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+
+    ## Date Clan
+    flag_sp_policy_dragon_corps_name:0 "#V Date Dragon Corps Establishment#!"
+    flag_sp_policy_dragon_corps_desc:0 "The elite cavalry unit, known as the Dragon Corps, was created by Date Masamune. This force combined the mobility of cavalry with the firepower of firearms and made an appearance during the Siege of Osaka in 1614 and 1615. It was referred to as 'Dragon Corps' in Europe during the 17th century."
+    sp_policy_dragon_corps_modifier:0 "Dragon Corps Establishment"
+    sp_policy_dragon_corps_modifier_desc:0 "This individual created the cavalry firearm unit."
+    sp_policy_dragon_corps_effect_tt_0:0 "If #V you#!'s [culture|E] has $innovation_advanced_bowmaking$ [innovation|E], #V you#! can recruit [GetMaA('dragon_corps').GetName] [men_at_arms|E]"
+    sp_policy_dragon_corps_effect_tt_1:1 "You gain a force of [GetMaA('dragon_corps').GetName] numbering #V 100#!"
+    sp_policy_dragon_corps_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('date_margin').GetName( GetNullCharacter )], which is required to unlock the policy. The latter requires 12 [martial|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+
+    sp_policy_has_no_innovation_advanced_bowmaking_tt:0 "@warning_icon!#X Your [culture|E] does not have the $innovation_advanced_bowmaking$ [innovation|E]#!"
+
+    ## Shimazu Clan
+    flag_sp_policy_satsuma_military_education_name:0 "#V Satsuma Military Law#!"
+    flag_sp_policy_satsuma_military_education_desc:0 "In the Satsuma province of southern Kyushu, the harsh living conditions led to a strong and militant culture, resulting in warlike individuals throughout the region even into the Bakumatsu period. The Shimazu clan capitalized on these conditions to build a formidable army."
+    sp_policy_satsuma_military_education_modifier:0 "Satsuma Military Law"
+    sp_policy_satsuma_military_education_modifier_desc:0 "This individual led with unique military laws."
+    sp_policy_satsuma_military_education_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('shimazu_margin').GetName( GetNullCharacter )], which is required to unlock the policy. The latter requires 20 [prowess|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+
+    ## Uesugi Clan
+    flag_sp_policy_expeditionary_support_name:0 "#V Uesugi Expeditionary Army Support#!"
+    flag_sp_policy_expeditionary_support_desc:0 "‘Frost-covered camp, autumn winds rise, and several flocks of geese pass by at midnight.’\nMountains join together to form a strong hold. This stanza symbolizes the strategic foresight of Uesugi Kenshin. It is believed he implemented a major change in the military structure, creating the first of its kind long-ranged siege corps and hiring soldiers equipped for long sieges, as early as the 16th century."
+    sp_policy_expeditionary_support_modifier:0 "Expeditionary Army Support"
+    sp_policy_expeditionary_support_modifier_desc:0 "This individual favored a strategy of long-range support."
+    sp_policy_expeditionary_support_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('uesugi_margin').GetName( GetNullCharacter )], which is required to unlock the policy. The latter requires 12 [martial|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+
+    ## Mōri Clan
+    flag_sp_policy_million_minds_motto_name:0 "#V Mori Million Minds Oath#!"
+    flag_sp_policy_million_minds_motto_desc:0 "The motto carved on the stone tablet used by Mōri Motonari, the Sengoku warlord of Aki Province, when rebuilding the Yoshida Gunyama Castle. Due to difficulties in building the main keep stone walls, the tablet was buried at the rear of the main keep in the 'Hime-no-maru' as a substitute for a human pillar, which successfully completed the construction. By omitting one stroke from the character 'hundred', the character 'ten thousand' was written as 'one strength,' allowing it to be read as 'one strength, one mind, one heart' vertically, symbolizing unity in achieving success together."
+    sp_policy_million_minds_motto_modifier:0 "Million Minds Oath"
+    sp_policy_million_minds_motto_modifier_desc:0 "This individual followed the Million Minds Oath."
+    sp_policy_million_minds_motto_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('mori_margin').GetName( GetNullCharacter )], which is required to unlock the policy. The latter requires 12 [stewardship|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+
+    ## Chōsokabe Clan
+    flag_sp_policy_armoured_militia_name:0 "#V Chōsokabe One Armor Corps System#!"
+    flag_sp_policy_armoured_militia_desc:0 "The military system of armed farmers, not yet divided into soldiers and farmers, established by the Sengoku warlord Chōsokabe Motochika of Tosa Province. Regular samurai typically had additional armor, while these semi-farming, semi-soldier troops, who only had one set of armor, were called ‘One Armor Corps.’ These soldiers were generally exempted from routine samurai duties, and due to their strength from farming, they had higher collective action abilities. However, they were difficult to mobilize during busy farming periods and struggled with long campaigns."
+    sp_policy_armoured_militia_modifier:0 "One Armor Corps System"
+    sp_policy_armoured_militia_modifier_desc:0 "This individual established the One Armor Corps System."
+    sp_policy_armoured_militia_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('chosokabe_margin').GetName( GetNullCharacter )], which is required to unlock the policy. The latter requires 12 [martial|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+    sp_policy_armoured_militia_effect_tt_0:0 "#V You#! can recruit [GetMaA('armoured_militia').GetName] [men_at_arms|E]"
+
+    ## Sanada Clan
+    flag_sp_policy_six_coins_oath_name:0 "#V Sanada Six Coins Oath#!"
+    flag_sp_policy_six_coins_oath_desc:0 "Legend has it that when a person passes away and crosses the Sanzu River, six coins (hell money) must be paid. The Sanada clan, using this as their family crest, came from the poverty-stricken region of Shinano. In those times, newborn babies often died early, and the family would place six coins in the coffin. The six coins symbolized the six paths of reincarnation, representing the Sanada clan’s readiness to face death at any time."
+    sp_policy_six_coins_oath_modifier:0 "Six Coins Oath"
+    sp_policy_six_coins_oath_modifier_desc:0 "This individual followed the Six Coins Oath."
+    sp_policy_six_coins_oath_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('sanada_margin').GetName( GetNullCharacter )], which is required to unlock the policy. The latter requires 20 [martial|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+
+    flag_sp_policy_cunning_strategy_name:0 "#V Sanada Cunning Military Strategy#!"
+    flag_sp_policy_cunning_strategy_desc:0 "Ishida Mitsunari, a high-ranking official of the Toyotomi clan, once described Sanada Masayuki as: 'A master of both internal and external strategies, whose success or failure should be judged accordingly.' The term ‘bi-sei’ refers to the strategy of inconsistency and concealment—Masayuki’s philosophy of survival—where internal and external matters are not aligned and are kept secret."
+    sp_policy_cunning_strategy_modifier:0 "Cunning Military Strategy"
+    sp_policy_cunning_strategy_modifier_desc:0 "This individual mastered the art of switching allegiances and strategic deception."
+    sp_policy_cunning_strategy_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('sanada_margin').GetName( GetNullCharacter )], which is required to unlock the policy. The latter requires 15 [intrigue|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+    sp_policy_cunning_strategy_effect_tt:0 "Other [rulers|E] are more willing to accept your #V Offer betrayal#! and #V Offer Vassalage#! [interactions|E]"
+    sp_policy_foster_system_more_accpetive_betrayal_reason:0 "Your deceptive military strategy [sp_policy|E]：$VALUE|+=0$"
+
+    flag_sp_policy_sanada_red_armour_name:0 "#V Sanada Aka-zonae Establishment#!"
+    flag_sp_policy_sanada_red_armour_desc:0 "Formed by Sanada Nobushige (Yukimura) during the Summer Siege of Osaka in the 20th year of Keichō (1615). The Sanada Red Armor Corps, fully inheriting the Takeda-style red armor, led an attack on Tokugawa Ieyasu's main army during the Battle of Tennōji, causing the first major collapse of the Tokugawa army since the Battle of Mikatagahara. In the ‘Satsuma Old Records’ of the Shimazu clan, it was written: 'Sanada, Japan's greatest warrior, never before seen such courage.'"
+    sp_policy_sanada_red_armour_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('sanada_margin').GetName( GetNullCharacter )], which is required to unlock the policy. The latter requires 15 [martial|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+    sp_policy_sanada_red_armour_effect_tt_0:0 "#V You#! can recruit [GetMaA('sanada_red_armour').GetName] [men_at_arms|E]"
+    sp_policy_sanada_red_armour_effect_tt_1:1 "You gain a force of [GetMaA('sanada_red_armour').GetName] numbering #V 50#!"
+
+    # Ōtomo
+    flag_sp_policy_kichishitan_sanction_name:0 "#V Ōtomo Kirishitan Sanction#!"
+    flag_sp_policy_kichishitan_sanction_desc:0 "'Kirishitan' is a phonetic transcription of 'Christian.' The Sengoku daimyo of Bungo Province, Ōtomo Sōrin, was well known as a Christian daimyo. In the 20th year of Tenbun (1551), Sōrin met Jesuit missionary Francis Xavier, who was preaching in Bungo, and they became close friends. Twenty-seven years later, in the 6th year of Tenshō (1578), Sōrin converted to Christianity and was baptized. He protected missionary activities in his domain, engaged in trade with the West, and dreamed of establishing a Christian kingdom, but this dream was shattered after the Battle of Mimikawa."
+    sp_policy_kichishitan_sanction_modifier:0 "Kirishitan Sanction"
+    sp_policy_kichishitan_sanction_modifier_desc:0 "This person promotes the Kirishitan faith within their domain."
+    sp_policy_kichishitan_sanction_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('otomo_margin').GetName( GetNullCharacter )] and follow [GetReligionByKey('christianity_religion').GetName]. The latter requires 12 [learning|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+    sp_policy_has_no_policy_western_sanction_tt:0 "@warning_icon!#X You have not enacted the prerequisite policy 'Nanban Protection'#!"
+
+    # Miyoshi
+    flag_sp_policy_govern_for_people_name:0 "#V Miyoshi Just Governance for the People#!"
+    flag_sp_policy_govern_for_people_desc:0 "In the 22nd year of Tenbun (1553), the 13th Shogun of the Muromachi Shogunate, Ashikaga Yoshiteru, plotted against the acting Kanrei, Miyoshi Nagayoshi. In response, Nagayoshi dispatched troops to Ryozen Castle, forcing Yoshiteru to flee to Kutsuki in Ōmi, leading to his loss of power. From then on, Nagayoshi began stabilizing the war-torn Kinai region. In the 2nd year of Kōji (1556), he implemented a major tax reform, significantly reducing various unreasonable levies. The following year, in October, he issued three edicts at Daitokuji Temple in Kyoto to improve public order."
+    sp_policy_govern_for_people_modifier:0 "Just Governance for the People"
+    sp_policy_govern_for_people_modifier_desc:0 "This person is dedicated to stabilizing livelihoods and restoring governance."
+    sp_policy_govern_for_people_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('miyoshi_margin').GetName( GetNullCharacter )]. The latter requires 12 [stewardship|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+
+    ## Suzuki Clan
+    flag_sp_policy_partisan_corps_name:0 "#V Suzuki Saika Pact#!"
+    flag_sp_policy_partisan_corps_desc:0 "A loose alliance agreement established by the Saika Ikki of Kii Province, centered around the Suzuki Clan, to maintain autonomy. Its core principles include unified command over firearm troops, control over firearm trade and water transport, and support for the Honganji Temple to resist external powers. While each noble family retains territorial independence, major affairs are discussed collectively. Leveraging geographical advantages and technological prowess, they once resisted central warlords, embodying a classic example of regional forces' joint self-governance during the Sengoku period."
+    sp_policy_partisan_corps_modifier:0 "Saika Pact"
+    sp_policy_partisan_corps_modifier_desc:0 "This person unites local nobles to resist external powers."
+    sp_policy_partisan_corps_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('suzuki_margin').GetName( GetNullCharacter )], which is required to unlock this policy. The latter requires 12 [diplomacy|E] [skills|E] to unlock, and once enacted, it cannot be revoked for 5 years#!"
+
+    ## Honganji Clan
+    flag_sp_policy_buddhist_laws_name:0 "#V Honganji Unity of Kihō#!"
+    flag_sp_policy_buddhist_laws_desc:0 "A theocratic governance ideology promoted by the Ikko Sect (Jodo Shinshu) and the Honganji faction. Its core concept is the integration of Kihō (religion and politics), using religious faith to unite believers while establishing armed forces (such as the Ikko Ikki) to counter secular warlords, achieving self-governance and defense."
+    sp_policy_buddhist_laws_modifier:0 "Unity of Kihō"
+    sp_policy_buddhist_laws_modifier_desc:0 "This person enforces theocracy and consolidates followers."
+    sp_policy_buddhist_laws_warning_tt:0 "@warning_icon!#X You or your [spt_bugyo|E] do not have [GetTrait('honganji_margin').GetName( GetNullCharacter )], which is required to unlock this policy. The Kanjo Bugyō must have 15 [learning|E] [skills|E], and once enacted, it cannot be revoked for 5 years#!"

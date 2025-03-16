@@ -1,0 +1,97 @@
+﻿l_simp_chinese:
+
+    # 劝诱
+    pob_delegate_persuasion_interaction:0 "指示劝诱"
+    pob_delegate_persuasion_interaction_desc:0 "指示[courtier|E]尝试劝说[recipient.GetShortUINameNoTooltip]为你效命"
+    recipient_secondary_pob_delegate_persuasion_interaction:0 "说客"
+
+    pob_persuade_and_entice_interaction:0 "劝诱#weak （计谋）#!"
+    pob_persuade_and_entice_interaction_desc:0 "尝试劝说[recipient.GetShortUINameNoTooltip]为你效命"
+    pob_persuade_and_entice:0 "劝诱"
+    pob_persuade_and_entice_desc_general:0 "在劝诱[scheme|E]中，你尝试邀请另一角色到你的[court|E]。"
+    pob_persuade_and_entice_action:0 "$pob_persuade_and_entice$"
+    pob_persuade_and_entice_desc:0 "我会尝试劝说[SCHEME.GetTargetCharacter.GetShortUINamePossessive]为我效命"
+    pob_persuade_and_entice_start_scheme:0 "$pob_persuade_and_entice$开始"
+
+    pob_persuade_and_entice_invalidated_title:1 "@personal_scheme_icon!$pob_persuade_and_entice$计谋结束"
+    pob_persuade_and_entice_invalidated_war:1 "由于你们之间的战事，你不能再$pob_persuade_and_entice$[target.GetShortUIName]。"
+    pob_persuade_and_entice_invalidated_dead:1 "[target.GetShortUIName|U]已过世。你不能再对[target.GetHerHim]使用。"
+
+    pob_persuade_and_entice_events.1001.t:0 "$pob_persuade_and_entice$: 成功！"
+    pob_persuade_and_entice_events.1001.desc:0 "[target.GetUIName]最后决定加入我们的队伍。毫无疑问，我们才会是最后的赢家。"
+    pob_persuade_and_entice_events.1001.a:0 "这就是乱世的习俗。"
+
+    pob_persuade_and_entice_events.1002.t:0 "$pob_persuade_and_entice$: 失败！"
+    pob_persuade_and_entice_events.1002.desc:0 "不幸的是，[target.GetUIName]拒绝加入我们的队伍。只是这样的事情的话可不会动摇我们。"
+    pob_persuade_and_entice_events.1002.a:0 "这就是乱世的习俗。"
+    pob_persuade_and_entice_events.1002.b:0 "昨日之敌乃今日之友，我不会放弃。"
+
+    # 征兵
+    pob_delegate_conscription_interaction:0 "委任征兵"
+    pob_delegate_conscription_interaction_desc:0 "指示[courtier|E]尝试提高领地的军役"
+    recipient_secondary_pob_delegate_conscription_interaction:0 "奉行"
+
+    pob_promote_conscription_interaction:0 "民兵征发#weak （计谋）#!"
+    pob_promote_conscription_interaction_desc:0 "尝试提高你的领地的军役"
+    pob_promote_conscription:0 "民兵征发"
+    pob_promote_conscription_desc_general:0 "在$pob_promote_conscription$[scheme|E]中，你尝试提高领地的军役。"
+    pob_promote_conscription_action:0 "$pob_promote_conscription$："
+    pob_promote_conscription_desc:0 "我会尝试提高领地的军役"
+    pob_promote_conscription_start_scheme:0 "$pob_promote_conscription$开始"
+
+    pob_promote_conscription_invalidated_title:1 "@personal_scheme_icon!$pob_promote_conscription$计谋结束"
+    pob_promote_conscription_invalidated_dead:1 "[target.GetShortUIName|U]已过世。你不能再对[target.GetHerHim]使用。"
+
+    pob_promote_conscription_events.1001.t:0 "$pob_promote_conscription$: 成功！"
+    pob_promote_conscription_events.1001.desc:0 "[owner.GetUIName]完成了扩大兵役的目标。"
+    pob_promote_conscription_events.1001.a:0 "为了家名存续，这是必须做的。"
+
+    pob_promote_conscription_events.1002.t:0 "$pob_promote_conscription$: 失败！"
+    pob_promote_conscription_events.1002.desc:0 "因为领民疲惫，[owner.GetUIName]没能完成扩大兵役的目标。"
+    pob_promote_conscription_events.1002.a:0 "为了家名存续，我本该做得更好。"
+
+    #亲善
+    pob_send_envoy_interaction:0 "指示亲善"
+    pob_send_envoy_interaction_desc:0 "指示[courtier|E]为本家提升和[recipient.GetShortUINameNoTooltip]的外交关系"
+    recipient_secondary_pob_send_envoy_interaction:0 "奉行"
+
+    pob_improve_relations_interaction:0 "亲善#weak （计谋）#!"
+    pob_improve_relations_interaction_desc:0 "尝试提升和[recipient.GetShortUINameNoTooltip]的外交关系"
+    pob_improve_relations:0 "亲善"
+    pob_improve_relations_desc_general:0 "在亲善[scheme|E]中，你尝试提升和[recipient.GetShortUINameNoTooltip]的外交关系"
+    pob_improve_relations_action:0 "$pob_improve_relations$"
+    pob_improve_relations_desc:0 "我会尝试提升和[SCHEME.GetTargetCharacter.GetShortUINamePossessive]的外交关系"
+    pob_improve_relations_start_scheme:0 "$pob_improve_relations$开始"
+
+    pob_improve_relations_invalidated_title:1 "@personal_scheme_icon!$pob_improve_relations$计谋结束"
+
+    pob_improve_relations_events.1001.t:0 "$pob_improve_relations$: 成功！"
+    pob_improve_relations_events.1001.desc:0 "[owner.GetUIName]成功完成了和[target.GetUIName]改善外交关系的目标。"
+    pob_improve_relations_events.1001.a:0 "为了家名存续，这是必须做的。"
+
+    pob_improve_relations_events.1002.t:0 "$pob_improve_relations$: 失败！"
+    pob_improve_relations_events.1002.desc:0 "[owner.GetUIName]没能完成和[target.GetUIName]改善外交关系的目标。"
+    pob_improve_relations_events.1002.a:0 "为了家名存续，我本该做得更好。"
+
+    ## 开垦
+    pob_delegate_reclamation_interaction:0 "指示开垦"
+    pob_delegate_reclamation_interaction_desc:0 "指示[courtier|E]尝试开垦新田"
+    recipient_secondary_pob_delegate_reclamation_interaction:0 "奉行"
+
+    pob_plan_reclamation_interaction:0 "开垦新田#weak （计谋）#!"
+    pob_plan_reclamation_interaction_desc:0 "尝试土地开发以提高你的领地赋税和发展度"
+    pob_plan_reclamation:0 "开垦新田"
+    pob_plan_reclamation_desc_general:0 "在开垦新田[scheme|E]中，你尝试土地开发以提高你的领地赋税和发展度"
+    pob_plan_reclamation_action:0 "$pob_plan_reclamation$："
+    pob_plan_reclamation_desc:0 "我会尝试土地开发以提高领地赋税和发展度"
+    pob_plan_reclamation_start_scheme:0 "$pob_plan_reclamation$开始"
+
+    pob_plan_reclamation_invalidated_title:1 "@personal_scheme_icon!$pob_plan_reclamation$计谋结束"
+
+    pob_plan_reclamation_events.1001.t:0 "$pob_plan_reclamation$: 成功！"
+    pob_plan_reclamation_events.1001.desc:0 "[owner.GetUIName]完成了开垦新田的目标。"
+    pob_plan_reclamation_events.1001.a:0 "为了家名存续，这是必须做的。"
+
+    pob_plan_reclamation_events.1002.t:0 "$pob_plan_reclamation$: 失败！"
+    pob_plan_reclamation_events.1002.desc:0 "[owner.GetUIName]没能完成开垦新田的目标。"
+    pob_plan_reclamation_events.1002.a:0 "为了家名存续，我本该做得更好。"

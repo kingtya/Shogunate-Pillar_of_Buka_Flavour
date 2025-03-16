@@ -1,0 +1,46 @@
+﻿l_simp_chinese:
+
+    flag_sp_policy_western_sanction_name:0 "#V 南蛮保护#!"
+    flag_sp_policy_western_sanction_desc:0 "日本文化中的“南蛮”指的是来自葡萄牙、西班牙、英国等的欧洲人，他们主要通过海上航线来到东亚地区，这些航线通常会经过印度洋、东南亚，然后从南方进入日本海域。"
+    sp_policy_western_sanction_modifier:0 "南蛮保护"
+    sp_policy_western_sanction_modifier_desc:0 "此人保护西方外来者的权益。"
+    sp_policy_western_sanction_effect_tt:0 "你解锁#V 寻找南蛮商人#![decisions|E]"
+    sp_policy_has_no_innovation_shogunate_nanban_trade_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_shogunate_nanban_trade$[innovation|E]，强制推行会永久损失10点政策点#!"
+
+    flag_sp_policy_improve_firearms_name:0 "#V 铁炮队强化#!"
+    flag_sp_policy_improve_firearms_desc:0 "自葡萄牙人将铁炮带入种子岛开始，从九州南部种子岛到纪州根来众再到全日本，铁炮战术在日本得以迅速发展并逐步完善。"
+    sp_policy_improve_firearms_modifier:0 "铁炮队强化"
+    sp_policy_improve_firearms_modifier_desc:0 "此人改进了铁炮队军制。"
+
+    flag_sp_policy_meritocracy_name:0 "#V 能力主义#!"
+    flag_sp_policy_meritocracy_desc:0 "在财富或权力等稀缺资源分配上，由人的才能来决定并给予差别补偿的政治哲学。"
+    sp_policy_meritocracy_modifier:0 "能力主义"
+    sp_policy_meritocracy_modifier_desc:0 "此人在领内事务上任人唯贤。"
+    sp_policy_meritocracy_being_encouraged_modifier:0 "能力主义-喜悦"
+    sp_policy_meritocracy_being_encouraged_modifier_desc:0 "此人能力良好，备受领主青睐。"
+    sp_policy_meritocracy_being_humiliated_modifier:0 "能力主义-压抑"
+    sp_policy_meritocracy_being_humiliated_modifier_desc:0 "此人能力平平，被认为难以胜任领内的工作。"
+    sp_policy_meritocracy_effect_tt:0 "所有任一能力达到良好等级#P [GetPlayer.MakeScope.ScriptValue('decent_skill_rating')|0]#!的成年角色在加入你的[court|E]时会获得[GetModifier('sp_policy_meritocracy_being_encouraged_modifier').GetNameWithTooltip|P]，其他成年角\n色会获得#N [GetModifier('sp_policy_meritocracy_being_humiliated_modifier').GetNameWithTooltip]#!，立即适用于你的[courtier|E]"
+
+    flag_sp_policy_supply_transporter_name:0 "#V 小荷驮队配备#!"
+    flag_sp_policy_supply_transporter_desc:0 "专门负责运输兵粮武器的非职业化军队被称之为“小荷驮队”，负责指挥这些运输部队的将领则被称之为“小荷驮奉行”。"
+    sp_policy_supply_transporter_modifier:0 "小荷驮队配备"
+    sp_policy_supply_transporter_modifier_desc:0 "此人配备了专门的运输队。"
+
+    flag_sp_policy_easy_commerce_name:0 "#V 乐市乐座#!"
+    flag_sp_policy_easy_commerce_desc:0 "日本的“座”即日本式的封建行会，起源于以公家、寺社为本所的同业特权团体，本所从座人处征收座役、座钱。免除城下町的市场税和商业税，废除座商人特权，称为“乐市”；进一步废除座本身则称为“乐座”。"
+    sp_policy_easy_commerce_modifier:0 "乐市乐座"
+    sp_policy_easy_commerce_modifier_desc:0 "此人免除座商特权和贸易税，鼓励自由通商。"
+    sp_policy_has_no_innovation_guilds_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_guilds$[innovation|E]，强制推行会永久损失20点政策点#!"
+    sp_policy_easy_commerce_warning_tt:0 "@warning_icon!#X 你颁布的政策乐市乐座和这个政策冲突#!"
+
+    flag_sp_policy_soidier_professionaliztion_name:0 "#V 兵农分离#!"
+    flag_sp_policy_soidier_professionaliztion_desc:0 "战国大名为能拥有常备兵所实行的政策，可能启发于织田信长，实际奠基于太阁丰臣秀吉的检地与刀狩，最终完成于关白丰臣秀次的“人扫令”。此外，该政令也是为了确立武士阶级，使武士以外的人民无法拥有武力，巩固社会的秩序。"
+    sp_policy_soidier_professionaliztion_modifier:0 "兵农分离"
+    sp_policy_soidier_professionaliztion_modifier_desc:0 "此人将领民兵和常备兵分离，彻底化了常备军制。"
+    sp_policy_has_no_innovation_royal_armory_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_royal_armory$[innovation|E]，强制推行会永久损失20点政策点#!"
+
+    flag_sp_policy_progressive_system_name:0 "#V 革新制度#!"
+    flag_sp_policy_progressive_system_desc:0 ""
+    sp_policy_progressive_system_tt_0:0 "@warning_icon!#X 你必须把此政策作为前置，即颁布此政策前不能颁布任何政策#!"
+    sp_policy_progressive_system_tt_1:0 "你获得#P 20#!政策点，颁布保守政策额外消耗#N 10#!政策点，颁布中道政策额外消耗#N 5#!政策点"

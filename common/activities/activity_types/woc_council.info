@@ -1,0 +1,2238 @@
+﻿activity_woc_council = {
+	is_shown = {
+		#has_royal_court = yes
+		is_landed = yes
+	}
+
+	can_start_showing_failures_only = {
+		#is_available_adult = yes
+		custom_description = {
+			text = "is_not_convened_recently"
+			NAND = { 
+				has_character_flag = convened_woc_council_normal_recently
+				has_character_flag = convened_woc_council_urgent_recently
+			}
+		}
+		trigger_if = {
+			limit = {
+				scope:special_option ?= flag:woc_council_normal
+			}
+			custom_description = {
+				text = already_scheming_woc_council_missions
+				NOT = {
+					any_scheme = {
+						scheme_type = woc_council_missions
+					}
+				}
+			}
+		}
+	}
+
+	is_valid = {
+		scope:host = {
+			is_alive = yes
+			#is_capable_adult = yes
+			is_imprisoned = no
+			is_landed = yes
+			NOT = { is_incapable = yes }
+		}
+		# If no one shows up
+		trigger_if = {
+			limit = {
+				is_current_phase_active = yes
+			}
+			has_attending_activity_guests = yes
+		}
+	}
+	
+	on_host_death = {
+		every_attending_character = {
+			limit = { is_alive = yes }
+			trigger_event = {
+				id = woc_council_activity.3001
+				days = 1 # So you don't get spammed
+			}
+		}
+		# Code sends your entourage home on invalidated
+		scope:activity.var:host_var = {
+			# Saving the title for loc
+			primary_title = { save_scope_as = host_title }
+			# Inform your heir if you have one
+			player_heir ?= {
+				trigger_event = {
+					id = woc_council_activity.3001
+					days = 1
+				}
+			}
+		}
+	}
+
+	on_invalidated = {
+		#监禁取消了活动
+		if = {
+			limit = {
+				scope:host = { is_imprisoned = yes }
+			}
+			#Host has been imprisoned
+			every_attending_character = {
+				limit = {
+					NOT = { this = scope:host }
+				}
+				trigger_event = woc_council_activity.3002
+			}
+			scope:host = { trigger_event = woc_council_activity.3003 }
+		}
+		#无能取消了活动
+		if = {
+			limit = {
+				scope:host = { is_incapable = yes }
+			}
+			scope:activity = {
+				activity_type = { save_scope_as = activity_type }
+			}
+			scope:host = {
+				trigger_event = activity_system.0330
+			}
+			every_attending_character = {
+				limit = { NOT = { this = scope:host } }
+				trigger_event = activity_system.0331
+			}
+		}
+		#失去头衔取消了活动
+		if = {
+			limit = {
+				scope:host = { is_landed = no }
+			}
+			scope:activity = {
+				activity_type = { save_scope_as = activity_type }
+			}
+			every_attending_character = {
+				trigger_event = activity_system.0320
+			}
+		}
+	}
+
+	###################
+	# PARAMETERS
+	###################
+
+	is_grand_activity = no
+	is_single_location = yes
+
+	province_filter = realm
+	
+	max_route_deviation_mult = 2.0
+
+	is_location_valid = {
+		this = scope:host.capital_province
+	}
+
+	province_description = {
+		desc = activity_woc_council_province_desc
+	}
+
+	max_province_icons = 5
+
+	province_score = {
+		value = 0
+	}
+
+	cooldown = { years = 5 }
+
+	# desc is only shown in debug AI watch window
+	ai_will_do = {
+		value = 50
+		if = {
+			limit = {
+				OR = {
+					has_trait = lazy
+					has_trait = shy
+				}
+			}
+			add = -25
+		}
+		if = {
+			limit = {
+				has_trait = diligent
+			}
+			add = 20
+		}
+		if = {
+			limit = {
+				has_character_flag = convened_woc_council_normal_recently
+				prestige <= 2000
+			}
+			add = -100
+		}
+	}
+
+	###################
+	# GUEST HANDLING
+	###################
+
+	max_guests = 50
+
+	guest_invite_rules = {
+		defaults = {
+			1 = woc_activity_invite_rule_councilor
+		}
+	}
+
+	can_be_activity_guest = {
+		is_adult = yes
+		OR = {
+			AND = {
+				scope:special_option ?= flag:woc_council_urgent
+				highest_held_title_tier >= tier_county
+				is_vassal_of = scope:host
+			}
+			AND = {
+				is_councillor_of = scope:host
+				woc_council_valid_council_position = yes
+			}
+		}
+		in_diplomatic_range = scope:host
+	}
+
+	host_intents = {
+		intents = {
+			woc_council_status_quo_intent 
+			woc_council_devotion_intent
+			woc_council_fouse_realm_intent
+			woc_council_fouse_military_intent
+			#befriend_attendee_intent
+			#woo_attendee_intent
+		}
+		default = woc_council_status_quo_intent
+	}
+
+	guest_intents = {
+		intents = { 
+			woc_council_support_liege_intent
+			woc_council_expand_vassals_right_intent
+			woc_council_devotion_intent
+			woc_council_fouse_realm_intent
+			woc_council_fouse_military_intent
+			#befriend_attendee_intent
+			#woo_attendee_intent
+		}
+		default = woc_council_support_liege_intent
+	}
+
+	guest_join_chance = {
+		base = 75
+		base_woc_council_activity_modifier = yes
+	}
+
+	#旅行选项
+	travel_entourage_selection = {
+		weight = {
+			value = standard_travel_entourage_additions
+			if = {
+				limit = {
+					OR = {
+						has_trait = gregarious
+						has_trait = drunkard
+						has_trait = hashishiyah
+						has_trait = gluttonous
+						has_trait = comfort_eater
+					}
+				}
+				add = 10
+			}
+		}
+		max = 18
+		invite_rule_order = 3
+	}
+	#
+	cost = {
+		prestige = {
+			add = {
+				add = {
+					value = 50
+					desc = WOC_COUNCIL_BASE_COST
+				}
+				if = {
+					limit = {
+						scope:special_option ?= flag:woc_council_urgent
+						root.highest_held_title_tier < tier_empire
+					}
+					add = {
+						value = 450
+						desc = WOC_KING_COUNCIL_URGENT_COST
+					}
+				}
+				if = {
+					limit = {
+						scope:special_option ?= flag:woc_council_urgent
+						root.highest_held_title_tier = tier_empire
+					}
+					add = {
+						value = 950
+						desc = WOC_EMPIRE_COUNCIL_URGENT_COST
+					}
+				}
+			}
+		}
+	}
+
+	ui_predicted_cost = {
+		prestige = {
+			add = {
+				add = {
+					value = 50
+					desc = WOC_COUNCIL_BASE_COST
+				}
+				if = {
+					limit = {
+						has_character_flag = convened_woc_council_normal_recently
+						root.highest_held_title_tier < tier_empire
+					}
+					add = {
+						value = 450
+						desc = WOC_KING_COUNCIL_URGENT_COST
+					}
+				}
+				if = {
+					limit = {
+						has_character_flag = convened_woc_council_normal_recently
+						root.highest_held_title_tier = tier_empire
+					}
+					add = {
+						value = 950
+						desc = WOC_EMPIRE_COUNCIL_URGENT_COST
+					}
+				}
+			}
+		}
+	}
+
+	###################
+	# GRAPHICS
+	###################
+
+	map_entity = {
+		trigger = {
+			activity_location.culture = {
+				OR = {
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+				}
+			}
+		}
+		reference = "building_mena_feast_01_entity"
+	}
+
+	map_entity = {
+		trigger = {
+			activity_location.culture = {
+				has_graphical_india_culture_group_trigger = yes
+			}
+		}
+		reference = "building_indian_feast_01_entity"
+	}
+	
+	map_entity = "building_western_feast_01_entity"
+
+	# Travel
+	background = { # Bridge
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				is_riverside_province = yes
+				geographical_region = world_europe
+				OR = {
+					terrain = farmlands
+					terrain = plains
+					terrain = mountains
+					terrain = hills
+				}
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/ep2_travel_bridge.dds"
+		environment = "environment_travel_bridge"
+		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
+	}
+	
+	background = { # Farmland, settled
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				terrain = farmlands
+				exists = province_owner
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/ep2_travel_farm.dds"
+		environment = "environment_travel_farmlands"
+		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
+	}
+	background = { # Farmland, unsettled
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				terrain = farmlands
+				NOT = { exists = province_owner }
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/farms.dds"
+		environment = "environment_event_farms"
+		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
+	}
+
+	background = { #Desert, settled
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_wilderness_desert_trigger = yes
+				exists = province_owner
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/ep2_travel_desert.dds"
+		environment = "environment_travel_desert"
+		ambience = "event:/SFX/Events/Backgrounds/desert_day"
+	}
+	background = { #Desert, unsettled
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_wilderness_desert_trigger = yes
+				NOT = { exists = province_owner }
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/desert.dds"
+		environment = "environment_event_bp1_desert"
+		ambience = "event:/SFX/Events/Backgrounds/desert_day"
+	}
+
+	background = { #forest snowy
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location ?= { hunt_snowy_forest_trigger = yes }
+		}
+		texture = "gfx/interface/illustrations/event_scenes/ep2_hunt_snowy_forest.dds"
+		environment = "environment_hunt_snowy_forest"
+		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
+	}
+
+	background = { #forest_pine
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_wilderness_forest_pine_trigger = yes
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/forest_pine.dds"
+		environment = "environment_event_forest_pine"
+		ambience = "event:/SFX/Events/Backgrounds/coniferous_forest_day"
+	}
+
+	background = { #forest
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_wilderness_forest_trigger = yes
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/forest.dds"
+		environment = "environment_event_forest"
+		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
+	}
+
+	background = { #mountains, settled
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_wilderness_mountains_trigger = yes
+				exists = province_owner
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/ep2_travel_mountains.dds"
+		environment = "environment_travel_mountain_settlement"
+		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
+	}
+	background = { #mountains, unsettled
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_wilderness_mountains_trigger = yes
+				NOT = { exists = province_owner }
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/mountains.dds"
+		environment = "environment_event_mountains"
+		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
+	}
+
+	background = { #steppe, settled
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_wilderness_steppe_trigger = yes
+				exists = province_owner
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/ep2_travel_steppe.dds"
+		environment = "environment_travel_steppe_settlement"
+		ambience = "event:/SFX/Events/Backgrounds/steppe_day"
+	}
+	background = { #steppe, unsettled
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_wilderness_steppe_trigger = yes
+				NOT = { exists = province_owner }
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/steppe.dds"
+		environment = "environment_event_steppe"
+		ambience = "event:/SFX/Events/Backgrounds/steppe_day"
+	}
+
+	background = { #drylands (formerly desert)
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_drylands_trigger = yes
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/drylands.dds"
+		environment = "environment_event_desert"
+		ambience = "event:/SFX/Events/Backgrounds/desert_day"
+	}
+
+	background = { #wetlands
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_wilderness_wetlands_trigger = yes
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/bp1_wetlands.dds"
+		environment = "environment_event_bp1_wetlands" 
+		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
+	}
+
+	background = { #jungle
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_wilderness_jungle_trigger = yes
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/bp1_jungle.dds"
+		environment = "environment_event_bp1_jungle"
+		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
+	}
+
+	background = { #plains, settled
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_plains_trigger = yes
+				exists = province_owner
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/ep2_travel_hills.dds"
+		environment = "environment_travel_hills_settlement"
+		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
+	}
+	background = { #plains, unsettled
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_plains_trigger = yes
+				NOT = { exists = province_owner }
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/bp1_plains.dds"
+		environment = "environment_event_bp1_plains"
+		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
+	}
+
+	background = { #hills, settled
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_hills_trigger = yes
+				exists = province_owner
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/ep2_travel_hills.dds"
+		environment = "environment_travel_hills_settlement"
+		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
+	}
+	background = { #hills, unsettled
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				graphical_hills_trigger = yes
+				NOT = { exists = province_owner }
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/bp1_hills.dds"
+		environment = "environment_event_bp1_hills"
+		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
+	}
+
+	background = { #sea
+		trigger = {
+			OR = {
+				NOT = {
+					scope:host.location = scope:activity.activity_location
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest.location ?= scope:activity.activity_location
+					}
+				}
+				AND = {
+					exists = scope:activity.special_guest:honorary_guest_regular.location
+					NOT = {
+						scope:activity.special_guest:honorary_guest_regular.location ?= scope:activity.activity_location
+					}
+				}
+			}
+			scope:host.location = {
+				is_sea_province = yes
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/fp1_ocean.dds"
+		environment = "environment_event_fp1_ocean"
+		ambience = "event:/DLC/FP1/SFX/Events/event_ocean_longship"
+	}
+	# End Travel
+
+	background = {	# FP1
+		trigger = {
+			activity_location.culture = { has_building_gfx = norse_building_gfx }
+		}
+		texture = "gfx/interface/illustrations/event_scenes/fp1_viking_feast.dds"
+		environment = "environment_event_fp1_viking_feast"
+		ambience = "event:/DLC/FP1/SFX/Events/event_viking_feast"
+	}
+	background = {
+		trigger = {
+			activity_location.culture = { has_building_gfx = indian_building_gfx }
+		}
+		texture = "gfx/interface/illustrations/event_scenes/ep2_feast_indian.dds"
+		environment = "environment_indian_feast"
+		ambience = "event:/SFX/Events/Backgrounds/feasthall"
+	}
+	background = {
+		trigger = {
+			OR = {
+				activity_location.culture = { has_building_gfx = arabic_group_building_gfx }
+				activity_location.culture = { has_building_gfx = berber_group_building_gfx }
+				activity_location.culture = { has_building_gfx = iberian_building_gfx }
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/ep2_feast_mena.dds"
+		environment = "environment_mena_feast"
+		ambience = "event:/SFX/Events/Backgrounds/feasthall"
+	}
+	background = {
+		trigger = {
+			activity_location.culture = { has_building_gfx = steppe_building_gfx }
+		}
+		texture = "gfx/interface/illustrations/event_scenes/ep2_feast_steppe.dds"
+		environment = "environment_steppe_feast"
+		ambience = "event:/SFX/Events/Backgrounds/feasthall"
+	}
+	background = {
+		trigger = {
+			activity_location.culture = { has_building_gfx = african_building_gfx }
+		}
+		texture = "gfx/interface/illustrations/event_scenes/ep2_feast_sub_saharan.dds"
+		environment = "environment_sub-saharan_feast"
+		ambience = "event:/SFX/Events/Backgrounds/feasthall"
+	}
+	background = {
+		texture = "gfx/interface/illustrations/event_scenes/throneroom_west.dds"
+		environment = "environment_western_wedding"
+		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Weddings/ep2_event_grand_wedding"
+		music = "weddingwest_cue"
+	}
+	#窗口角色
+	window_characters = {
+		
+		guest = {
+			camera = camera_body_right
+
+			effect = {
+				if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						exists = scope:player
+						scope:player = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+						}
+					}
+					scope:player ?= { add_to_list = characters }
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						exists = scope:host.intent_target
+						any_attending_character = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							this = scope:host.intent_target
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							this = scope:host.intent_target
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						any_attending_character = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							OR = {
+								has_relation_lover = scope:host
+								has_relation_friend = scope:host
+							}
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							OR = {
+								has_relation_lover = scope:host
+								has_relation_friend = scope:host
+							}
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						any_attending_character = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							is_consort_of = scope:host
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							is_consort_of = scope:host
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						any_attending_character = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							is_councillor_of = scope:host
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							is_councillor_of = scope:host
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						any_attending_character = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							highest_held_title_tier >= tier_duchy
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							highest_held_title_tier >= tier_duchy
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						any_attending_character = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							highest_held_title_tier >= tier_county
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							highest_held_title_tier >= tier_county
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						any_attending_character = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							OR = {
+								is_parent_of = scope:host
+								is_close_or_extended_family_of = scope:host
+							}
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							OR = {
+								is_parent_of = scope:host
+								is_close_or_extended_family_of = scope:host
+							}
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+						}
+						add_to_list = characters
+					}
+				}
+			}
+
+			scripted_animation = {
+				triggered_animation = {
+					trigger = {
+						scope:character = { has_trait = shy }
+					}
+					animation = { sadness worry }
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { has_council_position = councillor_court_chaplain }
+					}
+					animation = chaplain
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { 
+							OR = {
+								has_council_position = councillor_chancellor 
+								has_council_position = councillor_spouse
+								has_council_position = councillor_woc_advisor_second
+							}
+						}
+					}
+					animation = chancellor
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { 
+							OR = {
+								has_council_position = councillor_steward 
+								has_council_position = councillor_woc_advisor
+							}
+						}
+					}
+					animation = steward
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { has_council_position = councillor_marshal }
+					}
+					animation = marshal
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { has_council_position = councillor_spymaster }
+					}
+					animation = spymaster
+				}
+				#Fallback
+				animation = throne_room_conversation_3
+			}
+		}
+		
+		host = {
+			camera = camera_body
+			
+			effect = {
+				if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+					}
+					scope:host = {
+						add_to_list = characters
+					}
+				}
+			}
+
+			scripted_animation = {
+				triggered_animation = {
+					trigger = {
+						scope:character = { has_trait = shy }
+					}
+					animation = { sadness worry }
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+					}
+					animation = throne_room_conversation_4
+				}
+				#Fallback
+				animation = throne_room_conversation_4
+			}
+		}
+		
+		travel_host = {
+			camera = camera_body
+			
+			effect = {
+				if = {
+					limit = {
+						NOT = {
+							scope:host.location = scope:activity.activity_location
+						}
+					}
+					scope:host = {
+						add_to_list = characters
+					}
+				}
+			}
+
+			scripted_animation = {
+				triggered_animation = {
+					trigger = {
+						scope:character = { has_trait = shy }
+					}
+					animation = { sadness worry }
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+					}
+					animation = throne_room_conversation_4
+				}
+				#Fallback
+				animation = throne_room_conversation_4
+			}
+		}
+		
+		guest = {
+			camera = camera_body
+			
+			effect = {
+				if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						any_attending_character = {
+							count >= 2
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							is_councillor_of = scope:host
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							is_councillor_of = scope:host
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						any_attending_character = {
+							count >= 2
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							highest_held_title_tier >= tier_duchy
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							highest_held_title_tier >= tier_duchy
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						any_attending_character = {
+							count >= 2
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							highest_held_title_tier >= tier_county
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							highest_held_title_tier >= tier_county
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						any_attending_character = {
+							count >= 2
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							OR = {
+								is_parent_of = scope:host
+								is_close_or_extended_family_of = scope:host
+							}
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							OR = {
+								is_parent_of = scope:host
+								is_close_or_extended_family_of = scope:host
+							}
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+						}
+						add_to_list = characters
+					}
+				}
+			}
+
+			scripted_animation = {
+				triggered_animation = {
+					trigger = {
+						scope:character = { has_trait = shy }
+					}
+					animation = { sadness worry }
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { has_council_position = councillor_court_chaplain }
+					}
+					animation = chaplain
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { 
+							OR = {
+								has_council_position = councillor_chancellor 
+								has_council_position = councillor_spouse
+								has_council_position = councillor_woc_advisor_second
+							}
+						}
+					}
+					animation = chancellor
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { 
+							OR = {
+								has_council_position = councillor_steward 
+								has_council_position = councillor_woc_advisor
+							}
+						}
+					}
+					animation = steward
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { has_council_position = councillor_marshal }
+					}
+					animation = marshal
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { has_council_position = councillor_spymaster }
+					}
+					animation = spymaster
+				}
+				#Fallback
+				animation = throne_room_conversation_3
+			}
+		}
+		
+		guest = {
+			camera = camera_body_left
+			
+			effect = {
+				if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						any_attending_character = {
+							count >= 3
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							is_councillor_of = scope:host
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							is_councillor_of = scope:host
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						any_attending_character = {
+							count >= 3
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							highest_held_title_tier >= tier_duchy
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							highest_held_title_tier >= tier_duchy
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						any_attending_character = {
+							count >= 3
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							highest_held_title_tier >= tier_county
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							highest_held_title_tier >= tier_county
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+						any_attending_character = {
+							count >= 3
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							OR = {
+								is_parent_of = scope:host
+								is_close_or_extended_family_of = scope:host
+							}
+						}
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+							OR = {
+								is_parent_of = scope:host
+								is_close_or_extended_family_of = scope:host
+							}
+						}
+						add_to_list = characters
+					}
+				}
+				else_if = {
+					limit = {
+						scope:host.location = scope:activity.activity_location
+					}
+					every_attending_character = {
+						limit = {
+							location = scope:activity.activity_location
+							NOR = {
+								this = scope:host
+							}
+						}
+						add_to_list = characters
+					}
+				}
+			}
+
+			scripted_animation = {
+				triggered_animation = {
+					trigger = {
+						scope:character = { has_trait = shy }
+					}
+					animation = { sadness worry }
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { has_council_position = councillor_court_chaplain }
+					}
+					animation = chaplain
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { 
+							OR = {
+								has_council_position = councillor_chancellor 
+								has_council_position = councillor_spouse
+								has_council_position = councillor_woc_advisor_second
+							}
+						}
+					}
+					animation = chancellor
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { 
+							OR = {
+								has_council_position = councillor_steward 
+								has_council_position = councillor_woc_advisor
+							}
+						}
+					}
+					animation = steward
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { has_council_position = councillor_marshal }
+					}
+					animation = marshal
+				}
+				triggered_animation = {
+					trigger = {
+						exists = scope:host
+						scope:character = { has_council_position = councillor_spymaster }
+					}
+					animation = spymaster
+				}
+				#Fallback
+				animation = throne_room_conversation_3
+			}
+		}
+	}
+
+	###################
+	# OPTIONS
+	###################
+
+	options = {
+		#Feast types
+		special_type = {
+			##正常会议
+			woc_council_normal = {
+				default = yes
+				
+				ai_will_do = {
+					value = 50
+				}
+			}
+			##紧急会议
+			woc_council_urgent = {
+
+				is_shown = {
+				}
+
+				is_valid = {
+					is_independent_ruler = yes
+					custom_description = {
+						text = "is_woc_council_law_3"
+						woc_council_law_value >= 3
+					}
+					NOT = {
+						government_has_flag = government_is_tribal
+					}
+					custom_description = {
+						text = "is_not_convened_recently"
+						NOT = { 
+							has_character_flag = convened_woc_council_urgent_recently
+						}
+					}
+				}
+				
+				ai_will_do = {
+					value = 0
+					if = {
+						limit = {
+							OR = {
+								has_trait = greedy
+								has_trait = ambitious
+								has_trait = impatient
+							}
+						}
+						add = 30
+					}
+					if = {
+						limit = {
+							OR = {
+								has_trait = lazy
+								has_trait = patient
+								has_trait = content
+							}
+						}
+						subtract = 15
+					}
+					if = {
+						limit = {
+							prestige <= 2000
+						}
+						multiply = 0
+					}
+				}
+			}
+		}
+		# 接待地点
+		woc_council_option_convocation_place = {
+			woc_council_place_minor = {
+				is_shown = { has_dlc_feature = advanced_activities }
+				
+				ai_will_do = {
+					value = 0
+					# Financial preference.
+					add = activity_option_likes_cheap_expense_value
+				}
+			}
+			woc_council_place_normal = {
+				default = yes
+				cost = {
+					gold = {
+						add = {
+							add = {
+								value = 30
+								desc = woc_council_place_normal
+							}
+							add = {
+								value = 10
+								multiply = activity_cost_scale_by_tier
+								subtract = 10
+								desc = activity_cost_scale_by_tier_desc
+							}
+							add = {
+								value = 10
+								multiply = activity_cost_scale_by_era
+								subtract = 10
+								desc = activity_cost_scale_by_era_desc
+							}
+							if = {
+								limit = {
+									dynasty ?= {
+										has_dynasty_perk = law_legacy_1
+									}
+								}
+								subtract = {
+									value = 10
+									add = {
+										value = 10
+										multiply = activity_cost_scale_by_tier
+										subtract = 10
+									}
+									add = {
+										value = 10
+										multiply = activity_cost_scale_by_era
+										subtract = 10
+									}
+									multiply = law_legacy_cost_reduction_mult
+									desc = law_legacy_1_name
+								}
+							}
+							min = 0
+						}
+					}
+				}
+
+				ai_will_do = {
+					value = 0
+					# Financial preference.
+					add = activity_option_likes_middling_expense_value
+				}
+			}
+			woc_council_place_large = {
+				is_shown = { has_dlc_feature = advanced_activities }
+
+				cost = {
+					gold = {
+						add = {
+							add = {
+								value = 70
+								desc = woc_council_place_large
+							}
+							add = {
+								value = 35
+								multiply = activity_cost_scale_by_tier
+								subtract = 35
+								desc = activity_cost_scale_by_tier_desc
+							}
+							add = {
+								value = 35
+								multiply = activity_cost_scale_by_era
+								subtract = 35
+								desc = activity_cost_scale_by_era_desc
+							}
+							if = {
+								limit = {
+									dynasty ?= {
+										has_dynasty_perk = law_legacy_1
+									}
+								}
+								subtract = {
+									value = 35
+									add = {
+										value = 35
+										multiply = activity_cost_scale_by_tier
+										subtract = 35
+									}
+									add = {
+										value = 35
+										multiply = activity_cost_scale_by_era
+										subtract = 35
+									}
+									multiply = law_legacy_cost_reduction_mult
+									desc = law_legacy_1_name
+								}
+							}
+							min = 0
+						}
+					}
+				}
+
+				ai_will_do = {
+					value = 0
+					# Financial preference.
+					add = activity_option_likes_heavy_expense_value
+				}
+			}
+		}
+
+		# How many courses do you have?
+		woc_council_option_reception = {
+			woc_council_reception_minor = {
+				is_shown = { has_dlc_feature = advanced_activities }
+
+				ai_will_do = {
+					value = 0
+					# Financial preference.
+					add = activity_option_likes_cheap_expense_value
+					# Quantity preference.
+					add = activity_option_food_prefers_small_volume_value
+				}
+			}
+			woc_council_reception_normal = {
+				default = yes
+	
+				cost = {
+					gold = {
+						add = {
+							add = {
+								value = 10
+								desc = woc_council_reception_normal
+							}
+							add = {
+								value = 10
+								multiply = activity_cost_scale_by_tier
+								subtract = 10
+								desc = activity_cost_scale_by_tier_desc
+							}
+							add = {
+								value = 10
+								multiply = activity_cost_scale_by_era
+								subtract = 10
+								desc = activity_cost_scale_by_era_desc
+							}
+							if = {
+								limit = {
+									dynasty ?= {
+										has_dynasty_perk = law_legacy_1
+									}
+								}
+								subtract = {
+									value = 10
+									add = {
+										value = 10
+										multiply = activity_cost_scale_by_tier
+										subtract = 10
+									}
+									add = {
+										value = 10
+										multiply = activity_cost_scale_by_era
+										subtract = 10
+									}
+									multiply = law_legacy_cost_reduction_mult
+									desc = law_legacy_1_name
+								}
+							}
+							min = 0
+						}
+					}
+				}
+
+				ai_will_do = {
+					value = 0
+					# Financial preference.
+					add = activity_option_likes_middling_expense_value
+					# Quantity preference.
+					## We just use slightly reduced quantity prefs here.
+					add = {
+						value = activity_option_prefers_large_volume_value
+						multiply = 0.5
+					}
+				}
+			}
+			woc_council_reception_large = {
+				is_shown = { has_dlc_feature = advanced_activities }
+
+				cost = {
+					gold = {
+						add = {
+							add = {
+								value = 35
+								desc = woc_council_reception_large
+							}
+							add = {
+								value = 35
+								multiply = activity_cost_scale_by_tier
+								subtract = 35
+								desc = activity_cost_scale_by_tier_desc
+							}
+							add = {
+								value = 35
+								multiply = activity_cost_scale_by_era
+								subtract = 35
+								desc = activity_cost_scale_by_era_desc
+							}
+							if = {
+								limit = {
+									dynasty ?= {
+										has_dynasty_perk = law_legacy_1
+									}
+								}
+								subtract = {
+									value = 35
+									add = {
+										value = 35
+										multiply = activity_cost_scale_by_tier
+										subtract = 35
+									}
+									add = {
+										value = 35
+										multiply = activity_cost_scale_by_era
+										subtract = 35
+									}
+									multiply = law_legacy_cost_reduction_mult
+									desc = law_legacy_1_name
+								}
+							}
+							min = 0
+						}
+					}
+				}
+
+				ai_will_do = {
+					value = 0
+					# Financial preference.
+					add = activity_option_likes_heavy_expense_value
+					# Quantity preference.
+					add = activity_option_prefers_large_volume_value
+				}
+			}
+		}
+	}
+
+	special_option_category = special_type
+
+	###################
+	# PHASES
+	###################
+	max_guest_arrival_delay_time = { months = 6 }
+
+	phases = {
+		#征询阶段
+		woc_council_phase_proposal = {
+			order = 1
+			is_predefined = yes
+			is_shown = { always = yes }
+			is_valid = {
+			}
+			on_enter_phase = {
+			}
+			on_phase_active = {
+				if = {
+					limit = { this = scope:host }
+					#完成征询后推进的天数
+					scope:activity = { progress_activity_phase_after = { months = 1 } }
+					#事件链起始
+					trigger_event = woc_council_activity.1001
+				}
+				else = {
+					#trigger_event = woc_council_activity.1001
+				}
+			}
+			on_weekly_pulse = {
+				
+			}
+
+			ai_will_do = {
+				value = 100
+			}
+		}
+		#建议阶段
+		woc_council_phase_suggestion = {
+			order = 2
+			is_predefined = yes
+			is_shown = { always = yes }
+			is_valid = {
+			}
+			on_enter_phase = {
+				if = {
+					limit = { this = scope:host }
+
+					# No passive state for the toast, just jump right into it
+					scope:activity = { progress_activity_phase_after = { days = 1 } }
+				}
+			}
+			on_phase_active = {
+				if = {
+					limit = { this = scope:host }
+					#完成上诉过程后推进的天数
+					scope:activity = { progress_activity_phase_after = { months = 2 } }
+					#事件链起始
+					if = {
+						limit = {
+							scope:activity = {
+								has_activity_option = {
+									category = special_type
+									option = woc_council_urgent
+								}
+							}
+						}
+						trigger_event = {
+							id = woc_council_activity.2002
+							days = 1
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { 
+								scope:activity = {
+									has_activity_option = {
+										category = special_type
+										option = woc_council_urgent
+									}
+								}
+							}
+						}
+						trigger_event = {
+							id = woc_council_activity.2004
+							days = 1
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							scope:activity = {
+								has_activity_option = {
+									category = special_type
+									option = woc_council_urgent
+								}
+							}
+						}
+						trigger_event = {
+							id = woc_council_activity.2003
+							days = 1
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { 
+								scope:activity = {
+									has_activity_option = {
+										category = special_type
+										option = woc_council_urgent
+									}
+								}
+							}
+						}
+						trigger_event = {
+							id = woc_council_activity.2001
+							days = 1
+						}
+					}
+				}
+			}
+			#每周随机活动
+			on_weekly_pulse = {
+				if = { #host
+					limit = {
+						this = scope:host
+					}
+					if = {
+						limit = {
+							scope:activity = {
+								has_activity_option = {
+									category = special_type
+									option = woc_council_urgent
+								}
+							}
+						}
+						trigger_event = { on_action = woc_council_urgent_magna_carta_event_selection }
+					}
+				}
+				else_if = { #guest
+					limit = {
+						NOT = { this = scope:host }
+					}
+					#trigger_event = { on_action = feast_default_event_selection }
+				}
+			}
+			on_end = {
+				if = {
+					limit = { this = scope:host }
+					woc_council_completed_log_entry_effect = yes
+				}
+				if = {
+					limit = { 
+						NOT = { this = scope:host } 
+						scope:activity = {
+							has_activity_option = {
+								category = special_type
+								option = woc_council_normal
+							}
+						}
+					}
+					woc_council_guest_completed_log_entry_effect = yes
+				}
+			}
+		}
+	}
+
+	ai_check_interval = 60
+	
+	ai_will_select_province = {
+		value = 100
+	}
+
+	###################
+	# ACTIVITY-SPECIFIC PULSES
+	###################
+	
+	pulse_actions = {
+		entries = {
+			guest_friendship guest_insulted
+			spouse_skill_diplomacy_improves spouse_gives_host_prestige spouse_manages_feast_splendidly spouse_impresses_clergy spouse_gives_hook
+			relation_gains_friend hook_trusting_guest guest_tells_fantastic_joke
+			courtiers_became_lovers courtier_friendship
+			courtier_improved_skill courtier_learned_language
+			courtiers_got_into_fight courtiers_became_rivals
+			host_gains_diplo_xp host_gains_steward_xp host_gains_intrigue_xp
+		}
+		chance_of_no_event = 5
+	}
+	
+	on_start = {
+		scope:host = {
+			every_councillor = {
+				limit = {
+					NOT = { has_variable = block_fire_councillor }
+				}
+				set_variable = {
+					name = block_fire_councillor
+					value = scope:host
+					months = 12
+				}
+			}
+		}
+	}
+	###等待事件
+	on_enter_passive_state = {
+		#trigger_event = woc_coronation.1001
+	}
+
+	# Effects run when the activity completes after its last phase
+	# root = character in this phase
+	# scope:activity = the activity
+	# scope:host = host of the activity
+	# 结束事件
+	on_complete = {
+		# 举办人结束事件
+		if = {
+			limit = { this = scope:host }
+			location = { save_scope_as = activity_location }
+			if = {
+				limit = { this = scope:host }
+				scope:host = {
+					save_scope_as = root_scope
+					#trigger_event = woc_coronation.1008
+				}
+			}
+		}
+		# 客人结束事件
+		else = {
+			if = {
+				limit = {
+					is_alive = yes
+					NOT = { this = scope:host }
+					is_imprisoned = no
+				}
+				#trigger_event = woc_coronation.1004
+			}
+		}
+		##移除议案限制
+		scope:host = {
+			remove_variable = woc_total_proposal
+			if = {
+				limit = {
+					scope:activity = {
+						has_activity_option = { 
+							category = special_type 
+							option = woc_council_normal
+						}
+					}
+				}
+				add_character_flag = {
+					flag = convened_woc_council_normal_recently
+					years = 3
+				}
+			}
+			if = {
+				limit = {
+					scope:activity = {
+						has_activity_option = { 
+							category = special_type 
+							option = woc_council_urgent
+						}
+					}
+				}
+				add_character_flag = {
+					flag = convened_woc_council_urgent_recently
+					years = 20
+				}
+			}
+		}
+	}
+}

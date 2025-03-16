@@ -1,0 +1,2058 @@
+﻿# Gain a Central Court Post
+gain_court_post_center_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	decision_group_type = shogunate_minor
+
+	desc = gain_court_post_center_decision_desc
+	selection_tooltip = gain_court_post_center_decision_tooltip
+
+	is_shown = {
+		shogunate_has_yamato_culture_trigger = yes
+		NOR = {
+			government_has_flag = government_is_republic
+			government_has_flag = government_is_theocracy
+		}
+		NOR = {
+			has_title = title:e_nmih_tenno
+			has_title = title:e_nmih_joko
+			has_title = title:e_nmih_nancho
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_male = yes
+		is_available_adult = yes
+		custom_description = {
+			text = "shogunate_gain_court_post_decision_center_trigger"
+			has_court_rank_trigger = yes
+			NOT = { has_character_flag = post_changed }
+		}
+	}
+
+	widget = {
+		gui = "decision_view_widget_option_list_generic"
+		controller = decision_option_list_controller
+		decision_to_second_step_button = "gain_court_post_center_decision_second_step"
+		show_from_start = yes
+
+		# Dummy
+		item = {
+			value = gain_court_post_dummy_decision
+			localization = gain_court_post_dummy_decision
+			icon = "gfx/interface/icons/icon_skill_learning.dds"
+			is_shown = {
+				always = no
+			}
+			ai_chance = {
+				value = 0
+			}
+		}
+		# Taiko
+		item = {
+			value = gain_court_post_taiko_decision
+			localization = gain_court_post_taiko_decision
+			icon = "gfx/interface/icons/icon_skill_learning.dds"
+			is_shown = {
+				has_nickname = nick_the_kampaku
+			}
+			ai_chance = {
+				value = 0
+				if = {
+					limit = {
+						prestige >= 2000
+					}
+					add = 50
+				}
+			}
+		}
+		# Kampaku
+		item = {
+			value = gain_court_post_kampaku_decision
+			localization = gain_court_post_kampaku_decision
+			icon = "gfx/interface/icons/icon_skill_learning.dds"
+			is_shown = {
+				OR = {
+					has_trait = juichii
+					has_trait = shoichii
+				}
+				is_under_highest_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_kampaku } }
+				}
+			}
+			ai_chance = {
+				value = 50
+			}
+		}
+		# Daijo Daijin
+		item = {
+			value = gain_court_post_daijo_daijin_decision
+			localization = gain_court_post_daijo_daijin_decision
+			icon = "gfx/interface/icons/icon_skill_learning.dds"
+			is_shown = {
+				OR = {
+					has_trait = shonii
+					has_trait = juichii
+					has_trait = shoichii
+				}
+				is_under_second_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_daijo_daijin } }
+				}
+			}
+			ai_chance = {
+				value = 50
+			}
+		}
+		# Sa Daijin
+		item = {
+			value = gain_court_post_sa_daijin_decision
+			localization = gain_court_post_sa_daijin_decision
+			icon = "gfx/interface/icons/icon_skill_learning.dds"
+			is_shown = {
+				OR = {
+					has_trait = shonii
+					has_trait = juichii
+					has_trait = shoichii
+				}
+				is_under_third_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_sa_daijin } }
+				}
+			}
+			ai_chance = {
+				value = 50
+			}
+		}
+		# U Daijin
+		item = {
+			value = gain_court_post_u_daijin_decision
+			localization = gain_court_post_u_daijin_decision
+			icon = "gfx/interface/icons/icon_skill_learning.dds"
+			is_shown = {
+				OR = {
+					has_trait = junii
+					has_trait = shonii
+					has_trait = juichii
+					has_trait = shoichii
+				}
+				is_under_fourth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_u_daijin } }
+				}
+			}
+			ai_chance = {
+				value = 50
+			}
+		}
+		# Nai Daijin
+		item = {
+			value = gain_court_post_nai_daijin_decision
+			localization = gain_court_post_nai_daijin_decision
+			icon = "gfx/interface/icons/icon_skill_learning.dds"
+			is_shown = {
+				OR = {
+					has_trait = shosanmi
+					has_trait = junii
+					has_trait = shonii
+				}
+				is_under_fifth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_nai_daijin } }
+				}
+			}
+			ai_chance = {
+				value = 50
+			}
+		}
+		# Dai Nagon
+		item = {
+			value = gain_court_post_dai_nagon_decision
+			localization = gain_court_post_dai_nagon_decision
+			icon = "gfx/interface/icons/icon_skill_learning.dds"
+			is_shown = {
+				is_nii_or_sanmi_trigger = yes
+				is_under_sixth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_dai_nagon } }
+				}
+			}
+			ai_chance = {
+				value = 50
+			}
+		}
+		# Gon Dai Nagon
+		item = {
+			value = gain_court_post_gon_dai_nagon_decision
+			localization = gain_court_post_gon_dai_nagon_decision
+			icon = "gfx/interface/icons/icon_skill_learning.dds"
+			is_shown = {
+				is_nii_or_sanmi_trigger = yes
+				is_under_sixth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_gon_dai_nagon } }
+				}
+			}
+			ai_chance = {
+				value = 50
+			}
+		}
+		# Chu Nagon
+		item = {
+			value = gain_court_post_chu_nagon_decision
+			localization = gain_court_post_chu_nagon_decision
+			icon = "gfx/interface/icons/icon_skill_learning.dds"
+			is_shown = {
+				is_nii_or_sanmi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_chu_nagon } }
+				}
+			}
+			ai_chance = {
+				value = 50
+			}
+		}
+		# Gon Chu Nagon
+		item = {
+			value = gain_court_post_gon_chu_nagon_decision
+			localization = gain_court_post_gon_chu_nagon_decision
+			icon = "gfx/interface/icons/icon_skill_learning.dds"
+			is_shown = {
+				is_nii_or_sanmi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_gon_chu_nagon } }
+				}
+			}
+			ai_chance = {
+				value = 50
+			}
+		}
+		# Sangi
+		item = {
+			value = gain_court_post_sangi_decision
+			localization = gain_court_post_sangi_decision
+			icon = "gfx/interface/icons/icon_skill_learning.dds"
+			is_shown = {
+				is_sanmi_or_shii_trigger = yes
+				is_under_fifth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_sangi } }
+				}
+			}
+			ai_chance = {
+				value = 10
+			}
+		}
+		# Jiju
+		item = {
+			value = gain_court_post_jiju_decision
+			localization = gain_court_post_jiju_decision
+			icon = "gfx/interface/icons/icon_skill_learning.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					OR = {
+						has_trait = jusanmi
+						is_shii_or_goi_trigger = yes
+					}
+				}
+				is_under_sixth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_jiju } }
+				}
+			}
+			ai_chance = {
+				value = 1
+			}
+		}
+		# Nakatsukasa Kyo
+		item = {
+			value = gain_court_post_nakatsukasa_kyo_decision
+			localization = gain_court_post_nakatsukasa_kyo_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				is_nii_or_sanmi_trigger = yes
+				is_under_sixth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_nakatsukasa_kyo } }
+				}
+			}
+			ai_chance = {
+				value = 10
+			}
+		}
+		# Shikibu Kyo
+		item = {
+			value = gain_court_post_shikibu_kyo_decision
+			localization = gain_court_post_shikibu_kyo_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				is_nii_or_sanmi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_shikibu_kyo } }
+				}
+			}
+			ai_chance = {
+				value = 10
+			}
+		}
+		# Jibu Kyo
+		item = {
+			value = gain_court_post_jibu_kyo_decision
+			localization = gain_court_post_jibu_kyo_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				is_nii_or_sanmi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_jibu_kyo } }
+				}
+			}
+			ai_chance = {
+				value = 10
+			}
+		}
+		# Minbu Kyo
+		item = {
+			value = gain_court_post_minbu_kyo_decision
+			localization = gain_court_post_minbu_kyo_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				is_nii_or_sanmi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_minbu_kyo } }
+				}
+			}
+			ai_chance = {
+				value = 10
+			}
+		}
+		# Hyobu Kyo
+		item = {
+			value = gain_court_post_hyobu_kyo_decision
+			localization = gain_court_post_hyobu_kyo_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				is_nii_or_sanmi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_hyobu_kyo } }
+				}
+			}
+			ai_chance = {
+				value = 10
+			}
+		}
+		# Gyobu Kyo
+		item = {
+			value = gain_court_post_gyobu_kyo_decision
+			localization = gain_court_post_gyobu_kyo_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				is_nii_or_sanmi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_gyobu_kyo } }
+				}
+			}
+			ai_chance = {
+				value = 10
+			}
+		}
+		# Okura Kyo
+		item = {
+			value = gain_court_post_okura_kyo_decision
+			localization = gain_court_post_okura_kyo_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				is_nii_or_sanmi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_okura_kyo } }
+				}
+			}
+			ai_chance = {
+				value = 10
+			}
+		}
+		# Kunai Kyo
+		item = {
+			value = gain_court_post_kunai_kyo_decision
+			localization = gain_court_post_kunai_kyo_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				is_nii_or_sanmi_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_kunai_kyo } }
+				}
+			}
+			ai_chance = {
+				value = 10
+			}
+		}
+		# Nakatsukasa Daihu
+		item = {
+			value = gain_court_post_nakatsukasa_daihu_decision
+			localization = gain_court_post_nakatsukasa_daihu_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_shii_trigger = yes
+				}
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_nakatsukasa_daihu } }
+				}
+			}
+			ai_chance = {
+				value = 5
+			}
+		}
+		# Shikibu Daihu
+		item = {
+			value = gain_court_post_shikibu_daihu_decision
+			localization = gain_court_post_shikibu_daihu_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_shii_trigger = yes
+				}
+				is_under_eighth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_shikibu_daihu } }
+				}
+			}
+			ai_chance = {
+				value = 5
+			}
+		}
+		# Jibu Daihu
+		item = {
+			value = gain_court_post_jibu_daihu_decision
+			localization = gain_court_post_jibu_daihu_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_shii_trigger = yes
+				}
+				is_under_eighth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_jibu_daihu } }
+				}
+			}
+			ai_chance = {
+				value = 5
+			}
+		}
+		# Minbu Daihu
+		item = {
+			value = gain_court_post_minbu_daihu_decision
+			localization = gain_court_post_minbu_daihu_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_shii_trigger = yes
+				}
+				is_under_eighth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_minbu_daihu } }
+				}
+			}
+			ai_chance = {
+				value = 5
+			}
+		}
+		# Hyobu Daihu
+		item = {
+			value = gain_court_post_hyobu_daihu_decision
+			localization = gain_court_post_hyobu_daihu_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_shii_trigger = yes
+				}
+				is_under_eighth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_hyobu_daihu } }
+				}
+			}
+			ai_chance = {
+				value = 5
+			}
+		}
+		# Gyobu Daihu
+		item = {
+			value = gain_court_post_gyobu_daihu_decision
+			localization = gain_court_post_gyobu_daihu_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_shii_trigger = yes
+				}
+				is_under_eighth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_gyobu_daihu } }
+				}
+			}
+			ai_chance = {
+				value = 5
+			}
+		}
+		# Okura Daihu
+		item = {
+			value = gain_court_post_okura_daihu_decision
+			localization = gain_court_post_okura_daihu_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_shii_trigger = yes
+				}
+				is_under_eighth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_okura_daihu } }
+				}
+			}
+			ai_chance = {
+				value = 5
+			}
+		}
+		# Kunai Daihu
+		item = {
+			value = gain_court_post_kunai_daihu_decision
+			localization = gain_court_post_kunai_daihu_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_shii_trigger = yes
+				}
+				is_under_eighth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_kunai_daihu } }
+				}
+			}
+			ai_chance = {
+				value = 5
+			}
+		}
+		# Nakatsukasa no Sho
+		item = {
+			value = gain_court_post_nakatsukasa_no_sho_decision
+			localization = gain_court_post_nakatsukasa_no_sho_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_ninth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_nakatsukasa_no_sho } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						highest_held_title_tier >= tier_duchy
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Shikibu no Sho
+		item = {
+			value = gain_court_post_shikibu_no_sho_decision
+			localization = gain_court_post_shikibu_no_sho_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_ninth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_shikibu_no_sho } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						highest_held_title_tier >= tier_duchy
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Jibu no Sho
+		item = {
+			value = gain_court_post_jibu_no_sho_decision
+			localization = gain_court_post_jibu_no_sho_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_ninth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_jibu_no_sho } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						highest_held_title_tier >= tier_duchy
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Minbu no Sho
+		item = {
+			value = gain_court_post_minbu_no_sho_decision
+			localization = gain_court_post_minbu_no_sho_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_ninth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_minbu_no_sho } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						highest_held_title_tier >= tier_duchy
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Hyobu no Sho
+		item = {
+			value = gain_court_post_hyobu_no_sho_decision
+			localization = gain_court_post_hyobu_no_sho_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_ninth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_hyobu_no_sho } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						highest_held_title_tier >= tier_duchy
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Gyobu no Sho
+		item = {
+			value = gain_court_post_gyobu_no_sho_decision
+			localization = gain_court_post_gyobu_no_sho_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_ninth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_gyobu_no_sho } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						highest_held_title_tier >= tier_duchy
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Okura no Sho
+		item = {
+			value = gain_court_post_okura_no_sho_decision
+			localization = gain_court_post_okura_no_sho_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_ninth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_okura_no_sho } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						highest_held_title_tier >= tier_duchy
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Kunai no Sho
+		item = {
+			value = gain_court_post_kunai_no_sho_decision
+			localization = gain_court_post_kunai_no_sho_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_ninth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_kunai_no_sho } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						highest_held_title_tier >= tier_duchy
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Shuri Daibu
+		item = {
+			value = gain_court_post_shuri_daibu_decision
+			localization = gain_court_post_shuri_daibu_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_under_shoshii_trigger = yes
+				}
+				is_under_eighth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_shuri_daibu } }
+				}
+			}
+			ai_chance = {
+				value = 5
+			}
+		}
+		# Sakyo Daibu
+		item = {
+			value = gain_court_post_sakyo_dayu_decision
+			localization = gain_court_post_sakyo_dayu_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_eighth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_sakyo_dayu } }
+				}
+			}
+			ai_chance = {
+				value = 1
+			}
+		}
+		# Ukyo Daibu
+		item = {
+			value = gain_court_post_ukyo_dayu_decision
+			localization = gain_court_post_ukyo_dayu_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_eighth_higher_post_trigger = yes
+				OR = {
+					has_title = title:k_nmih_kanrei
+					has_claim_on = title:k_nmih_kanrei
+				}
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_ukyo_dayu } }
+				}
+			}
+			ai_chance = {
+				value = 0
+				if = {
+					limit = {
+						dynasty = dynasty:10000401 # Hosokawa
+					}
+					add = 100
+				}
+			}
+		}
+		# Daizen Daihu
+		item = {
+			value = gain_court_post_daizen_daihu_decision
+			localization = gain_court_post_daizen_daihu_decision
+			icon = "gfx/interface/icons/icon_skill_stewardship.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_eighth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_daizen_daihu } }
+				}
+			}
+			ai_chance = {
+				value = 1
+			}
+		}
+		# Sama no Kami
+		item = {
+			value = gain_court_post_sama_no_kami_decision
+			localization = gain_court_post_sama_no_kami_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_eighth_higher_post_trigger = yes
+				OR = {
+					has_title = title:e_nmih_japan
+					has_claim_on = title:e_nmih_japan
+					father = { has_title = title:e_nmih_japan }
+				}
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_sama_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+				if = {
+					limit = {
+						NOT = { has_trait = ashikaga_family }
+					}
+					multiply = 0
+				}
+				if = {
+					limit = {
+						dynasty = dynasty:10000400 # Ashikaga
+					}
+					add = 100
+				}
+			}
+		}
+		# Uma no Kami
+		item = {
+			value = gain_court_post_uma_no_kami_decision
+			localization = gain_court_post_uma_no_kami_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_eighth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_uma_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Sama no Suke
+		item = {
+			value = gain_court_post_sama_no_suke_decision
+			localization = gain_court_post_sama_no_suke_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_jugoi_trigger = yes
+				}
+				is_under_ninth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_sama_no_suke } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Danjo Daihitsu
+		item = {
+			value = gain_court_post_danjo_daihitsu_decision
+			localization = gain_court_post_danjo_daihitsu_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_shoshii_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_danjo_daihitsu } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Danjo Shohitsu
+		item = {
+			value = gain_court_post_danjo_shohitsu_decision
+			localization = gain_court_post_danjo_shohitsu_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_jushii_trigger = yes
+				is_under_eighth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_danjo_shohitsu } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Danjo Daichu
+		item = {
+			value = gain_court_post_danjo_daichu_decision
+			localization = gain_court_post_danjo_daichu_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_shogoi_trigger = yes
+				is_under_eighth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_danjo_daichu } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Danjo Shochu
+		item = {
+			value = gain_court_post_danjo_shochu_decision
+			localization = gain_court_post_danjo_shochu_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_jugoi_trigger = yes
+				is_under_ninth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_danjo_shochu } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Sa Konoe Taisho
+		item = {
+			value = gain_court_post_sa_konoe_taisho_decision
+			localization = gain_court_post_sa_konoe_taisho_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				OR = {
+					is_nii_trigger = yes
+					is_sanmi_trigger = yes
+				}
+				is_under_fifth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_sa_konoe_taisho } }
+				}
+			}
+			ai_chance = {
+				value = 10
+			}
+		}
+		# U Konoe Taisho
+		item = {
+			value = gain_court_post_u_konoe_taisho_decision
+			localization = gain_court_post_u_konoe_taisho_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				OR = {
+					is_nii_trigger = yes
+					is_sanmi_trigger = yes
+				}
+				is_under_fifth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_u_konoe_taisho } }
+				}
+			}
+			ai_chance = {
+				value = 10
+			}
+		}
+		# Sa Konoe Chujo
+		item = {
+			value = gain_court_post_sakonoe_chujo_decision
+			localization = gain_court_post_sakonoe_chujo_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_shii_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_limited_trigger"
+					NOT = {
+						any_ruler = {
+							count = 4
+							has_nickname = nick_the_sakonoe_chujo
+						}
+					}
+				}
+			}
+			ai_chance = {
+				value = 1
+			}
+		}
+		# U Konoe Chujo
+		item = {
+			value = gain_court_post_ukonoe_chujo_decision
+			localization = gain_court_post_ukonoe_chujo_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_shii_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_limited_trigger"
+					NOT = {
+						any_ruler = {
+							count = 4
+							has_nickname = nick_the_ukonoe_chujo
+						}
+					}
+				}
+			}
+			ai_chance = {
+				value = 1
+			}
+		}
+		# Sa Konoe Shosho
+		item = {
+			value = gain_court_post_sakonoe_shosho_decision
+			localization = gain_court_post_sakonoe_shosho_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_ninth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_limited_trigger"
+					NOT = {
+						any_ruler = {
+							count = 4
+							has_nickname = nick_the_sakonoe_shosho
+						}
+					}
+				}
+			}
+			ai_chance = {
+				value = 1
+			}
+		}
+		# U Konoe Shosho
+		item = {
+			value = gain_court_post_ukonoe_shosho_decision
+			localization = gain_court_post_ukonoe_shosho_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				OR = {
+					has_empire_tier_liege_trigger = yes
+					is_goi_trigger = yes
+				}
+				is_under_ninth_higher_post_trigger = yes
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_limited_trigger"
+					NOT = {
+						any_ruler = {
+							count = 4
+							has_nickname = nick_the_ukonoe_shosho
+						}
+					}
+				}
+			}
+			ai_chance = {
+				value = 1
+			}
+		}
+		# Sa Emon Kami
+		item = {
+			value = gain_court_post_saemon_no_kami_decision
+			localization = gain_court_post_saemon_no_kami_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_under_shoshii_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+				OR = {
+					highest_held_title_tier >= tier_duchy
+					has_trait = ashikaga_family
+				}
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_saemon_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# U Emon Kami
+		item = {
+			value = gain_court_post_uemon_no_kami_decision
+			localization = gain_court_post_uemon_no_kami_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_under_shoshii_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+				OR = {
+					highest_held_title_tier >= tier_duchy
+					has_trait = ashikaga_family
+				}
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_uemon_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Sa Emon Suke
+		item = {
+			value = gain_court_post_saemon_no_suke_decision
+			localization = gain_court_post_saemon_no_suke_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_goi_trigger = yes
+				is_under_eighth_higher_post_trigger = yes
+				highest_held_title_tier >= tier_county
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_saemon_no_suke } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# U Emon Suke
+		item = {
+			value = gain_court_post_uemon_no_suke_decision
+			localization = gain_court_post_uemon_no_suke_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_goi_trigger = yes
+				is_under_eighth_higher_post_trigger = yes
+				highest_held_title_tier >= tier_county
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_uemon_no_suke } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Sa Emon Jo
+		item = {
+			value = gain_court_post_saemon_no_jo_decision
+			localization = gain_court_post_saemon_no_jo_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_jugoi_trigger = yes
+				is_under_ninth_higher_post_trigger = yes
+				highest_held_title_tier <= tier_barony
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# U Emon Jo
+		item = {
+			value = gain_court_post_uemon_no_jo_decision
+			localization = gain_court_post_uemon_no_jo_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_jugoi_trigger = yes
+				is_under_ninth_higher_post_trigger = yes
+				highest_held_title_tier <= tier_barony
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Sa Hyoe Kami
+		item = {
+			value = gain_court_post_sahyoe_no_kami_decision
+			localization = gain_court_post_sahyoe_no_kami_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_under_shoshii_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+				OR = {
+					highest_held_title_tier >= tier_duchy
+					has_trait = ashikaga_family
+				}
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_sahyoe_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# U Hyoe Kami
+		item = {
+			value = gain_court_post_uhyoe_no_kami_decision
+			localization = gain_court_post_uhyoe_no_kami_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_under_shoshii_trigger = yes
+				is_under_seventh_higher_post_trigger = yes
+				OR = {
+					highest_held_title_tier >= tier_duchy
+					has_trait = ashikaga_family
+				}
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_uhyoe_no_kami } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Sa Hyoe Suke
+		item = {
+			value = gain_court_post_sahyoe_no_suke_decision
+			localization = gain_court_post_sahyoe_no_suke_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_goi_trigger = yes
+				is_under_eighth_higher_post_trigger = yes
+				highest_held_title_tier >= tier_county
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_sahyoe_no_suke } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# U Hyoe Suke
+		item = {
+			value = gain_court_post_uhyoe_no_suke_decision
+			localization = gain_court_post_uhyoe_no_suke_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_goi_trigger = yes
+				is_under_eighth_higher_post_trigger = yes
+				highest_held_title_tier >= tier_county
+			}
+			is_valid = {
+				custom_description = {
+					text = "shogunate_gain_court_post_decision_unique_trigger"
+					NOT = { any_ruler = { has_nickname = nick_the_uhyoe_no_suke } }
+				}
+			}
+			ai_chance = {
+				value = 1
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					multiply = 0
+				}
+			}
+		}
+		# Sa Hyoe Jo
+		item = {
+			value = gain_court_post_sahyoe_no_jo_decision
+			localization = gain_court_post_sahyoe_no_jo_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_jugoi_trigger = yes
+				is_under_ninth_higher_post_trigger = yes
+				highest_held_title_tier <= tier_barony
+			}
+			ai_chance = {
+				value = 0
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					add = 100
+				}
+			}
+		}
+		# U Hyoe Jo
+		item = {
+			value = gain_court_post_uhyoe_no_jo_decision
+			localization = gain_court_post_uhyoe_no_jo_decision
+			icon = "gfx/interface/icons/icon_skill_martial.dds"
+			is_shown = {
+				is_jugoi_trigger = yes
+				is_under_ninth_higher_post_trigger = yes
+				highest_held_title_tier <= tier_barony
+			}
+			ai_chance = {
+				value = 0
+				if = {
+					limit = {
+						culture = { has_cultural_pillar = heritage_imperial_court }
+					}
+					add = 100
+				}
+			}
+		}
+	}
+
+	effect = {
+		# Taiko
+		if = {
+			limit = { scope:gain_court_post_taiko_decision ?= yes }
+			give_nickname = nick_the_taiko
+		}
+		# Kampaku
+		if = {
+			limit = { scope:gain_court_post_kampaku_decision ?= yes }
+			give_nickname = nick_the_kampaku
+			add_character_flag = highest_post
+		}
+		# Daijo Daijin
+		if = {
+			limit = { scope:gain_court_post_daijo_daijin_decision ?= yes }
+			give_nickname = nick_the_daijo_daijin
+			add_character_flag = second_higher_post
+		}
+		# Sa Daijin
+		if = {
+			limit = { scope:gain_court_post_sa_daijin_decision ?= yes }
+			give_nickname = nick_the_sa_daijin
+			add_character_flag = third_higher_post
+		}
+		# U Daijin
+		if = {
+			limit = { scope:gain_court_post_u_daijin_decision ?= yes }
+			give_nickname = nick_the_u_daijin
+			add_character_flag = fourth_higher_post
+		}
+		# Nai Daijin
+		if = {
+			limit = { scope:gain_court_post_nai_daijin_decision ?= yes }
+			give_nickname = nick_the_nai_daijin
+			add_character_flag = fifth_higher_post
+		}
+		# Dai Nagon
+		if = {
+			limit = { scope:gain_court_post_dai_nagon_decision ?= yes }
+			give_nickname = nick_dai_nagon
+			add_character_flag = sixth_higher_post
+		}
+		# Gon Dai Nagon
+		if = {
+			limit = { scope:gain_court_post_gon_dai_nagon_decision ?= yes }
+			give_nickname = nick_gon_dai_nagon
+			add_character_flag = sixth_higher_post
+		}
+		# Chu Nagon
+		if = {
+			limit = { scope:gain_court_post_chu_nagon_decision ?= yes }
+			give_nickname = nick_chu_nagon
+			add_character_flag = seventh_higher_post
+		}
+		# Gon Chu Nagon
+		if = {
+			limit = { scope:gain_court_post_gon_chu_nagon_decision ?= yes }
+			give_nickname = nick_gon_chu_nagon
+			add_character_flag = seventh_higher_post
+		}
+		# Sangi
+		if = {
+			limit = { scope:gain_court_post_sangi_decision ?= yes }
+			give_nickname = nick_the_sangi
+			add_character_flag = seventh_higher_post
+		}
+		# Jiju
+		if = {
+			limit = { scope:gain_court_post_jiju_decision ?= yes }
+			give_nickname = nick_the_jiju
+			add_character_flag = ninth_higher_post
+		}
+		# Nakatsukasa Kyo
+		if = {
+			limit = { scope:gain_court_post_nakatsukasa_kyo_decision ?= yes }
+			give_nickname = nick_the_nakatsukasa_kyo
+			add_character_flag = seventh_higher_post
+		}
+		# Shikibu Kyo
+		if = {
+			limit = { scope:gain_court_post_shikibu_kyo_decision ?= yes }
+			give_nickname = nick_the_shikibu_kyo
+			add_character_flag = seventh_higher_post
+		}
+		# Jibu Kyo
+		if = {
+			limit = { scope:gain_court_post_jibu_kyo_decision ?= yes }
+			give_nickname = nick_the_jibu_kyo
+			add_character_flag = seventh_higher_post
+		}
+		# Minbu Kyo
+		if = {
+			limit = { scope:gain_court_post_minbu_kyo_decision ?= yes }
+			give_nickname = nick_the_minbu_kyo
+			add_character_flag = seventh_higher_post
+		}
+		# Hyobu Kyo
+		if = {
+			limit = { scope:gain_court_post_hyobu_kyo_decision ?= yes }
+			give_nickname = nick_the_hyobu_kyo
+			add_character_flag = seventh_higher_post
+		}
+		# Gyobu Kyo
+		if = {
+			limit = { scope:gain_court_post_gyobu_kyo_decision ?= yes }
+			give_nickname = nick_the_gyobu_kyo
+			add_character_flag = seventh_higher_post
+		}
+		# Okura Kyo
+		if = {
+			limit = { scope:gain_court_post_okura_kyo_decision ?= yes }
+			give_nickname = nick_the_okura_kyo
+			add_character_flag = seventh_higher_post
+		}
+		# Kunai Kyo
+		if = {
+			limit = { scope:gain_court_post_kunai_kyo_decision ?= yes }
+			give_nickname = nick_the_kunai_kyo
+			add_character_flag = seventh_higher_post
+		}
+		# Nakatsukasa Daihu
+		if = {
+			limit = { scope:gain_court_post_nakatsukasa_daihu_decision ?= yes }
+			give_nickname = nick_the_nakatsukasa_daihu
+			add_character_flag = eighth_higher_post
+		}
+		# Shikibu Daihu
+		if = {
+			limit = { scope:gain_court_post_shikibu_daihu_decision ?= yes }
+			give_nickname = nick_the_shikibu_daihu
+			add_character_flag = eighth_higher_post
+		}
+		# Jibu Daihu
+		if = {
+			limit = { scope:gain_court_post_jibu_daihu_decision ?= yes }
+			give_nickname = nick_the_jibu_daihu
+			add_character_flag = eighth_higher_post
+		}
+		# Minbu Daihu
+		if = {
+			limit = { scope:gain_court_post_minbu_daihu_decision ?= yes }
+			give_nickname = nick_the_minbu_daihu
+			add_character_flag = eighth_higher_post
+		}
+		# Hyobu Daihu
+		if = {
+			limit = { scope:gain_court_post_hyobu_daihu_decision ?= yes }
+			give_nickname = nick_the_hyobu_daihu
+			add_character_flag = eighth_higher_post
+		}
+		# Gyobu Daihu
+		if = {
+			limit = { scope:gain_court_post_gyobu_daihu_decision ?= yes }
+			give_nickname = nick_the_gyobu_daihu
+			add_character_flag = eighth_higher_post
+		}
+		# Okura Daihu
+		if = {
+			limit = { scope:gain_court_post_okura_daihu_decision ?= yes }
+			give_nickname = nick_the_okura_daihu
+			add_character_flag = eighth_higher_post
+		}
+		# Kunai Daihu
+		if = {
+			limit = { scope:gain_court_post_kunai_daihu_decision ?= yes }
+			give_nickname = nick_the_kunai_daihu
+			add_character_flag = eighth_higher_post
+		}
+		# Nakatsukasa no Sho
+		if = {
+			limit = { scope:gain_court_post_nakatsukasa_no_sho_decision ?= yes }
+			give_nickname = nick_the_nakatsukasa_no_sho
+			add_character_flag = ninth_higher_post
+		}
+		# Shikibu no Sho
+		if = {
+			limit = { scope:gain_court_post_shikibu_no_sho_decision ?= yes }
+			give_nickname = nick_the_shikibu_no_sho
+			add_character_flag = ninth_higher_post
+		}
+		# Jibu no Sho
+		if = {
+			limit = { scope:gain_court_post_jibu_no_sho_decision ?= yes }
+			give_nickname = nick_the_jibu_no_sho
+			add_character_flag = ninth_higher_post
+		}
+		# Minbu no Sho
+		if = {
+			limit = { scope:gain_court_post_minbu_no_sho_decision ?= yes }
+			give_nickname = nick_the_minbu_no_sho
+			add_character_flag = ninth_higher_post
+		}
+		# Hyobu no Sho
+		if = {
+			limit = { scope:gain_court_post_hyobu_no_sho_decision ?= yes }
+			give_nickname = nick_the_hyobu_no_sho
+			add_character_flag = ninth_higher_post
+		}
+		# Gyobu no Sho
+		if = {
+			limit = { scope:gain_court_post_gyobu_no_sho_decision ?= yes }
+			give_nickname = nick_the_gyobu_no_sho
+			add_character_flag = ninth_higher_post
+		}
+		# Okura no Sho
+		if = {
+			limit = { scope:gain_court_post_okura_no_sho_decision ?= yes }
+			give_nickname = nick_the_okura_no_sho
+			add_character_flag = ninth_higher_post
+		}
+		# Kunai no Sho
+		if = {
+			limit = { scope:gain_court_post_kunai_no_sho_decision ?= yes }
+			give_nickname = nick_the_kunai_no_sho
+			add_character_flag = ninth_higher_post
+		}
+		# Shuri Daibu
+		if = {
+			limit = { scope:gain_court_post_shuri_daibu_decision ?= yes }
+			give_nickname = nick_the_shuri_daibu
+			add_character_flag = eighth_higher_post
+		}
+		# Sakyo Daibu
+		if = {
+			limit = { scope:gain_court_post_sakyo_dayu_decision ?= yes }
+			give_nickname = nick_the_sakyo_dayu
+			add_character_flag = ninth_higher_post
+		}
+		# Ukyo Daibu
+		if = {
+			limit = { scope:gain_court_post_ukyo_dayu_decision ?= yes }
+			give_nickname = nick_the_ukyo_dayu
+			add_character_flag = ninth_higher_post
+		}
+		# Daizen Daihu
+		if = {
+			limit = { scope:gain_court_post_daizen_daihu_decision ?= yes }
+			give_nickname = nick_the_daizen_daihu
+			add_character_flag = ninth_higher_post
+		}
+		# Sama no Kami
+		if = {
+			limit = { scope:gain_court_post_sama_no_kami_decision ?= yes }
+			give_nickname = nick_the_sama_no_kami
+			add_character_flag = ninth_higher_post
+		}
+		# Uma no Kami
+		if = {
+			limit = { scope:gain_court_post_uma_no_kami_decision ?= yes }
+			give_nickname = nick_the_uma_no_kami
+			add_character_flag = ninth_higher_post
+		}
+		# Sama no Suke
+		if = {
+			limit = { scope:gain_court_post_sama_no_suke_decision ?= yes }
+			give_nickname = nick_the_sama_no_suke
+			add_character_flag = tenth_higher_post
+		}
+		# Danjo Daihitsu
+		if = {
+			limit = { scope:gain_court_post_danjo_daihitsu_decision ?= yes }
+			give_nickname = nick_the_danjo_daihitsu
+			add_character_flag = eighth_higher_post
+		}
+		# Danjo Shohitsu
+		if = {
+			limit = { scope:gain_court_post_danjo_shohitsu_decision ?= yes }
+			give_nickname = nick_the_danjo_shohitsu
+			add_character_flag = eighth_higher_post
+		}
+		# Danjo Daichu
+		if = {
+			limit = { scope:gain_court_post_danjo_daichu_decision ?= yes }
+			give_nickname = nick_the_danjo_daichu
+			add_character_flag = ninth_higher_post
+		}
+		# Danjo Shochu
+		if = {
+			limit = { scope:gain_court_post_danjo_shochu_decision ?= yes }
+			give_nickname = nick_the_danjo_shochu
+			add_character_flag = ninth_higher_post
+		}
+		# Sa Konoe Taisho
+		if = {
+			limit = { scope:gain_court_post_sa_konoe_taisho_decision ?= yes }
+			give_nickname = nick_the_sa_konoe_taisho
+			add_character_flag = seventh_higher_post
+		}
+		# U Konoe Taisho
+		if = {
+			limit = { scope:gain_court_post_u_konoe_taisho_decision ?= yes }
+			give_nickname = nick_the_u_konoe_taisho
+			add_character_flag = seventh_higher_post
+		}
+		# Sa Konoe Chujo
+		if = {
+			limit = { scope:gain_court_post_sakonoe_chujo_decision ?= yes }
+			give_nickname = nick_the_sakonoe_chujo
+			add_character_flag = eighth_higher_post
+		}
+		# U Konoe Chujo
+		if = {
+			limit = { scope:gain_court_post_ukonoe_chujo_decision ?= yes }
+			give_nickname = nick_the_ukonoe_chujo
+			add_character_flag = eighth_higher_post
+		}
+		# Sa Konoe Shosho
+		if = {
+			limit = { scope:gain_court_post_sakonoe_shosho_decision ?= yes }
+			give_nickname = nick_the_sakonoe_shosho
+			add_character_flag = ninth_higher_post
+		}
+		# U Konoe Shosho
+		if = {
+			limit = { scope:gain_court_post_ukonoe_shosho_decision ?= yes }
+			give_nickname = nick_the_ukonoe_shosho
+			add_character_flag = ninth_higher_post
+		}
+		# Sa Emon Kami
+		if = {
+			limit = { scope:gain_court_post_saemon_no_kami_decision ?= yes }
+			give_nickname = nick_the_saemon_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# U Emon Kami
+		if = {
+			limit = { scope:gain_court_post_uemon_no_kami_decision ?= yes }
+			give_nickname = nick_the_uemon_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Sa Emon Suke
+		if = {
+			limit = { scope:gain_court_post_saemon_no_suke_decision ?= yes }
+			give_nickname = nick_the_saemon_no_suke
+			add_character_flag = ninth_higher_post
+		}
+		# U Emon Suke
+		if = {
+			limit = { scope:gain_court_post_uemon_no_suke_decision ?= yes }
+			give_nickname = nick_the_uemon_no_suke
+			add_character_flag = ninth_higher_post
+		}
+		# Sa Emon Jo
+		if = {
+			limit = { scope:gain_court_post_saemon_no_jo_decision ?= yes }
+			give_nickname = nick_the_saemon_no_jo
+			add_character_flag = tenth_higher_post
+		}
+		# U Emon Jo
+		if = {
+			limit = { scope:gain_court_post_uemon_no_jo_decision ?= yes }
+			give_nickname = nick_the_uemon_no_jo
+			add_character_flag = tenth_higher_post
+		}
+		# Sa Hyoe Kami
+		if = {
+			limit = { scope:gain_court_post_sahyoe_no_kami_decision ?= yes }
+			give_nickname = nick_the_sahyoe_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# U Hyoe Kami
+		if = {
+			limit = { scope:gain_court_post_uhyoe_no_kami_decision ?= yes }
+			give_nickname = nick_the_uhyoe_no_kami
+			add_character_flag = eighth_higher_post
+		}
+		# Sa Hyoe Suke
+		if = {
+			limit = { scope:gain_court_post_sahyoe_no_suke_decision ?= yes }
+			give_nickname = nick_the_sahyoe_no_suke
+			add_character_flag = ninth_higher_post
+		}
+		# U Hyoe Suke
+		if = {
+			limit = { scope:gain_court_post_uhyoe_no_suke_decision ?= yes }
+			give_nickname = nick_the_uhyoe_no_suke
+			add_character_flag = ninth_higher_post
+		}
+		# Sa Hyoe Jo
+		if = {
+			limit = { scope:gain_court_post_sahyoe_no_jo_decision ?= yes }
+			give_nickname = nick_the_sahyoe_no_jo
+			add_character_flag = tenth_higher_post
+		}
+		# U Hyoe Jo
+		if = {
+			limit = { scope:gain_court_post_uhyoe_no_jo_decision ?= yes }
+			give_nickname = nick_the_uhyoe_no_jo
+			add_character_flag = tenth_higher_post
+		}
+
+		# add modifiers
+		gain_imperial_court_central_post_effect = yes
+	}
+
+	cost = {
+		gold = {
+			value = 0
+			if = {
+				limit = {
+					OR = {
+						scope:gain_court_post_sahyoe_no_jo_decision ?= yes
+						scope:gain_court_post_uhyoe_no_jo_decision ?= yes
+					}
+				}
+				add = 50
+			}
+			else_if = {
+				limit = {
+					NOT = { scope:gain_court_post_taiko_decision ?= yes }
+				}
+				add = 100
+			}
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+		prestige = {
+			value = 0
+			if = {
+				limit = {
+					scope:gain_court_post_taiko_decision ?= yes
+				}
+				add = 1000
+			}
+			if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_court_affiliation
+					}
+				}
+				multiply = 0.5
+			}
+		}
+	}
+
+	ai_check_interval = 1
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}

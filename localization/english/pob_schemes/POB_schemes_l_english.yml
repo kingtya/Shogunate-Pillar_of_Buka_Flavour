@@ -1,0 +1,96 @@
+﻿l_english:
+
+    pob_suggest_promote_conscription_interaction:0 "Demand Promote Militia"
+    pob_suggest_promote_conscription_interaction_desc:0 "Instruct the [courtier|E] to attempt to increase military service in the domain."
+    recipient_secondary_pob_suggest_promote_conscription_interaction:0 "[courtier|E]"
+
+    pob_promote_conscription_interaction:0 "Promote Militia #weak (Scheme)#!"
+    pob_promote_conscription_interaction_desc:0 "Attempt to increase the military service in your domain."
+    pob_promote_conscription:0 "Promote Militia"
+    pob_promote_conscription_desc_general:0 "In the [scheme|E] of Militia Conscription, you attempt to increase military service in your domain."
+    pob_promote_conscription_action:0 "$pob_promote_conscription$"
+    pob_promote_conscription_desc:0 "I will attempt to increase military service in my domain."
+    pob_promote_conscription_start_scheme:0 "$pob_promote_conscription$ Begins"
+
+    pob_promote_conscription_invalidated_title:1 "@personal_scheme_icon! $pob_promote_conscription$ Scheme Ends"
+    pob_promote_conscription_invalidated_dead:1 "[target.GetShortUIName|U] has passed away. You can no longer use this on [target.GetHerHim]."
+
+    pob_promote_conscription_events.1001.t:0 "$pob_promote_conscription$: Success!"
+    pob_promote_conscription_events.1001.desc:0 "[owner.GetUIName] has achieved the goal of expanding military service."
+    pob_promote_conscription_events.1001.a:0 "Such is the way of troubled times."
+
+    pob_promote_conscription_events.1002.t:0 "$pob_promote_conscription$: Failure!"
+    pob_promote_conscription_events.1002.desc:0 "Due to the exhaustion of the populace, [owner.GetUIName] has failed to achieve the goal of expanding military service."
+    pob_promote_conscription_events.1002.a:0 "Such is the way of troubled times."
+
+    ###
+    pob_delegate_persuasion_interaction:0 "Instruct Persuasion"
+    pob_delegate_persuasion_interaction_desc:0 "Instruct the [courtier|E] to attempt to persuade [recipient.GetShortUINameNoTooltip] to serve you."
+    recipient_secondary_pob_delegate_persuasion_interaction:0 "[courtier|E]"
+
+    pob_persuade_and_entice_interaction:0 "Persuade and Entice #weak (Scheme)#!"
+    pob_persuade_and_entice_interaction_desc:0 "Attempt to persuade [recipient.GetShortUINameNoTooltip] to serve you."
+    pob_persuade_and_entice:0 "Persuade and Entice"
+    pob_persuade_and_entice_desc_general:0 "In the [scheme|E] of Persuade and Entice, you attempt to invite another character to your [court|E]."
+    pob_persuade_and_entice_action:0 "$pob_persuade_and_entice$"
+    pob_persuade_and_entice_desc:0 "I will attempt to persuade [SCHEME.GetTargetCharacter.GetShortUINamePossessive] to serve me."
+    pob_persuade_and_entice_start_scheme:0 "$pob_persuade_and_entice$ Begins"
+
+    pob_persuade_and_entice_invalidated_title:1 "@personal_scheme_icon! $pob_persuade_and_entice$ Scheme Ends"
+    pob_persuade_and_entice_invalidated_war:1 "Due to the ongoing war between you, you can no longer $pob_persuade_and_entice$ [target.GetShortUIName]."
+    pob_persuade_and_entice_invalidated_dead:1 "[target.GetShortUIName|U] has passed away. You can no longer use this on [target.GetHerHim]."
+
+    pob_persuade_and_entice_events.1001.t:0 "$pob_persuade_and_entice$: Success!"
+    pob_persuade_and_entice_events.1001.desc:0 "[target.GetUIName] has finally decided to join our ranks. Without a doubt, we will be the ultimate victors."
+    pob_persuade_and_entice_events.1001.a:0 "Such is the way of troubled times."
+
+    pob_persuade_and_entice_events.1002.t:0 "$pob_persuade_and_entice$: Failure!"
+    pob_persuade_and_entice_events.1002.desc:0 "Unfortunately, [target.GetUIName] has refused to join our ranks. However, such setbacks will not shake our resolve."
+    pob_persuade_and_entice_events.1002.a:0 "Such is the way of troubled times."
+    pob_persuade_and_entice_events.1002.b:0 "Yesterday's enemy may be tomorrow's ally—I will not give up."
+
+    # Diplomacy
+    pob_send_envoy_interaction:0 "Dispatch Envoy"
+    pob_send_envoy_interaction_desc:0 "Instruct the [courtier|E] to enhance diplomatic relations between our house and [recipient.GetShortUINameNoTooltip]"
+    recipient_secondary_pob_send_envoy_interaction:0 "Execute"
+
+    pob_improve_relations_interaction:0 "Diplomatic Overture #weak (Scheme)#!"
+    pob_improve_relations_interaction_desc:0 "Attempt to improve diplomatic relations with [recipient.GetShortUINameNoTooltip]"
+    pob_improve_relations:0 "Diplomatic Overture"
+    pob_improve_relations_desc_general:0 "In the Diplomatic Overture [scheme|E], you attempt to improve diplomatic relations with [recipient.GetShortUINameNoTooltip]"
+    pob_improve_relations_action:0 "$pob_improve_relations$"
+    pob_improve_relations_desc:0 "I will attempt to improve diplomatic relations with [SCHEME.GetTargetCharacter.GetShortUINamePossessive]"
+    pob_improve_relations_start_scheme:0 "Initiate $pob_improve_relations$"
+
+    pob_improve_relations_invalidated_title:1 "@personal_scheme_icon! $pob_improve_relations$ Scheme Concluded"
+
+    pob_improve_relations_events.1001.t:0 "$pob_improve_relations$: Success!"
+    pob_improve_relations_events.1001.desc:0 "[owner.GetUIName] has successfully improved diplomatic relations with [target.GetUIName]."
+    pob_improve_relations_events.1001.a:0 "For the sake of our house's honor, this was necessary."
+
+    pob_improve_relations_events.1002.t:0 "$pob_improve_relations$: Failure!"
+    pob_improve_relations_events.1002.desc:0 "[owner.GetUIName] failed to improve diplomatic relations with [target.GetUIName]."
+    pob_improve_relations_events.1002.a:0 "For the sake of our house's honor, I should have done better."
+
+    ## Land Reclamation
+    pob_delegate_reclamation_interaction:0 "Delegate Reclamation"
+    pob_delegate_reclamation_interaction_desc:0 "Instruct the [courtier|E] to undertake land reclamation efforts"
+    recipient_secondary_pob_delegate_reclamation_interaction:0 "Execute"
+
+    pob_plan_reclamation_interaction:0 "Land Reclamation #weak (Scheme)#!"
+    pob_plan_reclamation_interaction_desc:0 "Attempt land development to increase your domain's tax revenue and growth"
+    pob_plan_reclamation:0 "Land Reclamation"
+    pob_plan_reclamation_desc_general:0 "In the Land Reclamation [scheme|E], you strive to develop land to enhance your domain's tax revenue and growth"
+    pob_plan_reclamation_action:0 "$pob_plan_reclamation$"
+    pob_plan_reclamation_desc:0 "I will attempt land development to enhance tax revenue and domain growth"
+    pob_plan_reclamation_start_scheme:0 "Initiate $pob_plan_reclamation$"
+
+    pob_plan_reclamation_invalidated_title:1 "@personal_scheme_icon! $pob_plan_reclamation$ Scheme Concluded"
+
+    pob_plan_reclamation_events.1001.t:0 "$pob_plan_reclamation$: Success!"
+    pob_plan_reclamation_events.1001.desc:0 "[owner.GetUIName] has successfully reclaimed new land."
+    pob_plan_reclamation_events.1001.a:0 "For the sake of our house's prosperity, this was necessary."
+
+    pob_plan_reclamation_events.1002.t:0 "$pob_plan_reclamation$: Failure!"
+    pob_plan_reclamation_events.1002.desc:0 "[owner.GetUIName] failed to reclaim new land."
+    pob_plan_reclamation_events.1002.a:0 "For the sake of our house's prosperity, I should have done better."

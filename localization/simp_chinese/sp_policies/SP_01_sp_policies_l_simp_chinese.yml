@@ -1,0 +1,152 @@
+﻿l_simp_chinese:
+## 今川家
+flag_sp_policy_laws_of_imagawa_name:0 "#V 今川假名目录#!"
+flag_sp_policy_laws_of_imagawa_desc:0 "骏河国的战国大名今川氏亲制定的分国法，是东国是最古老的分国法。大永6年（1526年）4月，今川氏亲制定了由33条组成的家法《假名目录》。当时氏亲身患重病，草案中很大程度上反映了家臣以及嫡子今川氏辉继承并稳定政权的意愿。天文22年（1553年）2月，今川义元制定了《假名目录追加21条》进行补订，其中否认了守护不入的义务，完全摒弃了守护大名的色彩。"
+sp_policy_laws_of_imagawa_modifier:0 "今川假名目录"
+sp_policy_laws_of_imagawa_modifier_desc:0 "此人颁布了今川假名目录。"
+sp_policy_laws_of_imagawa_county_modifier:0 "今川假名目录"
+sp_policy_laws_of_imagawa_county_modifier_desc:0 "这个地方的守护不入特权被新的法律废除。"
+sp_policy_laws_of_imagawa_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('imagawa_margin').GetName( GetNullCharacter )]，由后者解锁要求其有12[stewardship|E]且颁布后5年内无法将其撤职#!"
+sp_policy_laws_of_imagawa_effect_tt:0 "你领地内的[county|E]获得[GetModifier('sp_policy_laws_of_imagawa_county_modifier').GetNameWithTooltip]，为期#V 20年#!"
+sp_policy_laws_of_imagawa_effect_tt_1:1 "你直辖领地内的[county|E]每个#V 季度#!都有较高概率获得[GetModifier('sp_policy_laws_of_imagawa_county_modifier').GetNameWithTooltip]，为期#V 5年#!"
+
+## 武田家
+flag_sp_policy_laws_of_takeda_name:0 "#V 甲州法度次第#!"
+flag_sp_policy_laws_of_takeda_desc:0 "甲斐国的战国大名武田信玄于天文16年（1547年）制定的分国法，也被称为信玄家法、甲州法度、甲州式目等。最初由55条基本法组成，天文23年（1554年）追加2条，共57条。甲州法度分为上卷和下卷，上卷由57条组成，主要规定了法律条款；下卷由99条组成，是一部道德论述集，引用了诸如论语、孟子等中国古典著作，旨在规范日常行为。"
+sp_policy_laws_of_takeda_modifier:0 "甲州法度次第"
+sp_policy_laws_of_takeda_modifier_desc:0 "此人颁布了甲州法度次第。"
+sp_policy_laws_of_takeda_county_modifier:0 "甲州法度次第"
+sp_policy_laws_of_takeda_county_modifier_desc:0 "这个地方的土地所有权和年贡征收被新的法律规范。"
+sp_policy_laws_of_takeda_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('takeda_margin').GetName( GetNullCharacter )]，由后者解锁要求其有12[stewardship|E]且颁布后5年内无法将其撤职#!"
+sp_policy_laws_of_takeda_effect_tt:0 "你领地内的[county|E]获得[GetModifier('sp_policy_laws_of_takeda_county_modifier').GetNameWithTooltip]，为期#V 20年#!"
+sp_policy_laws_of_takeda_effect_tt_1:1 "你直辖领地内的[county|E]每个#V 季度#!都有较高概率获得[GetModifier('sp_policy_laws_of_takeda_county_modifier').GetNameWithTooltip]，为期#V 5年#!"
+
+flag_sp_policy_takeda_red_armour_name:0 "#V 编制武田赤备#!"
+flag_sp_policy_takeda_red_armour_desc:0 "日本战国时期武田信玄军中的精锐部队，以全身红色甲胄著称，威慑敌军。其源于武田家宿将饭冢久兵卫，山县昌景统领后发展壮大，成为战国最强骑兵之一。赤备象征武勇与威严，后来井伊直政等大名也组建类似部队，延续其战术与精神。"
+sp_policy_takeda_red_armour_effect_tt_0:0 "#V 你#!可以招募[GetMaA('takeda_red_armour').GetName][men_at_arms|E]"
+sp_policy_takeda_red_armour_effect_tt_1:1 "你获得一支人数为#V 50#!的[GetMaA('takeda_red_armour').GetName]军队"
+
+## 北条家
+flag_sp_policy_five_admonitions_name:0 "#V 五条训诫#!"
+flag_sp_policy_five_admonitions_desc:0 "又名五个条御书置。相模国的战国大名北条氏纲于天文十年（1541年）5月21日写给嫡子氏康的遗训。书中谈到了节俭的重要性，谈及先父北条早云（伊势宗瑞）功成之原因，氏纲言道：“世上时人尝言亡父入道公以微小之身成为天性之福人，自是因为得到了天道眷顾，但最重要的还是因为早云公严守节俭之道，不好华丽之故也。”"
+sp_policy_five_admonitions_modifier:0 "五条训诫"
+sp_policy_five_admonitions_modifier_desc:0 "此人谛听了五条训诫。"
+sp_policy_five_admonitions_county_modifier:0 "五条训诫"
+sp_policy_five_admonitions_county_modifier_desc:0 "这个地方实行了四公六民的税收政策。"
+sp_policy_five_admonitions_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('hojo_margin').GetName( GetNullCharacter )]，由后者解锁要求其有12[learning|E]且颁布后5年内无法将其撤职#!"
+sp_policy_five_admonitions_effect_tt:0 "你领地内的[county|E]获得[GetModifier('sp_policy_five_admonitions_county_modifier').GetNameWithTooltip]，为期#V 20年#!"
+sp_policy_five_admonitions_effect_tt_1:1 "你直辖领地内的[county|E]每个#V 季度#!都有较高概率获得[GetModifier('sp_policy_five_admonitions_county_modifier').GetNameWithTooltip]，为期#V 5年#!"
+sp_policy_five_admonitions_effect_tt_2:2 "你获得[GetTrait('temperate').GetName( GetNullCharacter )|V][trait|E]"
+
+## 德川家
+flag_sp_policy_guardian_forces_name:0 "#V 旗本先手役#!"
+flag_sp_policy_guardian_forces_desc:0 "永禄9年（1566年），战国大名德川家康统一三河地区时进行改革的德川家军制。这次改革将三河武士重新编组为东三河众、西三河众，以及家康直属的旗本三备。先手役是家康直属的机动部队，与马廻众分开编制在上述的旗本内。先手役不仅作为旗本部队的先锋参与战斗，还具备即时反应部队的特征，属于旗本先手役的武士常驻在家康居城附近，为突发情况做好准备。"
+sp_policy_guardian_forces_modifier:0 "旗本先手役"
+sp_policy_guardian_forces_modifier_desc:0 "此人组建了旗本先手役。"
+sp_policy_guardian_forces_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('tokugawa_margin').GetName( GetNullCharacter )]，由后者解锁要求其有15[martial|E]且颁布后5年内无法将其撤职#!"
+	
+## 织田家
+flag_sp_policy_intensive_firearms_name:0 "#V 火器集中运用#!"
+flag_sp_policy_intensive_firearms_desc:0 "天正3年（1575年），织田信长和德川家康组成联军对抗武田军。面对甲斐武田家强悍的骑兵部队，织田军在阵地上筑起了拒马木桩，让铁炮手分列在其中，采取三段击的交换射击战术，依靠着射程和弹丸覆盖的优势，杀伤甲斐骑兵，提取确保了长筱之战中大获全胜，奠定了统一日本的格局。"
+sp_policy_intensive_firearms_modifier:0 "火器集中运用"
+sp_policy_intensive_firearms_modifier_desc:0 "此人钟情于将铁炮投入战争。"
+sp_policy_intensive_firearms_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('oda_margin').GetName( GetNullCharacter )]，由后者解锁要求其有15[martial|E]且颁布后5年内无法将其撤职#!"
+sp_policy_intensive_firearms_effect_tt:1 "#V 你#!可以招募[GetMaA('oda_crossbowmen').GetName][men_at_arms|E]"
+sp_policy_has_no_policy_improve_firearms_tt:0 "@warning_icon!#X 你没有颁布前置[sp_policy|E]铁炮队强化#!"
+
+sp_policy_has_no_innovation_advanced_bowmaking_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_advanced_bowmaking$[innovation|E]#!"
+
+## 伊达家
+flag_sp_policy_dragon_corps_name:0 "#V 编制龙骑兵#!"
+flag_sp_policy_dragon_corps_desc:0 "奥州的战国大名伊达政宗独创的精锐骑马铁炮队，兼具骑兵的机动力和火枪兵的远程杀伤力，在庆长19年（1614年）至庆长20年（1615年）的大坂之役中昙花一现。在十七世纪的欧洲，该兵种也被称为“龙骑兵”。"
+sp_policy_dragon_corps_modifier:0 "编制龙骑兵"
+sp_policy_dragon_corps_modifier_desc:0 "此人组建了骑马铁炮队。"
+sp_policy_dragon_corps_effect_tt_0:0 "如果#V 你#!的[culture|E]有$innovation_advanced_bowmaking$[innovation|E]，#V 你#!可以招募[GetMaA('dragon_corps').GetName][men_at_arms|E]"
+sp_policy_dragon_corps_effect_tt_1:1 "你获得一支人数为#V 100#!的[GetMaA('dragon_corps').GetName]军队"
+sp_policy_dragon_corps_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('date_margin').GetName( GetNullCharacter )]，由后者解锁要求其有12[martial|E]且颁布后5年内无法将其撤职#!"
+
+## 岛津家
+flag_sp_policy_satsuma_military_education_name:0 "#V 萨摩军法#!"
+flag_sp_policy_satsuma_military_education_desc:0 "南九州的萨摩国地处荒僻，当地生活条件艰苦，故而民风彪悍，直到幕末时代都盛产战争狂人。当地有力的战国大名岛津家驾驭此等优劣势，建立强军。"
+sp_policy_satsuma_military_education_modifier:0 "萨摩军法"
+sp_policy_satsuma_military_education_modifier_desc:0 "此人以独特的军法统率部队。"
+sp_policy_satsuma_military_education_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('shimazu_margin').GetName( GetNullCharacter )]，由后者解锁要求其有20[prowess|E]且颁布后5年内无法将其撤职#!"
+
+## 上杉家
+flag_sp_policy_expeditionary_support_name:0 "#V 远征军支援#!"
+flag_sp_policy_expeditionary_support_desc:0 "霜满军营秋气兴，数行雁过月三更。\n越山并得能州景，遮莫家乡忆远征。\n\n$TAB$$TAB$$TAB$$TAB$$TAB$$TAB$——上杉谦信《阵中作》"
+sp_policy_expeditionary_support_modifier:0 "远征军支援"
+sp_policy_expeditionary_support_modifier_desc:0 "此人掌握了远距离作战的精髓。"
+sp_policy_expeditionary_support_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('uesugi_margin').GetName( GetNullCharacter )]，由后者解锁要求其有12[martial|E]且颁布后5年内无法将其撤职#!"
+
+## 毛利家
+flag_sp_policy_million_minds_motto_name:0 "#V 百万一心之训#!"
+flag_sp_policy_million_minds_motto_desc:0 "安艺国的战国大名毛利元在改建吉田郡山城时使用的石碑上所刻下的训言。由于本丸石垣的建设进展困难，于是将此碑埋在本丸后方的“姬之丸”处代替人柱，最终成功完成了普请建设。通过省略“百”字的一画，将“万”字写成“一力”，使其竖写时可以读作“一日一力一心”，即“同心协力”，寓意国人们齐心协力，便可做成任何事情。"
+sp_policy_million_minds_motto_modifier:0 "百万一心之训"
+sp_policy_million_minds_motto_modifier_desc:0 "此人家中谛听了百万一心之训。"
+sp_policy_million_minds_motto_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('mori_margin').GetName( GetNullCharacter )]，由后者解锁要求其有12[stewardship|E]且颁布后5年内无法将其撤职#!"
+
+## 长宗我部家
+flag_sp_policy_armoured_militia_name:0 "#V 一领具足制#!"
+flag_sp_policy_armoured_militia_desc:0 "土佐国的战国大名长宗我部氏调度兵农未分时的武装农民的[martial|E]制度。正规的武士通常会拥有额外的备用具足，而这些半农半兵的士兵因只有一套具足而得名。一领具足们通常免去了武士应做的常规工作，由于从事农活而身体强健，具有较高的集体行动能力，因此作为士兵的水平较高，但也因此在农忙期间动员困难，难以承受长期的战役。"
+sp_policy_armoured_militia_modifier:0 "一领具足制"
+sp_policy_armoured_militia_modifier_desc:0 "此人建立了一领具足制。"
+sp_policy_armoured_militia_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('chosokabe_margin').GetName( GetNullCharacter )]，由后者解锁要求其有12[martial|E]且颁布后5年内无法将其撤职#!"
+sp_policy_armoured_militia_effect_tt_0:0 "#V 你#!可以招募[GetMaA('armoured_militia').GetName][men_at_arms|E]"
+
+## 真田家
+flag_sp_policy_six_coins_oath_name:0 "#V 六文钱誓言#!"
+flag_sp_policy_six_coins_oath_desc:0 "传说人死后渡过三途川的时候，需要支付六文钱（冥钱）。以渡钱为家徽的真田氏所在的信浓在当时是很贫困的地方，初生婴孩经常夭折，而其家人则将六文钱置于棺木中，而六文钱亦代表六道，这代表着真田一族随时赴死的决心。"
+sp_policy_six_coins_oath_modifier:0 "六文钱誓言"
+sp_policy_six_coins_oath_modifier_desc:0 "此人家中谛听了六文钱誓言。"
+sp_policy_six_coins_oath_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('sanada_margin').GetName( GetNullCharacter )]，由后者解锁要求其有20[prowess|E]且颁布后5年内无法将其撤职#!"
+
+flag_sp_policy_cunning_strategy_name:0 "#V 表里军略#!"
+flag_sp_policy_cunning_strategy_desc:0 "丰臣家重臣石田三成写信给上杉景胜时曾形容真田昌幸：“表里比兴者，应以成败相论。”所谓“比兴”即不合理、不一致。“表里比兴”即昌幸的生存哲学——内外不一、深藏不露。"
+sp_policy_cunning_strategy_modifier:0 "表里军略"
+sp_policy_cunning_strategy_modifier_desc:0 "此人掌握了寝返和调略的精髓。"
+sp_policy_cunning_strategy_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('sanada_margin').GetName( GetNullCharacter )]，由后者解锁要求其有15[intrigue|E]且颁布后5年内无法将其撤职#!"
+sp_policy_cunning_strategy_effect_tt:0 "其他[ruler|E]更愿意接受你的#V 要求倒戈#!和#V 提议倒戈#![interaction|E]"
+sp_policy_foster_system_more_accpetive_betrayal_reason:0 "你的表里军略[sp_policy|E]：$VALUE|+=0$"
+
+flag_sp_policy_sanada_red_armour_name:0 "#V 编制真田赤备#!"
+flag_sp_policy_sanada_red_armour_desc:0 "庆长20年（1615年）的大阪夏之阵中由真田信繁（幸村）编成。完全继承武田流赤备的真田信繁队在天王寺口之战中对家康本阵的攻击造成了德川本阵自三方原之战以来从未有过的大崩溃，在岛津氏的《萨摩旧记》中被记载下了“真田日本第一勇士，自古以来未有此等”这样赞赏其活跃的文字。"
+sp_policy_sanada_red_armour_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('sanada_margin').GetName( GetNullCharacter )]，由后者解锁要求其有15[martial|E]且颁布后5年内无法将其撤职#!"
+sp_policy_sanada_red_armour_effect_tt_0:0 "#V 你#!可以招募[GetMaA('sanada_red_armour').GetName][men_at_arms|E]"
+sp_policy_sanada_red_armour_effect_tt_1:1 "你获得一支人数为#V 50#!的[GetMaA('sanada_red_armour').GetName]军队"
+
+## 大友家
+flag_sp_policy_kichishitan_sanction_name:0 "#V 吉立支丹保护#!"
+flag_sp_policy_kichishitan_sanction_desc:0 "吉立支丹即基督徒的假名音译。丰后国的战国大名大友宗麟以天主教大名为人熟知，天文20年（1551年）宗麟认识了在丰后布教的耶稣会传教士沙勿略并成为密友，二十七年后的天正6年（1578年）改信天主教并受洗礼。宗麟对领地内的布教活动加以保护、进行与西方的贸易，曾梦想要建立天主教王国，但在耳川一战后梦碎。"
+sp_policy_kichishitan_sanction_modifier:0 "吉立支丹保护"
+sp_policy_kichishitan_sanction_modifier_desc:0 "此人在领内推行吉立支丹信仰。"
+sp_policy_kichishitan_sanction_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('otomo_margin').GetName( GetNullCharacter )]且信仰[GetReligionByKey('christianity_religion').GetName]，由后者解锁要求其有12[learning|E]且颁布后5年内无法将其撤职#!"
+sp_policy_has_no_policy_western_sanction_tt:0 "@warning_icon!#X 你没有颁布前置[sp_policy|E]南蛮保护#!"
+
+## 丰臣家
+flag_sp_policy_census_edict_name:0 "#V 检地刀狩#!"
+flag_sp_policy_census_edict_desc:0 ""
+sp_policy_census_edict_modifier:0 "检地刀狩"
+sp_policy_census_edict_modifier_desc:0 "此人在领内实行了检地刀狩。"
+sp_policy_census_edict_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('toyotomi_margin').GetName( GetNullCharacter )]，由后者解锁要求其有15[stewardship|E] [skills|E] 且颁布后5年内无法将其撤职#!"
+
+## 三好家
+flag_sp_policy_govern_for_people_name:0 "#V 理世安民#!"
+flag_sp_policy_govern_for_people_desc:0 "天文二十二年（1553年），室町幕府十三代将军足利义辉密谋对付时任管领代三好长庆，长庆发兵灵山城，义辉被迫出逃近江朽木，大权旁落。自此长庆开始整顿因战争不绝而混乱无比的近畿地区，弘治二年（1556年）11月长庆重新制定赋税，大幅删修不合理的各项苛捐杂税，并在翌年10月在京都大德寺颁布三条禁令以整肃治安。"
+sp_policy_govern_for_people_modifier:0 "理世安民"
+sp_policy_govern_for_people_modifier_desc:0 "此人致力于安顿民生，匡扶大政。"
+sp_policy_govern_for_people_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('miyoshi_margin').GetName( GetNullCharacter )]，由后者解锁要求其有12[stewardship|E]且颁布后5年内无法将其撤职#!"
+
+## 铃木家
+flag_sp_policy_partisan_corps_name:0 "#V 杂贺规约#!"
+flag_sp_policy_partisan_corps_desc:0 "以铃木家为核心的纪伊国杂贺众为维持自治而制定的松散联盟协议，其核心在于统一指挥铁炮部队、控制铁炮贸易与水运和支持本愿寺以对抗外部强权，各豪族保留领地独立但共议重大事务；凭借地理优势与技术实力一度抵御中央大名，是战国地方势力联合自治的典型缩影。"
+sp_policy_partisan_corps_modifier:0 "杂贺规约"
+sp_policy_partisan_corps_modifier_desc:0 "此人联合地方豪族，共抗强权。"
+sp_policy_partisan_corps_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('suzuki_margin').GetName( GetNullCharacter )]，由后者解锁要求其有12[diplomacy|E]且颁布后5年内无法将其撤职#!"
+
+## 本愿寺家 
+flag_sp_policy_buddhist_laws_name:0 "#V 机法一体#!"
+flag_sp_policy_buddhist_laws_desc:0 "由一向宗（净土真宗）的本愿寺势力推行的一种政教合一的统治理念。其核心思想是将宗教与政治结合，以宗教信仰凝聚信徒，同时建立武装势力（如一向一揆）来抗衡世俗大名，实现自治与防御。"
+sp_policy_buddhist_laws_modifier:0 "机法一体"
+sp_policy_buddhist_laws_modifier_desc:0 "此人推行政教合一，笼络信徒。"
+sp_policy_buddhist_laws_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('honganji_margin').GetName( GetNullCharacter )]，由后者解锁要求其有15[learning|E]且颁布后5年内无法将其撤职#!"

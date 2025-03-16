@@ -1,0 +1,189 @@
+﻿################
+### 政策复位 ###
+################
+sp_clear_flag_list = {
+	clear_variable_list = sp_conservative_policy_flags
+	clear_variable_list = sp_neutral_policy_flags
+	clear_variable_list = sp_progressive_policy_flags
+	clear_variable_list = sp_special_policy_flags
+}
+
+#################
+### 政策点管理 ###
+#################
+
+sp_init_points = {
+	if = {
+		limit = {
+			NOT = {
+				exists = var:sp_current_policy_points
+			}
+		}
+		set_variable = {
+			name = sp_current_policy_points
+			value = 0
+		}
+	}
+}
+
+sp_count_policy_points = {
+	set_variable = {
+		name = sp_policy_will_be_points
+		value = {
+			value = root.var:sp_current_policy_points
+			add = $FLAG$.sp_policy_points
+		}
+	}
+}
+
+
+################
+### 封臣立场 ###
+################
+### 宫廷礼制
+sp_courtly_vassal_towards_policy_opinion_effect = {
+	save_temporary_scope_as = actor
+	if = {
+		limit = { any_vassal = { has_vassal_stance = courtly } }
+		if = {
+			limit = { 
+				$POLICY_TYPE_SW_1$ = no
+				$POLICY_TYPE_SW_2$ = no
+			}
+			custom_tooltip = sp_courtly_vassal_towards_policy_opinion_effect_tt_0
+			hidden_effect = {
+				every_vassal = {
+					limit = {
+						has_vassal_stance = courtly
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = sp_vassal_towards_conservative_policy_opinion
+						opinion = $OPINION$
+					}
+				}
+			}
+		}
+		if = {
+			limit = { 
+				$POLICY_TYPE_SW_1$ = no
+				$POLICY_TYPE_SW_2$ = yes
+			}
+			custom_tooltip = sp_courtly_vassal_towards_policy_opinion_effect_tt_1
+			hidden_effect = {
+				every_vassal = {
+					limit = {
+						has_vassal_stance = courtly
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = sp_vassal_towards_neutral_policy_opinion
+						opinion = $OPINION$
+					}
+				}
+			}
+		}
+		if = {
+			limit = { 
+				$POLICY_TYPE_SW_1$ = yes
+				$POLICY_TYPE_SW_2$ = no
+			}
+			custom_tooltip = sp_courtly_vassal_towards_policy_opinion_effect_tt_2
+			hidden_effect = {
+				every_vassal = {
+					limit = {
+						has_vassal_stance = courtly
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = sp_vassal_towards_progressive_policy_opinion
+						opinion = $OPINION$
+					}
+				}
+			}
+		}
+	}
+}
+
+sp_glory_hound_vassal_towards_policy_opinion_effect = {
+	save_temporary_scope_as = actor
+	if = {
+		limit = { any_vassal = { has_vassal_stance = glory_hound } }
+		if = {
+			limit = {
+			}
+			custom_tooltip = sp_glory_hound_vassal_towards_policy_opinion_effect_tt
+			hidden_effect = {
+				every_vassal = {
+					limit = {
+						has_vassal_stance = glory_hound
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = sp_vassal_towards_conservative_policy_opinion
+						opinion = $OPINION$
+					}
+				}
+			}
+		}
+	}
+}
+
+sp_parochial_vassal_towards_policy_opinion_effect = {
+	save_temporary_scope_as = actor
+	if = {
+		limit = { any_vassal = { has_vassal_stance = parochial } }
+		if = {
+			limit = { 
+				$POLICY_TYPE_SW_1$ = no
+				$POLICY_TYPE_SW_2$ = no
+			}
+			custom_tooltip = sp_parochial_vassal_towards_policy_opinion_effect_tt_0
+			hidden_effect = {
+				every_vassal = {
+					limit = {
+						has_vassal_stance = parochial
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = sp_vassal_towards_conservative_policy_opinion
+						opinion = $OPINION$
+					}
+				}
+			}
+		}
+		if = {
+			limit = { 
+				$POLICY_TYPE_SW_1$ = no
+				$POLICY_TYPE_SW_2$ = yes
+			}
+		}
+		if = {
+			limit = { 
+				$POLICY_TYPE_SW_1$ = yes
+				$POLICY_TYPE_SW_2$ = no
+			}
+			custom_tooltip = sp_parochial_vassal_towards_policy_opinion_effect_tt_2
+			hidden_effect = {
+				every_vassal = {
+					limit = {
+						has_vassal_stance = parochial
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = sp_vassal_towards_progressive_policy_opinion
+						opinion = $OPINION$
+					}
+				}
+			}
+		}
+	}
+}
+
+sp_block_firing_councillor_effect = {
+	set_variable = {
+		name = block_fire_councillor
+		value = $COURT_OWNER$
+		years = 5
+	}
+}

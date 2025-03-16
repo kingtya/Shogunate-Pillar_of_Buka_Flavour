@@ -1,0 +1,7 @@
+﻿l_english:
+
+   councillor_spt_bugyo:0 "Kanjo Bugyō"
+   councillor_spt_bugyo_desc:0 "$councillor_spt_bugyo$ is [councillor|E] who assists with finances and directs acting officers. $councillor_spt_bugyo$ directly affects the number of [sp_policy|E] that can be implemented in your [realm|E]."
+   councillor_spt_bugyo_modifier:0 "The Lord's Appointment and Enforcement" #NT!
+   spt_bugyo_task_default:0 "implement executive order" #NT!
+   spt_bugyo_task_default_effect_desc:1 "[councillor.GetShortUIName|U] will enforce the decree in your territory and grant you:\n[councillor.GetModifierDescForTask('spt_bugyo_task_default')]" #NT!

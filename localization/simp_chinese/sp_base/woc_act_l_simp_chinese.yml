@@ -1,0 +1,69 @@
+﻿l_simp_chinese:
+
+    activity_woc_council:0 "评定会议"
+    activity_woc_council_host_an_a:0 "$host_activity_a$"
+    activity_woc_council_selection_tooltip:0 "召集你的[councillor|E]进行评定，处理领地事务。"
+
+    activity_woc_council_desc:0 "大名统治的核心机制之一，通常由家臣团参与，用于共同讨论和决定领地的政治、军事、经济等重要事务。\n\n你可以根据领地发展的动向为家臣指派任务。"
+    activity_woc_council_host_desc:0 "$BULLET_WITH_TAB$[liege|E]将指派给[councillors|E]任务\n$BULLET_WITH_TAB$参与者可能会获得[prestige_i|E][prestige|E]\n$BULLET_WITH_TAB$参与者会获得[stress_gain_i][stress|E]"
+
+    NOT_IS_NOT_CONVENED_RECENTLY:0 "最近已经召开过御前会议"
+    ALREADY_SCHEMING_WOC_COUNCIL_MISSIONS:0 "仍有未完成的内阁目标"
+    
+    WOC_COUNCIL_BASE_COST:0 "基础"
+    WOC_KING_COUNCIL_URGENT_COST:0 "召开议会"
+    WOC_EMPIRE_COUNCIL_URGENT_COST:0 "召开议会"
+    
+    woc_council_normal:0 "评定会议"
+    woc_council_normal_desc:0 "$BULLET_WITH_TAB$召开评定会议，商议处理[realm|E]的各项事务\n$BULLET_WITH_TAB$[liege|E]召开御前会议后将有#N 1年#!冷却时间\n\n#flavor 御前会议是仅限[councillor|E]及摄政参加的小型会议，为领主对领地的治理出谋划策#!"
+    
+    woc_council_urgent:0 "议会"
+    woc_council_urgent_desc:0 "$BULLET$召开议会，商议处理[realm|E]的各项事务，[liege|E]将能借机向[vassals|E]提出种种要求，如开征额外税款，征募额外军队。\n$BULLET$所有[vassals|E]将受邀参加，[vassals|E]将可能借机提出签署宪章的请愿\n$BULLET$[liege|E]召开议会后将有#N 20年#!冷却时间，将耗费大量威望\n\n#flavor 议会是所有[councillor|E]、摄政及所有伯爵及以上封臣参加的议事会议#!"
+    IS_NOT_WOC_COUNCIL_LAW_3:0 "内阁权未到干涉君权或更大"
+    
+    activity_woc_council_guest_help_text:0 "[councillor|E]都有机会对[realm|E]事务提出建议\n参与者有可能在此期间获得[stress_gain_i][stress|E]"
+    activity_woc_council_destination_selection:0 "御前会议只能在首都省份召开"
+    activity_woc_council_province_desc:0 "首都省份"
+    
+    
+    
+    
+    ### OPTIONS
+    woc_council_option_convocation_place:0 "会议地点"
+    woc_council_place_minor:0 "私人房间"
+    woc_council_place_minor_desc:0 "$BULLET$不会获得[prestige|E]\n\n#weak 御前会议应当专注于对[realm|E]事务的讨论，过大的召开地点对会议进程没有帮助。\n\n因此，在任何地方，就算在我的卧室召开会议，也是可以的。#!"
+    woc_council_place_normal:0 "会客室"
+    woc_council_place_normal_desc:0 "$BULLET$$tour_increase_prestige$\n\n#weak 御前会议将在专门的会客室召开，书记员等辅助人员会到场协助。#!"
+    woc_council_place_large:0 "御座厅"
+    woc_council_place_large_desc:0 "$BULLET$$tour_increase_prestige$提升\n\n#weak 御前会议将在我的御座厅召开，参会人员将享受最好的讨论环境和人员帮助。#!"
+    
+    
+    woc_council_option_reception:0 "招待标准"
+    woc_council_reception_minor:0 "差劲"
+    woc_council_reception_minor_desc:0 "$BULLET$[GetVassalStance( 'glory_hound' ).GetName]和[GetVassalStance( 'courtly' ).GetName][vassals|E]将会生气，获得更多的[stress_gain_i][stress|E]\n\n#weak 一张桌子，几张凳子，对御前会议足够了#!"
+    woc_council_reception_normal:0 "普通"
+    woc_council_reception_normal_desc:0 "$BULLET$获得普通的[stress_gain_i][stress|E]\n\n#weak 参会者不但能坐在舒适的地方，还能获得通常的奢侈食物和物件#!"
+    woc_council_reception_large:0 "奢侈"
+    woc_council_reception_large_desc:0 "$BULLET$[GetVassalStance( 'glory_hound' ).GetName]和[GetVassalStance( 'courtly' ).GetName][vassals|E]将会满意，获得更少的[stress_gain_i][stress|E]\n\n#weak 御前会议正是展现[liege|E]好客的好机会，各式各样的美味佳肴和便利设施必不可少"
+    
+    woc_council_phase_proposal:0 "征询意见"
+    woc_council_phase_proposal_desc:0 "[liege|E]将征询[councillor|E]对重大内外事务的意见"
+    woc_council_phase_suggestion:0 "领地建议"
+    woc_council_phase_suggestion_desc:0 "[liege|E]将与[councillor|E]讨论[realm|E]发展的方向"
+    activity_woc_council_guest_desc:0 "受邀[councillor|E]将在会议提出对[realm|E]发展的建议"
+    activity_woc_council_conclusion_desc:0 "你的[GetActivityType( 'activity_woc_council' ).GetName]宣告结束。"
+
+    
+    #御前会议意图
+    woc_council_status_quo_intent:0 "维持现状"
+    woc_council_status_quo_intent_desc:0 "[realm|E]目前的情况就是最好的，无需新的变化"
+    woc_council_support_liege_intent:0 "支持领主"
+    woc_council_support_liege_intent_desc:0 "我应当支持我的[liege|E]，急[liege|E]之所急"
+    woc_council_expand_vassals_right_intent:0 "扩大封臣权利"
+    woc_council_expand_vassals_right_intent_desc:0 "[realm|E]内[vassal|E]理应获得更多的权利"
+    woc_council_devotion_intent:0 "虔敬信仰"
+    woc_council_devotion_intent_desc:0 "[liege|E]应当以光大[faith|E]为重心"
+    woc_council_fouse_realm_intent:0 "经济发展"
+    woc_council_fouse_realm_intent_desc:0 "[realm|E]的重心需要转向经济发展"
+    woc_council_fouse_military_intent:0 "整顿军备"
+    woc_council_fouse_military_intent_desc:0 "[realm|E]的重心需要转向军事建设"

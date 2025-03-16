@@ -1,29 +1,58 @@
 ﻿namespace = shogunate_alliance
 
 # Setup Alliances (on game start)
+# based on negotiate_alliance_interaction in /common/character_interactions/00_alliance.txt
+
 shogunate_alliance.0001 = {
 	scope = none
 	hidden = yes
 
 	trigger = {
 		has_game_rule = enable_fictional_alliances
-	}
+	}								
 
 	immediate = {
 		every_ruler = {
-			limit = {
-				NOT = { has_trait = incapable }
-			}
+			
+								   
+	
 			save_scope_as = actor
 
 			every_ruler = {
 				limit = {
 					NOT = { this = scope:actor }
-					NOT = { has_trait = incapable }
+									
 					NOT = { is_allied_to = scope:actor }
 				}
 				save_scope_as = recipient
 
+				#Prioritize marriage between rulers and/or direct blood relation between rulers first.
+#				if = {
+#					limit = {
+#						scope:actor = {
+#							OR = {
+#								is_spouse_of = scope:recipient
+#								is_child_of = scope:recipient
+#								is_parent_of = scope:recipient
+#								is_sibling_of = scope:recipient
+#								is_grandparent_of = scope:recipient
+#								is_great_grandparent_of = scope:recipient
+#								is_grandchild_of = scope:recipient
+#								is_great_grandchild_of = scope:recipient
+#								is_uncle_or_aunt_of = scope:recipient
+#								is_nibling_of = scope:recipient
+#							}
+#						}
+#					}
+#					scope:actor = {
+#						create_alliance = {
+#							target = scope:recipient
+#							allied_through_owner = scope:actor
+#							allied_through_target = scope:recipient
+#						}
+#					}
+#				}
+				#...Then marriage between close family members and either actor or recipient.
 				if = {
 					limit = {
 						scope:recipient = {
@@ -88,6 +117,7 @@ shogunate_alliance.0001 = {
 						}
 					}
 				}
+				#...And finally marriage between close relatives and close relatives.
 				else_if = {
 					limit = {
 						scope:actor = {
@@ -141,6 +171,38 @@ shogunate_alliance.0001 = {
 							target = scope:recipient
 							allied_through_owner = scope:actor_spouse
 							allied_through_target = scope:recipient_spouse
+						}
+					}
+				}
+#				else_if = {
+#					limit = {
+#						scope:actor = { has_perk = defensive_negotiations_perk }
+#					}
+#					scope:actor = {
+#						create_alliance = {
+#							target = scope:recipient
+#							allied_through_owner = scope:actor
+#							allied_through_target = scope:recipient
+#						}
+#					}
+#					scope:recipient = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+#						add_opinion = {
+#							modifier = perk_negotiated_alliance_opinion
+#							target = scope:actor
+#						}
+#					}
+#				}
+				else_if = {
+					limit = {
+						scope:actor = {
+							hostage_oath_of_friendship_trigger = yes
+						}
+					}
+					scope:actor = {
+						create_alliance = {
+							target = scope:recipient
+							allied_through_owner = scope:actor
+							allied_through_target = scope:recipient
 						}
 					}
 				}

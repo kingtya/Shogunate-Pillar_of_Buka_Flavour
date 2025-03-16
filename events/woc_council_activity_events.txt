@@ -1,0 +1,2202 @@
+﻿namespace = woc_council_activity
+
+woc_council_activity.1001 = {
+	type = activity_event
+	title = woc_council_activity.1001.t
+	desc = {
+		desc = woc_council_activity.1001.desc
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_active_diarchy = yes
+				}
+			}
+			desc = woc_council_activity.1001.desc_diarch
+		}
+		desc = woc_council_activity.1001.desc_end
+	}
+	theme = tour_stop
+	left_portrait = {
+		character = scope:host
+		animation = throne_room_conversation_4
+	}
+	right_portrait = {
+		character = scope:host.diarch
+		animation = throne_room_conversation_3
+	}
+
+	trigger = {
+		#DLC check.
+		has_ep2_dlc_trigger = yes
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = woc_council_activity.1001.a
+	}
+	
+	after = {
+		#trigger_event = woc_council_activity.1002
+	}
+}
+
+woc_council_activity.1002 = {
+	type = activity_event
+	title = woc_council_activity.1002.t
+	desc = {
+		desc = woc_council_activity.1002.desc
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_active_diarchy = yes
+				}
+			}
+			desc = woc_council_activity.1002.desc_diarch
+		}
+		desc = woc_council_activity.1002.desc_end
+	}
+	theme = tour_stop
+	left_portrait = {
+		character = scope:host
+		animation = throne_room_conversation_4
+	}
+	right_portrait = {
+		character = scope:host.diarch
+		animation = throne_room_conversation_3
+	}
+	
+	widget = {
+		gui = "woc_council_mission_event_window_widget"
+		container = "custom_widgets_container"
+	}
+
+	trigger = {
+		#DLC check.
+		has_ep2_dlc_trigger = yes
+	}
+	
+	immediate = {
+		if = {
+			limit = { root = scope:host }
+			woc_council_set_mission_possible = yes
+		}
+	}
+	
+	option = {
+		name = woc_council_activity.1002.a
+	}
+	after = {
+		scope:host = {
+			every_councillor = {
+				remove_variable = woc_council_debt_councillor_missions
+				remove_variable = woc_council_powerful_faction_councillor_missions
+				remove_variable = woc_council_war_aid_councillor_missions
+				remove_variable = woc_council_excommunicated_councillor_missions
+				remove_variable = woc_council_player_heir_councillor_missions
+			}
+		}
+		if = {
+			limit = {
+				scope:host = {
+					has_variable = woc_council_debt_select
+				}
+			}
+			scope:host = {
+				random_councillor = {
+					limit = {
+						NOT = {
+							has_variable = woc_council_assigned_mission
+						}
+						woc_council_valid_council_position = yes
+						AND = {
+							exists = involved_activity
+							involved_activity = {
+								has_activity_type = activity_woc_council
+							}
+						}
+					}
+					weight = {
+						modifier = {
+							add = 100
+							has_council_position = councillor_steward
+						}
+						modifier = {
+							add = 100
+							has_council_position = councillor_woc_advisor
+						}
+						modifier = {
+							add = {
+								value = stewardship
+							}
+							stewardship > 8
+						}
+					}
+					set_variable = woc_council_assigned_mission
+					trigger_event = woc_council_activity.1003
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:host = {
+					has_variable = woc_council_powerful_faction_select
+				}
+				random_list = {
+					0 = {
+						trigger = {
+							NOT = {
+								has_variable = woc_council_assigned_mission
+							}
+						}
+						modifier = {
+							add = 100
+							has_council_position = councillor_chancellor
+						}
+						modifier = {
+							add = 100
+							has_council_position = councillor_woc_advisor_second
+						}
+						modifier = {
+							add = {
+								value = intrigue
+							}
+							intrigue > 8
+						}
+						set_variable = woc_council_assigned_mission
+						trigger_event = woc_council_activity.1004
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:host = {
+					has_variable = woc_council_war_aid_select
+				}
+				random_list = {
+					0 = {
+						trigger = {
+							NOT = {
+								has_variable = woc_council_assigned_mission
+							}
+						}
+						modifier = {
+							add = 100
+							has_council_position = councillor_marshal
+						}
+						modifier = {
+							add = 100
+							has_council_position = councillor_spymaster
+						}
+						modifier = {
+							add = {
+								value = martial
+							}
+							martial > 8
+						}
+						set_variable = woc_council_assigned_mission
+						trigger_event = woc_council_activity.1005
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:host = {
+					has_variable = woc_council_excommunicated_select
+				}
+				random_list = {
+					0 = {
+						trigger = {
+							NOT = {
+								has_variable = woc_council_assigned_mission
+							}
+						}
+						modifier = {
+							add = 100
+							has_council_position = councillor_court_chaplain
+						}
+						modifier = {
+							add = {
+								value = learning
+							}
+							learning > 8
+						}
+						set_variable = woc_council_assigned_mission
+						trigger_event = woc_council_activity.1006
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:host = {
+					has_variable = woc_council_player_heir_select
+				}
+				random_list = {
+					0 = {
+						trigger = {
+							NOT = {
+								has_variable = woc_council_assigned_mission
+							}
+						}
+						modifier = {
+							add = 100
+							has_council_position = councillor_spouse
+						}
+						modifier = {
+							add = 100
+							has_council_position = councillor_spymaster
+						}
+						modifier = {
+							add = {
+								value = diplomacy
+							}
+							diplomacy > 8
+						}
+						set_variable = woc_council_assigned_mission
+						trigger_event = woc_council_activity.1007
+					}
+				}
+			}
+		}
+	}
+}
+
+woc_council_activity.1003 = {
+	type = activity_event
+	title = woc_council_activity.1003.t
+	desc = {
+		desc = woc_council_activity.1003.desc
+	}
+	theme = tour_stop
+	left_portrait = {
+		character = scope:host
+		animation = throne_room_conversation_4
+	}
+	right_portrait = {
+		character = scope:root
+		animation = throne_room_conversation_3
+	}
+	
+	trigger = {
+		#DLC check.
+		has_ep2_dlc_trigger = yes
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = woc_council_activity.1003.a
+		add_character_modifier = woc_council_add_max_schemes
+		set_variable = woc_council_debt_councillor_missions
+		start_scheme = {
+			type = woc_council_councillor_missions
+			target = root
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = {
+		name = woc_council_activity.1003.b
+		if = {
+			limit = {
+				has_trait = woc_councillor
+				has_trait_xp = {
+					trait = woc_councillor
+					track = woc_councillor_impact
+					value >= 10
+				}
+			}
+			add_trait_xp = {
+				trait = woc_councillor
+				track = woc_councillor_impact
+				value = -10
+			}
+		}
+		add_prestige = -200
+		remove_variable = woc_council_assigned_mission
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+woc_council_activity.1004 = {
+	type = activity_event
+	title = woc_council_activity.1004.t
+	desc = {
+		desc = woc_council_activity.1004.desc
+	}
+	theme = tour_stop
+	left_portrait = {
+		character = scope:host
+		animation = throne_room_conversation_4
+	}
+	right_portrait = {
+		character = scope:root
+		animation = throne_room_conversation_3
+	}
+	
+	trigger = {
+		#DLC check.
+		has_ep2_dlc_trigger = yes
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = woc_council_activity.1003.a
+		add_character_modifier = woc_council_add_max_schemes
+		set_variable = woc_council_powerful_faction_councillor_missions
+		start_scheme = {
+			type = woc_council_councillor_missions
+			target = root
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = {
+		name = woc_council_activity.1003.b
+		if = {
+			limit = {
+				has_trait = woc_councillor
+				has_trait_xp = {
+					trait = woc_councillor
+					track = woc_councillor_impact
+					value >= 10
+				}
+			}
+			add_trait_xp = {
+				trait = woc_councillor
+				track = woc_councillor_impact
+				value = -10
+			}
+		}
+		add_prestige = -200
+		remove_variable = woc_council_assigned_mission
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+woc_council_activity.1005 = {
+	type = activity_event
+	title = woc_council_activity.1005.t
+	desc = {
+		desc = woc_council_activity.1005.desc
+	}
+	theme = tour_stop
+	left_portrait = {
+		character = scope:host
+		animation = throne_room_conversation_4
+	}
+	right_portrait = {
+		character = scope:root
+		animation = throne_room_conversation_3
+	}
+	
+	trigger = {
+		#DLC check.
+		has_ep2_dlc_trigger = yes
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = woc_council_activity.1003.a
+		add_character_modifier = woc_council_add_max_schemes
+		set_variable = woc_council_war_aid_councillor_missions
+		start_scheme = {
+			type = woc_council_councillor_missions
+			target = root
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = {
+		name = woc_council_activity.1003.b
+		if = {
+			limit = {
+				has_trait = woc_councillor
+				has_trait_xp = {
+					trait = woc_councillor
+					track = woc_councillor_impact
+					value >= 10
+				}
+			}
+			add_trait_xp = {
+				trait = woc_councillor
+				track = woc_councillor_impact
+				value = -10
+			}
+		}
+		add_prestige = -200
+		remove_variable = woc_council_assigned_mission
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+woc_council_activity.1006 = {
+	type = activity_event
+	title = woc_council_activity.1006.t
+	desc = {
+		desc = woc_council_activity.1006.desc
+	}
+	theme = tour_stop
+	left_portrait = {
+		character = scope:host
+		animation = throne_room_conversation_4
+	}
+	right_portrait = {
+		character = scope:root
+		animation = throne_room_conversation_3
+	}
+	
+	trigger = {
+		#DLC check.
+		has_ep2_dlc_trigger = yes
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = woc_council_activity.1003.a
+		add_character_modifier = woc_council_add_max_schemes
+		set_variable = woc_council_excommunicated_councillor_missions
+		start_scheme = {
+			type = woc_council_councillor_missions
+			target = root
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = {
+		name = woc_council_activity.1003.b
+		if = {
+			limit = {
+				has_trait = woc_councillor
+				has_trait_xp = {
+					trait = woc_councillor
+					track = woc_councillor_impact
+					value >= 10
+				}
+			}
+			add_trait_xp = {
+				trait = woc_councillor
+				track = woc_councillor_impact
+				value = -10
+			}
+		}
+		add_prestige = -200
+		remove_variable = woc_council_assigned_mission
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+woc_council_activity.1007 = {
+	type = activity_event
+	title = woc_council_activity.1007.t
+	desc = {
+		desc = woc_council_activity.1007.desc
+	}
+	theme = tour_stop
+	left_portrait = {
+		character = scope:host
+		animation = throne_room_conversation_4
+	}
+	right_portrait = {
+		character = scope:root
+		animation = throne_room_conversation_3
+	}
+	
+	trigger = {
+		#DLC check.
+		has_ep2_dlc_trigger = yes
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = woc_council_activity.1003.a
+		add_character_modifier = woc_council_add_max_schemes
+		set_variable = woc_council_player_heir_councillor_missions
+		start_scheme = {
+			type = woc_council_councillor_missions
+			target = root
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = {
+		name = woc_council_activity.1003.b
+		if = {
+			limit = {
+				has_trait = woc_councillor
+				has_trait_xp = {
+					trait = woc_councillor
+					track = woc_councillor_impact
+					value >= 10
+				}
+			}
+			add_trait_xp = {
+				trait = woc_councillor
+				track = woc_councillor_impact
+				value = -10
+			}
+		}
+		add_prestige = -200
+		remove_variable = woc_council_assigned_mission
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+woc_council_activity.2001 = {
+	type = activity_event
+	title = woc_council_activity.2001.t
+	desc = {
+		desc = woc_council_activity.2001.desc
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_active_diarchy = yes
+				}
+			}
+			desc = woc_council_activity.2001.desc_diarch
+		}
+		desc = woc_council_activity.2001.desc_end
+	}
+	theme = memory_stewardship
+	left_portrait = {
+		character = scope:host
+		animation = throne_room_conversation_4
+	}
+	right_portrait = {
+		character = scope:host.diarch
+		animation = throne_room_conversation_3
+	}
+
+	trigger = {
+		#DLC check.
+		has_ep2_dlc_trigger = yes
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = woc_council_activity.2001.a
+	}
+}
+
+woc_council_activity.2003 = {
+	type = activity_event
+	title = woc_council_activity.2003.t
+	desc = {
+		desc = woc_council_activity.2003.desc
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_active_diarchy = yes
+				}
+			}
+			desc = woc_council_activity.2003.desc_diarch
+		}
+		desc = woc_council_activity.2003.desc_end
+	}
+	theme = memory_stewardship
+	left_portrait = {
+		character = scope:host
+		animation = throne_room_conversation_4
+	}
+	right_portrait = {
+		character = scope:host.diarch
+		animation = throne_room_conversation_3
+	}
+
+	trigger = {
+		#DLC check.
+		has_ep2_dlc_trigger = yes
+	}
+	
+	option = {
+		name = woc_council_activity.2003.a
+	}
+}
+
+woc_council_activity.2002 = {
+	type = activity_event
+	title = woc_council_activity.2002.t
+	desc = {
+		desc = woc_council_activity.2002.desc
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_active_diarchy = yes
+				}
+			}
+			desc = woc_council_activity.2002.desc_diarch
+		}
+		desc = woc_council_activity.2002.desc_end
+	}
+	theme = realm
+	left_portrait = {
+		character = scope:host
+		animation = throne_room_conversation_4
+	}
+	right_portrait = {
+		character = scope:host.diarch
+		animation = throne_room_conversation_3
+	}
+
+	trigger = {
+		#DLC check.
+		has_ep2_dlc_trigger = yes
+	}
+	
+	immediate = {
+		save_scope_as = woc_liege
+		remove_variable = agree_woc_council_proposal
+		remove_variable = disagree_woc_council_proposal
+	}
+	
+	#开征额外税款
+	option = {
+		name = woc_council_activity.2002.a
+		every_vassal = {
+			limit = {
+				highest_held_title_tier >= tier_county
+				#gold > medium_gold_value_static_max
+			}
+			trigger_event = {
+				id = woc_council_activity.2020
+				days = 1
+			}
+		}
+		trigger_event = {
+			id = woc_council_activity.2021
+			days = 30
+		}
+	}
+	#征募军队
+	option = {
+		name = woc_council_activity.2002.b
+		every_vassal = {
+			limit = {
+				highest_held_title_tier >= tier_county
+			}
+			trigger_event = {
+				id = woc_council_activity.2030
+				days = 1
+			}
+		}
+		trigger_event = {
+			id = woc_council_activity.2031
+			days = 30
+		}
+	}
+}
+
+woc_council_activity.2004 = {
+	type = activity_event
+	title = woc_council_activity.2004.t
+	desc = {
+		desc = woc_council_activity.2004.desc
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_active_diarchy = yes
+				}
+			}
+			desc = woc_council_activity.2004.desc_diarch
+		}
+		desc = woc_council_activity.2004.desc_end
+	}
+	theme = memory_stewardship
+	left_portrait = {
+		character = scope:host
+		animation = throne_room_conversation_4
+	}
+	right_portrait = {
+		character = scope:host.diarch
+		animation = throne_room_conversation_3
+	}
+
+	trigger = {
+		#DLC check.
+		has_ep2_dlc_trigger = yes
+	}
+	
+	immediate = {
+	}
+	
+	#维持现状
+	option = {
+		name = woc_council_activity.2004.a
+		custom_tooltip = woc_council_activity.2004.a.ct
+		hidden_effect = {
+			random_list = {
+				10 = {
+					#盛大活动
+					set_variable = {
+						name = woc_council_suggestion
+						value = 1
+					}
+				}
+				10 = {
+					trigger = {
+						scope:host = {
+							any_vassal = {
+								has_vassal_stance = minority
+							}
+						}
+					}
+					#保护少数派
+					set_variable = {
+						name = woc_council_suggestion
+						value = 2
+					}
+				}
+				10 = {
+					trigger = {
+						scope:host = {
+							is_at_war = no
+						}
+					}
+					#维持和平
+					set_variable = {
+						name = woc_council_suggestion
+						value = 3
+					}
+				}
+			}
+		}
+	}
+	#整顿军备
+	option = {
+		trigger = {
+			scope:activity = {
+				OR = {
+					AND = {
+						woc_council_support_liege_intent_value >= woc_council_devotion_intent_value
+						woc_council_support_liege_intent_value >= woc_council_fouse_realm_intent_value
+						woc_council_support_liege_intent_value >= woc_council_fouse_military_intent_value
+					}
+					AND = {
+						woc_council_fouse_military_intent_value > woc_council_devotion_intent_value
+						woc_council_fouse_military_intent_value > woc_council_fouse_realm_intent_value
+						woc_council_fouse_military_intent_value > woc_council_support_liege_intent_value
+					}
+				}
+			}
+		}
+		name = woc_council_activity.2004.b
+		custom_tooltip = woc_council_activity.2004.b.ct
+		hidden_effect = {
+			random_list = {
+				10 = {
+					#训练农兵
+					set_variable = {
+						name = woc_council_suggestion
+						value = 4
+					}
+				}
+				10 = {
+					#训练兵士
+					set_variable = {
+						name = woc_council_suggestion
+						value = 5
+					}
+				}
+				10 = {
+					#革新战术
+					set_variable = {
+						name = woc_council_suggestion
+						value = 6
+					}
+				}
+			}
+		}
+	}
+	#经济发展
+	option = {
+		trigger = {
+			scope:activity = {
+				OR = {
+					AND = {
+						woc_council_support_liege_intent_value >= woc_council_devotion_intent_value
+						woc_council_support_liege_intent_value >= woc_council_fouse_realm_intent_value
+						woc_council_support_liege_intent_value >= woc_council_fouse_military_intent_value
+					}
+					AND = {
+						woc_council_fouse_realm_intent_value > woc_council_devotion_intent_value
+						woc_council_fouse_realm_intent_value > woc_council_fouse_military_intent_value
+						woc_council_fouse_realm_intent_value > woc_council_support_liege_intent_value
+					}
+				}
+			}
+		}
+		name = woc_council_activity.2004.c
+		custom_tooltip = woc_council_activity.2004.c.ct
+		hidden_effect = {
+			random_list = {
+				10 = {
+					#改良行政
+					set_variable = {
+						name = woc_council_suggestion
+						value = 7
+					}
+				}
+				10 = {
+					trigger = {
+						scope:host = {
+							any_held_title = {
+								tier = tier_county
+								OR = {
+									has_county_modifier = county_corruption_bandits_rampant_modifier
+									has_county_modifier = county_corruption_lack_of_sheriffs_modifier
+									has_county_modifier = county_corruption_thieves_guild_modifier
+								}
+							}
+						}
+					}
+					#打击匪盗
+					set_variable = {
+						name = woc_council_suggestion
+						value = 8
+					}
+				}
+				10 = {
+					trigger = {
+						scope:host = {
+							any_directly_owned_province = {
+								has_free_building_slot = yes
+							}
+						}
+					}
+					#建设新建筑
+					set_variable = {
+						name = woc_council_suggestion
+						value = 9
+					}
+				}
+			}
+		}
+	}
+	#虔敬信仰
+	option = {
+		trigger = {
+			scope:activity = {
+				OR = {
+					AND = {
+						woc_council_support_liege_intent_value >= woc_council_devotion_intent_value
+						woc_council_support_liege_intent_value >= woc_council_fouse_realm_intent_value
+						woc_council_support_liege_intent_value >= woc_council_fouse_military_intent_value
+					}
+					AND = {
+						woc_council_devotion_intent_value > woc_council_fouse_military_intent_value
+						woc_council_devotion_intent_value > woc_council_fouse_realm_intent_value
+						woc_council_devotion_intent_value > woc_council_support_liege_intent_value_value
+					}
+				}
+			}
+		}
+		name = woc_council_activity.2004.d
+		custom_tooltip = woc_council_activity.2004.d.ct
+		hidden_effect = {
+			random_list = {
+				10 = {
+					#修好神职人员
+					set_variable = {
+						name = woc_council_suggestion
+						value = 10
+					}
+				}
+				10 = {
+					trigger = {
+						scope:host = {
+							any_neighboring_and_across_water_top_liege_realm_owner = {
+								root = {
+									OR = {
+										has_cb_on = {
+											target = prev
+											cb = minor_religious_war
+										}
+										has_cb_on = {
+											target = prev
+											cb = religious_war
+										}
+										has_cb_on = {
+											target = prev
+											cb = major_religious_war
+										}
+										has_cb_on = {
+											target = prev
+											cb = undirected_great_holy_war
+										}
+										has_cb_on = {
+											target = prev
+											cb = directed_great_holy_war
+										}
+									}
+									# Must not be allied to or have truce with recipient.
+									NOR = {
+										is_allied_to = prev
+										has_truce = prev
+									}
+								}			
+							}
+						}
+					}
+					#发动圣战
+					set_variable = {
+						name = woc_council_suggestion
+						value = 11
+					}
+				}
+				10 = {
+					trigger = {
+						scope:host = {
+							has_trait = excommunicated
+						}
+					}
+					#忏悔书
+					set_variable = {
+						name = woc_council_suggestion
+						value = 12
+					}
+				}
+			}
+		}
+	}
+	after = {
+		trigger_event = {
+			id = woc_council_activity.2005
+			days = 1
+		}
+	}
+}
+
+woc_council_activity.2005 = {
+	type = activity_event
+	title = woc_council_activity.2005.t
+	desc = {
+		desc = woc_council_activity.2005.desc
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_variable = woc_council_suggestion
+					var:woc_council_suggestion = 1
+				}
+			}
+			desc = woc_council_activity.2005.woc_council_suggestion_diplo_1.desc
+		}
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_variable = woc_council_suggestion
+					var:woc_council_suggestion = 2
+				}
+			}
+			desc = woc_council_activity.2005.woc_council_suggestion_diplo_2.desc
+		}
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_variable = woc_council_suggestion
+					var:woc_council_suggestion = 3
+				}
+			}
+			desc = woc_council_activity.2005.woc_council_suggestion_diplo_3.desc
+		}
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_variable = woc_council_suggestion
+					var:woc_council_suggestion = 4
+				}
+			}
+			desc = woc_council_activity.2005.woc_council_suggestion_martial_1.desc
+		}
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_variable = woc_council_suggestion
+					var:woc_council_suggestion = 5
+				}
+			}
+			desc = woc_council_activity.2005.woc_council_suggestion_martial_2.desc
+		}
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_variable = woc_council_suggestion
+					var:woc_council_suggestion = 6
+				}
+			}
+			desc = woc_council_activity.2005.woc_council_suggestion_martial_3.desc
+		}
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_variable = woc_council_suggestion
+					var:woc_council_suggestion = 7
+				}
+			}
+			desc = woc_council_activity.2005.woc_council_suggestion_steward_1.desc
+		}
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_variable = woc_council_suggestion
+					var:woc_council_suggestion = 8
+				}
+			}
+			desc = woc_council_activity.2005.woc_council_suggestion_steward_2.desc
+		}
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_variable = woc_council_suggestion
+					var:woc_council_suggestion = 9
+				}
+			}
+			desc = woc_council_activity.2005.woc_council_suggestion_steward_3.desc
+		}
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_variable = woc_council_suggestion
+					var:woc_council_suggestion = 10
+				}
+			}
+			desc = woc_council_activity.2005.woc_council_suggestion_learn_1.desc
+		}
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_variable = woc_council_suggestion
+					var:woc_council_suggestion = 11
+				}
+			}
+			desc = woc_council_activity.2005.woc_council_suggestion_learn_2.desc
+		}
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					has_variable = woc_council_suggestion
+					var:woc_council_suggestion = 12
+				}
+			}
+			desc = woc_council_activity.2005.woc_council_suggestion_learn_3.desc
+		}
+		desc = woc_council_activity.2005.desc_end
+	}
+	theme = realm
+	left_portrait = {
+		character = scope:host
+		animation = throne_room_conversation_4
+	}
+	right_portrait = {
+		character = scope:host.diarch
+		animation = throne_room_conversation_3
+	}
+
+	trigger = {
+		#DLC check.
+		has_ep2_dlc_trigger = yes
+	}
+	
+	immediate = {
+		add_character_modifier = woc_council_add_max_schemes
+		start_scheme = {
+			type = woc_council_missions
+			target = root
+		}
+	}
+	
+	option = {
+		name = woc_council_activity.2005.a
+	}
+}
+
+woc_council_activity.2020 = {
+	type = letter_event
+	trigger = {
+		scope:woc_liege = {
+			has_royal_court = yes
+		}
+		exists = scope:woc_liege
+	}
+	opening = {
+		desc = woc_council_activity.2020.opening
+	}
+	desc = woc_council_activity.2020.desc
+	
+	sender = scope:woc_liege
+	immediate = {
+		save_scope_as = woc_vassal
+	}
+	option = {
+		name = woc_council_activity.2020.a
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		trigger = {
+			scope:woc_liege = {
+				has_royal_court = yes
+			}
+			exists = scope:woc_liege
+		}
+		show_as_unavailable = {
+			NOT = {
+				scope:woc_liege = {
+					has_royal_court = yes
+				}
+				exists = scope:woc_liege
+			}
+		}
+		name = woc_council_activity.2020.b
+		custom_tooltip = woc_council_activity.2020.b.tt
+		hidden_effect = {
+			scope:woc_liege = {
+				if = {
+					limit = {
+						NOT = { has_variable = agree_woc_council_proposal }
+					}
+					set_variable = {
+						name = agree_woc_council_proposal
+						value = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_variable = agree_woc_council_proposal
+					}
+					change_variable = {
+						name = agree_woc_council_proposal
+						add = 1
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 0
+			ai_value_modifier = {
+				ai_boldness = -0.25
+				ai_greed = -0.5
+			}
+			opinion_modifier = { # Opinion Factor
+				who = scope:woc_vassal
+				opinion_target = scope:woc_liege
+				multiplier = 1.0
+				desc = AI_OPINION_REASON
+			}
+			modifier = {
+				add = 50
+				OR = {
+					has_trait = generous
+					has_trait = content
+					has_trait = craven
+				}
+			}
+			modifier = {
+				add = 75
+				has_trait = loyal
+			}
+		}
+	}
+	option = {
+		trigger = {
+			scope:woc_liege = {
+				has_royal_court = yes
+			}
+			exists = scope:woc_liege
+		}
+		show_as_unavailable = {
+			NOT = {
+				scope:woc_liege = {
+					has_royal_court = yes
+				}
+				exists = scope:woc_liege
+			}
+		}
+		name = woc_council_activity.2020.c
+		custom_tooltip = woc_council_activity.2020.c.tt
+		hidden_effect = {
+			scope:woc_liege = {
+				if = {
+					limit = {
+						NOT = { has_variable = disagree_woc_council_proposal }
+					}
+					set_variable = {
+						name = disagree_woc_council_proposal
+						value = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_variable = disagree_woc_council_proposal
+					}
+					change_variable = {
+						name = disagree_woc_council_proposal
+						add = 1
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 0
+			ai_value_modifier = {
+				ai_boldness = 0.25
+				ai_greed = 0.5
+			}
+			opinion_modifier = { # Opinion Factor
+				who = scope:woc_vassal
+				opinion_target = scope:woc_liege
+				multiplier = -1.0
+				desc = AI_OPINION_REASON
+			}
+			modifier = {
+				add = 50
+				OR = {
+					has_trait = greedy
+					has_trait = ambitious
+					has_trait = brave
+				}
+			}
+			modifier = {
+				add = 75
+				has_trait = disloyal
+			}
+			modifier = {
+				add = 1000
+				gold < minor_gold_value
+			}
+		}
+	}
+}
+
+woc_council_activity.2021 = {
+	hidden = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				woc_council_proposal_value >= 0
+			}
+			scope:host = {
+				trigger_event = {
+					id = woc_council_activity.2022
+					days = 1
+				}
+				every_vassal = {
+					limit = {
+						highest_held_title_tier >= tier_county
+						#gold > medium_gold_value_static_max
+					}
+					send_interface_message = {
+						type = event_generic_neutral
+						title = woc_impose_additional_taxes_pass_msg_tt
+						left_icon = scope:woc_liege					
+						custom_tooltip = woc_impose_additional_taxes_pass_msg_ct
+						pay_short_term_gold = {
+							target = scope:host
+							gold = minor_gold_value
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				woc_council_proposal_value < 0
+			}
+			scope:host = {
+				trigger_event = {
+					id = woc_council_activity.2023
+					days = 1
+				}
+			}
+		}
+		remove_variable = agree_woc_council_proposal
+		remove_variable = disagree_woc_council_proposal
+	}
+}
+
+woc_council_activity.2022 = {
+	type = activity_event
+	title = woc_council_activity.2022.t
+	desc = woc_council_activity.2022.desc
+	theme = realm
+	
+	right_portrait = {
+		character = root
+	}
+	immediate = {
+	}
+	option = { 
+		name = woc_council_activity.2022.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+woc_council_activity.2023 = {
+	type = activity_event
+	title = woc_council_activity.2023.t
+	desc = woc_council_activity.2023.desc
+	theme = realm
+	
+	right_portrait = {
+		character = root
+	}
+	immediate = {
+	}
+	option = { 
+		name = woc_council_activity.2023.a
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		trigger = {
+			scope:woc_liege = {
+				has_trait = diplomat
+			}
+			exists = scope:woc_liege
+		}
+		show_as_unavailable = {
+			NOT = {
+				scope:woc_liege = {
+					has_trait = diplomat
+				}
+				exists = scope:woc_liege
+			}
+		}
+		trait = diplomat
+		name = woc_council_activity.2023.b
+		custom_tooltip = woc_council_activity.2023.b.tt
+		duel = {
+			skill = diplomacy
+			value = low_skill_rating
+			50 = {
+				desc = woc_council_activity.2023.b.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+				}
+				add_character_modifier = {
+					modifier = woc_council_decrease_vassal_tax_modifier
+					years = 5
+				}
+				hidden_effect = {
+					every_vassal = {
+						limit = {
+							highest_held_title_tier >= tier_county
+							#gold > medium_gold_value_static_max
+						}
+						send_interface_message = {
+							type = event_generic_neutral
+							title = woc_impose_additional_taxes_pass_msg_tt
+							left_icon = scope:woc_liege					
+							custom_tooltip = woc_impose_additional_taxes_pass_msg_ct
+							pay_short_term_gold = {
+								target = scope:host
+								gold = minor_gold_value
+							}
+						}
+					}
+				}
+			}
+			50 = {
+				desc = woc_council_activity.2023.b.failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+				}
+				add_prestige = minor_prestige_loss
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = { 
+		name = woc_council_activity.2023.c
+		custom_tooltip = woc_council_activity.2023.c.tt
+		add_tyranny = 30
+		hidden_effect = {
+			every_vassal = {
+				limit = {
+					highest_held_title_tier >= tier_county
+					#gold > medium_gold_value_static_max
+				}
+				send_interface_message = {
+					type = event_generic_neutral
+					title = woc_impose_additional_taxes_pass_msg_tt
+					left_icon = scope:woc_liege					
+					custom_tooltip = woc_impose_additional_taxes_pass_msg_ct
+					pay_short_term_gold = {
+						target = scope:host
+						gold = minor_gold_value
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+woc_council_activity.2030 = {
+	type = letter_event
+	trigger = {
+		scope:woc_liege = {
+			has_royal_court = yes
+		}
+		exists = scope:woc_liege
+	}
+	opening = {
+		desc = woc_council_activity.2030.opening
+	}
+	desc = woc_council_activity.2030.desc
+	
+	sender = scope:woc_liege
+	immediate = {
+		save_scope_as = woc_vassal
+	}
+	option = {
+		name = woc_council_activity.2020.a
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		trigger = {
+			scope:woc_liege = {
+				has_royal_court = yes
+			}
+			exists = scope:woc_liege
+		}
+		show_as_unavailable = {
+			NOT = {
+				scope:woc_liege = {
+					has_royal_court = yes
+				}
+				exists = scope:woc_liege
+			}
+		}
+		name = woc_council_activity.2020.b
+		custom_tooltip = woc_council_activity.2030.b.tt
+		hidden_effect = {
+			scope:woc_liege = {
+				if = {
+					limit = {
+						NOT = { has_variable = agree_woc_council_proposal }
+					}
+					set_variable = {
+						name = agree_woc_council_proposal
+						value = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_variable = agree_woc_council_proposal
+					}
+					change_variable = {
+						name = agree_woc_council_proposal
+						add = 1
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 0
+			ai_value_modifier = {
+				ai_boldness = -0.25
+				ai_greed = -0.5
+			}
+			opinion_modifier = { # Opinion Factor
+				who = scope:woc_vassal
+				opinion_target = scope:woc_liege
+				multiplier = 1.0
+				desc = AI_OPINION_REASON
+			}
+			modifier = {
+				add = 50
+				OR = {
+					has_trait = generous
+					has_trait = content
+					has_trait = craven
+				}
+			}
+			modifier = {
+				add = 75
+				has_trait = loyal
+			}
+		}
+	}
+	option = {
+		trigger = {
+			scope:woc_liege = {
+				has_royal_court = yes
+			}
+			exists = scope:woc_liege
+		}
+		show_as_unavailable = {
+			NOT = {
+				scope:woc_liege = {
+					has_royal_court = yes
+				}
+				exists = scope:woc_liege
+			}
+		}
+		name = woc_council_activity.2020.c
+		custom_tooltip = woc_council_activity.2030.c.tt
+		hidden_effect = {
+			scope:woc_liege = {
+				if = {
+					limit = {
+						NOT = { has_variable = disagree_woc_council_proposal }
+					}
+					set_variable = {
+						name = disagree_woc_council_proposal
+						value = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_variable = disagree_woc_council_proposal
+					}
+					change_variable = {
+						name = disagree_woc_council_proposal
+						add = 1
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 1000
+			ai_value_modifier = {
+				ai_boldness = 0.25
+				ai_greed = 0.5
+			}
+			opinion_modifier = { # Opinion Factor
+				who = scope:woc_vassal
+				opinion_target = scope:woc_liege
+				multiplier = -1.0
+				desc = AI_OPINION_REASON
+			}
+			modifier = {
+				add = 50
+				OR = {
+					has_trait = greedy
+					has_trait = ambitious
+					has_trait = brave
+				}
+			}
+			modifier = {
+				add = 75
+				has_trait = disloyal
+			}
+		}
+	}
+}
+
+woc_council_activity.2031 = {
+	hidden = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				woc_council_proposal_value >= 0
+			}
+			scope:host = {
+				trigger_event = {
+					id = woc_council_activity.2032
+					days = 1
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				woc_council_proposal_value < 0
+			}
+			scope:host = {
+				trigger_event = {
+					id = woc_council_activity.2033
+					days = 1
+				}
+			}
+		}
+		remove_variable = agree_woc_council_proposal
+		remove_variable = disagree_woc_council_proposal
+	}
+}
+
+woc_council_activity.2032 = {
+	type = activity_event
+	title = woc_council_activity.2032.t
+	desc = woc_council_activity.2032.desc
+	theme = realm
+	
+	right_portrait = {
+		character = root
+	}
+	immediate = {
+		add_character_modifier = {
+			modifier = woc_council_enlistment_of_additional_troops
+			years = 10
+		}
+		every_vassal = {
+			limit = {
+				highest_held_title_tier >= tier_county
+			}
+			send_interface_message = {
+				type = event_generic_neutral
+				title = woc_enlistment_of_additional_troops_pass_msg_tt
+				left_icon = scope:woc_liege					
+				custom_tooltip = woc_enlistment_of_additional_troops_pass_msg_ct
+				add_character_modifier = {
+					modifier = woc_council_additional_army_maintenance
+					years = 10
+				}
+			}
+		}
+	}
+	option = { 
+		name = woc_council_activity.2032.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+woc_council_activity.2033 = {
+	type = activity_event
+	title = woc_council_activity.2033.t
+	desc = woc_council_activity.2033.desc
+	theme = realm
+	
+	right_portrait = {
+		character = root
+	}
+	immediate = {
+	}
+	option = { 
+		name = woc_council_activity.2033.a
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		trigger = {
+			scope:woc_liege = {
+				has_trait = administrator
+			}
+			exists = scope:woc_liege
+		}
+		show_as_unavailable = {
+			NOT = {
+				scope:woc_liege = {
+					has_trait = administrator
+				}
+				exists = scope:woc_liege
+			}
+		}
+		trait = administrator
+		name = woc_council_activity.2033.b
+		custom_tooltip = woc_council_activity.2033.b.tt
+		duel = {
+			skill = stewardship
+			value = low_skill_rating
+			50 = {
+				desc = woc_council_activity.2033.b.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+				}
+				add_character_modifier = {
+					modifier = woc_council_enlistment_of_additional_troops
+					years = 10
+				}
+				add_character_modifier = {
+					modifier = woc_council_decrease_vassal_levy_modifier
+					years = 10
+				}
+				hidden_effect = {
+					every_vassal = {
+						limit = {
+							highest_held_title_tier >= tier_county
+						}
+						send_interface_message = {
+							type = event_generic_neutral
+							title = woc_enlistment_of_additional_troops_pass_msg_tt
+							left_icon = scope:woc_liege					
+							custom_tooltip = woc_enlistment_of_additional_troops_pass_msg_ct
+							add_character_modifier = {
+								modifier = woc_council_additional_army_maintenance
+								years = 10
+							}
+						}
+					}
+				}
+			}
+			50 = {
+				desc = woc_council_activity.2033.b.failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+				}
+				add_prestige = minor_prestige_loss
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = { 
+		name = woc_council_activity.2033.c
+		custom_tooltip = woc_council_activity.2033.c.tt
+		add_tyranny = 30
+		add_character_modifier = {
+			modifier = woc_council_enlistment_of_additional_troops
+			years = 10
+		}
+		hidden_effect = {
+			every_vassal = {
+				limit = {
+					highest_held_title_tier >= tier_county
+				}
+				send_interface_message = {
+					type = event_generic_neutral
+					title = woc_enlistment_of_additional_troops_pass_msg_tt
+					left_icon = scope:woc_liege					
+					custom_tooltip = woc_enlistment_of_additional_troops_pass_msg_ct
+					add_character_modifier = {
+						modifier = woc_council_additional_army_maintenance
+						years = 10
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+woc_council_activity.2100 = {
+	type = activity_event
+	title = woc_council_activity.2100.t
+	desc = woc_council_activity.2100.desc
+	theme = realm
+	
+	right_portrait = {
+		character = root
+		animation = worry
+	}
+	
+	immediate = {
+		save_scope_as = woc_liege
+	}
+	
+	option = { 
+		name = woc_council_activity.2100.a
+		add_prestige = scope:woc_liege.woc_reject_magna_carta_prestige_cost_value
+		hidden_effect = {
+			scope:activity = {
+				every_attending_character = {
+					limit = {
+						is_ai = no
+						NOT = { this = scope:woc_liege }
+					}
+					trigger_event = woc_council_activity.2101
+				}
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				base = 0
+				modifier = {
+					add = 100
+					prestige >= scope:woc_liege.woc_reject_magna_carta_prestige_cost_value
+					NOT = { has_trait = diplomat }
+				}
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			scope:woc_liege = {
+				has_trait = diplomat
+			}
+			exists = scope:woc_liege
+		}
+		show_as_unavailable = {
+			NOT = {
+				scope:woc_liege = {
+					has_trait = diplomat
+				}
+				exists = scope:woc_liege
+			}
+		}
+		trait = diplomat
+		name = woc_council_activity.2100.b
+		custom_tooltip = woc_council_activity.2100.b.tt
+		duel = {
+			skill = diplomacy
+			value = decent_skill_rating
+			50 = {
+				desc = woc_council_activity.2100.b.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+				}
+			}
+			50 = {
+				desc = woc_council_activity.2100.b.failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+				}
+				add_prestige = major_prestige_loss
+			}
+		}
+		hidden_effect = {
+			scope:activity = {
+				every_attending_character = {
+					limit = {
+						is_ai = no
+						NOT = { this = scope:woc_liege }
+					}
+					trigger_event = woc_council_activity.2102
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = { 
+		name = woc_council_activity.2100.c
+		custom_tooltip = woc_council_activity.2100.c.tt
+		set_variable = {
+			name = woc_council_reject_magna_carta
+			years = 10
+		}
+		hidden_effect = {
+			scope:activity = {
+				every_attending_character = {
+					limit = {
+						is_ai = no
+						NOT = { this = scope:woc_liege }
+					}
+					trigger_event = woc_council_activity.2103
+				}
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				prestige < scope:woc_liege.woc_reject_magna_carta_prestige_cost_value
+				NOT = { has_trait = diplomat }
+			}
+		}
+	}
+	
+	option = { 
+		name = woc_council_activity.2100.d
+		hidden_effect = {
+			scope:activity = {
+				every_attending_character = {
+					limit = {
+						is_ai = no
+						NOT = { this = scope:woc_liege }
+					}
+					trigger_event = woc_council_activity.2104
+				}
+			}
+		}
+		add_character_modifier = woc_council_magna_carta
+		if = {
+			limit = {
+				exists = dynasty
+				dynasty = {
+					NOT = { has_dynasty_modifier = woc_council_magna_carta_dynasty }
+				}
+			}
+			create_artifact = {
+				name = woc_council_magna_carta_artifact_name
+				description = woc_council_magna_carta_artifact_desc
+				type = book
+				template = woc_council_magna_carta_artifact_template
+				visuals = scroll
+				quality = 100
+				wealth = 100
+				modifier = woc_council_magna_carta_artifact_modifier
+				#max_durability = 40
+				decaying = no
+				save_scope_as = woc_council_magna_carta_artifact
+			}
+			scope:woc_council_magna_carta_artifact = {
+				set_owner = {
+					target = root
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = dynasty
+				dynasty = {
+					NOT = { has_dynasty_modifier = woc_council_magna_carta_dynasty }
+				}
+			}
+			dynasty = {
+				add_dynasty_modifier = {
+					modifier = woc_council_magna_carta_dynasty
+				}
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+woc_council_activity.2101 = {
+	type = activity_event
+	title = woc_council_activity.2100.t
+	desc = woc_council_activity.2101.desc
+	theme = realm
+	
+	right_portrait = {
+		character = scope:woc_liege
+		animation = worry
+	}
+	
+	option = { 
+		name = woc_council_activity.2101.a
+	}
+}
+
+woc_council_activity.2102 = {
+	type = activity_event
+	title = woc_council_activity.2100.t
+	desc = woc_council_activity.2102.desc
+	theme = realm
+	
+	right_portrait = {
+		character = scope:woc_liege
+		animation = worry
+	}
+	
+	option = { 
+		name = woc_council_activity.2102.a
+	}
+}
+
+woc_council_activity.2103 = {
+	type = activity_event
+	title = woc_council_activity.2100.t
+	desc = woc_council_activity.2103.desc
+	theme = realm
+	
+	right_portrait = {
+		character = scope:woc_liege
+		animation = worry
+	}
+	
+	option = { 
+		name = woc_council_activity.2103.a
+	}
+}
+
+woc_council_activity.2104 = {
+	type = activity_event
+	title = woc_council_activity.2100.t
+	desc = woc_council_activity.2104.desc
+	theme = realm
+	
+	right_portrait = {
+		character = scope:woc_liege
+		animation = worry
+	}
+	
+	option = { 
+		name = woc_council_activity.2104.a
+	}
+}
+
+woc_council_activity.3001 = {
+	type = character_event
+	title = woc_council_activity.3001.t
+	desc = woc_council_activity.3001.desc
+	theme = realm
+
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+
+	immediate = {}
+
+	option = { 
+		name = woc_council_activity.3001.a
+		custom_tooltip = woc_council_activity.3001.tt
+	}
+}
+
+woc_council_activity.3002 = {
+	type = character_event
+	title = woc_council_activity.3002.t
+	desc = woc_council_activity.3002.desc
+	theme = feast_activity
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_prison.dds"
+	}
+	left_portrait = {
+		character = scope:host
+		animation = prison_dungeon
+	}
+	
+	option = {
+		name = woc_council_activity.3002.a
+	}
+}
+
+woc_council_activity.3003 = {
+	type = character_event
+	title = woc_council_activity.3002.t
+	desc = woc_council_activity.3003.desc
+	theme = feast_activity
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_prison.dds"
+	}
+	left_portrait = {
+		character = scope:host
+		animation = prison_dungeon
+	}
+	
+	option = {
+		name = woc_council_activity.3003.a
+	}
+}
+
+namespace = woc_council_councillor_missions
+woc_council_councillor_missions.0001 = {
+	type = character_event
+	title = woc_council_councillor_missions.0001.t
+	desc = {
+		triggered_desc = {
+			trigger = {
+				has_variable = woc_council_debt_councillor_missions
+			}
+			desc = woc_council_councillor_missions.0001.debt.desc
+		}
+		triggered_desc = {
+			trigger = {
+				has_variable = woc_council_powerful_faction_councillor_missions
+			}
+			desc = woc_council_councillor_missions.0001.powerful_faction.desc
+		}
+		triggered_desc = {
+			trigger = {
+				has_variable = woc_council_war_aid_councillor_missions
+			}
+			desc = woc_council_councillor_missions.0001.war_aid.desc
+		}
+		triggered_desc = {
+			trigger = {
+				has_variable = woc_council_excommunicated_councillor_missions
+			}
+			desc = woc_council_councillor_missions.0001.excommunicated.desc
+		}
+		triggered_desc = {
+			trigger = {
+				has_variable = woc_council_player_heir_councillor_missions
+			}
+			desc = woc_council_councillor_missions.0001.player_heir.desc
+		}
+	}
+	theme = realm
+	left_portrait = {
+		character = root
+	}
+	
+	immediate = {
+		
+	}
+	#帮领主征税
+	option = {
+		trigger = {
+			has_variable = woc_council_debt_councillor_missions
+		}
+		name = woc_council_councillor_missions.0001.a
+		set_variable = woc_council_debt_councillor_missions_1
+		ai_chance = {
+			base = 100
+		}
+	}
+	#帮领主征税同时收点
+	option = {
+		trigger = {
+			has_variable = woc_council_debt_councillor_missions
+		}
+		name = woc_council_councillor_missions.0001.b
+		set_variable = woc_council_debt_councillor_missions_2
+		ai_chance = {
+			base = 0
+		}
+	}
+	#向商人借贷
+	option = {
+		trigger = {
+			has_variable = woc_council_debt_councillor_missions
+		}
+		name = woc_council_councillor_missions.0001.c
+		set_variable = woc_council_debt_councillor_missions_3
+		ai_chance = {
+			base = 0
+		}
+	}
+}

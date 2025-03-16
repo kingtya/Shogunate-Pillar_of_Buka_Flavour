@@ -1,0 +1,64 @@
+﻿l_english:
+
+    trait_oda_margin:0 "Oda Legacy"
+    trait_oda_margin_desc:0 "The Oda clan originated in Oda Manor, Echizen Province. Their original surname was Inbe, and they served the Shiba clan along with the Kai and Asakura clans. During the Muromachi period, they were deputy governors of Owari Province. The Danjo-no-chū branch was a cadet line of the Oda clan and rose to power over three generations, seizing the opportunity presented by the turbulent era."
+    TRAIT_FLAG_DESC_trait_oda_margin:0 "Unlocks #V Intensive Firearm Use [sp_policy|E]#!\nIf you fulfill the requirements, unlocks #V Intensive Firearm Use [sp_policy|E]#! for the [liege|E]\nUnlocks #V Separation of Soldiers and Farmers#! and #V Free Market and Free Guilds [sp_policy|E]#! early"
+
+    trait_imagawa_margin:0 "Imagawa Legacy"
+    trait_imagawa_margin_desc:0 "The Imagawa clan originated in Mikawa Province, Hekikai District, and was a branch of the Seiwa Genji lineage. During the Nanboku-chō period, they supported the Ashikaga clan in aiding the Northern Court against the Southern Court and later remained loyal to the Muromachi Ashikaga Shogunate. There was a saying: 'If the shogun’s line fails, Kira will succeed; if Kira fails, Imagawa will succeed.'"
+    TRAIT_FLAG_DESC_trait_imagawa_margin:0 "Unlocks #V Promotion of Courtly Tastes#! [decision|E] (not yet implemented)\nUnlocks #V Imagawa Kana Code [sp_policy|E]#!\nIf you fulfill the requirements, unlocks #V Imagawa Kana Code [sp_policy|E]#! for the [liege|E]"
+
+    trait_takeda_margin:0 "Takeda Legacy"
+    trait_takeda_margin_desc:0 "The Takeda clan originated in Takeda Township, Kai Province, and was a branch of the Seiwa Genji lineage descending from Shinra Saburō Yoshimitsu. Takeda Kiyomitsu’s son, Nobuyoshi, was appointed as the governor of Kai, and the position remained hereditary within the Takeda clan."
+    TRAIT_FLAG_DESC_trait_takeda_margin:0 "Unlocks #V Kōshū Legal Code [sp_policy|E]#!\nIf you fulfill the requirements, unlocks #V Kōshū Legal Code [sp_policy|E]#! for the [liege|E]"
+
+    trait_hojo_margin:0 "Gō-Hōjō Legacy"
+    trait_hojo_margin_desc:0 "Founded by Ise Shinkurō Sōun, a former Kyoto court official. He was rewarded with lordship after pacifying an internal conflict within the Imagawa clan. After unifying Sagami Province, his successor, Ujitsuna, adopted the Hōjō surname to legitimize their rule. Since they had no direct blood ties to the Kamakura-era Hōjō regents, they are known as the Later Hōjō clan."
+    TRAIT_FLAG_DESC_trait_hojo_margin:0 "Unlocks #V Five Admonitions [sp_policy|E]#!\nIf you fulfill the requirements, unlocks #V Five Admonitions [sp_policy|E]#! for the [liege|E]"
+
+    trait_tokugawa_margin:0 "Tokugawa Legacy"
+    trait_tokugawa_margin_desc:0 "Founded by Tokugawa Ieyasu, formerly of the Matsudaira clan, a powerful samurai family in Mikawa Province. His grandfather, Kiyoyasu, aimed to dominate Mikawa and was later praised as 'a man who could have unified the country if he had lived to thirty.' After rising to power, Ieyasu claimed descent from the Seiwa Genji branch of the Nitta clan and changed his surname to Tokugawa."
+    TRAIT_FLAG_DESC_trait_tokugawa_margin:0 "Unlocks #V Hatamoto Vanguard [sp_policy|E]#!\nIf you fulfill the requirements, unlocks #V Hatamoto Vanguard [sp_policy|E]#! for the [liege|E]"
+
+    trait_date_margin:0 "Date Legacy"
+    trait_date_margin_desc:0 "The Date clan originated from Date District in Mutsu Province and was a branch of the Fujiwara clan’s San’in lineage. From the Kamakura period to the Edo period, they were a dominant power in the Tōhoku region."
+    TRAIT_FLAG_DESC_trait_date_margin:0 "Unlocks #V Formation of Dragoons [sp_policy|E]#!\nIf you fulfill the requirements, unlocks #V Formation of Dragoons [sp_policy|E]#! for the [liege|E]"
+
+    trait_shimazu_margin:0 "Shimazu Legacy"
+    trait_shimazu_margin_desc:0 "The Shimazu clan originated from Shimazu Manor in Hyūga Province and was descended from the Qin clan, a group of immigrants. During the Kamakura period, they were appointed as jitō (land stewards) in Kyushu. At their peak, they ruled southern Kyushu from Satsuma Province."
+    TRAIT_FLAG_DESC_trait_shimazu_margin:0 "Unlocks #V Satsuma Military Law [sp_policy|E]#!\nIf you fulfill the requirements, unlocks #V Satsuma Military Law [sp_policy|E]#! for the [liege|E]"
+
+    trait_uesugi_margin:0 "Uesugi Legacy #weak (House Nagao)#!"
+    trait_uesugi_margin_desc:0 "The Uesugi clan was originally a noble family that later became rulers of the Kantō region. Both the Ōgigayatsu and Yamanouchi Uesugi branches were destroyed by the Later Hōjō clan’s expansion. Uesugi Norimasa then appointed Nagao Kagetora (later Uesugi Kenshin) as the new Kantō Kanrei, making the Nagao family the main line of the Uesugi clan."
+    TRAIT_FLAG_DESC_trait_uesugi_margin:0 "Unlocks #V Expeditionary Army Support [sp_policy|E]#!\nIf you fulfill the requirements, unlocks #V Expeditionary Army Support [sp_policy|E]#! for the [liege|E]"
+
+    trait_mori_margin:0 "Mōri Legacy"
+    trait_mori_margin_desc:0 "The Mōri clan descended from the Ōe clan and was founded by Ōe Hiromoto’s fourth son, Mōri Suemitsu, in the Kamakura period. The Aki-Mōri family was a minor local power until Mōri Motonari rose to prominence by defeating the Amago clan in the east and the Ōuchi usurper Sue Harukata in the west, becoming the 'Overlord of the West.'"
+    TRAIT_FLAG_DESC_trait_mori_margin:0 "Unlocks #V One Million Hearts Oath [sp_policy|E]#!\nIf you fulfill the requirements, unlocks #V One Million Hearts Oath [sp_policy|E]#! for the [liege|E]"
+
+    trait_chosokabe_margin:0 "Chōsokabe Legacy"
+    trait_chosokabe_margin_desc:0 "A powerful family in Tosa Province, with an unclear history of arrival. The clan was nearly annihilated under Kanetsugu, but Chōsokabe Kunichika restored it with the support of the Ichijō clan. Under Chōsokabe Motochika, they unified Shikoku."
+    TRAIT_FLAG_DESC_trait_chosokabe_margin:0 "Unlocks #V One Armour Corps System [sp_policy|E]#!\nIf you fulfill the requirements, unlocks #V One Armour Corps System [sp_policy|E]#! for the [liege|E]"
+
+    trait_otomo_margin:0 "Ōtomo Legacy"
+    trait_otomo_margin_desc:0 "The Ōtomo clan originated from Ōtomo Manor in Sagami Province and claimed descent from Minamoto no Yoritomo. They were a dominant force in Kyushu from the Kamakura period to the Sengoku period. Under Ōtomo Sōrin, they maintained close ties with the West and were praised by missionaries as 'Japan’s greatest lord.'"
+    TRAIT_FLAG_DESC_trait_otomo_margin:0 "Unlocks #V Kirishitan Protection [sp_policy|E]#!\nIf you fulfill the requirements, unlocks #V Kirishitan Protection [sp_policy|E]#! for the [liege|E]\nUnlocks #V Nanban Protection [sp_policy|E]#! early."
+
+    trait_sanada_margin:0 "Sanada Legacy"
+    trait_sanada_margin_desc:0 "Founded by Sanada Yukitaka (Roku), originally a branch of the Unno clan, a former Kamakura-period gokenin (household vassal). After the Unno clan’s downfall, Yukitaka inherited the Sanada name. Three generations of the Sanada clan—Yukitaka, Masayuki, and Nobushige (Yukimura)—were known for their military prowess. Yukimura became famous during the Siege of Osaka, where he fought valiantly against overwhelming odds and was called 'Japan’s greatest warrior.'"
+    TRAIT_FLAG_DESC_trait_sanada_margin:0 "Unlocks #V Six Coins Oath [sp_policy|E]#!\nUnlocks #V Cunning Military Strategy [sp_policy|E]#!\nUnlocks #V Sanada Aka-zonae Establishment [sp_policy|E]#!"
+
+
+    trait_miyoshi_margin:0 "Miyoshi Legacy"
+    trait_miyoshi_margin_desc:0 "The Miyoshi clan originated from Miyoshi District in Awa Province and is said to be a branch of the Awa Ogasawara clan. Originally retainers of the Hosokawa clan, they rose to prominence under Miyoshi Motonaga. Under Miyoshi Nagayoshi, the clan reached its peak, unifying the Kinai region and earning the title of 'Vice-Shogun of Japan.' However, after Nagayoshi’s death, the clan rapidly declined."
+    TRAIT_FLAG_DESC_trait_miyoshi_margin:0 "Unlocks #V Just Governance for the People [sp_policy|E]#!\nIf you fulfill the requirements, it unlocks #V Just Governance for the People [sp_policy|E]#! for the [liege|E]"
+
+    trait_suzuki_margin:0 "Suzuki Legacy"  
+    trait_suzuki_margin_desc:0 "A noble family of Kii Province, allegedly descended from the Kumano Navy. They led the Saika mercenary group, wielding influence across the Kinai region. During the era of Shigehide, they allied with the Honganji Temple to resist Oda Nobunaga, repeatedly frustrating powerful enemies with their firearm tactics. At their peak, they controlled the lifeline of Kii Province's firearm trade. However, internal strife weakened them, leading to their eventual subjugation by Toyotomi Hideyoshi through strategic maneuvers, marking the end of their mercenary autonomy legend."  
+    TRAIT_FLAG_DESC_trait_suzuki_margin:0 "Unlocks #V Saika Pact [sp_policy|E]#!\nIf the conditions are met, unlocks #V Saika Pact [sp_policy|E]#! for the liege."
+
+    trait_honganji_margin:0 "Honganji Legacy"  
+    trait_honganji_margin_desc:0 "Originating with Kakunyo, the Honganji faction was originally a stronghold of the Jōdo Shinshū (True Pure Land Sect). After Shinran founded the teachings, the Honganji Temple gradually grew in power. By the era of Kennyo, it had developed a religious militia that contended with Sengoku warlords. During the Ishiyama War, they resisted Oda Nobunaga for over a decade with the support of Ikkō-Ikki uprisings, spreading their influence across Kinai and Hokuriku. However, internal divisions led to their decline, and they ultimately submitted to the Toyotomi regime, later integrating into the Tokugawa system."  
+    TRAIT_FLAG_DESC_trait_honganji_margin:0 "Unlocks #V Unity of Kihō [sp_policy|E]#!\nIf the conditions are met, unlocks #V Unity of Kihō [sp_policy|E]#! for the liege."
+
+   

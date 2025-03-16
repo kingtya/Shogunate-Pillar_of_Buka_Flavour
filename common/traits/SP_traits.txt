@@ -385,31 +385,40 @@ toyotomi_margin = { # 丰臣传
 	desc = trait_toyotomi_margin_desc
 }
 
-oda_nobunaga = {
+suzuki_margin = { # 铃木传
 	category = fame
 	shown_in_ruler_designer = no
+	
+	same_opinion = 5
 
-	domain_limit = 3
-	#domain_tax_different_faith_mult = 0.5
-	dread_baseline_add = 30
-	dread_per_tyranny_mult = 0.5
-	different_faith_opinion = -50
-	clergy_opinion = -25
-	#siege_phase_time = -0.5
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_suzuki_margin
 
 	icon = {
-		desc = oda_nobunaga.dds
+		desc = suzuki_margin.dds
 	}
 
-	desc = {
-		first_valid = {
-			triggered_desc = {
-				trigger = {
-					NOT = { exists = this }
-				}
-				desc = trait_oda_nobunaga_desc
-			}
-			desc = trait_oda_nobunaga_desc
-		}
+	desc = trait_suzuki_margin_desc
+}
+
+honganji_margin = { # 本愿寺传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_honganji_margin
+
+	icon = {
+		desc = honganji_margin.dds
 	}
+
+	desc = trait_honganji_margin_desc
 }

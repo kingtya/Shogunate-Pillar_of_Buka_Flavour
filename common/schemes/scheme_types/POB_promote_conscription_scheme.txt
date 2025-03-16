@@ -1,0 +1,134 @@
+﻿pob_promote_conscription = {
+	# Basic Setup
+	skill = martial
+	desc = pob_promote_conscription_desc_general
+	success_desc = "BEFRIEND_SUCCESS_DESC"
+
+	icon = martial
+	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
+	category = personal
+	target_type = character
+	is_secret = no
+	is_basic = yes
+	cooldown = { 
+		years = 1
+	}
+
+	# Parameters
+	speed_per_skill_point = -2.5
+	spymaster_speed_per_skill_point = 0	
+	uses_resistance = no
+	base_progress_goal = 170
+	base_maximum_success = 95
+	minimum_success = 5
+	
+	# Core Triggers
+	allow = {
+		is_adult = yes
+		is_imprisoned = no
+		scope:target = scope:owner
+	}
+
+	valid = {
+		is_imprisoned = no
+		is_incapable = no
+	}
+
+	odds_prediction = {
+		add = odds_skill_contribution_martial_value
+		min = 0
+	}
+
+	pulse_actions = {
+		entries = {
+		}
+		chance_of_no_event = scheme_apa_chance_of_no_event_value
+	}
+
+	# Base Chances
+	base_success_chance = {
+		base = 25
+
+		modifier = {
+			add = 10
+			OR = {
+				liege ?= {
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = flag:flag_sp_policy_improve_militia
+					}
+				}
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_improve_militia
+				}
+			}
+			desc = SCHEME_SP_POLICY_IMPROVE_MILITIA
+		}
+
+		modifier = {
+			add = {
+				value = scope:owner.diplomacy
+				multiply = 0.5
+			}
+			desc = SCHEME_YOUR_DIPLOMACY
+		}
+
+		modifier = {
+			add = {
+				value = scope:owner.martial
+			 	multiply = 1.5
+			}
+			desc = SCHEME_YOUR_MARTIAL
+		}
+
+		modifier = {
+			add = {
+				value = scope:owner.stewardship
+				multiply = 0.5
+			}
+			desc = SCHEME_YOUR_STEWARDSHIP
+		}
+
+		modifier = {
+			add = {
+				value = scope:owner.learning
+				multiply = 0.5
+			}
+			desc = SCHEME_YOUR_LEARNING
+		}
+
+		modifier = {
+			add = {
+				value = scope:owner.domain_size
+				multiply = -5
+			}
+			desc = SCHEME_REALM_SIZE
+		}
+	}
+
+	# On Actions
+	on_start = {
+	}
+
+	on_phase_completed = {
+		save_scope_as = scheme
+		scheme_target_character = { save_scope_as = target }
+		scheme_owner = { save_scope_as = owner }
+		scope:scheme.scheme_owner = {
+			trigger_event = pob_promote_conscription_events.0002
+		}
+	}
+
+	on_invalidated = {
+		scope:owner = {
+			send_interface_toast = {
+				title = pob_promote_conscription_invalidated_title
+				left_icon = scope:target
+			}
+		}
+	}
+
+	on_monthly = {
+	}
+}

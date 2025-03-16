@@ -1,0 +1,22 @@
+﻿l_simp_chinese:
+
+    sp_tab_my_policies_tt:0 "#T 政策#!"
+    sp_policy_window_head_text:0 "政策"
+    sp_policy_type_general_header_text:0 "通用"
+    sp_policy_type_special_header_text:1 "御用"
+    sp_policy_type_con:0 "保守[sp_policy|E]"
+    sp_policy_type_neu:1 "中道[sp_policy|E]"
+    sp_policy_type_pro:2 "革新[sp_policy|E]"
+    sp_policy_type_spe:3 "御用[sp_policy|E]"
+    sp_effect_header_text:0 "效果"
+    sp_cost_header_text:1 "费用"
+    sp_confirm_button_text:0 "发布政策"
+    sp_remove_button_text:1 "撤销政策"
+    sp_policy_released_cd:0 "你已经颁布了这个政策"
+    sp_contraditory_policy_released_cd:0 "你颁布过互相冲突的政策"
+    sp_policy_is_locked_cd:0 "你不满足这个政策的解锁条件"
+    sp_policy_need_more_points_cd:0 "你需要更多政策点"
+    sp_policy_not_released_cd:0 "你还没有颁布这个政策"
+    sp_policy_released_recently_cd:0 "你颁布这个政策的时间未满三年"
+    sp_current_policy_points:0 "#weak 目前#!#E [sp_policy_point|E]#!：[GetPlayer.MakeScope.Var('sp_current_policy_points').GetValue|0]/[GetPlayer.MakeScope.ScriptValue('sp_total_policy_points')|0]"
+    

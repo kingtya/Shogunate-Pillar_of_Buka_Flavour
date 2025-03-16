@@ -1,0 +1,10 @@
+﻿l_english:
+
+   game_concept_sp_policy:0 "Policy" #NT!
+   game_concept_sp_policy_desc:0 "Policies are special laws implemented by [rulers|E] for a specific purpose, often providing political buffs or [soldier|E]-enhancing [modifier|E], or other special effects. \n\nSome Daimyos can unlock special imperial policies through family inheritance [trait|E]. These traits are inherited through male line and represent the characteristic of [houses|E] of this era."
+   
+   game_concept_sp_policy_point:0 "Policy Point Limit"
+   game_concept_sp_policy_point_desc:0 "You can only issue a certain amount of [sp_policy|E] by spending policy points, and the number of policy points is limited by [era|E] and [skills|E] of the assigned [spt_bugyo|E]. \n\nThe determining factors of the upper limit are:\n\n$EFFECT_LIST_BULLET$Every 2 points of [stewardship|E] [skills|E] of [spt_bugyo|E] increases it by #V 1#!\n$EFFECT_LIST_BULLET$Every 4 [learning|E] of [spt_bugyo|E] increases it by #V 1#!\n$EFFECT_LIST_BULLET$[culture|E] [innovation|E] reached Heian [era|E] increases it by #V 25#!\n$EFFECT_LIST_BULLET$[culture|E] [innovation|E] reached Kamakura·Muromachi [era|E] increases it by #V 25#!\n$EFFECT_LIST_BULLET$[culture|E] [innovation|E] reached Sengoku [era|E] increases it by #V 25#!\n$EFFECT_LIST_BULLET$[culture|E] [innovation|E] reached Azuchi-momoyama [era|E] increases it by #V 20#!\n$EFFECT_LIST_BULLET$The #V Progressive System#! [sp_policy|E] increases it by #V 20#!"
+
+   game_concept_spt_bugyo:0 "Kanjo Bugyō"
+   game_concept_spt_bugyo_desc:0 "$councillor_spt_bugyo$ is [councillor|E] who assists with finances and directs acting officers. $councillor_spt_bugyo$ directly affects the number of [sp_policy|E] that can be implemented within [realm|E]."

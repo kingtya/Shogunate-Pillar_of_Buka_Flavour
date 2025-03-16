@@ -1,0 +1,202 @@
+﻿sp_init_special_policy_flag_list = {
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_intensive_firearms
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_laws_of_imagawa
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_laws_of_takeda
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_takeda_red_armour
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_five_admonitions
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_guardian_forces
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_dragon_corps
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_satsuma_military_education
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_expeditionary_support
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_million_minds_motto
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_armoured_militia
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_six_coins_oath
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_cunning_strategy
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_sanada_red_armour
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_kichishitan_sanction
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_govern_for_people
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_partisan_corps
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_buddhist_laws
+	}
+
+}
+
+################
+################
+### 保守政策 ###
+################
+################
+sp_init_conservative_policy_flag_list = {
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_canal_improvements
+	}
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_official_purveyor
+	}
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_improve_militia
+	}
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_foster_system
+	}
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_council_system
+	}
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_buddhism_sanction
+	}
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_castle_construction
+	}
+	add_to_variable_list = {
+		name = sp_conservative_policy_flags
+		target = flag:flag_sp_policy_court_affiliation
+	}
+
+}
+
+################
+################
+### 中道政策 ###
+################
+################
+
+sp_init_neutral_policy_flag_list = {
+	add_to_variable_list = {
+		name = sp_neutral_policy_flags
+		target = flag:flag_sp_policy_direct_daimyo_rule
+	}
+	add_to_variable_list = {
+		name = sp_neutral_policy_flags
+		target = flag:flag_sp_policy_improve_labor
+	}
+	add_to_variable_list = {
+		name = sp_neutral_policy_flags
+		target = flag:flag_sp_policy_deploy_draftee
+	}
+	add_to_variable_list = {
+		name = sp_neutral_policy_flags
+		target = flag:flag_sp_policy_coalition_focus
+	}
+	add_to_variable_list = {
+		name = sp_neutral_policy_flags
+		target = flag:flag_sp_policy_distant_diplomacy
+	}
+	add_to_variable_list = {
+		name = sp_neutral_policy_flags
+		target = flag:flag_sp_policy_post_horse_system
+	}
+	add_to_variable_list = {
+		name = sp_neutral_policy_flags
+		target = flag:flag_sp_policy_thermalism
+	}
+	add_to_variable_list = {
+		name = sp_neutral_policy_flags
+		target = flag:flag_sp_policy_suggestion_box
+	}
+	
+}
+
+################
+################
+### 革新政策 ###
+################
+################
+
+sp_init_progressive_policy_flag_list = {
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_progressive_system
+	}
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_soidier_professionaliztion
+	}
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_easy_commerce
+	}
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_improve_firearms
+	}
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_improve_cavalry
+	}
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_meritocracy
+	}
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_supply_transporter
+	}
+	add_to_variable_list = {
+		name = sp_progressive_policy_flags
+		target = flag:flag_sp_policy_western_sanction
+	}
+
+}
+
+

@@ -1,0 +1,2745 @@
+﻿# 保守
+sp_ai_publish_policy_canal_improvements_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		gold >= 50
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_canal_improvements
+				}
+			}
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_canal_improvements.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_canal_improvements
+				ACTION = add
+				CONFIRM = yes
+			}
+			remove_short_term_gold = 50
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_economical_boom_personality = yes
+			add = 20
+		}
+
+		modifier = {
+			has_trait = compassionate
+			add = 20
+		}
+	}
+}
+sp_ai_publish_policy_official_purveyor_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_official_purveyor
+				}
+			}
+		}
+	}
+
+	cost = {
+		#gold = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_official_purveyor.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_official_purveyor
+				ACTION = add
+				CONFIRM = yes
+			}
+			remove_short_term_gold = 50
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_economical_boom_personality = yes
+			add = 20
+		}
+	}
+}
+sp_ai_publish_policy_improve_militia_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_improve_militia
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_improve_militia.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_improve_militia
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 20
+		}
+		
+	}
+}
+sp_ai_publish_policy_buddhism_sanction_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_buddhism_sanction
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		piety = 25
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_buddhism_sanction.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_buddhism_sanction
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_cautious_personality = yes
+			add = 20
+		}
+
+		modifier = {
+			has_trait = zealous
+			religion = religion:shinto_religion
+			add = 25
+		}
+
+		modifier = {
+			this = character:10029120 # 织田信长
+			factor = 0
+		}
+
+		modifier = {
+			dynasty = dynasty:10000640 # 大友
+			factor = 0
+		}
+	}
+}
+sp_ai_publish_policy_foster_system_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_foster_system
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_foster_system.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_foster_system
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 20
+		}
+
+		
+	}
+}
+sp_ai_publish_policy_council_system_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		highest_held_title_tier > 2
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_council_system
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 25
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_council_system.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_council_system
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_cautious_personality = yes
+			add = 20
+		}
+
+		
+	}
+}
+sp_ai_publish_policy_improve_cavalry_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		OR = {
+			number_maa_regiments_of_base_type = {
+				type = light_cavalry
+				value >= 1
+			}
+			number_maa_regiments_of_base_type = {
+				type = heavy_cavalry
+				value >= 1
+			}
+			number_maa_regiments_of_base_type = {
+				type = archer_cavalry
+				value >= 1
+			}
+		}
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_improve_cavalry
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_improve_cavalry.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_improve_cavalry
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 20
+		}
+
+		
+	}
+}
+sp_ai_publish_policy_castle_construction_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_castle_construction
+				}
+			}
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_castle_construction.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_castle_construction
+				ACTION = add
+				CONFIRM = yes
+			}
+			remove_short_term_gold = 25
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_economical_boom_personality = yes
+			add = 20
+		}
+
+		modifier = {
+			has_trait = content
+			add = 20
+		}
+	}
+}
+##########
+## 中道 ##
+##########
+sp_ai_publish_policy_improve_labor_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_improve_labor
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_improve_labor.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_improve_labor
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_economical_boom_personality = yes
+			add = 20
+		}
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 20
+		}
+
+		
+	}
+}
+sp_ai_publish_policy_direct_daimyo_rule_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_direct_daimyo_rule
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_direct_daimyo_rule.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_direct_daimyo_rule
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 20
+		}
+
+		
+	}
+}
+sp_ai_publish_policy_deploy_draftee_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_deploy_draftee
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_deploy_draftee.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_deploy_draftee
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 20
+		}
+
+		modifier = {
+			ai_has_cautious_personality = yes
+			add = 20
+		}
+
+		
+	}
+}
+sp_ai_publish_policy_post_horse_system_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		gold >= 25
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_post_horse_system
+				}
+			}
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_post_horse_system.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_post_horse_system
+				ACTION = add
+				CONFIRM = yes
+			}
+			remove_short_term_gold = 25
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 20
+		}
+
+		modifier = {
+			ai_has_cautious_personality = yes
+			add = 20
+		}
+
+		
+	}
+}
+sp_ai_publish_policy_distant_diplomacy_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_distant_diplomacy
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 25
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_distant_diplomacy.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_distant_diplomacy
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_cautious_personality = yes
+			add = 20
+		}
+
+		
+	}
+}
+sp_ai_publish_policy_coalition_focus_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_coalition_focus
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 25
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_coalition_focus.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_coalition_focus
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_cautious_personality = yes
+			add = 20
+		}
+
+		
+	}
+}
+sp_ai_publish_policy_suggestion_box_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_suggestion_box
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 10
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_suggestion_box.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_suggestion_box
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 0
+		modifier = {
+			trigger_if = {
+				limit = {
+					exists = root.var:sp_current_policy_points
+				}
+				root.var:sp_current_policy_points >= 75
+			}
+			add = 25
+		}
+	}
+}
+##########
+## 革新 ##
+##########
+sp_ai_publish_policy_easy_commerce_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		OR = {
+			sp_has_oda_margin_trait = yes
+			sp_culture_has_innovation_guilds = yes
+		}
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_easy_commerce
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		gold = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_easy_commerce.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_easy_commerce
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 20
+		}
+
+		modifier = {
+			this = character:10029120 # 织田信长
+			add = 20
+		}
+	}
+}
+sp_ai_publish_policy_soidier_professionaliztion_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		OR = {
+			sp_has_oda_margin_trait = yes
+			sp_culture_has_innovation_royal_armory = yes
+		}
+		number_of_maa_regiments >= recommended_num_maa_regiments_value
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_soidier_professionaliztion
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_soidier_professionaliztion.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_soidier_professionaliztion
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 40
+		}
+
+		modifier = {
+			this = character:10029120 # 织田信长
+			add = 20
+		}
+	}
+}
+sp_ai_publish_policy_improve_firearms_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		number_maa_regiments_of_base_type = {
+			type = archers
+			value >= 1
+		}
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_improve_firearms
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_improve_firearms.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_improve_firearms
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 20
+		}
+
+		
+	}
+}
+sp_ai_publish_policy_meritocracy_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_meritocracy
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_meritocracy.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_meritocracy
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		
+	}
+}
+sp_ai_publish_policy_supply_transporter_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_supply_transporter
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_supply_transporter.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_supply_transporter
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 20
+		}
+		
+	}
+}
+sp_ai_publish_policy_western_sanction_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		religion = religion:christianity_religion
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_western_sanction
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		piety = 25
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_western_sanction.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_western_sanction
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_cautious_personality = yes
+			add = 20
+		}
+		
+		modifier = {
+			dynasty = dynasty:10000640
+			add = 20
+		}
+	}
+}
+##########
+## 御用 ##
+##########
+sp_ai_publish_policy_laws_of_imagawa_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_imagawa_margin_trait = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_laws_of_imagawa
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_laws_of_imagawa.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_laws_of_imagawa
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_laws_of_takeda_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_takeda_margin_trait = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_laws_of_takeda
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_laws_of_takeda.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_laws_of_takeda
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_five_admonitions_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_hojo_margin_trait = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_five_admonitions
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_five_admonitions.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_five_admonitions
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_guardian_forces_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_tokugawa_margin_trait = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_guardian_forces
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_guardian_forces.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_guardian_forces
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_intensive_firearms_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_oda_margin_trait = yes
+	}
+	is_valid = {
+		sp_culture_has_innovation_advanced_bowmaking = yes
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_intensive_firearms
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		#gold = 100
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_intensive_firearms.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_intensive_firearms
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_dragon_corps_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_date_margin_trait = yes
+	}
+	is_valid = {
+		sp_culture_has_innovation_advanced_bowmaking = yes
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_dragon_corps
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 150
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_dragon_corps.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_dragon_corps
+				ACTION = add
+				CONFIRM = yes
+			}
+			spawn_army = {
+				name = event_troop_default_name
+				men_at_arms = {
+					type = dragon_corps
+					stacks = 2
+				}
+				location = root.capital_province
+				origin = root.capital_province
+			}
+			spawn_army = {
+				name = event_troop_default_name
+				men_at_arms = {
+					type = dragon_corps
+					stacks = 2
+				}
+				location = root.capital_province
+				origin = root.capital_province
+			}
+			spawn_army = {
+				name = event_troop_default_name
+				men_at_arms = {
+					type = dragon_corps
+					stacks = 2
+				}
+				location = root.capital_province
+				origin = root.capital_province
+			}
+			spawn_army = {
+				name = event_troop_default_name
+				men_at_arms = {
+					type = dragon_corps
+					stacks = 2
+				}
+				location = root.capital_province
+				origin = root.capital_province
+			}
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_satsuma_military_education_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_shimazu_margin_trait = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_satsuma_military_education
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_satsuma_military_education.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_satsuma_military_education
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_expeditionary_support_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_uesugi_margin_trait = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_expeditionary_support
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_expeditionary_support.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_expeditionary_support
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_armoured_militia_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_chosokabe_margin_trait = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_armoured_militia
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_armoured_militia.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_armoured_militia
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_million_minds_motto_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_mori_margin_trait = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_million_minds_motto
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_million_minds_motto.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_million_minds_motto
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_six_coins_oath_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_sanada_margin_trait = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_six_coins_oath
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_six_coins_oath.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_six_coins_oath
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_kichishitan_sanction_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_otomo_margin_trait_2 = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_kichishitan_sanction
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		piety = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_kichishitan_sanction.sp_policy_points
+			}
+		}
+		set_character_faith_with_conversion = faith:catholic
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_kichishitan_sanction
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_govern_for_people_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_miyoshi_margin_trait = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_govern_for_people
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_govern_for_people.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_govern_for_people
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_partisan_corps_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_suzuki_margin_trait = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_partisan_corps
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		gold = 25
+		#prestige = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_partisan_corps.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_partisan_corps
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_buddhist_laws_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_honganji_margin_trait = yes
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_buddhist_laws
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+		piety = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_buddhist_laws.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effect_to_character = {
+				FLAG = flag:flag_sp_policy_buddhist_laws
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}

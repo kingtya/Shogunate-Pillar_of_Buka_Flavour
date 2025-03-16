@@ -1,0 +1,420 @@
+﻿namespace = pob_events
+
+## 0001 家传特质初始化
+## 0002 建筑初始化
+## 0003 文化传统初始化
+## 0004-0005 退位
+
+pob_events.0001 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		every_living_character = {
+			if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10023003 # 氏亲
+						}
+						this = character:10023003
+					}
+					dynasty = dynasty:10000230
+					is_male = yes
+				}
+				add_trait = imagawa_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10029100
+						}
+						#this = character:10029120 # 信长
+						this = character:10029100 # 信秀
+						this = character:10029118 # 信定
+					}
+					dynasty = dynasty:10000280
+					is_male = yes
+				}
+				add_trait = oda_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10020000
+						}
+						#this = character:10020010 # 信玄
+						this = character:10020000 # 信虎
+					}
+					dynasty = dynasty:10000200
+					is_male = yes
+				}
+				add_trait = takeda_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10016000 # 氏纲
+						}
+						this = character:10016000 
+						this = character:10016001 # 早云
+					}
+					dynasty = dynasty:10000160
+					is_male = yes
+				}
+				add_trait = hojo_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10024006 # 家康
+						}
+						this = character:10024006
+						this = character:10024002 # 广忠
+						this = character:10024000 # 清康
+					}
+					dynasty = dynasty:10000240
+					is_male = yes
+				}
+				add_trait = tokugawa_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10001001
+						}
+						#this = character:10001035 # 政宗
+						#this = character:10001021 # 辉宗
+						this = character:10001001 # 稙宗
+					}
+					dynasty = dynasty:10000010
+					is_male = yes
+				}
+				add_trait = date_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10060000 # 贵久
+						}
+						this = character:10060000 # 贵久
+					}
+					dynasty = dynasty:10000600
+					is_male = yes
+				}
+				add_trait = shimazu_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10032011 # 谦信
+						}
+						this = character:10032011 # 谦信
+						this = character:10032000 # 为景
+					}
+					OR = {
+						AND = {
+							character:10032011 = { # 谦信
+								dynasty = dynasty:10000100
+							}
+							dynasty = dynasty:10000100
+						}
+						dynasty = dynasty:10000320
+					}
+					is_male = yes
+				}
+				add_trait = uesugi_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10056004
+						}
+						this = character:10056004
+					}
+					dynasty = dynasty:10000560
+					is_male = yes
+				}
+				add_trait = mori_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10059102 # 国亲
+						}
+						this = character:10059102 # 国亲
+					}
+					dynasty = dynasty:10000582
+					is_male = yes
+				}
+				add_trait = chosokabe_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10064002 # 宗麟
+						}
+						this = character:10064002 # 宗麟
+					}
+					dynasty = dynasty:10000640
+					is_male = yes
+				}
+				add_trait = otomo_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10021142 # 幸纲
+						}
+						this = character:10021142 # 幸纲
+					}
+					dynasty = dynasty:10000222
+					is_male = yes
+				}
+				add_trait = sanada_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10059003 # 元长
+						}
+						this = character:10059003 # 元长
+					}
+					dynasty = dynasty:10000587
+					is_male = yes
+				}
+				add_trait = miyoshi_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10048550 # 孙市
+						}
+						this = character:10048550 # 孙市
+					}
+					dynasty = dynasty:10000409
+					is_male = yes
+				}
+				add_trait = suzuki_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10042200 # 证如
+						}
+						this = character:10042200 # 元长
+					}
+					dynasty = dynasty:10000430
+					is_male = yes
+				}
+				add_trait = honganji_margin
+			}
+			
+		}
+	}
+}
+
+pob_events.0003 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		every_culture_global = {
+			# Koshin
+			if = {
+				limit = {
+					this = culture:koshin
+				}
+				add_culture_tradition = tradition_mountaineers
+				add_culture_tradition = tradition_horse_breeder
+			}
+			# Oshu
+			else_if = {
+				limit = {
+					this = culture:northern_oshu
+				}
+				add_culture_tradition = tradition_horse_breeder
+				add_culture_tradition = tradition_hunters
+			}
+			else_if = {
+				limit = {
+					this = culture:southern_oshu
+				}
+				add_culture_tradition = tradition_hill_dwellers
+			}
+			# Kanto
+			else_if = {
+				limit = {
+					this = culture:western_kanto
+				}
+				add_culture_tradition = tradition_pastoralists
+				add_culture_tradition = tradition_polders
+			}
+			else_if = {
+				limit = {
+					this = culture:eastern_kanto
+				}
+				add_culture_tradition = tradition_pastoralists
+				add_culture_tradition = tradition_seafaring
+			}
+			else_if = {
+				limit = {
+					this = culture:northern_kanto
+				}
+				add_culture_tradition = tradition_highland_warriors
+			}
+			else_if = {
+				limit = {
+					this = culture:southern_kanto
+				}
+				add_culture_tradition = tradition_only_the_strong
+				add_culture_tradition = tradition_stand_and_fight
+			}
+			# Shikoku
+			else_if = {
+				limit = {
+					this = culture:shikoku
+				}
+				add_culture_tradition = tradition_practiced_pirates
+				add_culture_tradition = tradition_fishermen
+			}
+			# Western Chubu
+			else_if = {
+				limit = {
+					this = culture:western_chubu
+				}
+				add_culture_tradition = tradition_maritime_mercantilism
+				add_culture_tradition = tradition_artisans
+			}
+			# Kyushu
+			else_if = {
+				limit = {
+					this = culture:northern_kyushu
+				}
+				add_culture_tradition = tradition_maritime_mercantilism
+				add_culture_tradition = tradition_practiced_pirates
+			}
+			else_if = {
+				limit = {
+					this = culture:central_kyushu
+				}
+				add_culture_tradition = tradition_xenophilic
+				add_culture_tradition = tradition_esteemed_hospitality
+			}
+			else_if = {
+				limit = {
+					this = culture:southern_kyushu
+				}
+				add_culture_tradition = tradition_quarrelsome
+				add_culture_tradition = tradition_chivalry
+			}
+			# Kinai
+			else_if = {
+ 				limit = {
+					this = culture:northern_kinai
+				}
+				add_culture_tradition = tradition_forest_folk
+				add_culture_tradition = tradition_forbearing
+			}
+			else_if = {
+				limit = {
+					this = culture:central_kinai
+				}
+				add_culture_tradition = tradition_ruling_caste
+				add_culture_tradition = tradition_poetry
+			}
+			else_if = {
+				limit = {
+					this = culture:southern_kinai
+				}
+				add_culture_tradition = tradition_philosopher_culture
+				add_culture_tradition = tradition_poetry
+			}
+			# Tokai
+			else_if = {
+				limit = {
+					this = culture:tokai
+				}
+				add_culture_tradition = tradition_agrarian
+				add_culture_tradition = tradition_loyal_soldiers
+			}
+			# Western Chugoku
+			else_if = {
+				limit = {
+					this = culture:western_chugoku
+				}
+				add_culture_tradition = tradition_seafaring
+			}
+			else_if = {
+				limit = {
+					this = culture:sanyo
+				}
+				add_culture_tradition = tradition_metal_craftsmanship
+				add_culture_tradition = tradition_ancient_miners
+			}
+			else_if = {
+				limit = {
+					this = culture:sanin
+				}
+				add_culture_tradition = tradition_mystical_ancestors
+			}
+			else_if = {
+				limit = {
+					this = culture:western_hokuriku
+				}
+				add_culture_tradition = tradition_collective_lands
+				#add_culture_tradition = tradition_zealous_people
+			}
+			else_if = {
+				limit = {
+					this = culture:eastern_hokuriku
+				}
+				add_culture_tradition = tradition_adaptive_skirmishing
+				add_culture_tradition = tradition_hit_and_run
+			}
+			# Hokkaido
+			else_if = {
+				limit = {
+					this = culture:hokkaido_wajin
+				}
+				add_culture_tradition = tradition_culture_blending
+			}
+			# Dewa
+			else_if = {
+				limit = {
+					this = culture:dewa
+				}
+				add_culture_tradition = tradition_forest_fighters
+			}
+		}
+	}
+}

@@ -1,5 +1,7 @@
 ﻿pob_abdicate_decision_feudal = {
-	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
 	sort_order = 200
 
 	is_shown = {
@@ -21,7 +23,13 @@
 				}
 			}
 		}
-		
+		player_heir = {
+			OR = {
+				is_child_of = root
+				is_grandchild_of = root
+			}
+		}
+			
 	}
 
 	is_valid = {
@@ -29,9 +37,11 @@
 			exists = player_heir
 			player_heir = {
 				dynasty = root.dynasty
-				is_child_of = root
 				is_adult = yes
 			}
+		}
+		NOT = {
+			has_diarchy_type = regency
 		}
 	}
 
@@ -42,21 +52,18 @@
 	effect = {
 		save_scope_as = previous_player
 		custom_tooltip = pob_abdicate_decision_effect_tooltip
-		root = {
-			trigger_event = {
-				id = pob_events.0005
-				days = 1
+		root.player_heir = {
+			save_scope_as = current_player
+		}
+		hidden_effect = {
+			scope:previous_player = {
+				depose = yes
 			}
 		}
-		root.player_heir = {
-			show_as_tooltip = {
-				set_diarch = scope:previous_player
-				set_diarchy_swing = 40
-			}
-			trigger_event = {
-				id = pob_events.0004
-				days = 2
-			}
+		scope:current_player = {
+			start_diarchy = regency
+			set_diarch = scope:previous_player
+			set_diarchy_swing = 40
 		}
 	}
 
@@ -130,7 +137,9 @@
 }
 
 pob_abdicate_decision_clan = {
-	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
 	sort_order = 200
 
 	is_shown = {
@@ -255,8 +264,9 @@ pob_abdicate_decision_clan = {
 
 pob_search_for_western_merchant_decision = {
 	ai_check_interval = 40
-	picture = "gfx/interface/illustrations/decisions/fp3_decision_tax_collector.dds"
-	
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/fp3_decision_tax_collector.dds"
+	}
 	sort_order = 60
 
 	cooldown = { years = 5 }

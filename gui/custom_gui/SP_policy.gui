@@ -1,22 +1,31 @@
 ﻿types sp_types { # 作为一个类型名，没有实际意义
 
-    type sp_open_button = widget {
-        name = "sp_open_button"  # 窗口名，该名称会被用于初始创建窗口 一般与类型名相同即可
-        visible = "[And(And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)), Not(IsGameViewOpen('struggle')))]"
+    type sp_button_tab = widget {
+        name = "sp_button_tab"  # 窗口名，该名称会被用于初始创建窗口 一般与类型名相同即可
+        visible = no
+        
         parentanchor = top|right # 父锚点，即锚点在父窗口的位置
-        position = { 0 535 } # 位置
+        position = { 0 525 } # 位置
         layer = hud_layer
 		size = { 50 0 }
         allow_outside = yes
 
-        using = Animation_ShowHide_Quick # 使用动画模版 此模版是p社自带的，模版本质是可重用的代码，可以不是一个完整的类型，甚至可以只是一句代码
-
+        using = Animation_ShowHide_Quick # 可以不是一个完整的类型，甚至可以只是一句代码
+        
         vbox = {
 			alwaystransparent = no
 			filter_mouse = all
 			visible = "[Not(IsGameViewOpen('barbershop'))]"
 			margin = { 5 10 }
-        
+
+            Background = {
+				visible = "[And(Not(IsRightWindowOpen) , Not(IsGameViewOpen('barbershop')) )]"
+				texture = "gfx/interface/skinned/hud_maintab_bg_middle.dds"
+				spriteType = CorneredTiled
+				texture_density =  2
+				margin = { 0 -20 }
+			}
+
             Background = {
 				visible = "[And(Not(IsRightWindowOpen) , Not(IsGameViewOpen('barbershop')) )]"
 				spriteType = CorneredStretched
@@ -25,17 +34,19 @@
 				texture_density = 2
 				size = { 50 100 }
 				texture = "gfx/interface/skinned/hud_maintab_bg_bottom.dds"
+                margin = { 0 25 }
 			}
 
             widget = {
 				layoutpolicy_horizontal = expanding
-				size = { 0 15 }
+				size = { 0 30 }
 
 				icon = {
 					visible = "[And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode))]"
 					parentanchor = right|vcenter
 					texture = "gfx/interface/skinned/hud_spike_big.dds"
 					size = { 25 15 }
+                    position = { 0 10 }
 
 					using = Animation_ShowHide_Standard
 				}
@@ -57,11 +68,11 @@
                 }
 
                 widget_hud_main_tab = {
-                    name = "sp_tab_my_polices"
 
                     blockoverride "maintab_button"
                     {
                         texture = "gfx/interface/skinned/hud_maintab/maintab_my_policy.dds"
+                        shortcut = "army_merge"
                         onclick = "[GetScriptedGui('sp_init_flag_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                         onclick = "[GetVariableSystem.Toggle( 'show_sp_window' )]"
                         tooltip = sp_tab_my_policies_tt
@@ -71,13 +82,23 @@
             }
         }
     }
+    type sp_button_tab_window = sp_button_tab {
+        name = "sp_button_tab_window"
+        
+        visible = "[And( Not(GetPlayer.GetTopLiege.GetGovernment.HasRule( 'administrative' )) , And(And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)), Not(IsGameViewOpen('struggle'))))]"
+    }
+    type sp_button_tab_window_admin = sp_button_tab {
+        name = "sp_button_tab_window_admin"
 
+        position = { 0 570 } # 位置
+        visible = "[And( GetPlayer.GetTopLiege.GetGovernment.HasRule( 'administrative' ) , And(And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)), Not(IsGameViewOpen('struggle'))))]"
+    }
 
-    type sp_window = window { # 政策窗口的类型
-        name = "sp_window"
+    type sp_policy_window = window { # 政策窗口的类型
+        name = "sp_policy_window"
         allow_outside = yes # 允许内部元素溢出到外部
         position = { 0 0 }
-        movable = yes # 使得窗口可移动 注意：以window为基类的类型，是唯一可以移动的类型 在其他地方写movable = yes是没有意义的
+        movable = no
         parentanchor = center
         layer = middle
         size = { 1300 1000 } # 窗口大小，你也可以使用百分比，使用百分比的话会以父窗口为基准 此处父窗口为玩家屏幕
@@ -136,168 +157,126 @@
 
             vbox = {
                 layoutpolicy_horizontal = expanding # 保证横向填充
+                layoutpolicy_vertical = expanding
 
-                hbox = {
+                hbox = { # 标题栏
                     layoutpolicy_horizontal = expanding # 保证横向填充
                     layoutpolicy_vertical = expanding
-                    hbox = {
+                    maximumsize = { 1300 12 }
+                    button_tab = {
                         layoutpolicy_horizontal = expanding # 保证横向填充
                         layoutpolicy_vertical = expanding
-                        
-                        header_standard = {
-                            layoutpolicy_horizontal = expanding
-                            blockoverride "header_text"
-                            {
-                                text = sp_con_neu_policy_header_text
+                        hbox = {
+                            text_single = {
+                                layoutpolicy_horizontal = expanding
+                                align = center
+                                text = "sp_policy_type_general_header_text"
+                                default_format = "#low"
                             }
-                            blockoverride "button_close"
-                            {
-                                visible = no
+                            text_single = {
+                                align = center
+                                text = "24"
+                                default_format = "#low"
+                                margin_right = 15
+                                min_width = 30
+
+                                using = Animation_Character_Window_Refresh
                             }
                         }
+                        onclick = "[GetVariableSystem.Set( 'sp_show_policy_type_button_tab', 'general' )]"
+                        down = "[Or( Not( GetVariableSystem.Exists('sp_show_policy_type_button_tab') ), GetVariableSystem.HasValue( 'sp_show_policy_type_button_tab', 'general' ))]"
                     }
-                    hbox = {
+                    button_tab = {
                         layoutpolicy_horizontal = expanding # 保证横向填充
                         layoutpolicy_vertical = expanding
-                        
-                        header_standard = {
-                            layoutpolicy_horizontal = expanding
-                            blockoverride "header_text"
-                            {
-                                text = sp_pro_sp_policy_header_text
+                        hbox = {
+                            text_single = {
+                                layoutpolicy_horizontal = expanding
+                                align = center
+                                text = "sp_policy_type_special_header_text"
+                                default_format = "#low"
                             }
-                            blockoverride "button_close"
-                            {
-                                visible = no
+                            text_single = {
+                                align = center
+                                text = "15"
+                                default_format = "#low"
+                                margin_right = 15
+                                min_width = 30
+
+                                using = Animation_Character_Window_Refresh
                             }
                         }
+                        onclick = "[GetVariableSystem.Set( 'sp_show_policy_type_button_tab', 'special' )]"
+                        down = "[GetVariableSystem.HasValue( 'sp_show_policy_type_button_tab', 'special' )]"
                     }
                 }
 
-               
-                hbox = { # 政策分类
+                scrollbox = {
                     layoutpolicy_horizontal = expanding # 保证横向填充
-                    layoutpolicy_vertical = preferred
-                    size = { 100% 100% }
-                    ################
-                    ### 保守政策 ###
-                    ################
-                    vbox = {
-                        layoutpolicy_horizontal = expanding # 保证横向填充
-                        layoutpolicy_vertical = expanding
-                        scrollbox = {
+                    layoutpolicy_vertical = expanding
+                    blockoverride "scrollbox_content" {
+                        vbox = { # 政策分类
                             layoutpolicy_horizontal = expanding # 保证横向填充
-                            layoutpolicy_vertical = preferred
-                            size = { 100% 450 }
-                            blockoverride "scrollbox_content" {
-                                vbox = {
-                                    datamodel = "[GetPlayer.MakeScope.GetList('sp_conservative_policy_flags')]"
-
-                                    item = {
-                                        sp_flag_info_button = {}
+                            sp_policy_list = {}
+                            sp_policy_list = {
+                                blockoverride "sp_policy_list_button" {
+                                    button_expandable_toggle_field = {
+                                        blockoverride "text"
+                                        {
+                                            text = "sp_policy_type_neu"
+                                        }
                                     }
                                 }
-                                
-                            }
-                            blockoverride "scrollbox_empty"
-                            {
-                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('sp_conservative_policy_flags') )]"
-                                text = sp_policy_is_loading_text
-                            }
-                        }
-                    }
-                    ################
-                    ### 中道政策 ###
-                    ################
-                    vbox = {
-                        layoutpolicy_horizontal = expanding # 保证横向填充
-                        layoutpolicy_vertical = expanding
-
-                        scrollbox = {
-                            layoutpolicy_horizontal = expanding # 保证横向填充
-                            layoutpolicy_vertical = preferred
-                            size = { 100% 450 }
-                            blockoverride "scrollbox_content" {
-                                vbox = {
+                                blockoverride "sp_policy_items" {
                                     datamodel = "[GetPlayer.MakeScope.GetList('sp_neutral_policy_flags')]"
-
-                                    item = {
-                                        sp_flag_info_button = {}
+                                }
+                            }
+                            sp_policy_list = {
+                                blockoverride "sp_policy_list_button" {
+                                    button_expandable_toggle_field = {
+                                        blockoverride "text"
+                                        {
+                                            text = "sp_policy_type_pro"
+                                        }
                                     }
                                 }
-                                
-                            }
-                            blockoverride "scrollbox_empty"
-                            {
-                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('sp_neutral_policy_flags') )]"
-                                text = sp_policy_is_loading_text
-                            }
-                        }
-                    }
-                    ################
-                    ### 革新政策 ###
-                    ################
-                    vbox = {
-                        layoutpolicy_horizontal = expanding # 保证横向填充
-                        layoutpolicy_vertical = expanding
-                        scrollbox = {
-                            layoutpolicy_horizontal = expanding # 保证横向填充
-                            layoutpolicy_vertical = preferred
-                            size = { 100% 450 }
-                            blockoverride "scrollbox_content" {
-                                vbox = {
+                                blockoverride "sp_policy_items" {
                                     datamodel = "[GetPlayer.MakeScope.GetList('sp_progressive_policy_flags')]"
-        
-                                    item = {
-                                        sp_flag_info_button = {}
+                                }
+                            }
+                            sp_policy_list = {
+                                visible = "[GetVariableSystem.HasValue( 'sp_show_policy_type_button_tab', 'special' )]"
+                                blockoverride "sp_policy_list_button" {
+                                    button_expandable_toggle_field = {
+                                        blockoverride "text"
+                                        {
+                                            text = "sp_policy_type_spe"
+                                        }
                                     }
                                 }
-                                
-                            }
-                            blockoverride "scrollbox_empty"
-                            {
-                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('sp_progressive_policy_flags') )]"
-                                text = sp_policy_is_loading_text
-                            }
-                        }
-                    }
-                    ################
-                    ### 御用政策 ###
-                    ################
-                    vbox = {
-                        layoutpolicy_horizontal = expanding # 保证横向填充
-                        layoutpolicy_vertical = expanding
-                        scrollbox = {
-                            layoutpolicy_horizontal = expanding # 保证横向填充
-                            layoutpolicy_vertical = preferred
-                            size = { 100% 450 }
-                            blockoverride "scrollbox_content" {
-                                vbox = {
+                                blockoverride "sp_policy_items" {
                                     datamodel = "[GetPlayer.MakeScope.GetList('sp_special_policy_flags')]"
-        
-                                    item = {
-                                        sp_flag_info_button = {}
-                                    }
                                 }
-                                
-                            }
-                            blockoverride "scrollbox_empty"
-                            {
-                                visible = "[IsDataModelEmpty( GetPlayer.MakeScope.GetList('sp_special_policy_flags') )]"
-                                text = sp_policy_is_loading_text
                             }
                         }
                     }
+                    blockoverride "scrollbox_margins"
+					{
+                        margin_right = 10
+					}
                 }
+                
+
+                expand = {}
+                
+            
             }
 
-           
-
-
             hbox = { # 政策信息栏
+                #visible = no
                 layoutpolicy_horizontal = expanding # 保证横向填充
-                layoutpolicy_vertical = preferred
-                size = { 100% 40% }
+                #layoutpolicy_vertical = preferred
+                #size = { 100% 40% }
                 ################
                 ### 人物详情 ###
                 ################
@@ -376,23 +355,18 @@
                         ################
                         ### 政策效果 ###
                         ################
-                        vbox = {
-                            margin = { 0 2 }
-                        }
                         hbox = {
                             layoutpolicy_horizontal = expanding
-                            margin = { 10 0 }
+                            margin = { 0 0 }
                             
-                            text_label_left = {
-                                using = Font_Size_Medium
+                            text_label_center = {
                                 text = sp_effect_header_text
                             }
-                            expand = {}
                         }
                         vbox = {
                             layoutpolicy_horizontal = expanding
                             layoutpolicy_vertical = expanding
-                            margin = { 10 10 }
+                            margin = { 10 5 }
                             background = {
                                 using = Background_Area
                                 margin = { -15 -15 }
@@ -400,7 +374,7 @@
                             scrollbox = {
                                 layoutpolicy_horizontal = preferred
                                 layoutpolicy_vertical = expanding
-                                size = { 0 180 }
+                                size = { 0 182 }
                                 blockoverride "scrollbox_content" {
                                     hbox = {
                                         margin = { 0 -6 }
@@ -419,24 +393,22 @@
                                 }
                             }
                         }
-                       
+                                    
                         ################
                         ### 政策费用 ###
                         ################
                         hbox = {
                             layoutpolicy_horizontal = expanding
-                            margin = { 10 0 }
+                            margin = { 0 0 }
                             
-                            text_label_left = {
-                                using = Font_Size_Medium
+                            text_label_center = {
                                 text = sp_cost_header_text
                             }
-                            expand = {}
                         }
                         vbox = {
                             layoutpolicy_horizontal = expanding
                             layoutpolicy_vertical = expanding
-                            margin = { 10 10 }
+                            margin = { 10 5 }
                             background = {
                                 using = Background_Area
                                 margin = { -15 -15 }
@@ -444,7 +416,7 @@
                             scrollbox = {
                                 layoutpolicy_horizontal = preferred
                                 layoutpolicy_vertical = expanding
-                                size = { 0 73 }
+                                size = { 0 74 }
                                 blockoverride "scrollbox_content" {
                                     hbox = {
                                         margin = { 0 -6 }
@@ -462,8 +434,6 @@
                                 }
                             }
                         }
-                        
-                        
                     }
                     hbox = {
                         layoutpolicy_horizontal = expanding # 保证横向填充
@@ -500,13 +470,17 @@
                     }
                     
                 }
+
+                #expand = {}
             }
+
+            expand = {}
 
         }
     }
 
     type sp_flag_info_button = button_letter {
-        size = { 240 60 }
+        size = { 240 65 }
 
         hbox = {
             spacer = { size = { 15 0 } }
@@ -544,15 +518,52 @@
         onclick = "[GetScriptedGui('sp_count_points_sg').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('sp_selected_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
     }
 
-    type sp_placeholder_for_layout = scrollbox {
-		layoutpolicy_horizontal = expanding
-		layoutpolicy_vertical = expanding
-		blockoverride "scrollbox_content" {
-		}
-	}
+    type sp_policy_list = vbox {
+        visible = "[Or( Not( GetVariableSystem.Exists('sp_show_policy_type_button_tab') ), GetVariableSystem.HasValue( 'sp_show_policy_type_button_tab', 'general' ))]"
+        layoutpolicy_horizontal = expanding
+        layoutpolicy_vertical = expanding
+
+        oncreate = "[BindFoldOutContext]"
+        oncreate = "[PdxGuiFoldOut.Unfold]"
+        
+        block "sp_policy_list_button" {
+            button_expandable_toggle_field = {
+                blockoverride "text"
+                {
+                    text = "sp_policy_type_con"
+                }
+            }
+        }
+
+        vbox = {
+            visible = "[PdxGuiFoldOut.IsUnfolded]"
+
+            layoutpolicy_horizontal = expanding
+            
+            vbox = {
+                layoutpolicy_horizontal = expanding # 保证横向填充
+                size = { 100% 125 }
+                dynamicgridbox = {
+                    block "sp_policy_items" {
+                        datamodel = "[GetPlayer.MakeScope.GetList('sp_conservative_policy_flags')]"
+                    }
+                    
+                    flipdirection = yes
+                    ignoreinvisible = yes
+                    maxhorizontalslots = 5
+                    datamodel_wrap = 5
+
+                    item = {
+                        sp_flag_info_button = {}
+                    }
+                }
+            }
+        }
+    }
 
 }
 
 # 实例化类型对象，只有实例化后才能在scripted_widgets中被使用
-sp_open_button = {}
-sp_window = {}
+sp_button_tab_window = {}
+sp_button_tab_window_admin = {}
+sp_policy_window = {}

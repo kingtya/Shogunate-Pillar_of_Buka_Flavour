@@ -1,0 +1,23 @@
+﻿l_english:
+
+    SP_AI_THEIR_LOVER: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is very close to [target.GetHerHis] liege: $VALUE|=+0$"
+    SP_AI_THEIR_FRIEND: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is a friend of [target.GetHerHis] liege: $VALUE|=+0$"
+    SP_AI_THEIR_RIVAL: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is a rival of [target.GetHerHis] liege: $VALUE|=+0$"
+    SP_AI_THEIR_CHILD: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is a child of [target.GetHerHis] liege: $VALUE|=+0$"
+    SP_AI_THEIR_RELATIVE: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is a relative of [target.GetHerHis] liege: $VALUE|=+0$"
+    SP_AI_MY_LIEGES_KNIGHT: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is [target.GetHerHis] liege's [target.GetLiege.Custom('KnightCulture')]: $VALUE|=+0$"
+
+    SP_AI_MY_LIEGES_COMMANDER: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is a commander of [target.GetHerHis] liege: $VALUE|=+0$"
+    SP_AI_ON_THE_COUNCIL: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is on the council: $VALUE|=+0$"
+    SP_AI_COURT_PHYSICIAN: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is the court physician of [target.GetHerHis] liege: $VALUE|=+0$"
+    SP_AI_LEAVING_MY_SPOUSE: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] will leave [target.GetHerHis] spouse: $VALUE|=+0$"
+    SP_AI_LEAVING_MY_CHILD: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] will leave [target.GetHerHis] child: $VALUE|=+0$"
+    SP_AI_MARRIED_MATRILINIALLY: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is in a [matrilineal|E] marriage: $VALUE|=+0$"
+    SP_AI_MARRIED_PATRILINIALLY: "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is in a [patrilineal|E] marriage: $VALUE|=+0$"
+    SP_AI_YOU_ARE_THE_SOVEREIGN: "You are the sovereign of [SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]: $VALUE|=+0$"
+    SCHEME_pob_persuade_and_entice_STRONG_HOOK_PENALTY:0 "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is loyal to [target.GetHerHis] [target.Custom2('RelationToMeShort', target.GetLiege)]: $VALUE|+0=$"
+    SCHEME_pob_persuade_and_entice_LOYAL_PENALTY:0 "Target has the [GetTrait('loyal').GetName( owner.Self )] trait: $VALUE|+0=$"
+
+    SCHEME_REALM_SIZE:0 "Realm Size: $VALUE|+0=$"
+
+    SCHEME_SP_POLICY_IMPROVE_MILITIA:0 "Militia Strengthening: $VALUE|+0=$"

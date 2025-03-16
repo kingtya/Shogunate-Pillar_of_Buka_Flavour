@@ -1,0 +1,187 @@
+﻿### Witch Ritual Intent 
+
+woc_council_status_quo_intent = {
+	icon = intent_gain_renown
+	
+	auto_complete = yes
+
+	ai_will_do = {
+		value = 25
+	}
+
+	scripted_animation = {
+		animation = idle
+	}
+}
+
+woc_council_support_liege_intent = {
+	icon = befriend_intent
+	
+	auto_complete = yes
+
+	ai_will_do = {
+		value = 25
+		if = {
+			limit = {
+				exists = root.liege
+				opinion = {
+					target = liege
+					value < -25
+				}
+			}
+			add = 25
+		}
+		if = {
+			limit = {
+				exists = root.liege
+				opinion = {
+					target = liege
+					value < -50
+				}
+			}
+			add = 35
+		}
+		if = {
+			limit = {
+				exists = root.liege
+				opinion = {
+					target = liege
+					value > 25
+				}
+			}
+			add = -15
+		}
+		if = {
+			limit = {
+				exists = root.liege
+				opinion = {
+					target = liege
+					value > 50
+				}
+			}
+			add = -15
+		}
+	}
+
+	scripted_animation = {
+		animation = idle
+	}
+}
+
+woc_council_expand_vassals_right_intent = {
+	icon = intent_impress
+	
+	is_shown = {
+		is_alive = yes
+		is_imprisoned = no
+		NOT = { scope:special_option ?= flag:woc_council_normal }
+	}
+
+	ai_will_do = {
+		value = 50
+		if = {
+			limit = {
+				exists = root.liege
+				opinion = {
+					target = liege
+					value < -25
+				}
+			}
+			add = 25
+		}
+		if = {
+			limit = {
+				exists = root.liege
+				opinion = {
+					target = liege
+					value < -50
+				}
+			}
+			add = 25
+		}
+		if = {
+			limit = {
+				exists = root.liege
+				opinion = {
+					target = liege
+					value > 25
+				}
+			}
+			add = -15
+		}
+		if = {
+			limit = {
+				exists = root.liege
+				opinion = {
+					target = liege
+					value > 50
+				}
+			}
+			add = -15
+		}
+	}
+
+	scripted_animation = {
+		animation = personality_rational
+	}
+}
+
+woc_council_devotion_intent = {
+	icon = pious_intent
+	
+	is_shown = {
+		is_alive = yes
+		is_imprisoned = no
+		NOT = { scope:special_option ?= flag:woc_council_urgent }
+	}
+
+	ai_will_do = {
+		value = ai_zeal
+		if = {
+			limit = {
+				has_trait = zealous
+			}
+			add = 250
+		}
+	}
+
+	scripted_animation = {
+		animation = personality_zealous
+	}
+}
+
+woc_council_fouse_realm_intent = {
+	icon = justice_intent
+	
+	is_shown = {
+		is_alive = yes
+		is_imprisoned = no
+		NOT = { scope:special_option ?= flag:woc_council_urgent }
+	}
+
+	ai_will_do = {
+		value = ai_rationality
+	}
+
+	scripted_animation = {
+		animation = admiration
+	}
+}
+
+woc_council_fouse_military_intent = {
+	icon = recruit_knights_intent
+	
+	is_shown = {
+		is_alive = yes
+		is_imprisoned = no
+		NOT = { scope:special_option ?= flag:woc_council_urgent }
+	}
+
+	ai_will_do = {
+		value = ai_boldness
+	}
+
+	scripted_animation = {
+		animation = marshal
+	}
+}

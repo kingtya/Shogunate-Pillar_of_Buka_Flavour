@@ -1,0 +1,41 @@
+﻿l_simp_chinese:
+
+    flag_sp_policy_direct_daimyo_rule_name:0 "#V 大名亲政#!"
+    flag_sp_policy_direct_daimyo_rule_desc:0 "大名亲自处理领国政务，不再委托给家宰或其他重臣。"
+    sp_policy_direct_daimyo_rule_modifier:0 "大名亲政"
+    sp_policy_direct_daimyo_rule_modifier_desc:0 "此人躬亲于政。"
+
+    flag_sp_policy_improve_labor_name:0 "#V 夫役强化#!"
+    flag_sp_policy_improve_labor_desc:0 "又称工役。按照乡村民户人口多寡，征调民夫，从事劳役。"
+    sp_policy_improve_labor_modifier:0 "夫役强化"
+    sp_policy_improve_labor_modifier_desc:0 "此人额外征召了领地的民夫。"
+
+    flag_sp_policy_deploy_draftee_name:0 "#V 军役众配备#!"
+    flag_sp_policy_deploy_draftee_desc:0 "武田信玄曾将领民分为“军役众”和“总百姓”。“军役众”参军以换取免除部分税赋徭役的酬劳，“总百姓”可以不打仗，但需要承担正常的税赋和徭役。"
+    sp_policy_deploy_draftee_modifier:0 "军役众配备"
+    sp_policy_deploy_draftee_modifier_desc:0 "此人在领民兵外额外组建了一套常备军制。"
+
+    flag_sp_policy_post_horse_system_name:0 "#V 传马制#!"
+    flag_sp_policy_post_horse_system_desc:0 "传马制是一种古代的交通通讯制度，主要用于驿站之间的信息传递。它在唐朝时期发展得较为繁盛，很可能是通过遣唐使传入日本的。"
+    sp_policy_post_horse_system_modifier:0 "传马制"
+    sp_policy_post_horse_system_modifier_desc:0 "此人在领地内广设驿站。"
+
+    flag_sp_policy_distant_diplomacy_name:0 "#V 远交近攻策#!"
+    flag_sp_policy_distant_diplomacy_desc:0 "一种古老的外交策略，核心在于先攻击地理位置较近的敌人，同时与地理位置较远的国家建立友好关系。"
+    sp_policy_distant_diplomacy_modifier:0 "远交近攻策"
+    sp_policy_distant_diplomacy_modifier_desc:0 "此人加强了外交的重要性。"
+
+    flag_sp_policy_suggestion_box_name:0 "#V 目安箱#!"
+    flag_sp_policy_suggestion_box_desc:0 "以施政参考意见和收集社会情况等为目的，为收集百姓的进言而设置的意见箱及其制度。"
+    sp_policy_suggestion_box_modifier:0 "目安箱"
+    sp_policy_suggestion_box_modifier_desc:0 "此人允许领民上达建议信。"
+
+    flag_sp_policy_coalition_focus_name:0 "#V 合纵策#!"
+    flag_sp_policy_coalition_focus_desc:0 "合纵即“合众弱以攻一强“，目的在于联合许多弱国抵抗一个强国，以防止强国的兼并，实质上是各势力之间为互相拉拢而展开的外交、[martial|E]斗争。"
+    sp_policy_coalition_focus_modifier:0 "合纵策"
+    sp_policy_coalition_focus_modifier_desc:0 "此人着力拉拢周边国众和大名。"
+
+    flag_sp_policy_thermalism_name:0 "#V 温泉疗法#!"
+    flag_sp_policy_thermalism_desc:0 "日本自古以来就有温泉疗养的传统。早在奈良时代（710年至784年），就出现了用温泉作为“神水”为病患治疗的记录。江户时代（1603年至1868年），温泉作为一种治疗手段被广泛利用。"
+    sp_policy_thermalism_modifier:0 "温泉疗法"
+    sp_policy_thermalism_modifier_desc:0 "此人利用领内的温泉疗养。"

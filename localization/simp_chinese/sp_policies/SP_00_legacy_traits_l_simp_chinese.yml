@@ -1,0 +1,65 @@
+﻿l_simp_chinese:
+
+    trait_imagawa_margin:0 "今川传"
+    trait_imagawa_margin_desc:0 "今川氏发迹于三河国碧海郡今川，乃清和源氏一脉，于南北朝时代作为足利氏一门支援北朝对抗南朝，继而支持室町足利幕府。传言道“公方不继吉良继，吉良不继今川继”。"
+    TRAIT_FLAG_DESC_trait_imagawa_margin:0 "解锁#V 传播公家嗜好#![decision|E]（未实装）\n解锁#V 今川假名目录[sp_policy|E]#!\n如果满足要求，为领主解锁#V 今川假名目录[sp_policy|E]#!"
+
+    trait_takeda_margin:0 "武田传"
+    trait_takeda_margin_desc:0 "武田氏发迹于甲斐国武田乡，乃清和源氏新罗三郎义光后裔。清光子信义就任甲斐守护，此后该职由武田氏世代相继。"
+    TRAIT_FLAG_DESC_trait_takeda_margin:0 "解锁#V 甲州法度次第[sp_policy|E]#!\n如果满足要求，为领主解锁#V 甲州法度次第[sp_policy|E]#!"
+
+    trait_oda_margin:0 "织田传"
+    trait_oda_margin_desc:0 "织田氏发祥于越前国织田庄，本姓忌部氏，与甲斐氏、朝仓氏同为斯波武卫家效力，室町时代为尾张守护代。弹正忠家本为织田氏庶流，传自信长祖父三代，趁乱世之机坐大。"
+    TRAIT_FLAG_DESC_trait_oda_margin:0 "解锁#V 火器集中运用[sp_policy|E]#!\n如果满足要求，为领主解锁#V 火器集中运用[sp_policy|E]#!\n提前解锁#V 兵农分离[sp_policy|E]#!和#V 乐市乐座[sp_policy|E]#! "
+
+    trait_hojo_margin:0 "后北条传"
+    trait_hojo_margin_desc:0 "始于原为京都御家人的伊势新九郎宗瑞，其因平定今川家内乱有功受封城主。统一相模后，二代当主氏纲改姓北条以巩固统治，因与镰仓时代的幕府执权北条氏没有直接血缘关系，故又称后北条氏。"
+    TRAIT_FLAG_DESC_trait_hojo_margin:0 "解锁#V 五条训诫[sp_policy|E]#!\n如果满足要求，为领主解锁#V 五条训诫[sp_policy|E]#!"
+
+    trait_tokugawa_margin:0 "德川传"
+    trait_tokugawa_margin_desc:0 "始于德川家康，前身是三河国豪族松平氏。家康的祖父清康致力于称霸三河，被后世誉为“如果活到三十岁当可取得天下”。家康发迹后自称清和源氏支流得川氏后裔，改一字为德川。"
+    TRAIT_FLAG_DESC_trait_tokugawa_margin:0 "解锁#V 旗本先手役[sp_policy|E]#!\n如果满足要求，为领主解锁#V 旗本先手役[sp_policy|E]#!"
+
+    trait_uesugi_margin:0 "上杉传#weak （长尾家）#!"
+    trait_uesugi_margin_desc:0 "上杉氏原为公家，后在关东管治。扇谷、山内上杉家相继在后北条家侵攻下灭亡，宪政将关东管领一职授予长尾景虎（上杉谦信），自此原为越后守护代的长尾家成为上杉氏的嫡流。"
+    TRAIT_FLAG_DESC_trait_uesugi_margin:0 "解锁#V 远征军支援[sp_policy|E]#!\n如果满足要求，为领主解锁#V 远征军支援[sp_policy|E]#!"
+
+    trait_shimazu_margin:0 "岛津传"
+    trait_shimazu_margin_desc:0 "岛津氏发源于日向国岛津庄，原为渡来人，属秦氏惟宗氏一脉，于镰仓幕府时期出任九州地头，全盛时以萨摩国为中心统治南九州。"
+    TRAIT_FLAG_DESC_trait_shimazu_margin:0 "解锁#V 萨摩军法[sp_policy|E]#!\n如果满足要求，为领主解锁#V 萨摩军法[sp_policy|E]#!"
+
+    trait_date_margin:0 "伊达传"
+    trait_date_margin_desc:0 "伊达氏发源于陆奥国伊达郡，乃藤原氏山阴流一脉。自镰仓时代起到江户时代皆为东北地方举足轻重的大名。"
+    TRAIT_FLAG_DESC_trait_date_margin:0 "解锁#V 编制龙骑兵[sp_policy|E]#!\n如果满足要求，为领主解锁#V 编制龙骑兵[sp_policy|E]#!"
+
+    trait_mori_margin:0 "毛利传"
+    trait_mori_margin_desc:0 "本姓大江氏。发源于镰仓时代的政所别当大江广元四子季光。安艺毛利氏本是当地小豪族，传至元就向东击败尼子氏，向西消灭篡夺大内氏的陶晴贤，一跃成为“西国的霸主”。"
+    TRAIT_FLAG_DESC_trait_mori_margin:0 "解锁#V 百万一心之训[sp_policy|E]#!\n如果满足要求，为领主解锁#V 百万一心之训[sp_policy|E]#!"
+
+    trait_chosokabe_margin:0 "长宗我部传"
+    trait_chosokabe_margin_desc:0 "土佐国豪族，进入当地时期不明。曾于兼序时代遭入侵而灭亡，国亲在一条家的支持下复兴长宗我部氏。传至元亲时一统四国地区。"
+    TRAIT_FLAG_DESC_trait_chosokabe_margin:0 "解锁#V 一领具足制[sp_policy|E]#!\n如果满足要求，为领主解锁#V 一领具足制[sp_policy|E]#!"
+
+    trait_otomo_margin:0 "大友传"
+    trait_otomo_margin_desc:0 "大友氏发源于相模国大友庄，相传家祖能直为源赖朝后裔，镰仓时代到战国时代以九州丰后国为根据地，一度支配北九州。传自宗麟时代与西方关系密切，被传教士赞誉为“日本第一英主”。"
+    TRAIT_FLAG_DESC_trait_otomo_margin:0 "解锁#V 吉立支丹保护[sp_policy|E]#!\n如果满足要求，为领主解锁#V 吉立支丹保护[sp_policy|E]#!\n提前解锁#V 南蛮保护#![sp_policy|E]"
+
+    trait_sanada_margin:0 "真田传"
+    trait_sanada_margin_desc:0 "始于真田幸纲（隆），原为信浓豪族海野氏分家。海野氏早年为镰仓幕府御家人，随即衰落，被武田家灭亡后，幸纲继承家门。真田家辛纲、昌幸、信繁（幸村）一门三代均为将略之才。幸村于大坂之战以寡击众，号“日本第一兵”。"
+    TRAIT_FLAG_DESC_trait_sanada_margin:0 "解锁#V 六文钱誓言[sp_policy|E]#!\n如果满足要求，为领主解锁#V 六文钱誓言[sp_policy|E]#!\n解锁#V 表里军略[sp_policy|E]#!\n如果满足要求，为领主解锁#V 表里军略[sp_policy|E]#!\n解锁#V 编制真田赤备[sp_policy|E]#!\n如果满足要求，为领主解锁#V 编制真田赤备[sp_policy|E]#!"
+
+    trait_miyoshi_margin:0 "三好传"
+    trait_miyoshi_margin_desc:0 "三好氏发源于阿波国三好郡，据传出自阿波小笠原氏，原为管领细川氏家臣。元长时成为细川家重臣，传自长庆时代达到巅峰，一统近畿地区，一度号称“日本副王”，又随着长庆过世迅速陨落。"
+    TRAIT_FLAG_DESC_trait_miyoshi_margin:0 "解锁#V 理世安民[sp_policy|E]#!\n如果满足要求，为领主解锁#V 理世安民[sp_policy|E]#!"
+
+    trait_toyotomi_margin:0 "丰臣传"
+    trait_toyotomi_margin_desc:0 "始于木下秀吉。秀吉原为织田信长家臣，凭智略崛起，本能寺之变后击败明智光秀，统一天下，号丰臣，推行太阁检地、刀狩，奠定中央集权。家业传至秀赖，关原之战败于德川家康，终于大坂之阵，二世而亡。"
+    TRAIT_FLAG_DESC_trait_toyotomi_margin:0 "解锁#V 检地刀狩[sp_policy|E]#!\n如果满足要求，为领主解锁#V 检地刀狩[sp_policy|E]#!"
+
+    trait_suzuki_margin:0 "铃木传"
+    trait_suzuki_margin_desc:0 "纪伊国豪族，据称出自熊野水军一脉，领杂贺众佣兵集团纵横近畿。重秀时联合本愿寺抗衡织田信长，凭铁炮战术屡挫强敌，一度掌控纪州铁炮贸易命脉，终因内斗削弱实力，遭丰臣秀吉调略分击而臣服，佣兵自治传奇遂告终结。"
+    TRAIT_FLAG_DESC_trait_suzuki_margin:0 "解锁#V 杂贺规约[sp_policy|E]#!\n如果满足要求，为领主解锁#V 杂贺规约[sp_policy|E]#!"
+
+    trait_honganji_margin:0 "本愿寺传"
+    trait_honganji_margin_desc:0 "始于觉如，原为净土真宗本山势力。亲鸾创教后，本愿寺逐步壮大，至显如时形成宗教武装，与战国大名抗衡。石山合战中，凭借一向一揆之力抵御织田信长十余年，势力遍布畿内北陆。后因内部分裂，势衰归顺丰臣，终入德川体制。"
+    TRAIT_FLAG_DESC_trait_honganji_margin:0 "解锁#V 机法一体[sp_policy|E]#!\n如果满足要求，为领主解锁#V 机法一体[sp_policy|E]#!"
