@@ -98,7 +98,7 @@
         name = "sp_policy_window"
         allow_outside = yes # 允许内部元素溢出到外部
         position = { 0 0 }
-        movable = no
+        movable = yes
         parentanchor = center
         layer = middle
         size = { 1300 1000 } # 窗口大小，你也可以使用百分比，使用百分比的话会以父窗口为基准 此处父窗口为玩家屏幕
@@ -273,7 +273,6 @@
             }
 
             hbox = { # 政策信息栏
-                #visible = no
                 layoutpolicy_horizontal = expanding # 保证横向填充
                 #layoutpolicy_vertical = preferred
                 #size = { 100% 40% }
@@ -295,10 +294,10 @@
                         }
                         blockoverride "scrollbox_content" {
                             hbox = {
-                                margin = { 0 15}
+                                margin = { 0 15 }
                             }
                             widget_councillor_item = {
-                                size = { 340 0 }
+                                size = { 260 250 }
                                 visible = "[AccessCouncilWindow.IsPlayerCouncilShown)]"
                                 #layoutpolicy_horizontal = expanding
                                 layoutpolicy_vertical = expanding
@@ -326,14 +325,13 @@
                                     using = Background_Area
                                     margin = { 0 -15 }
                                 }
-                                margin = { 10 20 }
+                                spacing = 5
+                                margin = { 10 10 }
                                 icon = {
                                     name = "icon_policy_point"
                                     size = { 30 30 }
                                     texture = "gfx/interface/icons/symbols/icon_policy_point.dds"
                                 }
-
-                                spacing = 5
 
                                 text_single = {
                                     text = sp_current_policy_points

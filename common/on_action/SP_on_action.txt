@@ -25,6 +25,7 @@ realm_maintenance_quarterly_pulse = {
 		sp_policy_laws_of_imagawa_pulse
 		sp_policy_laws_of_takeda_pulse 
 		sp_policy_five_admonitions_pulse
+		pob_retainer_task_submission_pulse
 	}
 }
 
@@ -164,6 +165,21 @@ sp_policy_five_admonitions_pulse = {
 					}
 				}
 			}
+		}
+	}
+}
+
+pob_retainer_task_submission_pulse = {
+	trigger = {
+		is_ai = no
+	}
+	effect = {
+		every_councillor = {
+			limit = {
+				is_capable_adult = yes
+			}
+			trigger_event = pob_events.0010
+			add_character_modifier = debug_modifier
 		}
 	}
 }

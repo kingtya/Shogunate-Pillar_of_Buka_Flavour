@@ -1,4 +1,17 @@
-﻿################
+﻿sp_vassal_react_to_conservative_policies_effect = {
+	sp_parochial_vassal_towards_policy_opinion_effect = {
+		POLICY_TYPE_SW_1 = no
+		POLICY_TYPE_SW_2 = no
+		OPINION = 10
+	}
+	sp_courtly_vassal_towards_policy_opinion_effect = {
+		POLICY_TYPE_SW_1 = no
+		POLICY_TYPE_SW_2 = no
+		OPINION = 5
+	}
+}
+
+################
 ### 政策复位 ###
 ################
 sp_clear_flag_list = {

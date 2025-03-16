@@ -31,6 +31,7 @@
 			is_adult = yes
 			is_imprisoned = no
 		}
+		pob_has_any_running_task_scheme = no
 	}
 
 	valid = {

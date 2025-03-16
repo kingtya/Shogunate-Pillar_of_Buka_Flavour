@@ -1,13 +1,13 @@
 ﻿l_english:
 
-   sp_tab_my_policies_tt:0 "#T Policy#!" #NT!
+   sp_tab_my_policies_tt:0 "#T Policies#!" #NT!
    sp_policy_window_head_text:0 "Policies" #NT!
    sp_policy_type_general_header_text:0 "General"
    sp_policy_type_special_header_text:1 "Special"
-   sp_policy_type_con:1 "Conservative [sp_policy|E]"
-   sp_policy_type_neu:1 "Neutral [sp_policy|E]"
-   sp_policy_type_pro:1 "Progressive [sp_policy|E]"
-   sp_policy_type_spe:1 "Special [sp_policy|E]"
+   sp_policy_type_con:1 "Conservative [sp_policies|E]"
+   sp_policy_type_neu:1 "Neutral [sp_policies|E]"
+   sp_policy_type_pro:1 "Progressive [sp_policies|E]"
+   sp_policy_type_spe:1 "Special [sp_policies|E]"
    sp_policy_is_loading_text:0 "Policies Loading"
    sp_effect_header_text:0 "Effects"
    sp_cost_header_text:1 "Cost"

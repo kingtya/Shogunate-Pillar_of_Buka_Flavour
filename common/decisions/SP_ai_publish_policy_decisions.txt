@@ -47,7 +47,7 @@ sp_ai_publish_policy_canal_improvements_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_canal_improvements
 				ACTION = add
 				CONFIRM = yes
@@ -127,7 +127,7 @@ sp_ai_publish_policy_official_purveyor_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_official_purveyor
 				ACTION = add
 				CONFIRM = yes
@@ -202,7 +202,7 @@ sp_ai_publish_policy_improve_militia_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_improve_militia
 				ACTION = add
 				CONFIRM = yes
@@ -277,7 +277,7 @@ sp_ai_publish_policy_buddhism_sanction_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_buddhism_sanction
 				ACTION = add
 				CONFIRM = yes
@@ -367,7 +367,7 @@ sp_ai_publish_policy_foster_system_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_foster_system
 				ACTION = add
 				CONFIRM = yes
@@ -444,7 +444,7 @@ sp_ai_publish_policy_council_system_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_council_system
 				ACTION = add
 				CONFIRM = yes
@@ -534,7 +534,7 @@ sp_ai_publish_policy_improve_cavalry_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_improve_cavalry
 				ACTION = add
 				CONFIRM = yes
@@ -606,7 +606,7 @@ sp_ai_publish_policy_castle_construction_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_castle_construction
 				ACTION = add
 				CONFIRM = yes
@@ -689,7 +689,7 @@ sp_ai_publish_policy_improve_labor_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_improve_labor
 				ACTION = add
 				CONFIRM = yes
@@ -770,7 +770,7 @@ sp_ai_publish_policy_direct_daimyo_rule_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_direct_daimyo_rule
 				ACTION = add
 				CONFIRM = yes
@@ -846,7 +846,7 @@ sp_ai_publish_policy_deploy_draftee_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_deploy_draftee
 				ACTION = add
 				CONFIRM = yes
@@ -924,7 +924,7 @@ sp_ai_publish_policy_post_horse_system_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_post_horse_system
 				ACTION = add
 				CONFIRM = yes
@@ -1006,7 +1006,7 @@ sp_ai_publish_policy_distant_diplomacy_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_distant_diplomacy
 				ACTION = add
 				CONFIRM = yes
@@ -1082,7 +1082,7 @@ sp_ai_publish_policy_coalition_focus_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_coalition_focus
 				ACTION = add
 				CONFIRM = yes
@@ -1158,7 +1158,7 @@ sp_ai_publish_policy_suggestion_box_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_suggestion_box
 				ACTION = add
 				CONFIRM = yes
@@ -1243,7 +1243,7 @@ sp_ai_publish_policy_easy_commerce_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_easy_commerce
 				ACTION = add
 				CONFIRM = yes
@@ -1327,7 +1327,7 @@ sp_ai_publish_policy_soidier_professionaliztion_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_soidier_professionaliztion
 				ACTION = add
 				CONFIRM = yes
@@ -1410,7 +1410,7 @@ sp_ai_publish_policy_improve_firearms_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_improve_firearms
 				ACTION = add
 				CONFIRM = yes
@@ -1486,7 +1486,7 @@ sp_ai_publish_policy_meritocracy_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_meritocracy
 				ACTION = add
 				CONFIRM = yes
@@ -1557,7 +1557,7 @@ sp_ai_publish_policy_supply_transporter_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_supply_transporter
 				ACTION = add
 				CONFIRM = yes
@@ -1633,7 +1633,7 @@ sp_ai_publish_policy_western_sanction_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_western_sanction
 				ACTION = add
 				CONFIRM = yes
@@ -1664,289 +1664,17 @@ sp_ai_publish_policy_western_sanction_decision = {
 ##########
 ## 御用 ##
 ##########
-sp_ai_publish_policy_laws_of_imagawa_decision = {
-	ai_goal = yes
-	cooldown = { years = 5 }
-	is_shown = {
-		is_ai = yes
-		has_game_rule = enable_ai_special_policies
-		sp_has_imagawa_margin_trait = yes
-	}
-	is_valid = {
-		trigger_if = {
-			limit = {
-				exists = root.var:sp_current_policy_points
-			}
-			#root.var:sp_current_policy_points < root.sp_total_policy_points
-		}
-		trigger_if = {
-			limit = {
-				has_variable_list = sp_released_policy_flags
-			}
-			NOT = {
-				any_in_list = {
-					variable = sp_released_policy_flags
-					this = flag:flag_sp_policy_laws_of_imagawa
-				}
-			}
-		}
-	}
-
-	minimum_cost = {
-		prestige = 100
-	}
-
-	effect = {
-		if = {
-			limit = {
-				NOT = { exists = root.var:sp_current_policy_points }
-			}
-			set_variable = {
-				name = sp_current_policy_points
-				value = 0
-			}
-		}
-		set_variable = {
-			name = sp_policy_will_be_points
-			value = {
-				value = root.var:sp_current_policy_points
-				#add = flag:flag_sp_policy_laws_of_imagawa.sp_policy_points
-			}
-		}
-		if = {
-			limit = {
-				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
-			}
-			sp_set_policy_effect_to_character = {
-				FLAG = flag:flag_sp_policy_laws_of_imagawa
-				ACTION = add
-				CONFIRM = yes
-			}
-		}
-	}
-
-	ai_potential = {
-		always = yes
-	}
-
-	ai_will_do = {
-		base = 100
-	}
-}
-sp_ai_publish_policy_laws_of_takeda_decision = {
-	ai_goal = yes
-	cooldown = { years = 5 }
-	is_shown = {
-		is_ai = yes
-		has_game_rule = enable_ai_special_policies
-		sp_has_takeda_margin_trait = yes
-	}
-	is_valid = {
-		trigger_if = {
-			limit = {
-				exists = root.var:sp_current_policy_points
-			}
-			#root.var:sp_current_policy_points < root.sp_total_policy_points
-		}
-		trigger_if = {
-			limit = {
-				has_variable_list = sp_released_policy_flags
-			}
-			NOT = {
-				any_in_list = {
-					variable = sp_released_policy_flags
-					this = flag:flag_sp_policy_laws_of_takeda
-				}
-			}
-		}
-	}
-
-	minimum_cost = {
-		prestige = 100
-	}
-
-	effect = {
-		if = {
-			limit = {
-				NOT = { exists = root.var:sp_current_policy_points }
-			}
-			set_variable = {
-				name = sp_current_policy_points
-				value = 0
-			}
-		}
-		set_variable = {
-			name = sp_policy_will_be_points
-			value = {
-				value = root.var:sp_current_policy_points
-				#add = flag:flag_sp_policy_laws_of_takeda.sp_policy_points
-			}
-		}
-		if = {
-			limit = {
-				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
-			}
-			sp_set_policy_effect_to_character = {
-				FLAG = flag:flag_sp_policy_laws_of_takeda
-				ACTION = add
-				CONFIRM = yes
-			}
-		}
-	}
-
-	ai_potential = {
-		always = yes
-	}
-
-	ai_will_do = {
-		base = 100
-	}
-}
-sp_ai_publish_policy_five_admonitions_decision = {
-	ai_goal = yes
-	cooldown = { years = 5 }
-	is_shown = {
-		is_ai = yes
-		has_game_rule = enable_ai_special_policies
-		sp_has_hojo_margin_trait = yes
-	}
-	is_valid = {
-		trigger_if = {
-			limit = {
-				exists = root.var:sp_current_policy_points
-			}
-			#root.var:sp_current_policy_points < root.sp_total_policy_points
-		}
-		trigger_if = {
-			limit = {
-				has_variable_list = sp_released_policy_flags
-			}
-			NOT = {
-				any_in_list = {
-					variable = sp_released_policy_flags
-					this = flag:flag_sp_policy_five_admonitions
-				}
-			}
-		}
-	}
-
-	minimum_cost = {
-		prestige = 100
-	}
-
-	effect = {
-		if = {
-			limit = {
-				NOT = { exists = root.var:sp_current_policy_points }
-			}
-			set_variable = {
-				name = sp_current_policy_points
-				value = 0
-			}
-		}
-		set_variable = {
-			name = sp_policy_will_be_points
-			value = {
-				value = root.var:sp_current_policy_points
-				#add = flag:flag_sp_policy_five_admonitions.sp_policy_points
-			}
-		}
-		if = {
-			limit = {
-				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
-			}
-			sp_set_policy_effect_to_character = {
-				FLAG = flag:flag_sp_policy_five_admonitions
-				ACTION = add
-				CONFIRM = yes
-			}
-		}
-	}
-
-	ai_potential = {
-		always = yes
-	}
-
-	ai_will_do = {
-		base = 100
-	}
-}
-sp_ai_publish_policy_guardian_forces_decision = {
-	ai_goal = yes
-	cooldown = { years = 5 }
-	is_shown = {
-		is_ai = yes
-		has_game_rule = enable_ai_special_policies
-		sp_has_tokugawa_margin_trait = yes
-	}
-	is_valid = {
-		trigger_if = {
-			limit = {
-				exists = root.var:sp_current_policy_points
-			}
-			#root.var:sp_current_policy_points < root.sp_total_policy_points
-		}
-		trigger_if = {
-			limit = {
-				has_variable_list = sp_released_policy_flags
-			}
-			NOT = {
-				any_in_list = {
-					variable = sp_released_policy_flags
-					this = flag:flag_sp_policy_guardian_forces
-				}
-			}
-		}
-	}
-
-	minimum_cost = {
-		prestige = 100
-	}
-
-	effect = {
-		if = {
-			limit = {
-				NOT = { exists = root.var:sp_current_policy_points }
-			}
-			set_variable = {
-				name = sp_current_policy_points
-				value = 0
-			}
-		}
-		set_variable = {
-			name = sp_policy_will_be_points
-			value = {
-				value = root.var:sp_current_policy_points
-				#add = flag:flag_sp_policy_guardian_forces.sp_policy_points
-			}
-		}
-		if = {
-			limit = {
-				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
-			}
-			sp_set_policy_effect_to_character = {
-				FLAG = flag:flag_sp_policy_guardian_forces
-				ACTION = add
-				CONFIRM = yes
-			}
-		}
-	}
-
-	ai_potential = {
-		always = yes
-	}
-
-	ai_will_do = {
-		base = 100
-	}
-}
 sp_ai_publish_policy_intensive_firearms_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_oda_margin_trait = yes
+		sp_has_legacy_trait_trigger = { 
+			TRAIT = oda_margin
+			SKILL = martial
+			RATING = high_skill_rating
+		}
 	}
 	is_valid = {
 		sp_culture_has_innovation_advanced_bowmaking = yes
@@ -1995,8 +1723,300 @@ sp_ai_publish_policy_intensive_firearms_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_intensive_firearms
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_laws_of_imagawa_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_legacy_trait_trigger = { 
+			TRAIT = imagawa_margin
+			SKILL = stewardship
+			RATING = decent_skill_rating
+		}
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_laws_of_imagawa
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_laws_of_imagawa.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effects_to_character_effect = {
+				FLAG = flag:flag_sp_policy_laws_of_imagawa
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_laws_of_takeda_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_legacy_trait_trigger = { 
+			TRAIT = takeda_margin
+			SKILL = stewardship
+			RATING = decent_skill_rating
+		}
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_laws_of_takeda
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_laws_of_takeda.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effects_to_character_effect = {
+				FLAG = flag:flag_sp_policy_laws_of_takeda
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_five_admonitions_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_legacy_trait_trigger = { 
+			TRAIT = hojo_margin
+			SKILL = stewardship
+			RATING = decent_skill_rating
+		}
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_five_admonitions
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_five_admonitions.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effects_to_character_effect = {
+				FLAG = flag:flag_sp_policy_five_admonitions
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+sp_ai_publish_policy_guardian_forces_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_legacy_trait_trigger = { 
+			TRAIT = tokugawa_margin
+			SKILL = martial
+			RATING = high_skill_rating
+		}
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_guardian_forces
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_guardian_forces.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effects_to_character_effect = {
+				FLAG = flag:flag_sp_policy_guardian_forces
 				ACTION = add
 				CONFIRM = yes
 			}
@@ -2017,7 +2037,11 @@ sp_ai_publish_policy_dragon_corps_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_date_margin_trait = yes
+		sp_has_legacy_trait_trigger = { 
+			TRAIT = shimazu_margin
+			SKILL = martial
+			RATING = high_skill_rating
+		}
 	}
 	is_valid = {
 		sp_culture_has_innovation_advanced_bowmaking = yes
@@ -2065,7 +2089,7 @@ sp_ai_publish_policy_dragon_corps_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_dragon_corps
 				ACTION = add
 				CONFIRM = yes
@@ -2123,7 +2147,11 @@ sp_ai_publish_policy_satsuma_military_education_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_shimazu_margin_trait = yes
+		sp_has_legacy_trait_trigger = { 
+			TRAIT = satsuma_margin
+			SKILL = martial
+			RATING = high_skill_rating
+		}
 	}
 	is_valid = {
 		trigger_if = {
@@ -2170,7 +2198,7 @@ sp_ai_publish_policy_satsuma_military_education_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_satsuma_military_education
 				ACTION = add
 				CONFIRM = yes
@@ -2192,7 +2220,11 @@ sp_ai_publish_policy_expeditionary_support_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_uesugi_margin_trait = yes
+		sp_has_legacy_trait_trigger = { 
+			TRAIT = chosokabe_margin
+			SKILL = martial
+			RATING = high_skill_rating
+		}
 	}
 	is_valid = {
 		trigger_if = {
@@ -2239,7 +2271,7 @@ sp_ai_publish_policy_expeditionary_support_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_expeditionary_support
 				ACTION = add
 				CONFIRM = yes
@@ -2255,84 +2287,17 @@ sp_ai_publish_policy_expeditionary_support_decision = {
 		base = 100
 	}
 }
-sp_ai_publish_policy_armoured_militia_decision = {
-	ai_goal = yes
-	cooldown = { years = 5 }
-	is_shown = {
-		is_ai = yes
-		has_game_rule = enable_ai_special_policies
-		sp_has_chosokabe_margin_trait = yes
-	}
-	is_valid = {
-		trigger_if = {
-			limit = {
-				exists = root.var:sp_current_policy_points
-			}
-			#root.var:sp_current_policy_points < root.sp_total_policy_points
-		}
-		trigger_if = {
-			limit = {
-				has_variable_list = sp_released_policy_flags
-			}
-			NOT = {
-				any_in_list = {
-					variable = sp_released_policy_flags
-					this = flag:flag_sp_policy_armoured_militia
-				}
-			}
-		}
-	}
-
-	minimum_cost = {
-		prestige = 100
-	}
-
-	effect = {
-		if = {
-			limit = {
-				NOT = { exists = root.var:sp_current_policy_points }
-			}
-			set_variable = {
-				name = sp_current_policy_points
-				value = 0
-			}
-		}
-		set_variable = {
-			name = sp_policy_will_be_points
-			value = {
-				value = root.var:sp_current_policy_points
-				#add = flag:flag_sp_policy_armoured_militia.sp_policy_points
-			}
-		}
-		if = {
-			limit = {
-				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
-			}
-			sp_set_policy_effect_to_character = {
-				FLAG = flag:flag_sp_policy_armoured_militia
-				ACTION = add
-				CONFIRM = yes
-			}
-		}
-	}
-
-	ai_check_interval = 36
-	
-	ai_potential = {
-		always = yes
-	}
-
-	ai_will_do = {
-		base = 100
-	}
-}
 sp_ai_publish_policy_million_minds_motto_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_mori_margin_trait = yes
+		sp_has_legacy_trait_trigger = { 
+			TRAIT = mori_margin
+			SKILL = stewardship
+			RATING = decent_skill_rating
+		}
 	}
 	is_valid = {
 		trigger_if = {
@@ -2379,7 +2344,7 @@ sp_ai_publish_policy_million_minds_motto_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_million_minds_motto
 				ACTION = add
 				CONFIRM = yes
@@ -2395,13 +2360,92 @@ sp_ai_publish_policy_million_minds_motto_decision = {
 		base = 100
 	}
 }
+sp_ai_publish_policy_armoured_militia_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		has_game_rule = enable_ai_special_policies
+		sp_has_legacy_trait_trigger = { 
+			TRAIT = chosokabe_margin
+			SKILL = martial
+			RATING = high_skill_rating
+		}
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			#root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_armoured_militia
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 100
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				#add = flag:flag_sp_policy_armoured_militia.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effects_to_character_effect = {
+				FLAG = flag:flag_sp_policy_armoured_militia
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
 sp_ai_publish_policy_six_coins_oath_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_sanada_margin_trait = yes
+		sp_has_legacy_trait_trigger = { 
+			TRAIT = sanada_margin
+			SKILL = prowess
+			RATING = extremely_high_skill_rating
+		}
 	}
 	is_valid = {
 		trigger_if = {
@@ -2448,7 +2492,7 @@ sp_ai_publish_policy_six_coins_oath_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_six_coins_oath
 				ACTION = add
 				CONFIRM = yes
@@ -2470,7 +2514,11 @@ sp_ai_publish_policy_kichishitan_sanction_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_otomo_margin_trait_2 = yes
+		sp_has_legacy_trait_trigger = { 
+			TRAIT = otomo_margin
+			SKILL = learning
+			RATING = decent_skill_rating
+		}
 	}
 	is_valid = {
 		trigger_if = {
@@ -2518,7 +2566,7 @@ sp_ai_publish_policy_kichishitan_sanction_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_kichishitan_sanction
 				ACTION = add
 				CONFIRM = yes
@@ -2540,7 +2588,11 @@ sp_ai_publish_policy_govern_for_people_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_miyoshi_margin_trait = yes
+		sp_has_legacy_trait_trigger = { 
+			TRAIT = miyoshi_margin
+			SKILL = stewardship
+			RATING = decent_skill_rating
+		}
 	}
 	is_valid = {
 		trigger_if = {
@@ -2587,7 +2639,7 @@ sp_ai_publish_policy_govern_for_people_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_govern_for_people
 				ACTION = add
 				CONFIRM = yes
@@ -2609,7 +2661,11 @@ sp_ai_publish_policy_partisan_corps_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_suzuki_margin_trait = yes
+		sp_has_legacy_trait_trigger = { 
+			TRAIT = suzuki_margin
+			SKILL = diplomacy
+			RATING = decent_skill_rating
+		}
 	}
 	is_valid = {
 		trigger_if = {
@@ -2657,7 +2713,7 @@ sp_ai_publish_policy_partisan_corps_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_partisan_corps
 				ACTION = add
 				CONFIRM = yes
@@ -2679,7 +2735,11 @@ sp_ai_publish_policy_buddhist_laws_decision = {
 	is_shown = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
-		sp_has_honganji_margin_trait = yes
+		sp_has_legacy_trait_trigger = {
+			TRAIT = honganji_margin
+			SKILL = learning
+			RATING = high_skill_rating
+		}
 	}
 	is_valid = {
 		trigger_if = {
@@ -2727,7 +2787,7 @@ sp_ai_publish_policy_buddhist_laws_decision = {
 			limit = {
 				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
 			}
-			sp_set_policy_effect_to_character = {
+			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_buddhist_laws
 				ACTION = add
 				CONFIRM = yes

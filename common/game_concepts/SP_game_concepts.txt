@@ -1,4 +1,5 @@
 ﻿sp_policy = {
+	alias =  { sp_policies }
 	texture = "gfx/interface/icons/activities/activity_adult_education_header.dds"
 }
 

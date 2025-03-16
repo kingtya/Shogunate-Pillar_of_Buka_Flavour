@@ -1,6 +1,7 @@
 ﻿l_simp_chinese:
 
 game_concept_sp_policy:0 "政策"
+game_concept_sp_policies:0 "政策"
 game_concept_sp_policy_desc:0 "政策是[ruler|E]为了某一特定目的而推行的特殊法令，往往能提供政略上的增益或[soldier|E]强化的[modifier|E]，或其他特殊效果。\n\n部分势力可以通过家传[trait|E]解锁特殊的御用政策，这种特质是男性遗传的，作为这一[house|E]的时代特征。"
 
 game_concept_sp_policy_point:0 "政策点上限"

@@ -141,9 +141,7 @@ pob_delegate_persuasion_interaction = {
 			every_courtier = {
 				limit = {
 					is_adult = yes
-					NOT = {
-						any_scheme = { exists = this }
-					}
+					pob_has_any_running_task_scheme = no
 				}
 				order_by = diplomacy
 				add_to_list = characters

@@ -31,7 +31,7 @@
 	is_valid = {
 		scope:host = {
 			is_alive = yes
-			#is_capable_adult = yes
+			is_capable_adult = yes
 			is_imprisoned = no
 			is_landed = yes
 			NOT = { is_incapable = yes }
@@ -2018,68 +2018,18 @@
 			on_phase_active = {
 				if = {
 					limit = { this = scope:host }
-					#完成上诉过程后推进的天数
 					scope:activity = { progress_activity_phase_after = { months = 2 } }
-					#事件链起始
 					if = {
 						limit = {
 							scope:activity = {
 								has_activity_option = {
 									category = special_type
-									option = woc_council_urgent
+									option = woc_council_normal
 								}
 							}
 						}
 						trigger_event = {
 							id = woc_council_activity.2002
-							days = 1
-						}
-					}
-					else_if = {
-						limit = {
-							NOT = { 
-								scope:activity = {
-									has_activity_option = {
-										category = special_type
-										option = woc_council_urgent
-									}
-								}
-							}
-						}
-						trigger_event = {
-							id = woc_council_activity.2004
-							days = 1
-						}
-					}
-				}
-				else = {
-					if = {
-						limit = {
-							scope:activity = {
-								has_activity_option = {
-									category = special_type
-									option = woc_council_urgent
-								}
-							}
-						}
-						trigger_event = {
-							id = woc_council_activity.2003
-							days = 1
-						}
-					}
-					else_if = {
-						limit = {
-							NOT = { 
-								scope:activity = {
-									has_activity_option = {
-										category = special_type
-										option = woc_council_urgent
-									}
-								}
-							}
-						}
-						trigger_event = {
-							id = woc_council_activity.2001
 							days = 1
 						}
 					}
@@ -2091,23 +2041,7 @@
 					limit = {
 						this = scope:host
 					}
-					if = {
-						limit = {
-							scope:activity = {
-								has_activity_option = {
-									category = special_type
-									option = woc_council_urgent
-								}
-							}
-						}
-						trigger_event = { on_action = woc_council_urgent_magna_carta_event_selection }
-					}
-				}
-				else_if = { #guest
-					limit = {
-						NOT = { this = scope:host }
-					}
-					#trigger_event = { on_action = feast_default_event_selection }
+					#trigger_event = { on_action = feast_new_event_selection_tombola }
 				}
 			}
 			on_end = {
@@ -2170,7 +2104,6 @@
 	}
 	###等待事件
 	on_enter_passive_state = {
-		#trigger_event = woc_coronation.1001
 	}
 
 	# Effects run when the activity completes after its last phase
@@ -2179,60 +2112,5 @@
 	# scope:host = host of the activity
 	# 结束事件
 	on_complete = {
-		# 举办人结束事件
-		if = {
-			limit = { this = scope:host }
-			location = { save_scope_as = activity_location }
-			if = {
-				limit = { this = scope:host }
-				scope:host = {
-					save_scope_as = root_scope
-					#trigger_event = woc_coronation.1008
-				}
-			}
-		}
-		# 客人结束事件
-		else = {
-			if = {
-				limit = {
-					is_alive = yes
-					NOT = { this = scope:host }
-					is_imprisoned = no
-				}
-				#trigger_event = woc_coronation.1004
-			}
-		}
-		##移除议案限制
-		scope:host = {
-			remove_variable = woc_total_proposal
-			if = {
-				limit = {
-					scope:activity = {
-						has_activity_option = { 
-							category = special_type 
-							option = woc_council_normal
-						}
-					}
-				}
-				add_character_flag = {
-					flag = convened_woc_council_normal_recently
-					years = 3
-				}
-			}
-			if = {
-				limit = {
-					scope:activity = {
-						has_activity_option = { 
-							category = special_type 
-							option = woc_council_urgent
-						}
-					}
-				}
-				add_character_flag = {
-					flag = convened_woc_council_urgent_recently
-					years = 20
-				}
-			}
-		}
 	}
 }

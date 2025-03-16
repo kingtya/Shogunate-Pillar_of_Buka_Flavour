@@ -36,7 +36,7 @@
     sp_policy_has_no_policy_improve_firearms_tt:0 "@warning_icon!#X You have not enacted the prerequisite policy to strengthen the firearm unit#!"
 
     ## Hojo Clan
-    flag_sp_policy_five_admonitions_name:0 "#V Go-Hojo Five Admonitions#!"
+    flag_sp_policy_five_admonitions_name:0 "#V Gō-Hōjō Five Admonitions#!"
     flag_sp_policy_five_admonitions_desc:0 "Also known as the Five Articles of Advice, it was a set of instructions written by Hojo Ujitsuna of Sagami Province to his son Ujiyasu in 1541. The advice emphasizes frugality and describes the reasons for the success of Ujitsuna's father, Hojo Ujitsuna, who achieved greatness due to his frugality, even claiming that the father’s success was due to divine favor."
     sp_policy_five_admonitions_modifier:0 "Five Admonitions"
     sp_policy_five_admonitions_modifier_desc:0 "This individual followed the Five Admonitions."

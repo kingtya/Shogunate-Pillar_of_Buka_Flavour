@@ -1,9 +1,7 @@
 ﻿namespace = pob_events
 
 ## 0001 家传特质初始化
-## 0002 建筑初始化
 ## 0003 文化传统初始化
-## 0004-0005 退位
 
 pob_events.0001 = {
 	scope = none
@@ -416,5 +414,148 @@ pob_events.0003 = {
 				add_culture_tradition = tradition_forest_fighters
 			}
 		}
+	}
+}
+
+pob_events.0010 = {
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_council_position = councillor_court_chaplain
+			}
+			#
+		}
+		else_if = {
+			limit = {
+				has_council_position = councillor_chancellor
+			}
+			trigger_event = woc_council_councillor_missions.0002
+		}
+		else_if = {
+			limit = {
+				has_council_position = councillor_steward
+			}
+			#
+		}
+		else_if = {
+			limit = {
+				has_council_position = councillor_marshal
+			}
+			#
+		}	
+		else_if = {
+			limit = {
+				has_council_position = councillor_spymaster
+			}
+			#
+		}
+	}
+}
+
+pob_events.0011 = {
+	type = character_event
+	title = "呈报"
+	desc = "身为内阁成员我有义务提出一些建议，帮助领主解决一些问题。"
+	theme = realm
+	left_portrait = {
+		character = root
+	}
+	
+	immediate = {
+		save_scope_as = reporter
+	}
+
+	#AI亲善呈报
+	option = {
+		trigger = {
+			is_ai = yes
+			root.liege ?= {
+				any_neighboring_top_liege_realm_owner = {
+					root = {
+						can_start_scheme = {
+							type = pob_improve_relations
+							target_character = prev
+						}
+					}
+				}
+			}
+		}
+		name = woc_council_councillor_missions.0002.a
+		root.liege ?= {
+			random_neighboring_top_liege_realm_owner = {
+				root = {
+					can_start_scheme = {
+						type = pob_improve_relations
+						target_character = prev
+					}
+				}
+				save_scope_as = target
+			}
+			trigger_event = pob_events.0012
+		}
+	}
+
+	# 玩家亲善呈报
+	option = {
+		name = woc_council_councillor_missions.0001.a
+		set_variable = {
+			name = woc_councillor_missions
+			value = pob_persuasion_submission
+		}
+		root.liege ?= {
+			trigger_event = pob_events.0012
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	# Fallback
+	option = {
+		name = woc_council_councillor_missions.0001.b
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+# 外交大臣呈报
+pob_events.0012 = {
+	type = character_event
+	title = "外交大臣呈报"
+	desc = "身为内阁成员我有义务提出一些建议，帮助领主解决一些问题。"
+	theme = realm
+	left_portrait = {
+		character = root
+	}
+	
+	immediate = {
+		
+	}
+	#批准
+	option = {
+		name = woc_council_councillor_missions.0001.a
+		scope:reporter = {
+			begin_scheme_basic_effect = {
+				SCHEME_TYPE = pob_improve_relations
+				TARGET_TYPE = target_character
+				TARGET_SCOPE = scope:target
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	#拒绝
+	option = {
+		name = woc_council_councillor_missions.0001.b
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	after = {
 	}
 }

@@ -26,7 +26,7 @@ sp_apply_modifier = {
 	}
 
 	effect = {
-		sp_set_policy_effect_to_character = {
+		sp_set_policy_effects_to_character_effect = {
 			FLAG = scope:sp_selected_flag
 			ACTION = add
 			CONFIRM = yes
@@ -42,7 +42,7 @@ sp_can_apply_modifier = {
 	}
 
 	is_valid = {
-		sp_can_release_policy = {
+		sp_can_release_policy_trigger = {
 			FLAG = scope:sp_selected_flag
 		}
 	}
@@ -56,7 +56,7 @@ sp_remove_modifier = {
 	}
 
 	effect = {
-		sp_set_policy_effect_to_character = {
+		sp_set_policy_effects_to_character_effect = {
 			FLAG = scope:sp_selected_flag
 			ACTION = remove
 			CONFIRM = no
@@ -87,7 +87,7 @@ sp_apply_cost = {
 	}
 
 	effect = {
-		sp_set_cost_to_character = {
+		sp_set_cost_to_character_effect = {
 			FLAG = scope:sp_selected_flag
 		}
 	}

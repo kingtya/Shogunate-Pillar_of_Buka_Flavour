@@ -1,0 +1,108 @@
+﻿sp_culture_has_innovation_trigger = {
+	exists = $INNOVATION$
+	culture = {
+		has_innovation = $INNOVATION$
+	}
+}
+
+sp_culture_has_innovation_advanced_bowmaking = {
+	culture = {
+		has_innovation = innovation_advanced_bowmaking
+	}
+}
+sp_culture_has_innovation_guilds = {
+	culture = {
+		has_innovation = innovation_guilds
+	}
+}
+sp_culture_has_innovation_royal_armory = {
+	culture = {
+		has_innovation = innovation_royal_armory
+	}
+}
+sp_culture_has_innovation_shogunate_nanban_trade = {
+	culture = {
+		has_innovation = innovation_shogunate_nanban_trade
+	}
+}
+## 撤销政策
+sp_can_revoke_policy = {
+	trigger_if = {
+		limit = {
+			exists = $FLAG$
+		}
+		custom_description = {
+			text = sp_policy_not_released_cd
+			trigger_if = {
+				limit = {
+					has_variable_list = sp_released_policy_flags
+				}
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = $FLAG$
+				}
+			}
+			trigger_else = {
+				always = no
+			}
+		}
+
+		custom_description = {
+			text = sp_policy_released_recently_cd
+			trigger_if = {
+				limit = {
+					trigger_if = {
+						limit = {
+							has_variable_list = sp_released_policy_flags
+						}
+						any_in_list = {
+							variable = sp_released_policy_flags
+							this = $FLAG$
+						}
+						
+					}
+					trigger_else = {
+						always = no
+					}
+				}
+				NOT = {
+					has_character_flag = $FLAG$
+				}
+			}
+			trigger_else = {
+				always = yes
+			}
+		}
+	}
+	trigger_else = {
+		always = no
+	}
+	
+}
+## 已发布政策
+sp_is_released_policy = {
+	trigger_if = {
+		limit = {
+			has_variable_list = sp_released_policy_flags
+		}
+		any_in_list = {
+			variable = sp_released_policy_flags
+			this = $FLAG$
+		}
+	}
+	trigger_else = {
+		always = no
+	}
+}
+
+pob_has_any_running_task_scheme = {
+	any_scheme = { 
+		OR = {
+			scheme_type = pob_persuade_enlishment
+			scheme_type = pob_improve_relations
+			scheme_type = pob_plan_reclamation
+			scheme_type = pob_promote_conscription
+			scheme_type = pob_spread_rumors
+		}
+	}
+}

@@ -7,9 +7,9 @@
     pob_spread_rumors_interaction:0 "$pob_spread_rumors$#weak （计谋）#!"
     pob_spread_rumors_interaction_desc:0 "尝试破坏[recipient.GetShortUINameNoTooltip]和周围统治者的关系"
     pob_spread_rumors:0 "流言中伤"
-    pob_spread_rumors_desc_general:0 "$pob_spread_rumors$是一种[hostile_scheme|E]，目标是破坏另一角色和周围统治者的关系。"
+    pob_spread_rumors_desc_general:0 "$pob_spread_rumors$是一种[hostile_scheme|E]，目标是破坏另一角色和周围统治者的关系。\n\n[success_chance|E]受许多因素决定，包括：\n$BULLET_WITH_TAB$你的[intrigue|E][skills]\n$BULLET_WITH_TAB$忍[trait|E]"
     pob_spread_rumors_action:0 "$pob_spread_rumors$"
-    pob_spread_rumors_desc:0 "我会尝试破坏[SCHEME.GetTargetCharacter.GetShortUINamePossessive]和周围统治者的关系"
+    pob_spread_rumors_desc:0 "我会尝试破坏[SCHEME.GetTargetCharacter.GetShortUINamePossessive]和周围统治者的关系。"
     pob_spread_rumors_start_scheme:0 "$pob_spread_rumors$开始"
 
     pob_spread_rumors_invalidated_title:1 "@personal_scheme_icon!$pob_spread_rumors$计谋结束"

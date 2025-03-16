@@ -12,16 +12,7 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_canal_improvements = {
 			$ACTION$_character_modifier = sp_policy_canal_improvements_modifier
 			custom_tooltip = sp_policy_canal_improvements_effect_tt
-			sp_parochial_vassal_towards_policy_opinion_effect = {
-				POLICY_TYPE_SW_1 = no
-				POLICY_TYPE_SW_2 = no
-				OPINION = 10
-			}
-			sp_courtly_vassal_towards_policy_opinion_effect = {
-				POLICY_TYPE_SW_1 = no
-				POLICY_TYPE_SW_2 = no
-				OPINION = 5
-			}
+			sp_vassal_react_to_conservative_policies_effect = yes
 		}
 		flag:flag_sp_policy_improve_militia = {
 			$ACTION$_character_modifier = sp_policy_improve_militia_modifier
@@ -408,10 +399,12 @@ sp_policy_introduction_effect = {
 		############
 		############
 
-		flag:flag_sp_policy_laws_of_imagawa = {
+		flag:flag_sp_policy_intensive_firearms = {
 			if = {
 				limit = {
-					sp_councillor_has_imagawa_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = oda_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
@@ -419,7 +412,53 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_imagawa_margin_trait = no
+					sp_has_oda_margin_trait = no
+				}
+				custom_tooltip = sp_policy_intensive_firearms_warning_tt
+			}
+			if = {
+				limit = {
+					sp_culture_has_innovation_advanced_bowmaking = no
+				}
+				custom_tooltip = sp_policy_has_no_innovation_advanced_bowmaking_tt
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = { has_variable_list = sp_released_policy_flags }
+						NOT = {
+							any_in_list = {
+								variable = sp_released_policy_flags
+								this = flag:flag_sp_policy_improve_firearms
+							}
+						}
+					}
+				}
+				custom_tooltip = sp_policy_has_no_policy_improve_firearms_tt
+			}
+			$ACTION$_character_modifier = sp_policy_intensive_firearms_modifier
+			custom_tooltip = sp_policy_intensive_firearms_effect_tt
+		}
+		flag:flag_sp_policy_laws_of_imagawa = {
+			if = {
+				limit = {
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = imagawa_margin
+					}
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = imagawa_margin
+							SKILL = stewardship
+							RATING = decent_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_laws_of_imagawa_warning_tt
 			}
@@ -439,7 +478,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_laws_of_takeda = {
 			if = {
 				limit = {
-					sp_councillor_has_takeda_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = takeda_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					block_firing_councillor_effect = { COURT_OWNER = root }
@@ -447,7 +488,13 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_takeda_margin_trait = no
+					NOT = {
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = takeda_margin
+							SKILL = stewardship
+							RATING = decent_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_laws_of_takeda_warning_tt
 			}
@@ -464,15 +511,28 @@ sp_policy_introduction_effect = {
 			}
 			
 		}
-
 		flag:flag_sp_policy_takeda_red_armour = {
 			if = {
 				limit = {
-					sp_councillor_has_takeda_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = takeda_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
 				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = takeda_margin
+							SKILL = martial
+							RATING = high_skill_rating
+						}
+					}
+				}
+				custom_tooltip = sp_policy_laws_of_takeda_warning_tt
 			}
 			custom_tooltip = sp_policy_takeda_red_armour_effect_tt_0
 			if = {
@@ -496,11 +556,12 @@ sp_policy_introduction_effect = {
 				custom_tooltip = sp_policy_takeda_red_armour_effect_tt_1
 			}
 		}
-		
 		flag:flag_sp_policy_five_admonitions = {
 			if = {
 				limit = {
-					sp_councillor_has_hojo_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = hojo_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
@@ -508,7 +569,13 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_hojo_margin_trait = no
+					NOT = {
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = hojo_margin
+							SKILL = learning
+							RATING = decent_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_five_admonitions_warning_tt
 			}
@@ -551,7 +618,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_guardian_forces = {
 			if = {
 				limit = {
-					sp_councillor_has_tokugawa_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = tokugawa_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
@@ -559,54 +628,24 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_tokugawa_margin_trait = no
+					NOT = {
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = tokugawa_margin
+							SKILL = martial
+							RATING = high_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_guardian_forces_warning_tt
 			}
 			$ACTION$_character_modifier = sp_policy_guardian_forces_modifier
 		}
-		flag:flag_sp_policy_intensive_firearms = {
-			if = {
-				limit = {
-					sp_councillor_has_oda_margin_trait = yes
-				}
-				cp:councillor_spt_bugyo = {
-					sp_block_firing_councillor_effect = { COURT_OWNER = root }
-				}
-			}
-			if = {
-				limit = {
-					sp_has_oda_margin_trait = no
-				}
-				custom_tooltip = sp_policy_intensive_firearms_warning_tt
-			}
-			if = {
-				limit = {
-					sp_culture_has_innovation_advanced_bowmaking = no
-				}
-				custom_tooltip = sp_policy_has_no_innovation_advanced_bowmaking_tt
-			}
-			if = {
-				limit = {
-					OR = {
-						NOT = { has_variable_list = sp_released_policy_flags }
-						NOT = {
-							any_in_list = {
-								variable = sp_released_policy_flags
-								this = flag:flag_sp_policy_improve_firearms
-							}
-						}
-					}
-				}
-				custom_tooltip = sp_policy_has_no_policy_improve_firearms_tt
-			}
-			$ACTION$_character_modifier = sp_policy_intensive_firearms_modifier
-			custom_tooltip = sp_policy_intensive_firearms_effect_tt
-		}
 		flag:flag_sp_policy_dragon_corps = {
 			if = {
 				limit = {
-					sp_councillor_has_date_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = date_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
@@ -614,7 +653,13 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_date_margin_trait = no
+					NOT = {
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = date_margin
+							SKILL = martial
+							RATING = decent_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_dragon_corps_warning_tt
 			}
@@ -650,12 +695,8 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_satsuma_military_education = {
 			if = {
 				limit = {
-					root = {
-						NOT = { has_trait = shimazu_margin }
-					}
-					exists = cp:councillor_steward
-					cp:councillor_spt_bugyo = {
-						has_trait = shimazu_margin
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = shimazu_margin
 					}
 				}
 				cp:councillor_spt_bugyo = {
@@ -664,7 +705,13 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_shimazu_margin_trait = no
+					NOT = { 
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = shimazu_margin
+							SKILL = learning
+							RATING = decent_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_satsuma_military_education_warning_tt
 			}
@@ -673,12 +720,20 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_expeditionary_support = {
 			if = {
 				limit = {
-					sp_councillor_has_uesugi_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = uesugi_margin
+					}
 				}
 			}
 			if = {
 				limit = {
-					sp_has_uesugi_margin_trait = no
+					NOT = {
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = uesugi_margin
+							SKILL = martial
+							RATING = high_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_expeditionary_support_warning_tt
 			}
@@ -687,7 +742,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_million_minds_motto = {
 			if = {
 				limit = {
-					sp_councillor_has_mori_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = mori_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
@@ -695,7 +752,13 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_mori_margin_trait = no
+					NOT = {
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = mori_margin
+							SKILL = learning
+							RATING = decent_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_million_minds_motto_warning_tt
 			}
@@ -704,7 +767,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_armoured_militia = {
 			if = {
 				limit = {
-					sp_councillor_has_chosokabe_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = chosokabe_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
@@ -712,7 +777,13 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_chosokabe_margin_trait = no
+					NOT = {
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = chosokabe_margin
+							SKILL = martial
+							RATING = high_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_armoured_militia_warning_tt
 			}
@@ -722,7 +793,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_six_coins_oath = {
 			if = {
 				limit = {
-					sp_councillor_has_sanada_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = sanada_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
@@ -730,7 +803,13 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_sanada_margin_trait = no
+					NOT = {
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = sanada_margin
+							SKILL = prowess
+							RATING = extremely_high_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_six_coins_oath_warning_tt
 			}
@@ -739,7 +818,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_cunning_strategy = {
 			if = {
 				limit = {
-					sp_councillor_has_sanada_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = sanada_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
@@ -747,7 +828,13 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_sanada_margin_trait_2 = no
+					NOT = {
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = sanada_margin
+							SKILL = intrigue
+							RATING = high_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_cunning_strategy_warning_tt
 			}
@@ -757,7 +844,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_sanada_red_armour = {
 			if = {
 				limit = {
-					sp_councillor_has_sanada_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = sanada_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
@@ -765,7 +854,13 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_sanada_margin_trait_3 = no
+					NOT = {
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = sanada_margin
+							SKILL = martial
+							RATING = high_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_sanada_red_armour_warning_tt
 			}
@@ -794,7 +889,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_kichishitan_sanction = {
 			if = {
 				limit = {
-					sp_councillor_has_otomo_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = otomo_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
@@ -802,7 +899,14 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_otomo_margin_trait = no
+					NOT = {
+						religion = religion:christianity_religion
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = otomo_margin
+							SKILL = learning
+							RATING = decent_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_kichishitan_sanction_warning_tt
 			}
@@ -825,7 +929,9 @@ sp_policy_introduction_effect = {
 		flag:flag_sp_policy_govern_for_people = {
 			if = {
 				limit = {
-					sp_councillor_has_miyoshi_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = miyoshi_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
@@ -833,17 +939,24 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_miyoshi_margin_trait = no
+					NOT = {
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = miyoshi_margin
+							SKILL = stewardship
+							RATING = decent_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_govern_for_people_warning_tt
 			}
 			$ACTION$_character_modifier = sp_policy_govern_for_people_modifier
 		}
-
 		flag:flag_sp_policy_partisan_corps = {
 			if = {
 				limit = {
-					sp_councillor_has_suzuki_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = suzuki_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
@@ -851,17 +964,24 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_suzuki_margin_trait = no
+					NOT = {
+						sp_has_legacy_trait_trigger = { 
+							TRAIT = suzuki_margin
+							SKILL = martial
+							RATING = high_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_partisan_corps_warning_tt
 			}
 			$ACTION$_character_modifier = sp_policy_partisan_corps_modifier
 		}
-
 		flag:flag_sp_policy_buddhist_laws = {
 			if = {
 				limit = {
-					sp_councillor_has_honganji_margin_trait = yes
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = honganji_margin
+					}
 				}
 				cp:councillor_spt_bugyo = {
 					sp_block_firing_councillor_effect = { COURT_OWNER = root }
@@ -869,7 +989,13 @@ sp_policy_introduction_effect = {
 			}
 			if = {
 				limit = {
-					sp_has_honganji_margin_trait = no
+					NOT = {
+						sp_has_legacy_trait_trigger = {
+							TRAIT = honganji_margin
+							SKILL = learning
+							RATING = high_skill_rating
+						}
+					}
 				}
 				custom_tooltip = sp_policy_buddhist_laws_warning_tt
 			}
@@ -1028,7 +1154,7 @@ sp_policy_revocation_effect = {
 ################
 ### 政策花费 ###
 ################
-sp_set_cost_to_character = {
+sp_set_cost_to_character_effect = {
 	switch = {
 		trigger = $FLAG$
 
@@ -1180,7 +1306,7 @@ sp_set_cost_to_character = {
 ################
 ### 政策效果 ###
 ################
-sp_set_policy_effect_to_character = {
+sp_set_policy_effects_to_character_effect = {
 	
 	show_as_tooltip = { # 作为显示效果，不实际执行
 		sp_policy_introduction_effect = {
