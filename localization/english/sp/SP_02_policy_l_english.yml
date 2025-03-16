@@ -54,7 +54,8 @@
     sp_policy_improve_militia_modifier_desc:0 "This person has increased the military service requirements in their domain, while exempting some other duties."
     pob_improve_militia_county_modifier:0 "Militia Strengthening"
     pob_improve_militia_county_modifier_desc:0 "This place has increased the military service requirements."
-    sp_policy_improve_militia_effect_tt:0 "Your [scheme_success_chance|E] of Promote Militia [scheme|E] rises."
+    sp_policy_improve_militia_effect_tt:0 "You, your [vassal|E], and [courtiers|E]'s #V  Militia Strengthening#! [scheme_success_chance|E] increases"
+"
 
     flag_sp_policy_castle_construction_name:0 "#V Castle Construction#!"
     flag_sp_policy_castle_construction_desc:0 "From the samurai residences in the Kamakura period to the mountain castles of the Nanboku-chō and Muromachi periods, and finally to the plains castles of the Warring States period, Japan's castle construction philosophy has developed over time into its mature form."

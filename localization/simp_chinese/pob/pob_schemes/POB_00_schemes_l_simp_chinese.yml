@@ -5,7 +5,7 @@
     pob_delegate_persuasion_interaction_desc:0 "指示[courtier|E]尝试劝说[recipient.GetShortUINameNoTooltip]为你效命"
     recipient_secondary_pob_delegate_persuasion_interaction:0 "说客"
 
-    pob_persuade_enlistment_interaction:0 "劝诱#weak （计谋）#!"
+    pob_persuade_enlistment_interaction:0 "$pob_persuade_enlistment$#weak （计谋）#!"
     pob_persuade_enlistment_interaction_desc:0 "尝试劝说[recipient.GetShortUINameNoTooltip]为你效命"
     pob_persuade_enlistment:0 "劝诱"
     pob_persuade_enlistment_desc_general:0 "在劝诱[scheme|E]中，你尝试邀请另一角色到你的[court|E]。"
@@ -26,13 +26,21 @@
     pob_persuade_enlistment_events.1002.a:0 "这就是乱世的习俗。"
     pob_persuade_enlistment_events.1002.b:0 "昨日之敌乃今日之友，我不会放弃。"
 
+    pob_persuade_enlistment_events.1003.t:0 "$pob_persuade_enlistment$: 大成功！"
+    pob_persuade_enlistment_events.1003.desc:0 "[target.GetUIName]对加入我们的队伍非常兴奋。毫无疑问，我们才会是最后的赢家。"
+    pob_persuade_enlistment_events.1003.a:0 "这就是乱世的习俗。"
+
+     pob_persuade_enlistment_events.1004.t:0 "$pob_persuade_enlistment$: 大失败！"
+    pob_persuade_enlistment_events.1004.desc:0 "[target.GetUIName]对加入我们的队伍毫无兴趣。只是这样的事情的话可不会动摇我们。"
+    pob_persuade_enlistment_events.1004.a:0 "这就是乱世的习俗。"
+
     # 征兵
     pob_delegate_conscription_interaction:0 "委任征兵"
-    pob_delegate_conscription_interaction_desc:0 "指示[courtier|E]尝试提高领地的军役"
+    pob_delegate_conscription_interaction_desc:0 "指示[courtier|E]尝试提高领地的[levies|E]规模"
     recipient_secondary_pob_delegate_conscription_interaction:0 "奉行"
 
-    pob_promote_conscription_interaction:0 "民兵征发#weak （计谋）#!"
-    pob_promote_conscription_interaction_desc:0 "尝试提高你的领地的军役"
+    pob_promote_conscription_interaction:0 "$pob_promote_conscription$#weak （计谋）#!"
+    pob_promote_conscription_interaction_desc:0 "尝试提高你的领地的[levies|E]规模"
     pob_promote_conscription:0 "民兵征发"
     pob_promote_conscription_desc_general:0 "在$pob_promote_conscription$[scheme|E]中，你尝试提高领地的军役。"
     pob_promote_conscription_action:0 "$pob_promote_conscription$："
@@ -51,14 +59,14 @@
     pob_promote_conscription_events.1002.a:0 "为了家名存续，我本该做得更好。"
 
     #亲善
-    pob_send_envoy_interaction:0 "指示亲善"
-    pob_send_envoy_interaction_desc:0 "指示[courtier|E]为本家提升和[recipient.GetShortUINameNoTooltip]的外交关系"
-    recipient_secondary_pob_send_envoy_interaction:0 "奉行"
+    pob_dispatch_envoy_interaction:0 "指示亲善"
+    pob_dispatch_envoy_interaction_desc:0 "指示[courtier|E]为本家提升和[recipient.GetShortUINameNoTooltip]的外交关系"
+    recipient_secondary_pob_dispatch_envoy_interaction:0 "奉行"
 
-    pob_improve_relations_interaction:0 "亲善#weak （计谋）#!"
+    pob_improve_relations_interaction:0 "$pob_improve_relations$#weak （计谋）#!"
     pob_improve_relations_interaction_desc:0 "尝试提升和[recipient.GetShortUINameNoTooltip]的外交关系"
     pob_improve_relations:0 "亲善"
-    pob_improve_relations_desc_general:0 "在亲善[scheme|E]中，你尝试提升和另一角色的外交关系"
+    pob_improve_relations_desc_general:0 "在亲善[scheme|E]中，你尝试提升和另一角色的外交关系。"
     pob_improve_relations_action:0 "$pob_improve_relations$"
     pob_improve_relations_desc:0 "我会尝试提升和[SCHEME.GetTargetCharacter.GetShortUINamePossessive]的外交关系"
     pob_improve_relations_start_scheme:0 "$pob_improve_relations$开始"
@@ -75,13 +83,13 @@
 
     ## 开垦
     pob_delegate_reclamation_interaction:0 "指示开垦"
-    pob_delegate_reclamation_interaction_desc:0 "指示[courtier|E]尝试开垦新田"
+    pob_delegate_reclamation_interaction_desc:0 "指示[courtier|E]尝试土地开发以提高你的[domain_taxes|E]和[county_development|E]"
     recipient_secondary_pob_delegate_reclamation_interaction:0 "奉行"
 
-    pob_plan_reclamation_interaction:0 "开垦新田#weak （计谋）#!"
-    pob_plan_reclamation_interaction_desc:0 "尝试土地开发以提高你的领地赋税和发展度"
+    pob_plan_reclamation_interaction:0 "$pob_plan_reclamation$#weak （计谋）#!"
+    pob_plan_reclamation_interaction_desc:0 "尝试土地开发以提高你的[domain_taxes|E]和[county_development|E]"
     pob_plan_reclamation:0 "开垦新田"
-    pob_plan_reclamation_desc_general:0 "在开垦新田[scheme|E]中，你尝试土地开发以提高你的领地赋税和发展度"
+    pob_plan_reclamation_desc_general:0 "在开垦新田[scheme|E]中，你尝试土地开发以提高你的领地赋税和发展度。"
     pob_plan_reclamation_action:0 "$pob_plan_reclamation$："
     pob_plan_reclamation_desc:0 "我会尝试土地开发以提高领地赋税和发展度"
     pob_plan_reclamation_start_scheme:0 "$pob_plan_reclamation$开始"
@@ -95,3 +103,5 @@
     pob_plan_reclamation_events.1002.t:0 "$pob_plan_reclamation$: 失败！"
     pob_plan_reclamation_events.1002.desc:0 "[owner.GetUIName]没能完成开垦新田的目标。"
     pob_plan_reclamation_events.1002.a:0 "为了家名存续，我本该做得更好。"
+
+    

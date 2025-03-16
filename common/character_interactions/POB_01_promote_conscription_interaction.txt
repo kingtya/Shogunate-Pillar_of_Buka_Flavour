@@ -95,7 +95,6 @@ pob_delegate_conscription_interaction = {
 	common_interaction = yes
 	interface_priority = 75
 
-	#notification_text = 1
 	popup_on_receive = no
 	pause_on_receive = no
 

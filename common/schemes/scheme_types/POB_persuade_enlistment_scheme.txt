@@ -11,7 +11,7 @@
 	is_secret = yes
 	is_basic = yes
 	cooldown = { 
-		years = 1 
+		years = 3
 	}
 
 	# Parameters
@@ -53,6 +53,47 @@
 	odds_prediction = {
 		add = base_odds_prediction_target_is_char_value
 		add = odds_skill_contribution_diplomacy_value
+		add = {
+			value = 0 
+			desc = scheme_odds.misc_modifiers
+			if = {
+				limit = {
+					scope:target = {
+						OR = {
+							is_knight = yes
+							is_councillor = yes
+							has_any_court_position = yes 
+						}
+					}
+				}
+				add = -10
+			}
+			if = {
+				limit = {
+					scope:target.liege ?= {
+						is_close_or_extended_family_of = scope:target
+					}
+				}
+				add = -10
+			}
+			if = {
+				limit = {
+					scope:target = {
+						is_extended_family_of = scope:owner
+					}
+				}
+				add = 10
+			}
+			if = {
+				limit = {
+					scope:target = {
+						is_close_family_of = scope:owner
+					}
+				}
+				add = 20
+			}
+		}
+
 		min = 0
 	}
 
@@ -104,6 +145,8 @@
  			max = 50
 		}
 
+		apply_opportunistic_scheme_success_chance_adjustments_modifier = yes
+		
 		# Current roles
 		modifier = {
 			scope:target = {
@@ -130,9 +173,9 @@
 		}
 
 		modifier = {
-			trigger = { 
-				scope:target = { has_any_court_position = yes }
-			}             
+			scope:target = { 
+				has_any_court_position = yes 
+			}         
 			add = -10
 			desc = SP_AI_COURT_PHYSICIAN
 		}
@@ -257,7 +300,7 @@
 				has_trait = loyal
 			}
 			add = -50
-			desc = SCHEME_pob_persuade_enlistment_LOYAL_PENALTY
+			desc = POB_SCHEME_TARGET_LOYAL
 		}
 
 		modifier = {
@@ -268,7 +311,7 @@
 				}
 			}
 			add = -50
-			desc = SCHEME_pob_persuade_enlistment_STRONG_HOOK_PENALTY
+			desc = POB_SCHEME_STRONG_HOOK_PENALTY
 		}
 
 		# Family (at location)
@@ -365,10 +408,15 @@
 	
 	base_secrecy = {
 		add = secrecy_base_value
+		add = countermeasure_apply_secrecy_maluses_value
 	}
 
 	# On Actions
 	on_start = {
+		set_variable = {
+			name = apply_countermeasures
+			value = flag:opportunistic
+		}
 	}
 
 	on_phase_completed = {
@@ -435,5 +483,6 @@
 	}
 
 	on_monthly = {
+		hostile_scheme_monthly_discovery_chance_effect = yes
 	}
 }

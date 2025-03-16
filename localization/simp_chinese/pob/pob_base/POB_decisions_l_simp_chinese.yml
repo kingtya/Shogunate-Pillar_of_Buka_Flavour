@@ -1,7 +1,7 @@
 ﻿l_simp_chinese:
 ## 隐居
 pob_abdicate_decision_feudal:0 "决意隐居"
-pob_abdicate_decision_clan:0 "决意退位"
+pob_abdicate_decision_clan:0 "决意让贤"
 pob_abdicate_decision_feudal_tooltip:0 "交接权力给你的[player_heir|E]"
 pob_abdicate_decision_clan_tooltip:0 "交接权力给你的[player_heir|E]"
 pob_abdicate_decision_feudal_desc:0 "我的继承人能够胜任家督之位，为了领土安泰，是时候让他执掌大权了！\n\n#weak 幕府武家栋梁 Shogunate Pillar of Buka#!"

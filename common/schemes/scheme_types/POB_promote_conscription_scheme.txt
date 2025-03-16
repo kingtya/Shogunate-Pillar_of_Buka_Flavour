@@ -11,7 +11,7 @@
 	is_secret = no
 	is_basic = yes
 	cooldown = { 
-		years = 1
+		years = 3
 	}
 
 	# Parameters
@@ -63,7 +63,7 @@
 					this = flag:flag_sp_policy_improve_militia
 				}
 			}
-			desc = SCHEME_SP_POLICY_IMPROVE_MILITIA
+			desc = SP_SCHEME_POLICY_IMPROVE_MILITIA
 		}
 
 		modifier = {
@@ -97,13 +97,25 @@
 			}
 			desc = SCHEME_YOUR_LEARNING
 		}
+		
+		modifier = {
+			scope:owner = {
+				is_ruler = no
+				exists = liege
+			}
+			add = {
+				value = scope:owner.liege.domain_size
+				multiply = -5
+			}
+			desc = POB_SCHEME_OWNER_REALM_SIZE
+		}
 
 		modifier = {
 			add = {
 				value = scope:owner.domain_size
 				multiply = -5
 			}
-			desc = SCHEME_REALM_SIZE
+			desc = POB_SCHEME_OWNER_REALM_SIZE
 		}
 	}
 

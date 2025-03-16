@@ -19,9 +19,11 @@ sp_vassal_towards_conservative_policy_opinion = {
 pob_improve_relations_task_increased_opinion = {
 	opinion = 20
 	stacking = yes
+	years = 5
 }
 
 pob_improve_relations_task_decreased_opinion = {
 	opinion = -20
 	stacking = yes
+	years = 5
 }

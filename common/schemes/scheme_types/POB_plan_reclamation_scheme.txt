@@ -67,11 +67,23 @@
 		}
 
 		modifier = {
+			scope:owner = {
+				is_ruler = no
+				exists = liege
+			}
+			add = {
+				value = scope:owner.liege.domain_size
+				multiply = -5
+			}
+			desc = POB_SCHEME_OWNER_REALM_SIZE
+		}
+
+		modifier = {
 			add = {
 				value = scope:owner.domain_size
 				multiply = -5
 			}
-			desc = SCHEME_REALM_SIZE
+			desc = POB_SCHEME_OWNER_REALM_SIZE
 		}
 	}
 

@@ -10,8 +10,8 @@
 	target_type = character
 	is_secret = yes
 	is_basic = yes
-	maximum_breaches = 5
-	cooldown = { 
+	maximum_breaches = 2
+	cooldown = {
 		years = 3
 	}
 
@@ -76,7 +76,15 @@
 			desc = SCHEME_YOUR_INTRIGUE
 		}
 
-		apply_calculated_scheme_success_chance_adjustments_modifier = yes
+		modifier = {
+			add = 20
+			scope:owner = {
+				has_trait = ninja
+			}
+			desc = POB_SCHEME_OWNER_NINJA
+		}
+
+		apply_opportunistic_scheme_success_chance_adjustments_modifier = yes
 
 		# 家族团结度
 		modifier = {
@@ -104,7 +112,7 @@
 	on_start = {
 		set_variable = {
 			name = apply_countermeasures
-			value = flag:calculating
+			value = flag:opportunistic
 		}
 	}
 
@@ -145,5 +153,6 @@
 	}
 
 	on_monthly = {
+		hostile_scheme_monthly_discovery_chance_effect = yes
 	}
 }

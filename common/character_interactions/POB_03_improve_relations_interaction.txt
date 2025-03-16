@@ -98,24 +98,23 @@
 	}
 }
 
-pob_send_envoy_interaction = {
+pob_dispatch_envoy_interaction = {
 
 	category = interaction_category_diplomacy
 	ai_min_reply_days = 1
 	ai_max_reply_days = 3
 	icon = icon_scheme_challenge_status
 	
-	desc = pob_send_envoy_interaction_desc
+	desc = pob_dispatch_envoy_interaction_desc
 
 	interface_priority = 20
 
 	common_interaction = yes
 
-	#notification_text = 1
 	popup_on_receive = no
 	pause_on_receive = no
 
-	cooldown = { years = 2 }
+	cooldown = { years = 5 }
 	
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }

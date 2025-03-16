@@ -100,12 +100,14 @@ pob_delegate_rumor_spreading_interaction = {
 
 	common_interaction = yes
 
-	#notification_text = 1
 	popup_on_receive = no
 	pause_on_receive = no
 
-	cooldown = { years = 2 }
+	cooldown = { years = 5 }
 	
+	redirect = {
+	}
+
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }
 		scope:recipient = {
