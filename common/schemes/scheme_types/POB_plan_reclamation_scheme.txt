@@ -37,7 +37,7 @@
 	}
 
 	odds_prediction = {
-		add = odds_skill_contribution_stewardship_value
+		add = pob_plan_reclamation_odds_value
 		min = 0
 	}
 

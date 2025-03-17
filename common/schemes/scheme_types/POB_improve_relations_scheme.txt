@@ -28,7 +28,6 @@
 		is_adult = yes
 		is_imprisoned = no
 		scope:target = {
-			is_adult = yes
 			is_imprisoned = no
 			is_ruler = yes
 		}
@@ -54,8 +53,7 @@
 	}
 
 	odds_prediction = {
-		add = base_odds_prediction_target_is_char_value
-		add = odds_skill_contribution_diplomacy_value
+		add = pob_improve_relations_odds_value
 		min = 0
 	}
 

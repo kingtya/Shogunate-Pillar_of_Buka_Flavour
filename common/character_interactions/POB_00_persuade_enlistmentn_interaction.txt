@@ -59,6 +59,7 @@
 	ai_frequency = 120
 	
 	ai_potential = {
+		prestige >= 400
 		NOR = {
 			is_physically_able = yes
 			any_scheme = {
@@ -87,12 +88,11 @@
 	auto_accept = yes
 
 	ai_will_do = {
-		base = 10
+		base = 50
 	}
 }
 
 pob_delegate_persuasion_interaction = {
-
 	category = interaction_category_diplomacy
 	ai_min_reply_days = 1
 	ai_max_reply_days = 3
@@ -102,11 +102,23 @@ pob_delegate_persuasion_interaction = {
 
 	common_interaction = yes
 
-	#notification_text = 1
 	popup_on_receive = no
 	pause_on_receive = no
 
 	cooldown = { years = 3 }
+
+	redirect = {
+		scope:actor = {
+			ordered_courtier = {
+				limit = {
+					is_adult = yes
+					pob_has_any_running_task_scheme = no
+				}
+				order_by = diplomacy
+				save_scope_as = secondary_recipient
+			}
+		}
+	}
 	
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }
@@ -173,6 +185,10 @@ pob_delegate_persuasion_interaction = {
 		}
 
 		scope:secondary_recipient = {
+			save_scope_as = owner
+			pob_predict_scheme_difficulty_effect = {
+				SCHEME = pob_persuade_enlistment
+			}
 			add_prestige = 100
 		}
 	}
@@ -180,7 +196,7 @@ pob_delegate_persuasion_interaction = {
 	ai_frequency = 120
 
 	ai_potential = {
-		always = yes
+		prestige >= 400
 	}
 
 	ai_targets = {
@@ -195,7 +211,7 @@ pob_delegate_persuasion_interaction = {
 	auto_accept = yes
 
 	ai_will_do = {
-		base = 100
+		base = 50
 	}
 }
 

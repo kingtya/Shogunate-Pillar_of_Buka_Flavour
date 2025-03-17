@@ -8,29 +8,24 @@
     pob_persuade_enlistment_interaction:0 "$pob_persuade_enlistment$#weak （计谋）#!"
     pob_persuade_enlistment_interaction_desc:0 "尝试劝说[recipient.GetShortUINameNoTooltip]为你效命"
     pob_persuade_enlistment:0 "劝诱"
-    pob_persuade_enlistment_desc_general:0 "在劝诱[scheme|E]中，你尝试邀请另一角色到你的[court|E]。\n\n[success_chance|E]受许多因素决定，包括：\n$BULLET_WITH_TAB$你的[diplomacy|E][skills]\n$BULLET_WITH_TAB$目标对[liege|E]的[opinion|E]\n$BULLET_WITH_TAB$目标对你的[opinion|E]\n$BULLET_WITH_TAB$目标的[court_position|E]\n$BULLET_WITH_TAB$目标和领主的[family|E]关系\n$BULLET_WITH_TAB$目标和你的[family|E]关系\n$BULLET_WITH_TAB$忠信[trait|E]"
+    pob_persuade_enlistment_desc_general:0 "在劝诱[scheme|E]中，你尝试邀请另一角色到你的[court|E]。\n\n[success_chance|E]受许多因素决定，包括：\n$BULLET_WITH_TAB$你的[diplomacy|E][skills]\n$BULLET_WITH_TAB$目标对[liege|E]的[opinion|E]\n$BULLET_WITH_TAB$目标对你的[opinion|E]\n$BULLET_WITH_TAB$目标的[court_position|E]\n$BULLET_WITH_TAB$目标和领主的[family|E]关系\n$BULLET_WITH_TAB$目标和你的[family|E]关系\n$BULLET_WITH_TAB$忠信[trait|E]\n$BULLET_WITH_TAB$[house_unity|E]"
     pob_persuade_enlistment_action:0 "$pob_persuade_enlistment$"
     pob_persuade_enlistment_desc:0 "我会尝试劝说[SCHEME.GetTargetCharacter.GetShortUINamePossessive]为我效命"
     pob_persuade_enlistment_start_scheme:0 "$pob_persuade_enlistment$开始"
-
     pob_persuade_enlistment_invalidated_title:1 "@personal_scheme_icon!$pob_persuade_enlistment$计谋结束"
     pob_persuade_enlistment_invalidated_war:1 "由于你们之间的战事，你不能再$pob_persuade_enlistment$[target.GetShortUIName]。"
     pob_persuade_enlistment_invalidated_dead:1 "[target.GetShortUIName|U]已过世。你不能再对[target.GetHerHim]使用。"
-
     pob_persuade_enlistment_events.1001.t:0 "$pob_persuade_enlistment$: 成功！"
     pob_persuade_enlistment_events.1001.desc:0 "[target.GetUIName]最后决定加入我们的队伍。毫无疑问，我们才会是最后的赢家。"
     pob_persuade_enlistment_events.1001.a:0 "这就是乱世的习俗。"
-
     pob_persuade_enlistment_events.1002.t:0 "$pob_persuade_enlistment$: 失败！"
     pob_persuade_enlistment_events.1002.desc:0 "不幸的是，[target.GetUIName]拒绝加入我们的队伍。只是这样的事情的话可不会动摇我们。"
     pob_persuade_enlistment_events.1002.a:0 "这就是乱世的习俗。"
     pob_persuade_enlistment_events.1002.b:0 "昨日之敌乃今日之友，我不会放弃。"
-
     pob_persuade_enlistment_events.1003.t:0 "$pob_persuade_enlistment$: 大成功！"
     pob_persuade_enlistment_events.1003.desc:0 "[target.GetUIName]对加入我们的队伍非常兴奋。毫无疑问，我们才会是最后的赢家。"
     pob_persuade_enlistment_events.1003.a:0 "这就是乱世的习俗。"
-
-     pob_persuade_enlistment_events.1004.t:0 "$pob_persuade_enlistment$: 大失败！"
+    pob_persuade_enlistment_events.1004.t:0 "$pob_persuade_enlistment$: 大失败！"
     pob_persuade_enlistment_events.1004.desc:0 "[target.GetUIName]对加入我们的队伍毫无兴趣。只是这样的事情的话可不会动摇我们。"
     pob_persuade_enlistment_events.1004.a:0 "这就是乱世的习俗。"
 
@@ -46,23 +41,21 @@
     pob_promote_conscription_action:0 "$pob_promote_conscription$："
     pob_promote_conscription_desc:0 "我会尝试提高领地的军役"
     pob_promote_conscription_start_scheme:0 "$pob_promote_conscription$开始"
-
     pob_promote_conscription_invalidated_title:1 "@personal_scheme_icon!$pob_promote_conscription$计谋结束"
     pob_promote_conscription_invalidated_dead:1 "[target.GetShortUIName|U]已过世。你不能再对[target.GetHerHim]使用。"
-
     pob_promote_conscription_events.1001.t:0 "$pob_promote_conscription$: 成功！"
-    pob_promote_conscription_events.1001.desc:0 "[owner.GetUIName]完成了扩大兵役的目标。"
-    pob_promote_conscription_events.1001.a:0 "为了家名存续，这是必须做的。"
-
+    pob_promote_conscription_events.1001.desc:0 "[ROOT.Char.GetFaith.HighGodName]保佑，[owner.GetUIName]部分完成了扩大兵役的目标。"
     pob_promote_conscription_events.1002.t:0 "$pob_promote_conscription$: 失败！"
-    pob_promote_conscription_events.1002.desc:0 "因为领民疲惫，[owner.GetUIName]没能完成扩大兵役的目标。"
-    pob_promote_conscription_events.1002.a:0 "为了家名存续，我本该做得更好。"
+    pob_promote_conscription_events.1002.desc:0 "[ROOT.Char.GetFaith.HighGodName]不佑，领民疲惫，[owner.GetUIName]没能完成扩大兵役的目标。"
+    pob_promote_conscription_events.1003.t:0 "$pob_promote_conscription$: 大成功！"
+    pob_promote_conscription_events.1003.desc:0 "[ROOT.Char.GetFaith.HighGodName]开恩，[owner.GetUIName]超额完成了扩大兵役的目标。"
+    pob_promote_conscription_events.1004.t:0 "$pob_promote_conscription$: 大失败！"
+    pob_promote_conscription_events.1004.desc:0 "[ROOT.Char.GetFaith.HighGodName]降怒，领民疲惫，[owner.GetUIName]失败的策略几乎激起了一揆。"
 
     #亲善
     pob_dispatch_envoy_interaction:0 "指示亲善"
     pob_dispatch_envoy_interaction_desc:0 "指示[courtier|E]为本家提升和[recipient.GetShortUINameNoTooltip]的外交关系"
-    recipient_secondary_pob_dispatch_envoy_interaction:0 "奉行"
-
+    recipient_secondary_pob_dispatch_envoy_interaction:0 "使者"
     pob_improve_relations_interaction:0 "$pob_improve_relations$#weak （计谋）#!"
     pob_improve_relations_interaction_desc:0 "尝试提升和[recipient.GetShortUINameNoTooltip]的外交关系"
     pob_improve_relations:0 "亲善"
@@ -70,22 +63,20 @@
     pob_improve_relations_action:0 "$pob_improve_relations$"
     pob_improve_relations_desc:0 "我会尝试提升和[SCHEME.GetTargetCharacter.GetShortUINamePossessive]的外交关系"
     pob_improve_relations_start_scheme:0 "$pob_improve_relations$开始"
-
     pob_improve_relations_invalidated_title:1 "@personal_scheme_icon!$pob_improve_relations$计谋结束"
-
     pob_improve_relations_events.1001.t:0 "$pob_improve_relations$: 成功！"
-    pob_improve_relations_events.1001.desc:0 "[owner.GetUIName]成功完成了和[target.GetUIName]改善外交关系的目标。"
-    pob_improve_relations_events.1001.a:0 "为了家名存续，这是必须做的。"
-
+    pob_improve_relations_events.1001.desc:0 "[ROOT.Char.GetFaith.HighGodName]保佑，[owner.GetUIName]成功完成了和[target.GetUIName]改善外交关系的目标。"
     pob_improve_relations_events.1002.t:0 "$pob_improve_relations$: 失败！"
-    pob_improve_relations_events.1002.desc:0 "[owner.GetUIName]没能完成和[target.GetUIName]改善外交关系的目标。"
-    pob_improve_relations_events.1002.a:0 "为了家名存续，我本该做得更好。"
+    pob_improve_relations_events.1002.desc:0 "[ROOT.Char.GetFaith.HighGodName]不佑，[owner.GetUIName]没能完成和[target.GetUIName]改善外交关系的目标。"
+    pob_improve_relations_events.1003.t:0 "$pob_improve_relations$: 大成功！"
+    pob_improve_relations_events.1003.desc:0 "[ROOT.Char.GetFaith.HighGodName]开恩，[owner.GetUIName]在我们和[target.GetUIName]之间搭起了信任的桥梁。"
+    pob_improve_relations_events.1004.t:0 "$pob_improve_relations$: 大失败！"
+    pob_improve_relations_events.1004.desc:0 "[ROOT.Char.GetFaith.HighGodName]降怒，[owner.GetUIName]失败的策略让[target.GetUIName]对我们产生了不信任。"
 
     ## 开垦
     pob_delegate_reclamation_interaction:0 "指示开垦"
     pob_delegate_reclamation_interaction_desc:0 "指示[courtier|E]尝试土地开发以提高你的[domain_taxes|E]和[county_development|E]"
-    recipient_secondary_pob_delegate_reclamation_interaction:0 "奉行"
-
+    recipient_secondary_pob_delegate_reclamation_interaction:0 "代官"
     pob_plan_reclamation_interaction:0 "$pob_plan_reclamation$#weak （计谋）#!"
     pob_plan_reclamation_interaction_desc:0 "尝试土地开发以提高你的[domain_taxes|E]和[county_development|E]"
     pob_plan_reclamation:0 "开垦新田"
@@ -93,15 +84,16 @@
     pob_plan_reclamation_action:0 "$pob_plan_reclamation$："
     pob_plan_reclamation_desc:0 "我会尝试土地开发以提高领地赋税和发展度"
     pob_plan_reclamation_start_scheme:0 "$pob_plan_reclamation$开始"
-
     pob_plan_reclamation_invalidated_title:1 "@personal_scheme_icon!$pob_plan_reclamation$计谋结束"
-
     pob_plan_reclamation_events.1001.t:0 "$pob_plan_reclamation$: 成功！"
-    pob_plan_reclamation_events.1001.desc:0 "[owner.GetUIName]完成了开垦新田的目标。"
-    pob_plan_reclamation_events.1001.a:0 "为了家名存续，这是必须做的。"
-
+    pob_plan_reclamation_events.1001.desc:0 "[ROOT.Char.GetFaith.HighGodName]保佑，[owner.GetUIName]部分完成了开垦新田的目标。"
     pob_plan_reclamation_events.1002.t:0 "$pob_plan_reclamation$: 失败！"
-    pob_plan_reclamation_events.1002.desc:0 "[owner.GetUIName]没能完成开垦新田的目标。"
-    pob_plan_reclamation_events.1002.a:0 "为了家名存续，我本该做得更好。"
+    pob_plan_reclamation_events.1002.desc:0 "[ROOT.Char.GetFaith.HighGodName]不佑，[owner.GetUIName]没能完成开垦新田的目标。"
+    pob_plan_reclamation_events.1003.t:0 "$pob_plan_reclamation$: 大成功！"
+    pob_plan_reclamation_events.1003.desc:0 "[ROOT.Char.GetFaith.HighGodName]开恩，[owner.GetUIName]设法在各郡都完成了开垦新田的目标，当世名奉行也不过如此。"
+    pob_plan_reclamation_events.1004.t:0 "$pob_plan_reclamation$: 大失败！"
+    pob_plan_reclamation_events.1004.desc:0 "[ROOT.Char.GetFaith.HighGodName]降怒，[owner.GetUIName]没能完成开垦新田的目标，最后只是折腾了百姓。"
 
-    
+    pob_scheme_typical_option_successful:0 "为了家名存续，这是必须做的。"
+    pob_scheme_typical_option_failed:0 "为了家名存续，我本应做得更好。"
+        

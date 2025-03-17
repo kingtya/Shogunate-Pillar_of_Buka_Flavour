@@ -431,7 +431,8 @@ pob_events.0010 = {
 			limit = {
 				has_council_position = councillor_chancellor
 			}
-			trigger_event = woc_council_councillor_missions.0002
+			add_character_modifier = debug_modifier
+			trigger_event = pob_events.0011
 		}
 		else_if = {
 			limit = {

@@ -18,9 +18,21 @@
     POB_SCHEME_STRONG_HOOK_PENALTY:0 "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is loyal to [target.GetHerHis] [target.Custom2('RelationToMeShort', target.GetLiege)]: $VALUE|+0=$"
     POB_SCHEME_TARGET_LOYAL:0 "Target has the [GetTrait('loyal').GetName( owner.Self )] trait: $VALUE|+0=$"
 
-    POB_SCHEME_OWNER_REALM_SIZE:0 "Realm Size: $VALUE|+0=$"
-
     SP_SCHEME_POLICY_IMPROVE_MILITIA:0 "Militia Strengthening: $VALUE|+0=$"
+    POB_SCHEME_STRONG_HOOK_PENALTY:0 "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))] is loyal to [target.GetHerHis] [target.Custom2('RelationToMeShort', target.GetLiege)]: $VALUE|+0=$"
+    POB_SCHEME_TARGET_LOYAL:0 "Target is [GetTrait('loyal').GetName( owner.Self )]: $VALUE|+0=$"
+    POB_SCHEME_OWNER_REALM_SIZE:0 "Realm Size: $VALUE|+0=$"
+    POB_SCHEME_OWNER_NINJA:0 "[GetTrait('ninja').GetName( owner.Self )]: $VALUE|+0=$"
 
-    pob_improve_relations_task_increased_opinion:0 "Goodwill"
-    pob_improve_relations_task_decreased_opinion:1 "Enmity"
+    pob_improve_relations_increased_opinion:0 "Goodwill"
+    pob_improve_relations_decreased_opinion:1 "Enmity"
+
+    pob_scheme_abysmal_tt:0 "[predicted_difficulty|E]: $scheme_odds_prediction_level_abysmal$"
+    pob_scheme_low_tt:0 "[predicted_difficulty|E]: $scheme_odds_prediction_level_low$"
+    pob_scheme_medium_tt:0 "[predicted_difficulty|E]: $scheme_odds_prediction_level_medium$"
+    pob_scheme_high_tt:0 "[predicted_difficulty|E]: $scheme_odds_prediction_level_high$"
+    pob_scheme_excellent_tt:0 "[predicted_difficulty|E]: $scheme_odds_prediction_level_excellent$"
+
+    pob_scheme_typical_option_successful:0 "For the survival of the family name, this had to be done."
+    pob_scheme_typical_option_failed:0 "For the survival of the family name, I should have done better."
+

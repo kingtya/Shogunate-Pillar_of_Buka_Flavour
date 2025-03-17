@@ -200,3 +200,122 @@ sp_block_firing_councillor_effect = {
 		years = 5
 	}
 }
+
+pob_predict_scheme_difficulty_effect = {
+	if = {
+		limit = {
+			scope:owner.$SCHEME$_odds_value >= 40
+		}
+		custom_tooltip = pob_scheme_excellent_tt
+	}
+	else_if = {
+		limit = {
+			scope:owner.$SCHEME$_odds_value >= 30
+		}
+		custom_tooltip = pob_scheme_high_tt
+	}
+	else_if = {
+		limit = {
+			scope:owner.$SCHEME$_odds_value >= 20 
+		}
+		custom_tooltip = pob_scheme_medium_tt
+	}
+	else_if = {
+		limit = {
+			scope:owner.$SCHEME$_odds_value >= 10
+		}
+		custom_tooltip = pob_scheme_low_tt
+	}
+	else = {
+		custom_tooltip = pob_scheme_abysmal_tt
+	}
+}
+
+# 类跑团大成功大失败机制
+pob_scheme_event_success_roll_effect = {
+	random_list = {
+		0 = {
+			modifier = {
+				add = scope:scheme.scheme_success_chance
+			}
+			random_list = {
+				8 = {
+					save_scope_value_as = {
+						name = scheme_successful
+						value = yes
+					}
+				}
+				2 = {
+					save_scope_value_as = {
+						name = scheme_ex_successful
+						value = yes
+					}
+				}
+			}
+		}
+		0 = {
+			modifier = {
+				add = 100
+				subtract = scope:scheme.scheme_success_chance
+			}
+			random_list = {
+				8 = {
+					save_scope_value_as = {
+						name = scheme_failed
+						value = yes
+					}
+				}
+				2 = {
+				}
+			}
+		}
+	}
+}
+
+pob_trigger_scheme_events_effect = {
+	if = {
+		limit = {
+			scope:owner = {
+				is_ruler = no
+			}
+			exists = scope:owner.liege
+		}
+		scope:owner.liege ?= {
+			save_scope_as = liege
+		}
+		scope:liege = {
+			if = {
+				limit = { exists = scope:scheme_successful }
+				trigger_event = $SCHEME$_events.1001
+			}
+			else_if = {
+				limit = { exists = scope:scheme_ex_successful }
+				trigger_event = $SCHEME$_events.1003
+			}
+			else_if = {
+				limit = { exists = scope:scheme_failed }
+				trigger_event = $SCHEME$_events.1004
+			}
+			else = {
+				trigger_event = $SCHEME$_events.1002
+			}
+		}
+	}
+	else = {
+		if = {
+			limit = { exists = scope:scheme_successful }
+			trigger_event = $SCHEME$_events.1001
+		}
+		else_if = {
+			limit = { exists = scope:scheme_failed }
+			trigger_event = $SCHEME$_events.1002
+		}
+		else_if = {
+			limit = { exists = scope:scheme_ex_successful }
+			trigger_event = $SCHEME$_events.1003
+		}
+		else = {
+			trigger_event = $SCHEME$_events.1004
+		}
+	}
+}

@@ -409,3 +409,317 @@ sp_total_policy_points = {
 		add = 20
 	}
 }
+
+pob_improve_relations_odds_value = {
+	add = {
+		value = {
+			scope:target = { value = "opinion(scope:owner)" }
+			multiply = 0.5
+			floor = yes
+		}
+		desc = scheme_odds.target.opinion_of_owner
+	}
+	add = {
+		value = scope:owner.diplomacy
+		multiply = 0.75
+		desc = scheme_odds.diplomacy.owner
+	}
+	add = { # Base
+		value = 10
+		desc = scheme_odds.misc_modifiers
+	}
+}
+
+pob_promote_conscription_odds_value = {
+	add = {
+		value = scope:owner.martial
+		multiply = 0.75
+		desc = scheme_odds.martial.owner
+	}
+	add = {
+		value = scope:owner.stewardship
+		multiply = 0.5
+		desc = scheme_odds.stewardship.owner
+	}
+	add = {
+		value = scope:owner.learning
+		multiply = 0.25
+		desc = scheme_odds.learning.owner
+	}
+	add = { # Base
+		value = 12.5
+		add = {
+			value = scope:owner.domain_size
+			multiply = -2.5
+		}
+		desc = scheme_odds.misc_modifiers
+	}
+}
+
+pob_plan_reclamation_odds_value = {
+	add = {
+		value = scope:owner.stewardship
+		multiply = 0.75
+		desc = scheme_odds.stewardship.owner
+	}
+	add = {
+		value = scope:owner.learning
+		multiply = 0.5
+		desc = scheme_odds.learning.owner
+	}
+	add = { # Base
+		value = 12.5
+		add = {
+			value = scope:owner.domain_size
+			multiply = -2.5
+		}
+		desc = scheme_odds.misc_modifiers
+	}
+}
+
+pob_persuade_enlistment_odds_value = {
+	add = { # 对你的好感
+		value = {
+			scope:target = { value = "opinion(scope:owner)" }
+			multiply = 0.25
+			floor = yes
+		}
+		desc = scheme_odds.target.opinion_of_owner
+	} 
+	add = { # 外交
+		value = scope:owner.diplomacy
+		multiply = 0.75
+		desc = scheme_odds.diplomacy.owner
+	} 
+	add = { # 谋略
+		value = scope:owner.intrigue
+		multiply = 0.25
+		desc = scheme_odds.intrigue.owner
+	}
+	add = { # Base
+		value = 2.5
+		desc = scheme_odds.misc_modifiers
+		# Opinion modifiers (with target's liege)
+		if = { 
+			limit = {
+				scope:target = {
+					exists = liege
+					is_courtier_of = liege
+				}
+			}
+			add = {
+				value = {
+					scope:target = { value = "opinion(scope:target.liege)" }
+					multiply = -0.25
+					floor = yes
+				}
+			}
+		}
+		# Curent roles
+		if = { 
+			limit = {
+				scope:target = {
+					is_knight = yes
+				}
+			}
+			add = -5
+		}
+		if = { 
+			limit = {
+				scope:target = {
+					is_commanding_army = yes
+				}
+			}
+			add = -7.5
+		}
+		if = { 
+			limit = {
+				scope:target = {
+					is_councillor = yes
+				}
+			}
+			add = -10
+		}
+		if = { 
+			limit = {
+				scope:target = {
+					has_any_court_position = yes
+				}
+			}
+			add = -10
+		}
+		# Relations & relatives (with actor)
+		if = {
+			limit = {
+				scope:target = {
+					has_relation_lover = scope:owner
+				}
+			}
+			add = 25
+		}
+		if = {
+			limit = {
+				scope:target = {
+					has_relation_friend = scope:owner
+				}
+			}
+			add = 18.5
+		}
+		if = {
+			limit = {
+				scope:target = {
+					this.dynasty.dynast = scope:owner
+				}
+			}
+			add = 7.5
+		}
+		if = {
+			limit = {
+				scope:target = {
+					this.house.house_head = scope:owner
+				}
+			}
+			add = 15
+		}
+		if = { 
+			limit = {
+				scope:target = {
+					NOT = { is_close_family_of = scope:owner }
+					is_extended_family_of = scope:owner
+				}
+			}
+			add = 7.5
+		}
+		if = { 
+			limit = {
+				scope:target = {
+					is_close_family_of = scope:owner
+				}
+			}
+			add = 18.5
+		}
+		if = { 
+			limit = {
+				scope:target = {
+					is_spouse_of = scope:owner
+				}
+			}
+			add = 20
+		}
+		# Relations & relatives (with host)
+		if = { 
+			limit = {
+				scope:target = {
+					exists = liege
+					has_relation_lover = liege
+				}
+			}
+			add = -25
+		}
+		if = { 
+			limit = {
+				scope:target = {
+					exists = liege
+					has_relation_friend = liege
+				}
+			}
+			add = -18.5
+		}
+		if = { 
+			limit = {
+				scope:target = {
+					exists = liege
+					is_child_of = liege
+				}
+			}
+			add = -40
+		}
+		if = { 
+			limit = {
+				scope:target = {
+					exists = liege
+					liege = {
+						has_strong_hook = prev
+					}
+				}
+			}
+			add = -25
+		}
+		if = { 
+			limit = {
+				scope:target = {
+					has_trait = loyal
+				}
+			}
+			add = -25
+		}
+		if = { 
+			limit = {
+				scope:target = {
+					is_married = yes
+					is_male = yes
+					any_spouse = {
+						matrilinear_marriage = yes
+						host = scope:target.host
+					}
+				}
+			}
+			add = -12.5
+		}
+		if = { 
+			limit = {
+				scope:target = {
+					is_married = yes
+					is_female = yes
+					any_spouse = {
+						patrilinear_marriage = yes
+						host = scope:target.host
+					}
+				}
+			}
+			add = -12.5
+		}
+		if = {
+			limit = {
+				scope:target = {
+					exists = inspiration
+					inspiration = {
+						exists = inspiration_sponsor
+					}
+				}
+			}
+			add = -12.5
+		}
+		if = {
+			limit = {
+				scope:target = {
+					exists = inspiration
+					inspiration = {
+						exists = inspiration_sponsor
+					}
+				}
+			}
+			add = -63
+		}
+	}
+}
+
+pob_spread_rumors_odds_value = {
+	add = {
+		value = scope:owner.intrigue
+		multiply = 1
+		desc = scheme_odds.intrigue.owner
+	}
+	add = { # Base
+		value = 12.5
+		if = {
+			limit = {
+				scope:owner = {
+					has_trait = ninja
+				}
+				add = 10
+			}
+		}
+		desc = scheme_odds.misc_modifiers
+	}
+}

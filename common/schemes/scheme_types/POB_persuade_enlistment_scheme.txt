@@ -52,49 +52,7 @@
 	}
 
 	odds_prediction = {
-		add = base_odds_prediction_target_is_char_value
-		add = odds_skill_contribution_diplomacy_value
-		add = {
-			value = 0 
-			desc = scheme_odds.misc_modifiers
-			if = {
-				limit = {
-					scope:target = {
-						OR = {
-							is_knight = yes
-							is_councillor = yes
-							has_any_court_position = yes 
-						}
-					}
-				}
-				add = -10
-			}
-			if = {
-				limit = {
-					scope:target.liege ?= {
-						is_close_or_extended_family_of = scope:target
-					}
-				}
-				add = -10
-			}
-			if = {
-				limit = {
-					scope:target = {
-						is_extended_family_of = scope:owner
-					}
-				}
-				add = 10
-			}
-			if = {
-				limit = {
-					scope:target = {
-						is_close_family_of = scope:owner
-					}
-				}
-				add = 20
-			}
-		}
-
+		add = pob_persuade_enlistment_odds_value
 		min = 0
 	}
 
@@ -134,7 +92,6 @@
 			who = scope:target
  			opinion_target = scope:target.liege
  			multiplier = -0.5
- 			#step = 5
  			max = 50
  		}
 
@@ -142,7 +99,6 @@
 			who = scope:target
 			opinion_target = scope:owner
 			multiplier = 0.5
-			#step = 5
  			max = 50
 		}
 
@@ -177,7 +133,7 @@
 			scope:target = { 
 				has_any_court_position = yes 
 			}         
-			add = -10
+			add = -20
 			desc = SP_AI_COURT_PHYSICIAN
 		}
 
@@ -200,14 +156,6 @@
 
 		modifier = {
 			scope:target = {
-				is_child_of = scope:owner
-			}
-			add = 40
-			desc = SP_AI_YOUR_CHILD
-		}
-
-		modifier = {
-			scope:target = {
 				this.dynasty.dynast = scope:owner
 			}
 			add = 15
@@ -221,15 +169,7 @@
 			add = 30
 			desc = SP_AI_YOU_ARE_THE_HOUSE_HEAD
 		}
-
-		modifier = {
-			scope:target = {
-				this.top_liege = scope:owner
-			}
-			add = 30
-			desc = SP_AI_YOU_ARE_THE_SOVEREIGN
-		}
-
+		
 		modifier = {
 			scope:target = {
 				NOT = { is_child_of = scope:owner }
@@ -242,7 +182,6 @@
 
 		modifier = {
 			scope:target = {
-				NOT = { is_child_of = scope:owner }
 				is_close_family_of = scope:owner
 			}
 			add = 37
@@ -295,15 +234,7 @@
 			desc = SP_AI_THEIR_RELATIVE
 		}
 
-		modifier = {
-			scope:target = {
-				exists = liege
-				has_trait = loyal
-			}
-			add = -50
-			desc = POB_SCHEME_TARGET_LOYAL
-		}
-
+		# 强牵制
 		modifier = {
 			scope:target = {
 				exists = liege
@@ -313,6 +244,16 @@
 			}
 			add = -50
 			desc = POB_SCHEME_STRONG_HOOK_PENALTY
+		}
+
+		# 忠信
+		modifier = {
+			scope:target = {
+				exists = liege
+				has_trait = loyal
+			}
+			add = -50
+			desc = POB_SCHEME_TARGET_LOYAL
 		}
 
 		# Family (at location)

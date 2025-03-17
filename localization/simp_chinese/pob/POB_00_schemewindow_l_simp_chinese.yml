@@ -19,6 +19,12 @@ SP_AI_YOUR_RELATIVE: "你是[SelectLocalization(target.IsPlayer, target.GetShort
 
 SP_SCHEME_POLICY_IMPROVE_MILITIA:0 "兵役强化[policy|E]：$VALUE|+0=$"
 POB_SCHEME_STRONG_HOOK_PENALTY:0 "[SelectLocalization(target.IsPlayer, target.GetShortUIName, target.Custom('GetShogunateCharacterNameFromCharacter'))]忠于[target.GetHerHis]的[target.Custom2('RelationToMeShort', target.GetLiege)]：$VALUE|+0=$"
-POB_SCHEME_TARGET_LOYAL:0 "目标是[GetTrait('loyal').GetName( owner.Self )]的: $VALUE|+0=$"
+POB_SCHEME_TARGET_LOYAL:0 "目标是[GetTrait('loyal').GetName( owner.Self )]的：$VALUE|+0=$"
 POB_SCHEME_OWNER_REALM_SIZE:0 "领地规模：$VALUE|+0=$"
-POB_SCHEME_OWNER_NINJA:0 "[GetTrait('ninja').GetName( owner.Self )]的: $VALUE|+0=$"
+POB_SCHEME_OWNER_NINJA:0 "[GetTrait('ninja').GetName( owner.Self )]：$VALUE|+0=$"
+
+pob_scheme_abysmal_tt:0 "[predicted_difficulty|E]：$scheme_odds_prediction_level_abysmal$"
+pob_scheme_low_tt:0 "[predicted_difficulty|E]：$scheme_odds_prediction_level_low$"
+pob_scheme_medium_tt:0 "[predicted_difficulty|E]：$scheme_odds_prediction_level_medium$"
+pob_scheme_high_tt:0 "[predicted_difficulty|E]：$scheme_odds_prediction_level_high$"
+pob_scheme_excellent_tt:0 "[predicted_difficulty|E]：$scheme_odds_prediction_level_excellent$"

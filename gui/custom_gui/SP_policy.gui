@@ -287,11 +287,10 @@
                         margin = { -15 -15 }
                     }
                     scrollbox = {
+                        #size = { 0 250 }
                         layoutpolicy_horizontal = expanding
                         layoutpolicy_vertical = expanding
-                        background = {
-                            using = Background_Area
-                        }
+                        
                         blockoverride "scrollbox_content" {
                             hbox = {
                                 margin = { 0 15 }

@@ -178,8 +178,8 @@ pob_retainer_task_submission_pulse = {
 			limit = {
 				is_capable_adult = yes
 			}
-			trigger_event = pob_events.0010
-			add_character_modifier = debug_modifier
+			#trigger_event = pob_events.0010
+			#add_character_modifier = debug_modifier
 		}
 	}
 }

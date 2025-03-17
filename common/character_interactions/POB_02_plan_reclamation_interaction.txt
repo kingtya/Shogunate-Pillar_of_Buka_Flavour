@@ -56,6 +56,7 @@
 	ai_frequency = 60
 		
 	ai_potential = {
+		prestige >= 400
 		NOR = {
 			is_physically_able = yes
 			any_scheme = {
@@ -214,6 +215,10 @@ pob_delegate_reclamation_interaction = {
 		}
 
 		scope:secondary_recipient = {
+			save_scope_as = owner
+			pob_predict_scheme_difficulty_effect = {
+				SCHEME = pob_promote_conscription
+			}
 			add_prestige = 100
 		}
 	}
@@ -221,7 +226,7 @@ pob_delegate_reclamation_interaction = {
 	ai_frequency = 120
 
 	ai_potential = {
-		always = yes
+		prestige >= 400
 	}
 
 	ai_targets = {
