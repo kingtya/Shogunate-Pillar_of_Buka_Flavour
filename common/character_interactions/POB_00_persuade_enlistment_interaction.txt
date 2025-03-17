@@ -92,7 +92,20 @@
 	auto_accept = yes
 
 	ai_will_do = {
-		base = 50
+		base = 10
+
+		modifier = {
+			add = 40
+			scope:actor.persuade_enlistment_odds_value >= 40
+		}
+		modifier = {
+			add = 30
+			scope:actor.persuade_enlistment_odds_value >= 30
+		}
+		modifier = {
+			add = 20
+			scope:actor.persuade_enlistment_odds_value >= 20
+		}
 	}
 }
 
