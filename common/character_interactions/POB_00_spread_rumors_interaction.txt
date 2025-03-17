@@ -179,6 +179,9 @@ pob_delegate_rumor_spreading_interaction = {
 			}
 		}
 
+		scope:recipient = {
+			save_scope_as = target
+		}
 		scope:secondary_recipient = {
 			save_scope_as = owner
 			pob_predict_scheme_difficulty_effect = {

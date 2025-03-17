@@ -604,43 +604,9 @@ pob_plan_reclamation_events.0002 = { # 开垦事件
 			scheme_owner = {
 				save_scope_as = owner
 				#SUCCESS ROLL
-
-				random = {
-					chance = scope:scheme.scheme_success_chance
-					save_scope_value_as = {
-						name = scheme_successful
-						value = yes
-					}
-				}
-
-				if = {
-					limit = {
-						scope:owner = {
-							is_ruler = no
-						}
-						exists = scope:owner.liege
-					}
-					scope:owner.liege ?= {
-						save_scope_as = liege
-					}
-					scope:liege = {
-						if = {
-							limit = { exists = scope:scheme_successful }
-							trigger_event = pob_plan_reclamation_events.1001
-						}
-						else = {
-							trigger_event = pob_plan_reclamation_events.1002
-						}
-					}
-				}
-				else = {
-					if = {
-						limit = { exists = scope:scheme_successful }
-						trigger_event = pob_plan_reclamation_events.1001
-					}
-					else = {
-						trigger_event = pob_plan_reclamation_events.1002
-					}
+				pob_scheme_event_success_roll_effect = yes
+				pob_trigger_scheme_events_effect = {
+					SCHEME = pob_plan_reclamation
 				}
 			}
 		}
@@ -731,27 +697,15 @@ pob_plan_reclamation_events.1002 = {
 	theme = crown
 
 	left_portrait = {
-		character = scope:owner
-		animation = worry
-	}
-	right_portrait = {
 		trigger = {
 			NOT = { root = scope:owner }
 		}
 		character = root
 		animation = anger
 	}
-	lower_center_portrait = {
-		trigger = {
-			NOT = { root = scope:owner }
-		}
-		character = scope:target
-	}
-	lower_right_portrait = {
-		trigger = {
-			root = scope:owner
-		}
-		character = scope:target
+	right_portrait = {
+		character = scope:owner
+		animation = worry
 	}
 
 	widget = {
@@ -837,27 +791,15 @@ pob_plan_reclamation_events.1004 = {
 	theme = crown
 
 	left_portrait = {
-		character = scope:owner
-		animation = worry
-	}
-	right_portrait = {
 		trigger = {
 			NOT = { root = scope:owner }
 		}
 		character = root
 		animation = anger
 	}
-	lower_center_portrait = {
-		trigger = {
-			NOT = { root = scope:owner }
-		}
-		character = scope:target
-	}
-	lower_right_portrait = {
-		trigger = {
-			root = scope:owner
-		}
-		character = scope:target
+	right_portrait = {
+		character = scope:owner
+		animation = worry
 	}
 
 	widget = {
@@ -901,43 +843,9 @@ pob_promote_conscription_events.0002 = {
 			scheme_owner = {
 				save_scope_as = owner
 				#SUCCESS ROLL
-
-				random = {
-					chance = scope:scheme.scheme_success_chance
-					save_scope_value_as = {
-						name = scheme_successful
-						value = yes
-					}
-				}
-
-				if = {
-					limit = {
-						scope:owner = {
-							is_ruler = no
-						}
-						exists = scope:owner.liege
-					}
-					scope:owner.liege ?= {
-						save_scope_as = liege
-					}
-					scope:liege = {
-						if = {
-							limit = { exists = scope:scheme_successful }
-							trigger_event = pob_promote_conscription_events.1001
-						}
-						else = {
-							trigger_event = pob_promote_conscription_events.1002
-						}
-					}
-				}
-				else = {
-					if = {
-						limit = { exists = scope:scheme_successful }
-						trigger_event = pob_promote_conscription_events.1001
-					}
-					else = {
-						trigger_event = pob_promote_conscription_events.1002
-					}
+				pob_scheme_event_success_roll_effect = yes
+				pob_trigger_scheme_events_effect = {
+					SCHEME = pob_promote_conscription
 				}
 			}
 		}
@@ -971,15 +879,44 @@ pob_promote_conscription_events.1001 = {
 			limit = {
 				NOT = { has_county_modifier = pob_improve_militia_county_modifier }
 			}
-			add_county_modifier = {
-				modifier = pob_improve_militia_county_modifier
-				years = 1
+			random = {
+				chance = 75
+				add_county_modifier = {
+					modifier = pob_improve_militia_county_modifier
+					years = 3
+				}
+				root = {
+					if = {
+						limit = {
+							NOT = { exists = scope:pob_promote_conscription_fallback }
+						}
+						save_scope_value_as = {
+							name = pob_promote_conscription_fallback
+							value = yes
+						}
+					}
+				}
 			}
+		}
+		if = {
+			limit = {
+				NOT = { exists = scope:pob_promote_conscription_fallback }
+			}
+			random_held_county = {
+				limit = {
+					NOT = { has_county_modifier = pob_improve_militia_county_modifier }
+				}
+				add_county_modifier = {
+					modifier = pob_improve_militia_county_modifier
+					years = 3
+				}
+			}
+			clear_saved_scope = pob_plan_reclamation_fallback
 		}
 	}
 
 	option = {
-		name = pob_promote_conscription_events.1001.a
+		name = pob_scheme_typical_option_successful
 	}
 
 	after = {
@@ -1015,7 +952,98 @@ pob_promote_conscription_events.1002 = {
 	}
 	
 	option = {
-		name = pob_promote_conscription_events.1002.a
+		name = pob_scheme_typical_option_failed
+		show_as_tooltip = {
+			scope:scheme = {
+				end_scheme = yes
+			}
+		}
+		scope:owner = {
+			add_prestige = -100
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			scope:scheme ?= {
+				end_scheme = yes
+			}
+		}
+	}
+}
+pob_promote_conscription_events.1003 = {
+	type = character_event
+	title = pob_promote_conscription_events.1003.t
+	desc = pob_promote_conscription_events.1003.desc
+	theme = crown
+
+	left_portrait = {
+		character = root
+		animation = throne_room_applaud_1
+	}
+	right_portrait = {
+		trigger = {
+			NOT = { root = scope:owner }
+		}
+		character = scope:owner
+		animation = throne_room_bow_1
+	}
+	widget = {
+		gui = "event_window_widget_scheme"
+		container = "custom_widgets_container"
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_positive_effect"
+		every_held_county = {
+			limit = {
+				NOT = { has_county_modifier = pob_improve_militia_county_modifier }
+			}
+			add_county_modifier = {
+				modifier = pob_improve_militia_county_modifier
+				years = 1
+			}
+		}
+	}
+
+	option = {
+		name = pob_scheme_typical_option_successful
+	}
+
+	after = {
+		if = {
+			limit = { exists = scope:scheme }
+			scope:scheme = {
+				end_scheme = yes
+			}
+		}
+	}
+}
+pob_promote_conscription_events.1004 = {
+	type = character_event
+	title = pob_promote_conscription_events.1004.t
+	desc = pob_promote_conscription_events.1004.desc
+	theme = crown
+
+	left_portrait = {
+		character = scope:owner
+		animation = worry
+	}
+	right_portrait = {
+		trigger = {
+			NOT = { root = scope:owner }
+		}
+		character = root
+		animation = anger
+	}
+
+	widget = {
+		gui = "event_window_widget_scheme"
+		container = "custom_widgets_container"
+	}
+	
+	option = {
+		name = pob_scheme_typical_option_failed
 		show_as_tooltip = {
 			scope:scheme = {
 				end_scheme = yes
@@ -1047,43 +1075,9 @@ pob_spread_rumors_events.0002 = {
 			scheme_owner = {
 				save_scope_as = owner
 				#SUCCESS ROLL
-
-				random = {
-					chance = scope:scheme.scheme_success_chance
-					save_scope_value_as = {
-						name = scheme_successful
-						value = yes
-					}
-				}
-
-				if = {
-					limit = {
-						scope:owner = {
-							is_ruler = no
-						}
-						exists = scope:owner.liege
-					}
-					scope:owner.liege ?= {
-						save_scope_as = liege
-					}
-					scope:liege = {
-						if = {
-							limit = { exists = scope:scheme_successful }
-							trigger_event = pob_spread_rumors_events.1001
-						}
-						else = {
-							trigger_event = pob_spread_rumors_events.1002
-						}
-					}
-				}
-				else = {
-					if = {
-						limit = { exists = scope:scheme_successful }
-						trigger_event = pob_spread_rumors_events.1001
-					}
-					else = {
-						trigger_event = pob_spread_rumors_events.1002
-					}
+				pob_scheme_event_success_roll_effect = yes
+				pob_trigger_scheme_events_effect = {
+					SCHEME = pob_spread_rumors
 				}
 			}
 		}
@@ -1193,6 +1187,133 @@ pob_spread_rumors_events.1002 = {
 		show_as_tooltip = {
 			scope:scheme = {
 				end_scheme = yes
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			scope:scheme ?= {
+				end_scheme = yes
+			}
+		}
+	}
+}
+pob_spread_rumors_events.1003 = {
+	type = character_event
+	title = pob_spread_rumors_events.1003.t
+	desc = pob_spread_rumors_events.1003.desc
+	theme = crown
+
+	left_portrait = {
+		character = root
+		animation = throne_room_applaud_1
+	}
+	right_portrait = {
+		trigger = {
+			NOT = { root = scope:owner }
+		}
+		character = scope:owner
+		animation = throne_room_bow_1
+	}
+	lower_center_portrait = {
+		trigger = {
+			NOT = { root = scope:owner }
+		}
+		character = scope:target
+	}
+	lower_right_portrait = {
+		trigger = {
+			root = scope:owner
+		}
+		character = scope:target
+	}
+
+	widget = {
+		gui = "event_window_widget_scheme"
+		container = "custom_widgets_container"
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_positive_effect"
+		scope:target = {
+			add_character_modifier = {
+				modifier = pob_slandered_by_spreading_rumors_modifier
+				years = 3
+			}
+			add_character_modifier = {
+				modifier = pob_slandered_by_spreading_rumors_modifier
+				years = 3
+			}
+		}
+	}
+
+	option = {
+		name = pob_scheme_typical_option_successful
+	}
+
+	after = {
+		if = {
+			limit = { exists = scope:scheme }
+			scope:scheme = {
+				end_scheme = yes
+			}
+		}
+	}
+}
+pob_spread_rumors_events.1004 = {
+	type = character_event
+	title = pob_spread_rumors_events.1004.t
+	desc = pob_spread_rumors_events.1004.desc
+	theme = crown
+
+	left_portrait = {
+		character = scope:owner
+		animation = worry
+	}
+	right_portrait = {
+		trigger = {
+			NOT = { root = scope:owner }
+		}
+		character = root
+		animation = anger
+	}
+	lower_center_portrait = {
+		trigger = {
+			NOT = { root = scope:owner }
+		}
+		character = scope:target
+	}
+	lower_right_portrait = {
+		trigger = {
+			root = scope:owner
+		}
+		character = scope:target
+	}
+
+	widget = {
+		gui = "event_window_widget_scheme"
+		container = "custom_widgets_container"
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_negative"
+	}
+
+	option = {
+		name = {
+			text = pob_scheme_typical_option_failed
+		}
+		show_as_tooltip = {
+			scope:scheme = {
+				end_scheme = yes
+			}
+		}
+		scope:target = {
+			add_opinion = {
+				target = root
+				modifier = hate_opinion
+				opinion = -50
 			}
 		}
 	}

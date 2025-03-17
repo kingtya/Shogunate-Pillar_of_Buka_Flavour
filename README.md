@@ -21,3 +21,5 @@
 
 3、common\scripted_triggers\SP_02_legacy_trait_triggers中确定能发布政策的条件
 
+4、common\script_values\SP_03_values中确定需要消耗的政策点
+

@@ -20,7 +20,7 @@
 	uses_resistance = no
 	base_progress_goal = 170
 	maximum_breaches = 1
-	base_maximum_success = 95
+	base_maximum_success = 100
 	minimum_success = 5
 	
 	# Core Triggers
@@ -54,7 +54,7 @@
 		modifier = {
 			add = {
 				value = scope:owner.stewardship
-			 	multiply = 1.5
+			 	multiply = 2
 			}
 			desc = SCHEME_YOUR_STEWARDSHIP
 		}
@@ -62,7 +62,7 @@
 		modifier = {
 			add = {
 				value = scope:owner.learning
-				multiply = 0.5
+				multiply = 1
 			}
 			desc = SCHEME_YOUR_LEARNING
 		}
@@ -74,7 +74,7 @@
 			}
 			add = {
 				value = scope:owner.liege.domain_size
-				multiply = -5
+				multiply = -2
 			}
 			desc = POB_SCHEME_OWNER_REALM_SIZE
 		}
@@ -82,7 +82,7 @@
 		modifier = {
 			add = {
 				value = scope:owner.domain_size
-				multiply = -5
+				multiply = -2
 			}
 			desc = POB_SCHEME_OWNER_REALM_SIZE
 		}

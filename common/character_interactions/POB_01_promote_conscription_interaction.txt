@@ -50,6 +50,10 @@
 					TARGET_SCOPE = scope:recipient
 				}
 			}
+			save_scope_as = owner
+			pob_predict_scheme_difficulty_effect = {
+				SCHEME = pob_promote_conscription
+			}
 		}
 	}
 

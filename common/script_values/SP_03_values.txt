@@ -337,7 +337,6 @@
 		}
 	}
 }
-
 sp_total_policy_points = {
 	value = 25
 	if = {
@@ -429,54 +428,6 @@ pob_improve_relations_odds_value = {
 		desc = scheme_odds.misc_modifiers
 	}
 }
-
-pob_promote_conscription_odds_value = {
-	add = {
-		value = scope:owner.martial
-		multiply = 0.75
-		desc = scheme_odds.martial.owner
-	}
-	add = {
-		value = scope:owner.stewardship
-		multiply = 0.5
-		desc = scheme_odds.stewardship.owner
-	}
-	add = {
-		value = scope:owner.learning
-		multiply = 0.25
-		desc = scheme_odds.learning.owner
-	}
-	add = { # Base
-		value = 12.5
-		add = {
-			value = scope:owner.domain_size
-			multiply = -2.5
-		}
-		desc = scheme_odds.misc_modifiers
-	}
-}
-
-pob_plan_reclamation_odds_value = {
-	add = {
-		value = scope:owner.stewardship
-		multiply = 0.75
-		desc = scheme_odds.stewardship.owner
-	}
-	add = {
-		value = scope:owner.learning
-		multiply = 0.5
-		desc = scheme_odds.learning.owner
-	}
-	add = { # Base
-		value = 12.5
-		add = {
-			value = scope:owner.domain_size
-			multiply = -2.5
-		}
-		desc = scheme_odds.misc_modifiers
-	}
-}
-
 pob_persuade_enlistment_odds_value = {
 	add = { # 对你的好感
 		value = {
@@ -703,7 +654,51 @@ pob_persuade_enlistment_odds_value = {
 		}
 	}
 }
-
+pob_plan_reclamation_odds_value = {
+	add = {
+		value = scope:owner.stewardship
+		multiply = 1
+		desc = scheme_odds.stewardship.owner
+	}
+	add = {
+		value = scope:owner.learning
+		multiply = 0.5
+		desc = scheme_odds.learning.owner
+	}
+	add = { # Base
+		value = 12
+		add = {
+			value = scope:owner.domain_size
+			multiply = -1
+		}
+		desc = scheme_odds.misc_modifiers
+	}
+}
+pob_promote_conscription_odds_value = {
+	add = {
+		value = scope:owner.martial
+		multiply = 1
+		desc = scheme_odds.martial.owner
+	}
+	add = {
+		value = scope:owner.stewardship
+		multiply = 0.75
+		desc = scheme_odds.stewardship.owner
+	}
+	add = {
+		value = scope:owner.learning
+		multiply = 0.5
+		desc = scheme_odds.learning.owner
+	}
+	add = { # Base
+		value = 12
+		add = {
+			value = scope:owner.domain_size
+			multiply = -1
+		}
+		desc = scheme_odds.misc_modifiers
+	}
+}
 pob_spread_rumors_odds_value = {
 	add = {
 		value = scope:owner.intrigue
