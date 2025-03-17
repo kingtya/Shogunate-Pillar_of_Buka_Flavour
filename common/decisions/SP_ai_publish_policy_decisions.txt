@@ -1677,7 +1677,9 @@ sp_ai_publish_policy_intensive_firearms_decision = {
 		}
 	}
 	is_valid = {
-		sp_culture_has_innovation_advanced_bowmaking = yes
+		sp_culture_has_innovation_trigger = {
+			INNOVATION = innovation_advanced_bowmaking
+		}
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points
@@ -2044,7 +2046,9 @@ sp_ai_publish_policy_dragon_corps_decision = {
 		}
 	}
 	is_valid = {
-		sp_culture_has_innovation_advanced_bowmaking = yes
+		sp_culture_has_innovation_trigger = {
+			INNOVATION = innovation_advanced_bowmaking
+		}
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points

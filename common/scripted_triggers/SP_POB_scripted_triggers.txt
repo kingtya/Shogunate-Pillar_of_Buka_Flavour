@@ -5,11 +5,6 @@
 	}
 }
 
-sp_culture_has_innovation_advanced_bowmaking = {
-	culture = {
-		has_innovation = innovation_advanced_bowmaking
-	}
-}
 sp_culture_has_innovation_guilds = {
 	culture = {
 		has_innovation = innovation_guilds

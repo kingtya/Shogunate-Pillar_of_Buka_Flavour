@@ -650,10 +650,10 @@ pob_plan_reclamation_events.1001 = {
 				root = {
 					if = {
 						limit = {
-							NOT = { exists = scope:pob_plan_reclamation_fallback }
+							NOT = { exists = scope:pob_fallback }
 						}
 						save_scope_value_as = {
-							name = pob_plan_reclamation_fallback
+							name = pob_fallback
 							value = yes
 						}
 					}
@@ -662,7 +662,7 @@ pob_plan_reclamation_events.1001 = {
 		}
 		if = {
 			limit = {
-				NOT = { exists = scope:pob_plan_reclamation_fallback }
+				NOT = { exists = scope:pob_fallback }
 			}
 			random_held_county = {
 				limit = {
@@ -673,7 +673,7 @@ pob_plan_reclamation_events.1001 = {
 					years = 3
 				}
 			}
-			clear_saved_scope = pob_plan_reclamation_fallback
+			clear_saved_scope = pob_fallback
 		}
 	}
 
@@ -711,6 +711,10 @@ pob_plan_reclamation_events.1002 = {
 	widget = {
 		gui = "event_window_widget_scheme"
 		container = "custom_widgets_container"
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_negative"
 	}
 
 	option = {
@@ -807,6 +811,10 @@ pob_plan_reclamation_events.1004 = {
 		container = "custom_widgets_container"
 	}
 
+	immediate = {
+		play_music_cue = "mx_cue_negative"
+	}
+
 	option = {
 		name = {
 			text = pob_scheme_typical_option_failed
@@ -888,10 +896,10 @@ pob_promote_conscription_events.1001 = {
 				root = {
 					if = {
 						limit = {
-							NOT = { exists = scope:pob_promote_conscription_fallback }
+							NOT = { exists = scope:pob_fallback }
 						}
 						save_scope_value_as = {
-							name = pob_promote_conscription_fallback
+							name = pob_fallback
 							value = yes
 						}
 					}
@@ -900,7 +908,7 @@ pob_promote_conscription_events.1001 = {
 		}
 		if = {
 			limit = {
-				NOT = { exists = scope:pob_promote_conscription_fallback }
+				NOT = { exists = scope:pob_fallback }
 			}
 			random_held_county = {
 				limit = {
@@ -911,7 +919,7 @@ pob_promote_conscription_events.1001 = {
 					years = 3
 				}
 			}
-			clear_saved_scope = pob_plan_reclamation_fallback
+			clear_saved_scope = pob_fallback
 		}
 	}
 
@@ -949,6 +957,10 @@ pob_promote_conscription_events.1002 = {
 	widget = {
 		gui = "event_window_widget_scheme"
 		container = "custom_widgets_container"
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_negative"
 	}
 	
 	option = {
@@ -1040,6 +1052,48 @@ pob_promote_conscription_events.1004 = {
 	widget = {
 		gui = "event_window_widget_scheme"
 		container = "custom_widgets_container"
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_negative"
+		every_held_county = {
+			limit = {
+				NOT = { has_county_modifier = pob_ikki_fellowship_modifier }
+			}
+			random = {
+				chance = 75
+				add_county_modifier = {
+					modifier = pob_ikki_fellowship_modifier
+					years = 3
+				}
+				root = {
+					if = {
+						limit = {
+							NOT = { exists = scope:pob_fallback }
+						}
+						save_scope_value_as = {
+							name = pob_promote_conscription_fallback
+							value = yes
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { exists = scope:pob_fallback }
+			}
+			random_held_county = {
+				limit = {
+					NOT = { has_county_modifier = pob_ikki_fellowship_modifier }
+				}
+				add_county_modifier = {
+					modifier = pob_ikki_fellowship_modifier
+					years = 3
+				}
+			}
+			clear_saved_scope = pob_fallback
+		}
 	}
 	
 	option = {

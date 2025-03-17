@@ -1,25 +1,4 @@
-﻿sp_has_legacy_trait_trigger = {
-	exists = $TRAIT$
-	OR = {
-		has_trait = $TRAIT$
-		AND = {
-			exists = cp:councillor_spt_bugyo
-			cp:councillor_spt_bugyo = {
-				has_trait = $TRAIT$
-				$SKILL$ >= $RATING$
-			}
-		}
-	}
-}
-
-sp_councillor_has_legacy_trait_trigger = {
-	exists = $TRAIT$
-	NOT = { has_trait = $TRAIT$ }
-	exists = cp:councillor_spt_bugyo
-	cp:councillor_spt_bugyo = {
-		has_trait = $TRAIT$
-	}
-}
+﻿
 
 sp_can_release_policy_trigger = {
 	trigger_if = {
@@ -95,7 +74,9 @@ sp_can_release_policy_trigger = {
 				limit = {
 					$FLAG$ = flag:flag_sp_policy_intensive_firearms
 				}
-				sp_culture_has_innovation_advanced_bowmaking = yes
+				sp_culture_has_innovation_trigger = {
+					INNOVATION = innovation_advanced_bowmaking
+				}
 				sp_has_legacy_trait_trigger = { 
 					TRAIT = oda_margin
 					SKILL = martial
@@ -160,7 +141,9 @@ sp_can_release_policy_trigger = {
 				limit = {
 					$FLAG$ = flag:flag_sp_policy_dragon_corps
 				}
-				sp_culture_has_innovation_advanced_bowmaking = yes
+				sp_culture_has_innovation_trigger = {
+					INNOVATION = innovation_advanced_bowmaking
+				}
 				sp_has_legacy_trait_trigger = { 
 					TRAIT = date_margin
 					SKILL = martial
@@ -315,4 +298,26 @@ sp_can_release_policy_trigger = {
 		always = no
 	}
 	
+}
+
+sp_has_legacy_trait_trigger = {
+	exists = $TRAIT$
+	OR = {
+		has_trait = $TRAIT$
+		AND = {
+			exists = cp:councillor_spt_bugyo
+			cp:councillor_spt_bugyo = {
+				has_trait = $TRAIT$
+				$SKILL$ >= $RATING$
+			}
+		}
+	}
+}
+sp_councillor_has_legacy_trait_trigger = {
+	exists = $TRAIT$
+	NOT = { has_trait = $TRAIT$ }
+	exists = cp:councillor_spt_bugyo
+	cp:councillor_spt_bugyo = {
+		has_trait = $TRAIT$
+	}
 }
