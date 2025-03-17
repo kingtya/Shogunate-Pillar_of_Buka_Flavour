@@ -1058,12 +1058,12 @@ pob_promote_conscription_events.1004 = {
 		play_music_cue = "mx_cue_negative"
 		every_held_county = {
 			limit = {
-				NOT = { has_county_modifier = pob_ikki_fellowship_modifier }
+				NOT = { has_county_modifier = pob_ikki_fellowship_county_modifier }
 			}
 			random = {
 				chance = 75
 				add_county_modifier = {
-					modifier = pob_ikki_fellowship_modifier
+					modifier = pob_ikki_fellowship_county_modifier
 					years = 3
 				}
 				root = {
@@ -1085,10 +1085,10 @@ pob_promote_conscription_events.1004 = {
 			}
 			random_held_county = {
 				limit = {
-					NOT = { has_county_modifier = pob_ikki_fellowship_modifier }
+					NOT = { has_county_modifier = pob_ikki_fellowship_county_modifier }
 				}
 				add_county_modifier = {
-					modifier = pob_ikki_fellowship_modifier
+					modifier = pob_ikki_fellowship_county_modifier
 					years = 3
 				}
 			}

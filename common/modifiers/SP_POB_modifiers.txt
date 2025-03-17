@@ -385,7 +385,7 @@ pob_slandered_by_spreading_rumors_modifier = {
 	stacking = yes
 }
 
-pob_ikki_fellowship_modifier = {
+pob_ikki_fellowship_county_modifier = {
 	icon = county_modifier_control_negative
 	county_opinion_add = -10
 	levy_size = -0.1
