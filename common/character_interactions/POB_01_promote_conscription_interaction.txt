@@ -21,6 +21,12 @@
 		}
 	}
 
+	is_valid = {
+		scope:actor = {
+			has_lifestyle = martial_lifestyle
+		}
+	}
+
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			can_start_scheme = {
@@ -50,6 +56,7 @@
 					TARGET_SCOPE = scope:recipient
 				}
 			}
+			
 			save_scope_as = owner
 			pob_predict_scheme_difficulty_effect = {
 				SCHEME = pob_promote_conscription

@@ -21,6 +21,12 @@
 		}
 	}
 
+	is_valid = {
+		scope:actor = {
+			has_lifestyle = stewardship_lifestyle
+		}
+	}
+
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			can_start_scheme = {
@@ -49,6 +55,11 @@
 					TARGET_TYPE = target_character
 					TARGET_SCOPE = scope:recipient
 				}
+			}
+
+			save_scope_as = owner
+			pob_predict_scheme_difficulty_effect = {
+				SCHEME = pob_promote_conscription
 			}
 		}
 	}
@@ -234,7 +245,7 @@ pob_delegate_reclamation_interaction = {
 		scope:secondary_recipient = {
 			save_scope_as = owner
 			pob_predict_scheme_difficulty_effect = {
-				SCHEME = pob_promote_conscription
+				SCHEME = pob_plan_reclamation
 			}
 			add_prestige = 100
 		}

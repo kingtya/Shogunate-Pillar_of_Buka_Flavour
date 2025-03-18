@@ -23,6 +23,10 @@
 		}
 	}
 
+	is_valid = {
+		has_lifestyle = intrigue_lifestyle
+	}
+
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			can_start_scheme = {

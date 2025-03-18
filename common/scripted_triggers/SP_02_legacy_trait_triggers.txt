@@ -301,7 +301,6 @@ sp_can_release_policy_trigger = {
 }
 
 sp_has_legacy_trait_trigger = {
-	exists = $TRAIT$
 	OR = {
 		has_trait = $TRAIT$
 		AND = {
@@ -314,7 +313,6 @@ sp_has_legacy_trait_trigger = {
 	}
 }
 sp_councillor_has_legacy_trait_trigger = {
-	exists = $TRAIT$
 	NOT = { has_trait = $TRAIT$ }
 	exists = cp:councillor_spt_bugyo
 	cp:councillor_spt_bugyo = {
