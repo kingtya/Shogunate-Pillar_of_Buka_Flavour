@@ -15,15 +15,3 @@ sp_vassal_towards_conservative_policy_opinion = {
 	decaying = yes
 	stacking = yes
 }
-
-pob_improve_relations_increased_opinion = {
-	opinion = 20
-	stacking = yes
-	years = 5
-}
-
-pob_improve_relations_decreased_opinion = {
-	opinion = -20
-	stacking = yes
-	years = 5
-}

@@ -24,6 +24,7 @@
     flag_sp_policy_distant_diplomacy_desc:0 "一种古老的外交策略，核心在于先攻击地理位置较近的敌人，同时与地理位置较远的国家建立友好关系。"
     sp_policy_distant_diplomacy_modifier:0 "远交近攻策"
     sp_policy_distant_diplomacy_modifier_desc:0 "此人加强了外交的重要性。"
+    sp_policy_distant_diplomacy_effect_tt:0 "你、你的[vassal|E]和[courtiers|E]针对非相邻[rulers|E]的[GetScheme('pob_improve_relations').GetTypeName|V][scheme_success_chance|E]提高"
 
     flag_sp_policy_suggestion_box_name:0 "#V 目安箱#!"
     flag_sp_policy_suggestion_box_desc:0 "以施政参考意见和收集社会情况等为目的，为收集百姓的进言而设置的意见箱及其制度。"
@@ -31,7 +32,7 @@
     sp_policy_suggestion_box_modifier_desc:0 "此人允许领民上达建议信。"
 
     flag_sp_policy_coalition_focus_name:0 "#V 合纵策#!"
-    flag_sp_policy_coalition_focus_desc:0 "合纵即“合众弱以攻一强“，目的在于联合许多弱国抵抗一个强国，以防止强国的兼并，实质上是各势力之间为互相拉拢而展开的外交、[martial|E]斗争。"
+    flag_sp_policy_coalition_focus_desc:0 "合纵即“合众弱以攻一强“，目的在于联合许多弱国抵抗一个强国，以防止强国的兼并，实质上是各势力之间为互相拉拢而展开的外交、军事斗争。"
     sp_policy_coalition_focus_modifier:0 "合纵策"
     sp_policy_coalition_focus_modifier_desc:0 "此人着力拉拢周边国众和大名。"
 

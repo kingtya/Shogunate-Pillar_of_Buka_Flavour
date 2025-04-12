@@ -5,7 +5,7 @@
     sp_policy_western_sanction_modifier:0 "南蛮保护"
     sp_policy_western_sanction_modifier_desc:0 "此人保护西方外来者的权益。"
     sp_policy_western_sanction_effect_tt:0 "你解锁#V 寻找南蛮商人#![decisions|E]"
-    sp_policy_has_no_innovation_shogunate_nanban_trade_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_shogunate_nanban_trade$[innovation|E]，强制推行会永久损失10点政策点#!"
+    sp_policy_has_no_innovation_shogunate_nanban_trade_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_shogunate_nanban_trade$[innovation|E]，强制推行将冻结10政策点，为期#V 25#!年#!"
 
     flag_sp_policy_improve_firearms_name:0 "#V 铁炮队强化#!"
     flag_sp_policy_improve_firearms_desc:0 "自葡萄牙人将铁炮带入种子岛开始，从九州南部种子岛到纪州根来众再到全日本，铁炮战术在日本得以迅速发展并逐步完善。"
@@ -31,16 +31,16 @@
     flag_sp_policy_easy_commerce_desc:0 "日本的“座”即日本式的封建行会，起源于以公家、寺社为本所的同业特权团体，本所从座人处征收座役、座钱。免除城下町的市场税和商业税，废除座商人特权，称为“乐市”；进一步废除座本身则称为“乐座”。"
     sp_policy_easy_commerce_modifier:0 "乐市乐座"
     sp_policy_easy_commerce_modifier_desc:0 "此人免除座商特权和贸易税，鼓励自由通商。"
-    sp_policy_has_no_innovation_guilds_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_guilds$[innovation|E]，强制推行会永久损失20点政策点#!"
+    sp_policy_has_no_innovation_guilds_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_guilds$[innovation|E]，强制推行将冻结20政策点，为期#V 25#!年#!"
     sp_policy_easy_commerce_warning_tt:0 "@warning_icon!#X 你颁布的政策乐市乐座和这个政策冲突#!"
 
     flag_sp_policy_soidier_professionaliztion_name:0 "#V 兵农分离#!"
     flag_sp_policy_soidier_professionaliztion_desc:0 "战国大名为能拥有常备兵所实行的政策，可能启发于织田信长，实际奠基于太阁丰臣秀吉的检地与刀狩，最终完成于关白丰臣秀次的“人扫令”。此外，该政令也是为了确立武士阶级，使武士以外的人民无法拥有武力，巩固社会的秩序。"
     sp_policy_soidier_professionaliztion_modifier:0 "兵农分离"
     sp_policy_soidier_professionaliztion_modifier_desc:0 "此人将领民兵和常备兵分离，彻底化了常备军制。"
-    sp_policy_has_no_innovation_royal_armory_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_royal_armory$[innovation|E]，强制推行会永久损失20点政策点#!"
+    sp_policy_has_no_innovation_royal_armory_tt:0 "@warning_icon!#X 你的[culture|E]没有$innovation_royal_armory$[innovation|E]，强制推行将冻结20政策点，为期#V 25#!年#!"
 
     flag_sp_policy_progressive_system_name:0 "#V 革新制度#!"
     flag_sp_policy_progressive_system_desc:0 ""
-    sp_policy_progressive_system_tt_0:0 "@warning_icon!#X 你必须把此政策作为前置，即颁布此政策前不能颁布任何政策#!"
+    sp_policy_progressive_system_tt_0:0 "@warning_icon!#X 你必须把此政策作为前置，即颁布此政策前不能颁布任何政策，并只能最后撤销该政策#!"
     sp_policy_progressive_system_tt_1:0 "你获得#P 20#!政策点，颁布保守政策额外消耗#N 10#!政策点，颁布中道政策额外消耗#N 5#!政策点"

@@ -1675,11 +1675,11 @@ sp_ai_publish_policy_intensive_firearms_decision = {
 			SKILL = martial
 			RATING = high_skill_rating
 		}
-	}
-	is_valid = {
 		sp_culture_has_innovation_trigger = {
 			INNOVATION = innovation_advanced_bowmaking
 		}
+	}
+	is_valid = {
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points
@@ -2040,15 +2040,15 @@ sp_ai_publish_policy_dragon_corps_decision = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
 		sp_has_legacy_trait_trigger = { 
-			TRAIT = shimazu_margin
+			TRAIT = date_margin
 			SKILL = martial
 			RATING = high_skill_rating
 		}
-	}
-	is_valid = {
 		sp_culture_has_innovation_trigger = {
 			INNOVATION = innovation_advanced_bowmaking
 		}
+	}
+	is_valid = {
 		trigger_if = {
 			limit = {
 				exists = root.var:sp_current_policy_points
@@ -2152,7 +2152,7 @@ sp_ai_publish_policy_satsuma_military_education_decision = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
 		sp_has_legacy_trait_trigger = { 
-			TRAIT = satsuma_margin
+			TRAIT = shimazu_margin
 			SKILL = martial
 			RATING = high_skill_rating
 		}
@@ -2225,7 +2225,7 @@ sp_ai_publish_policy_expeditionary_support_decision = {
 		is_ai = yes
 		has_game_rule = enable_ai_special_policies
 		sp_has_legacy_trait_trigger = { 
-			TRAIT = chosokabe_margin
+			TRAIT = uesugi_margin
 			SKILL = martial
 			RATING = high_skill_rating
 		}

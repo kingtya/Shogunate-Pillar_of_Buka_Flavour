@@ -1,5 +1,4 @@
 ﻿sp_culture_has_innovation_trigger = {
-	exists = $INNOVATION$
 	culture = {
 		has_innovation = $INNOVATION$
 	}
@@ -46,18 +45,10 @@ sp_can_revoke_policy = {
 			text = sp_policy_released_recently_cd
 			trigger_if = {
 				limit = {
-					trigger_if = {
-						limit = {
-							has_variable_list = sp_released_policy_flags
-						}
-						any_in_list = {
-							variable = sp_released_policy_flags
-							this = $FLAG$
-						}
-						
-					}
-					trigger_else = {
-						always = no
+					has_variable_list = sp_released_policy_flags
+					any_in_list = {
+						variable = sp_released_policy_flags
+						this = $FLAG$
 					}
 				}
 				NOT = {
@@ -68,6 +59,20 @@ sp_can_revoke_policy = {
 				always = yes
 			}
 		}
+		
+		custom_description = {
+			text = ""
+			trigger_if = {
+				limit = {
+					$FLAG$ = flag:flag_sp_policy_progressive_system
+				}
+				any_in_list = {
+					variable = sp_released_policy_flags
+					count <= 1
+				}
+			}
+		}
+		
 	}
 	trigger_else = {
 		always = no
@@ -87,17 +92,5 @@ sp_is_released_policy = {
 	}
 	trigger_else = {
 		always = no
-	}
-}
-
-pob_has_any_running_task_scheme = {
-	any_scheme = { 
-		OR = {
-			scheme_type = pob_persuade_enlishment
-			scheme_type = pob_improve_relations
-			scheme_type = pob_plan_reclamation
-			scheme_type = pob_promote_conscription
-			scheme_type = pob_spread_rumors
-		}
 	}
 }

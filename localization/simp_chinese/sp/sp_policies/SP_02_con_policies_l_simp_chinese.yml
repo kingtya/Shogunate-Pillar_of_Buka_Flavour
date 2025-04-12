@@ -48,7 +48,7 @@ flag_sp_policy_improve_militia_name:0 "#V 兵役强化#!"
 flag_sp_policy_improve_militia_desc:0 "战国大名的兵力基础，是大名向家臣、国众课征军役所取得的人力。征发比之平日更多的兵役能够在短时间内聚集军力，但也必须以免除栋别役、普请役等为代价安抚民心。"
 sp_policy_improve_militia_modifier:0 "兵役强化"
 sp_policy_improve_militia_modifier_desc:0 "此人加重了领地的兵役，免除了部分栋别役和普请役。"
-sp_policy_improve_militia_effect_tt:0 "你、你的[vassal|E]和[courtiers|E]的#V 民兵征发#![scheme_success_chance|E]提高"
+sp_policy_improve_militia_effect_tt:0 "你、你的[vassal|E]和[courtiers|E]的[GetScheme('pob_promote_conscription').GetTypeName|V][scheme_success_chance|E]提高"
 
 flag_sp_policy_castle_construction_name:0 "#V 城郭基建#!"
 flag_sp_policy_castle_construction_desc:0 "从镰仓时代的武士居馆，到南北朝和室町时代的山城，再到战国时代的平山城，日本的筑城理念经历了漫长的发展而趋于成熟。"

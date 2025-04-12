@@ -117,8 +117,8 @@ dragon_corps = { # 伊达龙骑兵
 			variable = sp_released_policy_flags
 			this = flag:flag_sp_policy_dragon_corps
 		}
-		culture = {
-			has_innovation = innovation_advanced_bowmaking
+		sp_culture_has_innovation_trigger = {
+			INNOVATION = innovation_advanced_bowmaking
 		}
 	}
 

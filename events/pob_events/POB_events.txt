@@ -560,3 +560,23 @@ pob_events.0012 = {
 	after = {
 	}
 }
+
+pob_events.0013 = {
+	hidden = yes
+	immediate = {
+		change_variable = {
+			name = sp_current_policy_points
+			subtract = 20
+		}
+	}
+}
+
+pob_events.0014 = {
+	hidden = yes
+	immediate = {
+		change_variable = {
+			name = sp_current_policy_points
+			subtract = 10
+		}
+	}
+}
