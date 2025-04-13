@@ -262,7 +262,7 @@ pob_abdicate_decision_clan = {
 	}
 }
 
-pob_search_for_western_merchant_decision = {
+sp_search_for_western_merchant_decision = {
 	ai_check_interval = 40
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/fp3_decision_tax_collector.dds"
@@ -351,8 +351,8 @@ pob_search_for_western_merchant_decision = {
 					save_scope_as = western_merchant
 				}
 				send_interface_message = {
-					title = pob_search_for_western_merchant_decision.msg.t
-					desc = pob_search_for_western_merchant_decision.msg.desc
+					title = sp_search_for_western_merchant_decision.msg.t
+					desc = sp_search_for_western_merchant_decision.msg.desc
 					type = event_stewardship_good_with_text
 					left_icon = scope:western_merchant
 				}

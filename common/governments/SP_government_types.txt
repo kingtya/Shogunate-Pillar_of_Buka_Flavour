@@ -1,0 +1,78 @@
+﻿republic_government = {
+	primary_holding = city_holding
+	valid_holdings = { city_holding castle_holding }
+	required_county_holdings = { city_holding castle_holding church_holding }
+
+	government_rules = {
+		inherit_from_dynastic_government = no
+		create_cadet_branches = yes
+		royal_court = yes
+		legitimacy = yes
+		dynasty_named_realms = yes
+		use_as_base_on_landed = yes
+		use_as_base_on_rank_up = yes
+	}
+
+	house_unity = clan_house_unity		# Shogunate
+
+	vassal_contract = {
+		republic_government_obligations
+		#religious_rights
+		fortification_rights
+		coinage_rights
+		succession_rights
+		war_declaration_rights
+		council_rights
+		title_revocation_rights
+	}
+
+	ai = {
+		use_legends = yes
+	}
+
+	#tax_slot_type = republic_tax_slot
+	flag = may_appoint_viziers
+	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
+	flag = government_is_republic
+	color = hsv{ 0.00 1.00 0.98 }
+}
+
+theocracy_government = {
+	government_rules = {
+		religious = yes
+		inherit_from_dynastic_government = no
+	}
+
+	house_unity = clan_house_unity		# Shogunate
+
+	primary_holding = church_holding
+	valid_holdings = { castle_holding tribal_holding }
+	required_county_holdings = { church_holding castle_holding city_holding }
+
+	ai = {
+		use_legends = yes
+	}
+
+	can_get_government = {
+		NOT = {
+			faith = {
+				has_doctrine = doctrine_theocracy_lay_clergy
+			}
+		}
+	}
+
+	vassal_contract = { 
+		theocracy_government_obligations
+		religious_rights
+		fortification_rights
+		coinage_rights
+		succession_rights
+		war_declaration_rights
+		council_rights
+		title_revocation_rights
+	}
+
+	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
+	flag = government_is_theocracy
+	color = hsv{ 0.00 0.00 0.78 }
+}

@@ -1,11 +1,10 @@
 ﻿activity_woc_council = {
 	is_shown = {
-		#has_royal_court = yes
 		is_landed = yes
 	}
 
 	can_start_showing_failures_only = {
-		#is_available_adult = yes
+		is_available_adult = yes
 		custom_description = {
 			text = "is_not_convened_recently"
 			NAND = { 
@@ -182,11 +181,6 @@
 		is_adult = yes
 		OR = {
 			AND = {
-				scope:special_option ?= flag:woc_council_urgent
-				highest_held_title_tier >= tier_county
-				is_vassal_of = scope:host
-			}
-			AND = {
 				is_councillor_of = scope:host
 				woc_council_valid_council_position = yes
 			}
@@ -248,30 +242,8 @@
 	cost = {
 		prestige = {
 			add = {
-				add = {
-					value = 50
-					desc = WOC_COUNCIL_BASE_COST
-				}
-				if = {
-					limit = {
-						scope:special_option ?= flag:woc_council_urgent
-						root.highest_held_title_tier < tier_empire
-					}
-					add = {
-						value = 450
-						desc = WOC_KING_COUNCIL_URGENT_COST
-					}
-				}
-				if = {
-					limit = {
-						scope:special_option ?= flag:woc_council_urgent
-						root.highest_held_title_tier = tier_empire
-					}
-					add = {
-						value = 950
-						desc = WOC_EMPIRE_COUNCIL_URGENT_COST
-					}
-				}
+				value = 50
+				desc = WOC_COUNCIL_BASE_COST
 			}
 		}
 	}
@@ -1651,59 +1623,6 @@
 				
 				ai_will_do = {
 					value = 50
-				}
-			}
-			##紧急会议
-			woc_council_urgent = {
-
-				is_shown = {
-				}
-
-				is_valid = {
-					is_independent_ruler = yes
-					custom_description = {
-						text = "is_woc_council_law_3"
-						woc_council_law_value >= 3
-					}
-					NOT = {
-						government_has_flag = government_is_tribal
-					}
-					custom_description = {
-						text = "is_not_convened_recently"
-						NOT = { 
-							has_character_flag = convened_woc_council_urgent_recently
-						}
-					}
-				}
-				
-				ai_will_do = {
-					value = 0
-					if = {
-						limit = {
-							OR = {
-								has_trait = greedy
-								has_trait = ambitious
-								has_trait = impatient
-							}
-						}
-						add = 30
-					}
-					if = {
-						limit = {
-							OR = {
-								has_trait = lazy
-								has_trait = patient
-								has_trait = content
-							}
-						}
-						subtract = 15
-					}
-					if = {
-						limit = {
-							prestige <= 2000
-						}
-						multiply = 0
-					}
 				}
 			}
 		}
