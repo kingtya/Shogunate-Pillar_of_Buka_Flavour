@@ -4,6 +4,19 @@
 		pob_events.0002
 		pob_events.0003
 	}
+	
+	on_actions = {
+		sp_on_game_start
+	}
+}
+
+sp_on_game_start = {
+	effect = {
+		set_global_variable = {
+			name = pob_feature_policy_loaded
+			value = yes
+		}
+	}
 }
 
 on_join_court = {

@@ -94,18 +94,18 @@
         visible = "[And( GetPlayer.GetTopLiege.GetGovernment.HasRule( 'administrative' ) , And(And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)), Not(IsGameViewOpen('struggle'))))]"
     }
 
-    type sp_policy_window = window { # 政策窗口的类型
+    type sp_policy_window = window {
         name = "sp_policy_window"
-        allow_outside = yes # 允许内部元素溢出到外部
+        allow_outside = yes
         position = { 0 0 }
         movable = yes
         parentanchor = center
         layer = middle
-        size = { 1300 1000 } # 窗口大小，你也可以使用百分比，使用百分比的话会以父窗口为基准 此处父窗口为玩家屏幕
-        using = Window_Background # 一些背景模版，可以迅速让窗口适应原版风格，由于p社的工作，使用这些模版可以让切换到不同文化时候窗口风格与当前文化风格保持一致
+        size = { 1300 1000 }
+        using = Window_Background
         using = Window_Decoration_Spike
 
-        # 窗口可见性判断 即如果show_sp_window变量为true则显示窗口
+
         visible = "[And(GetVariableSystem.HasValue( 'show_sp_window', 'true' ),GetPlayer.IsValid)]"
 
         # 窗口关闭时候播放动画和声音，这些都是原版模版

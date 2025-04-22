@@ -562,10 +562,10 @@
 			always = yes
 		}
 		succession = {
-			order_of_succession = inheritance
-			traversal_order = children
-			rank = oldest
-			title_division = single_heir
+			#order_of_succession = inheritance
+			#traversal_order = children
+			#rank = oldest
+			#title_division = single_heir
 		}
 
 		potential = {
