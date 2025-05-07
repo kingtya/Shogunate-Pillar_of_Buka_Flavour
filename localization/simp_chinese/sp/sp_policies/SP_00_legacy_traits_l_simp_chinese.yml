@@ -42,7 +42,7 @@
 
     trait_otomo_margin:0 "大友传"
     trait_otomo_margin_desc:0 "大友氏发源于相模国大友庄，相传家祖能直为源赖朝后裔，镰仓时代到战国时代以九州丰后国为根据地，一度支配北九州。传自宗麟时代与西方关系密切，被传教士赞誉为“日本第一英主”。"
-    TRAIT_FLAG_DESC_trait_otomo_margin:0 "解锁#V 吉立支丹保护[sp_policy|E]#!\n如果满足要求，为领主解锁#V 吉立支丹保护[sp_policy|E]#!\n提前解锁#V 南蛮保护#![sp_policy|E]"
+    TRAIT_FLAG_DESC_trait_otomo_margin:0 "解锁#V 吉立支丹保护[sp_policy|E]#!\n如果满足要求，为领主解锁#V 吉立支丹保护[sp_policy|E]#!"
 
     trait_sanada_margin:0 "真田传"
     trait_sanada_margin_desc:0 "始于真田幸纲（隆），原为信浓豪族海野氏分家。海野氏早年为镰仓幕府御家人，随即衰落，被武田家灭亡后，幸纲继承家门。真田家辛纲、昌幸、信繁（幸村）一门三代均为将略之才。幸村于大坂之战以寡击众，号“日本第一兵”。"

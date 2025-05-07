@@ -31,6 +31,12 @@ on_leave_court = {
 	}
 }
 
+on_title_lost = {
+	on_actions = {
+		on_title_lost_sp_clear_introduced_policies
+	}
+}
+
 realm_maintenance_quarterly_pulse = {
 	on_actions = {
 		sp_policy_canal_improvements_pulse
@@ -38,7 +44,6 @@ realm_maintenance_quarterly_pulse = {
 		sp_policy_laws_of_imagawa_pulse
 		sp_policy_laws_of_takeda_pulse 
 		sp_policy_five_admonitions_pulse
-		pob_retainer_task_submission_pulse
 	}
 }
 
@@ -182,17 +187,21 @@ sp_policy_five_admonitions_pulse = {
 	}
 }
 
-pob_retainer_task_submission_pulse = {
+on_title_lost_sp_clear_introduced_policies = {
 	trigger = {
-		is_ai = no
+		is_landed = no
 	}
 	effect = {
-		every_councillor = {
-			limit = {
-				is_capable_adult = yes
-			}
-			#trigger_event = pob_events.0010
-			#add_character_modifier = debug_modifier
+		# 移除政策修正
+		sp_remove_character_modifier_effect = yes
+		# 清空政策列表
+		clear_variable_list = sp_released_policy_flags
+		# 移除冻结政策点标志位
+		remove_character_flag = sp_has_frozen_policy_points_flag
+		# 归零政策点
+		change_variable = {
+			name = sp_current_policy_points
+			multiply = 0
 		}
 	}
 }

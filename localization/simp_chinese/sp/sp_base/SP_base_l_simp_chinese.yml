@@ -6,11 +6,11 @@
     setting_disable_ai_special_policies:0 "#V 禁用#!"
     setting_disable_ai_special_policies_desc:1 "AI仅颁布通用[sp_policy|E]。"
 
-    rule_sp_fictional_alliances:0 "@prestige_icon! PoB：虚构同盟"
+    rule_sp_fictional_alliances:0 "@prestige_icon! PoB：姻亲同盟"
     setting_enable_fictional_alliances:1 "#V 启用#!"
-    setting_enable_fictional_alliances_desc:2 "幕府的原版设定，游戏开始后会由姻亲关系生成非史实[alliances|E]（@warning_icon!#X 这可能导致仇敌间的同盟#!）。"
+    setting_enable_fictional_alliances_desc:2 "幕府的原版设定，游戏开始后会由姻亲关系生成[alliances|E]（@warning_icon!#X 这可能导致仇敌间的同盟#!）。"
     setting_disable_fictional_alliances:0 "禁用"
-    setting_disable_fictional_alliances_desc:1 "游戏开始后不由姻亲关系生成非史实[alliances|E]（@warning_icon!#X 建议搭配#E 更佳婚姻同盟#!使用#!）。"
+    setting_disable_fictional_alliances_desc:1 "游戏开始后不由姻亲关系生成[alliances|E]。"
     
     # 游戏概念
     game_concept_sp_policy:0 "政策"

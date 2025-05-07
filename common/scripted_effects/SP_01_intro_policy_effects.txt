@@ -177,21 +177,6 @@ sp_policy_introduction_effect = {
 			}
 		}
 		flag:flag_sp_policy_western_sanction = {
-			if = {
-				limit = {
-					sp_culture_has_innovation_shogunate_nanban_trade = no
-					sp_has_otomo_margin_trait = no
-				}
-				custom_tooltip = sp_policy_has_no_innovation_shogunate_nanban_trade_tt
-				change_variable = {
-					name = sp_current_policy_points
-					add = 10
-				}
-				trigger_event = {
-					id = pob_events.0014
-					years = 25
-				}
-			}
 			$ACTION$_character_modifier = sp_policy_western_sanction_modifier
 			custom_tooltip = sp_policy_western_sanction_effect_tt
 			sp_glory_hound_vassal_towards_policy_opinion_effect = {
@@ -255,6 +240,7 @@ sp_policy_introduction_effect = {
 					sp_has_oda_margin_trait = no
 				}
 				custom_tooltip = sp_policy_has_no_innovation_royal_armory_tt
+				add_character_flag = sp_has_frozen_policy_points_flag
 				change_variable = {
 					name = sp_current_policy_points
 					add = 20
@@ -284,6 +270,7 @@ sp_policy_introduction_effect = {
 					sp_has_oda_margin_trait = no
 				}
 				custom_tooltip = sp_policy_has_no_innovation_guilds_tt
+				add_character_flag = sp_has_frozen_policy_points_flag
 				change_variable = {
 					name = sp_current_policy_points
 					add = 20
@@ -1284,8 +1271,8 @@ sp_set_policy_effects_to_character_effect = {
 				limit = { is_ai = no }
 				add_character_flag = {
 					flag = $FLAG$
-					#years = 3
-					days = 1
+					years = 3
+					#days = 1
 				}
 			}
 		}

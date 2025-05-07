@@ -1,15 +1,123 @@
 spt_bugyo_task_default = {
 	default_task = yes
 	position = councillor_spt_bugyo
-	
-	effect_desc = spt_bugyo_task_default_effect_desc
-	
+
 	task_type = task_type_general
 	task_progress = task_progress_infinite
 
+	asset = {
+		icon = "gfx/interface/icons/council_task_types/task_collect_taxes.dds"
+		background = "gfx/interface/buttons/button_round_bg.dds"
+		frame = "gfx/interface/buttons/button_round_frame.dds"
+		glow = "gfx/particles/halo.dds"
+	}
+
+	effect_desc = {
+		desc = task_collect_taxes_effect_desc
+		triggered_desc = {
+			trigger = { liege = { has_perk = tax_man_perk } }
+			desc = task_collect_taxes_tax_man_bonus_desc
+		}
+		triggered_desc = {
+			trigger = {
+				councillor_liege_has_erudition_legacy_5_perk = yes
+			}
+			desc = task_collect_taxes_erudition_bonus_desc
+		}
+		triggered_desc = {
+			trigger = {
+				councillor_liege_has_family_business_bonus = yes
+			}
+			desc = task_collect_taxes_family_business_bonus_desc
+		}
+		triggered_desc = {
+			trigger = {
+				councillor_liege_has_consulted_house_bonus = yes
+			}
+			desc = task_collect_taxes_consulted_house_bonus_desc
+		}
+		desc = {
+			desc = council_task_possible_side_effects
+			triggered_desc = {
+				trigger = {
+					stewardship > mediocre_skill_rating
+				}
+				desc = task_collect_taxes_extra_taxes
+			}
+			triggered_desc = {
+				trigger = {
+					stewardship < high_skill_rating
+					liege = {
+						any_sub_realm_county = {
+							steward_task_county_corruption_county_trigger = yes
+						}
+					}	
+				}
+				desc = task_collect_taxes_county_corruption
+			}
+		}
+	}
+
 	council_owner_modifier = {
 		name = task_collect_taxes_modifier
-		domain_tax_mult = 0.01
-		scale = steward_collect_taxes_scale_base
+		domain_tax_mult = 1
+		scale = steward_collect_taxes_total_scale
+	}
+
+	monthly_on_action = task_collect_taxes_side_effects
+
+	ai_will_do = {
+		value = 1 # Always a good backup
+		
+		if = { # Very greedy rulers prefer this over increasing Acceptance, in most cases
+			limit = {
+				scope:councillor_liege.ai_greed > 0
+			}
+			add = {
+				value = scope:councillor_liege.ai_greed
+				divide = 5
+			}
+		}
+		
+		if = {
+			# Wealth Focused characters like this
+			limit = {
+				scope:councillor_liege = {
+					has_focus = stewardship_wealth_focus
+				}
+			}
+			add = 15
+		}
+		
+		if = {
+			# And those with the Tax Man perk
+			limit = {
+				scope:councillor_liege = {
+					has_perk = tax_man_perk
+				}
+			}
+			add = 15
+		}
+		if = {
+			limit = {
+				scope:councillor_liege.primary_title.tier >= tier_duchy
+				scope:councillor_liege.gold < 100
+			}
+			add = 500
+		}
+		else_if = {
+			limit = {
+				scope:councillor_liege.gold < 10
+			}
+			add = 500
+		}
+		if = { # Conquerors want more money
+			limit = {
+				scope:councillor_liege = {
+					ai_has_conqueror_personality = yes
+				}
+			}
+			add = 500
+		}
 	}
 }

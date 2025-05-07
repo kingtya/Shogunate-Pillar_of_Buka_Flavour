@@ -1,0 +1,13 @@
+﻿#### Mood tracks of the Shogunate mod
+
+category = {
+	id = "shogunate_soundtrack"
+	name = "shogunate_soundtrack_list"
+	tracks = {
+		"mx_mood_hanagoyomi"
+		"mx_mood_minamo"
+		"mx_mood_oboro"
+		"mx_mood_sakuya"
+		"mx_mood_shizima"
+	}
+}

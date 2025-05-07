@@ -15,16 +15,7 @@
 
 	house_unity = clan_house_unity		# Shogunate
 
-	vassal_contract = {
-		republic_government_obligations
-		#religious_rights
-		fortification_rights
-		coinage_rights
-		succession_rights
-		war_declaration_rights
-		council_rights
-		title_revocation_rights
-	}
+	vassal_contract_group = pob_republic_vassal
 
 	ai = {
 		use_legends = yes
@@ -61,16 +52,7 @@ theocracy_government = {
 		}
 	}
 
-	vassal_contract = { 
-		theocracy_government_obligations
-		religious_rights
-		fortification_rights
-		coinage_rights
-		succession_rights
-		war_declaration_rights
-		council_rights
-		title_revocation_rights
-	}
+	vassal_contract_group = pob_theocracy_vassal
 
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	flag = government_is_theocracy

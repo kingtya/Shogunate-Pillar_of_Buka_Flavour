@@ -85,13 +85,13 @@
     type sp_button_tab_window = sp_button_tab {
         name = "sp_button_tab_window"
         
-        visible = "[And( Not(GetPlayer.GetTopLiege.GetGovernment.HasRule( 'administrative' )) , And(And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)), Not(IsGameViewOpen('struggle'))))]"
+        visible = "[And( GetPlayer.IsLandedRuler , And( Not(GetPlayer.GetTopLiege.GetGovernment.HasRule( 'administrative' )) , And(And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)), Not(IsGameViewOpen('struggle')))))]"
     }
     type sp_button_tab_window_admin = sp_button_tab {
         name = "sp_button_tab_window_admin"
 
         position = { 0 570 } # 位置
-        visible = "[And( GetPlayer.GetTopLiege.GetGovernment.HasRule( 'administrative' ) , And(And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)), Not(IsGameViewOpen('struggle'))))]"
+        visible = "[And( GetPlayer.IsLandedRuler , And( GetPlayer.GetTopLiege.GetGovernment.HasRule( 'administrative' ) , And(And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)), Not(IsGameViewOpen('struggle')))))]"
     }
 
     type sp_policy_window = window {
@@ -128,7 +128,7 @@
             background = {
                 #visible = "[Character.GetGovernment.IsType('feudal_government')]"
                 texture = "gfx/interface/skinned/hud_maintab/policy_background.dds"
-                alpha = 1
+                alpha = 0.5
 				spriteborder = { 1 1 }
 				margin = { -30 -10 }
                 modify_texture = {

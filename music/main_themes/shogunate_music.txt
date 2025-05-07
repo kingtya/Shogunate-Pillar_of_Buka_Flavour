@@ -1,0 +1,7 @@
+﻿##### MAINTHEME
+
+# Track name is used to determine priority - last track after sorting alphabetically is chosen as main track
+main_theme_track_999_shogunate = {
+	music = "file:/music/Sengoku_Main.mp3"
+	can_be_interrupted = yes
+}
