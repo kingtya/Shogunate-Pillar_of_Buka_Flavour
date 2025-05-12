@@ -2,12 +2,6 @@
 
    rule_sp_ai_special_policies:0 "@prestige_icon! PoB: AI Special Policies"
    setting_enable_ai_special_policies:1 "Enable"
-   setting_enable_ai_special_policies_desc:2 "The AI will enact special [sp_policy|E] corresponding to inherited traits (@warning_icon!#X This will weaken lesser-known factions#!)."
+   setting_enable_ai_special_policies_desc:2 "The AI will enact special [sp_policies|E] corresponding to inherited traits (@warning_icon!#X This will weaken lesser-known factions#!)."
    setting_disable_ai_special_policies:0 "#V Disable#!"
-   setting_disable_ai_special_policies_desc:1 "The AI will only enact general [sp_policy|E]."
-
-   rule_sp_fictional_alliances:0 "@prestige_icon! PoB: Fictional Alliances"
-   setting_enable_fictional_alliances:1 "#V Enable#!"
-   setting_enable_fictional_alliances_desc:2 "Shogunate's original setting, where non-historical [alliances|E] will be generated through marital ties at the start of the game (@warning_icon!#X This may lead to alliances between enemies#!)."
-   setting_disable_fictional_alliances:0 "Disable"
-   setting_disable_fictional_alliances_desc:1 "Non-historical [alliances|E] will not be generated through marital ties at the start of the game (@warning_icon!#X Recommended to use with #E Better Marriage Alliances#!)."
+   setting_disable_ai_special_policies_desc:1 "The AI will only enact general [sp_policies|E]."

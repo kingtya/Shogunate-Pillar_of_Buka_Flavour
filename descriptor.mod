@@ -4,4 +4,4 @@ tags={
 }
 name="[1.16] Shogunate Pillar of Buka Flavour"
 supported_version="*.*"
-remote_file_id="3442491442"
+remote_file_id="3477787321"
