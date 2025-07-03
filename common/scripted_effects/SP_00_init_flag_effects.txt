@@ -71,6 +71,14 @@
 		name = sp_special_policy_flags
 		target = flag:flag_sp_policy_buddhist_laws
 	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_census_edict
+	}
+	add_to_variable_list = {
+		name = sp_special_policy_flags
+		target = flag:flag_sp_policy_shipping_code
+	}
 
 }
 

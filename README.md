@@ -19,7 +19,7 @@
 2、common\scripted_effects\SP_01_intro_policy_effects
 这个文件定义了发布政策和撤销政策的效果，以及政策的花费，最后一个sp_set_policy_effects_to_character_effect是元effect，可以不用理会
 
-3、common\scripted_triggers\SP_02_legacy_trait_triggers中确定能发布政策的条件
+3、common\scripted_triggers\SP_02_legacy_trait_triggers\sp_can_release_policy_trigger中确定能发布政策的条件
 
 4、common\script_values\SP_03_values中确定需要消耗的政策点
 

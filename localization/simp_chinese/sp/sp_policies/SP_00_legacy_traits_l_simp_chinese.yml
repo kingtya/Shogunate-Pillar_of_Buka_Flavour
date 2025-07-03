@@ -52,7 +52,7 @@
     trait_miyoshi_margin_desc:0 "三好氏发源于阿波国三好郡，据传出自阿波小笠原氏，原为管领细川氏家臣。元长时成为细川家重臣，传自长庆时代达到巅峰，一统近畿地区，一度号称“日本副王”，又随着长庆过世迅速陨落。"
     TRAIT_FLAG_DESC_trait_miyoshi_margin:0 "解锁#V 理世安民[sp_policy|E]#!\n如果满足要求，为领主解锁#V 理世安民[sp_policy|E]#!"
 
-    trait_toyotomi_margin:0 "丰臣传"
+    trait_toyotomi_margin:0 "丰臣传#weak （羽柴家）#!"
     trait_toyotomi_margin_desc:0 "始于木下秀吉。秀吉原为织田信长家臣，凭智略崛起，本能寺之变后击败明智光秀，统一天下，号丰臣，推行太阁检地、刀狩，奠定中央集权。家业传至秀赖，关原之战败于德川家康，终于大坂之阵，二世而亡。"
     TRAIT_FLAG_DESC_trait_toyotomi_margin:0 "解锁#V 检地刀狩[sp_policy|E]#!\n如果满足要求，为领主解锁#V 检地刀狩[sp_policy|E]#!"
 
@@ -63,3 +63,15 @@
     trait_honganji_margin:0 "本愿寺传"
     trait_honganji_margin_desc:0 "始于觉如，原为净土真宗本山势力。亲鸾创教后，本愿寺逐步壮大，至显如时形成宗教武装，与战国大名抗衡。石山合战中，凭借一向一揆之力抵御织田信长十余年，势力遍布畿内北陆。后因内部分裂，势衰归顺丰臣，终入德川体制。"
     TRAIT_FLAG_DESC_trait_honganji_margin:0 "解锁#V 机法一体[sp_policy|E]#!\n如果满足要求，为领主解锁#V 机法一体[sp_policy|E]#!"
+
+    trait_kakizaki_margin:0 "蛎崎传"
+    trait_kakizaki_margin_desc:0 ""
+    TRAIT_FLAG_DESC_trait_kakizaki_margin:0 "解锁#V 廻船式目[sp_policy|E]#!\n如果满足要求，为领主解锁#V 廻船式目[sp_policy|E]#!"
+
+    trait_ando_margin:0 "安东传"
+    trait_ando_margin_desc:0 ""
+    TRAIT_FLAG_DESC_trait_ando_margin:0 "解锁#V 廻船式目[sp_policy|E]#!\n如果满足要求，为领主解锁#V 廻船式目[sp_policy|E]#!"
+
+    trait_so_margin:0 "宗传"
+    trait_so_margin_desc:0 ""
+    TRAIT_FLAG_DESC_trait_so_margin:0 "解锁#V 廻船式目[sp_policy|E]#!\n如果满足要求，为领主解锁#V 廻船式目[sp_policy|E]#!"

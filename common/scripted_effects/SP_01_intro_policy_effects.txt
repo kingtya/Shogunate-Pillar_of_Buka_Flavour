@@ -926,6 +926,74 @@ sp_policy_introduction_effect = {
 			}
 			$ACTION$_character_modifier = sp_policy_buddhist_laws_modifier
 		}
+		flag:flag_sp_policy_census_edict = {
+			if = {
+				limit = {
+					sp_councillor_has_legacy_trait_trigger = {
+						TRAIT = toyotomi_margin
+					}
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						sp_has_legacy_trait_trigger = {
+							TRAIT = toyotomi_margin
+							SKILL = stewardship
+							RATING = high_skill_rating
+						}
+					}
+				}
+				custom_tooltip = sp_policy_census_edict_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_census_edict_modifier
+		}
+		flag:flag_sp_policy_shipping_code = {
+			if = {
+				limit = {
+					OR = {
+						sp_councillor_has_legacy_trait_trigger = {
+							TRAIT = kakizaki_margin
+						}
+						sp_councillor_has_legacy_trait_trigger = {
+							TRAIT = ando_margin
+						}
+						sp_councillor_has_legacy_trait_trigger = {
+							TRAIT = so_margin
+						}
+					}
+				}
+				cp:councillor_spt_bugyo = {
+					sp_block_firing_councillor_effect = { COURT_OWNER = root }
+				}
+			}
+			if = {
+				limit = {
+					NOR = {
+						sp_has_legacy_trait_trigger = {
+							TRAIT = kakizaki_margin
+							SKILL = diplomacy
+							RATING = decent_skill_rating
+						}
+						sp_has_legacy_trait_trigger = {
+							TRAIT = ando_margin
+							SKILL = diplomacy
+							RATING = decent_skill_rating
+						}
+						sp_has_legacy_trait_trigger = {
+							TRAIT = so_margin
+							SKILL = diplomacy
+							RATING = decent_skill_rating
+						}
+					}
+				}
+				custom_tooltip = sp_policy_shipping_code_warning_tt
+			}
+			$ACTION$_character_modifier = sp_policy_shipping_code_modifier
+		}
 	}
 }
 
@@ -1072,6 +1140,12 @@ sp_policy_revocation_effect = {
 		}
 		flag:flag_sp_policy_buddhist_laws = {
 			$ACTION$_character_modifier = sp_policy_buddhist_laws_modifier
+		}
+		flag:flag_sp_policy_census_edict = {
+			$ACTION$_character_modifier = sp_policy_census_edict_warning_tt
+		}
+		flag:flag_sp_policy_shipping_code = {
+			$ACTION$_character_modifier = sp_policy_shipping_code_modifier
 		}
 	}
 }

@@ -263,6 +263,38 @@ sp_can_release_policy_trigger = {
 			}
 			trigger_if = {
 				limit = {
+					$FLAG$ = flag:flag_sp_policy_census_edict
+				}
+				sp_has_legacy_trait_trigger = {
+					TRAIT = toyotomi_margin
+					SKILL = stewardship
+					RATING = high_skill_rating
+				}
+			}
+			trigger_if = {
+				limit = {
+					$FLAG$ = flag:flag_sp_policy_shipping_code
+				}
+				OR = {
+					sp_has_legacy_trait_trigger = {
+						TRAIT = kakizaki_margin
+						SKILL = diplomacy
+						RATING = decent_skill_rating
+					}
+					sp_has_legacy_trait_trigger = {
+						TRAIT = ando_margin
+						SKILL = diplomacy
+						RATING = decent_skill_rating
+					}
+					sp_has_legacy_trait_trigger = {
+						TRAIT = so_margin
+						SKILL = diplomacy
+						RATING = decent_skill_rating
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
 					$FLAG$ = flag:flag_sp_policy_progressive_system
 				}
 				OR = {

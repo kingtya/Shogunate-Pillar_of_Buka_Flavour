@@ -3,7 +3,6 @@
 		has_innovation = $INNOVATION$
 	}
 }
-
 sp_culture_has_innovation_guilds = {
 	culture = {
 		has_innovation = innovation_guilds

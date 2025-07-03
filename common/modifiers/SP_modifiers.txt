@@ -78,7 +78,6 @@ sp_policy_improve_militia_modifier = {
 	levy_reinforcement_rate = 0.1
 	county_opinion_add = -15
 }
-
 pob_improve_militia_county_modifier = {
 	icon = martial_positive
 	levy_size = 0.2
@@ -116,7 +115,7 @@ sp_policy_deploy_draftee_modifier = {
 	icon = blood_political
 	maa_damage_add = 8
 	maa_toughness_add = 4
-	men_at_arms_maintenance = -0.2
+	men_at_arms_maintenance = 0.05
 	levy_reinforcement_rate = -0.1
 }
 
@@ -129,7 +128,7 @@ sp_policy_post_horse_system_modifier = {
 
 sp_policy_distant_diplomacy_modifier = {
 	icon = letter_political
-	monthly_prestige = 0.75
+	monthly_prestige = 1
 	monthly_prestige_gain_mult = 0.08
 	personal_scheme_power_add = 15
 	diplomatic_range_mult = 0.5
@@ -138,8 +137,8 @@ sp_policy_distant_diplomacy_modifier = {
 
 sp_policy_coalition_focus_modifier = {
 	icon = diplomacy_political
-	monthly_prestige = 0.4
-	sway_scheme_power_mult = 0.3
+	monthly_prestige = 1
+	#sway_scheme_power_mult = 0.3
 	mercenary_hire_cost_mult = -0.5
 	same_culture_mercenary_hire_cost_mult = -0.25
 }
@@ -206,7 +205,7 @@ sp_policy_meritocracy_being_humiliated_modifier = {
 sp_policy_supply_transporter_modifier = {
 	icon = goods_political
 	maa_pursuit_add = 12
-	movement_speed = 0.2
+	movement_speed = 0.1
 	supply_duration = 0.25
 	plains_supply_limit_mult = 0.5
 }
@@ -214,7 +213,7 @@ sp_policy_supply_transporter_modifier = {
 sp_policy_easy_commerce_modifier = {
 	icon = economy_political
 	republic_government_tax_contribution_mult = -0.2
-	tax_mult = 0.2
+	tax_mult = 0.1
 }
 
 sp_policy_soidier_professionaliztion_modifier = {
@@ -257,7 +256,7 @@ sp_policy_laws_of_takeda_county_modifier = {
 
 sp_policy_five_admonitions_modifier = {
 	icon = prestige_special
-	monthly_prestige = 2.0
+	monthly_prestige = 1
 	monthly_prestige_gain_mult = 0.12
 	monthly_dynasty_prestige = 0.25
 	tyranny_loss_mult = 0.5
@@ -269,6 +268,7 @@ sp_policy_five_admonitions_county_modifier = {
 	monthly_county_control_growth_add = 0.5
 	county_opinion_add = 30
 	travel_danger = -25
+	development_growth_factor = 0.2
 }
 
 sp_policy_guardian_forces_modifier = {
@@ -370,4 +370,20 @@ sp_policy_buddhist_laws_modifier = {
 	domain_tax_same_faith_mult = 0.15
 	domain_tax_different_faith_mult = -0.10
 	levy_reinforcement_rate_same_faith = 0.4
+}
+
+sp_policy_census_edict_modifier = {
+	icon = stewardship_special
+	tax_mult = 0.1
+	domain_tax_mult = 0.1
+	levy_maintenance = 0.05
+	levy_size = -0.3
+	vassal_tax_contribution_mult = 0.1
+	vassal_levy_contribution_add = 0.1
+}
+
+sp_policy_shipping_code_modifier = {
+	icon = stewardship_special
+	embarkation_cost_mult = -0.5
+	domain_tax_mult = 0.05
 }

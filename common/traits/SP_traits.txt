@@ -91,7 +91,7 @@ hojo_margin = { # 北条传
 	category = fame
 	shown_in_ruler_designer = no
 
-	legitimacy_gain_mult = 0.05
+	legitimacy_gain_mult = 0.1
 	same_opinion = 5
 
 	inherit_chance = 100
@@ -236,41 +236,11 @@ shimazu_margin = { # 岛津传
 	}
 }
 
-mori_margin = { # 岛津传
-	category = fame
-	shown_in_ruler_designer = no
-	
-	legitimacy_gain_mult = 0.2
-	same_opinion = 5
-
-	inherit_chance = 100
-	parent_inheritance_sex = male
-	inherit_from_real_father = no
-
-	flag = trait_mori_margin
-
-	icon = {
-		desc = mori_margin.dds
-	}
-
-	desc = {
-		first_valid = {
-			triggered_desc = {
-				trigger = {
-					NOT = { exists = this }
-				}
-				desc = trait_mori_margin_desc
-			}
-			desc = trait_mori_margin_desc
-		}
-	}
-}
-
 mori_margin = { # 毛利传
 	category = fame
 	shown_in_ruler_designer = no
 	
-	legitimacy_gain_mult = 0.1
+	legitimacy_gain_mult = 0.05
 	same_opinion = 5
 
 	inherit_chance = 100
@@ -421,4 +391,62 @@ honganji_margin = { # 本愿寺传
 	}
 
 	desc = trait_honganji_margin_desc
+}
+
+kakizaki_margin = { # 蛎崎传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_kakizaki_margin
+
+	icon = {
+		desc = kakizaki_margin.dds
+	}
+
+	desc = trait_kakizaki_margin_desc
+}
+
+ando_margin = { # 安东传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_ando_margin
+
+	icon = {
+		desc = ando_margin.dds
+	}
+
+	desc = trait_ando_margin_desc
+}
+
+so_margin = { # 宗传
+	category = fame
+	shown_in_ruler_designer = no
+	
+	legitimacy_gain_mult = 0.2
+	same_opinion = 5
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+
+	flag = trait_so_margin
+
+	icon = {
+		desc = so_margin.dds
+	}
+
+	desc = trait_so_margin_desc
 }

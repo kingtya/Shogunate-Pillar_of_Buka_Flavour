@@ -469,96 +469,6 @@ sp_ai_publish_policy_council_system_decision = {
 		
 	}
 }
-sp_ai_publish_policy_improve_cavalry_decision = {
-	ai_goal = yes
-	cooldown = { years = 5 }
-	is_shown = {
-		is_ai = yes
-		OR = {
-			number_maa_regiments_of_base_type = {
-				type = light_cavalry
-				value >= 1
-			}
-			number_maa_regiments_of_base_type = {
-				type = heavy_cavalry
-				value >= 1
-			}
-			number_maa_regiments_of_base_type = {
-				type = archer_cavalry
-				value >= 1
-			}
-		}
-	}
-	is_valid = {
-		trigger_if = {
-			limit = {
-				exists = root.var:sp_current_policy_points
-			}
-			root.var:sp_current_policy_points < root.sp_total_policy_points
-		}
-		trigger_if = {
-			limit = {
-				has_variable_list = sp_released_policy_flags
-			}
-			NOT = {
-				any_in_list = {
-					variable = sp_released_policy_flags
-					this = flag:flag_sp_policy_improve_cavalry
-				}
-			}
-		}
-	}
-
-	minimum_cost = {
-		prestige = 50
-	}
-
-	effect = {
-		if = {
-			limit = {
-				NOT = { exists = root.var:sp_current_policy_points }
-			}
-			set_variable = {
-				name = sp_current_policy_points
-				value = 0
-			}
-		}
-		set_variable = {
-			name = sp_policy_will_be_points
-			value = {
-				value = root.var:sp_current_policy_points
-				add = flag:flag_sp_policy_improve_cavalry.sp_policy_points
-			}
-		}
-		if = {
-			limit = {
-				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
-			}
-			sp_set_policy_effects_to_character_effect = {
-				FLAG = flag:flag_sp_policy_improve_cavalry
-				ACTION = add
-				CONFIRM = yes
-			}
-		}
-	}
-
-	ai_check_interval = 36
-	
-	ai_potential = {
-		always = yes
-	}
-
-	ai_will_do = {
-		base = 20
-
-		modifier = {
-			ai_has_warlike_personality = yes
-			add = 20
-		}
-
-		
-	}
-}
 sp_ai_publish_policy_castle_construction_decision = {
 	ai_goal = yes
 	cooldown = { years = 5 }
@@ -1412,6 +1322,96 @@ sp_ai_publish_policy_improve_firearms_decision = {
 			}
 			sp_set_policy_effects_to_character_effect = {
 				FLAG = flag:flag_sp_policy_improve_firearms
+				ACTION = add
+				CONFIRM = yes
+			}
+		}
+	}
+
+	ai_check_interval = 36
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			ai_has_warlike_personality = yes
+			add = 20
+		}
+
+		
+	}
+}
+sp_ai_publish_policy_improve_cavalry_decision = {
+	ai_goal = yes
+	cooldown = { years = 5 }
+	is_shown = {
+		is_ai = yes
+		OR = {
+			number_maa_regiments_of_base_type = {
+				type = light_cavalry
+				value >= 1
+			}
+			number_maa_regiments_of_base_type = {
+				type = heavy_cavalry
+				value >= 1
+			}
+			number_maa_regiments_of_base_type = {
+				type = archer_cavalry
+				value >= 1
+			}
+		}
+	}
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = root.var:sp_current_policy_points
+			}
+			root.var:sp_current_policy_points < root.sp_total_policy_points
+		}
+		trigger_if = {
+			limit = {
+				has_variable_list = sp_released_policy_flags
+			}
+			NOT = {
+				any_in_list = {
+					variable = sp_released_policy_flags
+					this = flag:flag_sp_policy_improve_cavalry
+				}
+			}
+		}
+	}
+
+	minimum_cost = {
+		prestige = 50
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { exists = root.var:sp_current_policy_points }
+			}
+			set_variable = {
+				name = sp_current_policy_points
+				value = 0
+			}
+		}
+		set_variable = {
+			name = sp_policy_will_be_points
+			value = {
+				value = root.var:sp_current_policy_points
+				add = flag:flag_sp_policy_improve_cavalry.sp_policy_points
+			}
+		}
+		if = {
+			limit = {
+				root.var:sp_policy_will_be_points <= root.sp_total_policy_points
+			}
+			sp_set_policy_effects_to_character_effect = {
+				FLAG = flag:flag_sp_policy_improve_cavalry
 				ACTION = add
 				CONFIRM = yes
 			}

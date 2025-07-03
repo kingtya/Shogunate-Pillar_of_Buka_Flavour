@@ -123,13 +123,6 @@ sp_policy_kichishitan_sanction_modifier_desc:0 "此人在领内推行吉立支�
 sp_policy_kichishitan_sanction_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('otomo_margin').GetName( GetNullCharacter )]且信仰[GetReligionByKey('christianity_religion').GetName]，由后者解锁要求其有12[learning|E]且颁布后5年内无法将其撤职#!"
 sp_policy_has_no_policy_western_sanction_tt:0 "@warning_icon!#X 你没有颁布前置[sp_policy|E]南蛮保护#!"
 
-## 丰臣家
-flag_sp_policy_census_edict_name:0 "#V 检地刀狩#!"
-flag_sp_policy_census_edict_desc:0 ""
-sp_policy_census_edict_modifier:0 "检地刀狩"
-sp_policy_census_edict_modifier_desc:0 "此人在领内实行了检地刀狩。"
-sp_policy_census_edict_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('toyotomi_margin').GetName( GetNullCharacter )]，由后者解锁要求其有15[stewardship|E] [skills|E] 且颁布后5年内无法将其撤职#!"
-
 ## 三好家
 flag_sp_policy_govern_for_people_name:0 "#V 理世安民#!"
 flag_sp_policy_govern_for_people_desc:0 "天文二十二年（1553年），室町幕府十三代将军足利义辉密谋对付时任管领代三好长庆，长庆发兵灵山城，义辉被迫出逃近江朽木，大权旁落。自此长庆开始整顿因战争不绝而混乱无比的近畿地区，弘治二年（1556年）11月长庆重新制定赋税，大幅删修不合理的各项苛捐杂税，并在翌年10月在京都大德寺颁布三条禁令以整肃治安。"
@@ -150,3 +143,17 @@ flag_sp_policy_buddhist_laws_desc:0 "由一向宗（净土真宗）的本愿寺�
 sp_policy_buddhist_laws_modifier:0 "机法一体"
 sp_policy_buddhist_laws_modifier_desc:0 "此人推行政教合一，笼络信徒。"
 sp_policy_buddhist_laws_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('honganji_margin').GetName( GetNullCharacter )]，由后者解锁要求其有15[learning|E]且颁布后5年内无法将其撤职#!"
+
+## 丰臣家
+flag_sp_policy_census_edict_name:0 "#V 检地刀狩#!"
+flag_sp_policy_census_edict_desc:0 ""
+sp_policy_census_edict_modifier:0 "检地刀狩"
+sp_policy_census_edict_modifier_desc:0 "此人在领内实行了检地刀狩。"
+sp_policy_census_edict_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('toyotomi_margin').GetName( GetNullCharacter )]，由后者解锁要求其有15[stewardship|E]且颁布后5年内无法将其撤职#!"
+
+## 蛎崎/安东/宗家
+flag_sp_policy_shipping_code_name:0 "#V 廻船式目#!"
+flag_sp_policy_shipping_code_desc:0 "日本战国时期与海运（廻船）有关的船运管理法规或条文制度。"
+sp_policy_shipping_code_modifier:0 "廻船式目"
+sp_policy_shipping_code_modifier_desc:0 "此人规范河运，促进港口商业。"
+sp_policy_shipping_code_warning_tt:0 "@warning_icon!#X 你或你的勘定奉行没有[GetTrait('kakizaki_margin').GetName( GetNullCharacter )]/[GetTrait('ando_margin').GetName( GetNullCharacter )]/[GetTrait('so_margin').GetName( GetNullCharacter )]，由后者解锁要求其有12[diplomacy|E]且颁布后5年内无法将其撤职#!"

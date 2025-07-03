@@ -229,12 +229,70 @@ pob_events.0001 = {
 							even_if_dead = yes
 							this = character:10042200 # 证如
 						}
-						this = character:10042200 # 元长
+						this = character:10042200 # 证如
 					}
 					dynasty = dynasty:10000430
 					is_male = yes
 				}
 				add_trait = honganji_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10029400 # 秀吉
+						}
+						this = character:10029400 # 秀吉
+						this = character:10029401 # 秀长
+					}
+					#dynasty = dynasty:10000282 # 木下
+					#dynasty = dynasty:10000283 # 羽柴
+					is_male = yes
+				}
+				add_trait = toyotomi_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10000136 # 爱季
+						}
+						this = character:10000136 # 爱季
+					}
+					dynasty = dynasty:10000001 # 安东
+					is_male = yes
+				}
+				add_trait = ando_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10069219 # 义调
+						}
+						this = character:10069219 # 义调
+					}
+					dynasty = dynasty:10000689 # 宗
+					is_male = yes
+				}
+				add_trait = so_margin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						any_ancestor = {
+							even_if_dead = yes
+							this = character:10159003 # 季广
+						}
+						this = character:10159003 # 季广
+					}
+					dynasty = dynasty:10001660 # 蛎崎
+					is_male = yes
+				}
+				add_trait = kakizaki_margin
 			}
 			
 		}
