@@ -2,8 +2,10 @@
 	default = enable_ai_special_policies
 
 	enable_ai_special_policies = {
+		flag = GG_can_change_rule
 	}
 	disable_ai_special_policies = {
+		flag = GG_can_change_rule
 	}
 }
 
@@ -13,5 +15,14 @@ sp_fictional_alliances = {
 	enable_fictional_alliances = {
 	}
 	disable_fictional_alliances = {
+	}
+}
+
+sp_96_hideyoshi_dna = {
+	default = sp_96_hideyoshi_dna_enabled
+
+	sp_96_hideyoshi_dna_enabled = {
+	}
+	sp_96_hideyoshi_dna_disabled = {
 	}
 }

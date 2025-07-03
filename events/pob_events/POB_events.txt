@@ -299,6 +299,22 @@ pob_events.0001 = {
 	}
 }
 
+pob_events.0002 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_game_rule = sp_96_hideyoshi_dna_enabled
+			}
+			character:10029400 ?= {
+				copy_inheritable_appearance_from = character:pob_toyotomi_hideyoshi_dna_clone
+			}
+		}
+	}
+}
+
 pob_events.0003 = {
 	scope = none
 	hidden = yes

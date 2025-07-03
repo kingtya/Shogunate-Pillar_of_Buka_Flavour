@@ -1,0 +1,26 @@
+pob_toyotomi_hideyoshi_dna_clone = {
+	name = "荒魂"
+	dna = pob_toyotomi_hideyoshi_dna
+	religion = "shinto"
+	culture = "western_chubu"
+	#father = pob_666668
+	1.1.2 = {
+		birth = yes
+	}
+	1.1.2 = {
+		death = yes
+	}
+}
+pob_tokugawa_ieyasu_dna_clone = {
+	name = "幸魂"
+	dna = pob_tokugawa_ieyasu_dna
+	religion = "shinto"
+	culture = "tokai"
+	#father = pob_666668
+	1.1.2 = {
+		birth = yes
+	}
+	1.1.2 = {
+		death = yes
+	}
+}

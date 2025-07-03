@@ -11,6 +11,12 @@
     setting_enable_fictional_alliances_desc:2 "幕府的原版设定，游戏开始后会由姻亲关系生成[alliances|E]（@warning_icon!#X 这可能导致仇敌间的同盟#!）。"
     setting_disable_fictional_alliances:0 "禁用"
     setting_disable_fictional_alliances_desc:1 "游戏开始后不由姻亲关系生成[alliances|E]。"
+
+    rule_sp_96_hideyoshi_dna:0 "@prestige_icon! PoB：96秀吉DNA"
+    setting_sp_96_hideyoshi_dna_enabled:1 "启用"
+    setting_sp_96_hideyoshi_dna_enabled_desc:2 "游戏开始后丰臣秀吉会采用96大河剧《秀吉》中的外貌DNA。"
+    setting_sp_96_hideyoshi_dna_disabled:0 "#V 禁用#!"
+    setting_sp_96_hideyoshi_dna_disabled_desc:1 ""
     
     # 游戏概念
     game_concept_sp_policy:0 "政策"
