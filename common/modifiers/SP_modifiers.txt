@@ -378,8 +378,6 @@ sp_policy_census_edict_modifier = {
 	domain_tax_mult = 0.1
 	levy_maintenance = 0.05
 	levy_size = -0.3
-	vassal_tax_contribution_mult = 0.1
-	vassal_levy_contribution_add = 0.1
 }
 
 sp_policy_shipping_code_modifier = {
@@ -387,3 +385,14 @@ sp_policy_shipping_code_modifier = {
 	embarkation_cost_mult = -0.5
 	domain_tax_mult = 0.05
 }
+
+# 镇守将军之旗
+sp_policy_chinju_shogun_flag_modifier = {
+	icon = prestige_level_impact_mult
+	monthly_prestige_gain_per_legitimacy_level_add = 0.15
+	courtier_and_guest_opinion = 5
+	cultural_head_fascination_add = 0.3
+	levy_reinforcement_rate = 0.15
+	martial = 1
+}
+
